@@ -67,7 +67,7 @@ for float32 scalar tensors, and it could not be simplified. If we call
 called, the placeholder operation for `x` will output 5.0, then the
 power operation will compute `5.0 ** 3`, so the output will be 125.0.
 
-![](./G_files/mls2_ag01.png){width="1442" height="721"}
+![](./G_files/mls2_ag01.png)
 
 The[]{#idm45728429388872} tensors in these graphs are *symbolic
 tensors*, meaning they don't have an actual value, just a data type, a
@@ -127,7 +127,7 @@ outputs of the power operation:
 This computation graph is represented in
 [Figure G-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html#computation_graph_diagram).
 
-![](./G_files/mls2_ag02.png){width="1441" height="634"}
+![](./G_files/mls2_ag02.png)
 
 Note that each operation has a name. It defaults to the name of the
 operation (e.g., `"pow"`), but you can define it manually when calling

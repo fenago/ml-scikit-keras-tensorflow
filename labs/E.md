@@ -42,7 +42,7 @@ the diagram the images are 6 × 6 pixels, so the neural network on the
 left should contain 36 neurons (and 630 connections), but for visual
 clarity a much smaller network is represented.
 
-![](./E_files/mls2_ae01.png){width="1408" height="865"}
+![](./E_files/mls2_ae01.png)
 
 The training algorithm works by using Hebb's rule (see ["The
 Perceptron"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#theperceptron)):
@@ -137,7 +137,7 @@ network reach thermal equilibrium, and then observing its state, we can
 simulate a wide range of probability distributions.
 This[]{#idm45728430672056} is called a *generative model*.
 
-![](./E_files/mls2_ae02.png){width="880" height="806"}
+![](./E_files/mls2_ae02.png)
 
 Training a Boltzmann machine means finding the parameters that will make
 the network approximate the training set's probability distribution. For
@@ -176,7 +176,7 @@ example,
 [Figure E-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#rbm_diagram)
 represents an RBM with three visible units and four hidden units.
 
-![](./E_files/mls2_ae03.png){width="1051" height="578"}
+![](./E_files/mls2_ae03.png)
 
 A[]{#idm45728430658392} very efficient training algorithm called
 *Contrastive Divergence* was [introduced in 2005 by Miguel Á.
@@ -243,7 +243,7 @@ can be trained in a semisupervised fashion.
 [Figure E-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#dbn_diagram)
 represents such a DBN configured for semisupervised learning.
 
-![](./E_files/mls2_ae04.png){width="1440" height="942"}
+![](./E_files/mls2_ae04.png)
 
 First, RBM 1 is trained without supervision. It learns low-level
 features in the training data. Then RBM 2 is trained with RBM 1's hidden
@@ -314,7 +314,7 @@ and each neuron has a weighted connection to every input (note that the
 diagram shows just two inputs, but there are typically a very large
 number, since the whole point of SOMs is to reduce dimensionality).
 
-![](./E_files/mls2_ae05.png){width="987" height="782"}
+![](./E_files/mls2_ae05.png)
 
 Once the network is trained, you can feed it a new instance and this
 will activate only one neuron (i.e., one point on the map): the neuron

@@ -664,7 +664,7 @@ notebooks available at
     ∨ *B*) ∧ ¬(*A* ∧ *B*), or the fact that *A* ⊕ *B* = (*A* ∨ *B*) ∧ (¬
     *A* ∨ ¬ *B*), and so on.
 
-    ![](./A_files/mls2_aain01.png){width="1442" height="650"}
+    ![](./A_files/mls2_aain01.png)
 
 3.  A classical Perceptron will converge only if the dataset is linearly
     separable, and it won't be able to estimate class probabilities. In

@@ -137,7 +137,7 @@ graph on the right, which represents the partial derivative ∂*g*/∂*x* =
 0 + (0 × *x* + *y* × 1) = *y* (we could similarly obtain the partial
 derivative with regard to *y*).
 
-![](./D_files/mls2_ad01.png){width="1439" height="785"}
+![](./D_files/mls2_ad01.png)
 
 The algorithm will go through the computation graph from the inputs to
 the outputs (hence the name "forward mode"). It starts by getting the
@@ -211,7 +211,7 @@ computed using dual numbers. All we need to do is compute *f*(3 + *ε*,
 4); this will output a dual number whose first component is equal to
 *f*(3, 4) and whose second component is equal to ∂*f*/∂*x* (3, 4).
 
-![](./D_files/mls2_ad02.png){width="1439" height="1162"}
+![](./D_files/mls2_ad02.png)
 
 To compute ∂*f*/∂*x* (3, 4) we would have to go through the graph again,
 but this time with *x* = 3 and *y* = 4 + *ε*.
@@ -244,7 +244,7 @@ values at the bottom right of each node (e.g., *x* × *x* = 9). The nodes
 are labeled *n*~1~ to *n*~7~ for clarity. The output node is *n*~7~:
 *f*(3, 4) = *n*~7~ = 42.
 
-![](./D_files/mls2_ad03.png){width="1440" height="1044"}
+![](./D_files/mls2_ad03.png)
 
 The idea is to gradually go down the graph, computing the partial
 derivative of *f*(*x*, *y*) with regard to each consecutive node, until
