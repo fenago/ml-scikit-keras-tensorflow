@@ -51,14 +51,14 @@ C-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492
 where the *α*^(*i*)^ variables are called the *Karush--Kuhn--Tucker*
 (KKT) multipliers, and they must be greater or equal to zero.
 
-::: {#generalized_lagrangian_hard_margin data-type="equation"}
+
 ##### [Equation C-1. ]{.label}Generalized Lagrangian for the hard margin problem
 
 $$\begin{array}{r}
 {\mathcal{L}\left( \mathbf{w},b,\alpha \right) = \frac{1}{2}\mathbf{w}^{\intercal}\mathbf{w} - \sum\limits_{i = 1}^{m}{\alpha^{(i)}\left( {t^{(i)}\left( \mathbf{w}^{\intercal}\mathbf{x}^{(i)} + b \right) - 1} \right)}} \\
 {\text{with}\alpha^{(i)} \geq 0\text{for} i = 1,2,\cdots,m} \\
 \end{array}$$
-:::
+
 
 Just like with the Lagrange multipliers method, you can compute the
 partial derivatives and locate the stationary points. If there is a
@@ -91,39 +91,39 @@ We can compute the partial derivatives of the generalized Lagrangian
 with regard to **w** and *b* with [Equation
 C-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#partial_derivatives_of_generalized_lagrangian).
 
-::: {#partial_derivatives_of_generalized_lagrangian .fifty-percent data-type="equation"}
+
 ##### [Equation C-2. ]{.label}Partial derivatives of the generalized Lagrangian
 
 $$\begin{array}{r}
 {\nabla_{\mathbf{w}}\mathcal{L}\left( \mathbf{w},b,\alpha \right) = \mathbf{w} - \sum\limits_{i = 1}^{m}\alpha^{(i)}t^{(i)}\mathbf{x}^{(i)}} \\
 {\frac{\partial}{\partial b}\mathcal{L}\left( \mathbf{w},b,\alpha \right) = - \sum\limits_{i = 1}^{m}\alpha^{(i)}t^{(i)}} \\
 \end{array}$$
-:::
+
 
 When these partial derivatives are equal to zero, we have [Equation
 C-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#stationary_points_properties).
 
-::: {#stationary_points_properties .fifty-percent data-type="equation"}
+
 ##### [Equation C-3. ]{.label}Properties of the stationary points
 
 $$\begin{array}{r}
 {\hat{\mathbf{w}} = \sum\limits_{i = 1}^{m}{\hat{\alpha}}^{(i)}t^{(i)}\mathbf{x}^{(i)}} \\
 {\sum\limits_{i = 1}^{m}{\hat{\alpha}}^{(i)}t^{(i)} = 0} \\
 \end{array}$$
-:::
+
 
 If we plug these results into the definition of the generalized
 Lagrangian, some terms disappear and we find [Equation
 C-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#dual_form_generalized_lagrangian).
 
-::: {#dual_form_generalized_lagrangian data-type="equation"}
+
 ##### [Equation C-4. ]{.label}Dual form of the SVM problem
 
 $$\begin{array}{r}
 {\mathcal{L}\left( \hat{\mathbf{w}},\hat{b},\alpha \right) = \frac{1}{2}\sum\limits_{i = 1}^{m}{\sum\limits_{j = 1}^{m}{\alpha^{(i)}\alpha^{(j)}t^{(i)}t^{(j)}{\mathbf{x}^{(i)}}^{\intercal}\mathbf{x}^{(j)}}} - \sum\limits_{i = 1}^{m}\alpha^{(i)}} \\
 {\text{with}\alpha^{(i)} \geq 0\text{for} i = 1,2,\cdots,m} \\
 \end{array}$$
-:::
+
 
 The goal is now to find the vector $\hat{\mathbf{\alpha}}$ that
 minimizes this function, with ${\hat{\alpha}}^{(i)} \geq 0$ for all
@@ -142,7 +142,7 @@ However, it is often preferred to compute the average over all support
 vectors to get a more stable and precise value, as in [Equation
 C-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#bias_term_dual_form).
 
-::: {#bias_term_dual_form .fifty-percent data-type="equation"}
+
 ##### [Equation C-5. ]{.label}Bias term estimation using the dual form
 
 $$\hat{b} = \frac{1}{n_{s}}\sum\limits_{\binom{i = 1}{{\hat{\alpha}}^{(i)} > 0}}^{m}\left\lbrack {t^{(i)} - {{\hat{\mathbf{w}}}^{\intercal}\mathbf{x}^{(i)}}} \right\rbrack$$

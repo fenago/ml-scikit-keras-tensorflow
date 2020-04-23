@@ -15,8 +15,8 @@ TensorFlow implements reverse-mode autodiff, but to understand it, it's
 useful to look at the other options first. So let's go through each of
 them, starting with manual differentiation.
 
-::: {.section data-type="sect1" pdf-bookmark="Manual Differentiation"}
-::: {#idm45728431211368 .sect1}
+
+
 Manual Differentiation
 ======================
 
@@ -40,23 +40,22 @@ defined, it is not too hard; you just need to use five rules:
 From these rules, you can derive [Equation
 D-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#partial_derivatives_equations).
 
-::: {#partial_derivatives_equations data-type="equation"}
+
 ##### [Equation D-1. ]{.label}Partial derivatives of *f*(*x*, *y*)
 
 $$\begin{aligned}
 \frac{\partial f}{\partial x} & {= \frac{\partial\left( x^{2}y \right)}{\partial x} + \frac{\partial y}{\partial x} + \frac{\partial 2}{\partial x} = y\frac{\partial\left( x^{2} \right)}{\partial x} + 0 + 0 = 2xy} \\
 \frac{\partial f}{\partial y} & {= \frac{\partial\left( x^{2}y \right)}{\partial y} + \frac{\partial y}{\partial y} + \frac{\partial 2}{\partial y} = x^{2} + 1 + 0 = x^{2} + 1} \\
 \end{aligned}$$
-:::
+
 
 This approach can become very tedious for more complex functions, and
 you run the risk of making mistakes. Fortunately, there are other
 options. Let's look at finite difference approximation now.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Finite Difference Approximation"}
-::: {#idm45728431137960 .sect1}
+
+
+
 Finite Difference Approximation
 ===============================
 
@@ -68,14 +67,14 @@ point *x* on the function, as *x* gets infinitely close to *x*~0~ (see
 [Equation
 D-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#derivative_definition)).
 
-::: {#derivative_definition data-type="equation"}
+
 ##### [Equation D-2. ]{.label}Definition of the derivative of a function *h*(*x*) at point *x*~0~
 
 $$\begin{array}{cl}
 {h^{'}\left( x_{0} \right)} & {= \lim\limits_{x\rightarrow x_{0}}\frac{h\left( x \right) - h\left( x_{0} \right)}{x - x_{0}}} \\
  & {= \lim\limits_{\varepsilon\rightarrow 0}\frac{h\left( x_{0} + \varepsilon \right) - h\left( x_{0} \right)}{\varepsilon}} \\
 \end{array}$$
-:::
+
 
 So, if we wanted to calculate the partial derivative of *f*(*x*, *y*)
 with regard to *x* at *x* = 3 and *y* = 4, we could compute *f*(3 + *ε*,
@@ -123,11 +122,10 @@ So far, we have considered two ways to compute gradients: using manual
 differentiation and using finite difference approximation.
 Unfortunately, both were fatally flawed to train a large-scale neural
 network. So let's turn to autodiff, starting with forward mode.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Forward-Mode Autodiff"}
-::: {#idm45728431137336 .sect1}
+
+
+
 Forward-Mode Autodiff
 =====================
 
@@ -193,7 +191,7 @@ number is represented in memory as a pair of floats. For example, 42 +
 Dual numbers can be added, multiplied, and so on, as shown in [Equation
 D-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#dual_numbers_operations).
 
-::: {#dual_numbers_operations data-type="equation"}
+
 ##### [Equation D-3. ]{.label}A few operations with dual numbers
 
 $$\begin{array}{cl}
@@ -201,7 +199,7 @@ $$\begin{array}{cl}
  & {\left( a + b\varepsilon \right) + \left( c + d\varepsilon \right) = \left( a + c \right) + \left( b + d \right)\varepsilon} \\
  & {\left( a + b\varepsilon \right) \times \left( c + d\varepsilon \right) = ac + \left( ad + bc \right)\varepsilon + \left( bd \right)\varepsilon^{2} = ac + \left( ad + bc \right)\varepsilon} \\
 \end{array}$$
-:::
+
 
 Most importantly, it can be shown that *h*(*a* + *bε*) = *h*(*a*) + *b*
 × *h*′(*a*)*ε*, so computing *h*(*a* + *ε*) gives you both *h*(*a*) and
@@ -225,11 +223,10 @@ neural networks): if there were 1,000 parameters, it would require 1,000
 passes through the graph to compute all the partial derivatives. This is
 where reverse-mode autodiff shines: it can compute all of them in just
 two passes through the graph. Let's see how.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Reverse-Mode Autodiff"}
-::: {#idm45728430993816 .sect1}
+
+
+
 Reverse-Mode Autodiff
 =====================
 
@@ -255,11 +252,11 @@ we reach the variable nodes. For this, reverse-mode autodiff relies
 heavily on the *chain rule*, shown in [Equation
 D-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#chain_rule).
 
-::: {#chain_rule data-type="equation"}
+
 ##### [Equation D-4. ]{.label}Chain rule
 
 $$\frac{\partial f}{\partial x} = \frac{\partial f}{\partial n_{i}} \times \frac{\partial n_{i}}{\partial x}$$
-:::
+
 
 Since *n*~7~ is the output node, *f* = *n*~7~ so ∂*f*/∂*n*~7~ = 1.
 
@@ -301,7 +298,7 @@ needs to be generated once, and then it can be executed over and over
 again, whenever the optimizer needs to compute the gradients. Moreover,
 this makes it possible to compute higher-order derivatives if needed.
 
-::: {data-type="tip"}
+
 ###### Tip
 
 If you ever want to implement a new type of low-level TensorFlow

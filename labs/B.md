@@ -24,8 +24,8 @@ through your Machine Learning projects. There are eight main steps:
 
 Obviously, you should feel free to adapt this checklist to your needs.
 
-::: {.section data-type="sect1" pdf-bookmark="Frame the Problem and Look at the Big Picture"}
-::: {#idm45728431717384 .sect1}
+
+
 Frame the Problem and Look at the Big Picture
 =============================================
 
@@ -54,11 +54,10 @@ Frame the Problem and Look at the Big Picture
 11. List the assumptions you (or others) have made so far.
 
 12. Verify assumptions if possible.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Get the Data"}
-::: {#get_the_data_step .sect1}
+
+
+
 Get the Data
 ============
 
@@ -90,11 +89,10 @@ easily get fresh data.
 
 11. Sample a test set, put it aside, and never look at it (no data
     snooping!).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Explore the Data"}
-::: {#idm45728431689592 .sect1}
+
+
+
 Explore the Data
 ================
 
@@ -136,11 +134,10 @@ these steps.
     Data"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#get_the_data_step)).
 
 10. Document what you have learned.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Prepare the Data"}
-::: {#idm45728431669928 .sect1}
+
+
+
 Prepare the Data
 ================
 
@@ -191,11 +188,10 @@ Notes:
 4.  Feature scaling:
 
     -   Standardize or normalize features.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Shortlist Promising Models"}
-::: {#idm45728431644632 .sect1}
+
+
+
 Shortlist Promising Models
 ==========================
 
@@ -230,11 +226,10 @@ Notes:
 
 7.  Shortlist the top three to five most promising models, preferring
     models that make different types of errors.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Fine-Tune the System"}
-::: {#idm45728431628440 .sect1}
+
+
+
 Fine-Tune the System
 ====================
 
@@ -265,17 +260,16 @@ Notes:
 3.  Once you are confident about your final model, measure its
     performance on the test set to estimate the generalization error.
 
-::: {data-type="warning" type="warning"}
+
 ###### Warning
 
 Don't tweak your model after measuring the generalization error: you
 would just start overfitting the test set.
-:::
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Present Your Solution"}
-::: {#idm45728431614232 .sect1}
+
+
+
+
 Present Your Solution
 =====================
 
@@ -297,11 +291,10 @@ Present Your Solution
 5.  Ensure your key findings are communicated through beautiful
     visualizations or easy-to-remember statements (e.g., "the median
     income is the number-one predictor of housing prices").
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Launch!"}
-::: {#idm45728431604168 .sect1}
+
+
+
 Launch!
 =======
 

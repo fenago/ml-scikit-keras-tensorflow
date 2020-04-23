@@ -2,16 +2,16 @@
 [Appendix A. ]{.label}Exercise Solutions
 ========================================
 
-::: {data-type="note" type="note"}
+
 ###### Note
 
 Solutions[]{#exsol20} to the coding exercises are available in the
 online Jupyter notebooks at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 1: The Machine Learning Landscape"}
-::: {#idm45728432240024 .sect1}
+
+
+
 [Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter): The Machine Learning Landscape
 ==========================================================================================================================================================
 
@@ -120,31 +120,28 @@ online Jupyter notebooks at
     the test set, and the generalization error you measure will be
     optimistic (you may launch a model that performs worse than you
     expect).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 2: End-to-End Machine Learning Project"}
-::: {#idm45728432186536 .sect1}
+
+
+
 [Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter): End-to-End Machine Learning Project
 =============================================================================================================================================================
 
 See the Jupyter notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 3: Classification"}
-::: {#idm45728432183288 .sect1}
+
+
+
 [Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter): Classification
 ===============================================================================================================================================
 
 See the Jupyter notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 4: Training Models"}
-::: {#idm45728432179880 .sect1}
+
+
+
 [Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter): Training Models
 ===============================================================================================================================================
 
@@ -246,11 +243,10 @@ See the Jupyter notebooks available at
 
 12. See the Jupyter notebooks available at
     [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 5: Support Vector Machines"}
-::: {#idm45728432154792 .sect1}
+
+
+
 [Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter): Support Vector Machines
 =============================================================================================================================================
 
@@ -331,11 +327,10 @@ See the Jupyter notebooks available at
 For the solutions to exercises 8, 9, and 10, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 6: Decision Trees"}
-::: {#idm45728432092664 .sect1}
+
+
+
 [Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter): Decision Trees
 ======================================================================================================================================
 
@@ -393,11 +388,10 @@ notebooks available at
 For the solutions to exercises 7 and 8, please see the Jupyter notebooks
 available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 7: Ensemble Learning and Random Forests"}
-::: {#idm45728432066696 .sect1}
+
+
+
 [Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter): Ensemble Learning and Random Forests
 ================================================================================================================================================================
 
@@ -464,11 +458,10 @@ available at
 For the solutions to exercises 8 and 9, please see the Jupyter notebooks
 available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 8: Dimensionality Reduction"}
-::: {#idm45728432052984 .sect1}
+
+
+
 [Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter): Dimensionality Reduction
 =========================================================================================================================================================
 
@@ -563,11 +556,10 @@ available at
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 9: Unsupervised Learning Techniques"}
-::: {#idm45728432034872 .sect1}
+
+
+
 [Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter): Unsupervised Learning Techniques
 ========================================================================================================================================================================
 
@@ -654,11 +646,10 @@ notebooks available at
 For the solutions to exercises 10 to 13, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 10: Introduction to Artificial Neural Networks with Keras"}
-::: {#idm45728432016936 .sect1}
+
+
+
 [Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter): Introduction to Artificial Neural Networks with Keras
 ============================================================================================================================================================================
 
@@ -778,11 +769,10 @@ notebooks available at
 
 10. See the Jupyter notebooks available at
     [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 11: Training Deep Neural Networks"}
-::: {#idm45728431964744 .sect1}
+
+
+
 [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter): Training Deep Neural Networks
 =====================================================================================================================================================
 
@@ -869,11 +859,10 @@ notebooks available at
 For the solution to exercise 8, please see the Jupyter notebooks
 available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 12: Custom Models and Training with TensorFlow"}
-::: {#idm45728431943752 .sect1}
+
+
+
 [Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter): Custom Models and Training with TensorFlow
 ========================================================================================================================================================================
 
@@ -984,11 +973,10 @@ available at
 For the solutions to exercises 12 and 13, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 13: Loading and Preprocessing Data with TensorFlow"}
-::: {#idm45728431910072 .sect1}
+
+
+
 [Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter): Loading and Preprocessing Data with TensorFlow
 ======================================================================================================================================================================
 
@@ -1131,11 +1119,10 @@ notebooks available at
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 14: Deep Computer Vision Using Convolutional Neural Networks"}
-::: {#idm45728431881112 .sect1}
+
+
+
 [Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter): Deep Computer Vision Using Convolutional Neural Networks
 ===============================================================================================================================================================================
 
@@ -1291,11 +1278,10 @@ notebooks available at
 For the solutions to exercises 9 to 11, please see the Jupyter notebooks
 available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 15: Processing Sequences Using RNNs and CNNs"}
-::: {#idm45728431852088 .sect1}
+
+
+
 [Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter): Processing Sequences Using RNNs and CNNs
 ===============================================================================================================================================================
 
@@ -1413,11 +1399,10 @@ available at
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 16: Natural Language Processing with RNNs and Attention"}
-::: {#idm45728431824840 .sect1}
+
+
+
 [Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter): Natural Language Processing with RNNs and Attention
 ==========================================================================================================================================================================
 
@@ -1515,11 +1500,10 @@ notebooks available at
 For the solutions to exercises 8 to 11, please see the Jupyter notebooks
 available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 17: Representation Learning and Generative Learning Using Autoencoders and GANs"}
-::: {#idm45728431807080 .sect1}
+
+
+
 [Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter): Representation Learning and Generative Learning Using Autoencoders and GANs
 ===========================================================================================================================================================================================================
 
@@ -1622,11 +1606,10 @@ available at
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 18: Reinforcement Learning"}
-::: {#idm45728431785448 .sect1}
+
+
+
 [Chapter 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_chapter): Reinforcement Learning
 ============================================================================================================================================
 
@@ -1756,11 +1739,10 @@ notebooks available at
 For the solutions to exercises 8, 9, and 10, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Chapter 19: Training and Deploying TensorFlow Models at Scale"}
-::: {#idm45728431757480 .sect1}
+
+
+
 [Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]{.keep-together}
 =================================================================================================================================================================================================
 
@@ -1891,10 +1873,9 @@ notebooks available at
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
-:::
-:::
 
-::: {data-type="footnotes"}
+
+
 ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728432174040-marker){.totri-footnote}^
 If you draw a straight line between any two points on the curve, the
 line never crosses the curve.

@@ -19,8 +19,8 @@ Deep Learning until the early 2010s. They are still the subject of very
 active research, so they may well come back with a vengeance in the
 future.
 
-::: {.section data-type="sect1" pdf-bookmark="Hopfield Networks"}
-::: {#idm45728430738248 .sect1}
+
+
 Hopfield Networks
 =================
 
@@ -74,11 +74,10 @@ a Hopfield net with 784 fully connected neurons and 306,936 weights.
 Such a network would only be able to learn about 110 different
 characters (14% of 784). That's a lot of parameters for such a small
 memory.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Boltzmann Machines"}
-::: {#idm45728430722264 .sect1}
+
+
+
 Boltzmann Machines
 ==================
 
@@ -94,11 +93,11 @@ mechanics), hence their name. [Equation
 E-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#boltzmann_distribution_equation)
 gives the probability that a particular neuron will output 1.
 
-::: {#boltzmann_distribution_equation data-type="equation"}
+
 ##### [Equation E-1. ]{.label}Probability that the i^th^ neuron will output 1
 
 $$p\left( {s_{i}^{(\text{next}\text{step})} = 1} \right)\, = \,\sigma\left( \frac{\sum\limits_{j = 1}^{N}{w_{i,j}s_{j} + b_{i}}}{T} \right)$$
-:::
+
 
 -   *s*~*j*~ is the *j*^th^ neuron's state (0 or 1).
 
@@ -163,11 +162,10 @@ image represents a 5).
 Unfortunately, there is no efficient technique to train Boltzmann
 machines. However, fairly efficient algorithms have been developed to
 train *restricted Boltzmann machines* (RBMs).
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Restricted Boltzmann Machines"}
-::: {#idm45728430721672 .sect1}
+
+
+
 Restricted Boltzmann Machines
 =============================
 
@@ -199,22 +197,21 @@ applying the rule in [Equation
 E-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#contrastive_divergence),
 where *η* is the learning rate.
 
-::: {#contrastive_divergence data-type="equation"}
+
 ##### [Equation E-2. ]{.label}Contrastive divergence weight update
 
 $\left. w_{i,j}\leftarrow w_{i,j} + \eta\,\left( \mathbf{x}\mathbf{h}^{\intercal} - \mathbf{x}'\mathbf{h}'^{\intercal} \right) \right.$
-:::
+
 
 The great benefit of this algorithm is that it does not require waiting
 for the network to reach thermal equilibrium: it just goes forward,
 backward, and forward again, and that's it. This makes it incomparably
 more efficient than previous algorithms, and it was a key ingredient to
 the first success of Deep Learning based on multiple stacked RBMs.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Deep Belief Nets"}
-::: {#idm45728430636328 .sect1}
+
+
+
 Deep Belief Nets
 ================
 
@@ -298,11 +295,10 @@ generate a few hundred captions, the most frequently generated ones will
 likely be a good description of the
 image.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430620168){#idm45728430620168-marker
 .totri-footnote}^
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Self-Organizing Maps"}
-::: {#idm45728430635736 .sect1}
+
+
+
 Self-Organizing Maps
 ====================
 
@@ -333,7 +329,7 @@ neurons in the same area of the map, while instances of the vowel "e"
 will activate neurons in another area, and intermediate sounds will
 generally activate intermediate neurons on the map.
 
-::: {data-type="note" type="note"}
+
 ###### Note
 
 One important difference from the other dimensionality reduction
@@ -343,7 +339,7 @@ is that all instances get mapped to a discrete number of points in the
 low-dimensional space (one point per neuron). When there are very few
 neurons, this technique is better described as clustering rather than
 dimensionality reduction.
-:::
+
 
 The training algorithm is unsupervised. It works by having all the
 neurons compete against each other. First, all the weights are
@@ -361,10 +357,9 @@ training instance and repeats the process, again and again. This
 algorithm tends to make nearby neurons gradually specialize in similar
 inputs.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430606136){#idm45728430606136-marker
 .totri-footnote}^
-:::
-:::
 
-::: {data-type="footnotes"}
+
+
 ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430655976-marker){.totri-footnote}^
 Miguel Á. Carreira-Perpiñán and Geoffrey E. Hinton, "On Contrastive
 Divergence Learning," *Proceedings of the 10th International Workshop on

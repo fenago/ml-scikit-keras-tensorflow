@@ -7,8 +7,8 @@ data structures supported by TensorFlow, beyond regular float or integer
 tensors. This includes strings, ragged tensors, sparse tensors, tensor
 arrays, sets, and queues.
 
-::: {.section data-type="sect1" pdf-bookmark="Strings"}
-::: {#idm45728430601592 .sect1}
+
+
 Strings
 =======
 
@@ -41,14 +41,14 @@ point:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9
             numpy=array([ 99,  97, 102, 233], dtype=int32)>
 ```
 
-::: {data-type="note" type="note"}
+
 ###### Note
 
 In tensors of type tf.string, the string length is not part of the
 tensor's shape. In other words, strings are considered as atomic values.
 However, in a Unicode string tensor (i.e., an int32 tensor), the length
 of the string *is* part of the tensor's shape.
-:::
+
 
 The `tf.strings` package contains several functions to manipulate string
 tensors, such as `length()` to count the number of bytes in a byte
@@ -86,11 +86,10 @@ tf.RaggedTensor(values=tf.Tensor(
 
 Notice that the decoded strings are stored in a `RaggedTensor`. What is
 that?
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Ragged Tensors"}
-::: {#idm45728430601000 .sect1}
+
+
+
 Ragged Tensors
 ==============
 
@@ -153,11 +152,10 @@ array([[   67,    97,   102,   233,     0,     0],
 
 Many TF operations support ragged tensors. For the full list, see the
 documentation of the `tf.RaggedTensor` class.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Sparse Tensors"}
-::: {#idm45728430404248 .sect1}
+
+
+
 Sparse Tensors
 ==============
 
@@ -191,11 +189,10 @@ value to a sparse tensor, as this would not return a sparse tensor:
 >>> s + 42.0
 [...] TypeError: unsupported operand type(s) for +: 'SparseTensor' and 'float'
 ```
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Tensor Arrays"}
-::: {#idm45728430167960 .sect1}
+
+
+
 Tensor Arrays
 =============
 
@@ -215,7 +212,7 @@ tensor1 = array.read(1) # => returns (and pops!) tf.constant([3., 10.])
 Notice that reading an item pops it from the array, replacing it with a
 tensor of the same shape, full of zeros.
 
-::: {data-type="warning" type="warning"}
+
 ###### Warning
 
 When you write to the array, you must assign the output back to the
@@ -223,7 +220,7 @@ array, as shown in this code example. If you don't, although your code
 will work fine in eager mode, it will break in graph mode (these modes
 were presented in
 [Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter)).
-:::
+
 
 When creating a `TensorArray`, you must provide its `size`, except in
 graph mode. Alternatively, you can leave the `size` unset and instead
@@ -242,11 +239,10 @@ array([[1., 2.],
        [0., 0.],
        [5., 7.]], dtype=float32)>
 ```
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Sets"}
-::: {#idm45728430044664 .sect1}
+
+
+
 Sets
 ====
 
@@ -293,12 +289,12 @@ If you prefer to use a different padding value, you must set
                                [ 0, 10, 13, -1, -1]], dtype=int32)>
 ```
 
-::: {data-type="warning" type="warning"}
+
 ###### Warning
 
 The default `default_value` is 0, so when dealing with string sets, you
 must set the `default_value` (e.g., to an empty string).
-:::
+
 
 Other functions available in `tf.sets` include `difference()`,
 `intersection()`, and `size()`, which are self-explanatory. If you want
@@ -306,11 +302,10 @@ to check whether or not a set contains some given values, you can
 compute the intersection of that set and the values. If you want to add
 some values to a set, you can compute the union of the set and the
 values.
-:::
-:::
 
-::: {.section data-type="sect1" pdf-bookmark="Queues"}
-::: {#idm45728429913224 .sect1}
+
+
+
 Queues
 ======
 
@@ -380,10 +375,9 @@ If a queue is already full and you try to enqueue another record, the
 thread. Similarly, if a queue is empty and you try to dequeue a record,
 the `dequeue*()` method will freeze until records are pushed to the
 queue by another thread.[]{#idm45728429519528}
-:::
-:::
 
-::: {data-type="footnotes"}
+
+
 ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html#idm45728430541496-marker){.totri-footnote}^
 If you are not familiar with Unicode code points, please check out
 [*https://homl.info/unicode*](https://homl.info/unicode).
