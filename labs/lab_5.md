@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 5. ] Support Vector Machines
 ============================================
 

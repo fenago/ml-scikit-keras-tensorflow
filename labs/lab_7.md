@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 7. ] Ensemble Learning and Random Forests
 =========================================================
 

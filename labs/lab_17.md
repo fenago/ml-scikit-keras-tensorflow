@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 17. ] Representation Learning and Generative Learning Using Autoencoders and GANs
 =================================================================================================
 

@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 4. ] Training Models
 ====================================
 

@@ -1,67 +1,66 @@
-Machine Learning Notebooks
-==========================
+<img align="right" src="./logo-small.png">
 
-This project aims at teaching you the fundamentals of Machine Learning in
-python. It contains the example code and solutions to the exercises in the second edition of my O'Reilly book [Hands-on Machine Learning with Scikit-Learn, Keras and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/):
+<h2><span style="color:red;">Machine Learning with Scikit-Learn, Keras and TensorFlow</span></h2>
 
-<img src="https://images-na.ssl-images-amazon.com/images/I/51aqYc1QyrL._SX379_BO1,204,203,200_.jpg" title="book" width="150" />
+### Overview
+Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow.
 
-**Note**: If you are looking for the first edition notebooks, check out [ageron/handson-ml](https://github.com/ageron/handson-ml).
+### Description
+Through a series of recent breakthroughs, deep learning has boosted the entire field of machine learning. Now, even programmers who know close to nothing about this technology can use simple, efficient tools to implement programs capable of learning from data. This practical book shows you how.
 
-## Quick Start
+By using concrete examples, minimal theory, and two production-ready Python frameworks—Scikit-Learn and TensorFlow—author Aurélien Géron helps you gain an intuitive understanding of the concepts and tools for building intelligent systems. You’ll learn a range of techniques, starting with simple linear regression and progressing to deep neural networks. With exercises in each lab to help you apply what you’ve learned, all you need is programming experience to get started.
 
-### Want to play with these notebooks online without having to install anything?
-Use any of the following services.
+**What You Will Learn**
 
-**WARNING**: Please be aware that these services provide temporary environments: anything you do will be deleted after a while, so make sure you download any data you care about.
+- Explore the machine learning landscape, particularly neural nets
+- Use Scikit-Learn to track an example machine-learning project end-to-end
+- Explore several training models, including support vector machines, decision trees, random forests, and ensemble methods
+- Use the TensorFlow library to build and train neural nets
+- Dive into neural net architectures, including convolutional nets, recurrent nets, and deep reinforcement learning
+- Learn techniques for training and scaling deep neural nets
 
-* **Recommended**: open this repository in [Colaboratory](https://colab.research.google.com/github/ageron/handson-ml2/blob/master/):
-<a href="https://colab.research.google.com/github/ageron/handson-ml2/blob/master/"><img src="https://colab.research.google.com/img/colab_favicon.ico" width="90" /></a>
+### Preface
+		* <host-ip>:<port>/lab/workspaces/preface
 
-* Or open it in [Binder](https://mybinder.org/v2/gh/ageron/handson-ml2/master):
-<a href="https://mybinder.org/v2/gh/ageron/handson-ml2/master"><img src="https://matthiasbussonnier.com/posts/img/binder_logo_128x128.png" width="90" /></a>
+### Labs
 
-  * _Note_: Most of the time, Binder starts up quickly and works great, but when handson-ml2 is updated, Binder creates a new environment from scratch, and this can take quite some time.
+Labs for this course are available at path shared below. Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. 
 
-* Or open it in [Deepnote](https://beta.deepnote.com/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb):
-<a href="https://beta.deepnote.com/launch?template=data-science&url=https%3A//github.com/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://www.deepnote.com/static/illustration.png" width="150" /></a>
-
-### Just want to quickly look at some notebooks, without executing any code?
-
-Browse this repository using [jupyter.org's notebook viewer](https://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb):
-<a href="https://nbviewer.jupyter.org/github/ageron/handson-ml2/blob/master/index.ipynb"><img src="https://jupyter.org/assets/nav_logo.svg" width="150" /></a>
-
-_Note_: [github.com's notebook viewer](index.ipynb) also works but it is slower and the math equations are not always displayed correctly.
-
-### Want to run this project using a Docker image?
-Read the [Docker instructions](https://github.com/ageron/handson-ml2/tree/master/docker).
-
-### Want to install this project on your own machine?
-
-Start by installing [Anaconda](https://www.anaconda.com/distribution/) (or [Miniconda](https://docs.conda.io/en/latest/miniconda.html)), [git](https://git-scm.com/downloads), and if you have a TensorFlow-compatible GPU, install the [GPU driver](https://www.nvidia.com/Download/index.aspx).
-
-Next, clone this project by opening a terminal and typing the following commands (do not type the first `$` signs on each line, they just indicate that these are terminal commands):
-
-    $ git clone https://github.com/ageron/handson-ml2.git
-    $ cd handson-ml2
-
-If you want to use a GPU, then edit `environment.yml` (or `environment-windows.yml` on Windows) and replace `tensorflow=2.0.0` with `tensorflow-gpu=2.0.0`. Also replace `tensorflow-serving-api==2.0.0` with `tensorflow-serving-api-gpu==2.0.0`.
-
-Next, run the following commands:
-
-    $ conda env create -f environment.yml # or environment-windows.yml on Windows
-    $ conda activate tf2
-    $ python -m ipykernel install --user --name=python3
-
-Then if you're on Windows, run the following command:
-
-    $ pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
-
-Finally, start Jupyter:
-
-    $ jupyter notebook
-
-If you need further instructions, read the [detailed installation instructions](INSTALL.md).
-
-## Contributors
-I would like to thank everyone who contributed to this project, either by providing useful feedback, filing issues or submitting Pull Requests. Special thanks go to Haesun Park who helped on some of the exercise solutions, and to Steven Bunkley and Ziembla who created the `docker` directory. Thanks as well to github user SuperYorio for helping out on the coding exercise solutions.
+1. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab1
+2. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab2
+3. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab3
+4. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab4
+5. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab5
+6. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab6
+7. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab7
+8. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab8
+9. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab9
+10. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab10
+11. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab11
+12. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab12
+13. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab13
+14. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab14
+15. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab15
+16. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab16
+17. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab17
+18. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab18
+19. ##### 
+		* <host-ip>:<port>/lab/workspaces/lab19

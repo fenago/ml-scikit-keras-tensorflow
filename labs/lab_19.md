@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 19. ] Training and Deploying TensorFlow [Models at Scale]
 =========================================================================================
 

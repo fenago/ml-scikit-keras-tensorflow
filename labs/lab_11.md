@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 11. ] Training Deep Neural Networks
 ===================================================
 

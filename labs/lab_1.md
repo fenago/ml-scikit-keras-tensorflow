@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 1. ] The Machine Learning Landscape
 ===================================================
 

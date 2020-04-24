@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 2. ] End-to-End Machine Learning Project
 ========================================================
 

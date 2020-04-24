@@ -1,4 +1,7 @@
 
+<img align="right" src="../logo-small.png">
+
+
 [Lab 15. ] Processing Sequences Using [RNNs and CNNs]
 ================================================================================
 
