@@ -1,4 +1,4 @@
-[Appendix A. ]{.label}Exercise Solutions
+[Appendix A. ] Exercise Solutions
 ========================================
 
 

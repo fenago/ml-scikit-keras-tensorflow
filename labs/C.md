@@ -1,5 +1,5 @@
 
-[Appendix C. ]{.label}SVM Dual Problem
+[Appendix C. ] SVM Dual Problem
 ======================================
 
 To[]{#idm45728431592488}[]{#idm45728431591064}[]{#idm45728431590216}
@@ -52,7 +52,7 @@ where the *α*^(*i*)^ variables are called the *Karush--Kuhn--Tucker*
 (KKT) multipliers, and they must be greater or equal to zero.
 
 
-##### [Equation C-1. ]{.label}Generalized Lagrangian for the hard margin problem
+##### [Equation C-1. ] Generalized Lagrangian for the hard margin problem
 
 $$\begin{array}{r}
 {\mathcal{L}\left( \mathbf{w},b,\alpha \right) = \frac{1}{2}\mathbf{w}^{\intercal}\mathbf{w} - \sum\limits_{i = 1}^{m}{\alpha^{(i)}\left( {t^{(i)}\left( \mathbf{w}^{\intercal}\mathbf{x}^{(i)} + b \right) - 1} \right)}} \\
@@ -92,7 +92,7 @@ with regard to **w** and *b* with [Equation
 C-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#partial_derivatives_of_generalized_lagrangian).
 
 
-##### [Equation C-2. ]{.label}Partial derivatives of the generalized Lagrangian
+##### [Equation C-2. ] Partial derivatives of the generalized Lagrangian
 
 $$\begin{array}{r}
 {\nabla_{\mathbf{w}}\mathcal{L}\left( \mathbf{w},b,\alpha \right) = \mathbf{w} - \sum\limits_{i = 1}^{m}\alpha^{(i)}t^{(i)}\mathbf{x}^{(i)}} \\
@@ -104,7 +104,7 @@ When these partial derivatives are equal to zero, we have [Equation
 C-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#stationary_points_properties).
 
 
-##### [Equation C-3. ]{.label}Properties of the stationary points
+##### [Equation C-3. ] Properties of the stationary points
 
 $$\begin{array}{r}
 {\hat{\mathbf{w}} = \sum\limits_{i = 1}^{m}{\hat{\alpha}}^{(i)}t^{(i)}\mathbf{x}^{(i)}} \\
@@ -117,7 +117,7 @@ Lagrangian, some terms disappear and we find [Equation
 C-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#dual_form_generalized_lagrangian).
 
 
-##### [Equation C-4. ]{.label}Dual form of the SVM problem
+##### [Equation C-4. ] Dual form of the SVM problem
 
 $$\begin{array}{r}
 {\mathcal{L}\left( \hat{\mathbf{w}},\hat{b},\alpha \right) = \frac{1}{2}\sum\limits_{i = 1}^{m}{\sum\limits_{j = 1}^{m}{\alpha^{(i)}\alpha^{(j)}t^{(i)}t^{(j)}{\mathbf{x}^{(i)}}^{\intercal}\mathbf{x}^{(j)}}} - \sum\limits_{i = 1}^{m}\alpha^{(i)}} \\
@@ -143,6 +143,6 @@ vectors to get a more stable and precise value, as in [Equation
 C-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#bias_term_dual_form).
 
 
-##### [Equation C-5. ]{.label}Bias term estimation using the dual form
+##### [Equation C-5. ] Bias term estimation using the dual form
 
 $$\hat{b} = \frac{1}{n_{s}}\sum\limits_{\binom{i = 1}{{\hat{\alpha}}^{(i)} > 0}}^{m}\left\lbrack {t^{(i)} - {{\hat{\mathbf{w}}}^{\intercal}\mathbf{x}^{(i)}}} \right\rbrack$$

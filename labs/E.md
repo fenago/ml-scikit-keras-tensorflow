@@ -1,5 +1,5 @@
 
-[Appendix E. ]{.label}Other Popular ANN Architectures
+[Appendix E. ] Other Popular ANN Architectures
 =====================================================
 
 In this appendix I will give a quick overview of a few historically
@@ -94,7 +94,7 @@ E-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492
 gives the probability that a particular neuron will output 1.
 
 
-##### [Equation E-1. ]{.label}Probability that the i^th^ neuron will output 1
+##### [Equation E-1. ] Probability that the i^th^ neuron will output 1
 
 $$p\left( {s_{i}^{(\text{next}\text{step})} = 1} \right)\, = \,\sigma\left( \frac{\sum\limits_{j = 1}^{N}{w_{i,j}s_{j} + b_{i}}}{T} \right)$$
 
@@ -198,7 +198,7 @@ E-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492
 where *η* is the learning rate.
 
 
-##### [Equation E-2. ]{.label}Contrastive divergence weight update
+##### [Equation E-2. ] Contrastive divergence weight update
 
 $\left. w_{i,j}\leftarrow w_{i,j} + \eta\,\left( \mathbf{x}\mathbf{h}^{\intercal} - \mathbf{x}'\mathbf{h}'^{\intercal} \right) \right.$
 

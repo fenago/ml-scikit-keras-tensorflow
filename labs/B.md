@@ -1,5 +1,5 @@
 
-[Appendix B. ]{.label}Machine Learning Project Checklist
+[Appendix B. ] Machine Learning Project Checklist
 ========================================================
 
 This[]{#idm45728431727352}[]{#idm45728431726280} checklist can guide you

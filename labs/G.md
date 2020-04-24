@@ -1,5 +1,5 @@
 
-[Appendix G. ]{.label}TensorFlow Graphs
+[Appendix G. ] TensorFlow Graphs
 =======================================
 
 In[]{#TFfunauto26}[]{#TFFgraph26} this appendix, we will explore the

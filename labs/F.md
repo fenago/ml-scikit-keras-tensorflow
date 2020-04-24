@@ -1,5 +1,5 @@
 
-[Appendix F. ]{.label}Special Data Structures
+[Appendix F. ] Special Data Structures
 =============================================
 
 In[]{#TFspecial25} this appendix we will take a very quick look at the
