@@ -11,7 +11,7 @@ online Jupyter notebooks at
 
 
 
-[Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter): The Machine Learning Landscape
+[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab): The Machine Learning Landscape
 ==========================================================================================================================================================
 
 1.  Machine Learning is about building systems that can learn from data.

@@ -1,5 +1,5 @@
 
-[Chapter 17. ] Representation Learning and Generative Learning Using Autoencoders and GANs
+[Lab 17. ] Representation Learning and Generative Learning Using Autoencoders and GANs
 =================================================================================================
 
 Autoencoders[]{#idm45728446303656}[]{#idm45728446302648}[]{#idm45728446301976}[]{#idm45728446301304}
@@ -8,11 +8,11 @@ of the input data, called *latent representations* or *codings*, without
 any supervision (i.e., the training set is unlabeled). These codings
 typically have a much lower dimensionality than the input data, making
 autoencoders useful for dimensionality reduction (see
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)),
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)),
 especially for visualization purposes. Autoencoders also act as feature
 detectors, and they can be used for unsupervised pretraining of deep
 neural networks (as we discussed in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)).
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
 Lastly, some[]{#idm45728446297240}[]{#idm45728446296536} autoencoders
 are *generative models*: they are capable of randomly generating new
 data that looks very similar to the training data. For example, you
@@ -68,7 +68,7 @@ However, they work very differently:
     that it was "the most interesting idea in the last 10 years in
     Machine Learning."
 
-In this chapter we will start by exploring in more depth how
+In this lab we will start by exploring in more depth how
 autoencoders work and how to use them for dimensionality reduction,
 feature extraction, unsupervised pretraining, or as generative models.
 This will naturally lead us to GANs. We will start by building a simple
@@ -134,7 +134,7 @@ representation to the outputs (see
 
 As you can see, an autoencoder typically has the same architecture as a
 Multi-Layer Perceptron (MLP; see
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)),
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
 except that the number of neurons in the output layer must be equal to
 the number of inputs. In this example, there is just one hidden layer
 composed of two neurons (the encoder), and one output layer composed of
@@ -166,7 +166,7 @@ If[]{#idm45728446203272}[]{#idm45728446202168}[]{#idm45728446201496} the
 autoencoder uses only linear activations and the cost
 function[]{#idm45728446200440} is the mean squared error (MSE), then it
 ends up performing Principal Component Analysis (PCA; see
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)).
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)).
 
 The following code builds a simple linear autoencoder to perform PCA on
 a 3D dataset, projecting it to 2D:
@@ -182,7 +182,7 @@ autoencoder.compile(loss="mse", optimizer=keras.optimizers.SGD(lr=0.1))
 ```
 
 This code is really not very different from all the MLPs we built in
-past chapters, but there are a few things to note:
+past labs, but there are a few things to note:
 
 -   We organized the autoencoder into two subcomponents: the encoder and
     the decoder. Both are regular `Sequential` models with a single
@@ -246,7 +246,7 @@ The architecture of a stacked autoencoder is typically symmetrical with
 regard to the central hidden layer (the coding layer). To put it simply,
 it looks like a sandwich. For example, an autoencoder for MNIST
 (introduced in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter))
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab))
 may have 784 inputs, followed by a hidden layer with 100 neurons, then a
 central hidden layer of 30 neurons, then another hidden layer with 100
 neurons, and an output layer with 784 neurons. This stacked autoencoder
@@ -263,11 +263,11 @@ Implementing a Stacked Autoencoder Using Keras
 You[]{#idm45728446077064}[]{#idm45728446076056} can implement a stacked
 autoencoder very much like a regular deep MLP. In particular, the same
 techniques we used in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 for training deep nets can be applied. For example, the following code
 builds a stacked autoencoder for Fashion MNIST (loaded and normalized as
 in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)),
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
 using the SELU activation [function]:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -371,7 +371,7 @@ that we have trained a stacked autoencoder, we can use it to reduce the
 dataset's dimensionality. For visualization, this does not give great
 results compared to other dimensionality reduction algorithms (such as
 those we discussed in
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)),
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)),
 but one big advantage of autoencoders is that they can handle large
 datasets, with many instances and many features. So one strategy is to
 use an autoencoder to reduce the dimensionality down to a reasonable
@@ -415,7 +415,7 @@ Unsupervised Pretraining Using Stacked Autoencoders
 
 As[]{#Aunsup17}[]{#SAunsup17}[]{#Pstack17}[]{#ULpretrain17} we discussed
 in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter),
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab),
 if you are tackling a complex supervised task but you do not have a lot
 of labeled training data, one solution is to find a neural network that
 performs a similar task and reuse its lower layers. This makes it
@@ -451,7 +451,7 @@ instances.
 There is nothing special about the implementation: just train an
 autoencoder using all the training data (labeled plus unlabeled), then
 reuse its encoder layers to create a new neural network (see the
-exercises at the end of this chapter for an example).
+exercises at the end of this lab for an example).
 
 Next, let's look at a few techniques for training stacked autoencoders.
 
@@ -561,7 +561,7 @@ showed](https://homl.info/112)^[3](https://learning.oreilly.com/library/view/han
 .totri-footnote}^ that autoencoders worked just as well. For several
 years this was the only efficient way to train deep nets, until many of
 the techniques introduced in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 made it possible to just train a deep net in one shot.
 
 Autoencoders are not limited to dense networks: you can also build
@@ -579,7 +579,7 @@ Convolutional Autoencoders
 If[]{#idm45728445174584}[]{#idm45728445173576} you are dealing with
 images, then the autoencoders we have seen so far will not work well
 (unless the images are very small): as we saw in
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter),
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
 convolutional neural networks are far better suited than dense networks
 to work with images. So if you want to build an autoencoder for images
 (e.g., for unsupervised pretraining or dimensionality reduction), you
@@ -627,7 +627,7 @@ If[]{#idm45728445164856}[]{#idm45728444880136} you want to build an
 autoencoder for sequences, such as time series or text (e.g., for
 unsupervised learning or dimensionality reduction), then recurrent
 neural networks (see
-[Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter))
+[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab))
 may be better suited than dense networks. Building a *recurrent
 autoencoder* is straightforward: the encoder is typically a
 sequence-to-vector RNN which compresses the input sequence down to a
@@ -690,7 +690,7 @@ al. introduced *stacked denoising autoencoders*.
 
 The noise can be pure Gaussian noise added to the inputs, or it can be
 randomly switched-off inputs, just like in dropout (introduced in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)).
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
 [Figure 17-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#denoising_autoencoders_diagram)
 shows both options.
 
@@ -796,7 +796,7 @@ sparsity is 0.1, it must be penalized to activate less. One approach
 could be simply adding the squared error (0.3 -- 0.1)^2^ to the cost
 function, but in practice a better approach is to use the
 Kullback--Leibler (KL) divergence (briefly discussed in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)),
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
 which has much stronger gradients than the[]{#idm45728444390568} mean
 squared error, as you can see in
 [Figure 17-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#sparsity_loss_plot).
@@ -913,7 +913,7 @@ need to wait for the network to stabilize into a "thermal equilibrium"
 before you can sample a new instance). Indeed, as their name suggests,
 variational autoencoders perform variational
 []{#idm45728444029784}Bayesian inference (introduced in
-[Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter)),
+[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab)),
 which is an efficient way to perform approximate Bayesian inference.
 
 Let's take a look at how they work.
@@ -1640,7 +1640,7 @@ Equalized learning rate
     RMSProp, Adam, or other adaptive gradient optimizers. Indeed, these
     optimizers normalize the gradient updates by their estimated
     standard deviation (see
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)),
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)),
     so parameters that have a larger dynamic
     range^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#idm45728442330328){#idm45728442330328-marker}^
     will take longer to train, while parameters with a small dynamic
@@ -1767,7 +1767,7 @@ which in turn encourages locality in the GAN, meaning that each style
 vector only affects a limited number of traits in the generated image.
 
 There is such a wide variety of GANs out there that it would require a
-whole book to cover them all. Hopefully this introduction has given you
+whole course to cover them all. Hopefully this introduction has given you
 the main ideas, and most importantly the desire to learn more. If you're
 struggling with a mathematical concept, there are probably blog posts
 out there that will help you understand it better. Then go ahead and
@@ -1780,7 +1780,7 @@ all you want is to get some amazing results quickly, then you can just
 use a pretrained model (e.g., there are pretrained StyleGAN models
 available for Keras).
 
-In the next chapter we will move to an entirely different branch of Deep
+In the next lab we will move to an entirely different branch of Deep
 Learning: Deep Reinforcement Learning.
 
 

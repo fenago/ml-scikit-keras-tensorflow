@@ -1,4 +1,4 @@
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter): Training Deep Neural Networks
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab): Training Deep Neural Networks
 =====================================================================================================================================================
 
 1.  No, all weights should be sampled independently; they should not all
@@ -42,7 +42,7 @@
     that it is generally outperformed by SELU and leaky ReLU. However,
     the ReLU activation function's ability to output precisely zero can
     be useful in some cases (e.g., see
-    [Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+    [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
     Moreover, it can sometimes benefit from optimized implementation as
     well as from hardware acceleration. The hyperbolic tangent (tanh)
     can be useful in the output layer if you need to output a number
@@ -52,7 +52,7 @@
     (e.g., for binary classification), but is rarely used in hidden
     layers (there are exceptions---for example, for the coding layer of
     variational autoencoders; see
-    [Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+    [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
     Finally, the softmax activation function is useful in the output
     layer to output probabilities for mutually exclusive classes, but it
     is rarely (if ever) used in hidden layers.

@@ -1,5 +1,5 @@
 
-[Chapter 19. ] Training and Deploying TensorFlow [Models at Scale]
+[Lab 19. ] Training and Deploying TensorFlow [Models at Scale]
 =========================================================================================
 
 Once[]{#idm45728436455304} you have a beautiful model that makes amazing
@@ -11,7 +11,7 @@ infrastructure may need to use this model on live data, in which case
 you probably want to wrap your model in a web service: this way, any
 part of your infrastructure can query your model at any time using a
 simple REST API (or some other protocol), as we discussed in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 But as time passes, you need to regularly retrain your model on fresh
 data and push the updated version to production. You must handle model
 versioning, gracefully transition from one model to the next, possibly
@@ -22,7 +22,7 @@ experiments*.^[1](https://learning.oreilly.com/library/view/hands-on-machine-lea
 .totri-footnote}^ If your product becomes successful, your service may
 start to get[]{#idm45728436429848} plenty of *queries per second* (QPS),
 and it must scale up to support the load. A great solution to scale up
-your service, as we will see in this chapter, is to use TF Serving,
+your service, as we will see in this lab, is to use TF Serving,
 either on your own hardware infrastructure or via a cloud service such
 as Google Cloud AI Platform. It will take care of efficiently serving
 your model, handle graceful model transitions, and more. If you use the
@@ -43,7 +43,7 @@ train a model across multiple machines, each equipped with multiple
 hardware accelerators. TensorFlow's simple[]{#idm45728436426248} yet
 powerful Distribution Strategies API makes this easy, as we will see.
 
-In this chapter we will look at how to deploy models, first to TF
+In this lab we will look at how to deploy models, first to TF
 Serving, then to Google Cloud AI Platform. We will also take a quick
 look at deploying models to mobile apps, embedded devices, and web apps.
 Lastly, we will discuss how to speed up computations using GPUs and how
@@ -546,7 +546,7 @@ Oracle Cloud, or some other Platform-as-a-Service (PaaS). Managing all
 the virtual machines, handling container orchestration (even with the
 help of Kubernetes), taking care of TF Serving configuration, tuning and
 monitoring---all of this can be a full-time job. Fortunately, some
-service providers can take care of all this for you. In this chapter we
+service providers can take care of all this for you. In this lab we
 will use Google Cloud AI Platform because it's the only platform with
 TPUs today, it supports TensorFlow 2, it offers a nice suite of AI
 services (e.g., AutoML, Vision API, Natural Language API), and it is the
@@ -579,7 +579,7 @@ care of:
     time of this writing, new users are offered a free trial, including
     \$300 worth of GCP credit that you can use over the course of 12
     months. You will only need a small portion of that to pay for the
-    services you will use in this chapter. Upon signing up for the free
+    services you will use in this lab. Upon signing up for the free
     trial, you will still need to create a payment profile and enter
     your credit card number: it is used for verification purposes
     (probably to avoid people using the free trial multiple times), but
@@ -589,7 +589,7 @@ care of:
     ![](./images/mls2_1903.png)
 
 3.  If you have used GCP before and your free trial has expired, then
-    the services you will use in this chapter will cost you some money.
+    the services you will use in this lab will cost you some money.
     It should not be too much, especially if you remember to turn off
     the services when you do not need them anymore. Make sure you
     understand and agree to the pricing conditions before you run any
@@ -998,9 +998,9 @@ automatically during training, which simplifies the whole process.
 
 I have explained the core concepts of TFLite, but going all the way to
 coding a mobile app or an embedded program would require a whole other
-book. Fortunately, one exists: if you want to learn more about building
+course. Fortunately, one exists: if you want to learn more about building
 TensorFlow applications for mobile and embedded devices, check out the
-O'Reilly book [*TinyML: Machine Learning with TensorFlow on Arduino and
+O'Reilly course [*TinyML: Machine Learning with TensorFlow on Arduino and
 Ultra-Low Power Micro-Controllers*](https://homl.info/tinyml), by Pete
 Warden (who leads the TFLite team) and Daniel Situnayake.
 
@@ -1048,8 +1048,8 @@ const image = tf.fromPixels(webcamElement);
 const prediction = model.predict(image);
 ```
 
-Once again, doing justice to this topic would require a whole book. If
-you want to learn more about TensorFlow.js, check out the O'Reilly book
+Once again, doing justice to this topic would require a whole course. If
+you want to learn more about TensorFlow.js, check out the O'Reilly course
 [*Practical Deep Learning for Cloud, Mobile, and
 Edge*](https://homl.info/tfjsbook), by Anirudh Koul, Siddha Ganju, and
 Meher Kasam.
@@ -1065,7 +1065,7 @@ Using GPUs to Speed Up Computations
 ===================================
 
 In
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 we discussed[]{#TFspeed19}[]{#idm45728433278504} several techniques that
 can considerably speed up training: better weight initialization, Batch
 Normalization, sophisticated optimizers, and so on. But even with all of
@@ -1077,7 +1077,7 @@ GPUs. We will also see how to split the computations across multiple
 devices, including the CPU and multiple GPU devices (see
 [Figure 19-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#multiple_devices_diagram)).
 For now we will run everything on a single machine, but later in this
-chapter we will discuss how to distribute computations across multiple
+lab we will discuss how to distribute computations across multiple
 servers.
 
 ![](./images/mls2_1909.png)
@@ -1134,7 +1134,7 @@ acceleration), and the *CUDA Deep Neural Network* library (cuDNN), a
 GPU-accelerated library of primitives for DNNs. cuDNN provides optimized
 implementations of common DNN computations such as activation layers,
 normalization, forward and backward convolutions, and pooling (see
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter)).
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
 It is part of Nvidia's Deep Learning SDK (note that you'll need to
 create an Nvidia developer account in order to download it). TensorFlow
 uses CUDA and cuDNN to control the GPU cards and accelerate computations
@@ -1279,7 +1279,7 @@ By default the Runtime is CPU-only, but you can change this by going to
 Runtime → "Change runtime type," selecting GPU in the "Hardware
 accelerator" drop-down menu, then clicking Save. In fact, you could even
 select TPU! (Yes, you can actually use a TPU for free; we will talk
-about TPUs later in this chapter, though, so for now just select GPU.)
+about TPUs later in this lab, though, so for now just select GPU.)
 
 ![](./images/mls2_1911.png)
 
@@ -1406,7 +1406,7 @@ Colab Runtimes.
 Lastly, in some cases you may want to split a GPU into two or more
 *virtual GPUs*---for example, if you want to test a distribution
 algorithm (this is a handy way to try out the code examples in the rest
-of this chapter even if you have a single GPU, such as in a Colab
+of this lab even if you have a single GPU, such as in a Colab
 Runtime). The following code splits the first GPU into two virtual
 devices, with 2 GiB of RAM each (again, this must be done immediately
 after importing TensorFlow):
@@ -1483,7 +1483,7 @@ on:^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/978
 You can safely ignore the prefix `/job:localhost/replica:0/task:0` for
 now (it allows you to place operations on other machines when using a
 TensorFlow cluster; we will talk about jobs, replicas, and tasks later
-in this chapter). As you can see, the first variable was placed on GPU
+in this lab). As you can see, the first variable was placed on GPU
 0, which is the default device. However, the second variable was placed
 on the CPU: this is because there are no GPU kernels for integer
 variables (or for operations involving integer tensors), so TensorFlow
@@ -1529,7 +1529,7 @@ Parallel Execution Across Multiple Devices
 ------------------------------------------
 
 As[]{#idm45728433042360} we saw in
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter),
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab),
 one of the benefits of using TF Functions is parallelism. Let's look at
 this a bit more closely. When TensorFlow runs a TF Function, it starts
 by analyzing its graph to find the list of operations that need to be
@@ -1626,7 +1626,7 @@ do:
     method^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#idm45728432999176){#idm45728432999176-marker}^
     to prepare the next few batches in advance so that they are ready
     when the GPU needs them (see
-    [Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)).
+    [Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
 
 -   If your model takes two images as input and processes them using two
     CNNs before joining their outputs, then it will probably run much
@@ -1684,7 +1684,7 @@ are located on different machines).
 
 Some neural network architectures, such as convolutional neural networks
 (see
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter)),
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
 contain layers that are only partially connected to the lower layers, so
 it is much easier to distribute chunks across devices in an efficient
 way
@@ -1693,7 +1693,7 @@ way
 ![](./images/mls2_1916.png)
 
 Deep recurrent neural networks (see
-[Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter))
+[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab))
 can be split a bit more efficiently across multiple GPUs. If you split
 the network horizontally by placing each layer on a different device,
 and you feed the network with an input sequence to process, then at the
@@ -2339,7 +2339,7 @@ back to the AI Platform so that it can decide which hyperparameter
 values to use during the next trial? Well, AI Platform just monitors the
 output directory (specified via `--job-dir`) for any event file
 (introduced in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter))
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab))
 containing summaries for a metric named `"accuracy"` (or whatever metric
 name is specified as the `hyperparameterMetricTag`), and it reads those
 values. So your training code simply has to use the `TensorBoard()`
@@ -2414,9 +2414,9 @@ Exercises
 Thank You!
 ==========
 
-Before we close the last chapter of this book, I would like to thank you
+Before we close the last lab of this course, I would like to thank you
 for reading it up to the last paragraph. I truly hope that you had as
-much pleasure reading this book as I had writing it, and that it will be
+much pleasure reading this course as I had writing it, and that it will be
 useful for your projects, big or small.
 
 If[]{#idm45728432250248}[]{#idm45728432249512} you find errors, please
@@ -2436,7 +2436,7 @@ and build it piece by piece. It will require patience and perseverance,
 but when you have a walking robot, or a working chatbot, or whatever
 else you fancy to build, it will be immensely rewarding.
 
-My greatest hope is that this book will inspire you to build a wonderful
+My greatest hope is that this course will inspire you to build a wonderful
 ML application that will benefit all of us! What will it be?
 
 ---*Aurélien Géron, June 17, 2019*
@@ -2453,7 +2453,7 @@ A REST (or RESTful) API is an API that uses standard HTTP verbs, such as
 GET, POST, PUT, and DELETE, and uses JSON inputs and outputs. The gRPC
 protocol is more complex but more efficient. Data is exchanged using
 protocol buffers (see
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)).
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
 
 ^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#idm45728436101768-marker){.totri-footnote}^
 If you are not familiar with Docker, it allows you to easily download a
@@ -2504,7 +2504,7 @@ Please check the docs for detailed and up-to-date installation
 instructions, as they change quite often.
 
 ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#idm45728433761432-marker)^
-Many code examples in this chapter use experimental APIs. They are very
+Many code examples in this lab use experimental APIs. They are very
 likely to be moved to the core API in future versions. So if an
 experimental function fails, try simply removing the word
 `experimental`, and hopefully it will work. If not, then perhaps the API
@@ -2521,7 +2521,7 @@ Heterogeneous Distributed Systems" Google Research whitepaper (2015).
 
 ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#idm45728433148632-marker)^
 As we saw in
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter),
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab),
 a kernel is a variable or operation's implementation for a specific data
 type and device type. For example, there is a GPU kernel for the
 `float32` `tf.matmul()` operation, but there is no GPU kernel for

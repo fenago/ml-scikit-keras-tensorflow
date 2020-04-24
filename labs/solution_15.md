@@ -1,5 +1,5 @@
 
-[Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter): Processing Sequences Using RNNs and CNNs
+[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab): Processing Sequences Using RNNs and CNNs
 ===============================================================================================================================================================
 
 1.  Here are a few RNN applications:
@@ -11,7 +11,7 @@
         identifying the chords of a song
 
     -   For a sequence-to-vector RNN: classifying music samples by music
-        genre, analyzing the sentiment of a book review, predicting what
+        genre, analyzing the sentiment of a course review, predicting what
         word an aphasic patient is thinking of based on readings from
         brain implants, predicting the probability that a user will want
         to watch a movie based on their watch history (this is one of

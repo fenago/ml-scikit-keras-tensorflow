@@ -1,5 +1,5 @@
 
-[Chapter 15. ] Processing Sequences Using [RNNs and CNNs]
+[Lab 15. ] Processing Sequences Using [RNNs and CNNs]
 ================================================================================
 
 The[]{#idm45728453118520} batter hits the ball. The outfielder
@@ -7,7 +7,7 @@ immediately starts running, anticipating the ball's trajectory. He
 tracks it, adapts his movements, and finally catches it (under a thunder
 of applause). Predicting the future is something you do all the time,
 whether you are finishing a friend's sentence or anticipating the smell
-of coffee at breakfast. In this chapter we will discuss recurrent neural
+of coffee at breakfast. In this lab we will discuss recurrent neural
 networks (RNNs), a class of nets that can predict the future (well, up
 to a point, of course). They[]{#idm45728453116888} can analyze time
 series data such as stock prices, and tell you when to buy or sell.
@@ -20,13 +20,13 @@ samples as input, making[]{#idm45728453113480} them extremely useful for
 natural language processing applications such as automatic translation
 or speech-to-text.
 
-In this chapter we will first look at the fundamental concepts
+In this lab we will first look at the fundamental concepts
 underlying RNNs and how to train them using backpropagation through
 time, then we will use them to forecast a time series. After that we'll
 explore the two main difficulties that RNNs face:
 
 -   Unstable gradients (discussed in
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)),
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)),
     which can be alleviated using various techniques, including
     recurrent dropout and recurrent layer normalization
 
@@ -38,10 +38,10 @@ sequential data: for small sequences, a regular dense network can do the
 trick; and for very long sequences, such as audio samples or text,
 convolutional neural networks can actually work quite well too. We will
 discuss both of these possibilities, and we will finish this
-chapter[]{#idm45728453107848} by implementing a *WaveNet*: this is a CNN
+lab[]{#idm45728453107848} by implementing a *WaveNet*: this is a CNN
 architecture capable of handling sequences of tens of thousands of time
 steps. In
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter),
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab),
 we will continue to explore RNNs and see how to use them for natural
 language processing, along with more recent architectures based on
 attention mechanisms. Let's get started!
@@ -167,7 +167,7 @@ a neural network that preserves some state across time steps is called a
 *memory cell* (or simply a *cell*). A single recurrent neuron, or a
 layer of recurrent neurons, is a very basic cell, capable of learning
 only short patterns (typically about 10 steps long, but this varies
-depending on the task). Later in this chapter, we will look at some more
+depending on the task). Later in this lab, we will look at some more
 complex and powerful types of cells capable of learning longer patterns
 (roughly 10 times longer, but again, this depends on the task).
 
@@ -230,7 +230,7 @@ RNN (like the one represented at the top left): the last words of a
 sentence can affect the first words of the translation, so you need to
 wait until you have seen the whole sentence before translating it. We
 will see how to implement an Encoder--Decoder in
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter)
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)
 (as we will see, it is a bit more complex than in
 [Figure 15-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#seq_to_seq_diagram)
 suggests).
@@ -715,7 +715,7 @@ values, and repeat the process as many times as needed. With this
 approach, you can generate arbitrarily long sequences. It may not be
 very accurate for long-term predictions, but it may be just fine if your
 goal is to generate original music or text, as we will see in
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter).
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab).
 
 
 ###### Tip
@@ -723,7 +723,7 @@ goal is to generate original music or text, as we will see in
 When forecasting time series, it is often useful to have some error bars
 along with your predictions. For this, an efficient technique is MC
 Dropout, introduced in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter):
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab):
 add an MC Dropout layer within each memory cell, dropping part of the
 inputs and hidden states. After training, to forecast a new time series,
 use the model many times and compute the mean and standard deviation of
@@ -746,7 +746,7 @@ To[]{#Slong15}[]{#RNNlong15}[]{#idm45728451658376} train an RNN on long
 sequences, we must run it over many time steps, making the unrolled RNN
 a very deep network. Just like any deep neural network it may suffer
 from the unstable gradients problem, discussed in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter):
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab):
 it may take forever to train, or training may be unstable. Moreover,
 when an RNN processes a long sequence, it will gradually forget the
 first inputs in the sequence. Let's look at both these problems,
@@ -944,7 +944,7 @@ model = keras.models.Sequential([
 
 However, the `LSTM` layer uses an optimized implementation when running
 on a GPU (see
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)),
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)),
 so in general it is preferable to use it (the `RNN` layer is mostly
 useful when you define custom cells, as we did earlier).
 
@@ -1142,7 +1142,7 @@ convolutional layers.
 ### Using 1D convolutional layers to process sequences
 
 In
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter),
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
 we[]{#idm45728450840440}[]{#idm45728450839704} saw that a 2D
 convolutional layer works by sliding several fairly small kernels (or
 filters) across an image, producing multiple 2D feature maps (one per
@@ -1262,7 +1262,7 @@ you realize that a single second of audio can contain tens of thousands
 of time steps---even LSTMs and GRUs cannot handle such long sequences.
 
 In
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter),
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab),
 we will continue to explore RNNs, and we will see how they can tackle
 various NLP
 tasks.[]{#idm45728450532008}[]{#idm45728450531064}[]{#idm45728450530120}[]{#idm45728450529176}

@@ -1,5 +1,5 @@
 
-[Chapter 9. ] Unsupervised Learning Techniques
+[Lab 9. ] Unsupervised Learning Techniques
 =====================================================
 
 Although[]{#idm45728476485128} most of the applications of Machine
@@ -32,9 +32,9 @@ just exploit the unlabeled data without needing humans to label every
 picture? Enter unsupervised learning.
 
 In
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)
 we looked at the most common unsupervised learning task: dimensionality
-reduction. In this chapter we will look at a few more unsupervised
+reduction. In this lab we will look at a few more unsupervised
 learning tasks and algorithms:
 
 Clustering
@@ -86,7 +86,7 @@ However, unlike classification, clustering is an unsupervised task.
 Consider
 [Figure 9-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#classification_vs_clustering_plot):
 on the left is the iris dataset (introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)),
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
 where each instance's species (i.e., its class) is represented with a
 different marker. It is a labeled dataset, for which classification
 algorithms such as Logistic Regression, SVMs, or Random Forest
@@ -275,7 +275,7 @@ clustering*, it can be useful to give each instance a score per cluster,
 which is called *soft clustering*. The score can be the distance between
 the instance and the centroid; conversely, it can be a similarity score
 (or affinity), such as the Gaussian Radial Basis Function (introduced in
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)).
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
 In the `KMeans` class, the `transform()` method measures the distance
 from each instance to every centroid:
 
@@ -472,7 +472,7 @@ minibatch_kmeans.fit(X)
 
 If the dataset does not fit in memory, the simplest option is to use the
 `memmap` class, as we did for incremental PCA in
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter).
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab).
 Alternatively, you can pass one mini-batch at a time to the
 `partial_fit()` method, but this will require much more work, since you
 will need to perform multiple initializations and select the best one
@@ -651,7 +651,7 @@ part of the same individual object are assigned to the same segment. In
 this case there would be a different segment for each pedestrian. The
 state of the art in semantic or instance segmentation today is achieved
 using complex architectures based on convolutional neural networks (see
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter)).
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
 Here, we[]{#idm45728475832328} are going to do something much simpler:
 *color segmentation*. We will simply assign pixels to the same segment
 if they have a similar color. In some applications, this may be
@@ -1017,7 +1017,7 @@ This algorithm works well if all the clusters are dense enough and if
 they are well separated by low-density regions. The `DBSCAN` class in
 Scikit-Learn is as simple to use as you might expect. Let's test it on
 the moons dataset, introduced in
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter):
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab):
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.cluster import DBSCAN
@@ -1538,7 +1538,7 @@ lower the threshold. Conversely, if you have too many false negatives
 (i.e., defective products that the system does not flag as defective),
 you can increase the threshold. This is the usual precision/recall
 trade-off (see
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter)).
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
 Here is how you would identify the outliers using the fourth percentile
 lowest density as the threshold (i.e., approximately 4% of the instances
 will be flagged as anomalies):
@@ -1857,7 +1857,7 @@ with deep neural networks is called Bayesian Deep Learning.
 
 ###### Tip
 
-If you want to dive deeper into Bayesian statistics, check out the book
+If you want to dive deeper into Bayesian statistics, check out the course
 [*Bayesian Data Analysis*](https://homl.info/bda) by Andrew Gelman et
 al. (Chapman & Hall).
 
@@ -1891,7 +1891,7 @@ PCA (and other dimensionality reduction techniques with an `inverse_transform()`
 :   If[]{#idm45728473418520} you compare the reconstruction error of a
     normal instance with the reconstruction error of an anomaly, the
     latter will usually be much larger. This is a simple and often quite
-    efficient anomaly detection approach (see this chapter's exercises
+    efficient anomaly detection approach (see this lab's exercises
     for an application of this approach).
 
 Fast-MCD (minimum covariance determinant)
@@ -1936,7 +1936,7 @@ One-class SVM
     the instances to a high-dimensional space, then separating the two
     classes using a linear SVM classifier within this high-dimensional
     space (see
-    [Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)).
+    [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
     Since we just have one class of instances, the one-class SVM
     algorithm instead tries to separate the instances in
     high-dimensional space from the origin. In the original space, this
@@ -1992,7 +1992,7 @@ Exercises
     that there are the same number of images per person in each set.
     Next, cluster the images using K-Means, and ensure that you have a
     good number of clusters (using one of the techniques discussed in
-    this chapter). Visualize the clusters: do you see similar faces in
+    this lab). Visualize the clusters: do you see similar faces in
     each cluster?
 
 11. Continuing with the Olivetti faces dataset, train a classifier to

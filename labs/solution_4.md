@@ -1,4 +1,4 @@
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter): Training Models
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab): Training Models
 ===============================================================================================================================================
 
 1.  If you have a training set with millions of features you can use

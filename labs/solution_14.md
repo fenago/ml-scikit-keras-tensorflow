@@ -1,5 +1,5 @@
 
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter): Deep Computer Vision Using Convolutional Neural Networks
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab): Deep Computer Vision Using Convolutional Neural Networks
 ===============================================================================================================================================================================
 
 1.  These are the main advantages of a CNN over a fully connected DNN

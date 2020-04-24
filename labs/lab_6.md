@@ -1,22 +1,22 @@
 
-[Chapter 6. ] Decision Trees
+[Lab 6. ] Decision Trees
 ===================================
 
 Like[]{#idm45728480132712} SVMs, *Decision Trees* are versatile Machine
 Learning algorithms that can perform both classification and regression
 tasks, and even multioutput tasks. They are powerful algorithms, capable
 of fitting complex datasets. For example, in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 you trained a `DecisionTreeRegressor` model on the California housing
 dataset, fitting it perfectly (actually, overfitting it).
 
 Decision Trees are also the fundamental components of Random Forests
 (see
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter)),
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
 which are among the most powerful Machine Learning algorithms available
 today.
 
-In this chapter we will start by discussing how to train, visualize, and
+In this lab we will start by discussing how to train, visualize, and
 make predictions with Decision Trees. Then we will go through the CART
 training algorithm used by Scikit-Learn, and we will discuss how to
 regularize trees and use them for regression tasks. Finally, we will
@@ -30,7 +30,7 @@ Training and Visualizing a Decision Tree
 To[]{#idm45728480125928} understand Decision Trees, let's build one and
 take a look at how it makes predictions. The following code trains a
 `DecisionTreeClassifier` on the iris dataset (see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)):
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.datasets import load_iris
@@ -396,7 +396,7 @@ have been pruned.
 
 [Figure 6-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#min_samples_leaf_plot)
 shows two Decision Trees trained on the moons dataset (introduced in
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)).
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
 On the left the Decision Tree is trained with the default
 hyperparameters (i.e., no restrictions), and on the right it's trained
 with `min_samples_leaf=4`. It is quite obvious that the model on the
@@ -496,7 +496,7 @@ can split it easily, while on the right, after the dataset is rotated by
 Decision Trees fit the training set perfectly, it is very likely that
 the model on the right will not generalize well. One way to limit this
 problem is to use Principal Component Analysis (see
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)),
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)),
 which often results in a better orientation of the training data.
 
 ![](./images/mls2_0607.png)
@@ -519,7 +519,7 @@ even on the same training data (unless you set the
 ![](./images/mls2_0608.png)
 
 Random Forests can limit this instability by averaging predictions over
-many trees, as we will see in the next chapter.
+many trees, as we will see in the next lab.
 
 
 

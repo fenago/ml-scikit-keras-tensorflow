@@ -1,5 +1,5 @@
 
-[Chapter 12. ] Custom Models and Training [with TensorFlow]
+[Lab 12. ] Custom Models and Training [with TensorFlow]
 ==================================================================================
 
 Up until now,
@@ -11,7 +11,7 @@ self-normalizing nets, using all sorts of techniques, such as Batch
 Normalization, dropout, and learning rate schedules. In fact, 95% of the
 use cases you will encounter will not require anything other than
 tf.keras (and tf.data; see
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)).
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
 But now it's time to dive deeper into TensorFlow and take a look at its
 lower-level [Python API](https://homl.info/tf2api). This will be useful
 when you need extra control to write custom loss functions, custom
@@ -20,7 +20,7 @@ and more. You may even need to fully control the training loop itself,
 for example to apply special transformations or constraints to the
 gradients (beyond just clipping them) or to use multiple optimizers for
 different parts of the network. We will cover all these cases in this
-chapter, and we will also look at how you can boost your custom models
+lab, and we will also look at how you can boost your custom models
 and training algorithms using TensorFlow's automatic graph generation
 feature. But first, let's take a quick tour of TensorFlow.
 
@@ -28,7 +28,7 @@ feature. But first, let's take a quick tour of TensorFlow.
 ###### Note
 
 TensorFlow 2.0 (beta) was[]{#idm45728465484472} released in June 2019,
-making TensorFlow much easier to use. The first edition of this book
+making TensorFlow much easier to use. The first edition of this course
 used TF 1, while this edition uses TF 2.
 
 
@@ -70,12 +70,12 @@ So what does TensorFlow offer? Here's a summary:
     device).
 
 -   It implements autodiff (see
-    [Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)
+    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)
     and
     [Appendix D](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_appendix))
     and provides some excellent optimizers, such as RMSProp and Nadam
     (see
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)),
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)),
     so you can easily minimize all sorts of loss functions.
 
 TensorFlow offers many more features built on top of these core
@@ -111,7 +111,7 @@ they are custom ASIC chips built specifically for Deep Learning
 operations^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465454520){#idm45728465454520-marker
 .totri-footnote}^ (we will discuss how to use TensorFlow with GPUs or
 TPUs in
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)).
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
 
 TensorFlow's architecture[]{#idm45728465451480} is shown in
 [Figure 12-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_architecture_diagram).
@@ -127,7 +127,7 @@ even across multiple devices and machines if you tell it to.
 TensorFlow[]{#idm45728465446232}[]{#idm45728465445496}[]{#idm45728465444824}
 runs not only on Windows, Linux, and macOS, but also on mobile devices
 (using *TensorFlow Lite*), including both iOS and Android (see
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)).
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
 If you do not want to use the Python API, there are C++, Java, Go, and
 Swift APIs. There is even a JavaScript implementation called
 *TensorFlow.js* that makes it possible to run your models directly in
@@ -136,12 +136,12 @@ your browser.
 There's[]{#idm45728465441400} more to TensorFlow than the library.
 TensorFlow is at the center of an extensive ecosystem of libraries.
 First, there's TensorBoard for visualization (see
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)).
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)).
 Next, there's [TensorFlow Extended (TFX)](https://tensorflow.org/tfx),
 which is a set of libraries built by Google to productionize TensorFlow
 projects: it includes tools for data validation, preprocessing, model
 analysis, and serving (with TF Serving; see
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)).
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
 Google's[]{#idm45728465437624} *TensorFlow Hub* provides a way to easily
 download and reuse pretrained neural networks. You can also get many
 neural network architectures, some of them pretrained, in TensorFlow's
@@ -290,7 +290,7 @@ in `keras.backend`. It includes functions like `square()`, `exp()`, and
 corresponding TensorFlow operations. If you want to write code that will
 be portable to other Keras implementations, you should use these Keras
 functions. However, they only cover a subset of all functions available
-in TensorFlow, so in this book we will use the TensorFlow operations
+in TensorFlow, so in this course we will use the TensorFlow operations
 directly. Here is as simple example using `keras.backend`, which is
 commonly named `K` for short:
 
@@ -512,7 +512,7 @@ model to be imprecise. The mean absolute error would not penalize
 outliers as much, but training might take a while to converge, and the
 trained model might not be very precise. This is probably a good time to
 use the Huber loss (introduced in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter))
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab))
 instead of the good old MSE. The[]{#idm45728464719224} Huber loss is not
 currently part of the official Keras API, but it is available in
 tf.keras (just use an instance of the `keras.losses.Huber` class). But
@@ -540,7 +540,7 @@ graph features, you should use only TensorFlow operations.
 It is also preferable to return a tensor containing one loss per
 instance, rather than returning the mean loss. This way, Keras can apply
 class weights or sample weights when requested (see
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)).
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)).
 
 Now you can use this loss when you compile the Keras model, then train
 your model:
@@ -792,7 +792,7 @@ For each batch during training, Keras will compute this metric and keep
 track of its mean since the beginning of the epoch. Most of the time,
 this is exactly what you want. But not always! Consider a binary
 classifier's precision, for example. As we saw in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter),
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab),
 precision is the number of true positives divided by the number of
 positive predictions (including both true positives and false
 positives). Suppose the model made five positive predictions in the
@@ -1096,7 +1096,7 @@ Custom Models
 
 We[]{#idm45728462948408}[]{#idm45728462947512} already looked at
 creating custom model classes in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter),
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab),
 when we discussed the Subclassing
 API.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462945544){#idm45728462945544-marker}^
 It's straightforward: subclass the `keras.Model` class, create layers
@@ -1110,7 +1110,7 @@ model represented in
 The[]{#idm45728462940296} inputs go through a first dense layer, then
 through a *residual block* composed of two dense layers and an addition
 operation (as we will see in
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter),
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
 a residual block adds its inputs to its outputs), then through this same
 residual block three more times, then through a second residual block,
 and the final result goes through a dense output layer. Note that this
@@ -1218,7 +1218,7 @@ of a stack of five hidden layers plus an output layer. This custom model
 will also have an auxiliary output on top of the upper hidden layer.
 The[]{#idm45728462246840} loss associated to this auxiliary output will
 be called the *reconstruction loss* (see
-[Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)):
+[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)):
 it is the mean squared difference between the reconstruction and the
 inputs. By adding this reconstruction loss to the main loss, we will
 encourage the model to preserve as much information as possible through
@@ -1308,7 +1308,7 @@ Computing Gradients Using Autodiff
 
 To[]{#idm45728462000600}[]{#idm45728461999624}[]{#idm45728461998648}
 understand how to use autodiff (see
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)
 and
 [Appendix D](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_appendix))
 to compute gradients automatically, let's consider a simple toy
@@ -1527,7 +1527,7 @@ In[]{#idm45728461183496}[]{#idm45728461182488} some rare cases, the
 `fit()` method may not be flexible enough for what you need to do. For
 example, the [Wide & Deep paper](https://homl.info/widedeep) we
 discussed in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)
 uses two different optimizers: one for the wide path and the other for
 the deep path. Since the `fit()` method only uses one optimizer (the one
 that we specify when compiling the model), implementing this paper
@@ -1562,7 +1562,7 @@ model = keras.models.Sequential([
 
 Next, let's create a tiny function that will randomly sample a batch of
 instances from the training set (in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)
 we will discuss the Data API, which offers a much better alternative):
 
 ``` {data-type="programlisting" code-language="python"}
@@ -1691,7 +1691,7 @@ and training algorithms, let's see how you can use TensorFlow's
 automatic graph generation feature: it can speed up your custom code
 considerably, and it will also make it portable to any platform
 supported by TensorFlow (see
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)).[]{#idm45728460556344}
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).[]{#idm45728460556344}
 
 
 
@@ -1775,7 +1775,7 @@ Function. That's all!
 
 Moreover, when you write a custom loss function, a custom metric, a
 custom layer, or any other custom function and you use it in a Keras
-model (as we did throughout this chapter), Keras automatically converts
+model (as we did throughout this lab), Keras automatically converts
 your function into a TF Function---no need to use `tf.function()`. So
 most of the time, all this magic is 100% transparent.
 
@@ -1942,7 +1942,7 @@ for you. However, there are a few rules to respect:
 -   As always, for performance reasons, you should prefer a vectorized
     implementation whenever you can, rather than using loops.
 
-It's time to sum up! In this chapter we started with a brief overview of
+It's time to sum up! In this lab we started with a brief overview of
 TensorFlow, then we looked at TensorFlow's low-level API, including
 tensors, operations, variables, and special data structures. We then
 used these tools to customize almost every component in tf.keras.
@@ -1953,7 +1953,7 @@ further, for example to explore the generated graphs, you will find
 technical details in
 [Appendix G](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html#tffunctions_appendix)).
 
-In the next chapter, we will look at how to efficiently load and
+In the next lab, we will look at how to efficiently load and
 preprocess data with TensorFlow.
 
 
@@ -1998,7 +1998,7 @@ Exercises
 
 12. Implement a custom layer that performs *Layer Normalization* (we
     will use this type of layer in
-    [Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter)):
+    [Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)):
 
     1.  The `build()` method should define two trainable weights **α**
         and **β**, both of shape `input_shape[-1:]` and data type
@@ -2020,7 +2020,7 @@ Exercises
 
 13. Train a model using a custom training loop to tackle the Fashion
     MNIST dataset (see
-    [Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)).
+    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)).
 
     1.  Display the epoch, iteration, mean training loss, and mean
         accuracy over each epoch (updated at each iteration), as well as
@@ -2077,7 +2077,7 @@ Same for `compute_output_shape()`.
 ^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462945544-marker)^
 The name "Subclassing API" usually refers only to the creation of custom
 models by subclassing, although many other things can be created by
-subclassing, as we saw in this chapter.
+subclassing, as we saw in this lab.
 
 ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462009848-marker)^
 You can also call `add_loss()` on any layer inside the model, as the

@@ -1,5 +1,5 @@
 
-[Chapter 13. ] Loading and Preprocessing Data [with TensorFlow]
+[Lab 13. ] Loading and Preprocessing Data [with TensorFlow]
 ======================================================================================
 
 So[]{#Dloadtensor13}[]{#idm45728460187384} far we have used only
@@ -32,7 +32,7 @@ to handle all this preprocessing is to write your own custom
 preprocessing layers. Another is to use the standard preprocessing
 layers provided by Keras.
 
-In this chapter, we will cover the Data API, the TFRecord format, and
+In this lab, we will cover the Data API, the TFRecord format, and
 how to create custom preprocessing layers and use the standard Keras
 ones. We will also take a quick look at a few related projects from
 TensorFlow's ecosystem:
@@ -153,7 +153,7 @@ usually want to spawn multiple threads to speed things up: it's as
 simple as setting the `num_parallel_calls` argument. Note that the
 function you pass to the `map()` method must be convertible to a TF
 Function (see
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter)).
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
 
 While the `map()` method applies a transformation to each item, the
 `apply()` method applies a transformation to the dataset as a whole. For
@@ -195,7 +195,7 @@ Shuffling the Data
 As[]{#idm45728459921976}[]{#idm45728459920968} you know, Gradient
 Descent works best when the instances in the training set are
 independent and identically distributed (see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)).
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
 A simple way to ensure this is to shuffle the instances, using the
 `shuffle()` method. It will create a new dataset that will start by
 filling up a buffer with the first items of the source dataset. Then,
@@ -552,7 +552,7 @@ still use NumPy arrays instead of datasets if you want (but of course
 they need to have been loaded and preprocessed first).
 
 If you want to build your own custom training loop (as in
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter)),
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)),
 you can just iterate over the training set, very naturally:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -561,7 +561,7 @@ for X_batch, y_batch in train_set:
 ```
 
 In fact, it is even possible to create a TF Function (see
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter))
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab))
 that performs the whole training loop:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -747,7 +747,7 @@ operations (and neither are the other operations in this code), so they
 cannot be included in a TensorFlow Function (except by wrapping them in
 a `tf.py_function()` operation, which would make the code slower and
 less portable, as we saw in
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter)).
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
 Fortunately, TensorFlow does include special protobuf definitions for
 which it provides parsing operations.
 
@@ -1040,7 +1040,7 @@ Encoding Categorical Features Using One-Hot Vectors
 Consider[]{#idm45728457417896}[]{#idm45728457416920} the
 `ocean_proximity` feature in the California housing dataset we explored
 in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter):
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab):
 it is a categorical feature with five possible values: `"<1H OCEAN"`,
 `"INLAND"`, `"NEAR OCEAN"`, `"NEAR BAY"`, and `"ISLAND"`. We need to
 encode this feature before we feed it to a neural network. Since there
@@ -1170,7 +1170,7 @@ neural network to make accurate predictions, so training tends to make
 embeddings useful representations of the categories.
 This[]{#idm45728457232888} is called *representation learning* (we will
 see other types of representation learning in
-[Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
 
 ![](./images/mls2_1304.png)
 
@@ -1350,10 +1350,10 @@ The[]{#idm45728456827448} TensorFlow team is working on providing a set
 of standard [Keras preprocessing layers](https://homl.info/preproc).
 They will probably be available by the time you read this; however, the
 API may change slightly by then, so please refer to the notebook for
-this chapter if anything behaves unexpectedly. This new API will likely
+this lab if anything behaves unexpectedly. This new API will likely
 supersede the existing Feature Columns API, which is harder to use and
 less intuitive (if you want to learn more about the Feature Columns API
-anyway, please check out the notebook for this chapter).
+anyway, please check out the notebook for this lab).
 
 We already discussed two of these layers: the
 `keras.layers.Normalization` layer that will perform feature
@@ -1605,11 +1605,11 @@ model.compile(loss="sparse_categorical_crossentropy", optimizer="sgd")
 model.fit(mnist_train, epochs=5)
 ```
 
-This was quite a technical chapter, and you may feel that it is a bit
+This was quite a technical lab, and you may feel that it is a bit
 far from the abstract beauty of neural networks, but the fact is Deep
 Learning often involves large amounts of data, and knowing how to load,
 parse, and preprocess it efficiently is a crucial skill to have. In the
-next chapter, we will look at convolutional neural networks, which are
+next lab, we will look at convolutional neural networks, which are
 among the most successful neural net architectures for image processing
 and many other applications.[]{#idm45728456338184}
 
@@ -1646,7 +1646,7 @@ Exercises
     features. What about text?
 
 9.  Load the Fashion MNIST dataset (introduced in
-    [Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter));
+    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab));
     split it into a training set, a validation set, and a test set;
     shuffle the training set; and save each [dataset] to
     multiple TFRecord files. Each record should be a serialized
@@ -1693,7 +1693,7 @@ Exercises
     5.  Add an `Embedding` layer and compute the mean embedding for each
         review, multiplied by the square root of the number of words
         (see
-        [Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter)).
+        [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
         This rescaled mean embedding can then be passed to the rest of
         your model.
 
@@ -1743,7 +1743,7 @@ Since protobuf objects are meant to be serialized and transmitted, they
 are called *messages*.
 
 ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#idm45728458471080-marker){.totri-footnote}^
-This chapter contains the bare minimum you need to know about protobufs
+This lab contains the bare minimum you need to know about protobufs
 to use TFRecords. To learn more about protobufs, please visit
 [*https://homl.info/protobuf*](https://homl.info/protobuf).
 

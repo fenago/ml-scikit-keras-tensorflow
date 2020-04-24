@@ -14,7 +14,7 @@ Strings
 
 Tensors[]{#idm45728430599960} can hold byte strings, which is useful in
 particular for natural language processing (see
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter)):
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)):
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> tf.constant(b"hello world")
@@ -219,7 +219,7 @@ When you write to the array, you must assign the output back to the
 array, as shown in this code example. If you don't, although your code
 will work fine in eager mode, it will break in graph mode (these modes
 were presented in
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter)).
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
 
 
 When creating a `TensorArray`, you must provide its `size`, except in

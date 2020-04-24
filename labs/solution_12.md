@@ -1,5 +1,5 @@
 
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter): Custom Models and Training with TensorFlow
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab): Custom Models and Training with TensorFlow
 ========================================================================================================================================================================
 
 1.  TensorFlow is an open-source library for numerical computation,

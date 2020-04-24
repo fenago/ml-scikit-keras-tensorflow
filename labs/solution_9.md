@@ -1,5 +1,5 @@
 
-[Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter): Unsupervised Learning Techniques
+[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab): Unsupervised Learning Techniques
 ========================================================================================================================================================================
 
 1.  In Machine Learning, clustering is the unsupervised task of grouping

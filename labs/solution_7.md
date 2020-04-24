@@ -1,4 +1,4 @@
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter): Ensemble Learning and Random Forests
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab): Ensemble Learning and Random Forests
 ================================================================================================================================================================
 
 1.  If you have trained five different models and they all achieve 95%

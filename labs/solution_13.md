@@ -1,5 +1,5 @@
 
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter): Loading and Preprocessing Data with TensorFlow
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab): Loading and Preprocessing Data with TensorFlow
 ======================================================================================================================================================================
 
 1.  Ingesting a large dataset and preprocessing it efficiently can be a
@@ -136,7 +136,7 @@
         possible to encode each letter, or subword tokens (e.g.,
         splitting "smartest" into "smart" and "est"). These last two
         options are discussed in
-        [Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter).
+        [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab).
 
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at

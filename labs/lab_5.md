@@ -1,5 +1,5 @@
 
-[Chapter 5. ] Support Vector Machines
+[Lab 5. ] Support Vector Machines
 ============================================
 
 A *Support Vector Machine* (SVM) is[]{#idm45728481784856} a powerful and
@@ -10,7 +10,7 @@ interested in Machine Learning should have it in their toolbox. SVMs are
 particularly well suited for classification of complex small- or
 medium-sized datasets.
 
-This chapter will explain the core concepts of SVMs, how to use them,
+This lab will explain the core concepts of SVMs, how to use them,
 and how they work.
 
 
@@ -22,7 +22,7 @@ The[]{#idm45728481715704}[]{#idm45728481714664}[]{#idm45728481713976}
 fundamental idea behind SVMs is best explained with some pictures.
 [Figure 5-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#large_margin_classification_plot)
 shows part of the iris dataset that was introduced at the end of
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter).
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab).
 The two classes can clearly be separated easily with a straight line
 (they are *linearly separable*). The left plot shows the decision
 boundaries of three possible linear classifiers. The model whose
@@ -153,7 +153,7 @@ with a linear kernel. When creating the SVC model, we would write
 `SVC(kernel="linear", C=1)`. Or we could use the `SGDClassifier` class,
 with `SGDClassifier(loss="hinge", alpha=1/(m*C))`. This applies regular
 Stochastic Gradient Descent (see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter))
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 to train a linear SVM classifier. It does not converge as fast as the
 `LinearSVC` class, but it can be useful to handle online classification
 tasks or huge datasets that do not fit in memory (out-of-core training).
@@ -167,7 +167,7 @@ scale the data using the `StandardScaler`. Also make sure you set the
 `loss` hyperparameter to `"hinge"`, as it is not the default value.
 Finally, for better performance, you should set the `dual`
 hyperparameter to `False`, unless there are more features than training
-instances (we will discuss duality later in the chapter).
+instances (we will discuss duality later in the lab).
 
 
 
@@ -182,7 +182,7 @@ classifiers are efficient and work surprisingly well in many cases, many
 datasets are not even close to being linearly separable. One approach to
 handling nonlinear datasets is to add more features, such as polynomial
 features (as you did in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter));
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab));
 in some cases this can result in a linearly separable dataset. Consider
 the left plot in
 [Figure 5-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#higher_dimensions_plot):
@@ -265,7 +265,7 @@ polynomials.
 
 A common approach to finding the right hyperparameter values is to use
 grid search (see
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)).
 It is often faster to first do a very coarse grid search, then a finer
 grid search around the best values found. Having a good sense of what
 each hyperparameter actually does can also help you search in the right
@@ -504,15 +504,15 @@ Under the Hood
 This section explains how SVMs make predictions and how their training
 algorithms work, starting with linear SVM classifiers. If you are just
 getting started with Machine Learning, you can safely skip it and go
-straight to the exercises at the end of this chapter, and come back
+straight to the exercises at the end of this lab, and come back
 later when you want to get a deeper understanding of SVMs.
 
 First, a word[]{#idm45728481030984} about notations. In
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)
 we used the convention of putting all the model parameters in one vector
 **θ**, including the bias term *θ*~0~ and the input feature weights
 *θ*~1~ to *θ*~*n*~, and adding a bias input *x*~0~ = 1 to all instances.
-In this chapter we will use a convention that is more convenient (and
+In this lab we will use a convention that is more convenient (and
 more common) when dealing with SVMs: the bias term will be called *b*,
 and the feature weights vector will be called **w**. No bias feature
 will be added to the input feature vectors.
@@ -641,7 +641,7 @@ Such[]{#idm45728480843656} problems are known as *Quadratic Programming*
 (QP) problems. Many off-the-shelf solvers are available to solve QP
 problems by using a variety of techniques that are outside the scope of
 this
-book.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480842232){#idm45728480842232-marker
+course.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480842232){#idm45728480842232-marker
 .totri-footnote}^
 
 The general problem formulation is given by [Equation
@@ -692,7 +692,7 @@ off-the-shelf QP solver and pass it the preceding parameters. The
 resulting vector **p** will contain the bias term *b* = *p*~0~ and the
 feature weights *w*~*i*~ = *p*~*i*~ for *i* = 1, 2, ⋯, *n*. Similarly,
 you can use a QP solver to solve the soft margin problem (see the
-exercises at the end of the chapter).
+exercises at the end of the lab).
 
 To use the kernel trick, we are going to look at a different constrained
 optimization problem.
@@ -917,7 +917,7 @@ Online SVMs
 -----------
 
 Before[]{#idm45728480202904}[]{#idm45728480201928} concluding this
-chapter, let's take a quick look at online SVM classifiers (recall that
+lab, let's take a quick look at online SVM classifiers (recall that
 online learning means learning incrementally, typically as new instances
 arrive).
 
@@ -1033,7 +1033,7 @@ Zeta (*ζ*) is the sixth letter of the Greek alphabet.
 
 ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480842232-marker){.totri-footnote}^
 To learn more about Quadratic Programming, you can start by reading
-Stephen Boyd and Lieven Vandenberghe's book [*Convex
+Stephen Boyd and Lieven Vandenberghe's course [*Convex
 Optimization*](https://homl.info/15) (Cambridge University Press, 2004)
 or watch Richard Brown's [series of video
 lectures](https://homl.info/16).
@@ -1044,12 +1044,12 @@ continuously differentiable and convex functions.
 
 ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480581784-marker){.totri-footnote}^
 As explained in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter),
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab),
 the dot product of two vectors **a** and **b** is normally noted **a** ·
 **b**. However, in Machine Learning, vectors are frequently represented
 as column vectors (i.e., single-column matrices), so the dot product is
 achieved by computing **a**^⊺^**b**. To remain consistent with the rest
-of the book, we will use this notation here, ignoring the fact that this
+of the course, we will use this notation here, ignoring the fact that this
 technically results in a single-cell matrix rather than a scalar value.
 
 ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480156312-marker){.totri-footnote}^

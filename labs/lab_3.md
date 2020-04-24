@@ -1,16 +1,16 @@
 
-[Chapter 3. ] Classification
+[Lab 3. ] Classification
 ===================================
 
 In
-[Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter)
+[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab)
 I mentioned that the most common supervised learning tasks are
 regression (predicting values) and classification (predicting classes).
 In
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 we explored a regression task, predicting housing values, using various
 algorithms such as Linear Regression, Decision Trees, and Random Forests
-(which will be explained in further detail in later chapters). Now we
+(which will be explained in further detail in later labs). Now we
 will turn our attention to classification systems.
 
 
@@ -19,7 +19,7 @@ MNIST
 =====
 
 In[]{#idm45728488574312}[]{#idm45728488573304}[]{#idm45728488572360}
-this chapter we will be using the MNIST dataset, which is a set of
+this lab we will be using the MNIST dataset, which is a set of
 70,000 small images of digits handwritten by high school students and
 employees of the US Census Bureau. Each image is labeled with the digit
 it represents. This set has been studied so much that it is often called
@@ -182,7 +182,7 @@ Performance Measures
 
 Evaluating[]{#idm45728488180744}[]{#CPperform03} a classifier is often
 significantly trickier than evaluating a regressor, so we will spend a
-large part of this chapter on this topic. There are many performance
+large part of this lab on this topic. There are many performance
 measures available, so grab another coffee and get ready to learn many
 new concepts and acronyms!
 
@@ -193,7 +193,7 @@ Measuring Accuracy Using Cross-Validation
 
 A[]{#idm45728488192856}[]{#idm45728488191880} good way to evaluate a
 model is to use cross-validation, just as you did in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 
 
 ##### Implementing Cross-Validation
@@ -225,7 +225,7 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
 
 The `StratifiedKFold` class[]{#idm45728488153752}[]{#idm45728488045256}
 performs stratified sampling (as explained in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter))
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab))
 to produce folds that contain a representative ratio of each class. At
 each iteration the code creates a clone of the classifier, trains that
 clone on the training folds, and makes predictions on the test fold.
@@ -239,7 +239,7 @@ Remember that K-fold cross-validation means splitting the training set
 into K folds (in this case, three), then making predictions and
 evaluating them on each fold using a model trained on the remaining
 folds (see
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)):
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)):
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.model_selection import cross_val_score
@@ -823,7 +823,7 @@ Let's now train a `RandomForestClassifier` and compare its ROC curve and
 ROC AUC score to those of the `SGDClassifier`. First, you need to get
 scores for each instance in the training set. But due to the way it
 works (see
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter)),
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
 the `RandomForestClassifier` class does not have a `decision_function()`
 method. Instead, it has a `predict_proba()` method. Scikit-Learn
 classifiers generally have one or the other, or both. The
@@ -931,7 +931,7 @@ Scikit-Learn detects when you try to use a binary classification
 algorithm for a multiclass classification task, and it automatically
 runs OvR or OvO, depending on the algorithm. Let's try this with a
 Support Vector Machine classifier (see
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)),
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)),
 using the `sklearn.svm.SVC` class:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -1033,7 +1033,7 @@ array([0.8489802 , 0.87129356, 0.86988048])
 It gets over 84% on all test folds. If you used a random classifier, you
 would get 10% accuracy, so this is not such a bad score, but you can
 still do much better. Simply scaling the inputs (as discussed in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter))
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab))
 increases accuracy above 89%:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -1144,7 +1144,7 @@ Analyzing individual errors can also be a good way to gain insights on
 what your classifier is doing and why it is failing, but it is more
 difficult and time-consuming. For example, let's plot examples of 3s and
 5s (the `plot_digits()` function just uses Matplotlib's `imshow()`
-function; see this chapter's Jupyter notebook for details):
+function; see this lab's Jupyter notebook for details):
 
 ``` {data-type="programlisting" code-language="python"}
 cl_a, cl_b = 3, 5
@@ -1395,7 +1395,7 @@ By default Scikit-Learn caches downloaded datasets in a directory called
 ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728488324168-marker){.totri-footnote}^
 Shuffling may be a bad idea in some contexts---for example, if you are
 working on time series data (such as stock market prices or weather
-conditions). We will explore this in the next chapters.
+conditions). We will explore this in the next labs.
 
 ^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485976232-marker){.totri-footnote}^
 But remember that our brain is a fantastic pattern recognition system,

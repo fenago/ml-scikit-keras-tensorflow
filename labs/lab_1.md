@@ -1,5 +1,5 @@
 
-[Chapter 1. ] The Machine Learning Landscape
+[Lab 1. ] The Machine Learning Landscape
 ===================================================
 
 When[]{#idm45728493908024} most people hear "Machine Learning," they
@@ -20,7 +20,7 @@ recommendations to voice search.
 Where does Machine Learning start and where does it end? What exactly
 does it mean for a machine to *learn* something? If I download a copy of
 Wikipedia, has my computer really learned something? Is it suddenly
-smarter? In this chapter we will start by clarifying what Machine
+smarter? In this lab we will start by clarifying what Machine
 Learning is and why you may want to use it.
 
 Then, before we set out to explore the Machine Learning continent, we
@@ -31,11 +31,11 @@ we will look at the workflow of a typical ML project, discuss the main
 challenges you may face, and cover how to evaluate and fine-tune a
 Machine Learning system.
 
-This chapter introduces a lot of fundamental concepts (and jargon) that
+This lab introduces a lot of fundamental concepts (and jargon) that
 every data scientist should know by heart. It will be a high-level
-overview (it's the only chapter without much code), all rather simple,
+overview (it's the only lab without much code), all rather simple,
 but you should make sure everything is crystal clear to you before
-continuing on to the rest of the book. So grab a coffee and let's get
+continuing on to the rest of the course. So grab a coffee and let's get
 started!
 
 
@@ -43,9 +43,9 @@ started!
 
 If you already know all the Machine Learning basics, you may want to
 skip directly to
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 If you are not sure, try to answer all the questions listed at the end
-of the chapter before moving on.
+of the lab before moving on.
 
 
 
@@ -193,7 +193,7 @@ Analyzing images of products on a production line to automatically classify them
 
 :   This is image classification, typically performed using
     convolutional neural networks (CNNs; see
-    [Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter)).
+    [Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
 
 Detecting tumors in brain scans
 
@@ -206,7 +206,7 @@ Automatically classifying news articles
 :   This is natural language processing (NLP), and more specifically
     text classification, which can be tackled using recurrent neural
     networks (RNNs), CNNs, or Transformers (see
-    [Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter)).
+    [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
 
 Automatically flagging offensive comments on discussion forums
 
@@ -227,51 +227,51 @@ Forecasting your company's revenue next year, based on many performance metrics
 :   This is a regression task (i.e., predicting values) that may be
     tackled using any regression model, such as a Linear Regression or
     Polynomial Regression model (see
-    [Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)),
+    [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
     a regression SVM (see
-    [Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)),
+    [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)),
     a regression Random Forest (see
-    [Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter)),
+    [Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
     or an artificial neural network (see
-    [Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)).
+    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)).
     If you want to take into account sequences of past performance
     metrics, you may want to use RNNs, CNNs, or Transformers (see
-    Chapters
-    [15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter)
+    Labs
+    [15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)
     and
-    [16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter)).
+    [16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
 
 Making your app react to voice commands
 
 :   This is speech recognition, which requires processing audio samples:
     since they are long and complex sequences, they are typically
-    processed using RNNs, CNNs, or Transformers (see Chapters
-    [15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter)
+    processed using RNNs, CNNs, or Transformers (see Labs
+    [15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)
     and
-    [16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter)).
+    [16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
 
 Detecting credit card fraud
 
 :   This is anomaly detection (see
-    [Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter)).
+    [Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab)).
 
 Segmenting clients based on their purchases so that you can design a different marketing strategy for each segment
 
 :   This is clustering (see
-    [Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter)).
+    [Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab)).
 
 Representing a complex, high-dimensional dataset in a clear and insightful diagram
 
 :   This is data visualization, often involving dimensionality reduction
     techniques (see
-    [Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)).
+    [Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)).
 
 Recommending a product that a client may be interested in, based on past purchases
 
 :   This is a recommender system. One approach is to feed past purchases
     (and other information about the client) to an artificial neural
     network (see
-    [Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)),
+    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
     and get it to output the most likely next purchase. This neural net
     would typically be trained on past sequences of purchases across all
     clients.
@@ -279,7 +279,7 @@ Recommending a product that a client may be interested in, based on past purchas
 Building an intelligent bot for a game
 
 :   This is often tackled using Reinforcement Learning (RL; see
-    [Chapter 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_chapter)),
+    [Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab)),
     which is a branch of Machine Learning that trains agents (such as
     bots) to pick the actions that will maximize their rewards over time
     (e.g., a bot may get a reward every time the player loses some life
@@ -374,7 +374,7 @@ value that corresponds to the probability of belonging to a given class
 ![](./images/mls2_0106.png)
 
 Here[]{#idm45728493761768} are some of the most important supervised
-learning algorithms (covered in this book):
+learning algorithms (covered in this course):
 
 -   k-Nearest Neighbors
 
@@ -404,10 +404,10 @@ The system tries to learn without a teacher.
 ![](./images/mls2_0107.png)
 
 Here[]{#idm45728493746280} are some of the most important unsupervised
-learning algorithms (most of these are covered in Chapters
-[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter){.totri-footnote}
+learning algorithms (most of these are covered in Labs
+[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab){.totri-footnote}
 and
-[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter){.totri-footnote}):
+[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab){.totri-footnote}):
 
 -   Clustering
 
@@ -966,7 +966,7 @@ In summary:
     this model will generalize well.
 
 This is what a typical Machine Learning project looks like. In
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 you will experience this firsthand by going through a project end to
 end.
 
@@ -1249,7 +1249,7 @@ almost flat model (a slope close to zero); the learning algorithm will
 almost certainly not overfit the training data, but it will be less
 likely to find a good solution. Tuning hyperparameters is an important
 part of building a Machine Learning system (you will see a detailed
-example in the next chapter).
+example in the next lab).
 
 
 
@@ -1479,8 +1479,8 @@ networks.[]{#idm45728493120984}[]{#idm45728493120008}
 Exercises
 =========
 
-In this chapter we have covered some of the most important concepts in
-Machine Learning. In the next chapters we will dive deeper and write
+In this lab we have covered some of the most important concepts in
+Machine Learning. In the next labs we will dive deeper and write
 more code, but before we do, make sure you know how to answer the
 following questions:
 
@@ -1569,13 +1569,13 @@ represent model parameters.
 
 ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493548920-marker){.totri-footnote}^
 The `prepare_country_stats()` function's definition is not shown here
-(see this chapter's Jupyter notebook if you want all the gory details).
+(see this lab's Jupyter notebook if you want all the gory details).
 It's just boring pandas code that joins the life satisfaction data from
 the OECD with the GDP per capita data from the IMF.
 
 ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493547448-marker){.totri-footnote}^
 It's OK if you don't understand all the code yet; we will present
-Scikit-Learn in the following chapters.
+Scikit-Learn in the following labs.
 
 ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493339432-marker){.totri-footnote}^
 For example, knowing whether to write "to," "two," or "too," depending

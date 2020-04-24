@@ -14,7 +14,7 @@
 
 
 
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter): Support Vector Machines
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab): Support Vector Machines
 =============================================================================================================================================
 
 1.  The fundamental idea behind Support Vector Machines is to fit the

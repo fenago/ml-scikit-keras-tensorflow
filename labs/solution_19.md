@@ -1,5 +1,5 @@
 
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab): Training and Deploying TensorFlow Models [at Scale]
 =================================================================================================================================================================================================
 
 1.  A SavedModel contains a TensorFlow model, including its architecture
@@ -147,7 +147,7 @@ output will give you the estimated value (since exp(log *v*) = *v*).
 
 ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431971048-marker){.totri-footnote}^
 In
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 we discuss many techniques that introduce additional hyperparameters:
 type of weight initialization, activation function hyperparameters
 (e.g., the amount of leak in leaky ReLU), Gradient Clipping threshold,

@@ -12,7 +12,7 @@ online Jupyter notebooks at
 
 
 
-[Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter): The Machine Learning Landscape
+[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab): The Machine Learning Landscape
 ==========================================================================================================================================================
 
 1.  Machine Learning is about building systems that can learn from data.
@@ -124,7 +124,7 @@ online Jupyter notebooks at
 
 
 
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter): End-to-End Machine Learning Project
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab): End-to-End Machine Learning Project
 =============================================================================================================================================================
 
 See the Jupyter notebooks available at
@@ -133,7 +133,7 @@ See the Jupyter notebooks available at
 
 
 
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter): Classification
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab): Classification
 ===============================================================================================================================================
 
 See the Jupyter notebooks available at
@@ -142,7 +142,7 @@ See the Jupyter notebooks available at
 
 
 
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter): Training Models
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab): Training Models
 ===============================================================================================================================================
 
 1.  If you have a training set with millions of features you can use
@@ -247,7 +247,7 @@ See the Jupyter notebooks available at
 
 
 
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter): Support Vector Machines
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab): Support Vector Machines
 =============================================================================================================================================
 
 1.  The fundamental idea behind Support Vector Machines is to fit the
@@ -331,7 +331,7 @@ notebooks available at
 
 
 
-[Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter): Decision Trees
+[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab): Decision Trees
 ======================================================================================================================================
 
 1.  The depth of a well-balanced binary tree containing *m* leaves is
@@ -392,7 +392,7 @@ available at
 
 
 
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter): Ensemble Learning and Random Forests
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab): Ensemble Learning and Random Forests
 ================================================================================================================================================================
 
 1.  If you have trained five different models and they all achieve 95%
@@ -462,7 +462,7 @@ available at
 
 
 
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter): Dimensionality Reduction
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab): Dimensionality Reduction
 =========================================================================================================================================================
 
 1.  The main motivations for dimensionality reduction are:
@@ -560,7 +560,7 @@ notebooks available at
 
 
 
-[Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter): Unsupervised Learning Techniques
+[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab): Unsupervised Learning Techniques
 ========================================================================================================================================================================
 
 1.  In Machine Learning, clustering is the unsupervised task of grouping
@@ -650,7 +650,7 @@ notebooks available at
 
 
 
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter): Introduction to Artificial Neural Networks with Keras
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab): Introduction to Artificial Neural Networks with Keras
 ============================================================================================================================================================================
 
 1.  Visit the [TensorFlow
@@ -688,7 +688,7 @@ notebooks available at
     Rectified Linear Unit (ReLU) function (see
     [Figure 10-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#activation_functions_plot)).
     See
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
     for other examples, such as ELU and variants of the ReLU function.
 
 6.  Considering the MLP described in the question, composed of one input
@@ -723,7 +723,7 @@ notebooks available at
     function with the softmax activation function, which can handle
     multiple classes, outputting one probability per class. If you want
     your neural network to predict housing prices like in
-    [Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter),
+    [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
     then you need one output neuron, using no activation function at all
     in the output
     layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431976808){#idm45728431976808-marker
@@ -757,7 +757,7 @@ notebooks available at
     layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431971048){#idm45728431971048-marker
     .totri-footnote}^ In general, the ReLU activation function (or one
     of its variants; see
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter))
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
     is a good default for the hidden layers. For the output layer, in
     general you will want the logistic activation function for binary
     classification, the softmax activation function for multiclass
@@ -773,7 +773,7 @@ notebooks available at
 
 
 
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter): Training Deep Neural Networks
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab): Training Deep Neural Networks
 =====================================================================================================================================================
 
 1.  No, all weights should be sampled independently; they should not all
@@ -817,7 +817,7 @@ notebooks available at
     that it is generally outperformed by SELU and leaky ReLU. However,
     the ReLU activation function's ability to output precisely zero can
     be useful in some cases (e.g., see
-    [Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+    [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
     Moreover, it can sometimes benefit from optimized implementation as
     well as from hardware acceleration. The hyperbolic tangent (tanh)
     can be useful in the output layer if you need to output a number
@@ -827,7 +827,7 @@ notebooks available at
     (e.g., for binary classification), but is rarely used in hidden
     layers (there are exceptions---for example, for the coding layer of
     variational autoencoders; see
-    [Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+    [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
     Finally, the softmax activation function is useful in the output
     layer to output probabilities for mutually exclusive classes, but it
     is rarely (if ever) used in hidden layers.
@@ -863,7 +863,7 @@ available at
 
 
 
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter): Custom Models and Training with TensorFlow
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab): Custom Models and Training with TensorFlow
 ========================================================================================================================================================================
 
 1.  TensorFlow is an open-source library for numerical computation,
@@ -977,7 +977,7 @@ notebooks available at
 
 
 
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter): Loading and Preprocessing Data with TensorFlow
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab): Loading and Preprocessing Data with TensorFlow
 ======================================================================================================================================================================
 
 1.  Ingesting a large dataset and preprocessing it efficiently can be a
@@ -1114,7 +1114,7 @@ notebooks available at
         possible to encode each letter, or subword tokens (e.g.,
         splitting "smartest" into "smart" and "est"). These last two
         options are discussed in
-        [Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter).
+        [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab).
 
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
@@ -1123,7 +1123,7 @@ notebooks available at
 
 
 
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter): Deep Computer Vision Using Convolutional Neural Networks
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab): Deep Computer Vision Using Convolutional Neural Networks
 ===============================================================================================================================================================================
 
 1.  These are the main advantages of a CNN over a fully connected DNN
@@ -1282,7 +1282,7 @@ available at
 
 
 
-[Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter): Processing Sequences Using RNNs and CNNs
+[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab): Processing Sequences Using RNNs and CNNs
 ===============================================================================================================================================================
 
 1.  Here are a few RNN applications:
@@ -1294,7 +1294,7 @@ available at
         identifying the chords of a song
 
     -   For a sequence-to-vector RNN: classifying music samples by music
-        genre, analyzing the sentiment of a book review, predicting what
+        genre, analyzing the sentiment of a course review, predicting what
         word an aphasic patient is thinking of based on readings from
         brain implants, predicting the probability that a user will want
         to watch a movie based on their watch history (this is one of
@@ -1403,7 +1403,7 @@ notebooks available at
 
 
 
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter): Natural Language Processing with RNNs and Attention
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab): Natural Language Processing with RNNs and Attention
 ==========================================================================================================================================================================
 
 1.  Stateless RNNs can only capture patterns whose length is less than,
@@ -1504,7 +1504,7 @@ available at
 
 
 
-[Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter): Representation Learning and Generative Learning Using Autoencoders and GANs
+[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab): Representation Learning and Generative Learning Using Autoencoders and GANs
 ===========================================================================================================================================================================================================
 
 1.  Here are some of the main tasks that autoencoders are used for:
@@ -1610,7 +1610,7 @@ notebooks available at
 
 
 
-[Chapter 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_chapter): Reinforcement Learning
+[Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab): Reinforcement Learning
 ============================================================================================================================================
 
 1.  Reinforcement Learning is an area of Machine Learning aimed at
@@ -1648,7 +1648,7 @@ notebooks available at
 
 2.  Here are a few possible applications of Reinforcement Learning,
     other than those mentioned in
-    [Chapter 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_chapter):
+    [Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab):
 
     Music personalization
 
@@ -1743,7 +1743,7 @@ notebooks available at
 
 
 
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab): Training and Deploying TensorFlow Models [at Scale]
 =================================================================================================================================================================================================
 
 1.  A SavedModel contains a TensorFlow model, including its architecture
@@ -1891,7 +1891,7 @@ output will give you the estimated value (since exp(log *v*) = *v*).
 
 ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431971048-marker){.totri-footnote}^
 In
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 we discuss many techniques that introduce additional hyperparameters:
 type of weight initialization, activation function hyperparameters
 (e.g., the amount of leak in leaky ReLU), Gradient Clipping threshold,

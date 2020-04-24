@@ -1,5 +1,5 @@
 
-[Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter): Decision Trees
+[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab): Decision Trees
 ======================================================================================================================================
 
 1.  The depth of a well-balanced binary tree containing *m* leaves is

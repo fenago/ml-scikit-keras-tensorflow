@@ -1,5 +1,5 @@
 
-[Chapter 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_chapter): Natural Language Processing with RNNs and Attention
+[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab): Natural Language Processing with RNNs and Attention
 ==========================================================================================================================================================================
 
 1.  Stateless RNNs can only capture patterns whose length is less than,

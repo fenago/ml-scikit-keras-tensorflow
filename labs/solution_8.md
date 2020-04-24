@@ -1,4 +1,4 @@
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter): Dimensionality Reduction
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab): Dimensionality Reduction
 =========================================================================================================================================================
 
 1.  The main motivations for dimensionality reduction are:

@@ -5,13 +5,13 @@
 In this appendix I will give a quick overview of a few historically
 important neural network architectures that are much less used today
 than deep Multilayer Perceptrons
-([Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)),
+([Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
 convolutional neural networks
-([Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter)),
+([Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
 recurrent neural networks
-([Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter)),
+([Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)),
 or autoencoders
-([Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+([Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
 They are often mentioned in the literature, and some are still used in a
 range of applications, so it is worth knowing about them. Additionally,
 we will discuss *deep belief nets*, which were the state of the art in
@@ -334,7 +334,7 @@ generally activate intermediate neurons on the map.
 
 One important difference from the other dimensionality reduction
 techniques discussed in
-[Chapter 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_chapter)
+[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)
 is that all instances get mapped to a discrete number of points in the
 low-dimensional space (one point per neuron). When there are very few
 neurons, this technique is better described as clustering rather than

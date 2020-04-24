@@ -1,5 +1,5 @@
 
-[Chapter 16. ] Natural Language Processing with [RNNs and Attention]
+[Lab 16. ] Natural Language Processing with [RNNs and Attention]
 ===========================================================================================
 
 When[]{#idm45728450510888}[]{#idm45728450509912} Alan Turing imagined
@@ -26,7 +26,7 @@ write natural language?
 
 A common approach for natural language tasks is to use recurrent neural
 networks. We will therefore continue to explore RNNs (introduced in
-[Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter)),
+[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)),
 starting with a *character RNN*, trained to predict the next character
 in a sentence. This will allow us to generate some original text, and in
 the process we will see how to build a TensorFlow Dataset on a very long
@@ -43,7 +43,7 @@ can be used to build an Encoder--Decoder architecture capable of
 performing neural machine translation (NMT). For this, we will use the
 seq2seq API provided by the TensorFlow Addons project.
 
-In the second part of this chapter, we will[]{#idm45728450496776} look
+In the second part of this lab, we will[]{#idm45728450496776} look
 at *attention mechanisms*. As their name suggests, these are neural
 network components that learn to select the part of the inputs that the
 rest of the model should focus on at each time step. First we will see
@@ -107,13 +107,13 @@ with open(filepath) as f:
 
 Next, we must encode every character as an integer. One option is to
 create a custom preprocessing layer, as we did in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter).
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab).
 But in this case, it will be simpler to use Keras's `Tokenizer` class.
 First we need to fit a tokenizer to the text: it will find all the
 characters used in the text and map each of them to a different
 character ID, from 1 to the number of distinct characters (it does not
 start at 0, so we can use that value for masking, as we will see later
-in this chapter):
+in this lab):
 
 ``` {data-type="programlisting" code-language="python"}
 tokenizer = keras.preprocessing.text.Tokenizer(char_level=True)
@@ -277,7 +277,7 @@ windows have exactly that length, we will get a single tensor for each
 of them. Now the dataset contains consecutive windows of 101 characters
 each. Since Gradient Descent works best when the instances in the
 training set are independent and identically distributed (see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)),
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
 we need to shuffle these windows. Then we can batch the windows and
 separate the inputs (the first 100 characters) from the target (the last
 character):
@@ -296,7 +296,7 @@ windows of length 11 rather than 101, and a batch size of 3 instead of
 ![](./images/mls2_1601.png)
 
 As discussed in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter),
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab),
 categorical input features should generally be encoded, usually as
 one-hot vectors or as embeddings. Here, we will encode each character
 using a one-hot vector because there are fairly few distinct characters
@@ -328,7 +328,7 @@ character based on the previous 100 characters, we can use an RNN with 2
 (`dropout`) and the hidden states (`recurrent_dropout`). We can tweak
 these hyperparameters later, if needed. The output layer is a
 time-distributed `Dense` layer like we saw in
-[Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter).
+[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab).
 This time this layer must have 39 units (`max_id`) because there are 39
 distinct characters in the text, and we want to output a probability for
 each possible character (at each time step). The output probabilities
@@ -649,7 +649,7 @@ every time, then you will want to handle preprocessing using only
 TensorFlow operations, so it can be included in the model itself. Let's
 see how. First, let's load the original IMDb reviews, as text (byte
 strings), using TensorFlow Datasets (introduced in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)):
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)):
 
 ``` {data-type="programlisting" code-language="python"}
 import tensorflow_datasets as tfds
@@ -712,7 +712,7 @@ truncated_vocabulary = [
 
 Now we need to add a preprocessing step to replace each word with its ID
 (i.e., its index in the vocabulary). Just like we did in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter),
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab),
 we will create a lookup table for this, using 1,000 out-of-vocabulary
 (oov) buckets:
 
@@ -740,7 +740,7 @@ greater than or equal to 10,000.
 ###### Tip
 
 TF Transform (introduced in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter))
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab))
 provides some useful functions to handle such vocabularies. For example,
 check out the `tft.compute_and_apply_vocabulary()` function: it will go
 through the dataset to find all distinct words and build the vocabulary,
@@ -780,7 +780,7 @@ history = model.fit(train_set, epochs=5)
 
 The first layer is an `Embedding` layer, which will convert word IDs
 into embeddings (introduced in
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)).
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
 The embedding matrix needs to have one row per word ID
 (`vocab_size + num_oov_buckets`) and one column per embedding dimension
 (this example uses 128 dimensions, but this is a hyperparameter you
@@ -1346,7 +1346,7 @@ by Minh-Thang Luong et al. Because the goal of the attention mechanism
 is to measure the similarity between one of the encoder's outputs and
 the decoder's previous hidden state, the authors proposed to simply
 compute[]{#idm45728447193432} the *dot product* (see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter))
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 of these two vectors, as this is often a fairly good similarity measure,
 and modern hardware can compute it much faster. For this to be possible,
 both vectors must have the same dimensionality.
@@ -1936,7 +1936,7 @@ by Shuai Li et al. that shows that by making neurons independent of each
 other in a given RNN layer, it is possible to train much deeper RNNs
 capable of learning much longer sequences).
 
-In the next chapter we will discuss how to learn deep representations in
+In the next lab we will discuss how to learn deep representations in
 an unsupervised way using autoencoders, and we will use generative
 adversarial networks (GANs) to produce images and more!
 
@@ -2111,7 +2111,7 @@ kind authorization of the authors.
 
 ^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446352872-marker)^
 Matthew Peters et al., "Deep Contextualized Word Representations,"
-*Proceedings of the 2018 Conference of the North American Chapter of the
+*Proceedings of the 2018 Conference of the North American Lab of the
 Association for Computational Linguistics: Human Language Technologies*
 1 (2018): 2227--2237.
 
@@ -2137,7 +2137,7 @@ Learners" (2019).
 ^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446336712-marker)^
 Jacob Devlin et al., "BERT: Pre-training of Deep Bidirectional
 Transformers for Language Understanding," *Proceedings of the 2018
-Conference of the North American Chapter of the Association for
+Conference of the North American Lab of the Association for
 Computational Linguistics: Human Language Technologies* 1 (2019).
 
 ^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446326680-marker)^

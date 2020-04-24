@@ -66,7 +66,7 @@ implement it in your projects. Great idea!
 Objective and Approach
 ======================
 
-This[]{#idm45728482050904} book assumes that you know close to nothing
+This[]{#idm45728482050904} course assumes that you know close to nothing
 about Machine Learning. Its goal is to give you the concepts, tools, and
 intuition you need to implement programs capable of *learning from
 data*.
@@ -102,9 +102,9 @@ be using production-ready Python frameworks:
     which provides support for some advanced TensorFlow features (e.g.,
     the ability to efficiently load data).
 
-The book favors a hands-on approach, growing an intuitive understanding
+The course favors a hands-on approach, growing an intuitive understanding
 of Machine Learning through concrete working examples and just a little
-bit of theory. While you can read this book without picking up your
+bit of theory. While you can read this course without picking up your
 laptop, I highly recommend you experiment with the code examples
 available online as Jupyter notebooks at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
@@ -115,7 +115,7 @@ available online as Jupyter notebooks at
 Prerequisites
 =============
 
-This[]{#idm45728482090824} book assumes that you have some Python
+This[]{#idm45728482090824} course assumes that you have some Python
 programming experience and that you are familiar with Python's main
 scientific libraries---in particular, [NumPy](http://numpy.org/),
 [pandas](http://pandas.pydata.org/), and
@@ -131,7 +131,7 @@ start. The official tutorial on
 [Python.org](https://docs.python.org/3/tutorial/) is also quite good.
 
 If you have never used Jupyter,
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 will guide you through installation and the basics: it is a powerful
 tool to have in your toolbox.
 
@@ -145,7 +145,7 @@ tutorial for linear algebra.
 Roadmap
 =======
 
-This[]{#idm45728501703000} book is organized in two parts. [Part I, *The
+This[]{#idm45728501703000} course is organized in two parts. [Part I, *The
 Fundamentals of [Machine
 Learning]*](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part01.html#fundamentals_part),
 covers the following topics:
@@ -246,7 +246,7 @@ This second edition has six main objectives:
 3.  Discuss some of the latest important results from Deep Learning
     research.
 
-4.  Migrate all TensorFlow chapters to TensorFlow 2, and use
+4.  Migrate all TensorFlow labs to TensorFlow 2, and use
     TensorFlow's implementation of the Keras API (tf.keras) whenever
     possible.
 
@@ -256,7 +256,7 @@ This second edition has six main objectives:
 6.  Clarify some sections and fix some errors, thanks to plenty of great
     feedback from readers.
 
-Some chapters were added, others were rewritten, and a few were
+Some labs were added, others were rewritten, and a few were
 reordered. See
 [*https://homl.info/changes2*](https://homl.info/changes2) for more
 details on what changed in the second edition.
@@ -300,11 +300,11 @@ particular:
     open source libraries (Pylearn 2 and Theano).
 
 -   François Chollet's *Deep Learning with Python* (Manning) is a very
-    practical book that covers a large range of topics in a clear and
+    practical course that covers a large range of topics in a clear and
     concise way, as you might expect from the author of the excellent
     Keras library. It favors code examples over mathematical theory.
 
--   Andriy Burkov's *The Hundred-Page Machine Learning Book* is very
+-   Andriy Burkov's *The Hundred-Page Machine Learning Course* is very
     short and covers an impressive range of topics, introducing them in
     approachable terms without shying away from the math equations.
 
@@ -312,10 +312,10 @@ particular:
     *Learning from Data* (AMLBook) is a rather theoretical approach to
     ML that provides deep insights, in particular on the bias/variance
     trade-off (see
-    [Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)).
+    [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
 
 -   Stuart Russell and Peter Norvig's *Artificial Intelligence: A Modern
-    Approach*, 3rd Edition (Pearson), is a great (and huge) book
+    Approach*, 3rd Edition (Pearson), is a great (and huge) course
     covering an incredible amount of topics, including Machine Learning.
     It helps put ML into perspective.
 
@@ -327,10 +327,10 @@ some of the best ML professionals out there.
 
 
 
-Conventions Used in This Book
+Conventions Used in This Course
 =============================
 
-The following typographical conventions are used in this book:
+The following typographical conventions are used in this course:
 
 *Italic*
 
@@ -382,7 +382,7 @@ supplemental material, such as code examples and exercises, available
 for download at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
 
-Some of the code examples in the book leave out repetitive sections or
+Some of the code examples in the course leave out repetitive sections or
 details that are obvious or unrelated to Machine Learning. This keeps
 the focus on the important parts of the code and saves space to cover
 more topics. If you want the full code examples, they are all available
@@ -419,15 +419,15 @@ result = square(3)  # result is 9
 Using Code Examples
 ===================
 
-This book is here to help you get your job done. In general, if example
-code is offered with this book, you may use it in your programs and
+This course is here to help you get your job done. In general, if example
+code is offered with this course, you may use it in your programs and
 documentation. You do not need to contact us for permission unless
 you're reproducing a significant portion of the code. For example,
-writing a program that uses several chunks of code from this book does
+writing a program that uses several chunks of code from this course does
 not require permission. Selling or distributing a CD-ROM of examples
 from O'Reilly books does require permission. Answering a question by
-citing this book and quoting example code does not require permission.
-Incorporating a significant amount of example code from this book into
+citing this course and quoting example code does not require permission.
+Incorporating a significant amount of example code from this course into
 your product's documentation does require permission.
 
 We appreciate, but do not require, attribution. An attribution usually
@@ -467,7 +467,7 @@ How to Contact Us
 =================
 
 Please address[]{#idm45728498195272}[]{#idm45728495264712} comments and
-questions concerning this book to the publisher:
+questions concerning this course to the publisher:
 
 -   O'Reilly Media, Inc.
 -   1005 Gravenstein Highway North
@@ -476,11 +476,11 @@ questions concerning this book to the publisher:
 -   707-829-0515 (international or local)
 -   707-829-0104 (fax)
 
-We have a web page for this book, where we list errata, examples, and
+We have a web page for this course, where we list errata, examples, and
 any additional information. You can access this page at
 [*https://homl.info/oreilly2*](https://homl.info/oreilly2).
 
-To comment or ask technical questions about this book, send email to
+To comment or ask technical questions about this course, send email to
 [*bookquestions\@oreilly.com*](mailto:bookquestions@oreilly.com){.email}.
 
 For more information about our books, courses, conferences, and news,
@@ -502,7 +502,7 @@ Acknowledgments
 ===============
 
 Never in my wildest dreams did I imagine that the first edition of this
-book would get such a large audience. I received so many messages from
+course would get such a large audience. I received so many messages from
 readers, many asking questions, some kindly pointing out errata, and
 most sending me encouraging words. I cannot express how grateful I am to
 all these readers for their tremendous support. Thank you all so very
@@ -510,35 +510,35 @@ much! Please do not hesitate to [file issues on
 GitHub](https://homl.info/issues2) if you find errors in the code
 examples (or just to ask questions), or to submit
 [errata](https://homl.info/errata2) if you find errors in the text. Some
-readers also shared how this book helped them get their first job, or
+readers also shared how this course helped them get their first job, or
 how it helped them solve a concrete problem they were working on. I find
-such feedback incredibly motivating. If you find this book helpful, I
+such feedback incredibly motivating. If you find this course helpful, I
 would love it if you could share your story with me, either privately
 (e.g., via [LinkedIn](https://www.linkedin.com/in/aurelien-geron/)) or
 publicly (e.g., in a tweet or through an [Amazon
 review](https://homl.info/amazon2)).
 
 I am also incredibly thankful to all the amazing people who took time
-out of their busy lives to review my book with such care. In particular,
-I would like to thank François Chollet for reviewing all the chapters
+out of their busy lives to review my course with such care. In particular,
+I would like to thank François Chollet for reviewing all the labs
 based on Keras and TensorFlow and giving me some great in-depth
 feedback. Since Keras is one of the main additions to this second
-edition, having its author review the book was invaluable. I highly
-recommend François's book [*Deep Learning with
+edition, having its author review the course was invaluable. I highly
+recommend François's course [*Deep Learning with
 Python*](https://homl.info/cholletbook) (Manning): it has the
 conciseness, clarity, and depth of the Keras library itself. Special
-thanks as well to Ankur Patel, who reviewed every chapter of this second
+thanks as well to Ankur Patel, who reviewed every lab of this second
 edition and gave me excellent feedback, in particular on
-[Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter),
+[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab),
 which covers unsupervised learning techniques. He could write a whole
-book on the topic... oh, wait, he did! Do check out [*Hands-On
+course on the topic... oh, wait, he did! Do check out [*Hands-On
 Unsupervised Learning Using Python: How to Build Applied Machine
 Learning Solutions from Unlabeled Data*](https://homl.info/patel)
 (O'Reilly). Huge thanks as well to Olzhas Akpambetov, who reviewed all
-the chapters in the second part of the book, tested much of the code,
+the labs in the second part of the course, tested much of the code,
 and offered many great suggestions. I'm grateful to Mark Daoust, Jon
 Krohn, Dominic Monn, and Josh Patterson for reviewing the second part of
-this book so thoroughly and offering their expertise. They left no stone
+this course so thoroughly and offering their expertise. They left no stone
 unturned and provided amazingly useful feedback.
 
 While writing this second edition, I was fortunate enough to get plenty
@@ -556,10 +556,10 @@ edition) Edd Wilder-James, and Yuefeng Zhou, all of whom were
 tremendously helpful. Huge thanks to all of you, and to all other
 members of the TensorFlow team, not just for your help, but also for
 making such a great library! Special thanks to Irene Giannoumis and
-Robert Crowe of the TFX team for reviewing Chapters
-[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)
+Robert Crowe of the TFX team for reviewing Labs
+[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)
 and
-[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)
+[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)
 in depth.
 
 Many thanks as well to O'Reilly's fantastic staff, in particular Nicole
@@ -578,7 +578,7 @@ me define its scope. Thanks to Matt Hacker and all of the Atlas team for
 answering all my technical questions regarding formatting, AsciiDoc, and
 LaTeX, and thanks to Nick Adams, Rebecca Demarest, Rachel Head, Judith
 McConville, Helen Monroe, Karen Montgomery, Rachel Roumeliotis, and
-everyone else at O'Reilly who contributed to this book.
+everyone else at O'Reilly who contributed to this course.
 
 I would also like to thank my former Google colleagues, in particular
 the YouTube video classification team, for teaching me so much about
@@ -594,15 +594,15 @@ of Soonson Kwon, and for all the great discussions we had about Deep
 Learning and TensorFlow. Anyone interested in Deep Learning in Singapore
 should definitely join their [Deep Learning Singapore
 meetup](https://homl.info/meetupsg). Jason deserves special thanks for
-sharing some of his TFLite expertise for Chapter 19!
+sharing some of his TFLite expertise for Lab 19!
 
 I will never forget the kind people who reviewed the first edition of
-this book, including David Andrzejewski, Lukas Biewald, Justin Francis,
+this course, including David Andrzejewski, Lukas Biewald, Justin Francis,
 Vincent Guilbeau, Eddy Hung, Karim Matrah, Grégoire Mesnil, Salim
 Sémaoune, Iain Smears, Michel Tessier, Ingrid von Glehn, Pete Warden,
 and of course my dear brother Sylvain. Special thanks to Haesun Park,
 who gave me plenty of excellent feedback and caught several errors while
-he was writing the Korean translation of the first edition of this book.
+he was writing the Korean translation of the first edition of this course.
 He also translated the Jupyter notebooks into Korean, not to mention
 TensorFlow's documentation. I do not speak Korean, but judging by the
 quality of his feedback, all his translations must be truly excellent!
@@ -611,9 +611,9 @@ this second edition.
 
 Last but not least, I am infinitely grateful to my beloved wife,
 Emmanuelle, and to our three wonderful children, Alexandre, Rémi, and
-Gabrielle, for encouraging me to work hard on this book. I'm also
+Gabrielle, for encouraging me to work hard on this course. I'm also
 thankful to them for their insatiable curiosity: explaining some of the
-most difficult concepts in this book to my wife and children helped me
+most difficult concepts in this course to my wife and children helped me
 clarify my thoughts and directly improved many parts of it. And they
 keep bringing me cookies and coffee! What more can one dream of?
 

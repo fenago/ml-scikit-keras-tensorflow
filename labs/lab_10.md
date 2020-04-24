@@ -1,5 +1,5 @@
 
-[Chapter 10. ] Introduction to Artificial Neural Networks with Keras
+[Lab 10. ] Introduction to Artificial Neural Networks with Keras
 ===========================================================================
 
 Birds[]{#idm45728473377928} inspired us to fly, burdock plants inspired
@@ -25,10 +25,10 @@ Apple's Siri), recommending the best videos to watch to hundreds of
 millions of users every day (e.g., YouTube), or learning to beat the
 world champion at the game of Go (DeepMind's AlphaGo).
 
-The first part of this chapter introduces artificial neural networks,
+The first part of this lab introduces artificial neural networks,
 starting with a quick tour of the very first ANN architectures and
 leading up to *Multilayer Perceptrons* (MLPs), which are heavily used
-today (other architectures will be explored in the next chapters). In
+today (other architectures will be explored in the next labs). In
 the second part, we will look at how to implement neural networks using
 the popular Keras API. This is a beautifully designed and simple
 high-level API for building, training, evaluating, and running neural
@@ -38,7 +38,7 @@ architectures. In fact, it will probably be sufficient for most of your
 use cases. And should you ever need extra flexibility, you can always
 write custom Keras components using its lower-level API, as we will see
 in
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter).
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab).
 
 But first, let's go back in time to see how artificial neural networks
 came to be!
@@ -69,7 +69,7 @@ techniques were developed, sparking a[]{#idm45728473361384} revival of
 interest in *connectionism* (the study of neural networks). But progress
 was slow, and by the 1990s other powerful Machine Learning techniques
 were invented, such as Support Vector Machines (see
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)).
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
 These techniques seemed to offer better results and stronger theoretical
 foundations than ANNs, so once again the study of neural networks was
 put on hold.
@@ -197,7 +197,7 @@ Let's see what these networks do:
     versa.
 
 You can imagine how these networks can be combined to compute complex
-logical expressions (see the exercises at the end of the chapter for an
+logical expressions (see the exercises at the end of the lab for an
 example).
 
 
@@ -247,7 +247,7 @@ threshold, it outputs the positive class. Otherwise it outputs the
 negative class (just like a Logistic Regression or linear SVM
 classifier). You could, for example, use a single TLU to classify iris
 flowers based on petal length and width (also adding an extra bias
-feature *x*~0~ = 1, just like we did in previous chapters). Training a
+feature *x*~0~ = 1, just like we did in previous labs). Training a
 TLU in this case means finding the right values for *w*~0~, *w*~1~, and
 *w*~2~ (the training algorithm is discussed shortly).
 
@@ -300,7 +300,7 @@ In this equation:
 
 So, how is a Perceptron trained? The[]{#idm45728473211144} Perceptron
 training algorithm proposed by Rosenblatt was largely inspired by
-*Hebb's rule*. In his 1949 book *The Organization of Behavior* (Wiley),
+*Hebb's rule*. In his 1949 course *The Organization of Behavior* (Wiley),
 Donald Hebb suggested that when a biological neuron triggers another
 neuron often, the connection between these two neurons grows stronger.
 Siegrid Löwel later summarized Hebb's idea in the catchy phrase, "Cells
@@ -352,7 +352,7 @@ convergence theorem*.
 Scikit-Learn[]{#idm45728473170536} provides a `Perceptron` class that
 implements a single-TLU network. It can be used pretty much as you would
 expect---for example, on the iris dataset (introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)):
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
 
 ``` {data-type="programlisting" code-language="python"}
 import numpy as np
@@ -446,7 +446,7 @@ Ronald Williams published a [groundbreaking
 paper](https://homl.info/44)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473066136){#idm45728473066136-marker}^
 that introduced the *backpropagation* training algorithm, which is still
 used today. In short, it is Gradient Descent (introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter))
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 using an efficient technique for computing the gradients
 automatically:^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473063912){#idm45728473063912-marker}^
 in just two passes through the network (one forward, one backward), the
@@ -561,7 +561,7 @@ The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*)
     Most importantly, the fact that it does not have a maximum output
     value helps reduce some issues during Gradient Descent (we will come
     back to this in
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)).
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
 
 These popular activation functions and their derivatives are represented
 in
@@ -642,7 +642,7 @@ summarizes the typical architecture of a regression MLP.
   \# hidden layers              Depends on the problem, but typically 1 to 5
   \# neurons per hidden layer   Depends on the problem, but typically 10 to 100
   \# output neurons             1 per prediction dimension
-  Hidden activation             ReLU (or SELU, see [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter))
+  Hidden activation             ReLU (or SELU, see [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
   Output activation             None, or ReLU/softplus (if positive outputs) or logistic/tanh (if bounded outputs)
   Loss function                 MSE or MAE/Huber (if outliers)
 
@@ -662,7 +662,7 @@ estimated probability of the positive class. The estimated probability
 of the negative class is equal to one minus that number.
 
 MLPs can also easily handle multilabel binary classification tasks (see
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter)).
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
 For example, you could have an email classification system that predicts
 whether each incoming email is ham or spam, and simultaneously predicts
 whether it is an urgent or nonurgent email. In this case, you would need
@@ -683,7 +683,7 @@ function[]{#idm45728472927368}[]{#idm45728472926392} for the whole
 output layer (see
 [Figure 10-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#fnn_for_classification_diagram)).
 The softmax function (introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter))
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 will ensure that all the estimated probabilities are between 0 and 1 and
 that they add up to 1 (which is required if the classes are exclusive).
 This is called multiclass
@@ -694,7 +694,7 @@ This is called multiclass
 Regarding[]{#idm45728472918584} the loss function, since we are
 predicting probability distributions, the cross-entropy loss (also
 called the log loss, see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter))
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 is generally a good choice.
 
 [Table 10-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#classification_mlp_architecture)
@@ -713,7 +713,7 @@ summarizes the typical architecture of a classification MLP.
 ###### Tip
 
 Before we go on, I recommend you go through exercise 1 at the end of
-this chapter. You will play with various neural network architectures
+this lab. You will play with various neural network architectures
 and visualize[]{#idm45728472899048} their outputs using the *TensorFlow
 Playground*. This will be very useful to better understand MLPs,
 including the effects of all the hyperparameters (number of layers and
@@ -760,7 +760,7 @@ features (see
 [Figure 10-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#keras_implementations_diagram)):
 for example, it supports TensorFlow's Data API, which makes it easy to
 load and preprocess data efficiently. For this reason, we will use
-tf.keras in this book. However, in this chapter we will not use any of
+tf.keras in this course. However, in this lab we will not use any of
 the TensorFlow-specific features, so the code should run fine on other
 Keras implementations as well (at least in Python), with only minor
 modifications, such as changing the imports.
@@ -794,7 +794,7 @@ Installing TensorFlow 2
 
 Assuming[]{#idm45728472872280} you installed Jupyter and Scikit-Learn by
 following the installation instructions in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter),
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
 use pip to install TensorFlow. If you created an isolated environment
 using virtualenv, you first need to activate it:
 
@@ -821,7 +821,7 @@ GPU-equipped systems. You will still need to install extra libraries for
 GPU support (see
 [*https://tensorflow.org/install*](https://tensorflow.org/install) for
 more details). We will look at GPUs in more depth in
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter).
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab).
 
 
 To test your installation, open a Python shell or a Jupyter notebook,
@@ -853,9 +853,9 @@ Building an Image Classifier Using the Sequential API
 
 First,
 we[]{#SAPIimage10}[]{#ICsequen10}[]{#CPimage10}[]{#idm45728472787416}[]{#idm45728472786744}
-need to load a dataset. In this chapter we will tackle Fashion MNIST,
+need to load a dataset. In this lab we will tackle Fashion MNIST,
 which is a drop-in replacement of MNIST (introduced in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter)).
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
 It has the exact same format as MNIST (70,000 grayscale images of 28 ×
 28 pixels each, with 10 classes), but the images represent fashion items
 rather than handwritten digits, so each class is more diverse, and the
@@ -870,7 +870,7 @@ only about 83% on Fashion MNIST.
 Keras[]{#idm45728472782520} provides some utility functions to fetch and
 load common datasets, including MNIST, Fashion MNIST, and the California
 housing dataset we used in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 Let's load Fashion MNIST:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -979,7 +979,7 @@ Let's go through this code line by line:
 Specifying `activation="relu"` is equivalent to specifying
 `activation=keras.activations.relu`. Other activation functions are
 available in the `keras.activations` package, we will use many of them
-in this book. See
+in this course. See
 [*https://keras.io/activations/*](https://keras.io/activations/) for the
 full list.
 
@@ -1022,7 +1022,7 @@ from tensorflow import keras
 output_layer = keras.layers.Dense(10)
 ```
 
-This approach is more verbose, but I use it in this book so you can
+This approach is more verbose, but I use it in this course so you can
 easily see which packages to use, and to avoid confusion between
 standard classes and custom classes. In production code, I prefer the
 previous approach. Many people also use
@@ -1037,7 +1037,7 @@ batch size can be anything), and its number of parameters. The summary
 ends with the total number of parameters, including trainable and
 non-trainable parameters. Here we only have trainable parameters (we
 will see examples of non-trainable parameters in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)):
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)):
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> model.summary()
@@ -1109,7 +1109,7 @@ want to use a different initialization method, you can set
 `kernel_initializer` (*kernel* is another name for the matrix of
 connection weights) or `bias_initializer` when creating the layer. We
 will discuss initializers further in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter),
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab),
 but if you want the full list, see
 [*https://keras.io/initializers/*](https://keras.io/initializers/).
 
@@ -1153,7 +1153,7 @@ specifying `optimizer="sgd"` is equivalent to specifying
 `optimizer=keras.optimizers.SGD()`, and `metrics=["accuracy"]` is
 equivalent to `metrics=[keras.metrics.sparse_categorical_accuracy]`
 (when using this loss). We will use many other losses, optimizers, and
-metrics in this book; for the full lists, see
+metrics in this course; for the full lists, see
 [*https://keras.io/losses*](https://keras.io/losses),
 [*https://keras.io/optimizers*](https://keras.io/optimizers), and
 [*https://keras.io/metrics*](https://keras.io/metrics).
@@ -1185,7 +1185,7 @@ using simple Stochastic Gradient Descent. In other words, Keras will
 perform the backpropagation algorithm described earlier (i.e.,
 reverse-mode autodiff plus Gradient Descent). We will discuss more
 efficient optimizers in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 (they improve the Gradient Descent part, not the autodiff).
 
 
@@ -1330,7 +1330,7 @@ types of activation functions to use for each hidden layer. You can also
 try tuning other hyperparameters, such as the batch size (it can be set
 in the `fit()` method using the `batch_size` argument, which defaults to
 32). We will get back to hyperparameter tuning at the end of this
-chapter. Once you are satisfied with your model's validation accuracy,
+lab. Once you are satisfied with your model's validation accuracy,
 you should evaluate it on the test set to estimate the generalization
 error before you deploy the model to production. You can easily do this
 using the `evaluate()` method (it also supports several other arguments,
@@ -1344,7 +1344,7 @@ the documentation for more details):
 ```
 
 As we saw in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter),
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
 it is common to get slightly lower performance on the test set than on
 the validation set, because the hyperparameters are tuned on the
 validation set, not the test set (however, in this example, we did not
@@ -1419,7 +1419,7 @@ California housing problem and tackle it using a regression neural
 network. For simplicity, we will use Scikit-Learn's
 `fetch_california_housing()` function to load the data. This dataset is
 simpler than the one we used in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter),
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
 since it contains only numerical features (there is no `ocean_proximity`
 feature), and there is no missing value. After loading the data, we
 split it into a training set, a validation set, and a test set, and we
@@ -1730,7 +1730,7 @@ in the constructor from their usage in the `call()` method. The big
 difference is that you can do pretty much anything you want in the
 `call()` method: `for` loops, `if` statements, low-level TensorFlow
 operations---your imagination is the limit (see
-[Chapter 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_chapter))!
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab))!
 This makes it a great API for researchers experimenting with new ideas.
 
 This extra flexibility does come at a cost: your model's architecture is
@@ -1774,7 +1774,7 @@ model's architecture (including every layer's hyperparameters) and the
 values of all the model parameters for every layer (e.g., connection
 weights and biases). It also saves the optimizer (including its
 hyperparameters and any state it may have). In
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter),
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab),
 we will see how to save a tf.keras model using TensorFlow's SavedModel
 format instead.
 
@@ -1830,7 +1830,7 @@ for too long and overfitting the training set: simply restore the last
 model saved after training, and this will be the best model on the
 validation set. The following code is a simple way to implement early
 stopping (introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)):
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
 
 ``` {data-type="programlisting" code-language="python"}
 checkpoint_cb = keras.callbacks.ModelCheckpoint("my_keras_model.h5",
@@ -2023,7 +2023,7 @@ rate of 0.05 (`optimizer=keras.optimizers.SGD(lr=0.05)`) instead of
 You can also visualize the whole graph, the learned weights (projected
 to 3D), or the profiling traces. The `TensorBoard()` callback has
 options to log extra data too, such as embeddings (see
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)).
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
 
 Additionally, TensorFlow[]{#idm45728469761736} offers a lower-level API
 in the `tf.summary` package. The following code creates a
@@ -2052,7 +2052,7 @@ with writer.as_default():
 This is actually a useful visualization tool to have, even beyond
 TensorFlow or Deep Learning.
 
-Let's summarize what you've learned so far in this chapter: we saw where
+Let's summarize what you've learned so far in this lab: we saw where
 neural nets came from, what an MLP is and how you can use it for
 classification and regression, how to use tf.keras's Sequential API to
 build MLPs, and how to use the Functional API or the Subclassing API to
@@ -2084,7 +2084,7 @@ One option is to simply try many combinations of hyperparameters and see
 which one works best on the validation set (or use K-fold
 cross-validation). For example, we can use `GridSearchCV` or
 `RandomizedSearchCV` to explore the hyperparameter space, as we did in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 To do this, we need to wrap our Keras models in objects that mimic
 regular Scikit-Learn regressors. The first step is to create a function
 that will build and compile a Keras model, given a set of
@@ -2143,7 +2143,7 @@ want to train hundreds of variants and see which one performs best on
 the validation set. Since there are many hyperparameters, it is
 preferable to use a randomized search rather than grid search (as we
 discussed in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)).
 Let's try to explore the number of hidden layers, the number of neurons,
 and the learning rate:
 
@@ -2164,7 +2164,7 @@ rnd_search_cv.fit(X_train, y_train, epochs=100,
 ```
 
 This is identical to what we did in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter),
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
 except here we pass extra parameters to the `fit()` method, and they get
 relayed to the underlying Keras models. Note that `RandomizedSearchCV`
 uses K-fold cross-validation, so it does not use `X_valid` and
@@ -2247,7 +2247,7 @@ Python libraries you can use to optimize hyperparameters:
 Moreover, many companies offer services for hyperparameter optimization.
 We'll discuss Google Cloud AI Platform's [hyperparameter tuning
 service](https://homl.info/googletuning) in
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter).
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab).
 Other options include services by [Arimo](https://arimo.com/) and
 [SigOpt](https://sigopt.com/), and CallDesk's
 [Oscar](http://oscar.calldesk.ai/).
@@ -2331,13 +2331,13 @@ the number of hidden layers until you start overfitting the training
 set. Very complex tasks, such as large image classification or speech
 recognition, typically require networks with dozens of layers (or even
 hundreds, but not fully connected ones, as we will see in
-[Chapter 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_chapter)),
+[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
 and they need a huge amount of training data. You will rarely have to
 train such networks from scratch: it is much more common to reuse parts
 of a pretrained state-of-the-art network that performs a similar task.
 Training will then be a lot faster and require much less data (we will
 discuss this in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)).
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
 
 
 
@@ -2402,7 +2402,7 @@ Learning rate
     general, the optimal learning rate is about half of the maximum
     learning rate (i.e., the learning rate above which the training
     algorithm diverges, as we saw in
-    [Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)).
+    [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
     One way to find a good learning rate is to train the model for a few
     hundred iterations, starting with a very low learning rate (e.g.,
     10^-5^) and gradually increasing it up to a very large value (e.g.,
@@ -2417,14 +2417,14 @@ Learning rate
     point). You can then reinitialize your model and train it normally
     using this good learning rate. We will look at more learning rate
     techniques in
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter).
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab).
 
 Optimizer
 
 :   Choosing a better optimizer than plain old Mini-batch Gradient
     Descent (and tuning its hyperparameters) is also quite important. We
     will see several advanced optimizers in
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter).
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab).
 
 Batch size
 
@@ -2432,7 +2432,7 @@ Batch size
     performance and training time. The main benefit of using large batch
     sizes is that hardware accelerators like GPUs can process them
     efficiently (see
-    [Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)),
+    [Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)),
     so the training algorithm will see more instances per second.
     Therefore, many researchers and practitioners recommend using the
     largest batch size that can fit in GPU RAM. There's a catch, though:
@@ -2453,7 +2453,7 @@ Batch size
     8,192) using various techniques such as warming up the learning rate
     (i.e., starting training with a small learning rate, then ramping it
     up, as we will see in
-    [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)).
+    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
     This led to a very short training time, without any generalization
     gap. So, one strategy is to try to use a large batch size, using
     learning rate warmup, and if training is unstable or the final
@@ -2463,7 +2463,7 @@ Batch size
 Activation function
 
 :   We discussed how to choose the activation function earlier in this
-    chapter: in general, the ReLU activation function will be a good
+    lab: in general, the ReLU activation function will be a good
     default for all hidden layers. For the output layer, it really
     depends on your task.
 
@@ -2486,7 +2486,7 @@ paper](https://homl.info/1cycle)^[27](https://learning.oreilly.com/library/view/
 by Leslie Smith.
 
 This concludes our introduction to artificial neural networks and their
-implementation with Keras. In the next few chapters, we will discuss
+implementation with Keras. In the next few labs, we will discuss
 techniques to train very deep nets. We will also explore how to
 customize models using TensorFlow's lower-level API and how to load and
 preprocess data efficiently using the Data API. And we will dive into
@@ -2559,7 +2559,7 @@ Exercises
         problem, can be alleviated with better weight initialization and
         other techniques, better optimizers (such as AdaGrad or Adam),
         or Batch Normalization (discussed in
-        [Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)).
+        [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
 
     7.  Go further. Take an hour or so to play around with other
         parameters and get a feel for what they do, to build an
@@ -2606,7 +2606,7 @@ Exercises
     many neurons do you need in the output layer, and which activation
     function should you use? What about for getting your network to
     predict housing prices, as in
-    [Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)?
+    [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)?
 
 8.  What is backpropagation and how does it work? What is the difference
     between backpropagation and reverse-mode autodiff?
@@ -2618,7 +2618,7 @@ Exercises
 10. Train a deep MLP on the MNIST dataset (you can load it using
     `keras.datasets.mnist.load_data()`. See if you can get over 98%
     precision. Try searching for the optimal learning rate by using the
-    approach presented in this chapter (i.e., by growing the learning
+    approach presented in this lab (i.e., by growing the learning
     rate exponentially, plotting the loss, and finding the point where
     the loss shoots up). Try adding all the bells and whistles---save
     checkpoints, use early stopping, and plot learning curves using

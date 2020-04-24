@@ -1,5 +1,5 @@
 
-[Chapter 7. ] Ensemble Learning and Random Forests
+[Lab 7. ] Ensemble Learning and Random Forests
 =========================================================
 
 Suppose[]{#idm45728479552728}[]{#idm45728479551720}[]{#idm45728479551048}
@@ -18,21 +18,21 @@ a group of Decision Tree classifiers, each on a different random subset
 of the training set. To make predictions, you obtain the predictions of
 all the individual trees, then predict the class that gets the most
 votes (see the last exercise in
-[Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter)).
+[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab)).
 Such an ensemble of Decision
 Trees[]{#idm45728479543944}[]{#idm45728479543000} is called a *Random
 Forest*, and despite its simplicity, this is one of the most powerful
 Machine Learning algorithms available today.
 
 As discussed in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter),
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
 you will often use Ensemble methods near the end of a project, once you
 have already built a few good predictors, to combine them into an even
 better predictor. In fact, the winning solutions in Machine Learning
 competitions often involve several Ensemble methods (most famously in
 the [Netflix Prize competition](http://netflixprize.com/)).
 
-In this chapter we will discuss the most popular Ensemble methods,
+In this lab we will discuss the most popular Ensemble methods,
 including *bagging*, *boosting*, and *stacking*. We will also explore
 Random Forests.
 
@@ -106,7 +106,7 @@ improving the ensemble's accuracy.
 The[]{#idm45728479512472} following code creates and trains a voting
 classifier in Scikit-Learn, composed of three diverse classifiers (the
 training set is the moons dataset, introduced in
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)):
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)):
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.ensemble import RandomForestClassifier
@@ -397,7 +397,7 @@ itself.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning
 The Random Forest algorithm introduces extra randomness when growing
 trees; instead of searching for the very best feature when splitting a
 node (see
-[Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter)),
+[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab)),
 it searches for the best feature among a random subset of features. The
 algorithm results in greater tree diversity, which (again) trades a
 higher bias for a lower variance, generally yielding an overall better
@@ -458,14 +458,14 @@ importance by looking at how much the tree nodes that use that feature
 reduce impurity on average (across all trees in the forest). More
 precisely, it is a weighted average, where each node's weight is equal
 to the number of training samples that are associated with it (see
-[Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter)).
+[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab)).
 
 Scikit-Learn computes this score automatically for each feature after
 training, then it scales the results so that the sum of all importances
 is equal to 1. You can access the result using the
 `feature_importances_` variable. For example, the following code trains
 a `RandomForestClassifier` on the iris dataset (introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter))
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 and outputs each feature's importance. It seems that the most important
 features are the petal length (44%) and width (42%), while sepal length
 and width are rather unimportant in comparison (11% and 2%,
@@ -487,7 +487,7 @@ petal width (cm) 0.423357996355
 
 Similarly, if you train a Random Forest classifier on the MNIST dataset
 (introduced in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter))
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab))
 and plot each pixel's importance, you get the image represented in
 [Figure 7-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#mnist_feature_importance_plot).
 
@@ -767,7 +767,7 @@ one on the right has too many trees and overfits the training set.
 
 In order to find the optimal number of trees, you can use early stopping
 (see
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter)).
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
 A simple way to implement this is to use the `staged_predict()` method:
 it returns an iterator over the predictions made by the ensemble at each
 stage of training (with one tree, two trees, etc.). The following code
@@ -878,7 +878,7 @@ Stacking
 ========
 
 The[]{#idm45728477885640}[]{#idm45728477884632}[]{#idm45728477883960}
-last Ensemble method we will discuss in this chapter is called
+last Ensemble method we will discuss in this lab is called
 *stacking* (short for [*stacked
 generalization*](https://homl.info/29)).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728477881896){#idm45728477881896-marker}^
 It is based on a simple idea: instead of using trivial functions (such
@@ -966,7 +966,7 @@ Exercises
     you increase or decrease the learning rate?
 
 8.  Load the MNIST data (introduced in
-    [Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter)),
+    [Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)),
     and split it into a training set, a validation set, and a test set
     (e.g., use 50,000 instances for training, 10,000 for validation, and
     10,000 for testing). Then train various classifiers, such as a
@@ -1008,7 +1008,7 @@ and On-Line," *Machine Learning* 36, no. 1--2 (1999): 85--103.
 
 ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479322744-marker){.totri-footnote}^
 Bias and variance were introduced in
-[Chapter 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_chapter).
+[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab).
 
 ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479314344-marker){.totri-footnote}^
 `max_samples` can alternatively be set to a float between 0.0 and 1.0,

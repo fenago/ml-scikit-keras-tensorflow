@@ -1,6 +1,6 @@
 
 
-Chapter 14. Deep Computer Vision Using Convolutional Neural Networks
+Lab 14. Deep Computer Vision Using Convolutional Neural Networks
 ====================================================================
 
 Although IBM’s Deep Blue supercomputer beat the chess world champion
@@ -23,7 +23,7 @@ brain’s visual cortex, and they have been used in image recognition
 since the 1980s. In the last few years, thanks to the increase in
 computational power, the amount of available training data, and the
 tricks presented in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter)
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 for training deep nets, CNNs have managed to achieve superhuman
 performance on some complex visual tasks. They power image search
 services, self-driving cars, automatic video classification systems, and
@@ -32,7 +32,7 @@ also successful at many other tasks, such as voice recognition and
 natural language processing. However, we will focus on visual
 applications for now.
 
-In this chapter we will explore where CNNs came from, what their
+In this lab we will explore where CNNs came from, what their
 building blocks look like, and how to implement them using TensorFlow
 and Keras. Then we will discuss some of the best CNN architectures, as
 well as other visual tasks, including object detection (classifying
@@ -108,7 +108,7 @@ The most important building block of a CNN is the *convolutional
 layer*:^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456222664)^
 neurons in the first convolutional layer are not connected to every
 single pixel in the input image (like they were in the layers discussed
-in previous chapters), but only to pixels in their receptive fields (see
+in previous labs), but only to pixels in their receptive fields (see
 [Figure 14-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_layers_diagram)).
 In turn, each neuron in the second convolutional layer is connected only
 to neurons located within a small rectangle in the first layer. This
@@ -506,7 +506,7 @@ four times smaller), simply dropping 75% of the input values. And in
 some applications, invariance is not desirable. Take semantic
 segmentation (the task of classifying each pixel in an image according
 to the object that pixel belongs to, which we’ll explore later in this
-chapter): obviously, if the input image is translated by one pixel to
+lab): obviously, if the input image is translated by one pixel to
 the right, the output should also be translated by one pixel to the
 right. The goal in this case is *equivariance*, not invariance: a small
 change to the inputs should lead to a corresponding small change in the
@@ -586,7 +586,7 @@ spatial dimensions as the inputs). This means that it just outputs a
 single number per feature map and per instance. Although this is of
 course extremely destructive (most of the information in the feature map
 is lost), it can be useful as the output layer, as we will see later in
-this chapter. To create such a layer, simply use the
+this lab. To create such a layer, simply use the
 `keras.layers.GlobalAvgPool2D` class:
 
 ``` {data-type="programlisting" data-code-language="python"}
@@ -636,7 +636,7 @@ general, it will not be too costly.
 
 Here is how you can implement a simple CNN to tackle the Fashion MNIST
 dataset (introduced in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter)):
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)):
 
 ``` {data-type="programlisting" data-code-language="python"}
 model = keras.models.Sequential([
@@ -693,7 +693,7 @@ Let’s go through this model:
 This CNN reaches over 92% accuracy on the test set. It’s not state of
 the art, but it is pretty good, and clearly much better than what we
 achieved with dense networks in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter).
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab).
 
 Over the years, variants of this fundamental architecture have been
 developed, leading to amazing advances in the field. A good measure of
@@ -841,7 +841,7 @@ presents this architecture.
 
 To reduce overfitting, the authors used two regularization techniques.
 First, they applied dropout (introduced in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter))
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
 with a 50% dropout rate during training to the outputs of layers F9 and
 F10. Second, they performed *data augmentation* by randomly shifting the
 training images by various offsets, flipping them horizontally, and
@@ -1150,7 +1150,7 @@ layers and the fully connected
 layer)^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454948344)^
 containing 3 residual units that output 64 feature maps, 4 RUs with 128
 maps, 6 RUs with 256 maps, and 3 RUs with 512 maps. We will implement
-this architecture later in this chapter.
+this architecture later in this lab.
 
 ResNets deeper than that, such as ResNet-152, use slightly different
 residual units. Instead of two 3 × 3 convolutional layers with, say, 256
@@ -1297,7 +1297,7 @@ the distribution of feature responses. This bottleneck step forces the
 SE block to learn a general representation of the feature combinations
 (we will see this principle in action again when we discuss autoencoders
 in
-[Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)).
+[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
 Finally, the output layer takes the embedding and outputs a
 recalibration vector containing one number per feature map (e.g., 256),
 each between 0 and 1. The feature maps are then multiplied by this
@@ -1490,11 +1490,11 @@ Pretrained Models for Transfer Learning
 If you want to build an image classifier but you do not have enough
 training data, then it is often a good idea to reuse the lower layers of
 a pretrained model, as we discussed in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter).
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab).
 For example, let’s train a model to classify pictures of flowers,
 reusing a pretrained Xception model. First, let’s load the dataset using
 TensorFlow Datasets (see
-[Chapter 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)):
+[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)):
 
 ``` {data-type="programlisting" data-code-language="python"}
 import tensorflow_datasets as tfds
@@ -1563,7 +1563,7 @@ manipulate the `Dataset` as you wish; and if you write a preprocessing
 function based on `tf.image` operations, this function can be used both
 in the tf.data pipeline and in the model you will deploy to production
 (see
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter)).
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
 
 Next let’s load an Xception model, pretrained on ImageNet. We exclude
 the top of the network by setting `include_top=False`: this excludes the
@@ -1581,7 +1581,7 @@ model = keras.Model(inputs=base_model.input, outputs=output)
 ```
 
 As explained in
-[Chapter 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_chapter),
+[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab),
 it’s usually a good idea to freeze the weights of the pretrained layers,
 at least at the beginning of training:
 
@@ -1608,7 +1608,7 @@ history = model.fit(train_set, epochs=5, validation_data=valid_set)
 ###### Warning
 
 This will be very slow, unless you have a GPU. If you do not, then you
-should run this chapter’s notebook in Colab, using a GPU runtime (it’s
+should run this lab’s notebook in Colab, using a GPU runtime (it’s
 free!). See the instructions at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
 
@@ -1640,7 +1640,7 @@ Classification and Localization
 
 Localizing an object in a picture can be expressed as a regression task,
 as discussed in
-[Chapter 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_chapter):
+[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab):
 to predict a bounding box around the object, a common approach is to
 predict the horizontal and vertical coordinates of the object’s center,
 as well as its height and width. This means we have four numbers to
@@ -1891,7 +1891,7 @@ with a few important differences:
 -   Before training the neural net, YOLOv3 finds five representative
     bounding box dimensions, called *anchor boxes* (or *bounding box
     priors*). It does this by applying the K-Means algorithm (see
-    [Chapter 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_chapter))
+    [Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab))
     to the height and width of the training set bounding boxes. For
     example, if the training images contain many pedestrians, then one
     of the anchor boxes will likely have the dimensions of a typical
@@ -1934,7 +1934,7 @@ A very common metric used in object detection tasks is the *mean Average
 Precision* (mAP). “Mean Average” sounds a bit redundant, doesn’t it? To
 understand this metric, let’s go back to two classification metrics we
 discussed in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter):
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab):
 precision and recall. Remember the trade-off: the higher the recall, the
 lower the precision. You can visualize this in a precision/recall curve
 (see
@@ -2065,7 +2065,7 @@ TensorFlow also offers a few other kinds of convolutional layers:
 `keras.layers.Conv1D`
 :   Creates a convolutional layer for 1D inputs, such as time series or
     text (sequences of letters or words), as we will see in
-    [Chapter 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_chapter).
+    [Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab).
 
 `keras.layers.Conv3D`
 :   Creates a convolutional layer for 3D inputs, such as 3D PET scans.
@@ -2135,14 +2135,14 @@ the network more resistant to images designed to fool it),
 explainability (understanding why the network makes a specific
 classification), realistic *image generation* (which we will come back
 to in
-[Chapter 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)),
+[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)),
 and *single-shot learning* (a system that can recognize an object after
 it has seen it just once). Some even explore completely novel
 architectures, such as Geoffrey Hinton’s [*capsule
 networks*](https://homl.info/capsnet)^[35](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453143336)^
 (I presented them in a couple of
 [videos](https://homl.info/capsnetvideos), with the corresponding code
-in a notebook). Now on to the next chapter, where we will look at how to
+in a notebook). Now on to the next lab, where we will look at how to
 process sequential data such as time series using recurrent neural
 networks and convolutional neural networks.
 

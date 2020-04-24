@@ -1,8 +1,8 @@
 
-[Chapter 2. ] End-to-End Machine Learning Project
+[Lab 2. ] End-to-End Machine Learning Project
 ========================================================
 
-In[]{#idm45728493095704} this chapter you will work through an example
+In[]{#idm45728493095704} this lab you will work through an example
 project end to end, pretending to be a recently hired data scientist at
 a real estate
 company.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#idm45728493094408){#idm45728493094408-marker
@@ -61,7 +61,7 @@ domains. Here are a few places you can look to get data:
 
     -   [The datasets subreddit](https://www.reddit.com/r/datasets)
 
-In this chapter we'll use the
+In this lab we'll use the
 []{#idm45728493063864}[]{#idm45728493062824}California Housing Prices
 dataset from the StatLib
 repository^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#idm45728493062008){#idm45728493062008-marker
@@ -101,10 +101,10 @@ should do is pull out your[]{#idm45728493052280}[]{#idm45728493051560}
 Machine Learning project checklist. You can start with the one in
 [Appendix B](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html#project_checklist_appendix);
 it should work reasonably well for most Machine Learning projects, but
-make sure to adapt it to your needs. In this chapter we will go through
+make sure to adapt it to your needs. In this lab we will go through
 many checklist items, but we will also skip a few, either because they
 are self-explanatory or because they will be discussed in later
-chapters.
+labs.
 
 
 
@@ -301,7 +301,7 @@ role="presentation" style="text-align: center; position: relative;"}
 ##### Notations
 
 This[]{#idm45728492996280} equation introduces several very common
-Machine Learning notations that we will use throughout this book:
+Machine Learning notations that we will use throughout this course:
 
 -   *m* is the number of instances in the dataset you are measuring the
     RMSE on.
@@ -1061,7 +1061,7 @@ There are a few things you might notice in these histograms:
         predicts values beyond \$500,000).
 
 3.  These attributes have very different scales. We will discuss this
-    later in this chapter, when we explore feature scaling.
+    later in this lab, when we explore feature scaling.
 
 4.  Finally, many[]{#idm45728492266952} histograms are *tail-heavy*:
     they extend much farther to the right of the median than to the
@@ -1204,7 +1204,7 @@ generally fine if your dataset is large enough (especially relative to
 the number of attributes), but if it is not, you run the risk of
 introducing a significant sampling bias. When a survey company decides
 to call 1,000 people to ask them a few questions, they don't just pick
-1,000 people randomly in a phone book. They try to ensure that these
+1,000 people randomly in a phone course. They try to ensure that these
 1,000 people are representative of the whole population. For example,
 the US population is 51.3% females and 48.7% males, so a well-conducted
 survey in the US would try to maintain this ratio in the sample: 513
@@ -1725,7 +1725,7 @@ Consistency
     :   Finally, some[]{#idm45728490634376} estimators, given a dataset,
         are capable of making predictions; they are called *predictors*.
         For example, the `LinearRegression` model in the previous
-        chapter was a predictor: given a country's GDP per capita, it
+        lab was a predictor: given a country's GDP per capita, it
         predicted life satisfaction. A predictor has a `predict()`
         method that takes a dataset of new instances and returns a
         dataset of corresponding predictions. It also has a `score()`
@@ -1894,10 +1894,10 @@ Alternatively, you could replace each category with a learnable,
 low-dimensional vector[]{#idm45728490393192} called an *embedding*. Each
 category's representation would be learned during training.
 This[]{#idm45728490357192} is an example of *representation learning*
-(see Chapters
-[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_chapter)
+(see Labs
+[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)
 and
-[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_chapter)
+[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)
 for more details).
 
 
@@ -2142,7 +2142,7 @@ Training and Evaluating on the Training Set
 
 The good news is that thanks to all these previous steps, things are now
 going to be much simpler than you might think. Let's first train a
-Linear Regression model, like we did in the previous chapter:
+Linear Regression model, like we did in the previous lab:
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.linear_model import LinearRegression
@@ -2184,7 +2184,7 @@ districts' `median_housing_values` range between \$120,000 and
 satisfying. This is an example of a model underfitting the training
 data. When this happens it can mean that the features do not provide
 enough [information] to make good predictions, or that
-the model is not powerful enough. As we saw in the previous chapter, the
+the model is not powerful enough. As we saw in the previous lab, the
 main ways to fix underfitting are to select a more powerful model, to
 feed the training algorithm with better features, or to reduce the
 constraints on the model. This model is not regularized, which rules out
@@ -2195,7 +2195,7 @@ does.
 Let's train a `DecisionTreeRegressor`. This is a powerful model, capable
 of finding complex nonlinear relationships in the data (Decision Trees
 are presented in more detail in
-[Chapter 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_chapter)).
+[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab)).
 The code should look familiar by now:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -2307,7 +2307,7 @@ performs worse than the Linear Regression model.
 
 Let's try one last model now: the `RandomForestRegressor`. As we will
 see in
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter),
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab),
 Random Forests work by training many Decision Trees on random subsets of
 the features, then averaging out their predictions. Building
 a[]{#idm45728489421768} model on top of many other models is called
@@ -2423,7 +2423,7 @@ This `param_grid` tells Scikit-Learn to first evaluate all 3 × 4 = 12
 combinations of `n_estimators` and `max_features` hyperparameter values
 specified in the first `dict` (don't worry about what these
 hyperparameters mean for now; they will be explained in
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter)),
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
 then try all 2 × 3 = 6 combinations of hyperparameter values in the
 second `dict`, but this time with the `bootstrap` hyperparameter set to
 `False` instead of `True` (which is the default value for this
@@ -2553,7 +2553,7 @@ than the best individual model (just like Random Forests perform better
 than the individual Decision Trees they rely on), especially if the
 individual models make very different types of errors. We will cover
 this topic in more detail in
-[Chapter 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_chapter).
+[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab).
 
 
 
@@ -2721,7 +2721,7 @@ scaling for you. It take JSON requests containing the input data (e.g.,
 of a district) and returns JSON responses containing the predictions.
 You can then use this web service in your website (or whatever
 production environment you are using). As we will see in
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter),
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab),
 deploying[]{#idm45728488645128} TensorFlow models on AI Platform is not
 much different from deploying Scikit-Learn models.
 
@@ -2758,7 +2758,7 @@ retrained on fresh data (as we will discuss shortly).
 However, it's not always possible to determine the model's performance
 without any human analysis. For example, suppose you trained an image
 classification model (see
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter))
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab))
 to detect several product defects on a production line. How can you get
 an alert if the model's performance drops, before thousands of defective
 products get shipped to your clients? One solution is to send to human
@@ -2835,7 +2835,7 @@ faster.
 Try It Out!
 ===========
 
-Hopefully this chapter gave you a good idea of what a Machine Learning
+Hopefully this lab gave you a good idea of what a Machine Learning
 project looks like as well as showing you some of the tools you can use
 to train a great system. As you can see, much of the work is in the data
 preparation step: building monitoring tools, setting up human evaluation
@@ -2857,7 +2857,7 @@ the experience with. Have fun!
 Exercises
 =========
 
-The following exercises are all based on this chapter's housing dataset:
+The following exercises are all based on this lab's housing dataset:
 
 1.  Try a Support Vector Machine regressor (`sklearn.svm.SVR`) with
     various hyperparameters, such as `kernel="linear"` (with various
@@ -2949,7 +2949,7 @@ about 68% of the values fall within 1*σ* of the mean, 95% within 2*σ*,
 and 99.7% within 3*σ*.
 
 ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#idm45728492256568-marker)^
-In this book, when a code example contains a mix of code and outputs, as
+In this course, when a code example contains a mix of code and outputs, as
 is the case here, it is formatted like in the Python interpreter, for
 better readability: the code lines are prefixed with `>>>` (or `...` for
 indented blocks), and the outputs have no prefix.

@@ -1,11 +1,11 @@
 
-[Chapter 4. ] Training Models
+[Lab 4. ] Training Models
 ====================================
 
 So far[]{#idm45728485651800}[]{#idm45728485650520} we have treated
 Machine Learning models and their training algorithms mostly like black
 boxes. If you went through some of the exercises in the previous
-chapters, you may have been surprised by how much you can get done
+labs, you may have been surprised by how much you can get done
 without knowing anything about what's under the hood: you optimized a
 regression system, you improved a digit image classifier, and you even
 built a spam classifier from scratch, all this without knowing how they
@@ -17,12 +17,12 @@ quickly home in on the appropriate model, the right training algorithm
 to use, and a good set of hyperparameters for your task. Understanding
 what's under the hood will also help you debug issues and perform error
 analysis more efficiently. Lastly, most of the topics discussed in this
-chapter will be essential in understanding, building, and training
+lab will be essential in understanding, building, and training
 neural networks (discussed in
 [Part II](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part02.html#neural_nets_part)
-of this book).
+of this course).
 
-In this chapter we will start by looking at the[]{#idm45728485570472}
+In this lab we will start by looking at the[]{#idm45728485570472}
 Linear Regression model, one of the simplest models there is. We will
 discuss two very different ways to train it:
 
@@ -54,7 +54,7 @@ classification tasks: Logistic Regression and Softmax Regression.
 
 ###### Warning
 
-There will be quite a few math equations in this chapter, using basic
+There will be quite a few math equations in this lab, using basic
 notions of[]{#idm45728485561320}[]{#idm45728485560616} linear algebra
 and calculus. To understand these equations, you will need to know what
 vectors and matrices are; how to transpose them, multiply them, and
@@ -63,7 +63,7 @@ with these concepts, please go through the linear algebra and calculus
 introductory tutorials available as Jupyter notebooks in the [online
 supplemental material](https://github.com/ageron/handson-ml2). For those
 who are truly allergic to mathematics, you should still go through this
-chapter and simply skip the equations; hopefully, the text will be
+lab and simply skip the equations; hopefully, the text will be
 sufficient to help you understand most of the concepts.
 
 
@@ -73,7 +73,7 @@ Linear Regression
 =================
 
 In
-[Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter)
+[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab)
 we[]{#TMlinear04}[]{#idm45728485554344}[]{#RPlinear04} looked at a
 simple regression model of life satisfaction: *life\_satisfaction* =
 *θ*~0~ + *θ*~1~ × *GDP\_per\_capita*.
@@ -142,7 +142,7 @@ $\mathbf{\theta}^{\intercal}$ is the *transpose* of **θ** (a row vector
 instead of a column vector) and $\mathbf{\theta}^{\intercal}\mathbf{x}$
 is the matrix multiplication of $\mathbf{\theta}^{\intercal}$ and **x**.
 It is of course the same prediction, except that it is now represented
-as a single-cell matrix rather than a scalar value. In this book I will
+as a single-cell matrix rather than a scalar value. In this course I will
 use this notation to avoid switching between dot products and matrix
 multiplications.
 
@@ -152,7 +152,7 @@ do we train it? Well, recall that training a model means setting its
 parameters so that the model best fits the training set. For this
 purpose, we first need a measure of how well (or poorly) the model fits
 the training data. In
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 we saw that the most common performance measure of a regression model is
 the Root Mean Square Error (RMSE) ([Equation
 2-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#rmse_equation)).
@@ -175,7 +175,7 @@ $$\text{MSE}\left( \mathbf{X},h_{\mathbf{\theta}} \right) = \frac{1}{m}\sum\limi
 
 
 Most of these notations were presented in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 (see
 ["Notations"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#notations)).
 The only difference is that we write *h*~**θ**~ instead of just *h* to
@@ -580,7 +580,7 @@ actually getting further and further away from the solution at every
 step.
 
 To find a good learning rate, you can use grid search (see
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)).
 However, you may want to limit the number of iterations so that grid
 search can eliminate models that take too long to converge.
 
@@ -623,7 +623,7 @@ algorithm much faster because it has very little data to manipulate at
 every iteration. It also makes it possible to train on huge training
 sets, since only one instance needs to be in memory at each iteration
 (Stochastic GD can be implemented as an out-of-core algorithm; see
-[Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter)).
+[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab)).
 
 On the other hand, due to its stochastic (i.e., random) nature, this
 algorithm is much less regular than Batch Gradient Descent: instead of
@@ -909,7 +909,7 @@ decide how complex your model should be? How can you tell that your
 model is overfitting or underfitting the data?
 
 In
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter)
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
 you used cross-validation to get an estimate of a model's generalization
 performance. If a model performs well on the training data but
 generalizes poorly according to the cross-validation metrics, then your
@@ -1057,10 +1057,10 @@ trade-off.[]{#idm45728483787160}[]{#idm45728483786184}
 Regularized Linear Models
 =========================
 
-As[]{#idm45728483783960}[]{#TMreglin04} we saw in Chapters
-[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter){.totri-footnote}
+As[]{#idm45728483783960}[]{#TMreglin04} we saw in Labs
+[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab){.totri-footnote}
 and
-[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter){.totri-footnote},
+[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab){.totri-footnote},
 a good way to reduce overfitting is to regularize the model (i.e., to
 constrain it): the fewer degrees of freedom it has, the harder it will
 be for it to overfit the data. A simple way to regularize a polynomial
@@ -1425,7 +1425,7 @@ Logistic Regression
 
 As[]{#RPlogistic04}[]{#idm45728483104808}[]{#TMlogreg04}[]{#idm45728483102648}
 we discussed in
-[Chapter 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_chapter),
+[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab),
 some regression algorithms can be used for classification (and vice
 versa). *Logistic Regression* (also called *Logit Regression*) is
 commonly used to estimate the probability that an instance belongs to a
@@ -1681,7 +1681,7 @@ The[]{#RPsoft04}[]{#idm45728482680072}[]{#idm45728482679128}[]{#idm4572848267848
 Logistic Regression model can be generalized to support multiple classes
 directly, without having to train and combine multiple binary
 classifiers (as discussed in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter)).
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
 This is called *Softmax Regression*, or *Multinomial Logistic
 Regression*.
 
@@ -1967,12 +1967,12 @@ models.
 ^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483760200-marker){.totri-footnote}^
 It is common to use the notation *J*(**θ**) for cost functions that
 don't have a short name; we will often use this notation throughout the
-rest of this book. The context will make it clear which cost function is
+rest of this course. The context will make it clear which cost function is
 being discussed.
 
 ^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483654232-marker)^
 Norms are discussed in
-[Chapter 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_chapter).
+[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 
 ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483640072-marker)^
 A square matrix full of 0s except for 1s on the main diagonal (top left

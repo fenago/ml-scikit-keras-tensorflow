@@ -1,5 +1,5 @@
 
-[Chapter 8. ] Dimensionality Reduction
+[Lab 8. ] Dimensionality Reduction
 =============================================
 
 Many[]{#idm45728477818264} Machine Learning problems involve thousands
@@ -11,7 +11,7 @@ often referred to as the *curse of dimensionality*.
 Fortunately, in real-world problems, it is often possible to reduce the
 number of features considerably, turning an intractable problem into a
 tractable one. For example, consider the MNIST images (introduced in
-[Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter)):
+[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)):
 the pixels on the image borders are almost always white, so you could
 completely drop these pixels from the training set without losing much
 information.
@@ -47,7 +47,7 @@ detecting patterns, such as clusters. Moreover, DataViz is essential to
 communicate your conclusions to people who are not data scientists---in
 particular, decision makers who will use your results.
 
-In this chapter we will discuss the curse of dimensionality and get a
+In this lab we will discuss the curse of dimensionality and get a
 sense of what goes on in high-dimensional space. Then, we will consider
 the two main approaches to dimensionality reduction (projection and
 Manifold Learning), and we will go through three of the most popular
@@ -218,7 +218,7 @@ lead to a better or simpler solution; it all depends on the dataset.
 
 Hopefully you now have a good sense of what the curse of dimensionality
 is and how dimensionality reduction algorithms can fight it, especially
-when the manifold assumption holds. The rest of this chapter will go
+when the manifold assumption holds. The rest of this lab will go
 through some of the most popular algorithms.[]{#idm45728477744264}
 
 ![](./images/mls2_0806.png)
@@ -392,7 +392,7 @@ Using Scikit-Learn
 
 Scikit-Learn's `PCA` class[]{#idm45728477613496}[]{#idm45728477612248}
 uses SVD decomposition to implement PCA, just like we did earlier in
-this chapter. The following code applies PCA to reduce the
+this lab. The following code applies PCA to reduce the
 dimensionality of the dataset down to two dimensions (note that it
 automatically takes care of centering the data):
 
@@ -617,7 +617,7 @@ Kernel PCA
 ==========
 
 In
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)
 we[]{#PCAkernel08}[]{#kernalpca04}[]{#idm45728477084696} discussed the
 kernel trick, a mathematical technique that implicitly maps instances
 into a very high-dimensional[]{#idm45728477083768} space (called the
@@ -637,7 +637,7 @@ unrolling datasets that lie close to a twisted manifold.
 
 The[]{#idm45728477077304} following code uses Scikit-Learn's `KernelPCA`
 class to perform kPCA with an RBF kernel (see
-[Chapter 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_chapter)
+[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)
 for more details about the RBF kernel and other kernels):
 
 ``` {data-type="programlisting" code-language="python"}
@@ -947,7 +947,7 @@ Exercises
     reduction algorithms?
 
 9.  Load the MNIST dataset (introduced in
-    [Chapter 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_chapter))
+    [Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab))
     and split it into a training set and a test set (take the first
     60,000 instances for training, and the remaining 10,000 for
     testing). Train a Random Forest classifier on the dataset and time
