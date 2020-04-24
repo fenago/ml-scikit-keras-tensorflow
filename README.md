@@ -26,41 +26,54 @@ By using concrete examples, minimal theory, and two production-ready Python fram
 
 Labs for this course are available at path shared below. Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. 
 
-1. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab1
-2. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab2
-3. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab3
-4. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab4
-5. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab5
-6. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab6
-7. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab7
-8. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab8
-9. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab9
-10. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab10
-11. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab11
-12. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab12
-13. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab13
-14. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab14
-15. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab15
-16. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab16
-17. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab17
-18. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab18
-19. ##### 
-		* <host-ip>:<port>/lab/workspaces/lab19
+1. ##### The Machine Learning Landscape
+		* <host-ip>:<port>/lab/workspaces/lab1_
+2. ##### End-to-End Machine Learning Project
+		* <host-ip>:<port>/lab/workspaces/lab2_
+3. ##### Classification
+		* <host-ip>:<port>/lab/workspaces/lab3_
+4. ##### Training Models
+		* <host-ip>:<port>/lab/workspaces/lab4_
+5. ##### Support Vector Machines
+		* <host-ip>:<port>/lab/workspaces/lab5_
+6. ##### Decision Trees
+		* <host-ip>:<port>/lab/workspaces/lab6_
+7. ##### Ensemble Learning and Random Forests
+		* <host-ip>:<port>/lab/workspaces/lab7_
+8. ##### Dimensionality Reduction
+		* <host-ip>:<port>/lab/workspaces/lab8_
+9. ##### Unsupervised Learning Techniques
+		* <host-ip>:<port>/lab/workspaces/lab9_
+10. ##### Introduction to Artificial Neural Networks with Keras
+		* <host-ip>:<port>/lab/workspaces/lab10_
+11. ##### Training Deep Neural Networks
+		* <host-ip>:<port>/lab/workspaces/lab11_
+12. ##### Custom Models and Training with TensorFlow
+		* <host-ip>:<port>/lab/workspaces/lab12_
+13. ##### Loading and Preprocessing Data with TensorFlow
+		* <host-ip>:<port>/lab/workspaces/lab13_
+14. ##### Deep Computer Vision Using Convolutional Neural Networks
+		* <host-ip>:<port>/lab/workspaces/lab14_
+15. ##### Processing Sequences Using RNNs and CNNs
+		* <host-ip>:<port>/lab/workspaces/lab15_
+16. ##### Natural Language Processing with RNNs and Attention
+		* <host-ip>:<port>/lab/workspaces/lab16_
+17. ##### Representation Learning and Generative Learning Using Autoencoders and GANs
+		* <host-ip>:<port>/lab/workspaces/lab17_
+18. ##### Reinforcement Learning
+		* <host-ip>:<port>/lab/workspaces/lab18_
+19. ##### Training and Deploying TensorFlow Models at Scale
+		* <host-ip>:<port>/lab/workspaces/lab19_
+
+. ##### Machine Learning Project Checklist
+		* <host-ip>:<port>/lab/workspaces/lab
+. ##### SVM Dual Problem
+		* <host-ip>:<port>/lab/workspaces/lab
+. ##### Autodiff
+		* <host-ip>:<port>/lab/workspaces/lab
+. ##### Other Popular ANN Architectures
+		* <host-ip>:<port>/lab/workspaces/lab
+. ##### Special Data Structures
+		* <host-ip>:<port>/lab/workspaces/lab
+. ##### TensorFlow Graphs
+		* <host-ip>:<port>/lab/workspaces/lab
