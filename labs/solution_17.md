@@ -82,7 +82,7 @@
     from the generated ones. At each training iteration, the
     discriminator is trained like a normal binary classifier, then the
     generator is trained to maximize the
-    [discriminator's]{.keep-together} error. GANs are used for advanced
+    [discriminator's] error. GANs are used for advanced
     image processing tasks such as super resolution, colorization, image
     editing (replacing objects with realistic background), turning a
     simple sketch into a photorealistic image, or predicting the next

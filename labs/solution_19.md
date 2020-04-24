@@ -1,5 +1,5 @@
 
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]{.keep-together}
+[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]
 =================================================================================================================================================================================================
 
 1.  A SavedModel contains a TensorFlow model, including its architecture

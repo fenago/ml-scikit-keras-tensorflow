@@ -36,7 +36,7 @@
     reverse the operation, because some information gets lost during
     dimensionality reduction. Moreover, while some algorithms (such as
     PCA) have a simple reverse transformation
-    [procedure]{.keep-together} that can reconstruct a dataset
+    [procedure] that can reconstruct a dataset
     relatively similar to the original, other algorithms (such as T-SNE)
     do not.
 

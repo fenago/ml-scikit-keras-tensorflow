@@ -500,7 +500,7 @@ available at
     reverse the operation, because some information gets lost during
     dimensionality reduction. Moreover, while some algorithms (such as
     PCA) have a simple reverse transformation
-    [procedure]{.keep-together} that can reconstruct a dataset
+    [procedure] that can reconstruct a dataset
     relatively similar to the original, other algorithms (such as T-SNE)
     do not.
 
@@ -1316,7 +1316,7 @@ available at
     temperature and the wind speed), the shape will be \[5, 10, 2\]. The
     outputs are also three-dimensional, with the same first two
     dimensions, but the last dimension is equal to the number of
-    [neurons]{.keep-together}. For example, if an RNN layer with 32
+    [neurons]. For example, if an RNN layer with 32
     neurons processes the batch we just discussed, the output will have
     a shape of \[5, 10, 32\].
 
@@ -1413,7 +1413,7 @@ notebooks available at
     the dataset properly. Moreover, stateful RNNs do not always work
     better, in part because consecutive batches are not independent and
     identically distributed (IID). Gradient Descent is not fond of
-    non-IID [datasets]{.keep-together}.
+    non-IID [datasets].
 
 2.  In general, if you translate a sentence one word at a time, the
     result will be terrible. For example, the French sentence "Je vous
@@ -1586,7 +1586,7 @@ available at
     from the generated ones. At each training iteration, the
     discriminator is trained like a normal binary classifier, then the
     generator is trained to maximize the
-    [discriminator's]{.keep-together} error. GANs are used for advanced
+    [discriminator's] error. GANs are used for advanced
     image processing tasks such as super resolution, colorization, image
     editing (replacing objects with realistic background), turning a
     simple sketch into a photorealistic image, or predicting the next
@@ -1743,7 +1743,7 @@ notebooks available at
 
 
 
-[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]{.keep-together}
+[Chapter 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_chapter): Training and Deploying TensorFlow Models [at Scale]
 =================================================================================================================================================================================================
 
 1.  A SavedModel contains a TensorFlow model, including its architecture

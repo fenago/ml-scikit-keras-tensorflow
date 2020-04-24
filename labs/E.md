@@ -234,7 +234,7 @@ it, for the same reason that deep neural networks are more powerful than
 shallow ones: real-world data is often organized in hierarchical
 patterns, and DBNs take advantage of that. Their lower layers learn
 low-level features in the input data, while higher layers learn
-high-level [features]{.keep-together}.
+high-level [features].
 
 Just like RBMs, DBNs are fundamentally unsupervised, but you can also
 train them in a supervised manner by adding some visible units to
@@ -260,7 +260,7 @@ the supervised step.
 At the end of training, if you feed RBM 1 a new instance, the signal
 will propagate up to RBM 2, then up to the top of RBM 3, and then back
 down to the label units; hopefully, the appropriate label will light up.
-This is how a DBN can be used for [classification]{.keep-together}.
+This is how a DBN can be used for [classification].
 
 One great benefit of this semisupervised approach is that you don't need
 much labeled training data. If the unsupervised RBMs do a good enough

@@ -33,7 +33,7 @@
     temperature and the wind speed), the shape will be \[5, 10, 2\]. The
     outputs are also three-dimensional, with the same first two
     dimensions, but the last dimension is equal to the number of
-    [neurons]{.keep-together}. For example, if an RNN layer with 32
+    [neurons]. For example, if an RNN layer with 32
     neurons processes the batch we just discussed, the output will have
     a shape of \[5, 10, 32\].
 

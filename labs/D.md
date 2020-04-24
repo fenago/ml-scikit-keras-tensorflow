@@ -149,7 +149,7 @@ partial derivative with regard to *y*, it would be the reverse).
 
 Now we have all we need to move up the graph to the multiplication node
 in function *g*. Calculus tells us that the derivative of the product of
-two functions *u* and *v* is [∂(*u* × *v*)/∂*x*]{.keep-together} =
+two functions *u* and *v* is [∂(*u* × *v*)/∂*x*] =
 ∂*v*/∂*x* × *u* + *v* × ∂*u*/∂*x*. We can therefore construct a large
 part of the graph on the right, representing 0 × *x* + *y* × 1.
 

@@ -74,7 +74,7 @@ tensors*, meaning they don't have an actual value, just a data type, a
 shape, and a name. They represent the future tensors that will flow
 through the graph once an actual value is fed to the placeholder `x` and
 the graph is executed. Symbolic tensors make it possible to specify
-ahead of time how to [connect]{.keep-together} operations, and they also
+ahead of time how to [connect] operations, and they also
 allow TensorFlow to recursively infer the data types and shapes of all
 tensors, given the data types and shapes of their inputs.
 

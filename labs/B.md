@@ -315,4 +315,4 @@ Launch!
         This is particularly important for online learning systems.
 
 3.  Retrain your models on a regular basis on fresh data (automate as
-    much as [possible]{.keep-together}).
+    much as [possible]).

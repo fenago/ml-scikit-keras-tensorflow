@@ -9,7 +9,7 @@
     the dataset properly. Moreover, stateful RNNs do not always work
     better, in part because consecutive batches are not independent and
     identically distributed (IID). Gradient Descent is not fond of
-    non-IID [datasets]{.keep-together}.
+    non-IID [datasets].
 
 2.  In general, if you translate a sentence one word at a time, the
     result will be terrible. For example, the French sentence "Je vous
