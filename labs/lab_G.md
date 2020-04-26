@@ -459,10 +459,12 @@ tf.keras.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html-marker)
+^[1]
+
 You can safely ignore it---it is only here for technical reasons, to
 ensure that TF Functions don't leak internal structures.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html-marker)
+^[2]
+
 A popular binary format discussed in
 [Lab 13]

@@ -592,11 +592,13 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
+^[1]
+
 Graphviz is an open source graph visualization software package,
 available at [*http://www.graphviz.org/*](http://www.graphviz.org/).
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
+^[2]
+
 P is the set of problems that can be solved in polynomial time. NP is
 the set of problems whose solutions can be verified in polynomial time.
 An NP-Hard problem is a problem to which any NP problem can be reduced
@@ -605,16 +607,20 @@ major open mathematical question is whether or not P = NP. If P ≠ NP
 (which seems likely), then no polynomial algorithm will ever be found
 for any NP-Complete problem (except perhaps on a quantum computer).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
+^[3]
+
 log~2~ is the binary logarithm. It is equal to log~2~(*m*) = log(*m*) /
 log(2).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
+^[4]
+
 A reduction of entropy is often called an *information gain*.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
+^[5]
+
 See Sebastian Raschka's [interesting analysis for more
 details](https://homl.info/19).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
+^[6]
+
 It randomly selects the set of features to evaluate at each node.

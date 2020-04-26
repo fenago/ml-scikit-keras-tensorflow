@@ -617,11 +617,13 @@ keep bringing me cookies and coffee! What more can one dream of?
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker)
+^[1]
+
 Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker)
+^[2]
+
 Despite the fact that Yann LeCun's deep convolutional neural networks
 had worked well for image recognition since the 1990s, although they
 were not as general-purpose.

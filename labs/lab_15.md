@@ -1315,7 +1315,8 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[1]
+
 Note that many researchers prefer to use the hyperbolic tangent (tanh)
 activation function in RNNs rather than the ReLU activation function.
 For example, take a look at Vu Pham et al.'s 2013 paper ["Dropout
@@ -1324,39 +1325,47 @@ Recognition"](https://homl.info/91). ReLU-based RNNs are also possible,
 as shown in Quoc V. Le et al.'s 2015 paper ["A Simple Way to Initialize
 Recurrent Networks of Rectified Linear Units"](https://homl.info/92).
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[2]
+
 Note that a `TimeDistributed(Dense(n))` layer is equivalent to a
 `Conv1D(n, kernel_size=1)` layer.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[3]
+
 César Laurent et al., "Batch Normalized Recurrent Neural Networks,"
 *Proceedings of the IEEE International Conference on Acoustics, Speech,
 and Signal Processing* (2016): 2657--2661.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[4]
+
 Jimmy Lei Ba et al., "Layer Normalization," arXiv preprint
 arXiv:1607.06450 (2016).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[5]
+
 It would have been simpler to inherit from `SimpleRNNCell` instead so
 that we wouldn't have to create an internal `SimpleRNNCell` or handle
 the `state_size` and `output_size` attributes, but the goal here was to
 show how to create a custom cell from scratch.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[6]
+
 A character from the animated movies *Finding Nemo* and *Finding Dory*
 who has short-term memory loss.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[7]
+
 Sepp Hochreiter and Jürgen Schmidhuber, "Long Short-Term Memory,"
 *Neural Computation* 9, no. 8 (1997): 1735--1780.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[8]
+
 Haşim Sak et al., "Long Short-Term Memory Based Recurrent Neural Network
 Architectures for Large Vocabulary Speech Recognition," arXiv preprint
 arXiv:1402.1128 (2014).
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)
+^[9]
+
 Wojciech Zaremba et al., "Recurrent Neural Network Regularization,"
 arXiv preprint arXiv:1409.2329 (2014).
 

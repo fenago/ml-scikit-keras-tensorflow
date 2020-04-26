@@ -2879,44 +2879,52 @@ available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[1]
+
 The example project is fictitious; the goal is to illustrate the main
 steps of a Machine Learning project, not to learn anything about the
 real estate business.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[2]
+
 The original dataset appeared in R. Kelley Pace and Ronald Barry,
 "Sparse Spatial Autoregressions," *Statistics & Probability Letters* 33,
 no. 3 (1997): 291--297.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[3]
+
 A piece of information fed to a Machine Learning system is often called
 a *signal*, in reference to Claude Shannon's information theory, which
 he developed at Bell Labs to improve telecommunications. His theory: you
 want a high signal-to-noise ratio.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[4]
+
 Recall that the transpose operator flips a column vector into a row
 vector (and vice versa).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[5]
+
 The latest version of Python 3 is recommended. Python 2.7+ may work too,
 but now that it's deprecated, all major scientific libraries are
 dropping support for it, so you should migrate to Python 3 as soon as
 possible.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[6]
+
 I'll show the installation steps using pip in a bash shell on a Linux or
 macOS system. You may need to adapt these commands to your own system.
 On Windows, I recommend installing Anaconda instead.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[7]
+
 If you want to upgrade pip for all users on your machine rather than
 just your own user, you should remove the `--user` option and make sure
 you have administrator rights (e.g., by adding `sudo` before the whole
 command on Linux or macOS).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[8]
+
 Alternative tools include venv (very similar to virtualenv and included
 in the standard library), virtualenvwrapper (provides extra
 functionalities on top of virtualenv), pyenv (allows easy switching
@@ -2924,7 +2932,8 @@ between Python versions), and pipenv (a great packaging tool by the same
 author as the popular `requests` library, built on top of pip and
 virtualenv).
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
+^[9]
+
 Note that Jupyter can handle multiple versions of Python, and even many
 other languages such as R or Octave.
 

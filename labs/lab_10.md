@@ -2625,43 +2625,52 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[1]
+
 You can get the best of both worlds by being open to biological
 inspirations without being afraid to create biologically unrealistic
 models, as long as they work well.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[2]
+
 Warren S. McCulloch and Walter Pitts, "A Logical Calculus of the Ideas
 Immanent in Nervous Activity," *The Bulletin of Mathematical Biology* 5,
 no. 4 (1943): 115--113.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[3]
+
 They are not actually attached, just so close that they can very quickly
 exchange chemical signals.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[4]
+
 Image by Bruce Blaus ([Creative Commons
 3.0](https://creativecommons.org/licenses/by/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Neuron*](https://en.wikipedia.org/wiki/Neuron).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[5]
+
 In the context of Machine Learning, the phrase "neural networks"
 generally refers to ANNs, not BNNs.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[6]
+
 Drawing of a cortical lamination by S. Ramon y Cajal (public domain).
 Reproduced from
 [*https://en.wikipedia.org/wiki/Cerebral\_cortex*](https://en.wikipedia.org/wiki/Cerebral_cortex).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[7]
+
 The name *Perceptron* is sometimes used to mean a tiny network with a
 single TLU.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[8]
+
 Note that this solution is not unique: when data points are linearly
 separable, there is an infinity of hyperplanes that can separate them.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
+^[9]
+
 In the 1990s, an ANN with more than two hidden layers was considered
 deep. Nowadays, it is common to see ANNs with dozens of layers, or even
 hundreds, so the definition of "deep" is quite fuzzy.

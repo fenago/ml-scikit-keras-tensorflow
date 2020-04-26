@@ -2893,25 +2893,30 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[1]
+
 For more details, be sure to check out Richard Sutton and Andrew Barto's
 course on RL, [*Reinforcement Learning: An
 Introduction*](https://homl.info/126) (MIT Press).
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[2]
+
 Volodymyr Mnih et al., "Playing Atari with Deep Reinforcement Learning,"
 arXiv preprint arXiv:1312.5602 (2013).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[3]
+
 Volodymyr Mnih et al., "Human-Level Control Through Deep Reinforcement
 Learning," *Nature* 518 (2015): 529--533.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[4]
+
 Check out the videos of DeepMind's system learning to play *Space
 Invaders*, *Breakout*, and other video games at
 [*https://homl.info/dqn3*](https://homl.info/dqn3).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[5]
+
 Image (a) is from NASA (public domain). (b) is a screenshot from the
 *Ms. Pac-Man* game, copyright Atari (fair use in this lab). Images
 (c) and (d) are reproduced from Wikipedia. (c) was created by user
@@ -2920,22 +2925,26 @@ Stevertigo and released under [Creative Commons BY-SA
 public domain. (e) was reproduced from Pixabay, released under [Creative
 Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[6]
+
 It is often better to give the poor performers a slight chance of
 survival, to preserve some diversity in the "gene pool."
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[7]
+
 If there is a single parent, this is called *asexual reproduction*. With
 two (or more) parents, it is called *sexual reproduction*. An
 offspring's genome (in this case a set of policy parameters) is randomly
 composed of parts of its parents' genomes.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[8]
+
 One interesting example of a genetic algorithm used for Reinforcement
 Learning is the [*NeuroEvolution of Augmenting
 Topologies*](https://homl.info/neat) (NEAT) algorithm.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
+^[9]
+
 This is called *Gradient Ascent*. It's just like Gradient Descent but in
 the opposite direction: maximizing instead of minimizing.
 

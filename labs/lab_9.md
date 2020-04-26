@@ -2026,36 +2026,44 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[1]
+
 Stuart P. Lloyd, "Least Squares Quantization in PCM," *IEEE Transactions
 on Information Theory* 28, no. 2 (1982): 129--137.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[2]
+
 That's because the mean squared distance between the instances and their
 closest centroid can only go down at each step.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[3]
+
 David Arthur and Sergei Vassilvitskii, "k-Means++: The Advantages of
 Careful Seeding," *Proceedings of the 18th Annual ACM-SIAM Symposium on
 Discrete Algorithms* (2007): 1027--1035.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[4]
+
 Charles Elkan, "Using the Triangle Inequality to Accelerate k-Means,"
 *Proceedings of the 20th International Conference on Machine Learning*
 (2003): 147--153.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[5]
+
 The triangle inequality is AC ≤ AB + BC where A, B and C are three
 points and AB, AC, and BC are the distances between these points.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[6]
+
 David Sculley, "Web-Scale K-Means Clustering," *Proceedings of the 19th
 International Conference on World Wide Web* (2010): 1177--1178.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[7]
+
 Phi (*ϕ* or *φ*) is the 21st letter of the Greek alphabet.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
+^[8]
+
 Most of these notations are standard, but a few additional notations
 were taken from the Wikipedia article on [plate
 notation](https://en.wikipedia.org/wiki/Plate_notation).

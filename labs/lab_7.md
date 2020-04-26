@@ -991,39 +991,48 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[1]
+
 Leo Breiman, "Bagging Predictors," *Machine Learning* 24, no. 2 (1996):
 123--140.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[2]
+
 In statistics, resampling with replacement is called *bootstrapping*.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[3]
+
 Leo Breiman, "Pasting Small Votes for Classification in Large Databases
 and On-Line," *Machine Learning* 36, no. 1--2 (1999): 85--103.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[4]
+
 Bias and variance were introduced in
 [Lab 4]
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[5]
+
 `max_samples` can alternatively be set to a float between 0.0 and 1.0,
 in which case the max number of instances to sample is equal to the size
 of the training set times `max_samples`.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[6]
+
 As *m* grows, this ratio approaches 1 -- exp(--1) ≈ 63.212%.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[7]
+
 Gilles Louppe and Pierre Geurts, "Ensembles on Random Patches," *Lecture
 Notes in Computer Science* 7523 (2012): 346--361.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[8]
+
 Tin Kam Ho, "The Random Subspace Method for Constructing Decision
 Forests," *IEEE Transactions on Pattern Analysis and Machine
 Intelligence* 20, no. 8 (1998): 832--844.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)
+^[9]
+
 Tin Kam Ho, "Random Decision Forests," *Proceedings of the Third
 International Conference on Document Analysis and Recognition* 1 (1995):
 278.

@@ -974,50 +974,59 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[1]
+
 Well, four dimensions if you count time, and a few more if you are a
 string theorist.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[2]
+
 Watch a rotating tesseract projected into 3D space at
 [*https://homl.info/30*](https://homl.info/30). Image by Wikipedia user
 NerdBoy1392 ([Creative Commons BY-SA
 3.0](https://creativecommons.org/licenses/by-sa/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Tesseract*](https://en.wikipedia.org/wiki/Tesseract).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[3]
+
 Fun fact: anyone you know is probably an extremist in at least one
 dimension (e.g., how much sugar they put in their coffee), if you
 consider enough dimensions.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[4]
+
 Karl Pearson, "On Lines and Planes of Closest Fit to Systems of Points
 in Space," *The London, Edinburgh, and Dublin Philosophical Magazine and
 Journal of Science* 2, no. 11 (1901): 559-572,
 [*https://homl.info/pca*](https://homl.info/pca).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[5]
+
 Scikit-Learn uses the algorithm described in David A. Ross et al.,
 "Incremental Learning for Robust Visual Tracking," *International
 Journal of Computer Vision* 77, no. 1--3 (2008): 125--141.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[6]
+
 Bernhard Schölkopf et al., "Kernel Principal Component Analysis," in
 *Lecture Notes in Computer Science* 1327 (Berlin: Springer, 1997):
 583--588.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[7]
+
 If you set `fit_inverse_transform=True`, Scikit-Learn will use the
 algorithm (based on Kernel Ridge Regression) described in Gokhan H.
 Bakır et al., ["Learning to Find Pre-Images"](https://homl.info/34),
 *Proceedings of the 16th International Conference on Neural Information
 Processing Systems* (2004): 449--456.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[8]
+
 Sam T. Roweis and Lawrence K. Saul, "Nonlinear Dimensionality Reduction
 by Locally Linear Embedding," *Science* 290, no. 5500 (2000):
 2323--2326.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker)
+^[9]
+
 The geodesic distance between two nodes in a graph is the number of
 nodes on the shortest path between these nodes.

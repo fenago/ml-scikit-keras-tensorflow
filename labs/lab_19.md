@@ -2440,19 +2440,22 @@ ML application that will benefit all of us! What will it be?
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[1]
+
 An A/B experiment consists in testing two different versions of your
 product on different subsets of users in order to check which version
 works best and get other insights.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[2]
+
 A REST (or RESTful) API is an API that uses standard HTTP verbs, such as
 GET, POST, PUT, and DELETE, and uses JSON inputs and outputs. The gRPC
 protocol is more complex but more efficient. Data is exchanged using
 protocol buffers (see
 [Lab 13]
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[3]
+
 If you are not familiar with Docker, it allows you to easily download a
 set of applications packaged in a *Docker image* (including all their
 dependencies and usually some good default configuration) and then run
@@ -2464,35 +2467,41 @@ more lightweight, as the container relies directly on the host's kernel.
 This means that the image does not need to include or run its own
 kernel.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[4]
+
 To be fair, this can be mitigated by serializing the data first and
 encoding it to Base64 before creating the REST request. Moreover, REST
 requests can be compressed using gzip, which reduces the payload size
 significantly.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[5]
+
 If the SavedModel contains some example instances in the *assets/extra*
 directory, you can configure TF Serving to execute the model on these
 instances before starting to serve new requests with it. This is called
 *model warmup*: it will ensure that everything is properly loaded,
 avoiding long response times for the first requests.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[6]
+
 At the time of this writing, TensorFlow version 2 is not available yet
 on AI Platform, but that's OK: you can use 1.13, and it will run your
 TF 2 SavedModels just fine.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[7]
+
 If you get an error saying that module `google.appengine` was not found,
 set `cache_discovery=False` in the call to the `build()` method; see
 [*https://stackoverflow.com/q/55561354*](https://stackoverflow.com/q/55561354).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[8]
+
 Also check out TensorFlow's [Graph Transform
 Tool](https://homl.info/tfgtt) for modifying and optimizing
 computational graphs.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
+^[9]
+
 If you're interested in this topic, check out [*federated
 learning*](https://tensorflow.org/federated).
 

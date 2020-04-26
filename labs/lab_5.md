@@ -1007,37 +1007,44 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[1]
+
 Chih-Jen Lin et al., "A Dual Coordinate Descent Method for Large-Scale
 Linear SVM," *Proceedings of the 25th International Conference on
 Machine Learning* (2008): 408--415.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[2]
+
 John Platt, "Sequential Minimal Optimization: A Fast Algorithm for
 Training Support Vector Machines" (Microsoft Research technical report,
 April 21, 1998),
 [*https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf*](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[3]
+
 More generally, when there are *n* features, the decision function is an
 *n*-dimensional *hyperplane*, and the decision
 boundary is an (*n* -- 1)-dimensional hyperplane.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[4]
+
 Zeta (*ζ*) is the sixth letter of the Greek alphabet.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[5]
+
 To learn more about Quadratic Programming, you can start by reading
 Stephen Boyd and Lieven Vandenberghe's course [*Convex
 Optimization*](https://homl.info/15) (Cambridge University Press, 2004)
 or watch Richard Brown's [series of video
 lectures](https://homl.info/16).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[6]
+
 The objective function is convex, and the inequality constraints are
 continuously differentiable and convex functions.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[7]
+
 As explained in
 [Lab 4]
 the dot product of two vectors **a** and **b** is normally noted **a** ·
@@ -1047,11 +1054,13 @@ achieved by computing **a**^⊺^**b**. To remain consistent with the rest
 of the course, we will use this notation here, ignoring the fact that this
 technically results in a single-cell matrix rather than a scalar value.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[8]
+
 Gert Cauwenberghs and Tomaso Poggio, "Incremental and Decremental
 Support Vector Machine Learning," *Proceedings of the 13th International
 Conference on Neural Information Processing Systems* (2000): 388--394.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker)
+^[9]
+
 Antoine Bordes et al., "Fast Kernel Classifiers with Online and Active
 Learning," *Journal of Machine Learning Research* 6 (2005): 1579--1619.

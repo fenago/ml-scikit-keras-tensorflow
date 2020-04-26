@@ -1839,46 +1839,55 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[1]
+
 William G. Chase and Herbert A. Simon, "Perception in Chess," *Cognitive
 Psychology* 4, no. 1 (1973): 55--81.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[2]
+
 You might be tempted to use the accuracy metric, but it would not work
 properly, since this metric expects the labels to be either 0 or 1 for
 each pixel. You can easily work around this problem by creating a custom
 metric that computes the accuracy after rounding the targets and
 predictions to 0 or 1.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[3]
+
 Yoshua Bengio et al., "Greedy Layer-Wise Training of Deep Networks,"
 *Proceedings of the 19th International Conference on Neural Information
 Processing Systems* (2006): 153--160.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[4]
+
 Jonathan Masci et al., "Stacked Convolutional Auto-Encoders for
 Hierarchical Feature Extraction," *Proceedings of the 21st International
 Conference on Artificial Neural Networks* 1 (2011): 52--59.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[5]
+
 Pascal Vincent et al., "Extracting and Composing Robust Features with
 Denoising Autoencoders," *Proceedings of the 25th International
 Conference on Machine Learning* (2008): 1096--1103.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[6]
+
 Pascal Vincent et al., "Stacked Denoising Autoencoders: Learning Useful
 Representations in a Deep Network with a Local Denoising Criterion,"
 *Journal of Machine Learning Research* 11 (2010): 3371--3408.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[7]
+
 Diederik Kingma and Max Welling, "Auto-Encoding Variational Bayes,"
 arXiv preprint arXiv:1312.6114 (2013).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[8]
+
 Variational autoencoders are actually more general; the codings are not
 limited to Gaussian distributions.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
+^[9]
+
 For more mathematical details, check out the original paper on
 variational autoencoders, or Carl Doersch's [great
 tutorial](https://homl.info/116) (2016).

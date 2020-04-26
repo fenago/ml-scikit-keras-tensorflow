@@ -2271,13 +2271,15 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[1]
+
 Xavier Glorot and Yoshua Bengio, "Understanding the Difficulty of
 Training Deep Feedforward Neural Networks," *Proceedings of the 13th
 International Conference on Artificial Intelligence and Statistics*
 (2010): 249--256.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[2]
+
 Here's an analogy: if you set a microphone amplifier's knob too close to
 zero, people won't hear your voice, but if you set it too close to the
 max, your voice will be saturated and people won't understand what you
@@ -2286,39 +2288,46 @@ set properly in order for your voice to come out loud and clear at the
 end of the chain. Your voice has to come out of each amplifier at the
 same amplitude as it came in.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[3]
+
 E.g., Kaiming He et al., "Delving Deep into Rectifiers: Surpassing
 Human-Level Performance on ImageNet Classification," *Proceedings of the
 2015 IEEE International Conference on Computer Vision* (2015):
 1026--1034.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[4]
+
 Unless it is part of the first hidden layer, a dead neuron may sometimes
 come back to life: Gradient Descent may indeed tweak neurons in the
 layers below in such a way that the weighted sum of the dead neuron's
 inputs is positive again.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[5]
+
 Bing Xu et al., "Empirical Evaluation of Rectified Activations in
 Convolutional Network," arXiv preprint arXiv:1505.00853 (2015).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[6]
+
 Djork-Arné Clevert et al., "Fast and Accurate Deep Network Learning by
 Exponential Linear Units (ELUs)," *Proceedings of the International
 Conference on Learning Representations* (2016).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[7]
+
 Günter Klambauer et al., "Self-Normalizing Neural Networks,"
 *Proceedings of the 31st International Conference on Neural Information
 Processing Systems* (2017): 972--981.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[8]
+
 Sergey Ioffe and Christian Szegedy, "Batch Normalization: Accelerating
 Deep Network Training by Reducing Internal Covariate Shift,"
 *Proceedings of the 32nd International Conference on Machine Learning*
 (2015): 448--456.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
+^[9]
+
 However, they are estimated during training, based on the training data,
 so arguably they *are* trainable. In Keras, "non-trainable" really means
 "untouched by backpropagation."

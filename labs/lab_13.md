@@ -1704,7 +1704,8 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[1]
+
 Imagine a sorted deck of cards on your left: suppose you just take the
 top three cards and shuffle them, then pick one randomly and put it to
 your right, keeping the other two in your hands. Take another card on
@@ -1713,37 +1714,44 @@ randomly, and put it on your right. When you are done going through all
 the cards like this, you will have a deck of cards on your right: do you
 think it will be perfectly shuffled?
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[2]
+
 In general, just prefetching one batch is fine, but in some cases you
 may need to prefetch a few more. Alternatively, you can let TensorFlow
 decide automatically by passing `tf.data.experimental.AUTOTUNE` (this is
 an experimental feature for now).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[3]
+
 But check out the `tf.data.experimental.prefetch_to_device()` function,
 which can prefetch data directly to the GPU.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[4]
+
 Support for datasets is specific to tf.keras; this will not work in
 other implementations of the Keras API.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[5]
+
 The `fit()` method will take care of repeating the training dataset.
 Alternatively, you could call `repeat()` on the training dataset so that
 it repeats forever and specify the `steps_per_epoch` argument when
 calling the `fit()` method. This may be useful in some rare cases, for
 example if you want to use a shuffle buffer that crosses over epochs.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[6]
+
 Since protobuf objects are meant to be serialized and transmitted, they
 are called *messages*.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[7]
+
 This lab contains the bare minimum you need to know about protobufs
 to use TFRecords. To learn more about protobufs, please visit
 [*https://homl.info/protobuf*](https://homl.info/protobuf).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[8]
+
 Why was `Example` even defined, since it contains no more than a
 `Features` object? Well, TensorFlow's developers may one day decide to
 add more fields to it. As long as the new `Example` definition still
@@ -1751,7 +1759,8 @@ contains the `features` field, with the same ID, it will be backward
 compatible. This extensibility is one of the great features of
 protobufs.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
+^[9]
+
 Tomas Mikolov et al., "Distributed Representations of Words and Phrases
 and Their Compositionality," *Proceedings of the 26th International
 Conference on Neural Information Processing Systems* 2 (2013):

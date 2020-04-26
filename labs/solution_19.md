@@ -132,20 +132,24 @@ notebooks available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
+^[1]
+
 If you draw a straight line between any two points on the curve, the
 line never crosses the curve.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
+^[2]
+
 log~2~ is the binary log; log~2~(*m*) = log(*m*) / log(2).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
+^[3]
+
 When the values to predict can vary by many orders of magnitude, you may
 want to predict the logarithm of the target value rather than the target
 value directly. Simply computing the exponential of the neural network's
 output will give you the estimated value (since exp(log *v*) = *v*).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
+^[4]
+
 In
 [Lab 11]
 we discuss many techniques that introduce additional hyperparameters:

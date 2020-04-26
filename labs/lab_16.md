@@ -1983,18 +1983,21 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[1]
+
 Alan Turing, "Computing Machinery and Intelligence," *Mind* 49 (1950):
 433--460.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[2]
+
 Of course, the word *chatbot* came much later. Turing called his test
 the *imitation game*: machine A and human B chat with human interrogator
 C via text messages; the interrogator asks questions to figure out which
 one is the machine (A or B). The machine passes the test if it can fool
 the interrogator, while the human B must try to help the interrogator.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[3]
+
 By definition, a stationary time series's mean, variance, and
 *autocorrelations* (i.e., correlations between values in the time series
 separated by a given interval) do not change over time. This is quite
@@ -2002,32 +2005,38 @@ restrictive; for example, it excludes time series with trends or
 cyclical patterns. RNNs are more tolerant in that they can learn trends
 and cyclical patterns.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[4]
+
 Taku Kudo, "Subword Regularization: Improving Neural Network Translation
 Models with Multiple Subword Candidates," arXiv preprint
 arXiv:1804.10959 (2018).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[5]
+
 Taku Kudo and John Richardson, "SentencePiece: A Simple and Language
 Independent Subword Tokenizer and Detokenizer for Neural Text
 Processing," arXiv preprint arXiv:1808.06226 (2018).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[6]
+
 Rico Sennrich et al., "Neural Machine Translation of Rare Words with
 Subword Units," *Proceedings of the 54th Annual Meeting of the
 Association for Computational Linguistics* 1 (2016): 1715--1725.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[7]
+
 Yonghui Wu et al., "Google's Neural Machine Translation System: Bridging
 the Gap Between Human and Machine Translation," arXiv preprint
 arXiv:1609.08144 (2016).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[8]
+
 Their ID is 0 only because they are the most frequent "words" in the
 dataset. It would probably be a good idea to ensure that the padding
 tokens are always encoded as 0, even if they are not the most frequent.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)
+^[9]
+
 To be precise, the sentence embedding is equal to the mean word
 embedding multiplied by the square root of the number of words in the
 sentence. This compensates for the fact that the mean of *n* vectors

@@ -1390,26 +1390,31 @@ available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
+^[1]
+
 By default Scikit-Learn caches downloaded datasets in a directory called
 *\$HOME/scikit\_learn\_data*.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
+^[2]
+
 Shuffling may be a bad idea in some contexts---for example, if you are
 working on time series data (such as stock market prices or weather
 conditions). We will explore this in the next labs.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
+^[3]
+
 But remember that our brain is a fantastic pattern recognition system,
 and our visual system does a lot of complex preprocessing before any
 information reaches our consciousness, so the fact that it feels simple
 does not mean that it is.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
+^[4]
+
 Scikit-Learn offers a few other averaging options and multilabel
 classifier metrics; see the documentation for more details.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
+^[5]
+
 You can use the `shift()` function from the
 `scipy.ndimage.interpolation` module. For example,
 `shift(image, [2, 1], cval=0)` shifts the image two pixels down and one

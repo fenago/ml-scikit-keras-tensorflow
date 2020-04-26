@@ -378,6 +378,7 @@ queue by another thread.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html-marker)
+^[1]
+
 If you are not familiar with Unicode code points, please check out
 [*https://homl.info/unicode*](https://homl.info/unicode).

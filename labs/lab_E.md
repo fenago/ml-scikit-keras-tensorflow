@@ -359,20 +359,24 @@ inputs.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
+^[1]
+
 Miguel Á. Carreira-Perpiñán and Geoffrey E. Hinton, "On Contrastive
 Divergence Learning," *Proceedings of the 10th International Workshop on
 Artificial Intelligence and Statistics* (2005): 59--66.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
+^[2]
+
 Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
+^[3]
+
 See this video by Geoffrey Hinton for more details and a demo:
 [*https://homl.info/137*](https://homl.info/137).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
+^[4]
+
 You can imagine a class of young children with roughly similar skills.
 One child happens to be slightly better at basketball. This motivates
 them to practice more, especially with their friends. After a while,

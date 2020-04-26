@@ -2031,42 +2031,51 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[1]
+
 TensorFlow includes another Deep Learning API called the *Estimators
 API*, but the TensorFlow team recommends using `tf.keras` instead.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[2]
+
 If you ever need to (but you probably won't), you can write your own
 operations using the C++ API.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[3]
+
 To learn more about TPUs and how they work, check out
 [*https://homl.info/tpus*](https://homl.info/tpus).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[4]
+
 A notable exception is `tf.math.log()`, which is commonly used but
 doesn't have a `tf.log()` alias (as it might be confused with logging).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[5]
+
 It would not be a good idea to use a weighted mean: if you did, then two
 instances with the same weight but in different batches would have a
 different impact on training, depending on the total weight of each
 batch.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[6]
+
 However, the Huber loss is seldom used as a metric (the MAE or MSE is
 preferred).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[7]
+
 This class is for illustration purposes only. A simpler and better
 implementation would just subclass the `keras.metrics.Mean` class; see
 the "Streaming metrics" section of the notebook for an example.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[8]
+
 This function is specific to tf.keras. You could use
 `keras.layers.Activation` instead.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)
+^[9]
+
 The Keras API calls this argument `input_shape`, but since it also
 includes the batch dimension, I prefer to call it `batch_input_shape`.
 Same for `compute_output_shape()`.

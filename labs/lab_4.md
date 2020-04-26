@@ -1927,7 +1927,8 @@ Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[1]
+
 It is often the case that a learning algorithm will try to optimize a
 different function than the performance measure used to evaluate the
 final model. This is generally because that function is easier to
@@ -1935,34 +1936,42 @@ compute, because it has useful differentiation properties that the
 performance measure lacks, or because we want to constrain the model
 during training, as you will see when we discuss regularization.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[2]
+
 Note that Scikit-Learn separates the bias term (`intercept_`) from the
 feature weights (`coef_`).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[3]
+
 Technically speaking, its derivative is *Lipschitz continuous*.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[4]
+
 Since feature 1 is smaller, it takes a larger change in *θ*~1~ to affect
 the cost function, which is why the bowl is elongated along the *θ*~1~
 axis.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[5]
+
 Eta (*η*) is the seventh letter of the Greek alphabet.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[6]
+
 While the Normal Equation can only perform Linear Regression, the
 Gradient Descent algorithms can be used to train many other models, as
 we will see.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[7]
+
 A quadratic equation is of the form *y* = *ax*^2^ + *bx* + *c*.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[8]
+
 This notion of bias is not to be confused with the bias term of linear
 models.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)
+^[9]
+
 It is common to use the notation *J*(**θ**) for cost functions that
 don't have a short name; we will often use this notation throughout the
 rest of this course. The context will make it clear which cost function is
