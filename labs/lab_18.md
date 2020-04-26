@@ -514,7 +514,7 @@ ready to train our first agent using policy gradients. Let's see how.
 Policy Gradients
 ================
 
-As []{#RLpolgrad18} []{#polgrad18} []{}
+As 
 discussed earlier, PG algorithms optimize the parameters of a policy by
 following the gradients toward higher rewards. One popular class of PG
 algorithms, called *REINFORCE algorithms*, was [introduced back in
@@ -1063,7 +1063,7 @@ plus the rewards it expects to get later (assuming it acts optimally).
 Q-Learning
 ==========
 
-Similarly, the Q-Learning algorithm []{#RLqlearn18}
+Similarly, the Q-Learning algorithm 
 is an adaptation of the Q-Value Iteration algorithm to the situation
 where the transition probabilities and the rewards are initially unknown
 (see [Equation
@@ -1203,7 +1203,7 @@ In this equation:
 Approximate Q-Learning and Deep Q-Learning
 ------------------------------------------
 
-The []{#RLdeep18}
+The 
 main problem with Q-Learning is that it does not scale well to large (or
 even medium) MDPs with many states and actions. For example, suppose you
 wanted to use Q-Learning to train an agent to play *Ms. Pac-Man* (see

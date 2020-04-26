@@ -415,7 +415,7 @@ that this network indeed solves the XOR problem! []{}
 The Multilayer Perceptron and Backpropagation
 ---------------------------------------------
 
-An []{#MLPback10} []{#back10} []{}
+An 
 MLP is composed of one (passthrough) *input layer*, one or more layers
 of TLUs, called *hidden layers*, and one final layer of TLUs called the
 *output layer* (see
@@ -855,7 +855,7 @@ Building an Image Classifier Using the Sequential API
 -----------------------------------------------------
 
 First,
-we []{#SAPIimage10} []{#ICsequen10} []{#CPimage10} []{}
+we 
 need to load a dataset. In this lab we will tackle Fashion MNIST,
 which is a drop-in replacement of MNIST (introduced in
 [Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
@@ -1480,7 +1480,7 @@ Functional API.
 Building Complex Models Using the Functional API
 ------------------------------------------------
 
-One []{#FAPIcomplex10} []{#Mcomplex1} []{}
+One 
 example of a nonsequential neural network is a *Wide & Deep* neural
 network. This neural network architecture was introduced in a [2016
 paper](https://homl.info/widedeep) by Heng-Tze Cheng et

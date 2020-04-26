@@ -1649,7 +1649,7 @@ GPUs? []{}
 Training Models Across Multiple Devices
 =======================================
 
-There []{#Mmultiple19} []{#TFscalemulti19} []{}
+There 
 are two main approaches to training a single model across multiple
 devices: *model parallelism*, where the model is split across the
 devices, and *data parallelism*, where the model is replicated across

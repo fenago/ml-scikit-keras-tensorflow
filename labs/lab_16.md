@@ -66,7 +66,7 @@ Let's start with a simple and fun model that can write like Shakespeare
 Generating Shakespearean Text Using a Character RNN
 ===================================================
 
-In []{#NLPtext16} []{#RNNtext16}
+In 
 a famous [2015 blog post](https://homl.info/charrnn) titled "The
 Unreasonable Effectiveness of Recurrent Neural Networks," Andrej
 Karpathy showed how to train an RNN to predict the next character in a
@@ -567,7 +567,7 @@ masking. []{}
 Sentiment Analysis
 ==================
 
-If []{#NLPsent16} []{}
+If 
 MNIST is the "hello world" of computer vision, then the IMDb reviews
 dataset is the "hello world" of natural language processing: it consists
 of 50,000 movie reviews in English (25,000 for training, 25,000 for
@@ -992,7 +992,7 @@ architecture. []{}
 An Encoder--Decoder Network for Neural Machine Translation
 ==========================================================
 
-Let's []{#NMT16} []{#NLPenddec16} []{#enddecmod16}
+Let's 
 take a look at a simple [neural machine translation
 model](https://homl.info/103)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 that will translate English sentences to French (see

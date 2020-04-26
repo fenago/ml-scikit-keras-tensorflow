@@ -1426,7 +1426,7 @@ scratch. []{}
 Logistic Regression
 ===================
 
-As []{#RPlogistic04} []{#TMlogreg04} []{}
+As 
 we discussed in
 [Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab),
 some regression algorithms can be used for classification (and vice
@@ -1680,7 +1680,7 @@ linear models), but its inverse: `C`. The higher the value of `C`, the
 Softmax Regression
 ------------------
 
-The []{#RPsoft04} []{}
+The 
 Logistic Regression model can be generalized to support multiple classes
 directly, without having to train and combine multiple binary
 classifiers (as discussed in

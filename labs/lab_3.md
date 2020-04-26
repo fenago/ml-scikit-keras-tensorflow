@@ -393,7 +393,7 @@ A trivial way to have perfect precision is to make one single positive
 prediction and ensure it is correct (precision = 1/1 = 100%). But this
 would not be very useful, since the classifier would ignore all but one
 positive instance.
-So []{#Mrecall03} []{#recall03} []{}
+So 
 precision is typically used along with another metric named *recall*,
 also called *sensitivity* or the *true positive rate* (TPR): this is the
 ratio of positive instances that are correctly detected by the

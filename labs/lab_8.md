@@ -233,7 +233,7 @@ through some of the most popular algorithms. []{}
 PCA
 ===
 
-*Principal Component Analysis* (PCA) []{#DRpca08} []{}
+*Principal Component Analysis* (PCA) 
 is by far the most popular dimensionality reduction algorithm. First it
 identifies the hyperplane that lies closest to the data, and then it
 projects the data onto it, just like in
