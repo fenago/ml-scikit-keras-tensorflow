@@ -16,7 +16,7 @@ services:
         max-size: 50m
     ports:
       - "8888:8888"
-      - "6006:6006"
+      - "8080:8080"
     volumes:
       - ../:/home/devel/handson-ml2
     command: /opt/conda/envs/tf2/bin/jupyter notebook --ip='0.0.0.0' --port=8888 --no-browser

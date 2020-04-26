@@ -1990,8 +1990,8 @@ the root of the project (or from anywhere else, as long as you point to
 the appropriate log directory):
 
 ``` {data-type="programlisting" code-language="shell-session"}
-$ tensorboard --logdir=./my_logs --port=6006
-TensorBoard 2.0.0 at http://mycomputer.local:6006/ (Press CTRL+C to quit)
+$ tensorboard --bind_all  --logdir=./my_logs --port=8080
+TensorBoard 2.0.0 at http://mycomputer.local:8080/ (Press CTRL+C to quit)
 ```
 
 If your shell cannot find the *tensorboard* script, then you must update
@@ -1999,16 +1999,16 @@ your `PATH` environment variable so that it contains the directory in
 which the script was installed (alternatively, you can just replace
 `tensorboard` in the command line with `python3 -m tensorboard.main`).
 Once the server is up, you can open a web browser and go to
-[*http://localhost:6006*](http://localhost:6006/).
+[*http://localhost:8080*](http://localhost:8080/).
 
 Alternatively, you can use TensorBoard directly within Jupyter, by
 running the following commands. The first line loads the TensorBoard
-extension, and the second line starts a TensorBoard server on port 6006
+extension, and the second line starts a TensorBoard server on port 8080
 (unless it is already started) and connects to it:
 
 ``` {data-type="programlisting" code-language="python"}
 %load_ext tensorboard
-%tensorboard --logdir=./my_logs --port=6006
+%tensorboard --bind_all  --logdir=./my_logs --port=8080
 ```
 
 Either way, you should see TensorBoard's web interface. Click the
