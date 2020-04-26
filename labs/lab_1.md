@@ -9,10 +9,10 @@ When most people hear "Machine Learning," they
 picture a robot: a dependable butler or a deadly Terminator, depending
 on who you ask. But Machine Learning is not just a futuristic fantasy;
 it's already here. In fact, it has been around for decades in some
-specialized applications,  []{}such as Optical
+specialized applications,  such as Optical
 Character Recognition (OCR). But the first ML application that really
 became mainstream, improving the lives of hundreds of millions of
-people, took over the world back in the 1990s:  []{}the
+people, took over the world back in the 1990s:  the
 *spam filter*. It's not exactly a self-aware Skynet, but it does
 technically qualify as Machine Learning (it has actually learned so well
 that you seldom need to flag an email as spam anymore). It was followed
@@ -46,7 +46,7 @@ started!
 
 If you already know all the Machine Learning basics, you may want to
 skip directly to
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
+[Lab 2]
 If you are not sure, try to answer all the questions listed at the end
 of the lab before moving on.
 
@@ -99,7 +99,7 @@ Why Use Machine Learning?
 
 Consider how you would write
 a spam filter using traditional programming techniques
-([Figure 1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#traditional_approach_diagram)):
+([Figure 1-1]
 
 1.  First you would consider what spam typically looks like. You might
     notice that some words or phrases (such as "4U," "credit card,"
@@ -123,7 +123,7 @@ In contrast, a spam filter based on Machine Learning techniques
 automatically learns which words and phrases are good predictors of spam
 by detecting unusually frequent patterns of words in the spam examples
 compared to the ham examples
-([Figure 1-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#ml_approach_diagram)).
+([Figure 1-2]
 The program is much shorter, easier to maintain, and most likely more
 accurate.
 
@@ -136,7 +136,7 @@ need to keep writing new rules forever.
 In contrast, a spam filter based on Machine Learning techniques
 automatically notices that "For U" has become unusually frequent in spam
 flagged by users, and it starts flagging them without your intervention
-([Figure 1-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#adapting_to_change_diagram)).
+([Figure 1-3]
 
 ![](./images/mls2_0102.png)
 
@@ -155,7 +155,7 @@ languages. The best solution (at least today) is to write an algorithm
 that learns by itself, given many example recordings for each word.
 
 Finally, Machine Learning can help humans learn
-([Figure 1-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#data_mining_diagram)).
+([Figure 1-4]
 ML algorithms can be inspected to see what they have learned (although
 for some algorithms this can be tricky). For instance, once a spam
 filter has been trained on enough spam, it can easily be inspected to
@@ -196,7 +196,7 @@ Analyzing images of products on a production line to automatically classify them
 
 :   This is image classification, typically performed using
     convolutional neural networks (CNNs; see
-    [Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
+    [Lab 14]
 
 Detecting tumors in brain scans
 
@@ -209,7 +209,7 @@ Automatically classifying news articles
 :   This is natural language processing (NLP), and more specifically
     text classification, which can be tackled using recurrent neural
     networks (RNNs), CNNs, or Transformers (see
-    [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
+    [Lab 16]
 
 Automatically flagging offensive comments on discussion forums
 
@@ -230,51 +230,51 @@ Forecasting your company's revenue next year, based on many performance metrics
 :   This is a regression task (i.e., predicting values) that may be
     tackled using any regression model, such as a Linear Regression or
     Polynomial Regression model (see
-    [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
+    [Lab 4]
     a regression SVM (see
-    [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)),
+    [Lab 5]
     a regression Random Forest (see
-    [Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
+    [Lab 7]
     or an artificial neural network (see
-    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)).
+    [Lab 10]
     If you want to take into account sequences of past performance
     metrics, you may want to use RNNs, CNNs, or Transformers (see
     Labs
-    [15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)
+    [15]
     and
-    [16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
+    [16]
 
 Making your app react to voice commands
 
 :   This is speech recognition, which requires processing audio samples:
     since they are long and complex sequences, they are typically
     processed using RNNs, CNNs, or Transformers (see Labs
-    [15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)
+    [15]
     and
-    [16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
+    [16]
 
 Detecting credit card fraud
 
 :   This is anomaly detection (see
-    [Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab)).
+    [Lab 9]
 
 Segmenting clients based on their purchases so that you can design a different marketing strategy for each segment
 
 :   This is clustering (see
-    [Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab)).
+    [Lab 9]
 
 Representing a complex, high-dimensional dataset in a clear and insightful diagram
 
 :   This is data visualization, often involving dimensionality reduction
     techniques (see
-    [Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)).
+    [Lab 8]
 
 Recommending a product that a client may be interested in, based on past purchases
 
 :   This is a recommender system. One approach is to feed past purchases
     (and other information about the client) to an artificial neural
     network (see
-    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
+    [Lab 10]
     and get it to output the most likely next purchase. This neural net
     would typically be trained on past sequences of purchases across all
     clients.
@@ -282,7 +282,7 @@ Recommending a product that a client may be interested in, based on past purchas
 Building an intelligent bot for a game
 
 :   This is often tackled using Reinforcement Learning (RL; see
-    [Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab)),
+    [Lab 18]
     which is a branch of Machine Learning that trains agents (such as
     bots) to pick the actions that will maximize their rewards over time
     (e.g., a bot may get a reward every time the player loses some life
@@ -337,10 +337,10 @@ learning, and Reinforcement [Learning].
 ### Supervised learning
 
 In *supervised learning*,
-the []{}
+the 
 training set you feed to the algorithm includes the desired solutions,
 called *labels*
-([Figure 1-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#supervised_learning_diagram)).
+([Figure 1-5]
 
 ![](./images/mls2_0105.png)
 
@@ -353,8 +353,7 @@ Another typical task is to predict a *target*
 numeric value, such as the price of a car, given a set of *features*
 (mileage, age, brand, etc.) called *predictors*.
 This sort of task is called *regression*
-([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-.totri-footnote}^ To train the system, you need to give it many examples
+([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) To train the system, you need to give it many examples
 of cars, including both their predictors and their labels (i.e., their
 prices).
 
@@ -401,7 +400,7 @@ learning algorithms (covered in this course):
 In *unsupervised learning*, as
 you might guess, the
 training data is unlabeled
-([Figure 1-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#unsupervised_learning_diagram)).
+([Figure 1-7]
 The system tries to learn without a teacher.
 
 ![](./images/mls2_0107.png)
@@ -410,7 +409,7 @@ Here are some of the most important unsupervised
 learning algorithms (most of these are covered in Labs
 [8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab){.totri-footnote}
 and
-[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab){.totri-footnote}):
+[9]
 
 -   Clustering
 
@@ -442,11 +441,11 @@ and
 
     -   Eclat
 
-For []{}
+For 
 example, say you have a lot of data about your blog's visitors. You may
 want to run a *clustering* algorithm to try to detect groups of similar
 visitors
-([Figure 1-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#clustering_diagram)).
+([Figure 1-8]
 At no point do you tell the algorithm which group a visitor belongs to:
 it finds those connections without your help. For example, it might
 notice that 40% of your visitors are males who love comic books and
@@ -458,11 +457,11 @@ groups. This may help you target your posts for each group.
 
 ![](./images/mls2_0108.png)
 
-*Visualization* algorithms []{}
+*Visualization* algorithms 
 are also good examples of unsupervised learning algorithms: you feed
 them a lot of complex and unlabeled data, and they output a 2D or 3D
 representation of your data that can easily be plotted
-([Figure 1-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#socher_ganjoo_manning_ng_2013_paper)).
+([Figure 1-9]
 These algorithms try to preserve as much structure as they can (e.g.,
 trying to keep separate clusters in the input space from overlapping in
 the visualization) so that you can understand how the data is organized
@@ -496,7 +495,7 @@ another learning algorithm. The system is shown mostly normal instances
 during training, so it learns to recognize them; then, when it sees a
 new instance, it can tell whether it looks like a normal one or whether
 it is likely an anomaly (see
-[Figure 1-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#anomaly_detection_diagram)).
+[Figure 1-10]
 A very similar task is *novelty detection*: it
 aims to detect new instances that look different from all instances in
 the training set. This requires having a very "clean" training set,
@@ -527,7 +526,7 @@ Since labeling data is usually time-consuming and
 costly, you will often have plenty of unlabeled instances, and few
 labeled instances. Some algorithms can deal with data that's partially
 labeled. This is called *semisupervised learning*
-([Figure 1-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#semi_supervised_learning_diagram)).
+([Figure 1-11]
 
 ![](./images/mls2_0111.png)
 
@@ -538,8 +537,7 @@ A shows up in photos 1, 5, and 11, while another person B shows up in
 photos 2, 5, and 7. This is the unsupervised part of the algorithm
 (clustering). Now all the system needs is for you to tell it who these
 people are. Just add one label per
-person^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-.totri-footnote}^ and it is able to name everyone in every photo, which
+person^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) and it is able to name everyone in every photo, which
 is useful for searching photos.
 
 Most semisupervised learning algorithms are combinations of unsupervised
@@ -556,12 +554,12 @@ supervised learning techniques.
 ### Reinforcement Learning
 
 *Reinforcement Learning*
-is []{} []{}
+is  
 a very different beast. The learning system, called an *agent* in this
 context, can observe the environment, select and perform actions, and
 get *rewards* in return (or *penalties* in the form of negative rewards,
 as shown in
-[Figure 1-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#reinforcement_learning_diagram)).
+[Figure 1-12]
 It must then learn by itself what is the best strategy, called a
 *policy*, to get the most reward over time. A policy defines what action
 the agent should choose when it is in a given situation.
@@ -607,7 +605,7 @@ data), then stop the old system and replace it with the new one.
 
 Fortunately, the whole process of training, evaluating, and launching a
 Machine Learning system can be automated fairly easily (as shown in
-[Figure 1-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#adapting_to_change_diagram)),
+[Figure 1-3]
 so even a batch learning system can adapt to change. Simply update the
 data and train a new version of the system from scratch as often as
 needed.
@@ -643,7 +641,7 @@ incrementally by feeding it data instances sequentially, either
 individually or in small groups called
 *mini-batches*. Each learning step is fast and cheap, so the system can
 learn about new data on the fly, as it arrives (see
-[Figure 1-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#online_learning_diagram)).
+[Figure 1-13]
 
 ![](./images/mls2_0113.png)
 
@@ -660,7 +658,7 @@ train systems on huge datasets that cannot fit in one machine's main
 memory (this is called *out-of-core* learning). The algorithm loads part
 of the data, runs a training step on that data, and repeats the process
 until it has run on all of the data (see
-[Figure 1-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#ol_for_huge_datasets_diagram)).
+[Figure 1-14]
 
 
 ###### Warning
@@ -732,7 +730,7 @@ This is called *instance-based learning*: the system learns the examples
 by heart, then generalizes to new cases by using a similarity measure to
 compare them to the learned examples (or a subset of them). For example,
 in
-[Figure 1-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#instance_based_learning_diagram)
+[Figure 1-15]
 the new instance would be classified as a triangle because the majority
 of the most similar instances belong to that class.
 
@@ -746,7 +744,7 @@ of the most similar instances belong to that class.
 Another way to generalize from a set of examples
 is to build a model of these examples and then use that model to make
 *predictions*. This is called *model-based learning*
-([Figure 1-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#model_based_learning_diagram)).
+([Figure 1-16]
 
 ![](./images/mls2_0116.png)
 
@@ -755,7 +753,7 @@ makes people happy, so you download the Better Life Index data from the
 [OECD's website](https://homl.info/4) and stats about gross domestic
 product (GDP) per capita from the [IMF's website](https://homl.info/5).
 Then you join the tables and sort by GDP per capita.
-[Table 1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#life_satisfaction_table_excerpt)
+[Table 1-1]
 shows an excerpt of what you get.
 
   Country         GDP per capita (USD)   Life satisfaction
@@ -769,7 +767,7 @@ shows an excerpt of what you get.
   : [Table 1-1. ] Does money make people happier?
 
 Let's plot the data for these countries
-([Figure 1-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#money_happy_scatterplot)).
+([Figure 1-17]
 
 ![](./images/mls2_0117.png)
 
@@ -781,7 +779,7 @@ to model life satisfaction as a linear function of GDP per capita.
 This step is called *model
 selection*: you selected a *linear model* of life satisfaction with just
 one attribute, GDP per capita ([Equation
-1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#a_simple_linear_model)).
+1-1]
 
 
 ##### [Equation 1-1. ] A simple linear model
@@ -817,10 +815,9 @@ role="presentation" style="text-align: center; position: relative;"}
 
 
 This model has two *model parameters*, *θ*~0~ and
-*θ*~1~.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-.totri-footnote}^ By tweaking these parameters, you can make your model
+*θ*~1~.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) By tweaking these parameters, you can make your model
 represent any linear function, as shown in
-[Figure 1-18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#tweaking_model_params_plot).
+[Figure 1-18]
 
 ![](./images/mls2_0118.png)
 
@@ -828,7 +825,7 @@ Before you can use your model, you need to define the parameter values
 *θ*~0~ and *θ*~1~. How can you know which values will make your model
 perform best? To answer this question, you need to specify a performance
 measure. You can
-either []{}
+either 
 define a *utility function* (or *fitness function*) that measures how
 *good* your model is, or you can define a *cost function* that measures
 how *bad* it is. For Linear Regression problems, people typically use a
@@ -860,7 +857,7 @@ training data (and hopefully make good predictions on new data).
 
 Now the model fits the training data as closely as possible (for a
 linear model), as you can see in
-[Figure 1-19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#best_fit_model_plot).
+[Figure 1-19]
 
 ![](./images/mls2_0119.png)
 
@@ -872,10 +869,9 @@ apply your model and find that life satisfaction is likely to be
 somewhere around 4.85 + 22,587 × 4.91 × 10^-5^ = 5.96.
 
 To whet your appetite,
-[Example 1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#example_scikit_code)
+[Example 1-1]
 shows the Python code that loads the data, prepares
-it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-.totri-footnote}^ creates a scatterplot for visualization, and then
+it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) creates a scatterplot for visualization, and then
 trains a linear model and makes a
 prediction.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^
@@ -927,7 +923,7 @@ predicted a life satisfaction of 5.7 for Cyprus. If you zoom out a bit
 and look at the two next-closest countries, you will find Portugal and
 Spain with life satisfactions of 5.1 and 6.5, respectively. Averaging
 these three values, you get 5.77, which is pretty close to your
-model-based prediction. This []{}
+model-based prediction. This 
 simple algorithm is called *k-Nearest Neighbors* regression (in this
 example, *k* = 3).
 
@@ -969,7 +965,7 @@ In summary:
     this model will generalize well.
 
 This is what a typical Machine Learning project looks like. In
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
+[Lab 2]
 you will experience this firsthand by going through a project end to
 end.
 
@@ -977,7 +973,7 @@ We have covered a lot of ground so far: you now know what Machine
 Learning is really about, why it is useful, what some of the most common
 categories of ML systems are, and what a typical project workflow looks
 like. Now let's look at what can go wrong in learning and prevent you
-from making accurate predictions. []{}
+from making accurate predictions. 
 
 
 
@@ -1016,9 +1012,8 @@ published in 2001, Microsoft
 researchers Michele Banko and Eric Brill showed that very different
 Machine Learning algorithms, including fairly simple ones, performed
 almost identically well on a complex problem of natural language
-disambiguation^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-.totri-footnote}^ once they were given enough data (as you can see in
-[Figure 1-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#banko_brill_2001_plot)).
+disambiguation^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) once they were given enough data (as you can see in
+[Figure 1-20]
 
 ![](./images/mls2_0120.png)
 
@@ -1049,7 +1044,7 @@ model-based learning.
 For example, the set of countries we used earlier for training the
 linear model was not perfectly representative; a few countries were
 missing.
-[Figure 1-21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#representative_training_data_scatterplot)
+[Figure 1-21]
 shows what the data looks like when you add the missing countries.
 
 ![](./images/mls2_0121.png)
@@ -1171,7 +1166,7 @@ careful. In Machine Learning this is called *overfitting*: it means that
 the model performs well on the training data, but it does not generalize
 well.
 
-[Figure 1-22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#overfitting_model_plot)
+[Figure 1-22]
 shows an example of a high-degree polynomial life satisfaction model
 that strongly overfits the training data. Even though it performs much
 better on the training data than the simple linear model, would you
@@ -1229,7 +1224,7 @@ You want to find the right balance between fitting the training data
 perfectly and keeping the model simple enough to ensure that it will
 generalize well.
 
-[Figure 1-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#ridge_model_plot)
+[Figure 1-23]
 shows three models. The dotted line represents the original model that
 was trained on the countries represented as circles (without the
 countries represented as squares), the dashed line is our second model
@@ -1312,7 +1307,7 @@ little lost, so let's step back and look at the big
 There's just one last important topic to cover: once you have trained a
 model, you don't want to just "hope" it generalizes to new cases. You
 want to evaluate it and fine-tune it if necessary. Let's see how to do
-that. []{}
+that. 
 
 
 
@@ -1358,7 +1353,7 @@ Hyperparameter Tuning and Model Selection
 -----------------------------------------
 
 Evaluating a
-model []{}
+model 
 is simple enough: just use a test set. But suppose you are hesitating
 between two types of models (say, a linear model and a polynomial
 model): how can you decide between them? One option is to train both and
@@ -1379,7 +1374,7 @@ on the test set, and you adapted the model and hyperparameters to
 produce the best model *for that particular set*. This means that the
 model is unlikely to perform as well on new data.
 
-A []{}
+A 
 common solution to this problem is called *holdout validation*: you
 simply hold out part of the training set to evaluate several candidate
 models and select the best one. The new held-out set is called the
@@ -1472,7 +1467,7 @@ assumptions about the data and evaluate only a few reasonable models.
 For example, for simple tasks you may evaluate linear models with
 various levels of regularization, and for a complex problem you may
 evaluate various neural
-networks. []{}
+networks. 
 
 
 
@@ -1534,12 +1529,11 @@ following questions:
 
 19. What can go wrong if you tune hyperparameters using the test set?
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 Fun fact: this odd-sounding name is a statistics term introduced by
 Francis Galton while he was studying the fact that the children of tall
 people tend to be shorter than their parents. Since the children were
@@ -1547,53 +1541,53 @@ shorter, he called this *regression to the mean*. This name was then
 applied to the methods he used to analyze correlations between
 variables.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 Some neural network architectures can be unsupervised, such as
 autoencoders and restricted Boltzmann machines. They can also be
 semisupervised, such as in deep belief networks and unsupervised
 pretraining.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 Notice how animals are rather well separated from vehicles and how
 horses are close to deer but far from birds. Figure reproduced with
 permission from Richard Socher et al., "Zero-Shot Learning Through
 Cross-Modal Transfer," *Proceedings of the 26th International Conference
 on Neural Information Processing Systems* 1 (2013): 935--943.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 That's when the system works perfectly. In practice it often creates a
 few clusters per person, and sometimes mixes up two people who look
 alike, so you may need to provide a few labels per person and manually
 clean up some clusters.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 By convention, the Greek letter *θ* (theta) is frequently used to
 represent model parameters.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 The `prepare_country_stats()` function's definition is not shown here
 (see this lab's Jupyter notebook if you want all the gory details).
 It's just boring pandas code that joins the life satisfaction data from
 the OECD with the GDP per capita data from the IMF.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 It's OK if you don't understand all the code yet; we will present
 Scikit-Learn in the following labs.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 For example, knowing whether to write "to," "two," or "too," depending
 on the context.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)
 Figure reproduced with permission from Michele Banko and Eric Brill,
 "Scaling to Very Very Large Corpora for Natural Language
 Disambiguation," *Proceedings of the 39th Annual Meeting of the
 Association for Computational Linguistics* (2001): 26--33.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)^
+^[10]
 Peter Norvig et al., "The Unreasonable Effectiveness of Data," *IEEE
 Intelligent Systems* 24, no. 2 (2009): 8--12.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)^
+^[11]
 David Wolpert, "The Lack of A Priori Distinctions Between Learning
 Algorithms," *Neural Computation* 8, no. 7 (1996): 1341--1390.

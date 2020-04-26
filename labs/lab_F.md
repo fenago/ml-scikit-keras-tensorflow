@@ -14,7 +14,7 @@ Strings
 
 Tensors can hold byte strings, which is useful in
 particular for natural language processing (see
-[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)):
+[Lab 16]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> tf.constant(b"hello world")
@@ -32,7 +32,7 @@ automatically encodes it to UTF-8:
 It is also possible to create tensors representing Unicode strings. Just
 create an array of 32-bit integers, each representing a single Unicode
 code
-point:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html){-marker
+point: ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -219,7 +219,7 @@ When you write to the array, you must assign the output back to the
 array, as shown in this code example. If you don't, although your code
 will work fine in eager mode, it will break in graph mode (these modes
 were presented in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
+[Lab 12]
 
 
 When creating a `TensorArray`, you must provide its `size`, except in
@@ -374,10 +374,10 @@ If a queue is already full and you try to enqueue another record, the
 `enqueue*()` method will freeze until a record is dequeued by another
 thread. Similarly, if a queue is empty and you try to dequeue a record,
 the `dequeue*()` method will freeze until records are pushed to the
-queue by another thread. []{}
+queue by another thread. 
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html-marker)
 If you are not familiar with Unicode code points, please check out
 [*https://homl.info/unicode*](https://homl.info/unicode).

@@ -53,7 +53,7 @@
     interact with the learning algorithm, providing labels for specific
     instances when the algorithm requests them. A common approach is
     uncertainty sampling (see the description in ["Active
-    Learning"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#activelearning_sb)).
+    Learning"]
 
 7.  Many people use the terms *anomaly detection* and *novelty
     detection* interchangeably, but they are not exactly the same. In

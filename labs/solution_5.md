@@ -40,7 +40,7 @@
 3.  SVMs try to fit the largest possible "street" between the classes
     (see the first answer), so if the training set is not scaled, the
     SVM will tend to neglect small features (see
-    [Figure 5-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#sensitivity_to_feature_scales_plot)).
+    [Figure 5-2]
 
 4.  An SVM classifier can output the distance between the test instance
     and the decision boundary, and you can use this as a confidence
@@ -66,7 +66,7 @@
 
 7.  Let's call the QP parameters for the hard margin problem **H**′,
     **f**′, **A**′, and **b**′ (see ["Quadratic
-    Programming"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#quadratic_programming_paragraph)).
+    Programming"]
     The QP parameters for the soft margin problem have *m* additional
     parameters (*n*~*p*~ = *n* + 1 + *m*) and *m* additional constraints
     (*n*~*c*~ = 2*m*). They can be defined like so:

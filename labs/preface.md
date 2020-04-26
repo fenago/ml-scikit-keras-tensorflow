@@ -7,15 +7,13 @@ The Machine Learning Tsunami
 ============================
 
 In 2006, Geoffrey Hinton et al. published [a
-paper](https://homl.info/136)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html){-marker
-.totri-footnote}^ showing how to train a deep neural network capable of
+paper](https://homl.info/136)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) showing how to train a deep neural network capable of
 recognizing handwritten digits with state-of-the-art precision (\>98%).
 They branded this technique "Deep Learning." A deep neural
 network is a (very) simplified model of our
 cerebral cortex, composed of a stack of layers of artificial neurons.
 Training a deep neural net was widely considered impossible at the
-time,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html){-marker
-.totri-footnote}^ and most researchers had abandoned the idea in the
+time,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) and most researchers had abandoned the idea in the
 late 1990s. This paper revived the interest of the scientific community,
 and before long many new papers demonstrated that Deep Learning was not
 only possible, but capable of mind-blowing achievements that no other
@@ -78,7 +76,7 @@ techniques that regularly win competitions.
 Rather than implementing our own toy versions of each algorithm, we will
 be using production-ready Python frameworks:
 
--   [Scikit-Learn](http://scikit-learn.org/) is []{}
+-   [Scikit-Learn](http://scikit-learn.org/) is 
     very easy to use, yet it implements many Machine Learning algorithms
     efficiently, so it makes for a great entry point to learning Machine
     Learning. It was created by David Cournapeau in 2007, and is now led
@@ -131,7 +129,7 @@ start. The official tutorial on
 [Python.org](https://docs.python.org/3/tutorial/) is also quite good.
 
 If you have never used Jupyter,
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
+[Lab 2]
 will guide you through installation and the basics: it is a powerful
 tool to have in your toolbox.
 
@@ -147,7 +145,7 @@ Roadmap
 
 This course is organized in two parts. [Part I, *The
 Fundamentals of [Machine
-Learning]*](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part01.html#fundamentals_part),
+Learning]*]
 covers the following topics:
 
 -   What Machine Learning is, what problems it tries to solve, and the
@@ -179,7 +177,7 @@ covers the following topics:
     density estimation, and anomaly detection
 
 [Part II, *Neural Networks and Deep
-Learning*](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part02.html#neural_nets_part),
+Learning*]
 covers the following topics:
 
 -   What neural nets are and what they're good for
@@ -213,7 +211,7 @@ one of the most exciting areas in Machine Learning, you should master
 the fundamentals first. Moreover, most problems can be solved quite well
 using simpler techniques such as Random Forests and Ensemble methods
 (discussed in
-[Part I](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part01.html#fundamentals_part)).
+[Part I]
 Deep Learning is best suited for complex problems such as image
 recognition, speech recognition, or natural language processing,
 provided you have enough data, computing power, and patience.
@@ -312,7 +310,7 @@ particular:
     *Learning from Data* (AMLBook) is a rather theoretical approach to
     ML that provides deep insights, in particular on the bias/variance
     trade-off (see
-    [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
+    [Lab 4]
 
 -   Stuart Russell and Peter Norvig's *Artificial Intelligence: A Modern
     Approach*, 3rd Edition (Pearson), is a great (and huge) course
@@ -529,7 +527,7 @@ Python*](https://homl.info/cholletbook) (Manning): it has the
 conciseness, clarity, and depth of the Keras library itself. Special
 thanks as well to Ankur Patel, who reviewed every lab of this second
 edition and gave me excellent feedback, in particular on
-[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab),
+[Lab 9]
 which covers unsupervised learning techniques. He could write a whole
 course on the topic... oh, wait, he did! Do check out [*Hands-On
 Unsupervised Learning Using Python: How to Build Applied Machine
@@ -557,9 +555,9 @@ tremendously helpful. Huge thanks to all of you, and to all other
 members of the TensorFlow team, not just for your help, but also for
 making such a great library! Special thanks to Irene Giannoumis and
 Robert Crowe of the TFX team for reviewing Labs
-[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)
+[13]
 and
-[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)
+[19]
 in depth.
 
 Many thanks as well to O'Reilly's fantastic staff, in particular Nicole
@@ -619,11 +617,11 @@ keep bringing me cookies and coffee! What more can one dream of?
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker)
 Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker)
 Despite the fact that Yann LeCun's deep convolutional neural networks
 had worked well for image recognition since the 1990s, although they
 were not as general-purpose.

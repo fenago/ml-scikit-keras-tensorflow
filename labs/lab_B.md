@@ -131,7 +131,7 @@ these steps.
 8.  Identify the promising transformations you may want to apply.
 
 9.  Identify extra data that would be useful (go back to ["Get the
-    Data"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#get_the_data_step)).
+    Data"]
 
 10. Document what you have learned.
 

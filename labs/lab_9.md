@@ -35,7 +35,7 @@ just exploit the unlabeled data without needing humans to label every
 picture? Enter unsupervised learning.
 
 In
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)
+[Lab 8]
 we looked at the most common unsupervised learning task: dimensionality
 reduction. In this lab we will look at a few more unsupervised
 learning tasks and algorithms:
@@ -87,9 +87,9 @@ it is the task of identifying similar instances and assigning them to
 Just like in classification, each instance gets assigned to a group.
 However, unlike classification, clustering is an unsupervised task.
 Consider
-[Figure 9-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#classification_vs_clustering_plot):
+[Figure 9-1]
 on the left is the iris dataset (introduced in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
+[Lab 4]
 where each instance's species (i.e., its class) is represented with a
 different marker. It is a labeled dataset, for which classification
 algorithms such as Logistic Regression, SVMs, or Random Forest
@@ -140,7 +140,7 @@ As a dimensionality reduction technique
 For *anomaly detection* (also called *outlier detection*)
 
 :   Any instance that has a
-    low affinity to all the clus []{}ters is likely to
+    low affinity to all the clus ters is likely to
     be an anomaly. For example, if you have clustered the users of your
     website based on their behavior, you can detect users with unusual
     behavior, such as an unusual number of requests per second. Anomaly
@@ -194,15 +194,14 @@ K-Means
 
 Consider []{#CAkmean09} the
 unlabeled dataset represented in
-[Figure 9-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#blobs_plot):
+[Figure 9-2]
 you can clearly see five blobs of instances. The K-Means algorithm is a
 simple algorithm capable of clustering this kind of dataset very quickly
 and efficiently, often in just a few iterations. It was proposed by
 Stuart Lloyd at Bell Labs in 1957 as a technique for pulse-code
 modulation, but it was only published outside of the company [in
-1982](https://homl.info/36).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^ In 1965, Edward W. Forgy had published virtually the
-same algorithm, so K-Means []{}
+1982](https://homl.info/36).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) In 1965, Edward W. Forgy had published virtually the
+same algorithm, so K-Means 
 is sometimes referred to as Lloyd--Forgy.
 
 ![](./images/mls2_0902.png)
@@ -259,7 +258,7 @@ array([1, 1, 2, 2], dtype=int32)
 
 If you plot the cluster's decision boundaries, you get a Voronoi
 tessellation (see
-[Figure 9-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#voronoi_plot),
+[Figure 9-3]
 where each centroid is represented with an X).
 
 ![](./images/mls2_0903.png)
@@ -272,13 +271,13 @@ well when the blobs have very different diameters because all it cares
 about when assigning an instance to a cluster is the distance to the
 centroid.
 
-Instead []{}
+Instead 
 of assigning each instance to a single cluster, which is called *hard
 clustering*, it can be useful to give each instance a score per cluster,
 which is called *soft clustering*. The score can be the distance between
 the instance and the centroid; conversely, it can be a similarity score
 (or affinity), such as the Gaussian Radial Basis Function (introduced in
-[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
+[Lab 5]
 In the `KMeans` class, the `transform()` method measures the distance
 from each instance to every centroid:
 
@@ -318,7 +317,7 @@ forever.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning
 .totri-footnote}^
 
 You can see the algorithm in action in
-[Figure 9-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#kmeans_algorithm_plot):
+[Figure 9-4]
 the centroids are initialized randomly (top left), then the instances
 are labeled (top right), then the centroids are updated (center left),
 the instances are relabeled (center right), and so on. As you can see,
@@ -342,7 +341,7 @@ one of the fastest clustering algorithms.
 Although the algorithm is guaranteed to converge, it may not converge to
 the right solution (i.e., it may converge to a local optimum): whether
 it does or not depends on the centroid initialization.
-[Figure 9-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#kmeans_variability_plot)
+[Figure 9-5]
 shows two suboptimal solutions that the algorithm can converge to if you
 are not lucky with the random initialization step.
 
@@ -373,18 +372,18 @@ initializations is controlled by the `n_init` hyperparameter: by
 default, it is equal to `10`, which means that the whole algorithm
 described earlier runs 10 times when you call `fit()`, and Scikit-Learn
 keeps the best solution. But how exactly does it know which solution is
-the best? It uses a performance metric! That []{}
+the best? It uses a performance metric! That 
 metric is called the model's *inertia*, which is the mean squared
 distance between each instance and its closest centroid. It is roughly
 equal to 223.3 for the model on the left in
-[Figure 9-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#kmeans_variability_plot),
+[Figure 9-5]
 237.5 for the model on the right in
-[Figure 9-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#kmeans_variability_plot),
+[Figure 9-5]
 and 211.6 for the model in
-[Figure 9-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#voronoi_plot).
+[Figure 9-3]
 The `KMeans` class runs the algorithm `n_init` times and keeps the model
 with the lowest inertia. In this example, the model in
-[Figure 9-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#voronoi_plot)
+[Figure 9-3]
 will be selected (unless we are very unlucky with `n_init` consecutive
 random initializations). If you are curious, a model's inertia is
 accessible via the `inertia_` instance variable:
@@ -407,8 +406,7 @@ a predictor's `score()` method must always respect Scikit-Learn's
 An important improvement to the K-Means algorithm,
 *K-Means++*, was proposed in a [2006 paper](https://homl.info/37) by
 David Arthur and Sergei
-Vassilvitskii.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^ They introduced a smarter initialization step that
+Vassilvitskii.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) They introduced a smarter initialization step that
 tends to select centroids that are distant from one another, and this
 improvement makes the K-Means algorithm much less likely to converge to
 a suboptimal solution. They showed that the additional computation
@@ -440,11 +438,10 @@ hyperparameter to `"random"`. You will rarely need to do this.
 
 ### Accelerated K-Means and mini-batch K-Means
 
-Another []{}
+Another 
 important improvement to the K-Means algorithm was proposed in a [2003
 paper](https://homl.info/38) by Charles
-Elkan.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^ It considerably accelerates the algorithm by avoiding
+Elkan.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) It considerably accelerates the algorithm by avoiding
 many unnecessary distance calculations. Elkan achieved this by
 exploiting the triangle inequality (i.e., that a straight line is always
 the shortest distance between two
@@ -457,8 +454,7 @@ although you probably will never need to).
 
 Yet another important variant of the K-Means algorithm was proposed in a
 [2010 paper](https://homl.info/39) by David
-Sculley.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^ Instead of using the full dataset at each iteration,
+Sculley.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) Instead of using the full dataset at each iteration,
 the algorithm is capable of using mini-batches, moving the centroids
 just slightly at each iteration. This speeds up the algorithm typically
 by a factor of three or four and makes it possible to cluster huge
@@ -475,7 +471,7 @@ minibatch_kmeans.fit(X)
 
 If the dataset does not fit in memory, the simplest option is to use the
 `memmap` class, as we did for incremental PCA in
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab).
+[Lab 8]
 Alternatively, you can pass one mini-batch at a time to the
 `partial_fit()` method, but this will require much more work, since you
 will need to perform multiple initializations and select the best one
@@ -485,7 +481,7 @@ example).
 Although the Mini-batch K-Means algorithm is much faster than the
 regular K-Means algorithm, its inertia is generally slightly worse,
 especially as the number of clusters increases. You can see this in
-[Figure 9-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#minibatch_kmeans_vs_kmeans_plot):
+[Figure 9-6]
 the plot on the left compares the inertias of Mini-batch K-Means and
 regular K-Means models trained on the previous dataset using various
 numbers of clusters *k*. The difference between the two curves remains
@@ -506,7 +502,7 @@ So far, we have set the number of clusters *k* to
 correct number of clusters. But in general, it will not be so easy to
 know how to set *k*, and the result might be quite bad if you set it to
 the wrong value. As you can see in
-[Figure 9-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#bad_n_clusters_plot),
+[Figure 9-7]
 setting *k* to 3 or 8 results in fairly bad models.
 
 ![](./images/mls2_0907.png)
@@ -520,7 +516,7 @@ lower as we increase *k*. Indeed, the more clusters there are, the
 closer each instance will be to its closest centroid, and therefore the
 lower the inertia will be. Let's plot the inertia as a function of *k*
 (see
-[Figure 9-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#inertia_vs_k_plot)).
+[Figure 9-8]
 
 ![](./images/mls2_0908.png)
 
@@ -561,7 +557,7 @@ dataset and the labels they were assigned:
 
 Let's compare the silhouette scores for different numbers of clusters
 (see
-[Figure 9-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#silhouette_score_vs_k_plot)).
+[Figure 9-9]
 
 ![](./images/mls2_0909.png)
 
@@ -574,7 +570,7 @@ An even more informative visualization is obtained when you plot every
 instance's silhouette coefficient, sorted by the cluster they are
 assigned to and by the value of the coefficient.
 This is called a *silhouette diagram* (see
-[Figure 9-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#silhouette_analysis_plot)).
+[Figure 9-10]
 Each diagram contains one knife shape per cluster. The shape's height
 indicates the number of instances the cluster contains, and its width
 represents the sorted silhouette coefficients of the instances in the
@@ -610,7 +606,7 @@ the algorithm several times to avoid suboptimal solutions, plus you need
 to specify the number of clusters, which can be quite a hassle.
 Moreover, K-Means does not behave very well when the clusters have
 varying sizes, different densities, or nonspherical shapes. For example,
-[Figure 9-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#bad_kmeans_plot)
+[Figure 9-11]
 shows how K-Means clusters a dataset containing three ellipsoidal
 clusters of different dimensions, densities, and orientations.
 
@@ -634,7 +630,7 @@ clusters will be nice and spherical, but it generally improves things.
 
 Now let's look at a few ways we can benefit from clustering. We will use
 K-Means, but feel free to experiment with other clustering
-algorithms. []{}
+algorithms. 
 
 
 
@@ -654,7 +650,7 @@ part of the same individual object are assigned to the same segment. In
 this case there would be a different segment for each pedestrian. The
 state of the art in semantic or instance segmentation today is achieved
 using complex architectures based on convolutional neural networks (see
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
+[Lab 14]
 Here, we are going to do something much simpler:
 *color segmentation*. We will simply assign pixels to the same segment
 if they have a similar color. In some applications, this may be
@@ -664,7 +660,7 @@ segmentation may be just fine.
 
 First, use Matplotlib's `imread()` function to load the image (see the
 upper-left image in
-[Figure 9-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#image_segmentation_plot)):
+[Figure 9-12]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from matplotlib.image import imread  # or `from imageio import imread`
@@ -701,7 +697,7 @@ green cluster is light green). Finally, it reshapes this long list of
 colors to get the same shape as the original image. And we're done!
 
 This outputs the image shown in the upper right of
-[Figure 9-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#image_segmentation_plot).
+[Figure 9-12]
 You can experiment with various numbers of clusters, as shown in the
 figure. When you use fewer than eight clusters, notice that the
 ladybug's flashy red color fails to get a cluster of its own: it gets
@@ -722,7 +718,7 @@ Using Clustering for Preprocessing
 ----------------------------------
 
 Clustering
-can []{}
+can 
 be an efficient approach to dimensionality reduction, in particular as a
 preprocessing step before a supervised learning algorithm. As an example
 of using clustering for dimensionality reduction, let's tackle the
@@ -832,7 +828,7 @@ explored.
 Using Clustering for Semi-Supervised Learning
 ---------------------------------------------
 
-Another []{}
+Another 
 use case for clustering is in semi-supervised learning, when we have
 plenty of unlabeled instances and very few labeled instances. Let's
 train a Logistic Regression model on a sample of 50 labeled instances
@@ -866,7 +862,7 @@ representative_digit_idx = np.argmin(X_digits_dist, axis=0)
 X_representative_digits = X_train[representative_digit_idx]
 ```
 
-[Figure 9-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#representative_images_plot)
+[Figure 9-13]
 shows these 50 representative images.
 
 ![](./images/mls2_0913.png)
@@ -1020,7 +1016,7 @@ This algorithm works well if all the clusters are dense enough and if
 they are well separated by low-density regions. The `DBSCAN` class in
 Scikit-Learn is as simple to use as you might expect. Let's test it on
 the moons dataset, introduced in
-[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab):
+[Lab 5]
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.cluster import DBSCAN
@@ -1059,7 +1055,7 @@ array([[-0.02137124,  0.40618608],
 ```
 
 This clustering is represented in the lefthand plot of
-[Figure 9-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#dbscan_plot).
+[Figure 9-14]
 As you can see, it identified quite a lot of anomalies, plus seven
 different clusters. How disappointing! Fortunately, if we widen each
 instance's neighborhood by increasing `eps` to 0.2, we get the
@@ -1102,7 +1098,7 @@ could also have chosen to train it on all the instances, or all but the
 anomalies: this choice depends on the final task.
 
 The decision boundary is represented in
-[Figure 9-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#cluster_classification_plot)
+[Figure 9-15]
 (the crosses represent the four instances in `X_new`). Notice that since
 there is no anomaly in the training set, the classifier always chooses a
 cluster, even when that cluster is far away. It is fairly
@@ -1227,7 +1223,7 @@ Spectral clustering
 
 Now let's dive into Gaussian mixture models, which can be used for
 density estimation, clustering, and anomaly
-detection. []{}
+detection. 
 
 
 
@@ -1243,7 +1239,7 @@ Gaussian distributions whose parameters are unknown. All the instances
 generated from a single Gaussian distribution form a cluster that
 typically looks like an ellipsoid. Each cluster can have a different
 ellipsoidal shape, size, density, and orientation, just like in
-[Figure 9-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#bad_kmeans_plot).
+[Figure 9-11]
 When you observe an instance, you know it was generated from one of the
 Gaussian distributions, but you are not told which one, and you do not
 know what the parameters of these distributions are.
@@ -1269,14 +1265,14 @@ process:
 
 This generative process can be represented as a
 graphical model.
-[Figure 9-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#gmm_plate_diagram)
+[Figure 9-16]
 represents the structure of the conditional dependencies between random
 variables.
 
 ![](./images/mls2_0916.png)
 
 Here is how to interpret the
-figure:^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
+figure: ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
 .totri-footnote}^
 
 -   The circles represent random variables.
@@ -1371,7 +1367,7 @@ expectation step, the algorithm estimates the probability that it
 belongs to each cluster (based on the current cluster parameters). Then,
 during the maximization step, each cluster is updated using *all* the
 instances in the dataset, with each instance weighted by the estimated
-probability that it belongs to that cluster. These []{}
+probability that it belongs to that cluster. These 
 probabilities are called the *responsibilities* of the clusters for the
 instances. [During] the maximization step, each
 cluster's update will mostly be impacted by the instances it is most
@@ -1454,7 +1450,7 @@ probability that an instance will fall within a particular region, you
 would have to integrate the PDF over that region (if you do so over the
 entire space of possible instance locations, the result will be 1).
 
-[Figure 9-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#gaussian_mixtures_plot)
+[Figure 9-17]
 shows the cluster means, the decision boundaries (dashed lines), and the
 density contours of this model.
 
@@ -1492,7 +1488,7 @@ following values:
 By default, `covariance_type` is equal to `"full"`, which means that
 each cluster can take on any shape, size, and orientation (it has its
 own unconstrained covariance matrix).
-[Figure 9-18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#covariance_type_plot)
+[Figure 9-18]
 plots the solutions found by the EM algorithm when `covariance_type` is
 set to `"tied"` or \"`spherical`."
 
@@ -1519,7 +1515,7 @@ Anomaly Detection Using Gaussian Mixtures
 -----------------------------------------
 
 *Anomaly detection* (also called *outlier detection*)
-is []{}
+is 
 the task of detecting instances that deviate strongly from the norm.
 These instances are called *anomalies*, or *outliers*, while the normal
 instances are called *inliers*. Anomaly detection is useful in a wide
@@ -1541,7 +1537,7 @@ lower the threshold. Conversely, if you have too many false negatives
 (i.e., defective products that the system does not flag as defective),
 you can increase the threshold. This is the usual precision/recall
 trade-off (see
-[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
+[Lab 3]
 Here is how you would identify the outliers using the fourth percentile
 lowest density as the threshold (i.e., approximately 4% of the instances
 will be flagged as anomalies):
@@ -1552,7 +1548,7 @@ density_threshold = np.percentile(densities, 4)
 anomalies = X[densities < density_threshold]
 ```
 
-[Figure 9-19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#mixture_anomaly_detection_plot)
+[Figure 9-19]
 represents these anomalies as stars.
 
 ![](./images/mls2_0919.png)
@@ -1584,7 +1580,7 @@ specify the number of clusters. So, how can you find it?
 Selecting the Number of Clusters
 --------------------------------
 
-With []{}
+With 
 K-Means, you could use the inertia or the silhouette score to select the
 appropriate number of clusters. But with Gaussian mixtures, it is not
 possible to use these metrics because they are not reliable when the
@@ -1592,7 +1588,7 @@ clusters are not spherical or have different sizes. Instead, you can try
 to find the model that minimizes a *theoretical information criterion*,
 such as the *Bayesian information criterion* (BIC) or the *Akaike
 information criterion* (AIC), defined in [Equation
-9-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#information_criteria_equation).
+9-1]
 
 
 ##### [Equation 9-1. ] Bayesian information criterion (BIC) and Akaike information criterion (AIC)
@@ -1634,7 +1630,7 @@ Consider a 1D mixture model of two Gaussian distributions centered at
 --4 and +1. For simplicity, this toy model has a single parameter *θ*
 that controls the standard deviations of both distributions. The
 top-left contour plot in
-[Figure 9-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#likelihood_function_plot)
+[Figure 9-20]
 shows the entire model *f*(*x*; *θ*) as a function of both *x* and *θ*.
 To estimate the probability distribution of a future outcome *x*, you
 need to set the model parameter *θ*. For example, if you set *θ* to 1.3
@@ -1671,7 +1667,7 @@ it as a regularized version of MLE.
 
 Notice that maximizing the likelihood function is equivalent to
 maximizing its logarithm (represented in the lower-righthand plot in
-[Figure 9-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#likelihood_function_plot)).
+[Figure 9-20]
 Indeed the logarithm is a strictly increasing function, so if *θ*
 maximizes the log likelihood, it also maximizes the likelihood. It turns
 out that it is generally easier to maximize the log likelihood. For
@@ -1698,7 +1694,7 @@ To compute the BIC and AIC, call the `bic()` and `aic()` methods:
 8102.518178214792
 ```
 
-[Figure 9-21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#aic_bic_vs_k_plot)
+[Figure 9-21]
 shows the BIC for different numbers of clusters *k*. As you can see,
 both the BIC and the AIC are lowest when *k*=3, so it is most likely the
 best choice. Note that we could also search for the best value for the
@@ -1735,12 +1731,12 @@ array([0.4 , 0.21, 0.4 , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  , 0.  ])
 Perfect: the algorithm automatically detected that only three clusters
 are needed, and the resulting clusters are almost identical to the ones
 in
-[Figure 9-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#gaussian_mixtures_plot).
+[Figure 9-17]
 
 In this model, the cluster parameters (including the weights, means, and
 covariance matrices) are not treated as fixed model parameters anymore,
 but as latent random variables, like the cluster assignments (see
-[Figure 9-22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#bgm_plate_diagram)).
+[Figure 9-22]
 So **z** now includes both the cluster parameters and the cluster
 assignments.
 
@@ -1770,7 +1766,7 @@ likely to be plentiful (high concentration). This prior belief about the
 number of clusters can be adjusted using the
 `weight_concentration_prior` hyperparameter. Setting it to 0.01 or
 10,000 gives very different clusterings (see
-[Figure 9-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#mixture_concentration_prior_plot)).
+[Figure 9-23]
 The more data we have, however, the less the priors matter. In fact, to
 plot diagrams with such large differences, you must use very strong
 priors and little data.
@@ -1778,9 +1774,9 @@ priors and little data.
 ![](./images/mls2_0923.png)
 
 Bayes' theorem ([Equation
-9-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#bayes_theorem_equation))
+9-2]
 tells us how to update the probability distribution over the latent
-variables after we observe some data **X**. It []{}
+variables after we observe some data **X**. It 
 computes the *posterior* distribution *p*(**z**\|**X**), which is the
 conditional probability of **z** given **X**.
 
@@ -1793,7 +1789,7 @@ $$p\left( \mathbf{z} \middle| \mathbf{X} \right) = \text{posterior} = \frac{\tex
 Unfortunately, in a Gaussian mixture model (and many other problems),
 the denominator *p*(**x**) is intractable, as it requires integrating
 over all the possible values of **z** ([Equation
-9-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#evidence_integral_equation)),
+9-3]
 which would require considering all possible combinations of cluster
 parameters and cluster assignments.
 
@@ -1812,7 +1808,7 @@ to make *q*(**z**) a good approximation of *p*(**z**\|**X**). This is
 achieved by finding the value of **λ** that minimizes the KL divergence
 from *q*(**z**) to [*p*(**z**\|**X**]), noted
 D~KL~(*q*‖*p*). The KL divergence equation is shown in [Equation
-9-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#variational_kl_divergence_equation),
+9-4]
 and it can be rewritten as the log of the evidence (log *p*(**X**))
 minus the *evidence lower bound* (ELBO). Since the
 log of the evidence does not depend on *q*, it is a constant term, so
@@ -1869,7 +1865,7 @@ Gaussian mixture models work great on clusters with ellipsoidal shapes,
 but if you try to fit a dataset with different shapes, you may have bad
 surprises. For example, let's see what happens if we use a Bayesian
 Gaussian mixture model to cluster the moons dataset (see
-[Figure 9-24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#moons_vs_bgm_plot)).
+[Figure 9-24]
 
 ![](./images/mls2_0924.png)
 
@@ -1886,7 +1882,7 @@ Other Algorithms for Anomaly and Novelty Detection
 --------------------------------------------------
 
 Scikit-Learn
-implements []{} []{}
+implements  
 other algorithms dedicated to anomaly detection or novelty detection:
 
 PCA (and other dimensionality reduction techniques with an `inverse_transform()` method)
@@ -1939,7 +1935,7 @@ One-class SVM
     the instances to a high-dimensional space, then separating the two
     classes using a linear SVM classifier within this high-dimensional
     space (see
-    [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
+    [Lab 5]
     Since we just have one class of instances, the one-class SVM
     algorithm instead tries to separate the instances in
     high-dimensional space from the origin. In the original space, this
@@ -1950,7 +1946,7 @@ One-class SVM
     to the probability of a new instance being mistakenly considered as
     novel when it is in fact normal. It works great, especially with
     high-dimensional datasets, but like all SVMs it does not scale to
-    large [datasets]. []{}
+    large [datasets]. 
 
 
 
@@ -2026,41 +2022,40 @@ Exercises
     error is. If you plot a reconstructed image, you will see why: it
     tries to reconstruct a normal face.
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 Stuart P. Lloyd, "Least Squares Quantization in PCM," *IEEE Transactions
 on Information Theory* 28, no. 2 (1982): 129--137.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 That's because the mean squared distance between the instances and their
 closest centroid can only go down at each step.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 David Arthur and Sergei Vassilvitskii, "k-Means++: The Advantages of
 Careful Seeding," *Proceedings of the 18th Annual ACM-SIAM Symposium on
 Discrete Algorithms* (2007): 1027--1035.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 Charles Elkan, "Using the Triangle Inequality to Accelerate k-Means,"
 *Proceedings of the 20th International Conference on Machine Learning*
 (2003): 147--153.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 The triangle inequality is AC ≤ AB + BC where A, B and C are three
 points and AB, AC, and BC are the distances between these points.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 David Sculley, "Web-Scale K-Means Clustering," *Proceedings of the 19th
 International Conference on World Wide Web* (2010): 1177--1178.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 Phi (*ϕ* or *φ*) is the 21st letter of the Greek alphabet.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html-marker)
 Most of these notations are standard, but a few additional notations
 were taken from the Wikipedia article on [plate
 notation](https://en.wikipedia.org/wiki/Plate_notation).

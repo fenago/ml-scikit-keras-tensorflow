@@ -5,13 +5,13 @@
 In this appendix I will give a quick overview of a few historically
 important neural network architectures that are much less used today
 than deep Multilayer Perceptrons
-([Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
+([Lab 10]
 convolutional neural networks
-([Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
+([Lab 14]
 recurrent neural networks
-([Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)),
+([Lab 15]
 or autoencoders
-([Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
+([Lab 17]
 They are often mentioned in the literature, and some are still used in a
 range of applications, so it is worth knowing about them. Additionally,
 we will discuss *deep belief nets*, which were the state of the art in
@@ -24,7 +24,7 @@ future.
 Hopfield Networks
 =================
 
-*Hopfield networks* were []{}
+*Hopfield networks* were 
 first introduced by W. A. Little in 1974, then popularized by J.
 Hopfield in 1982. They are *associative memory*
 networks: you first teach them some patterns, and then when they see a
@@ -36,7 +36,7 @@ neuron), and then when you show it a new character image, after a few
 iterations it outputs the closest learned character.
 
 Hopfield networks are fully connected graphs (see
-[Figure E-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#hopfield_net_diagram));
+[Figure E-1]
 that is, every neuron is connected to every other neuron. Note that in
 the diagram the images are 6 × 6 pixels, so the neural network on the
 left should contain 36 neurons (and 630 connections), but for visual
@@ -45,7 +45,7 @@ clarity a much smaller network is represented.
 ![](./E_files/mls2_ae01.png)
 
 The training algorithm works by using Hebb's rule (see ["The
-Perceptron"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#theperceptron)):
+Perceptron"]
 for each training image, the weight between two neurons is increased if
 the corresponding pixels are both on or both off, but decreased if one
 pixel is on and the other is off.
@@ -82,7 +82,7 @@ Boltzmann Machines
 ==================
 
 *Boltzmann machines*
-were []{}
+were 
 invented in 1985 by Geoffrey Hinton and Terrence Sejnowski. Just like
 Hopfield nets, they are fully connected ANNs, but they are based on
 *stochastic neurons*: instead of using a deterministic step function to
@@ -90,7 +90,7 @@ decide what value to output, these neurons output 1 with some
 probability, and 0 otherwise. The probability function that these ANNs
 use is based on the Boltzmann distribution (used in statistical
 mechanics), hence their name. [Equation
-E-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#boltzmann_distribution_equation)
+E-1]
 gives the probability that a particular neuron will output 1.
 
 
@@ -118,7 +118,7 @@ $$p\left( {s_{i}^{(\text{next}\text{step})} = 1} \right)\, = \,\sigma\left( \fra
 Neurons in Boltzmann
 machines are separated into two groups: *visible units* and *hidden
 units* (see
-[Figure E-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#boltzmann_machine_diagram)).
+[Figure E-2]
 All neurons work in the same stochastic way, but the visible units are
 the ones that receive the inputs and from which outputs are read.
 
@@ -173,7 +173,7 @@ An RBM is simply a Boltzmann
 machine in which there are no connections between visible units or
 between hidden units, only between visible and hidden units. For
 example,
-[Figure E-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#rbm_diagram)
+[Figure E-3]
 represents an RBM with three visible units and four hidden units.
 
 ![](./E_files/mls2_ae03.png)
@@ -181,20 +181,19 @@ represents an RBM with three visible units and four hidden units.
 A very efficient training algorithm called
 *Contrastive Divergence* was [introduced in 2005 by Miguel Á.
 Carreira-Perpiñán and Geoffrey
-Hinton](https://homl.info/135).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
-.totri-footnote}^ Here is how it works: for each training instance
+Hinton](https://homl.info/135).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html) Here is how it works: for each training instance
 **x**, the algorithm starts by feeding it to the network by setting the
 state of the visible units to *x*~1~, *x*~2~, ⋯, *x*~*n*~. Then you
 compute the state of the hidden units by applying the stochastic
 equation described before ([Equation
-E-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#boltzmann_distribution_equation)).
+E-1]
 This gives you a hidden vector **h** (where *h*~*i*~ is equal to the
 state of the *i*^th^ unit). Next you compute the state of the visible
 units, by applying the same stochastic equation. This gives you a vector
 **x**ʹ. Then once again you compute the state of the hidden units, which
 gives you a vector **h**ʹ. Now you can update each connection weight by
 applying the rule in [Equation
-E-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#contrastive_divergence),
+E-2]
 where *η* is the learning rate.
 
 
@@ -240,7 +239,7 @@ Just like RBMs, DBNs are fundamentally unsupervised, but you can also
 train them in a supervised manner by adding some visible units to
 represent the labels. Moreover, one great feature of DBNs is that they
 can be trained in a semisupervised fashion.
-[Figure E-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#dbn_diagram)
+[Figure E-4]
 represents such a DBN configured for semisupervised learning.
 
 ![](./E_files/mls2_ae04.png)
@@ -309,7 +308,7 @@ used to produce a low-dimensional representation of a high-dimensional
 dataset, generally for visualization, clustering, or classification. The
 neurons are spread across a map (typically 2D for visualization, but it
 can be any number of dimensions you want), as shown in
-[Figure E-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#som_diagram),
+[Figure E-5]
 and each neuron has a weighted connection to every input (note that the
 diagram shows just two inputs, but there are typically a very large
 number, since the whole point of SOMs is to reduce dimensionality).
@@ -334,7 +333,7 @@ generally activate intermediate neurons on the map.
 
 One important difference from the other dimensionality reduction
 techniques discussed in
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)
+[Lab 8]
 is that all instances get mapped to a discrete number of points in the
 low-dimensional space (one point per neuron). When there are very few
 neurons, this technique is better described as clustering rather than
@@ -360,20 +359,20 @@ inputs.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
 Miguel Á. Carreira-Perpiñán and Geoffrey E. Hinton, "On Contrastive
 Divergence Learning," *Proceedings of the 10th International Workshop on
 Artificial Intelligence and Statistics* (2005): 59--66.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
 Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
 See this video by Geoffrey Hinton for more details and a demo:
 [*https://homl.info/137*](https://homl.info/137).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker)
 You can imagine a class of young children with roughly similar skills.
 One child happens to be slightly better at basketball. This motivates
 them to practice more, especially with their friends. After a while,

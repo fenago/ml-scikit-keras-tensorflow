@@ -8,8 +8,7 @@
 In this lab you will work through an example
 project end to end, pretending to be a recently hired data scientist at
 a real estate
-company.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^ Here are the main steps you will go through:
+company.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) Here are the main steps you will go through:
 
 1.  Look at the big picture.
 
@@ -32,7 +31,7 @@ company.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning
 Working with Real Data
 ======================
 
-When []{}
+When 
 you are learning about Machine Learning, it is best to experiment with
 real-world data, not artificial datasets. Fortunately, there are
 thousands of open datasets to choose from, ranging across all sorts of
@@ -65,11 +64,10 @@ domains. Here are a few places you can look to get data:
     -   [The datasets subreddit](https://www.reddit.com/r/datasets)
 
 In this lab we'll use the
- []{}California Housing Prices
+ California Housing Prices
 dataset from the StatLib
-repository^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^ (see
-[Figure 2-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#california_housing_prices_plot)).
+repository^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) (see
+[Figure 2-1]
 This dataset is based on data from the 1990 California census. It is not
 exactly recent (a nice house in the Bay Area was still affordable at the
 time), but it has many qualities for learning, so we will pretend it is
@@ -100,9 +98,9 @@ housing price in any district, given all the other metrics.
 ###### Tip
 
 Since you are a well-organized data scientist, the first thing you
-should do is pull out your []{}
+should do is pull out your 
 Machine Learning project checklist. You can start with the one in
-[Appendix B](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html#project_checklist_appendix);
+[Appendix B]
 it should work reasonably well for most Machine Learning projects, but
 make sure to adapt it to your needs. In this lab we will go through
 many checklist items, but we will also skip a few, either because they
@@ -126,10 +124,9 @@ effort you will spend tweaking it.
 Your boss answers that your model's output (a prediction of a district's
 median housing price) will be fed to another Machine Learning system
 (see
-[Figure 2-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#house_pricing_pipeline_diagram)),
+[Figure 2-2]
 along with many other
-signals.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^ This downstream system will determine whether it is
+signals.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) This downstream system will determine whether it is
 worth investing in a given area or not. Getting this right is critical,
 as it directly affects [revenue].
 
@@ -192,7 +189,7 @@ regression task, since you are asked to predict a value. More
 specifically, this is a
 *multiple regression* problem, since the system will use multiple
 features to make a prediction (it will use the district's population,
-the median income, etc.). It []{}
+the median income, etc.). It 
 is also a *univariate regression* problem, since we are only trying to
 predict a single value for each district. If we were trying to predict
 multiple values per district,
@@ -216,12 +213,12 @@ learning technique.
 Select a Performance Measure
 ----------------------------
 
-Your []{}
+Your 
 next step is to select a performance measure. A typical performance
 measure for regression problems is the Root Mean Square Error (RMSE). It
 gives an idea of how much error the system typically makes in its
 predictions, with a higher weight for large errors. [Equation
-2-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#rmse_equation)
+2-1]
 shows the mathematical formula to compute the RMSE.
 
 
@@ -572,10 +569,10 @@ Even though the RMSE is generally the preferred performance measure for
 regression tasks, in some contexts you may prefer to use another
 function. For example, suppose that there are many outlier districts. In
 that case, you may
-consider []{}
+consider 
 using the *mean absolute error* (MAE, also called
 the average absolute deviation; see [Equation
-2-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#mae_equation)):
+2-2]
 
 
 ##### [Equation 2-2. ] Mean absolute error (MAE)
@@ -732,7 +729,7 @@ You will need a number of
 Python modules: Jupyter, NumPy, pandas, Matplotlib, and Scikit-Learn. If
 you already have Jupyter running with all these modules installed, you
 can safely skip to ["Download the
-Data"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#download_the_data).
+Data"]
 If you don't have them yet, there are many ways to install them (and
 their dependencies). You can use your [system's]
 packaging system (e.g., apt-get on Ubuntu, or MacPorts or Homebrew on
@@ -740,8 +737,7 @@ macOS), install a Scientific Python distribution such as Anaconda and
 use its packaging system, or just use Python's own packaging system,
 pip, which is included by default with the Python binary installers
 (since Python
-2.7.9).^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^ You can check to see if pip is installed by typing the
+2.7.9).^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) You can check to see if pip is installed by typing the
 following command:
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -751,7 +747,7 @@ pip 19.3.1 from [...]/lib/python3.7/site-packages/pip (python 3.7)
 
 You should make sure you have a recent version of pip installed. To
 upgrade the pip module, type the following (the exact version may
-differ):^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
+differ): ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -767,8 +763,7 @@ Successfully installed pip-19.3.1
 If you would like to work in an isolated
 environment (which is strongly recommended so that you can work on
 different projects without having conflicting library versions), install
-virtualenv^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^ by running the following pip command (again, if you
+virtualenv^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) by running the following pip command (again, if you
 want virtualenv to be installed for all users on your machine, remove
 `--user` and run this command with administrator rights):
 
@@ -846,9 +841,8 @@ virtualenv instructions).
 
 Now create a new Python notebook by clicking the New button and
 selecting the appropriate Python
-version^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^ (see
-[Figure 2-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#jupyter_empty_screenshot)).
+version^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) (see
+[Figure 2-3]
 Doing that will create a new notebook file called *Untitled.ipynb* in
 your workspace, start a Jupyter Python kernel to run the notebook, and
 open this notebook in a new tab. You should start by renaming this
@@ -861,7 +855,7 @@ A notebook contains a list of cells. Each cell can contain executable
 code or formatted text. Right now the notebook contains only one empty
 code cell, labeled "In \[1\]:". Try typing `print("Hello world!")` in
 the cell and clicking the play button (see
-[Figure 2-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#jupyter_new_notebook_screenshot))
+[Figure 2-4]
 or pressing Shift-Enter. This sends the current cell to this notebook's
 Python kernel, which runs it and returns the output. The result is
 displayed below the cell, and since you've reached the end of the
@@ -897,7 +891,7 @@ the data is also useful if you need to install the dataset on multiple
 machines.
 
 Here is the function to fetch the
-data:^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+data: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 import os
@@ -943,7 +937,7 @@ Take a Quick Look at the Data Structure
 
 Let's take a look at the top five rows using the DataFrame's `head()`
 method (see
-[Figure 2-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#housing_head_screenshot)).
+[Figure 2-5]
 
 ![](./images/mls2_0205.png)
 
@@ -956,7 +950,7 @@ the first 6 in the screenshot): `longitude`, `latitude`,
 The `info()` method is useful to get a quick description of the data, in
 particular the total number of rows, each attribute's type, and the
 number of nonnull values (see
-[Figure 2-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#housing_info_screenshot)).
+[Figure 2-6]
 
 ![](./images/mls2_0206.png)
 
@@ -987,7 +981,7 @@ Name: ocean_proximity, dtype: int64
 
 Let's look at the other fields. The `describe()` method shows a summary
 of the numerical attributes
-([Figure 2-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#housing_describe_screenshot)).
+([Figure 2-7]
 
 ![](./images/mls2_0207.png)
 
@@ -1011,7 +1005,7 @@ range (on the horizontal axis). You can either plot this one attribute
 at a time, or you can call the `hist()` method on the whole dataset (as
 shown in the following code example), and it will plot a histogram for
 each numerical attribute (see
-[Figure 2-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#attribute_histogram_plots)):
+[Figure 2-8]
 
 ``` {data-type="programlisting" code-language="python"}
 %matplotlib inline   # only in a Jupyter notebook
@@ -1117,7 +1111,7 @@ def split_train_test(data, test_ratio):
 ```
 
 You can then use this function like
-this:^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+this: ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> train_set, test_set = split_train_test(housing, 0.2)
@@ -1179,7 +1173,7 @@ ever gets deleted. If this is not possible, then you can try to use the
 most stable features to build a unique identifier. For example, a
 district's latitude and longitude are guaranteed to be stable for a few
 million years, so you could combine them into an ID like
-so:^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+so: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 housing_with_id["id"] = housing["longitude"] * 1000 + housing["latitude"]
@@ -1227,7 +1221,7 @@ categories of incomes in the whole dataset. Since the median income is a
 continuous numerical attribute, you first need to create an income
 category attribute. Let's look at the median income histogram more
 closely (back in
-[Figure 2-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#attribute_histogram_plots)):
+[Figure 2-8]
 most median income values are clustered around 1.5 to 6 (i.e.,
 \$15,000--\$60,000), but some median incomes go far beyond 6. It is
 important to have a sufficient number of instances in your dataset for
@@ -1245,7 +1239,7 @@ housing["income_cat"] = pd.cut(housing["median_income"],
 ```
 
 These income categories are represented in
-[Figure 2-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#housing_income_cat_hist_screenshot):
+[Figure 2-9]
 
 ``` {data-type="programlisting" code-language="python"}
 housing["income_cat"].hist()
@@ -1281,7 +1275,7 @@ Name: income_cat, dtype: float64
 
 With similar code you can measure the income category proportions in the
 full dataset.
-[Figure 2-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#compare_sampling_errors_screenshot)
+[Figure 2-10]
 compares the income category proportions in the overall dataset, in the
 test set generated with stratified sampling, and in a test set generated
 using purely random sampling. As you can see, the test set generated
@@ -1303,7 +1297,7 @@ We spent quite a bit of time on test set generation for a good reason:
 this is an often neglected but critical part of a Machine Learning
 project. Moreover, many of these ideas will be useful later when we
 discuss cross-validation. Now it's time to move on to the next stage:
-exploring the data. []{}
+exploring the data. 
 
 
 
@@ -1336,7 +1330,7 @@ Visualizing Geographical Data
 Since there is geographical
 information (latitude and longitude), it is a good idea to create a
 scatterplot of all districts to visualize the data
-([Figure 2-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#bad_visualization_plot)):
+([Figure 2-11]
 
 ``` {data-type="programlisting" code-language="python"}
 housing.plot(kind="scatter", x="longitude", y="latitude")
@@ -1348,7 +1342,7 @@ This looks like California all right, but other than that it is hard to
 see any particular pattern. Setting the `alpha` option to `0.1` makes it
 much easier to visualize the places where there is a high density of
 data points
-([Figure 2-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#better_visualization_plot)):
+([Figure 2-12]
 
 ``` {data-type="programlisting" code-language="python"}
 housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.1)
@@ -1366,12 +1360,12 @@ need to play around with visualization parameters to make the patterns
 stand out.
 
 Now let's look at the housing prices
-([Figure 2-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#housing_prices_scatterplot)).
+([Figure 2-13]
 The radius of each circle represents the district's population (option
 `s`), and the color represents the price (option `c`). We will use a
 predefined color map (option `cmap`) called `jet`, which ranges from
 blue (low values) to red (high
-prices):^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+prices): ^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4,
@@ -1397,7 +1391,7 @@ coastal districts are not too high, so it is not a simple rule.
 Looking for Correlations
 ------------------------
 
-Since []{}
+Since 
 the dataset is not too large, you can easily compute the *standard
 correlation coefficient* (also called *Pearson's r*) between every pair
 of attributes using the `corr()` method:
@@ -1431,7 +1425,7 @@ negative correlation; you can see a small negative correlation between
 the latitude and the median house value (i.e., prices have a slight
 tendency to go down when you go north). Finally, coefficients close to 0
 mean that there is no linear correlation.
-[Figure 2-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#correlation_coefficient_plots)
+[Figure 2-14]
 shows various plots along with the correlation coefficient between their
 horizontal and vertical axes.
 
@@ -1458,7 +1452,7 @@ numerical attribute against every other numerical attribute. Since there
 are now 11 numerical attributes, you would get 11^2^ = 121 plots, which
 would not fit on a page---so let's just focus on a few promising
 attributes that seem most correlated with the median housing value
-([Figure 2-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#scatter_matrix_plot)):
+([Figure 2-15]
 
 ``` {data-type="programlisting" code-language="python"}
 from pandas.plotting import scatter_matrix
@@ -1478,7 +1472,7 @@ details).
 
 The most promising attribute to predict the median house value is the
 median income, so let's zoom in on their correlation scatterplot
-([Figure 2-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#income_vs_house_value_scatterplot)):
+([Figure 2-16]
 
 ``` {data-type="programlisting" code-language="python"}
 housing.plot(kind="scatter", x="median_income", y="median_house_value",
@@ -1560,7 +1554,7 @@ point is to start off on the right foot and quickly gain insights that
 will help you get a first reasonably good prototype. But this is an
 iterative process: once you get a prototype up and running, you can
 analyze its output to gain more insights and come back to this
-exploration step. []{}
+exploration step. 
 
 
 
@@ -1692,7 +1686,7 @@ housing_tr = pd.DataFrame(X, columns=housing_num.columns,
 
 Scikit-Learn's API is remarkably well designed.
 These are the [main design
-principles](https://homl.info/11):^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+principles](https://homl.info/11): ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 Consistency
 
@@ -1795,7 +1789,7 @@ each of which represents a category. So this attribute is a categorical
 attribute. Most Machine Learning algorithms prefer to work with numbers,
 so let's convert these categories from text to numbers. For this, we
 can use Scikit-Learn's `OrdinalEncoder`
-class:^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+class: ^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.preprocessing import OrdinalEncoder
@@ -1840,7 +1834,7 @@ while the others will be 0 (cold). The new attributes are sometimes
 called *dummy* attributes.
 Scikit-Learn provides a `OneHotEncoder` class to
 convert categorical values into one-hot
-vectors:^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+vectors: ^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.preprocessing import OneHotEncoder
@@ -1898,9 +1892,9 @@ low-dimensional vector called an *embedding*. Each
 category's representation would be learned during training.
 This is an example of *representation learning*
 (see Labs
-[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)
+[13]
 and
-[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)
+[17]
 for more details).
 
 
@@ -2121,7 +2115,7 @@ different transformers and concatenate their outputs. But you cannot
 specify different columns for each transformer; they all apply to the
 whole data. It is possible to work around this limitation using a custom
 transformer for column selection (see the Jupyter notebook for an
-example). []{}
+example). 
 
 
 
@@ -2131,7 +2125,7 @@ Select and Train a Model
 ========================
 
 At last!
-You []{}
+You 
 framed the problem, you got the data and explored it, you sampled a
 training set and a test set, and you wrote transformation pipelines to
 clean up and prepare your data for Machine Learning algorithms
@@ -2169,7 +2163,7 @@ Labels: [286600.0, 340600.0, 196900.0, 46300.0, 254500.0]
 
 It works, although the predictions are not exactly accurate (e.g., the
 first prediction is off by close to 40%!). Let's measure this regression
-model's RMSE on the whole training set using []{}
+model's RMSE on the whole training set using 
 Scikit-Learn's `mean_squared_error()` function:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -2198,7 +2192,7 @@ does.
 Let's train a `DecisionTreeRegressor`. This is a powerful model, capable
 of finding complex nonlinear relationships in the data (Decision Trees
 are presented in more detail in
-[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab)).
+[Lab 6]
 The code should look familiar by now:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -2238,7 +2232,7 @@ then train your models against the smaller training set and evaluate
 them against the validation set. It's a bit of work, but nothing too
 difficult, and it would work fairly well.
 
-A []{}
+A 
 great alternative is to use Scikit-Learn's *K-fold cross-validation*
 feature. The following code randomly splits the training set into 10
 distinct subsets called *folds*, then it trains and evaluates the
@@ -2310,7 +2304,7 @@ performs worse than the Linear Regression model.
 
 Let's try one last model now: the `RandomForestRegressor`. As we will
 see in
-[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab),
+[Lab 7]
 Random Forests work by training many Decision Trees on random subsets of
 the features, then averaging out their predictions. Building
 a model on top of many other models is called
@@ -2426,7 +2420,7 @@ This `param_grid` tells Scikit-Learn to first evaluate all 3 × 4 = 12
 combinations of `n_estimators` and `max_features` hyperparameter values
 specified in the first `dict` (don't worry about what these
 hyperparameters mean for now; they will be explained in
-[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
+[Lab 7]
 then try all 2 × 3 = 6 combinations of hyperparameter values in the
 second `dict`, but this time with the `bootstrap` hyperparameter set to
 `False` instead of `True` (which is the default value for this
@@ -2556,7 +2550,7 @@ than the best individual model (just like Random Forests perform better
 than the individual Decision Trees they rely on), especially if the
 individual models make very different types of errors. We will cover
 this topic in more detail in
-[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab).
+[Lab 7]
 
 
 
@@ -2678,7 +2672,7 @@ final performance of the system is not better than the experts' price
 estimates, which were often off by about 20%, but it may still be a good
 idea to launch it, especially if this frees up some time for the experts
 so they can work on more interesting and productive
-tasks. []{}
+tasks. 
 
 
 
@@ -2705,7 +2699,7 @@ the model within a dedicated web service that your web application can
 query through a REST
 API^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 (see
-[Figure 2-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#webservice_model_diagram)).
+[Figure 2-17]
 This makes it easier to upgrade your model to new versions without
 interrupting the main application. It also simplifies scaling, since you
 can start as many web services as needed and load-balance the requests
@@ -2724,7 +2718,7 @@ scaling for you. It take JSON requests containing the input data (e.g.,
 of a district) and returns JSON responses containing the predictions.
 You can then use this web service in your website (or whatever
 production environment you are using). As we will see in
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab),
+[Lab 19]
 deploying TensorFlow models on AI Platform is not
 much different from deploying Scikit-Learn models.
 
@@ -2761,7 +2755,7 @@ retrained on fresh data (as we will discuss shortly).
 However, it's not always possible to determine the model's performance
 without any human analysis. For example, suppose you trained an image
 classification model (see
-[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab))
+[Lab 3]
 to detect several product defects on a production line. How can you get
 an alert if the model's performance drops, before thousands of defective
 products get shipped to your clients? One solution is to send to human
@@ -2885,44 +2879,44 @@ available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 The example project is fictitious; the goal is to illustrate the main
 steps of a Machine Learning project, not to learn anything about the
 real estate business.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 The original dataset appeared in R. Kelley Pace and Ronald Barry,
 "Sparse Spatial Autoregressions," *Statistics & Probability Letters* 33,
 no. 3 (1997): 291--297.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 A piece of information fed to a Machine Learning system is often called
 a *signal*, in reference to Claude Shannon's information theory, which
 he developed at Bell Labs to improve telecommunications. His theory: you
 want a high signal-to-noise ratio.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 Recall that the transpose operator flips a column vector into a row
 vector (and vice versa).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 The latest version of Python 3 is recommended. Python 2.7+ may work too,
 but now that it's deprecated, all major scientific libraries are
 dropping support for it, so you should migrate to Python 3 as soon as
 possible.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 I'll show the installation steps using pip in a bash shell on a Linux or
 macOS system. You may need to adapt these commands to your own system.
 On Windows, I recommend installing Anaconda instead.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 If you want to upgrade pip for all users on your machine rather than
 just your own user, you should remove the `--user` option and make sure
 you have administrator rights (e.g., by adding `sudo` before the whole
 command on Linux or macOS).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 Alternative tools include venv (very similar to virtualenv and included
 in the standard library), virtualenvwrapper (provides extra
 functionalities on top of virtualenv), pyenv (allows easy switching
@@ -2930,19 +2924,19 @@ between Python versions), and pipenv (a great packaging tool by the same
 author as the popular `requests` library, built on top of pip and
 virtualenv).
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)
 Note that Jupyter can handle multiple versions of Python, and even many
 other languages such as R or Octave.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[10]
 You might also need to check legal constraints, such as private fields
 that should never be copied to unsafe data stores.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[11]
 In a real project you would save this code in a Python file, but for now
 you can just write it in your Jupyter notebook.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[12]
 The standard deviation is generally denoted *σ* (the Greek letter
 sigma), and it is the square root of the *variance*, which is the
 average of the squared deviation from the mean. When a feature has a
@@ -2951,59 +2945,59 @@ distribution*), which is very common, the "68-95-99.7" rule applies:
 about 68% of the values fall within 1*σ* of the mean, 95% within 2*σ*,
 and 99.7% within 3*σ*.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[13]
 In this course, when a code example contains a mix of code and outputs, as
 is the case here, it is formatted like in the Python interpreter, for
 better readability: the code lines are prefixed with `>>>` (or `...` for
 indented blocks), and the outputs have no prefix.
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[14]
 You will often see people set the random seed to 42. This number has no
 special property, other than to be the Answer to the Ultimate Question
 of Life, the Universe, and Everything.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[15]
 The location information is actually quite coarse, and as a result many
 districts will have the exact same ID, so they will end up in the same
 set (test or train). This introduces some unfortunate sampling bias.
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[16]
 If you are reading this in grayscale, grab a red pen and scribble over
 most of the coastline from the Bay Area down to San Diego (as you might
 expect). You can add a patch of yellow around Sacramento as well.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[17]
 For more details on the design principles, see Lars Buitinck et al.,
 "API Design for Machine Learning Software: Experiences from the
 Scikit-Learn Project" ," arXiv preprint arXiv:1309.0238 (2013).
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[18]
 Some predictors also provide methods to measure the confidence of their
 predictions.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[19]
 This class is available in Scikit-Learn 0.20 and later. If you use an
 earlier version, please consider upgrading, or use the pandas
 `Series.factorize()` method.
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[20]
 Before Scikit-Learn 0.20, the method could only encode integer
 categorical values, but since 0.20 it can also handle other types of
 inputs, including text categorical inputs.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[21]
 See SciPy's documentation for more details.
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[22]
 Just like for pipelines, the name can be anything as long as it does not
 contain double underscores.
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[23]
 In a nutshell, a REST (or RESTful) API is an HTTP-based API that follows
 some conventions, such as using standard HTTP verbs to read, update,
 create, or delete resources (GET, POST, PUT, and DELETE) and using JSON
 for the inputs and outputs.
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html-marker)^
+^[24]
 A captcha is a test to ensure a user is not a robot. These tests have
 often been used as a cheap way to label training data.

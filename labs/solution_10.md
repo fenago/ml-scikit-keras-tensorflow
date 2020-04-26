@@ -34,9 +34,9 @@
 5.  Popular activation functions include the step function, the logistic
     (sigmoid) function, the hyperbolic tangent (tanh) function, and the
     Rectified Linear Unit (ReLU) function (see
-    [Figure 10-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#activation_functions_plot)).
+    [Figure 10-8]
     See
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+    [Lab 11]
     for other examples, such as ELU and variants of the ReLU function.
 
 6.  Considering the MLP described in the question, composed of one input
@@ -71,7 +71,7 @@
     function with the softmax activation function, which can handle
     multiple classes, outputting one probability per class. If you want
     your neural network to predict housing prices like in
-    [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
+    [Lab 2]
     then you need one output neuron, using no activation function at all
     in the output
     layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
@@ -90,7 +90,7 @@
     performs a forward pass through a computation graph, computing every
     node's value for the current training batch, and then it performs a
     reverse pass, computing all the gradients at once (see
-    [Appendix D](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_appendix)
+    [Appendix D]
     for more details). So what's the difference? Well, backpropagation
     refers to the whole process of training an artificial neural network
     using multiple backpropagation steps, each of which computes
@@ -105,7 +105,7 @@
     layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^ In general, the ReLU activation function (or one
     of its variants; see
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
+    [Lab 11]
     is a good default for the hidden layers. For the output layer, in
     general you will want the logistic activation function for binary
     classification, the softmax activation function for multiclass

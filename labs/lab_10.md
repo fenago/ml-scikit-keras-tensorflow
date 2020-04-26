@@ -41,7 +41,7 @@ architectures. In fact, it will probably be sufficient for most of your
 use cases. And should you ever need extra flexibility, you can always
 write custom Keras components using its lower-level API, as we will see
 in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab).
+[Lab 12]
 
 But first, let's go back in time to see how artificial neural networks
 came to be!
@@ -55,8 +55,7 @@ Surprisingly, ANNs []{#ANNboi10} []{#Nbio10} have
 been around for quite a while: they were first introduced back in 1943
 by the neurophysiologist Warren McCulloch and the mathematician Walter
 Pitts. In their [landmark
-paper](https://homl.info/43)^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^ "A Logical Calculus of Ideas Immanent in Nervous
+paper](https://homl.info/43)^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) "A Logical Calculus of Ideas Immanent in Nervous
 Activity," McCulloch and Pitts presented a simplified computational
 model of how biological neurons might work together in animal brains to
 perform complex computations using *propositional
@@ -72,7 +71,7 @@ techniques were developed, sparking a revival of
 interest in *connectionism* (the study of neural networks). But progress
 was slow, and by the 1990s other powerful Machine Learning techniques
 were invented, such as Support Vector Machines (see
-[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
+[Lab 5]
 These techniques seemed to offer better results and stronger theoretical
 foundations than ANNs, so once again the study of neural networks was
 put on hold.
@@ -118,7 +117,7 @@ Biological Neurons
 
 Before we discuss artificial neurons, let's take a quick look at a
 biological neuron (represented in
-[Figure 10-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#biological_neuron_wikipedia)).
+[Figure 10-1]
 It is an unusual-looking cell mostly found in animal brains. It's
 composed of a *cell body* containing the nucleus and most of the cell's
 complex components, many branching extensions called *dendrites*, plus
@@ -128,8 +127,7 @@ times longer. Near its extremity the axon splits off into many branches
 called *telodendria*, and at the tip of these branches are minuscule
 structures called *synaptic terminals* (or simply *synapses*), which are
 connected to the dendrites or cell bodies of other
-neurons.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^ Biological neurons produce short electrical impulses
+neurons.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) Biological neurons produce short electrical impulses
 called *action potentials* (APs, or just *signals*) which travel along
 the axons and make the synapses release chemical signals called
 *neurotransmitters*. When a neuron receives a sufficient amount of these
@@ -146,12 +144,11 @@ computations can be performed by a network of fairly simple neurons,
 much like a complex anthill can emerge from the combined efforts of
 simple ants. The architecture of biological neural
 networks
-(BNNs)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^ is still the subject of active research, but some
+(BNNs)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) is still the subject of active research, but some
 parts of the brain have been mapped, and it seems that neurons are often
 organized in consecutive layers, especially in the cerebral cortex
 (i.e., the outer layer of your brain), as shown in
-[Figure 10-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#biological_neural_network_wikipedia).
+[Figure 10-2]
 
 ![](./images/mls2_1002.png)
 
@@ -162,7 +159,7 @@ Logical Computations with Neurons
 ---------------------------------
 
 McCulloch and
-Pitts []{}
+Pitts 
 proposed a very simple model of the biological neuron, which later
 became known as an *artificial neuron*: it has one or more binary
 (on/off) inputs and one binary output. The artificial neuron activates
@@ -171,7 +168,7 @@ their paper, they showed that even with such a simplified model it is
 possible to build a network of artificial neurons that computes any
 logical proposition you want. To see how such a network works, let's
 build a few ANNs that perform various logical computations (see
-[Figure 10-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#nn_propositional_logic_diagram)),
+[Figure 10-3]
 assuming that a neuron is activated when at least two of its inputs are
 active.
 
@@ -212,7 +209,7 @@ The Perceptron
 The *Perceptron* is []{#percept10} one of the simplest ANN architectures,
 invented in 1957 by Frank Rosenblatt. It is based on a slightly
 different artificial neuron (see
-[Figure 10-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#artificial_neuron_diagram))
+[Figure 10-4]
 called a *threshold logic
 unit* (TLU), or sometimes a *linear threshold unit* (LTU). The inputs
 and output are numbers (instead of binary on/off values), and each input
@@ -226,7 +223,7 @@ and outputs the result: *h*~**w**~(**x**) = step(*z*), where *z* =
 
 The most common step function used in Perceptrons
 is the *Heaviside step function* (see [Equation
-10-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#step_functions_equation)).
+10-1]
 Sometimes the sign function is used instead.
 
 
@@ -255,11 +252,10 @@ TLU in this case means finding the right values for *w*~0~, *w*~1~, and
 *w*~2~ (the training algorithm is discussed shortly).
 
 A Perceptron is simply composed of a single layer of
-TLUs,^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^ with each TLU connected to all the inputs. When all
+TLUs,^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) with each TLU connected to all the inputs. When all
 the neurons in a layer are connected to every neuron in the previous
 layer (i.e., its input neurons), the
-layer []{} []{}
+layer  
 is called a *fully connected layer*, or a *dense layer*. The inputs of
 the Perceptron are fed to special passthrough neurons called *input
 neurons*: they output whatever input they are fed. All the input neurons
@@ -267,14 +263,14 @@ form the *input layer*. Moreover, an extra bias feature is generally
 added (*x*~0~ = 1): it is typically represented using a special type of
 neuron called a *bias neuron*, which outputs 1 all the time. A
 Perceptron with two inputs and three outputs is represented in
-[Figure 10-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#perceptron_diagram).
+[Figure 10-5]
 This Perceptron can classify instances simultaneously into three
 different binary classes, which makes it a multioutput classifier.
 
 ![](./images/mls2_1005.png)
 
 Thanks to the magic of linear algebra, [Equation
-10-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#neural_network_layer_equation)
+10-2]
 makes it possible to efficiently compute the outputs of a layer of
 artificial neurons for several instances at once.
 
@@ -319,7 +315,7 @@ it makes its predictions. For every output neuron that produced a wrong
 prediction, it reinforces the connection weights from the inputs that
 would have contributed to the correct prediction. The rule is shown in
 [Equation
-10-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#perceptron_update_rule).
+10-3]
 
 
 ##### [Equation 10-3. ] Perceptron learning rule (weight update)
@@ -348,14 +344,13 @@ are incapable of learning complex patterns (just like Logistic
 Regression classifiers). However, if the training instances are linearly
 separable, Rosenblatt demonstrated that this algorithm would converge to
 a
-solution.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^ This is called the *Perceptron
+solution.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) This is called the *Perceptron
 convergence theorem*.
 
 Scikit-Learn provides a `Perceptron` class that
 implements a single-TLU network. It can be used pretty much as you would
 expect---for example, on the iris dataset (introduced in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
+[Lab 4]
 
 ``` {data-type="programlisting" code-language="python"}
 import numpy as np
@@ -389,7 +384,7 @@ highlighted a number of serious weaknesses of Perceptrons---in
 particular, the fact that they are incapable of
 solving some trivial problems (e.g., the *Exclusive OR* (XOR)
 classification problem; see the left side of
-[Figure 10-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#xor_diagram)).
+[Figure 10-6]
 This is true of any other linear classification model (such as Logistic
 Regression classifiers), but researchers had expected much more from
 Perceptrons, and some were so disappointed that they dropped neural
@@ -401,11 +396,11 @@ eliminated by stacking multiple Perceptrons. The resulting ANN is called
 a *Multilayer Perceptron* (MLP). An MLP can solve the XOR problem, as
 you can verify by computing the output of the MLP represented on the
 right side of
-[Figure 10-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#xor_diagram):
+[Figure 10-6]
 with inputs (0, 0) or (1, 1), the network outputs 0, and with inputs (0,
 1) or (1, 0) it outputs 1. All connections have a weight equal to 1,
 except the four connections where the weight is shown. Try verifying
-that this network indeed solves the XOR problem! []{}
+that this network indeed solves the XOR problem! 
 
 ![](./images/mls2_1006.png)
 
@@ -419,7 +414,7 @@ An
 MLP is composed of one (passthrough) *input layer*, one or more layers
 of TLUs, called *hidden layers*, and one final layer of TLUs called the
 *output layer* (see
-[Figure 10-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#mlp_diagram)).
+[Figure 10-7]
 The layers close to the input layer are usually called the *lower
 layers*, and the ones close to the outputs are usually called the *upper
 layers*. Every layer except the output layer includes a bias neuron and
@@ -436,8 +431,7 @@ inputs to the outputs), so this architecture is an example of a
 
 
 When an ANN contains a deep stack of hidden
-layers,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^ it is called a *deep neural
+layers,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) it is called a *deep neural
 network* (DNN). The field of Deep Learning studies DNNs, and more
 generally models containing deep stacks of computations. Even so, many
 people talk about Deep Learning whenever neural networks are involved
@@ -449,9 +443,9 @@ Ronald Williams published a [groundbreaking
 paper](https://homl.info/44)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 that introduced the *backpropagation* training algorithm, which is still
 used today. In short, it is Gradient Descent (introduced in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
+[Lab 4]
 using an efficient technique for computing the gradients
-automatically:^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+automatically: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 in just two passes through the network (one forward, one backward), the
 backpropagation algorithm is able to compute the gradient of the
 network's error with regard to every single model parameter. In other
@@ -470,7 +464,7 @@ used by backpropagation is called *reverse-mode autodiff*. It is fast
 and precise, and is well suited when the function to differentiate has
 many variables (e.g., connection weights) and few outputs (e.g., one
 loss). If you want to learn more about autodiff, check out
-[Appendix D](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_appendix).
+[Appendix D]
 
 
 Let's run through this algorithm in a bit more detail:
@@ -564,11 +558,11 @@ The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*)
     Most importantly, the fact that it does not have a maximum output
     value helps reduce some issues during Gradient Descent (we will come
     back to this in
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
+    [Lab 11]
 
 These popular activation functions and their derivatives are represented
 in
-[Figure 10-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#activation_functions_plot).
+[Figure 10-8]
 But wait! Why do we need activation functions in the first place? Well,
 if you chain several linear transformations, all you get is a linear
 transformation. For example, if f(*x*) = 2*x* + 3 and g(*x*) = 5*x* --
@@ -584,7 +578,7 @@ theoretically approximate any continuous function.
 OK! You know where neural nets came from, what their architecture is,
 and how to compute their outputs. You've also learned about the
 backpropagation algorithm. But what exactly can you do with
-them? []{}
+them? 
 
 
 
@@ -633,10 +627,10 @@ The Huber loss is quadratic when the error is smaller than a threshold
 linear part makes it less sensitive to outliers than the mean squared
 error, and the quadratic part allows it to converge faster and be more
 precise than the mean absolute
-error. []{}
+error. 
 
 
-[Table 10-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#regression_mlp_architecture)
+[Table 10-1]
 summarizes the typical architecture of a regression MLP.
 
   Hyperparameter                Typical value
@@ -645,7 +639,7 @@ summarizes the typical architecture of a regression MLP.
   \# hidden layers              Depends on the problem, but typically 1 to 5
   \# neurons per hidden layer   Depends on the problem, but typically 10 to 100
   \# output neurons             1 per prediction dimension
-  Hidden activation             ReLU (or SELU, see [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
+  Hidden activation             ReLU (or SELU, see [Lab 11]
   Output activation             None, or ReLU/softplus (if positive outputs) or logistic/tanh (if bounded outputs)
   Loss function                 MSE or MAE/Huber (if outliers)
 
@@ -665,7 +659,7 @@ estimated probability of the positive class. The estimated probability
 of the negative class is equal to one minus that number.
 
 MLPs can also easily handle multilabel binary classification tasks (see
-[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
+[Lab 3]
 For example, you could have an email classification system that predicts
 whether each incoming email is ham or spam, and simultaneously predicts
 whether it is an urgent or nonurgent email. In this case, you would need
@@ -684,23 +678,23 @@ classification), then you need to have one output neuron per class, and
 you should use the softmax activation
 function for the whole
 output layer (see
-[Figure 10-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#fnn_for_classification_diagram)).
+[Figure 10-9]
 The softmax function (introduced in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
+[Lab 4]
 will ensure that all the estimated probabilities are between 0 and 1 and
 that they add up to 1 (which is required if the classes are exclusive).
 This is called multiclass
-[classification]. []{}
+[classification]. 
 
 ![](./images/mls2_1009.png)
 
 Regarding the loss function, since we are
 predicting probability distributions, the cross-entropy loss (also
 called the log loss, see
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
+[Lab 4]
 is generally a good choice.
 
-[Table 10-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#classification_mlp_architecture)
+[Table 10-2]
 summarizes the typical architecture of a classification MLP.
 
   Hyperparameter            Binary classification   Multilabel binary classification   Multiclass classification
@@ -721,7 +715,7 @@ and visualize their outputs using the *TensorFlow
 Playground*. This will be very useful to better understand MLPs,
 including the effects of all the hyperparameters (number of layers and
 neurons, activation functions, and
-more). []{}
+more). 
 
 
 Now you have all the concepts you need to start implementing MLPs with
@@ -746,7 +740,7 @@ gained popularity, owing to its ease of use, flexibility, and beautiful
 design. To perform the heavy computations required by neural networks,
 this reference implementation relies on a computation backend. At
 present, you can choose from three popular open source Deep Learning
-libraries: TensorFlow,  []{}Microsoft Cognitive Toolkit
+libraries: TensorFlow,  Microsoft Cognitive Toolkit
 (CNTK), and Theano. Therefore, to avoid any
 confusion, we will refer to this reference
 implementation as
@@ -760,7 +754,7 @@ TensorFlow itself now comes bundled with its own
 Keras implementation, tf.keras. It only supports TensorFlow as the
 backend, but it has the advantage of offering some very useful extra
 features (see
-[Figure 10-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#keras_implementations_diagram)):
+[Figure 10-10]
 for example, it supports TensorFlow's Data API, which makes it easy to
 load and preprocess data efficiently. For this reason, we will use
 tf.keras in this course. However, in this lab we will not use any of
@@ -797,7 +791,7 @@ Installing TensorFlow 2
 
 Assuming you installed Jupyter and Scikit-Learn by
 following the installation instructions in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
+[Lab 2]
 use pip to install TensorFlow. If you created an isolated environment
 using virtualenv, you first need to activate it:
 
@@ -824,7 +818,7 @@ GPU-equipped systems. You will still need to install extra libraries for
 GPU support (see
 [*https://tensorflow.org/install*](https://tensorflow.org/install) for
 more details). We will look at GPUs in more depth in
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab).
+[Lab 19]
 
 
 To test your installation, open a Python shell or a Jupyter notebook,
@@ -858,7 +852,7 @@ First,
 we 
 need to load a dataset. In this lab we will tackle Fashion MNIST,
 which is a drop-in replacement of MNIST (introduced in
-[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
+[Lab 3]
 It has the exact same format as MNIST (70,000 grayscale images of 28 ×
 28 pixels each, with 10 classes), but the images represent fashion items
 rather than handwritten digits, so each class is more diverse, and the
@@ -873,7 +867,7 @@ only about 83% on Fashion MNIST.
 Keras provides some utility functions to fetch and
 load common datasets, including MNIST, Fashion MNIST, and the California
 housing dataset we used in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
+[Lab 2]
 Let's load Fashion MNIST:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -924,7 +918,7 @@ For example, the first image in the training set represents a coat:
 'Coat'
 ```
 
-[Figure 10-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#fashion_mnist_plot)
+[Figure 10-11]
 shows some samples from the Fashion MNIST dataset.
 
 ![](./images/mls2_1011.png)
@@ -967,13 +961,13 @@ Let's go through this code line by line:
     matrix, containing all the connection weights between the neurons
     and their inputs. It also manages a vector of bias terms (one per
     neuron). When it receives some input data, it computes [Equation
-    10-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#neural_network_layer_equation).
+    10-2]
 
 -   Then we add a second `Dense` hidden layer with 100 neurons, also
     using the ReLU activation function.
 
 -   Finally, we add a `Dense` output layer with 10 neurons (one per
-    class), using the []{}
+    class), using the 
     softmax activation function (because the classes are exclusive).
 
 
@@ -1040,7 +1034,7 @@ batch size can be anything), and its number of parameters. The summary
 ends with the total number of parameters, including trainable and
 non-trainable parameters. Here we only have trainable parameters (we
 will see examples of non-trainable parameters in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)):
+[Lab 11]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> model.summary()
@@ -1112,7 +1106,7 @@ want to use a different initialization method, you can set
 `kernel_initializer` (*kernel* is another name for the matrix of
 connection weights) or `bias_initializer` when creating the layer. We
 will discuss initializers further in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab),
+[Lab 11]
 but if you want the full list, see
 [*https://keras.io/initializers/*](https://keras.io/initializers/).
 
@@ -1170,7 +1164,7 @@ target probability per class for each instance (such as one-hot vectors,
 e.g. `[0., 0., 0., 1., 0., 0., 0., 0., 0., 0.]` to represent class 3),
 then we would need to use the `"categorical_crossentropy"` loss instead.
 If we were doing binary classification (with one or more binary labels),
-then []{}
+then 
 we would use the `"sigmoid"` (i.e., logistic) activation function in the
 output layer instead of the `"softmax"` activation function, and we
 would use the `"binary_crossentropy"` loss.
@@ -1188,7 +1182,7 @@ using simple Stochastic Gradient Descent. In other words, Keras will
 perform the backpropagation algorithm described earlier (i.e.,
 reverse-mode autodiff plus Gradient Descent). We will discuss more
 efficient optimizers in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+[Lab 11]
 (they improve the Gradient Descent part, not the autodiff).
 
 
@@ -1281,7 +1275,7 @@ went through (`history.epoch`), and most importantly a dictionary
 the end of each epoch on the training set and on the validation set (if
 any). If you use this dictionary to create a pandas DataFrame and call
 its `plot()` method, you get the learning curves shown in
-[Figure 10-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#keras_learning_curves_plot):
+[Figure 10-12]
 
 ``` {.pagebreak-before data-type="programlisting" code-language="python"}
 import pandas as pd
@@ -1347,7 +1341,7 @@ the documentation for more details):
 ```
 
 As we saw in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
+[Lab 2]
 it is common to get slightly lower performance on the test set than on
 the validation set, because the hyperparameters are tuned on the
 validation set, not the test set (however, in this example, we did not
@@ -1396,7 +1390,7 @@ array(['Ankle boot', 'Pullover', 'Trouser'], dtype='<U11')
 
 Here, the classifier actually classified all three images correctly
 (these images are shown in
-[Figure 10-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#fashion_mnist_images_plot)):
+[Figure 10-13]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> y_new = y_test[:3]
@@ -1408,7 +1402,7 @@ array([9, 2, 1])
 
 Now you know how to use the Sequential API to build, train, evaluate,
 and use a classification MLP. But what about
-regression? []{}
+regression? 
 
 
 
@@ -1422,7 +1416,7 @@ California housing problem and tackle it using a regression neural
 network. For simplicity, we will use Scikit-Learn's
 `fetch_california_housing()` function to load the data. This dataset is
 simpler than the one we used in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
+[Lab 2]
 since it contains only numerical features (there is no `ocean_proximity`
 feature), and there is no missing value. After loading the data, we
 split it into a training set, a validation set, and a test set, and we
@@ -1450,7 +1444,7 @@ Using the Sequential API to build, train, evaluate, and use a regression
 MLP to make predictions is quite similar to what we did for
 classification. The main differences are the fact that the output layer
 has a single neuron (since we only want to predict a single value) and
-uses no activation function, and the loss function []{}
+uses no activation function, and the loss function 
 is the mean squared error. Since the dataset is quite noisy, we just use
 a single hidden layer with fewer neurons than before, to avoid
 overfitting:
@@ -1487,7 +1481,7 @@ paper](https://homl.info/widedeep) by Heng-Tze Cheng et
 al.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 It connects all or part of the inputs directly to the output layer, as
 shown in
-[Figure 10-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#wide_deep_diagram).
+[Figure 10-14]
 This architecture makes it possible for the neural network to learn both
 deep patterns (using the deep path) and simple rules (through the short
 path).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
@@ -1548,7 +1542,7 @@ it, evaluate it, and use it to make predictions.
 But what if you want to send a subset of the features through the wide
 path and a different subset (possibly overlapping) through the deep path
 (see
-[Figure 10-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#multiple_inputs_diagram))?
+[Figure 10-15]
 In this case, one solution is to use multiple inputs. For example,
 suppose we want to send five features through the wide path (features 0
 to 4), and six features through the deep path (features 2 to 7):
@@ -1602,7 +1596,7 @@ have multiple outputs:
     cases you will get better results on all tasks by training a single
     neural network with one output per task. This is because the neural
     network can learn features in the data that are useful across tasks.
-    For []{}
+    For 
     example, you could perform *multitask classification* on pictures of
     faces, using one output to classify the person's facial expression
     (smiling, surprised, etc.) and another output to identify whether
@@ -1613,7 +1607,7 @@ have multiple outputs:
     overfitting and thus improve the model's ability to generalize). For
     example, you may want to add some auxiliary outputs in a neural
     network architecture (see
-    [Figure 10-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#multiple_outputs_diagram))
+    [Figure 10-16]
     to ensure that the underlying part of the network learns something
     useful on its own, without relying on the rest of the network.
 
@@ -1622,7 +1616,7 @@ have multiple outputs:
 Adding extra outputs is quite easy: just connect them to the appropriate
 layers and add them to your model's list of outputs. For example, the
 following code builds the network represented in
-[Figure 10-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#multiple_outputs_diagram):
+[Figure 10-16]
 
 ``` {data-type="programlisting" code-language="python"}
 [...] # Same as above, up to the main output layer
@@ -1675,7 +1669,7 @@ y_pred_main, y_pred_aux = model.predict([X_new_A, X_new_B])
 
 As you can see, you can build any sort of architecture you want quite
 easily with the Functional API. Let's look at one last way you can build
-Keras models. []{}
+Keras models. 
 
 
 
@@ -1683,7 +1677,7 @@ Keras models. []{}
 Using the Subclassing API to Build Dynamic Models
 -------------------------------------------------
 
-Both []{}
+Both 
 the Sequential API and the Functional API are declarative: you start by
 declaring which layers you want to use and how they should be connected,
 and only then can you start feeding the model some data for training or
@@ -1733,7 +1727,7 @@ in the constructor from their usage in the `call()` method. The big
 difference is that you can do pretty much anything you want in the
 `call()` method: `for` loops, `if` statements, low-level TensorFlow
 operations---your imagination is the limit (see
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab))!
+[Lab 12]
 This makes it a great API for researchers experimenting with new ideas.
 
 This extra flexibility does come at a cost: your model's architecture is
@@ -1761,7 +1755,7 @@ will want to save them!
 Saving and Restoring a Model
 ----------------------------
 
-When []{}
+When 
 using the Sequential API or the Functional API, saving a trained Keras
 model is as simple as it gets:
 
@@ -1777,7 +1771,7 @@ model's architecture (including every layer's hyperparameters) and the
 values of all the model parameters for every layer (e.g., connection
 weights and biases). It also saves the optimizer (including its
 hyperparameters and any state it may have). In
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab),
+[Lab 19]
 we will see how to save a tf.keras model using TensorFlow's SavedModel
 format instead.
 
@@ -1833,7 +1827,7 @@ for too long and overfitting the training set: simply restore the last
 model saved after training, and this will be the best model on the
 validation set. The following code is a simple way to implement early
 stopping (introduced in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
+[Lab 4]
 
 ``` {data-type="programlisting" code-language="python"}
 checkpoint_cb = keras.callbacks.ModelCheckpoint("my_keras_model.h5",
@@ -1903,7 +1897,7 @@ your toolbox when using tf.keras: TensorBoard.
 Using TensorBoard for Visualization
 -----------------------------------
 
-TensorBoard []{}
+TensorBoard 
 is a great interactive visualization tool that you can use to view the
 learning curves during training, compare learning curves between
 multiple runs, visualize the computation graph, analyze training
@@ -1912,7 +1906,7 @@ multidimensional data projected down to 3D and automatically clustered
 for you, and more! This tool is installed automatically when you install
 TensorFlow, so you already have it.
 
-To use it, you must modify []{}
+To use it, you must modify 
 your program so that it outputs the data you want to visualize to
 special binary log files called *event files*. Each binary data record
 is called a *summary*. The TensorBoard server will monitor the log
@@ -2013,7 +2007,7 @@ extension, and the second line starts a TensorBoard server on port 8080
 
 Either way, you should see TensorBoard's web interface. Click the
 SCALARS tab to view the learning curves (see
-[Figure 10-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#tensorboard_diagram)).
+[Figure 10-17]
 At the bottom left, select the logs you want to visualize (e.g., the
 training logs from the first and second run), and click the `epoch_loss`
 scalar. Notice that the training loss went down nicely during both runs,
@@ -2026,7 +2020,7 @@ rate of 0.05 (`optimizer=keras.optimizers.SGD(lr=0.05)`) instead of
 You can also visualize the whole graph, the learned weights (projected
 to 3D), or the profiling traces. The `TensorBoard()` callback has
 options to log extra data too, such as embeddings (see
-[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
+[Lab 13]
 
 Additionally, TensorFlow offers a lower-level API
 in the `tf.summary` package. The following code creates a
@@ -2066,7 +2060,7 @@ visualization. You can already go ahead and use neural networks to
 tackle many problems! However, you may wonder how to choose the number
 of hidden layers, the number of neurons in the network, and all the
 other hyperparameters. Let's look at this
-now. []{}
+now. 
 
 
 
@@ -2087,7 +2081,7 @@ One option is to simply try many combinations of hyperparameters and see
 which one works best on the validation set (or use K-fold
 cross-validation). For example, we can use `GridSearchCV` or
 `RandomizedSearchCV` to explore the hyperparameter space, as we did in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
+[Lab 2]
 To do this, we need to wrap our Keras models in objects that mimic
 regular Scikit-Learn regressors. The first step is to create a function
 that will build and compile a Keras model, given a set of
@@ -2146,7 +2140,7 @@ want to train hundreds of variants and see which one performs best on
 the validation set. Since there are many hyperparameters, it is
 preferable to use a randomized search rather than grid search (as we
 discussed in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)).
+[Lab 2]
 Let's try to explore the number of hidden layers, the number of neurons,
 and the learning rate:
 
@@ -2167,7 +2161,7 @@ rnd_search_cv.fit(X_train, y_train, epochs=100,
 ```
 
 This is identical to what we did in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
+[Lab 2]
 except here we pass extra parameters to the `fit()` method, and they get
 relayed to the underlying Keras models. Note that `RandomizedSearchCV`
 uses K-fold cross-validation, so it does not use `X_valid` and
@@ -2203,7 +2197,7 @@ Fortunately, there are many techniques to explore a search space much
 more efficiently than randomly. Their core idea is simple: when a region
 of the space turns out to be good, it should be explored more. Such
 techniques take care of the "zooming" process for you and lead to much
-better solutions in much less time. Here are some []{}
+better solutions in much less time. Here are some 
 Python libraries you can use to optimize hyperparameters:
 
 [Hyperopt](https://github.com/hyperopt/hyperopt)
@@ -2215,7 +2209,7 @@ Python libraries you can use to optimize hyperparameters:
 [Hyperas](https://github.com/maxpumperla/hyperas), [kopt](https://github.com/Avsecz/kopt), or [Talos](https://github.com/autonomio/talos)
 
 :   Useful libraries for
-    optimizing []{}
+    optimizing 
     hyperparameters for Keras models (the first two are based on
     Hyperopt).
 
@@ -2250,7 +2244,7 @@ Python libraries you can use to optimize hyperparameters:
 Moreover, many companies offer services for hyperparameter optimization.
 We'll discuss Google Cloud AI Platform's [hyperparameter tuning
 service](https://homl.info/googletuning) in
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab).
+[Lab 19]
 Other options include services by [Arimo](https://arimo.com/) and
 [SigOpt](https://sigopt.com/), and CallDesk's
 [Oscar](http://oscar.calldesk.ai/).
@@ -2262,7 +2256,7 @@ paper](https://homl.info/pbt),^[23](https://learning.oreilly.com/library/view/ha
 where the authors jointly optimize a population of models and their
 hyperparameters. Google has also used an evolutionary approach, not just
 to search for hyperparameters but also to look for the best neural
-network architecture for the problem; their AutoML []{}
+network architecture for the problem; their AutoML 
 suite is already available as a [cloud
 service](https://cloud.google.com/automl/). Perhaps the days of building
 neural networks manually will soon be over? Check out Google's
@@ -2334,13 +2328,13 @@ the number of hidden layers until you start overfitting the training
 set. Very complex tasks, such as large image classification or speech
 recognition, typically require networks with dozens of layers (or even
 hundreds, but not fully connected ones, as we will see in
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
+[Lab 14]
 and they need a huge amount of training data. You will rarely have to
 train such networks from scratch: it is much more common to reuse parts
 of a pretrained state-of-the-art network that performs a similar task.
 Training will then be a lot faster and require much less data (we will
 discuss this in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
+[Lab 11]
 
 
 
@@ -2405,7 +2399,7 @@ Learning rate
     general, the optimal learning rate is about half of the maximum
     learning rate (i.e., the learning rate above which the training
     algorithm diverges, as we saw in
-    [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
+    [Lab 4]
     One way to find a good learning rate is to train the model for a few
     hundred iterations, starting with a very low learning rate (e.g.,
     10^-5^) and gradually increasing it up to a very large value (e.g.,
@@ -2420,14 +2414,14 @@ Learning rate
     point). You can then reinitialize your model and train it normally
     using this good learning rate. We will look at more learning rate
     techniques in
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab).
+    [Lab 11]
 
 Optimizer
 
 :   Choosing a better optimizer than plain old Mini-batch Gradient
     Descent (and tuning its hyperparameters) is also quite important. We
     will see several advanced optimizers in
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab).
+    [Lab 11]
 
 Batch size
 
@@ -2435,7 +2429,7 @@ Batch size
     performance and training time. The main benefit of using large batch
     sizes is that hardware accelerators like GPUs can process them
     efficiently (see
-    [Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)),
+    [Lab 19]
     so the training algorithm will see more instances per second.
     Therefore, many researchers and practitioners recommend using the
     largest batch size that can fit in GPU RAM. There's a catch, though:
@@ -2456,7 +2450,7 @@ Batch size
     8,192) using various techniques such as warming up the learning rate
     (i.e., starting training with a small learning rate, then ramping it
     up, as we will see in
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
+    [Lab 11]
     This led to a very short training time, without any generalization
     gap. So, one strategy is to try to use a large batch size, using
     learning rate warmup, and if training is unstable or the final
@@ -2562,14 +2556,14 @@ Exercises
         problem, can be alleviated with better weight initialization and
         other techniques, better optimizers (such as AdaGrad or Adam),
         or Batch Normalization (discussed in
-        [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
+        [Lab 11]
 
     7.  Go further. Take an hour or so to play around with other
         parameters and get a feel for what they do, to build an
         intuitive understanding about neural [networks].
 
 2.  Draw an ANN using the original artificial neurons (like the ones in
-    [Figure 10-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#nn_propositional_logic_diagram))
+    [Figure 10-3]
     that computes *A* ⊕ *B* (where ⊕ represents the XOR operation).
     Hint: *A* ⊕ *B* = [(*A* ∧ ¬ *B*] ∨ (¬ *A* ∧ *B*).
 
@@ -2609,7 +2603,7 @@ Exercises
     many neurons do you need in the output layer, and which activation
     function should you use? What about for getting your network to
     predict housing prices, as in
-    [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)?
+    [Lab 2]
 
 8.  What is backpropagation and how does it work? What is the difference
     between backpropagation and reverse-mode autodiff?
@@ -2627,78 +2621,77 @@ Exercises
     checkpoints, use early stopping, and plot learning curves using
     TensorBoard.
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 You can get the best of both worlds by being open to biological
 inspirations without being afraid to create biologically unrealistic
 models, as long as they work well.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 Warren S. McCulloch and Walter Pitts, "A Logical Calculus of the Ideas
 Immanent in Nervous Activity," *The Bulletin of Mathematical Biology* 5,
 no. 4 (1943): 115--113.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 They are not actually attached, just so close that they can very quickly
 exchange chemical signals.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 Image by Bruce Blaus ([Creative Commons
 3.0](https://creativecommons.org/licenses/by/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Neuron*](https://en.wikipedia.org/wiki/Neuron).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 In the context of Machine Learning, the phrase "neural networks"
 generally refers to ANNs, not BNNs.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 Drawing of a cortical lamination by S. Ramon y Cajal (public domain).
 Reproduced from
 [*https://en.wikipedia.org/wiki/Cerebral\_cortex*](https://en.wikipedia.org/wiki/Cerebral_cortex).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 The name *Perceptron* is sometimes used to mean a tiny network with a
 single TLU.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 Note that this solution is not unique: when data points are linearly
 separable, there is an infinity of hyperplanes that can separate them.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)
 In the 1990s, an ANN with more than two hidden layers was considered
 deep. Nowadays, it is common to see ANNs with dozens of layers, or even
 hundreds, so the definition of "deep" is quite fuzzy.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[10]
 David Rumelhart et al. "Learning Internal Representations by Error
 Propagation," (Defense Technical Information Center technical report,
 September 1985).
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[11]
 This technique was actually independently invented several times by
 various researchers in different fields, starting with Paul Werbos in
 1974.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[12]
 Biological neurons seem to implement a roughly sigmoid (*S*-shaped)
 activation function, so researchers stuck to sigmoid functions for a
 very long time. But it turns out that ReLU generally works better in
 ANNs. This is one of the cases where the biological analogy was
 misleading.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[13]
 Project ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating
 System).
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[14]
 You can use `keras.utils.plot_model()` to generate an image of your
 model.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[15]
 If your training or validation data does not match the expected shape,
 you will get an exception. This is perhaps the most common error, so you
 should get familiar with the error message. The message is actually
@@ -2708,64 +2701,64 @@ get the following exception: "ValueError: Error when checking input:
 expected flatten\_input to have 3 dimensions, but got array with shape
 (60000, 784)."
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[16]
 Heng-Tze Cheng et al., "Wide & Deep Learning for Recommender Systems,"
 *Proceedings of the First Workshop on Deep Learning for Recommender
 Systems* (2016): 7--10.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[17]
 The short path can also be used to provide manually engineered features
 to the neural network.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[18]
 The name `input_` is used to avoid overshadowing Python's built-in
 `input()` function.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[19]
 Alternatively, you can pass a dictionary mapping the input names to the
 input values, like `{"wide_input": X_train_A, "deep_input": X_train_B}`.
 This is especially useful when there are many inputs, to avoid getting
 the order wrong.
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[20]
 Alternatively, you can pass a dictionary that maps each output name to
 the corresponding loss. Just like for the inputs, this is useful when
 there are multiple outputs, to avoid getting the order wrong. The loss
 weights and metrics (discussed shortly) can also be set using
 dictionaries.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[21]
 Keras models have an `output` attribute, so we cannot use that name for
 the main output layer, which is why we renamed it to `main_output`.
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[22]
 Lisha Li et al., "Hyperband: A Novel Bandit-Based Approach to
 Hyperparameter Optimization," *Journal of Machine Learning Research* 18
 (April 2018): 1--52.
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[23]
 Max Jaderberg et al., "Population Based Training of Neural Networks,"
 arXiv preprint arXiv:1711.09846 (2017).
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[24]
 Dominic Masters and Carlo Luschi, "Revisiting Small Batch Training for
 Deep Neural Networks," arXiv preprint arXiv:1804.07612 (2018).
 
-^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[25]
 Elad Hoffer et al., "Train Longer, Generalize Better: Closing the
 Generalization Gap in Large Batch Training of Neural Networks,"
 *Proceedings of the 31st International Conference on Neural Information
 Processing Systems* (2017): 1729--1739.
 
-^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[26]
 Priya Goyal et al., "Accurate, Large Minibatch SGD: Training ImageNet in
 1 Hour," arXiv preprint arXiv:1706.02677 (2017).
 
-^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[27]
 Leslie N. Smith, "A Disciplined Approach to Neural Network
 Hyper-Parameters: Part 1---Learning Rate, Batch Size, Momentum, and
 Weight Decay," arXiv preprint arXiv:1803.09820 (2018).
 
-^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
+^[28]
 A few extra ANN architectures are presented in
-[Appendix E](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#other_ann_appendix).
+[Appendix E]

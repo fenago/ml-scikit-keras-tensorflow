@@ -38,7 +38,7 @@ defined, it is not too hard; you just need to use five rules:
 -   The derivative of *λ* times a function is *λ* times its derivative.
 
 From these rules, you can derive [Equation
-D-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#partial_derivatives_equations).
+D-1]
 
 
 ##### [Equation D-1. ] Partial derivatives of *f*(*x*, *y*)
@@ -65,7 +65,7 @@ point. More precisely, the derivative is defined as the limit of the
 slope of a straight line going through this point *x*~0~ and another
 point *x* on the function, as *x* gets infinitely close to *x*~0~ (see
 [Equation
-D-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#derivative_definition)).
+D-2]
 
 
 ##### [Equation D-2. ] Definition of the derivative of a function *h*(*x*) at point *x*~0~
@@ -129,7 +129,7 @@ network. So let's turn to autodiff, starting with forward mode.
 Forward-Mode Autodiff
 =====================
 
-[Figure D-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#symbolic_differentiation_diagram)
+[Figure D-1]
 shows how forward-mode autodiff works on an even
 simpler function, *g*(*x*, *y*) = 5 + *xy*. The graph for that function
 is represented on the left. After forward-mode autodiff, we get the
@@ -189,7 +189,7 @@ number is represented in memory as a pair of floats. For example, 42 +
 24*ε* is represented by the pair (42.0, 24.0).
 
 Dual numbers can be added, multiplied, and so on, as shown in [Equation
-D-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#dual_numbers_operations).
+D-3]
 
 
 ##### [Equation D-3. ] A few operations with dual numbers
@@ -204,7 +204,7 @@ $$\begin{array}{cl}
 Most importantly, it can be shown that *h*(*a* + *bε*) = *h*(*a*) + *b*
 × *h*′(*a*)*ε*, so computing *h*(*a* + *ε*) gives you both *h*(*a*) and
 the derivative *h*′(*a*) in just one shot.
-[Figure D-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_forward_diagram)
+[Figure D-2]
 shows that the partial derivative of *f*(*x*, *y*) with regard to *x* at
 *x* = 3 and *y* = 4 (which we will write ∂*f*/∂*x* (3, 4)) can be
 computed using dual numbers. All we need to do is compute *f*(3 + *ε*,
@@ -237,7 +237,7 @@ Then it does a second pass, this time in the reverse direction (i.e.,
 from the output to the inputs), to compute all the partial derivatives.
 The name "reverse mode" comes from this second pass through the graph,
 where gradients flow in the reverse direction.
-[Figure D-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_reverse_diagram)
+[Figure D-3]
 represents the second pass. During the first pass, all the node values
 were computed, starting from *x* = 3 and *y* = 4. You can see those
 values at the bottom right of each node (e.g., *x* × *x* = 9). The nodes
@@ -250,7 +250,7 @@ The idea is to gradually go down the graph, computing the partial
 derivative of *f*(*x*, *y*) with regard to each consecutive node, until
 we reach the variable nodes. For this, reverse-mode autodiff relies
 heavily on the *chain rule*, shown in [Equation
-D-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#chain_rule).
+D-4]
 
 
 ##### [Equation D-4. ] Chain rule
@@ -288,7 +288,7 @@ as long as you ask it to compute the partial derivatives at points that
 are differentiable.
 
 In
-[Figure D-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_reverse_diagram),
+[Figure D-3]
 the numerical results are computed on the fly, at each node. However,
 that's not exactly what TensorFlow does: instead, it creates a new
 computation graph. In other words, it implements *symbolic* reverse-mode
@@ -308,4 +308,4 @@ of the function's outputs with regard to its inputs. For example,
 suppose you implement a function that computes the square of its input:
 *f*(*x*) = *x*^2^. In that case you would need to provide the
 corresponding derivative function: *f*′(*x*) =
-2*x*. []{}
+2*x*. 

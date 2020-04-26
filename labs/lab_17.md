@@ -5,17 +5,17 @@
 [Lab 17. ] Representation Learning and Generative Learning Using Autoencoders and GANs
 =================================================================================================
 
-Autoencoders []{}
+Autoencoders 
 are artificial neural networks capable of learning dense representations
 of the input data, called *latent representations* or *codings*, without
 any supervision (i.e., the training set is unlabeled). These codings
 typically have a much lower dimensionality than the input data, making
 autoencoders useful for dimensionality reduction (see
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)),
+[Lab 8]
 especially for visualization purposes. Autoencoders also act as feature
 detectors, and they can be used for unsupervised pretraining of deep
 neural networks (as we discussed in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
+[Lab 11]
 Lastly, some autoencoders
 are *generative models*: they are capable of randomly generating new
 data that looks very similar to the training data. For example, you
@@ -108,11 +108,10 @@ to memorize long sequences is what makes it useful to recognize
 patterns, and hopefully this clarifies why constraining an autoencoder
 during training pushes it to discover and exploit patterns in the data.
 
-The relationship between memory, perception, and []{}
+The relationship between memory, perception, and 
 pattern matching was [famously studied by William Chase and Herbert
 Simon in the early
-1970s](https://homl.info/111).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^ They observed that expert chess players were able to
+1970s](https://homl.info/111).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) They observed that expert chess players were able to
 memorize the positions of all the pieces in a game by looking at the
 board for just five seconds, a task that most people would find
 impossible. However, this was only the case when the pieces were placed
@@ -126,18 +125,18 @@ Just like the chess players in this memory experiment, an autoencoder
 looks at the inputs, converts them to an efficient latent
 representation, and then spits out something that (hopefully) looks very
 close to the inputs. An
-autoencoder []{} []{}
+autoencoder  
 is always composed of two parts: an *encoder* (or *recognition network*)
 that converts the inputs to a latent representation, followed by a
 *decoder* (or *generative network*) that converts the internal
 representation to the outputs (see
-[Figure 17-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#encoder_decoder_diagram)).
+[Figure 17-1]
 
 ![](./images/mls2_1701.png)
 
 As you can see, an autoencoder typically has the same architecture as a
 Multi-Layer Perceptron (MLP; see
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
+[Lab 10]
 except that the number of neurons in the output layer must be equal to
 the number of inputs. In this example, there is just one hidden layer
 composed of two neurons (the encoder), and one output layer composed of
@@ -169,7 +168,7 @@ If the
 autoencoder uses only linear activations and the cost
 function is the mean squared error (MSE), then it
 ends up performing Principal Component Analysis (PCA; see
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)).
+[Lab 8]
 
 The following code builds a simple linear autoencoder to perform PCA on
 a 3D dataset, projecting it to 2D:
@@ -210,7 +209,7 @@ codings = encoder.predict(X_train)
 
 Note that the same dataset, `X_train`, is used as both the inputs and
 the targets.
-[Figure 17-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#linear_autoencoder_pca_diagram)
+[Figure 17-2]
 shows the original 3D dataset (on the left) and the output of the
 autoencoder's hidden layer (i.e., the coding layer, on the right). As
 you can see, the autoencoder found the best 2D plane to project the data
@@ -249,12 +248,12 @@ The architecture of a stacked autoencoder is typically symmetrical with
 regard to the central hidden layer (the coding layer). To put it simply,
 it looks like a sandwich. For example, an autoencoder for MNIST
 (introduced in
-[Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab))
+[Lab 3]
 may have 784 inputs, followed by a hidden layer with 100 neurons, then a
 central hidden layer of 30 neurons, then another hidden layer with 100
 neurons, and an output layer with 784 neurons. This stacked autoencoder
 is represented in
-[Figure 17-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#stacked_autoencoder_diagram).
+[Figure 17-3]
 
 ![](./images/mls2_1703.png)
 
@@ -266,11 +265,11 @@ Implementing a Stacked Autoencoder Using Keras
 You can implement a stacked
 autoencoder very much like a regular deep MLP. In particular, the same
 techniques we used in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+[Lab 11]
 for training deep nets can be applied. For example, the following code
 builds a stacked autoencoder for Fashion MNIST (loaded and normalized as
 in
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)),
+[Lab 10]
 using the SELU activation [function]:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -352,7 +351,7 @@ def show_reconstructions(model, n_images=5):
 show_reconstructions(stacked_ae)
 ```
 
-[Figure 17-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#reconstruction_plot)
+[Figure 17-4]
 shows the resulting images.
 
 ![](./images/mls2_1704.png)
@@ -369,12 +368,12 @@ useful patterns in the data. For now, let's go with this model.
 Visualizing the Fashion MNIST Dataset
 -------------------------------------
 
-Now []{}
+Now 
 that we have trained a stacked autoencoder, we can use it to reduce the
 dataset's dimensionality. For visualization, this does not give great
 results compared to other dimensionality reduction algorithms (such as
 those we discussed in
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)),
+[Lab 8]
 but one big advantage of autoencoders is that they can handle large
 datasets, with many instances and many features. So one strategy is to
 use an autoencoder to reduce the dimensionality down to a reasonable
@@ -399,7 +398,7 @@ Now we can plot the dataset:
 plt.scatter(X_valid_2D[:, 0], X_valid_2D[:, 1], c=y_valid, s=10, cmap="tab10")
 ```
 
-[Figure 17-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#fashion_mnist_visualization_plot)
+[Figure 17-5]
 shows the resulting scatterplot (beautified a bit by displaying some of
 the images). The t-SNE algorithm identified several clusters which match
 the classes reasonably well (each class is represented with a different
@@ -408,7 +407,7 @@ color).
 ![](./images/mls2_1705.png)
 
 So, autoencoders can be used for dimensionality reduction. Another
-application is for unsupervised pretraining. []{}
+application is for unsupervised pretraining. 
 
 
 
@@ -418,7 +417,7 @@ Unsupervised Pretraining Using Stacked Autoencoders
 
 As []{#Aunsup17} []{#SAunsup17} []{#Pstack17} []{#ULpretrain17} we discussed
 in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab),
+[Lab 11]
 if you are tackling a complex supervised task but you do not have a lot
 of labeled training data, one solution is to find a neural network that
 performs a similar task and reuse its lower layers. This makes it
@@ -431,7 +430,7 @@ Similarly, if you have a large dataset but most of it is unlabeled, you
 can first train a stacked autoencoder using all the data, then reuse the
 lower layers to create a neural network for your actual task and train
 it using the labeled data. For example,
-[Figure 17-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#unsupervised_pretraining_autoencoders_diagram)
+[Figure 17-6]
 shows how to use a stacked autoencoder to perform unsupervised
 pretraining for a classification neural network. When training the
 classifier, if you really don't have much labeled training data, you may
@@ -533,7 +532,7 @@ Rather than training the whole stacked autoencoder
 in one go like we just did, it is possible to train one shallow
 autoencoder at a time, then stack all of them into a single stacked
 autoencoder (hence the name), as shown in
-[Figure 17-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#stacking_autoencoders_diagram).
+[Figure 17-7]
 This technique is not used as much these days, but you may still run
 into papers that talk about "greedy layerwise training," so it's good to
 know what it means.
@@ -546,7 +545,7 @@ first autoencoder, and this gives us a new (compressed) training set. We
 then train a second autoencoder on this new dataset. This is the second
 phase of training. Finally, we build a big sandwich using all these
 autoencoders, as shown in
-[Figure 17-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#stacking_autoencoders_diagram)
+[Figure 17-7]
 (i.e., we first stack the hidden layers of each autoencoder, then the
 output layers in reverse order). This gives us the final stacked
 autoencoder (see the "Training One Autoencoder at a Time" section in the
@@ -558,19 +557,18 @@ interest in Deep Learning was the discovery in 2006 by [Geoffrey Hinton
 et al.](https://homl.info/136) that deep neural networks can be
 pretrained in an unsupervised fashion, using this greedy layerwise
 approach. They used restricted Boltzmann machines (RBMs; see
-[Appendix E](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#other_ann_appendix))
+[Appendix E]
 for this purpose, but in [2007 Yoshua Bengio et al.
-showed](https://homl.info/112)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^ that autoencoders worked just as well. For several
+showed](https://homl.info/112)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) that autoencoders worked just as well. For several
 years this was the only efficient way to train deep nets, until many of
 the techniques introduced in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+[Lab 11]
 made it possible to just train a deep net in one shot.
 
 Autoencoders are not limited to dense networks: you can also build
 convolutional autoencoders, or even recurrent autoencoders. Let's look
 at these
-now. []{}
+now. 
 
 
 
@@ -582,13 +580,12 @@ Convolutional Autoencoders
 If you are dealing with
 images, then the autoencoders we have seen so far will not work well
 (unless the images are very small): as we saw in
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
+[Lab 14]
 convolutional neural networks are far better suited than dense networks
 to work with images. So if you want to build an autoencoder for images
 (e.g., for unsupervised pretraining or dimensionality reduction), you
 will need to build a [*convolutional
-autoencoder*](https://homl.info/convae).^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^ The encoder is a regular CNN composed of convolutional
+autoencoder*](https://homl.info/convae).^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) The encoder is a regular CNN composed of convolutional
 layers and pooling layers. It typically reduces the spatial
 dimensionality of the inputs (i.e., height and width) while increasing
 the depth (i.e., the number of feature maps). The decoder must do the
@@ -630,7 +627,7 @@ If you want to build an
 autoencoder for sequences, such as time series or text (e.g., for
 unsupervised learning or dimensionality reduction), then recurrent
 neural networks (see
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab))
+[Lab 15]
 may be better suited than dense networks. Building a *recurrent
 autoencoder* is straightforward: the encoder is typically a
 sequence-to-vector RNN which compresses the input sequence down to a
@@ -684,17 +681,15 @@ autoencoder to learn useful features is to add noise to its inputs,
 training it to recover the original, noise-free inputs. This idea has
 been around since the 1980s (e.g., it is mentioned in Yann LeCun's 1987
 master's thesis). In a [2008
-paper](https://homl.info/113),^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^ Pascal Vincent et al. showed that autoencoders could
+paper](https://homl.info/113),^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) Pascal Vincent et al. showed that autoencoders could
 also be used for feature extraction. In a [2010
-paper](https://homl.info/114),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^ Vincent et
+paper](https://homl.info/114),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) Vincent et
 al. introduced *stacked denoising autoencoders*.
 
 The noise can be pure Gaussian noise added to the inputs, or it can be
 randomly switched-off inputs, just like in dropout (introduced in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)).
-[Figure 17-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#denoising_autoencoders_diagram)
+[Lab 11]
+[Figure 17-8]
 shows both options.
 
 ![](./images/mls2_1708.png)
@@ -720,7 +715,7 @@ dropout_decoder = keras.models.Sequential([
 dropout_ae = keras.models.Sequential([dropout_encoder, dropout_decoder])
 ```
 
-[Figure 17-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#dropout_denoising_plot)
+[Figure 17-9]
 shows a few noisy images (with half the pixels turned off), and the
 images reconstructed by the dropout-based denoising autoencoder. Notice
 how the autoencoder guesses details that are actually not in the input,
@@ -739,7 +734,7 @@ Sparse Autoencoders
 ===================
 
 Another
-kind []{}
+kind 
 of constraint that often leads to good feature extraction is *sparsity*:
 by adding an appropriate term to the cost function, the autoencoder is
 pushed to reduce the number of active neurons in the coding layer. For
@@ -799,17 +794,17 @@ sparsity is 0.1, it must be penalized to activate less. One approach
 could be simply adding the squared error (0.3 -- 0.1)^2^ to the cost
 function, but in practice a better approach is to use the
 Kullback--Leibler (KL) divergence (briefly discussed in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)),
+[Lab 4]
 which has much stronger gradients than the mean
 squared error, as you can see in
-[Figure 17-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#sparsity_loss_plot).
+[Figure 17-10]
 
 ![](./images/mls2_1710.png)
 
 Given two discrete probability distributions *P* and *Q*, the KL
 divergence between these distributions, noted *D*~KL~(*P* ∥ *Q*), can be
 computed using [Equation
-17-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#kl_divergence_equation).
+17-1]
 
 
 ##### [Equation 17-1. ] Kullback--Leibler divergence
@@ -821,7 +816,7 @@ In our case, we want to measure the divergence between the target
 probability *p* that a neuron in the coding layer will activate and the
 actual probability *q* (i.e., the mean activation over the training
 batch). So the KL divergence simplifies to [Equation
-17-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#kl_divergence_equation_simplified).
+17-2]
 
 
 ##### [Equation 17-2. ] KL divergence between the target sparsity *p* and the actual sparsity *q*
@@ -881,7 +876,7 @@ of the neurons in the coding layer are mostly close to 0 (about 70% of
 all activations are lower than 0.1), and all neurons have a mean
 activation around 0.1 (about 90% of all neurons have a mean activation
 between 0.1 and 0.2), as shown in
-[Figure 17-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#sparse_autoencoder_plot).
+[Figure 17-11]
 
 ![](./images/mls2_1711.png)
 
@@ -915,12 +910,12 @@ easier to train, and the sampling process is much faster (with RBMs you
 need to wait for the network to stabilize into a "thermal equilibrium"
 before you can sample a new instance). Indeed, as their name suggests,
 variational autoencoders perform variational
- []{}Bayesian inference (introduced in
-[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab)),
+ Bayesian inference (introduced in
+[Lab 9]
 which is an efficient way to perform approximate Bayesian inference.
 
 Let's take a look at how they work.
-[Figure 17-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#variational_autoencoders_diagram)
+[Figure 17-12]
 (left) shows a variational autoencoder. You can recognize the basic
 structure of all autoencoders, with an encoder followed by a decoder (in
 this example, they both have two hidden layers), but there is a twist:
@@ -940,8 +935,7 @@ training instance.
 As you can see in the diagram, although the inputs may have a very
 convoluted distribution, a variational autoencoder tends to produce
 codings that look as though they were sampled from a simple Gaussian
-distribution:^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^ during training, the cost function (discussed next)
+distribution: during training, the cost function (discussed next)
 pushes the codings to gradually migrate within the coding space (also
 called the *latent space*) to end up looking like a cloud of Gaussian
 points. One great consequence is that after training a variational
@@ -960,9 +954,7 @@ than with the sparse autoencoder, in particular because of the Gaussian
 noise, which limits the amount of information that can be transmitted to
 the coding layer (thus pushing the autoencoder to learn useful
 features). Luckily, the equations simplify, so the latent loss can be
-computed quite simply using [Equation
-17-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#var_ae_latent_loss_equation):^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^
+computed quite simply using [Equation 17-3]
 
 
 ##### [Equation 17-3. ] Variational autoencoder's latent loss
@@ -975,13 +967,13 @@ dimensionality, and *μ*~i~ and *σ*~i~ are the mean and standard
 deviation of the *i*^th^ component of the codings. The vectors **μ** and
 **σ** (which contain all the *μ*~i~ and *σ*~i~) are output by the
 encoder, as shown in
-[Figure 17-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#variational_autoencoders_diagram)
+[Figure 17-12]
 (left).
 
 A common tweak to the variational autoencoder's architecture is to make
 the encoder output **γ** = log(**σ**^2^) rather than **σ**. The latent
 loss can then be computed as shown in [Equation
-17-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#var_ae_latent_loss_equation_2).
+17-4]
 This approach is more numerically stable and speeds up training.
 
 
@@ -992,7 +984,7 @@ $$\mathcal{L} = - \frac{1}{2}\sum\limits_{i = 1}^{n}\left\lbrack {1 + \gamma_{i}
 
 Let's start building a variational autoencoder for Fashion MNIST (as
 shown in
-[Figure 17-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#variational_autoencoders_diagram),
+[Figure 17-12]
 but using the **γ** tweak). First, we will need a custom layer to sample
 the codings, given **μ** and **γ**:
 
@@ -1070,7 +1062,7 @@ variational_ae.compile(loss="binary_crossentropy", optimizer="rmsprop")
 ```
 
 We first apply [Equation
-17-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#var_ae_latent_loss_equation_2)
+17-4]
 to compute the latent loss for each instance in the batch (we sum over
 the last axis). Then we compute the mean loss over all the instances in
 the batch, and we divide the result by 784 to ensure it has the
@@ -1107,7 +1099,7 @@ codings = tf.random.normal(shape=[12, codings_size])
 images = variational_decoder(codings).numpy()
 ```
 
-[Figure 17-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#vae_generated_images_plot)
+[Figure 17-13]
 shows the 12 generated images.
 
 ![](./images/mls2_1713.png)
@@ -1138,7 +1130,7 @@ interpolated_codings = tf.reshape(larger_grid, [-1, codings_size])
 images = variational_decoder(interpolated_codings).numpy()
 ```
 
-[Figure 17-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#semantic_interpolation_plot)
+[Figure 17-14]
 shows the resulting images. The original images are framed, and the rest
 are the result of semantic interpolation between the nearby images.
 Notice, for example, how the shoe in the fourth row and fifth column is
@@ -1149,7 +1141,7 @@ a nice interpolation between the two shoes located above and below it.
 For several years, variational autoencoders were quite popular, but GANs
 eventually took the lead, in particular because they are capable of
 generating much more realistic and crisp images. So let's turn our
-attention to GANs. []{}
+attention to GANs. 
 
 
 
@@ -1166,7 +1158,7 @@ almost instantly, it took a few years to overcome some of the
 difficulties of training GANs. Like many great ideas, it seems simple in
 hindsight: make neural networks compete against each other in the hope
 that this competition will push them to excel. As shown in
-[Figure 17-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#gan_diagram),
+[Figure 17-15]
 a GAN is composed of two neural networks:
 
 Generator
@@ -1329,7 +1321,7 @@ As discussed earlier, you can see the two phases at each iteration:
     attribute to `False`, once again to avoid a warning.
 
 That's it! If you display the generated images (see
-[Figure 17-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#gan_generated_images_plot)),
+[Figure 17-16]
 you will see that at the end of the first epoch, they already start to
 look like (very noisy) Fashion MNIST images.
 
@@ -1518,7 +1510,7 @@ learning rates of the two networks).
 Lastly, to build the dataset, then compile and train this model, we use
 the exact same code as earlier. After 50 epochs of training, the
 generator produces images like those shown in
-[Figure 17-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#dcgan_generated_images_plot).
+[Figure 17-17]
 It's still not perfect, but many of these images are pretty
 [convincing].
 
@@ -1527,7 +1519,7 @@ It's still not perfect, but many of these images are pretty
 If you scale up this architecture and train it on a large dataset of
 faces, you can get fairly realistic images. In fact, DCGANs can learn
 quite meaningful latent representations, as you can see in
-[Figure 17-18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#faces_arithmetics_diagram):
+[Figure 17-18]
 many images were generated, and nine of them were picked manually (top
 left), including three representing men with glasses, three men without
 glasses, and three women without glasses. For each of these categories,
@@ -1583,7 +1575,7 @@ trained layers remain trainable.
 
 For example, when growing the generator's outputs from 4 × 4 to 8 × 8
 (see
-[Figure 17-19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#progressively_growing_gan_diagram)),
+[Figure 17-19]
 an upsampling layer (using nearest neighbor filtering) is added to the
 existing convolutional layer, so it outputs 8 × 8 feature maps, which
 are then fed to the new convolutional layer (which uses `"same"` padding
@@ -1598,7 +1590,7 @@ output layer. The weight of the new outputs is *α*, while the weight of
 the original outputs is 1 -- *α*, and *α* is slowly increased from 0 to
 1. In other words, the new convolutional layers (represented with dashed
 lines in
-[Figure 17-19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#progressively_growing_gan_diagram))
+[Figure 17-19]
 are gradually faded in, while the original output layer is gradually
 faded out. A similar fade-in/fade-out technique is used when a new
 convolutional layer is added to the discriminator (followed by an
@@ -1643,7 +1635,7 @@ Equalized learning rate
     RMSProp, Adam, or other adaptive gradient optimizers. Indeed, these
     optimizers normalize the gradient updates by their estimated
     standard deviation (see
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)),
+    [Lab 11]
     so parameters that have a larger dynamic
     range^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
     will take longer to train, while parameters with a small dynamic
@@ -1685,7 +1677,7 @@ StyleGANs
 ---------
 
 The
-state []{}
+state 
 of the art in high-resolution image generation was advanced once again
 by the same Nvidia team in a [2018
 paper](https://homl.info/stylegan)^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
@@ -1696,7 +1688,7 @@ at every scale, greatly improving the quality of the generated images.
 The discriminator and the loss function were not modified, only the
 generator. Let's take a look at the StyleGAN. It is composed of two
 networks (see
-[Figure 17-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#stylegan_diagram)):
+[Figure 17-20]
 
 Mapping network
 
@@ -1705,7 +1697,7 @@ Mapping network
     sent through multiple
     *affine transformations* (i.e., `Dense` layers with no activation
     functions, represented by the "A" boxes in
-    [Figure 17-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#stylegan_diagram)),
+    [Figure 17-20]
     which produces multiple vectors. These vectors control the style of
     the generated image at different levels, from fine-grained texture
     (e.g., hair color) to high-level features (e.g., adult or child). In
@@ -1754,7 +1746,7 @@ The added noise is different for each level. Each noise input consists
 of a single feature map full of Gaussian noise, which is broadcast to
 all feature maps (of the given level) and scaled using learned
 per-feature scaling factors (this is represented by the "B" boxes in
-[Figure 17-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#stylegan_diagram))
+[Figure 17-20]
 before it is added.
 
 Finally, StyleGAN uses a
@@ -1843,93 +1835,92 @@ Exercises
     Turn it into a conditional GAN where you can control the generated
     class.
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 William G. Chase and Herbert A. Simon, "Perception in Chess," *Cognitive
 Psychology* 4, no. 1 (1973): 55--81.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 You might be tempted to use the accuracy metric, but it would not work
 properly, since this metric expects the labels to be either 0 or 1 for
 each pixel. You can easily work around this problem by creating a custom
 metric that computes the accuracy after rounding the targets and
 predictions to 0 or 1.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 Yoshua Bengio et al., "Greedy Layer-Wise Training of Deep Networks,"
 *Proceedings of the 19th International Conference on Neural Information
 Processing Systems* (2006): 153--160.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 Jonathan Masci et al., "Stacked Convolutional Auto-Encoders for
 Hierarchical Feature Extraction," *Proceedings of the 21st International
 Conference on Artificial Neural Networks* 1 (2011): 52--59.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 Pascal Vincent et al., "Extracting and Composing Robust Features with
 Denoising Autoencoders," *Proceedings of the 25th International
 Conference on Machine Learning* (2008): 1096--1103.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 Pascal Vincent et al., "Stacked Denoising Autoencoders: Learning Useful
 Representations in a Deep Network with a Local Denoising Criterion,"
 *Journal of Machine Learning Research* 11 (2010): 3371--3408.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 Diederik Kingma and Max Welling, "Auto-Encoding Variational Bayes,"
 arXiv preprint arXiv:1312.6114 (2013).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 Variational autoencoders are actually more general; the codings are not
 limited to Gaussian distributions.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)
 For more mathematical details, check out the original paper on
 variational autoencoders, or Carl Doersch's [great
 tutorial](https://homl.info/116) (2016).
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[10]
 Ian Goodfellow et al., "Generative Adversarial Nets," *Proceedings of
 the 27th International Conference on Neural Information Processing
 Systems* 2 (2014): 2672--2680.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[11]
 For a nice comparison of the main GAN losses, check out this great
 [GitHub project by Hwalsuk Lee](https://homl.info/ganloss).
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[12]
 Mario Lucic et al., "Are GANs Created Equal? A Large-Scale Study,"
 *Proceedings of the 32nd International Conference on Neural Information
 Processing Systems* (2018): 698--707.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[13]
 Alec Radford et al., "Unsupervised Representation Learning with Deep
 Convolutional Generative Adversarial Networks," arXiv preprint
 arXiv:1511.06434 (2015).
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[14]
 Reproduced with the kind authorization of the authors.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[15]
 Mehdi Mirza and Simon Osindero, "Conditional Generative Adversarial
 Nets," arXiv preprint arXiv:1411.1784 (2014).
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[16]
 Tero Karras et al., "Progressive Growing of GANs for Improved Quality,
 Stability, and Variation," *Proceedings of the International Conference
 on Learning Representations* (2018).
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[17]
 The dynamic range of a variable is the ratio between the highest and the
 lowest value it may take.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[18]
 Tero Karras et al., "A Style-Based Generator Architecture for Generative
 Adversarial Networks," arXiv preprint arXiv:1812.04948 (2018).
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html-marker)^
+^[19]
 Reproduced with the kind authorization of the authors.

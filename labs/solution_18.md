@@ -37,7 +37,7 @@
 
 2.  Here are a few possible applications of Reinforcement Learning,
     other than those mentioned in
-    [Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab):
+    [Lab 18]
 
     Music personalization
 

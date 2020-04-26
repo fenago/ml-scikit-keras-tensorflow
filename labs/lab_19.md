@@ -14,15 +14,14 @@ infrastructure may need to use this model on live data, in which case
 you probably want to wrap your model in a web service: this way, any
 part of your infrastructure can query your model at any time using a
 simple REST API (or some other protocol), as we discussed in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
+[Lab 2]
 But as time passes, you need to regularly retrain your model on fresh
 data and push the updated version to production. You must handle model
 versioning, gracefully transition from one model to the next, possibly
 roll back to the previous model in case of problems, and
 perhaps run multiple different models in parallel
 to perform *A/B
-experiments*.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^ If your product becomes successful, your service may
+experiments*.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) If your product becomes successful, your service may
 start to get plenty of *queries per second* (QPS),
 and it must scale up to support the load. A great solution to scale up
 your service, as we will see in this lab, is to use TF Serving,
@@ -65,8 +64,7 @@ use it in any Python code: if it's a tf.keras model, just call its
 point where it is preferable to wrap your model in a small service whose
 sole role is to make predictions and have the rest of the infrastructure
 query it (e.g., via a REST or gRPC
-API).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^ This decouples your model from the rest of the
+API).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) This decouples your model from the rest of the
 infrastructure, making it possible to easily switch model versions or
 scale the service up as needed (independently from the rest of your
 infrastructure), perform A/B experiments, and ensure that all your
@@ -84,7 +82,7 @@ TF Serving is a very efficient, battle-tested model server that's
 written in C++. It can sustain a high load, serve multiple versions of
 your models and watch a model repository to automatically deploy the
 latest versions, and more (see
-[Figure 19-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#tf_serving_diagram)).
+[Figure 19-1]
 
 ![](./images/mls2_1901.png)
 
@@ -133,7 +131,7 @@ Since a SavedModel saves the computation graph, it can only be used with
 models that are based exclusively on TensorFlow operations, excluding
 the `tf.py_function()` operation (which wraps arbitrary Python code). It
 also excludes dynamic tf.keras models (see
-[Appendix G](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html#tffunctions_appendix)),
+[Appendix G]
 since these models cannot be converted to computation graphs. Dynamic
 models need to be served using other tools (e.g., Flask).
 
@@ -251,8 +249,7 @@ is to install TF Serving.
 ### Installing TensorFlow Serving
 
 There are many ways to install TF Serving: using a Docker
-image,^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^ using the system's package manager, installing from
+image,^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) using the system's package manager, installing from
 source, and more. Let's use the Docker option, which is highly
 recommended by the TensorFlow team as it is simple to install, it will
 not mess with your system, and it offers high performance. You first
@@ -393,8 +390,7 @@ to strings and back) and in terms of payload size: many floats end up
 being represented using over 15 characters, which translates to over 120
 bits for 32-bit floats! This will result in high latency and bandwidth
 usage when transferring large NumPy
-arrays.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^ So let's use gRPC instead.
+arrays.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) So let's use gRPC instead.
 
 
 ###### Tip
@@ -490,8 +486,7 @@ checks for new model versions. If it finds one, it will automatically
 handle the transition gracefully: by default, it will answer pending
 requests (if any) with the previous model version, while handling new
 requests with the new
-version.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^ As soon as every pending request has been answered,
+version.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) As soon as every pending request has been answered,
 the previous model version is unloaded. You can see this at work in the
 TensorFlow Serving logs:
 
@@ -537,7 +532,7 @@ increasing the batching delay (see the
 
 If you expect to get many queries per second, you will want to deploy TF
 Serving on multiple servers and load-balance the queries (see
-[Figure 19-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#tf_serving_load_balancing_diagram)).
+[Figure 19-2]
 This will require deploying and managing many TF Serving containers
 across these servers. One way to handle that is to use a tool such as
 [Kubernetes](https://kubernetes.io/), which is an open source system for
@@ -574,7 +569,7 @@ care of:
 1.  Log []{#PScreat19} []{#GCPcreat19} in to your Google account, and then
     go to the [Google Cloud Platform (GCP)
     console](https://console.cloud.google.com/) (see
-    [Figure 19-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#gcp_screenshot)).
+    [Figure 19-3]
     If you don't have a Google account, you'll have to create one.
 
 2.  If it is your first time using GCP, you will have to read and accept
@@ -646,7 +641,7 @@ care of:
     one or more versions) to your bucket. To do this, just go to the GCS
     Browser, click the bucket, then drag and drop the *my\_mnist\_model*
     folder from your system to the bucket (see
-    [Figure 19-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#upload_model_screenshot)).
+    [Figure 19-4]
     Alternatively, you can click "Upload folder" and select the
     *my\_mnist\_model* folder to upload. By default, the maximum size
     for a SavedModel is 250 MB, but it is possible to request a higher
@@ -660,7 +655,7 @@ care of:
     scroll down to the Artificial Intelligence section, and click AI
     Platform → Models. Click Activate API (it takes a few minutes), then
     click "Create model." Fill in the model details (see
-    [Figure 19-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#create_model_screenshot))
+    [Figure 19-5]
     and click Create.
 
     ![](./images/mls2_1905.png)
@@ -668,7 +663,7 @@ care of:
 8.  Now that you have a model on AI Platform, you need to create a model
     version. In the list of models, click the model you just created,
     then click "Create version" and fill in the version details (see
-    [Figure 19-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#create_version_screenshot)):
+    [Figure 19-6]
     set the name, description, Python version (3.5 or above), framework
     (TensorFlow), framework version (2.0 if available, or
     1.13),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
@@ -706,7 +701,7 @@ constantly, so the monthly fee will be higher.
 
 
 Now let's query this prediction
-service! []{}
+service! 
 
 
 
@@ -746,7 +741,7 @@ So, let's create a service account for your application: in the
 navigation menu, go to IAM & admin → Service accounts, then click Create
 Service Account, fill in the form (service account name, ID,
 description), and click Create (see
-[Figure 19-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#create_service_account_screenshot)).
+[Figure 19-7]
 Next, you must give this account some access rights. Select the ML
 Engine Developer role: this will allow the service account to make
 predictions, and not much more. Optionally, you can grant some users
@@ -809,7 +804,7 @@ GCE).
 
 Next, you must create a resource object that wraps access to the
 prediction
-service:^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
+service: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="python"}
@@ -864,7 +859,7 @@ Stackdriver](https://cloud.google.com/stackdriver/).
 
 But what if you want to deploy your model to a mobile app? Or to an
 embedded
-device? []{}
+device? 
 
 
 
@@ -880,8 +875,7 @@ of which will make your app unresponsive, heat the device, and drain its
 battery. To avoid this, you need to make a mobile-friendly, lightweight,
 and efficient model, without sacrificing too much of its accuracy. The
 [TFLite](https://tensorflow.org/lite) library provides several
-tools^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^ to help you deploy your models to mobile and embedded
+tools^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) to help you deploy your models to mobile and embedded
 devices, with three main objectives:
 
 -   Reduce the model size, to shorten download time and reduce RAM
@@ -947,7 +941,7 @@ fairly basic but efficient symmetrical quantization technique. It finds
 the maximum absolute weight value, *m*, then it maps the floating-point
 range --*m* to +*m* to the fixed-point (integer) range --127 to +127.
 For example (see
-[Figure 19-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#quantization_diagram)),
+[Figure 19-8]
 if the weights range from --1.5 to +0.8, then the bytes --127, 0, and
 +127 will correspond to the floats --1.5, 0.0, and +1.5, respectively.
 Note that 0.0 always maps to 0 when using symmetrical quantization (also
@@ -1059,7 +1053,7 @@ Meher Kasam.
 
 
 Next, we will see how to use GPUs to speed up
-computations! []{}
+computations! 
 
 
 
@@ -1068,7 +1062,7 @@ Using GPUs to Speed Up Computations
 ===================================
 
 In
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+[Lab 11]
 we discussed []{#TFspeed19} several techniques that
 can considerably speed up training: better weight initialization, Batch
 Normalization, sophisticated optimizers, and so on. But even with all of
@@ -1078,7 +1072,7 @@ with a single CPU can take days or even weeks.
 In this section we will look at how to speed up your models by using
 GPUs. We will also see how to split the computations across multiple
 devices, including the CPU and multiple GPU devices (see
-[Figure 19-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#multiple_devices_diagram)).
+[Figure 19-9]
 For now we will run everything on a single machine, but later in this
 lab we will discuss how to distribute computations across multiple
 servers.
@@ -1137,12 +1131,12 @@ acceleration), and the *CUDA Deep Neural Network* library (cuDNN), a
 GPU-accelerated library of primitives for DNNs. cuDNN provides optimized
 implementations of common DNN computations such as activation layers,
 normalization, forward and backward convolutions, and pooling (see
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
+[Lab 14]
 It is part of Nvidia's Deep Learning SDK (note that you'll need to
 create an Nvidia developer account in order to download it). TensorFlow
 uses CUDA and cuDNN to control the GPU cards and accelerate computations
 (see
-[Figure 19-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#cuda_cudnn_diagram)).
+[Figure 19-10]
 
 ![](./images/mls2_1910.png)
 
@@ -1277,7 +1271,7 @@ code).
 
 When you open a Colab notebook, it runs on a free
 Google VM dedicated to that notebook, called a *Colab Runtime* (see
-[Figure 19-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#colab_diagram)).
+[Figure 19-11]
 By default the Runtime is CPU-only, but you can change this by going to
 Runtime → "Change runtime type," selecting GPU in the "Hardware
 accelerator" drop-down menu, then clicking Save. In fact, you could even
@@ -1338,7 +1332,7 @@ Program 1 will then only see GPU cards 0 and 1, named `/gpu:0` and
 `/gpu:1` respectively, and program 2 will only see GPU cards 2 and 3,
 named `/gpu:1` and `/gpu:0` respectively (note the order). Everything
 will work fine (see
-[Figure 19-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#splitting_gpus_diagram)).
+[Figure 19-12]
 Of course, you can also define these environment variables in Python by
 setting `os.environ["CUDA_DEVICE_ORDER"]` and
 `os.environ["CUDA_VISIBLE_DEVICES"]`, as long as you do so before using
@@ -1363,7 +1357,7 @@ for gpu in tf.config.experimental.list_physical_devices("GPU"):
 Now (supposing you have four GPUs, each with at least 4 GiB of RAM) two
 programs like this one can run in parallel, each using all four GPU
 cards (see
-[Figure 19-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#sharing_gpus_diagram)).
+[Figure 19-13]
 
 ![](./images/mls2_1913.png)
 
@@ -1469,10 +1463,10 @@ control:
 By default, all variables and all operations will be placed on the first
 GPU (named [`/gpu:0`]), except for variables and
 operations that don't have a GPU
-kernel:^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+kernel: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 these are placed on the CPU (named `/cpu:0`). A tensor or variable's
 `device` attribute tells you which device it was placed
-on:^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+on: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> a = tf.Variable(42.0)
@@ -1532,7 +1526,7 @@ Parallel Execution Across Multiple Devices
 ------------------------------------------
 
 As we saw in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab),
+[Lab 12]
 one of the benefits of using TF Functions is parallelism. Let's look at
 this a bit more closely. When TensorFlow runs a TF Function, it starts
 by analyzing its graph to find the list of operations that need to be
@@ -1540,7 +1534,7 @@ evaluated, and it counts how many dependencies each of them has.
 TensorFlow then adds each operation with zero dependencies (i.e., each
 source operation) to the evaluation queue of this operation's device
 (see
-[Figure 19-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#parallelization_diagram)).
+[Figure 19-14]
 Once an operation has been evaluated, the dependency counter of each
 operation that depends on it is decremented. Once an operation's
 dependency counter reaches zero, it is pushed to the evaluation queue of
@@ -1569,7 +1563,7 @@ inter-op thread pool in GPUs: each operation already floods most GPU
 threads).
 
 For example, in
-[Figure 19-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#parallelization_diagram),
+[Figure 19-14]
 operations A, B, and C are source ops, so they can immediately be
 evaluated. Operations A and B are placed on the CPU, so they are sent to
 the CPU's evaluation queue, then they are dispatched to the inter-op
@@ -1629,7 +1623,7 @@ do:
     method^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
     to prepare the next few batches in advance so that they are ready
     when the GPU needs them (see
-    [Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
+    [Lab 13]
 
 -   If your model takes two images as input and processes them using two
     CNNs before joining their outputs, then it will probably run much
@@ -1640,7 +1634,7 @@ do:
     faster to produce the ensemble's final prediction.
 
 But what if you want to *train* a single model across multiple
-GPUs? []{}
+GPUs? 
 
 
 
@@ -1669,7 +1663,7 @@ on a different device. [Unfortunately], such model
 parallelism turns out to be pretty tricky, and it really depends on the
 architecture of your neural network. For fully connected networks, there
 is generally not much to be gained from this approach (see
-[Figure 19-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#split_fully_connected_diagram)).
+[Figure 19-15]
 Intuitively, it may seem that an easy way to split the model is to place
 each layer on a different device, but this does not work because each
 layer needs to wait for the output of the previous layer before it can
@@ -1687,16 +1681,16 @@ are located on different machines).
 
 Some neural network architectures, such as convolutional neural networks
 (see
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
+[Lab 14]
 contain layers that are only partially connected to the lower layers, so
 it is much easier to distribute chunks across devices in an efficient
 way
-([Figure 19-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#split_partially_connected_diagram)).
+([Figure 19-16]
 
 ![](./images/mls2_1916.png)
 
 Deep recurrent neural networks (see
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab))
+[Lab 15]
 can be split a bit more efficiently across multiple GPUs. If you split
 the network horizontally by placing each layer on a different device,
 and you feed the network with an input sequence to process, then at the
@@ -1706,7 +1700,7 @@ second layer will be handling the output of the first layer for the
 first value, while the first layer will be handling the second value),
 and by the time the signal propagates to the output layer, all devices
 will be active simultaneously
-([Figure 19-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#split_rnn_network_diagram)).
+([Figure 19-17]
 There is still a lot of cross-device communication going on, but since
 each cell may be fairly complex, the benefit of running multiple cells
 in parallel may (in theory) outweigh the communication penalty. However,
@@ -1747,7 +1741,7 @@ exact same parameter updates on every GPU. This way, all replicas always
 remain perfectly identical. This is called the *mirrored strategy*, and
 it turns out to be quite efficient, especially when using a single
 machine (see
-[Figure 19-18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#mirrored_strategy_diagram)).
+[Figure 19-18]
 
 ![](./images/mls2_1918.png)
 
@@ -1769,7 +1763,7 @@ as we will see.
 Another approach is to store the model parameters outside of the GPU
 devices performing the computations (called *workers*), for example on
 the CPU (see
-[Figure 19-19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#data_parallelism_diagram)).
+[Figure 19-19]
 In a distributed setup, you may place all the parameters on one or more
 CPU-only servers called *parameter servers*, whose
 only role is to host and update the parameters.
@@ -1817,7 +1811,7 @@ replicas*.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learn
 With asynchronous updates, whenever a replica has
 finished computing the gradients, it immediately uses them to update the
 model parameters. There is no aggregation (it removes the "mean" step in
-[Figure 19-19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#data_parallelism_diagram))
+[Figure 19-19]
 and no synchronization. Replicas work independently of the other
 replicas. Since there is no waiting for the other replicas, this
 approach runs more training steps per minute. Moreover, although the
@@ -1834,8 +1828,8 @@ parameter values, these parameters will have been updated several times
 by other replicas (on average *N* -- 1 times, if there are *N*
 replicas), and there is no guarantee that the computed gradients will
 still be pointing in the right direction (see
-[Figure 19-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#stale_gradients_diagram)).
-When gradients are severely out-of-date, they are []{}
+[Figure 19-20]
+When gradients are severely out-of-date, they are 
 called *stale gradients*: they can slow down convergence, introducing
 noise and wobble effects (the learning curve may contain temporary
 oscillations), or they can even make the training algorithm diverge.
@@ -2067,7 +2061,7 @@ To start a TensorFlow cluster, you must first
 specify it. This means defining each task's IP address, TCP port, and
 type. For example, the following *cluster specification* defines a
 cluster with three tasks (two workers and one parameter server; see
-[Figure 19-21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#cluster_diagram)).
+[Figure 19-21]
 The cluster spec is a dictionary with one key per job, and the values
 are lists of task addresses (*IP*:*port*):
 
@@ -2215,7 +2209,7 @@ browser; it runs on a free Linux VM (Debian), with the SDK already
 installed and preconfigured for you. The Cloud Shell is available
 anywhere in GCP: just click the Activate Cloud Shell icon at the top
 right of the page (see
-[Figure 19-22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#cloud_shell_screenshot)).
+[Figure 19-22]
 
 ![](./images/mls2_1922.png)
 
@@ -2342,7 +2336,7 @@ back to the AI Platform so that it can decide which hyperparameter
 values to use during the next trial? Well, AI Platform just monitors the
 output directory (specified via `--job-dir`) for any event file
 (introduced in
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab))
+[Lab 10]
 containing summaries for a metric named `"accuracy"` (or whatever metric
 name is specified as the `hyperparameterMetricTag`), and it reads those
 values. So your training code simply has to use the `TensorBoard()`
@@ -2366,7 +2360,7 @@ state-of-the-art neural net architectures and train them at scale using
 various distribution strategies, on your own infrastructure or on the
 cloud---and you can even perform powerful Bayesian optimization to
 fine-tune the
-hyperparameters! []{}
+hyperparameters! 
 
 
 
@@ -2446,19 +2440,19 @@ ML application that will benefit all of us! What will it be?
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 An A/B experiment consists in testing two different versions of your
 product on different subsets of users in order to check which version
 works best and get other insights.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 A REST (or RESTful) API is an API that uses standard HTTP verbs, such as
 GET, POST, PUT, and DELETE, and uses JSON inputs and outputs. The gRPC
 protocol is more complex but more efficient. Data is exchanged using
 protocol buffers (see
-[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
+[Lab 13]
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 If you are not familiar with Docker, it allows you to easily download a
 set of applications packaged in a *Docker image* (including all their
 dependencies and usually some good default configuration) and then run
@@ -2470,43 +2464,43 @@ more lightweight, as the container relies directly on the host's kernel.
 This means that the image does not need to include or run its own
 kernel.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 To be fair, this can be mitigated by serializing the data first and
 encoding it to Base64 before creating the REST request. Moreover, REST
 requests can be compressed using gzip, which reduces the payload size
 significantly.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 If the SavedModel contains some example instances in the *assets/extra*
 directory, you can configure TF Serving to execute the model on these
 instances before starting to serve new requests with it. This is called
 *model warmup*: it will ensure that everything is properly loaded,
 avoiding long response times for the first requests.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 At the time of this writing, TensorFlow version 2 is not available yet
 on AI Platform, but that's OK: you can use 1.13, and it will run your
 TF 2 SavedModels just fine.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 If you get an error saying that module `google.appengine` was not found,
 set `cache_discovery=False` in the call to the `build()` method; see
 [*https://stackoverflow.com/q/55561354*](https://stackoverflow.com/q/55561354).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 Also check out TensorFlow's [Graph Transform
 Tool](https://homl.info/tfgtt) for modifying and optimizing
 computational graphs.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)
 If you're interested in this topic, check out [*federated
 learning*](https://tensorflow.org/federated).
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[10]
 Please check the docs for detailed and up-to-date installation
 instructions, as they change quite often.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[11]
 Many code examples in this lab use experimental APIs. They are very
 likely to be moved to the core API in future versions. So if an
 experimental function fails, try simply removing the word
@@ -2514,41 +2508,41 @@ experimental function fails, try simply removing the word
 has changed a bit; please check the Jupyter notebook, as I will ensure
 it contains the correct code.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[12]
 Presumably, these quotas are meant to stop bad guys who might be tempted
 to use GCP with stolen credit cards to mine cryptocurrencies.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[13]
 Martín Abadi et al., "TensorFlow: Large-Scale Machine Learning on
 Heterogeneous Distributed Systems" Google Research whitepaper (2015).
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[14]
 As we saw in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab),
+[Lab 12]
 a kernel is a variable or operation's implementation for a specific data
 type and device type. For example, there is a GPU kernel for the
 `float32` `tf.matmul()` operation, but there is no GPU kernel for
 `int32` `tf.matmul()` (only a CPU kernel).
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[15]
 You can also use `tf.debugging.set_log_device_placement(True)` to log
 all device placements.
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[16]
 This can be useful if you want to guarantee perfect reproducibility, as
 I explain in [this video](https://homl.info/repro), based on TF 1.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[17]
 At the time of this writing it only prefetches the data to the CPU RAM,
 but you can use `tf.data.experimental.prefetch_to_device()` to make it
 prefetch the data and push it to the device of your choice so that the
 GPU does not waste time waiting for the data to be transferred.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[18]
 If you are interested in going further with model parallelism, check out
 [Mesh TensorFlow](https://github.com/tensorflow/mesh).
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[19]
 This name is slightly confusing because it sounds like some replicas are
 special, doing nothing. In reality, all replicas are equivalent: they
 all work hard to be among the fastest at each training step, and the
@@ -2556,21 +2550,21 @@ losers vary at every step (unless some devices are really slower than
 others). However, it does mean that if a server crashes, training will
 continue just fine.
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[20]
 Jianmin Chen et al., "Revisiting Distributed Synchronous SGD," arXiv
 preprint arXiv:1604.00981 (2016).
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[21]
 For more details on AllReduce algorithms, read this [great
 post](https://homl.info/uenopost) by Yuichiro Ueno, and this page on
 [scaling with NCCL](https://homl.info/ncclalgo).
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[22]
 At the time of this writing, the 2.0 runtime is not yet available, but
 it should be ready by the time you read this. Check out the [list of
 available runtimes](https://homl.info/runtimes).
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html-marker)^
+^[23]
 Daniel Golovin et al., "Google Vizier: A Service for Black-Box
 Optimization," *Proceedings of the 23rd ACM SIGKDD International
 Conference on Knowledge Discovery and Data Mining* (2017): 1487--1495.

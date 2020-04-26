@@ -6,7 +6,7 @@
 ===================================================
 
 In
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)
+[Lab 10]
 we introduced artificial neural networks and
 trained our first deep neural networks. But they were shallow nets, with
 just a few hidden layers. What if you need to tackle a complex problem,
@@ -49,7 +49,7 @@ The Vanishing/Exploding Gradients Problems
 ==========================================
 
 As []{#DNNvanish11} []{#vanish11} we discussed in
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab),
+[Lab 10]
 the backpropagation algorithm works by going from the output layer to
 the input layer, propagating the error gradient along the way. Once the
 algorithm has computed the gradient of the cost function with regard to
@@ -65,7 +65,7 @@ the gradients can grow bigger and bigger until layers get insanely large
 weight updates and the algorithm diverges. This is
 the *exploding gradients* problem, which surfaces in recurrent neural
 networks (see
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)).
+[Lab 15]
 More generally, deep neural networks suffer from unstable gradients;
 different layers may learn at widely different speeds.
 
@@ -74,10 +74,9 @@ one of the reasons deep neural networks were mostly abandoned in the
 early 2000s. It wasn't clear what caused the gradients to be so unstable
 when training a DNN, but some light was shed in a [2010
 paper](https://homl.info/47) by Xavier Glorot and Yoshua
-Bengio.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ The authors found a few suspects, including the
+Bengio.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) The authors found a few suspects, including the
 combination of the
-popular []{}
+popular 
 logistic sigmoid activation function and the weight initialization
 technique that was most popular at the time (i.e., a normal distribution
 with a mean of 0 and a standard deviation of 1). In short, they showed
@@ -91,7 +90,7 @@ function has a mean of 0 and behaves slightly better than the logistic
 function in deep networks).
 
 Looking at the logistic activation function (see
-[Figure 11-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#sigmoid_saturation_plot)),
+[Figure 11-1]
 you can see that when inputs become large (negative or positive), the
 function saturates at 0 or 1, with a derivative extremely close to 0.
 Thus, when backpropagation kicks in it has virtually no gradient to
@@ -106,7 +105,7 @@ layers, so there is really nothing left for the lower layers.
 Glorot and He Initialization
 ----------------------------
 
-In []{}
+In 
 their paper, Glorot and Bengio propose a way to significantly alleviate
 the unstable gradients problem. They point out that we need the signal
 to flow properly in both directions: in the forward direction when
@@ -115,8 +114,7 @@ gradients. We don't want the signal to die out, nor do we want it to
 explode and saturate. For the signal to flow properly, the authors argue
 that we need the variance of the outputs of each layer to be equal to
 the variance of its
-inputs,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ and we need the gradients to have equal variance
+inputs,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) and we need the gradients to have equal variance
 before and after flowing through a layer in the reverse direction
 (please check out the paper if you are interested in the mathematical
 details). It is actually not
@@ -125,7 +123,7 @@ inputs and neurons (these numbers are called the *fan-in* and *fan-out*
 of the layer), but Glorot and Bengio proposed a good compromise that has
 proven to work very well in practice: the connection weights of each
 layer must be initialized randomly as described in [Equation
-11-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#xavier_initialization_equation),
+11-1]
 where *fan*~avg~ = (*fan*~in~ + *fan*~out~)/2.
 This initialization strategy
 is called *Xavier initialization* or *Glorot initialization*, after the
@@ -141,7 +139,7 @@ $\begin{array}{l}
 
 
 If you replace *fan*~avg~ with *fan*~in~ in [Equation
-11-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#xavier_initialization_equation),
+11-1]
 you get an initialization strategy that Yann LeCun proposed in the
 1990s. He called it *LeCun
 initialization*. Genevieve Orr and Klaus-Robert Müller even recommended
@@ -153,17 +151,16 @@ training considerably, and it is one of the tricks that led to the
 success of Deep Learning.
 
 Some
-papers^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ have provided similar strategies for different
+papers^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) have provided similar strategies for different
 activation functions. These strategies differ only by the scale of the
 variance and whether they use *fan*~avg~ or *fan*~in~, as shown in
-[Table 11-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#initialization_table)
+[Table 11-1]
 (for the uniform distribution, just compute $r = \sqrt{3\sigma^{2}}$).
 [The initialization strategy](https://homl.info/48) for the ReLU
 activation function (and its variants, including the ELU activation
 described shortly) is sometimes called *He initialization*, after the
 paper's first author. The SELU
-activation []{}
+activation 
 function will be explained later in this lab. It should be used with
 LeCun initialization (preferably with a normal distribution, as we will
 see).
@@ -228,13 +225,12 @@ negative.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learnin
 To solve this problem, you may want to use a
 variant of the ReLU function, such as the *leaky ReLU*. This function is
 defined as LeakyReLU~*α*~(*z*) = max(*αz*, *z*) (see
-[Figure 11-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#leaky_relu_plot)).
+[Figure 11-2]
 The hyperparameter *α* defines how much the function "leaks": it is the
 slope of the function for *z* \< 0 and is typically set to 0.01. This
 small slope ensures that leaky ReLUs never die; they can go into a long
 coma, but they have a chance to eventually wake up. A [2015
-paper](https://homl.info/49)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ compared several variants of the ReLU activation
+paper](https://homl.info/49)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) compared several variants of the ReLU activation
 function, and one of its conclusions was that the leaky variants always
 outperformed the strict ReLU activation function. In fact, setting *α* =
 0.2 (a huge leak) seemed to result in better performance than *α* = 0.01
@@ -254,15 +250,14 @@ datasets it runs the risk of overfitting the training set.
 
 Last but not least, a [2015 paper](https://homl.info/50) by Djork-Arné
 Clevert et
-al.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ proposed a new
+al.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) proposed a new
 activation []{#AFelu11} []{#elu11} []{#expoelu11} function called the
 *exponential linear unit* (ELU) that outperformed all the ReLU variants
 in the authors' experiments: training time was reduced, and the neural
 network performed better on the test set.
-[Figure 11-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#elu_activation_plot)
+[Figure 11-3]
 graphs the function, and [Equation
-11-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#elu_activation_equation)
+11-2]
 shows its definition.
 
 
@@ -300,8 +295,7 @@ compensates for that slow computation, but still, at test time an ELU
 network will be slower than a ReLU network.
 
 Then, a [2017
-paper](https://homl.info/selu)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ by Günter Klambauer et al. introduced
+paper](https://homl.info/selu)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) by Günter Klambauer et al. introduced
 the []{#selu11} []{#AFselu11} Scaled ELU (SELU) activation function: as
 its name suggests, it is a scaled variant of the ELU activation
 function. The authors showed that if you build a neural network composed
@@ -325,7 +319,7 @@ mathematical justification):
 -   The network's architecture must be sequential. Unfortunately, if you
     try to use SELU in nonsequential architectures, such as recurrent
     networks (see
-    [Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab))
+    [Lab 15]
     or networks with *skip connections* (i.e.,
     connections that skip layers, such as in Wide & Deep nets),
     self-normalization will not be guaranteed, so SELU will not
@@ -335,7 +329,7 @@ mathematical justification):
     dense, but some researchers have noted that the SELU activation
     function can improve performance in convolutional neural nets as
     well (see
-    [Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
+    [Lab 14]
 
 
 ###### Tip
@@ -355,7 +349,7 @@ training set. That said, because ReLU is the most used activation
 function (by far), many libraries and hardware accelerators provide
 ReLU-specific optimizations; therefore, if speed is your priority, ReLU
 might still be the best
-choice. []{}
+choice. 
 
 
 To use the leaky ReLU activation function, create a `LeakyReLU` layer
@@ -374,7 +368,7 @@ For PReLU, replace `LeakyRelu(alpha=0.2)` with `PReLU()`. There is
 currently no official implementation of RReLU in Keras, but you can
 fairly easily implement your own (to learn how to do that, see the
 exercises at the end of
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)). []{}
+[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)). 
 
 For SELU activation, set `activation="selu"` and
 `kernel_initializer="lecun_normal"` when creating a layer:
@@ -396,8 +390,7 @@ problems at the beginning of training, it doesn't guarantee that they
 won't come back during training.
 
 In a [2015
-paper](https://homl.info/51),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ Sergey Ioffe and Christian Szegedy
+paper](https://homl.info/51),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) Sergey Ioffe and Christian Szegedy
 proposed a technique called
 *Batch Normalization* (BN) that addresses these problems. The technique
 consists of adding an operation in the model just before or after the
@@ -417,7 +410,7 @@ estimate each input's mean and standard deviation. It does so by
 evaluating the mean and standard deviation of the input over the current
 mini-batch (hence the name "Batch Normalization"). The whole operation
 is summarized step by step in [Equation
-11-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#batch_normalization_algorithm).
+11-3]
 
 
 ##### [Equation 11-3. ] Batch Normalization algorithm
@@ -484,7 +477,7 @@ final input standard deviation vector) are estimated using an
 exponential moving average. Note that **μ** and **σ** are estimated
 during training, but they are used only after training (to replace the
 batch input means and standard deviations in [Equation
-11-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#batch_normalization_algorithm)).
+11-3]
 
 Ioffe and Szegedy demonstrated that Batch Normalization considerably
 improved all the deep neural networks they experimented with, leading to
@@ -525,7 +518,7 @@ the BN layer will compute **γ**⊗(**XW** + **b** -- **μ**)/**σ** + **β**
 previous layer's weights and biases (**W** and **b**) with the updated
 weights and biases (**W**′ and **b**′), we can get rid of the BN layer
 (TFLite's optimizer does this automatically; see
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
+[Lab 19]
 
 
 ###### Note
@@ -597,8 +590,7 @@ As you can see, each BN layer adds four parameters per input: **γ**,
 parameters, which is 4 × 784). The last two parameters, **μ** and **σ**,
 are the moving averages; they are not affected by backpropagation, so
 Keras calls them
-"non-trainable"^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^ (if you count the total number of BN parameters, 3,136
+"non-trainable"^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) (if you count the total number of BN parameters, 3,136
 + 1,200 + 400, and divide by 2, you get 2,368, which is the total number
 of non-trainable parameters in this model).
 
@@ -618,7 +610,7 @@ that will be called by Keras at each iteration during training. These
 operations will update the moving averages. Since we are using the
 TensorFlow backend, these operations are TensorFlow operations (we will
 discuss TF operations in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)):
+[Lab 12]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> model.layers[1].updates
@@ -706,7 +698,7 @@ during training and testing, add a `training` argument to the `call()`
 method and use this argument in the method to decide what to
 compute^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 (we will discuss custom layers in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
+[Lab 12]
 
 `BatchNormalization` has become one of the most-used layers in deep
 neural networks, to the point that it is often omitted in the diagrams,
@@ -734,7 +726,7 @@ backpropagation so that they never exceed some threshold. This is called
 Clipping*](https://homl.info/52).^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 This technique is most often used in recurrent neural networks, as Batch
 Normalization is tricky to use in RNNs, as we will see in
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab).
+[Lab 15]
 For other types of networks, BN is usually sufficient.
 
 In Keras, implementing Gradient Clipping is just a
@@ -765,7 +757,7 @@ eliminating the first component. If you observe that the gradients
 explode during training (you can track the size of the gradients using
 TensorBoard), you may want to try both clipping by value and clipping by
 norm, with different thresholds, and see which option performs best on
-the validation set. []{}
+the validation set. 
 
 
 
@@ -778,8 +770,8 @@ It []{#DNNpretrain11} []{#Lpre11} []{#pretrain11} is generally not a good
 idea to train a very large DNN from scratch: instead, you should always
 try to find an existing neural network that accomplishes a similar task
 to the one you are trying to tackle (we will discuss how to find them in
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
-then reuse the lower layers of this network. This []{}
+[Lab 14]
+then reuse the lower layers of this network. This 
 technique is called *transfer learning*. It will not only speed up
 training considerably, but also require significantly less training
 data.
@@ -789,7 +781,7 @@ into 100 different categories, including animals, plants, vehicles, and
 everyday objects. You now want to train a DNN to classify specific types
 of vehicles. These tasks are very similar, even partly overlapping, so
 you should try to reuse parts of the first network (see
-[Figure 11-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#reuse_pretrained_diagram)).
+[Figure 11-4]
 
 ![](./images/mls2_1104.png)
 
@@ -948,7 +940,7 @@ unlikely to be useful in other tasks. Transfer learning works best with
 deep convolutional neural networks, which tend to learn feature
 detectors that are much more general (especially in the lower layers).
 We will revisit transfer learning in
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
+[Lab 14]
 using the techniques we just discussed (and this time there will be no
 cheating, I promise!).
 
@@ -964,12 +956,12 @@ unfortunately you cannot find a model trained on a similar task. Don't
 lose hope! First, you should try to gather more labeled training data,
 but if you can't, you may still be able to perform *unsupervised
 pretraining* (see
-[Figure 11-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#unsupervised_pretraining_diagram)).
+[Figure 11-5]
 Indeed, it is often cheap to gather unlabeled training examples, but
 expensive to label them. If you can gather plenty of unlabeled training
 data, you can try to use it to train an unsupervised model, such as an
 autoencoder or a generative adversarial network (see
-[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
+[Lab 17]
 Then you can reuse the lower layers of the autoencoder or the lower
 layers of the GAN's discriminator, add the output layer for your task on
 top, and fine-tune the final network using supervised learning (i.e.,
@@ -990,7 +982,7 @@ labeled training data but plenty of unlabeled training data.
 Note that in the early days of Deep Learning it was difficult to train
 deep models, so people would
 use a technique called *greedy layer-wise pretraining* (depicted in
-[Figure 11-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#unsupervised_pretraining_diagram)).
+[Figure 11-5]
 They would first train an unsupervised model with a single layer,
 typically an RBM, then they would freeze that
 layer and add another one on top of it, then train the model again
@@ -998,7 +990,7 @@ layer and add another one on top of it, then train the model again
 add another layer on top of it, train the model again, and so on.
 Nowadays, things are much simpler: people generally train the full
 unsupervised model in one shot (i.e., in
-[Figure 11-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#unsupervised_pretraining_diagram),
+[Figure 11-5]
 just start directly at step three) and use autoencoders or GANs rather
 than RBMs.
 
@@ -1037,7 +1029,7 @@ you can train a model to reach good performance on this task, then it
 will already know quite a lot about language, and you can certainly
 reuse it for your actual task and fine-tune it on your labeled data (we
 will discuss more pretraining tasks in
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)).
+[Lab 15]
 
 
 ###### Note
@@ -1047,7 +1039,7 @@ automatically generate the labels from the data itself, then you train a
 model on the resulting "labeled" dataset using supervised learning
 techniques. Since this approach requires no human labeling whatsoever,
 it is best classified as a form of unsupervised
-learning. []{}
+learning. 
 
 
 
@@ -1097,7 +1089,7 @@ a great deal about what previous gradients were: at each iteration, it
 subtracts the local gradient from the *momentum vector* **m**
 (multiplied by the learning rate *η*), and it updates the weights by
 adding this momentum vector (see [Equation
-11-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#momentum_equation)).
+11-4]
 In other words, the gradient is used for acceleration, not for speed. To
 simulate some sort of friction mechanism and prevent the momentum from
 growing too large, the algorithm introduces a new hyperparameter *β*,
@@ -1121,10 +1113,10 @@ terminal velocity is equal to 10 times the gradient times the learning
 rate, so momentum optimization ends up going 10 times faster than
 Gradient Descent! This allows momentum optimization to escape from
 plateaus much faster than Gradient Descent. We saw in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)
+[Lab 4]
 that when the inputs have very different scales, the cost function will
 look like an elongated bowl (see
-[Figure 4-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#elongated_bowl_diagram)).
+[Figure 4-7]
 Gradient Descent goes down the steep slope quite fast, but then it takes
 a very long time to go down the valley. In contrast, momentum
 optimization will roll down the valley faster and faster until it
@@ -1165,12 +1157,12 @@ Nesterov Accelerated Gradient
 One small variant to
 momentum optimization, proposed by [Yurii Nesterov in
 1983](https://homl.info/55),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
-is almost always faster than vanilla momentum []{}
+is almost always faster than vanilla momentum 
 optimization. The *Nesterov Accelerated Gradient* (NAG) method, also
 known as *Nesterov momentum optimization*, measures the gradient of the
 cost function not at the local position **θ** but slightly ahead in the
 direction of the momentum, at **θ** + *β***m** (see [Equation
-11-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#nesterov_momentum_equation)).
+11-5]
 
 
 ##### [Equation 11-5. ] Nesterov Accelerated Gradient algorithm
@@ -1186,7 +1178,7 @@ pointing in the right direction (i.e., toward the optimum), so it will
 be slightly more accurate to use the gradient measured a bit farther in
 that direction rather than the gradient at the original position, as you
 can see in
-[Figure 11-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#nesterov_momentum_diagram)
+[Figure 11-6]
 (where ∇~1~ represents the gradient of the cost function measured at the
 starting point **θ**, and ∇~2~ represents the gradient at the point
 located at **θ** + *β***m**).
@@ -1223,7 +1215,7 @@ more toward the global optimum. The [*AdaGrad*
 algorithm](https://homl.info/56)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 achieves this correction by scaling down the gradient vector along the
 steepest dimensions (see [Equation
-11-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adagrad_algorithm)).
+11-6]
 
 
 ##### [Equation 11-6. ] AdaGrad algorithm
@@ -1256,7 +1248,7 @@ In short, this algorithm decays the learning rate,
 but it does so faster for steep dimensions than for dimensions with
 gentler slopes. This is called an *adaptive learning rate*. It helps
 point the resulting updates more directly toward the global optimum (see
-[Figure 11-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adagrad_diagram)).
+[Figure 11-7]
 One additional benefit is that it requires much less tuning of the
 learning rate hyperparameter *η*.
 
@@ -1285,7 +1277,7 @@ fixes this by accumulating only the gradients from the most recent
 iterations (as opposed to all the gradients since the beginning of
 training). It does so by using exponential decay in the first step (see
 [Equation
-11-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#rmsprop_algorithm)).
+11-7]
 
 
 ##### [Equation 11-7. ] RMSProp algorithm
@@ -1307,7 +1299,7 @@ optimizer = keras.optimizers.RMSprop(lr=0.001, rho=0.9)
 ```
 
 Note that the `rho` argument corresponds to *β* in [Equation
-11-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#rmsprop_algorithm).
+11-7]
 Except on very simple problems, this optimizer almost always performs
 much better than AdaGrad. In fact, it was the preferred optimization
 algorithm of many researchers until Adam optimization came around.
@@ -1319,7 +1311,7 @@ Adam and Nadam Optimization
 ---------------------------
 
 [*Adam*](https://homl.info/59),^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
-which []{}
+which 
 stands for *adaptive moment estimation*, combines the ideas of momentum
 optimization and RMSProp: just like momentum optimization, it keeps
 track of an exponentially decaying average of past gradients; and just
@@ -1383,7 +1375,7 @@ Finally, two variants of Adam are worth mentioning:
 AdaMax
 
 :   Notice that in step 2 of [Equation
-    11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adam_algorithm),
+    11-8]
     Adam accumulates the squares of the gradients in **s** (with a
     greater weight for more recent gradients). In step 5, if we ignore
     *ε* and steps 3 and 4 (which are technical details anyway), Adam
@@ -1393,7 +1385,7 @@ AdaMax
     root of the sum of squares). AdaMax, introduced in the same paper as
     Adam, replaces the ℓ~2~ norm with the ℓ~∞~ norm (a fancy way of
     saying the max). Specifically, it replaces step 2 in [Equation
-    11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adam_algorithm)
+    11-8]
     with
     $\left. \mathbf{s}\leftarrow{\max\left( \beta_{2}\mathbf{s},~\nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \right)} \right.$,
     it drops step 4, and in step 5 it scales down the gradient updates
@@ -1428,7 +1420,7 @@ instead: your dataset may just be allergic to adaptive gradients. Also
 check out the latest research, because it's moving fast.
 
 
-All []{}
+All 
 the optimization techniques discussed so far only rely on the
 *first-order partial derivatives* (*Jacobians*). The optimization
 literature also contains amazing algorithms based on the *second-order
@@ -1444,7 +1436,7 @@ slow.
 
 ##### Training Sparse Models
 
-All []{}
+All 
 the optimization algorithms just presented produce dense models, meaning
 that most parameters will be nonzero. If you need a blazingly fast model
 at runtime, or if you need it to take up less memory, you may prefer to
@@ -1458,9 +1450,9 @@ model's performance.
 A better option is to apply strong ℓ~1~ regularization during training
 (we will see how later in this lab), as it pushes the optimizer to
 zero out as many weights as it can (as discussed in ["Lasso
-Regression"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#lasso_regression)
+Regression"]
 in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
+[Lab 4]
 
 If these techniques remain insufficient, check out
 the [TensorFlow Model Optimization Toolkit
@@ -1469,7 +1461,7 @@ of iteratively removing connections during training based on their
 magnitude.
 
 
-[Table 11-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#optimizer_summary_table)
+[Table 11-2]
 compares all the optimizers we've discussed so far (\* is bad, \*\* is
 average, and \*\*\* is good).
 
@@ -1495,19 +1487,19 @@ Learning Rate Scheduling
 Finding a good learning rate
 is very important. If you set it much too high, training may diverge (as
 we discussed in ["Gradient
-Descent"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#gradientDescent4)).
+Descent"]
 If you set it too low, training will eventually converge to the optimum,
 but it will take a very long time. If you set it slightly too high, it
 will make progress very quickly at first, but it will end up dancing
 around the optimum, never really settling down. If you have a limited
 computing budget, you may have to interrupt training before it has
 converged properly, yielding a suboptimal solution (see
-[Figure 11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#learning_schedule_diagram)).
+[Figure 11-8]
 
 ![](./images/mls2_1108.png)
 
 As we discussed in
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab),
+[Lab 10]
 you can find a good learning rate by training the model for a few
 hundred iterations, exponentially increasing the learning rate from a
 very small value to a very large value, and then looking at the learning
@@ -1523,7 +1515,7 @@ the learning rate during training. It can also be beneficial to start
 with a low learning rate, increase it, then drop it again.
 These strategies are called *learning schedules*
 (we briefly introduced this concept in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
+[Lab 4]
 These are the most commonly used learning schedules:
 
 *Power scheduling*
@@ -1702,7 +1694,7 @@ lr_scheduler = keras.callbacks.ReduceLROnPlateau(factor=0.5, patience=5)
 ```
 
 Lastly,
-tf.keras []{}
+tf.keras 
 offers an alternative way to implement learning rate scheduling: define
 the learning rate using one of the schedules available in
 `keras.optimizers.schedules`, then pass this learning rate to any
@@ -1729,7 +1721,7 @@ of the notebook for an example.
 
 To sum up, exponential decay, performance scheduling, and 1cycle can
 considerably speed up convergence, so give them a
-try! []{}
+try! 
 
 
 
@@ -1751,7 +1743,7 @@ complex datasets. But this great flexibility also makes the network
 prone to overfitting the training set. We need regularization.
 
 We already implemented one of the best regularization techniques in
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab):
+[Lab 10]
 early stopping. Moreover, even though Batch Normalization was designed
 to solve the unstable gradients problems, it also acts like a pretty
 good regularizer. In this section we will examine other popular
@@ -1764,7 +1756,7 @@ regularization, dropout, and max-norm regularization.
 ----------------------------
 
 Just like you did in
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)
+[Lab 4]
 for simple linear models, you can use ℓ~2~ regularization to constrain a
 neural network's connection weights, and/or ℓ~1~ regularization if you
 want a sparse model (with many weights equal to 0). Here is how to apply
@@ -1834,12 +1826,12 @@ It is a fairly simple algorithm: at every training step, every neuron
 has a probability *p* of being temporarily "dropped out," meaning it
 will be entirely ignored during this training step, but it may be active
 during the next step (see
-[Figure 11-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#dropout_diagram)).
+[Figure 11-9]
 The hyperparameter *p* is called the *dropout rate*, and it is typically
 set between 10% and 50%: closer to 20--30% in recurrent neural nets (see
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab)),
+[Lab 15]
 and closer to 40--50% in convolutional neural networks (see
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)).
+[Lab 14]
 After training, neurons don't get dropped anymore. And that's all
 (except for a technical detail we will discuss momentarily).
 
@@ -2066,7 +2058,7 @@ If your model contains other layers that behave in a special way during
 training (such as `BatchNormalization` layers), then you should not
 force training mode like we just did. Instead, you should replace the
 `Dropout` layers with the following `MCDropout`
-class:^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+class: ^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 class MCDropout(keras.layers.Dropout):
@@ -2076,7 +2068,7 @@ class MCDropout(keras.layers.Dropout):
 
 Here, we just subclass the `Dropout` layer and override the `call()`
 method to force its `training` argument to `True` (see
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
+[Lab 12]
 Similarly, you could define an `MCAlphaDropout` class by subclassing
 `AlphaDropout` instead. If you are creating a model from scratch, it's
 just a matter of using `MCDropout` rather than `Dropout`. But if you
@@ -2123,7 +2115,7 @@ After each training iteration, the model's `fit()` method will call the
 object returned by `max_norm()`, passing it the layer's weights and
 getting rescaled weights in return, which then replace the layer's
 weights. As you'll see in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab),
+[Lab 12]
 you can define your own custom constraint function if necessary and use
 it as the `kernel_constraint`. You can also constrain the bias terms by
 setting the `bias_constraint` [argument].
@@ -2133,10 +2125,10 @@ The `max_norm()` function has an `axis` argument that defaults to `0`. A
 of neurons*\], so using `axis=0` means that the max-norm constraint will
 apply independently to each neuron's weight vector. If you want to use
 max-norm with convolutional layers (see
-[Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab)),
+[Lab 14]
 make sure to set the `max_norm()` constraint's `axis` argument
 appropriately (usually
-`axis=[0, 1, 2]`). []{}
+`axis=[0, 1, 2]`). 
 
 
 
@@ -2149,7 +2141,7 @@ In this lab we have covered a wide range of
 techniques, and you may be wondering which ones you should use. This
 depends on the task, and there is no clear consensus yet, but I have
 found the configuration in
-[Table 11-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#default_deep_neural_network_config)
+[Table 11-3]
 to work fine in most cases, without requiring much hyperparameter
 tuning. That said, please do not consider these defaults as hard rules!
 
@@ -2166,7 +2158,7 @@ tuning. That said, please do not consider these defaults as hard rules!
 
 If the network is a simple stack of dense layers, then it can
 self-normalize, and you should use the configuration in
-[Table 11-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#self_norm_deep_neural_network_config)
+[Table 11-4]
 instead.
 
   Hyperparameter           Default value
@@ -2202,7 +2194,7 @@ exceptions:
     sparse model will also help. Finally, you may want to reduce the
     float precision from 32 bits to 16 or even 8 bits (see ["Deploying a
     Model to a Mobile or Embedded
-    Device"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployingModelMobileEmbedded)).
+    Device"]
     Again, check out TF-MOT.
 
 -   If you are building a risk-sensitive application, or inference
@@ -2275,18 +2267,17 @@ Exercises
     6.  Retrain your model using 1cycle scheduling and see if it
         improves training speed and model accuracy.
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Xavier Glorot and Yoshua Bengio, "Understanding the Difficulty of
 Training Deep Feedforward Neural Networks," *Proceedings of the 13th
 International Conference on Artificial Intelligence and Statistics*
 (2010): 249--256.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Here's an analogy: if you set a microphone amplifier's knob too close to
 zero, people won't hear your voice, but if you set it too close to the
 max, your voice will be saturated and people won't understand what you
@@ -2295,72 +2286,72 @@ set properly in order for your voice to come out loud and clear at the
 end of the chain. Your voice has to come out of each amplifier at the
 same amplitude as it came in.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 E.g., Kaiming He et al., "Delving Deep into Rectifiers: Surpassing
 Human-Level Performance on ImageNet Classification," *Proceedings of the
 2015 IEEE International Conference on Computer Vision* (2015):
 1026--1034.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Unless it is part of the first hidden layer, a dead neuron may sometimes
 come back to life: Gradient Descent may indeed tweak neurons in the
 layers below in such a way that the weighted sum of the dead neuron's
 inputs is positive again.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Bing Xu et al., "Empirical Evaluation of Rectified Activations in
 Convolutional Network," arXiv preprint arXiv:1505.00853 (2015).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Djork-Arné Clevert et al., "Fast and Accurate Deep Network Learning by
 Exponential Linear Units (ELUs)," *Proceedings of the International
 Conference on Learning Representations* (2016).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Günter Klambauer et al., "Self-Normalizing Neural Networks,"
 *Proceedings of the 31st International Conference on Neural Information
 Processing Systems* (2017): 972--981.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 Sergey Ioffe and Christian Szegedy, "Batch Normalization: Accelerating
 Deep Network Training by Reducing Internal Covariate Shift,"
 *Proceedings of the 32nd International Conference on Machine Learning*
 (2015): 448--456.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)
 However, they are estimated during training, based on the training data,
 so arguably they *are* trainable. In Keras, "non-trainable" really means
 "untouched by backpropagation."
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[10]
 The Keras API also specifies a `keras.backend.learning_phase()` function
 that should return `1` during training and `0` otherwise.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[11]
 Hongyi Zhang et al., "Fixup Initialization: Residual Learning Without
 Normalization," arXiv preprint arXiv:1901.09321 (2019).
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[12]
 Razvan Pascanu et al., "On the Difficulty of Training Recurrent Neural
 Networks," *Proceedings of the 30th International Conference on Machine
 Learning* (2013): 1310--1318.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[13]
 Boris T. Polyak, "Some Methods of Speeding Up the Convergence of
 Iteration Methods," *USSR Computational Mathematics and Mathematical
 Physics* 4, no. 5 (1964): 1--17.
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[14]
 Yurii Nesterov, "A Method for Unconstrained Convex Minimization Problem
 with the Rate of Convergence O(1/k^2^)," *Doklady AN USSR* 269 (1983):
 543--547.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[15]
 John Duchi et al., "Adaptive Subgradient Methods for Online Learning and
 Stochastic Optimization," *Journal of Machine Learning Research* 12
 (2011): 2121--2159.
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[16]
 This algorithm was created by Geoffrey Hinton and Tijmen Tieleman in
 2012 and presented by Geoffrey Hinton in his Coursera class on neural
 networks (slides: [*https://homl.info/57*](https://homl.info/57); video:
@@ -2368,56 +2359,56 @@ networks (slides: [*https://homl.info/57*](https://homl.info/57); video:
 authors did not write a paper to describe the algorithm, researchers
 often cite "slide 29 in lecture 6" in their papers.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[17]
 Diederik P. Kingma and Jimmy Ba, "Adam: A Method for Stochastic
 Optimization," arXiv preprint arXiv:1412.6980 (2014).
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[18]
 These are estimations of the mean and (uncentered) variance of the
 gradients. The mean is often called the *first moment* while the
 variance is often called the *second moment*, hence the name of the
 algorithm.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[19]
 Timothy Dozat, "Incorporating Nesterov Momentum into Adam" (2016).
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[20]
 Ashia C. Wilson et al., "The Marginal Value of Adaptive Gradient Methods
 in Machine Learning," *Advances in Neural Information Processing
 Systems* 30 (2017): 4148--4158.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[21]
 Leslie N. Smith, "A Disciplined Approach to Neural Network
 Hyper-Parameters: Part 1---Learning Rate, Batch Size, Momentum, and
 Weight Decay," arXiv preprint arXiv:1803.09820 (2018).
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[22]
 Andrew Senior et al., "An Empirical Study of Learning Rates in Deep
 Neural Networks for Speech Recognition," *Proceedings of the IEEE
 International Conference on Acoustics, Speech, and Signal Processing*
 (2013): 6724--6728.
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[23]
 Geoffrey E. Hinton et al., "Improving Neural Networks by Preventing
 Co-Adaptation of Feature Detectors," arXiv preprint arXiv:1207.0580
 (2012).
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[24]
 Nitish Srivastava et al., "Dropout: A Simple Way to Prevent Neural
 Networks from Overfitting," *Journal of Machine Learning Research* 15
 (2014): 1929--1958.
 
-^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[25]
 Yarin Gal and Zoubin Ghahramani, "Dropout as a Bayesian Approximation:
 Representing Model Uncertainty in Deep Learning," *Proceedings of the
 33rd International Conference on Machine Learning* (2016): 1050--1059.
 
-^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[26]
 Specifically, they show that training a dropout network is
 mathematically equivalent to approximate Bayesian inference in a
 specific type of probabilistic model called a *Deep Gaussian Process*.
 
-^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html-marker)^
+^[27]
 This `MCDropout` class will work with all Keras APIs, including the
 Sequential API. If you only care about the Functional API or the
 Subclassing API, you do not have to create an `MCDropout` class; you can

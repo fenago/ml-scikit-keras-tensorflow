@@ -2,7 +2,7 @@
 [Appendix C. ] SVM Dual Problem
 ======================================
 
-To []{}
+To 
 understand *duality*, you first need to understand the *Lagrange
 multipliers* method. The general idea is to transform a constrained
 optimization objective into an unconstrained one, by moving the
@@ -41,13 +41,13 @@ stationary point, and as it respects the constraint, it must be the
 solution to the constrained optimization problem.
 
 However,
-this []{}
+this 
 method applies only to equality constraints. Fortunately, under some
 regularity conditions (which are respected by the SVM objectives), this
 method can be generalized to *inequality constraints* as well (e.g.,
 3*x* + 2*y* + 1 ≥ 0). The *generalized Lagrangian* for the hard margin
 problem is given by [Equation
-C-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#generalized_lagrangian_hard_margin),
+C-1]
 where the *α*^(*i*)^ variables are called the *Karush--Kuhn--Tucker*
 (KKT) multipliers, and they must be greater or equal to zero.
 
@@ -89,7 +89,7 @@ the constrained optimization problem.
 
 We can compute the partial derivatives of the generalized Lagrangian
 with regard to **w** and *b* with [Equation
-C-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#partial_derivatives_of_generalized_lagrangian).
+C-2]
 
 
 ##### [Equation C-2. ] Partial derivatives of the generalized Lagrangian
@@ -101,7 +101,7 @@ $$\begin{array}{r}
 
 
 When these partial derivatives are equal to zero, we have [Equation
-C-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#stationary_points_properties).
+C-3]
 
 
 ##### [Equation C-3. ] Properties of the stationary points
@@ -114,7 +114,7 @@ $$\begin{array}{r}
 
 If we plug these results into the definition of the generalized
 Lagrangian, some terms disappear and we find [Equation
-C-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#dual_form_generalized_lagrangian).
+C-4]
 
 
 ##### [Equation C-4. ] Dual form of the SVM problem
@@ -132,7 +132,7 @@ were looking for.
 
 Once you find the optimal $\hat{\mathbf{\alpha}}$, you can compute
 $\hat{\mathbf{w}}$ using the first line of [Equation
-C-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#stationary_points_properties).
+C-3]
 To compute $\hat{b}$, you can use the fact that a support vector must
 verify *t*^(*i*)^($\hat{\mathbf{w}}$^⊺^ **x**^(*i*)^ + $\hat{b}$) = 1,
 so if the *k*^th^ instance is a support vector (i.e.,
@@ -140,7 +140,7 @@ ${\hat{\alpha}}^{(k)} > 0$), you can use it to compute
 $\hat{b} = t^{(k)} - {{\hat{\mathbf{w}}}^{\intercal}\mathbf{x}^{(k)}}$.
 However, it is often preferred to compute the average over all support
 vectors to get a more stable and precise value, as in [Equation
-C-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app03.html#bias_term_dual_form).
+C-5]
 
 
 ##### [Equation C-5. ] Bias term estimation using the dual form

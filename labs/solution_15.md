@@ -80,7 +80,7 @@
     long-term state should be output at this time step (after going
     through the tanh activation function). The new short-term state is
     equal to the output of the cell. See
-    [Figure 15-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#lstm_cell_diagram).
+    [Figure 15-9]
 
 7.  An RNN layer is fundamentally sequential: in order to compute the
     outputs at time step *t*, it has to first compute the outputs at all

@@ -81,7 +81,7 @@
 9.  Custom Keras components should be convertible to TF Functions, which
     means they should stick to TF operations as much as possible and
     respect all the rules listed in ["TF Function
-    Rules"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tf_functionrules).
+    Rules"]
     If you absolutely need to include arbitrary Python code in a custom
     component, you can either wrap it in a `tf.py_function()` operation
     (but this will reduce performance and limit your model's
@@ -90,7 +90,7 @@
     `compile()` method).
 
 10. Please refer to ["TF Function
-    Rules"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tf_functionrules)
+    Rules"]
     for the list of rules to respect when creating a TF Function.
 
 11. Creating a dynamic Keras model can be useful for debugging, as it

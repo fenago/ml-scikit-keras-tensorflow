@@ -273,7 +273,7 @@ See the Jupyter notebooks available at
 3.  SVMs try to fit the largest possible "street" between the classes
     (see the first answer), so if the training set is not scaled, the
     SVM will tend to neglect small features (see
-    [Figure 5-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#sensitivity_to_feature_scales_plot)).
+    [Figure 5-2]
 
 4.  An SVM classifier can output the distance between the test instance
     and the decision boundary, and you can use this as a confidence
@@ -299,7 +299,7 @@ See the Jupyter notebooks available at
 
 7.  Let's call the QP parameters for the hard margin problem **H**′,
     **f**′, **A**′, and **b**′ (see ["Quadratic
-    Programming"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#quadratic_programming_paragraph)).
+    Programming"]
     The QP parameters for the soft margin problem have *m* additional
     parameters (*n*~*p*~ = *n* + 1 + *m*) and *m* additional constraints
     (*n*~*c*~ = 2*m*). They can be defined like so:
@@ -614,7 +614,7 @@ notebooks available at
     interact with the learning algorithm, providing labels for specific
     instances when the algorithm requests them. A common approach is
     uncertainty sampling (see the description in ["Active
-    Learning"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#activelearning_sb)).
+    Learning"]
 
 7.  Many people use the terms *anomaly detection* and *novelty
     detection* interchangeably, but they are not exactly the same. In
@@ -686,9 +686,9 @@ notebooks available at
 5.  Popular activation functions include the step function, the logistic
     (sigmoid) function, the hyperbolic tangent (tanh) function, and the
     Rectified Linear Unit (ReLU) function (see
-    [Figure 10-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#activation_functions_plot)).
+    [Figure 10-8]
     See
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+    [Lab 11]
     for other examples, such as ELU and variants of the ReLU function.
 
 6.  Considering the MLP described in the question, composed of one input
@@ -723,7 +723,7 @@ notebooks available at
     function with the softmax activation function, which can handle
     multiple classes, outputting one probability per class. If you want
     your neural network to predict housing prices like in
-    [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
+    [Lab 2]
     then you need one output neuron, using no activation function at all
     in the output
     layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
@@ -742,7 +742,7 @@ notebooks available at
     performs a forward pass through a computation graph, computing every
     node's value for the current training batch, and then it performs a
     reverse pass, computing all the gradients at once (see
-    [Appendix D](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#autodiff_appendix)
+    [Appendix D]
     for more details). So what's the difference? Well, backpropagation
     refers to the whole process of training an artificial neural network
     using multiple backpropagation steps, each of which computes
@@ -757,7 +757,7 @@ notebooks available at
     layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^ In general, the ReLU activation function (or one
     of its variants; see
-    [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
+    [Lab 11]
     is a good default for the hidden layers. For the output layer, in
     general you will want the logistic activation function for binary
     classification, the softmax activation function for multiclass
@@ -817,7 +817,7 @@ notebooks available at
     that it is generally outperformed by SELU and leaky ReLU. However,
     the ReLU activation function's ability to output precisely zero can
     be useful in some cases (e.g., see
-    [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
+    [Lab 17]
     Moreover, it can sometimes benefit from optimized implementation as
     well as from hardware acceleration. The hyperbolic tangent (tanh)
     can be useful in the output layer if you need to output a number
@@ -827,7 +827,7 @@ notebooks available at
     (e.g., for binary classification), but is rarely used in hidden
     layers (there are exceptions---for example, for the coding layer of
     variational autoencoders; see
-    [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
+    [Lab 17]
     Finally, the softmax activation function is useful in the output
     layer to output probabilities for mutually exclusive classes, but it
     is rarely (if ever) used in hidden layers.
@@ -945,7 +945,7 @@ available at
 9.  Custom Keras components should be convertible to TF Functions, which
     means they should stick to TF operations as much as possible and
     respect all the rules listed in ["TF Function
-    Rules"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tf_functionrules).
+    Rules"]
     If you absolutely need to include arbitrary Python code in a custom
     component, you can either wrap it in a `tf.py_function()` operation
     (but this will reduce performance and limit your model's
@@ -954,7 +954,7 @@ available at
     `compile()` method).
 
 10. Please refer to ["TF Function
-    Rules"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tf_functionrules)
+    Rules"]
     for the list of rules to respect when creating a TF Function.
 
 11. Creating a dynamic Keras model can be useful for debugging, as it
@@ -1114,7 +1114,7 @@ notebooks available at
         possible to encode each letter, or subword tokens (e.g.,
         splitting "smartest" into "smart" and "est"). These last two
         options are discussed in
-        [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab).
+        [Lab 16]
 
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
@@ -1363,7 +1363,7 @@ available at
     long-term state should be output at this time step (after going
     through the tanh activation function). The new short-term state is
     equal to the output of the cell. See
-    [Figure 15-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#lstm_cell_diagram).
+    [Figure 15-9]
 
 7.  An RNN layer is fundamentally sequential: in order to compute the
     outputs at time step *t*, it has to first compute the outputs at all
@@ -1648,7 +1648,7 @@ notebooks available at
 
 2.  Here are a few possible applications of Reinforcement Learning,
     other than those mentioned in
-    [Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab):
+    [Lab 18]
 
     Music personalization
 
@@ -1868,7 +1868,7 @@ notebooks available at
         the previous strategy, and a bit harder to deploy, since it
         requires managing parameter servers. However, it is useful to
         train huge models that don't fit in GPU
-        RAM. []{}
+        RAM. 
 
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
@@ -1876,22 +1876,22 @@ notebooks available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
 If you draw a straight line between any two points on the curve, the
 line never crosses the curve.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
 log~2~ is the binary log; log~2~(*m*) = log(*m*) / log(2).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
 When the values to predict can vary by many orders of magnitude, you may
 want to predict the logarithm of the target value rather than the target
 value directly. Simply computing the exponential of the neural network's
 output will give you the estimated value (since exp(log *v*) = *v*).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker)
 In
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
+[Lab 11]
 we discuss many techniques that introduce additional hyperparameters:
 type of weight initialization, activation function hyperparameters
 (e.g., the amount of leak in leaky ReLU), Gradient Clipping threshold,

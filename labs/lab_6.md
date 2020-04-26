@@ -9,13 +9,13 @@ Like SVMs, *Decision Trees* are versatile Machine
 Learning algorithms that can perform both classification and regression
 tasks, and even multioutput tasks. They are powerful algorithms, capable
 of fitting complex datasets. For example, in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
+[Lab 2]
 you trained a `DecisionTreeRegressor` model on the California housing
 dataset, fitting it perfectly (actually, overfitting it).
 
 Decision Trees are also the fundamental components of Random Forests
 (see
-[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
+[Lab 7]
 which are among the most powerful Machine Learning algorithms available
 today.
 
@@ -33,7 +33,7 @@ Training and Visualizing a Decision Tree
 To understand Decision Trees, let's build one and
 take a look at how it makes predictions. The following code trains a
 `DecisionTreeClassifier` on the iris dataset (see
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
+[Lab 4]
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.datasets import load_iris
@@ -66,8 +66,7 @@ export_graphviz(
 
 Then you can use the `dot` command-line tool from the Graphviz package
 to convert this *.dot* file to a variety of formats, such as PDF or
-PNG.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
-.totri-footnote}^ This command line converts the *.dot* file to a *.png*
+PNG.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) This command line converts the *.dot* file to a *.png*
 image file:
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -75,7 +74,7 @@ $ dot -Tpng iris_tree.dot -o iris_tree.png
 ```
 
 Your first Decision Tree looks like
-[Figure 6-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#iris_tree).
+[Figure 6-1]
 
 ![](./images/mls2_0601.png)
 
@@ -86,7 +85,7 @@ Making Predictions
 ==================
 
 Let's see how the tree represented in
-[Figure 6-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#iris_tree)
+[Figure 6-1]
 makes predictions. Suppose you find an iris flower and you want to
 classify it. You start at the *root node* (depth
 0, at the top): this node asks whether the flower's petal length is
@@ -124,7 +123,7 @@ attribute measures its *impurity*: a node is
 same class. For example, since the depth-1 left node applies only to
 *Iris setosa* training instances, it is pure and its `gini` score is 0.
 [Equation
-6-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#gini_impurity)
+6-1]
 shows how the training algorithm computes the `gini` score *G*~*i*~ of
 the *i*^th^ node. The depth-2 left node has a `gini` score equal to 1 --
 (0/54)^2^ -- (49/54)^2^ -- (5/54)^2^ ≈ 0.168.
@@ -144,14 +143,14 @@ In this equation:
 ###### Note
 
 Scikit-Learn uses
-the []{} []{}
+the  
 CART algorithm, which produces only *binary trees*: nonleaf nodes always
 have two children (i.e., questions only have yes/no answers). However,
 other algorithms such as ID3 can produce Decision Trees with nodes that
 have more than two [children].
 
 
-[Figure 6-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#decision_tree_decision_boundaries_plot)
+[Figure 6-2]
 shows this Decision Tree's decision boundaries. The thick vertical line
 represents the decision boundary of the root node (depth 0): petal
 length = 2.45 cm. Since the lefthand area is pure (only *Iris setosa*),
@@ -169,7 +168,7 @@ by the dotted lines).
 
 Decision Trees are intuitive, and their decisions are easy to interpret.
 Such models are
-often []{}
+often 
 called *white box models*. In contrast, as we will see, Random Forests
 or neural networks are generally considered *black box models*. They
 make great predictions, and you can easily check the calculations that
@@ -221,14 +220,14 @@ case).
 The CART Training Algorithm
 ===========================
 
-Scikit-Learn []{} []{}
+Scikit-Learn  
 uses the *Classification and Regression Tree* (CART) algorithm to train
 Decision Trees (also called "growing" trees). The algorithm works by
 first splitting the training set into two subsets using a single feature
 *k* and a threshold *t*~*k*~ (e.g., "petal length ≤ 2.45 cm"). How does
 it choose *k* and *t*~*k*~? It searches for the pair (*k*, *t*~*k*~)
 that produces the purest subsets (weighted by their size). [Equation
-6-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#classification_cart_cost_function)
+6-2]
 gives the cost function that the algorithm tries to minimize.
 
 
@@ -265,8 +264,7 @@ optimal.
 
 Unfortunately, finding the optimal tree is known to
 be an *NP-Complete*
-problem:^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
-.totri-footnote}^ it requires *O*(exp(*m*)) time, making the problem
+problem: ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) it requires *O*(exp(*m*)) time, making the problem
 intractable even for small training sets. This is why we must settle for
 a "reasonably good" solution.
 
@@ -281,8 +279,7 @@ Making predictions requires traversing the
 Decision Tree from the root to a leaf. Decision Trees generally are
 approximately balanced, so traversing the Decision Tree requires going
 through roughly *O*(log~2~(*m*))
-nodes.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
-.totri-footnote}^ Since each node only requires checking the value of
+nodes.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) Since each node only requires checking the value of
 one feature, the overall prediction complexity is *O*(log~2~(*m*)),
 independent of the number of features. So predictions are very fast,
 even when dealing with large training sets.
@@ -301,7 +298,7 @@ training considerably for larger training sets.
 Gini Impurity or Entropy?
 =========================
 
-By []{}
+By 
 default, the Gini impurity measure is used, but you can select the
 *entropy* impurity measure instead by setting the `criterion`
 hyperparameter to `"entropy"`. The concept of entropy originated in
@@ -311,15 +308,14 @@ a wide variety of domains,
 including Shannon's
 *information theory*, where it measures the average information content
 of a
-message:^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
-.totri-footnote}^ entropy is zero when all messages are identical. In
+message: ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) entropy is zero when all messages are identical. In
 Machine Learning, entropy is frequently used as an
 [impurity] measure: a set's entropy is zero when it
 contains instances of only one class. [Equation
-6-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#entropy_function)
+6-3]
 shows the definition of the entropy of the *i*^th^ node. For example,
 the depth-2 left node in
-[Figure 6-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#iris_tree)
+[Figure 6-1]
 has an entropy equal to --(49/54) log~2~ (49/54) -- (5/54) log~2~ (5/54)
 ≈ 0.445.
 
@@ -344,13 +340,13 @@ trees.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9
 Regularization Hyperparameters
 ==============================
 
-Decision []{}
+Decision 
 Trees make very few assumptions about the training data (as opposed to
 linear models, which assume that the data is linear, for example). If
 left unconstrained, the tree structure will adapt itself to the training
 data, fitting it very closely---indeed, most likely overfitting it. Such
 a
-model []{}
+model 
 is often called a *nonparametric model*, not because it does not have
 any parameters (it often has a lot) but because the number of parameters
 is not determined prior to training, so the model structure is free to
@@ -382,7 +378,7 @@ hyperparameters will regularize the model.
 
 ###### Note
 
-Other []{}
+Other 
 algorithms work by first training the Decision Tree without
 restrictions, then *pruning* (deleting) unnecessary nodes. A node whose
 children are all leaf nodes is considered unnecessary if the purity
@@ -397,9 +393,9 @@ children are deleted. The pruning continues until all unnecessary nodes
 have been pruned.
 
 
-[Figure 6-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#min_samples_leaf_plot)
+[Figure 6-3]
 shows two Decision Trees trained on the moons dataset (introduced in
-[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)).
+[Lab 5]
 On the left the Decision Tree is trained with the default
 hyperparameters (i.e., no restrictions), and on the right it's trained
 with `min_samples_leaf=4`. It is quite obvious that the model on the
@@ -415,7 +411,7 @@ Regression
 ==========
 
 Decision Trees are also
-capable of performing regression tasks. Let's []{}
+capable of performing regression tasks. Let's 
 build a regression tree using Scikit-Learn's `DecisionTreeRegressor`
 class, training it on a noisy quadratic dataset with `max_depth=2`:
 
@@ -427,7 +423,7 @@ tree_reg.fit(X, y)
 ```
 
 The resulting tree is represented in
-[Figure 6-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#regression_tree).
+[Figure 6-4]
 
 ![](./images/mls2_0604.png)
 
@@ -438,11 +434,11 @@ prediction for a new instance with *x*~1~ = 0.6. You traverse the tree
 starting at the root, and you eventually reach the leaf node that
 predicts `value=0.111`. This prediction is the average target value of
 the 110 training instances associated with this leaf node, and it
-results in a  []{}mean squared error equal to 0.015
+results in a  mean squared error equal to 0.015
 over these 110 instances.
 
 This model's predictions are represented on the left in
-[Figure 6-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#tree_regression_plot).
+[Figure 6-5]
 If you set `max_depth=3`, you get the predictions represented on the
 right. Notice how the predicted value for each region is always the
 average target value of the instances in that region. The algorithm
@@ -455,7 +451,7 @@ The CART algorithm works mostly the same way as earlier, except that
 instead of trying to split the training set in a way that minimizes
 impurity, it now tries to split the training set in a way that minimizes
 the MSE. [Equation
-6-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#regression_cart_cost_function)
+6-4]
 shows the cost function that the algorithm tries to minimize.
 
 
@@ -471,11 +467,11 @@ Just like for classification tasks, Decision Trees are prone to
 overfitting when dealing with regression tasks. Without any
 regularization (i.e., using the default hyperparameters), you get the
 predictions on the left in
-[Figure 6-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#tree_regression_regularization_plot).
+[Figure 6-6]
 These predictions are obviously overfitting the training set very badly.
 Just setting `min_samples_leaf=10` results in a much more reasonable
 model, represented on the right in
-[Figure 6-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#tree_regression_regularization_plot).
+[Figure 6-6]
 
 ![](./images/mls2_0606.png)
 
@@ -492,14 +488,14 @@ However, they do have a few limitations. First, as you may have noticed,
 Decision Trees love orthogonal decision boundaries (all splits are
 perpendicular to an axis), which makes them
 sensitive to training set rotation. For example,
-[Figure 6-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#sensitivity_to_rotation_plot)
+[Figure 6-7]
 shows a simple linearly separable dataset: on the left, a Decision Tree
 can split it easily, while on the right, after the dataset is rotated by
 45°, the decision boundary looks unnecessarily convoluted. Although both
 Decision Trees fit the training set perfectly, it is very likely that
 the model on the right will not generalize well. One way to limit this
 problem is to use Principal Component Analysis (see
-[Lab 8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab)),
+[Lab 8]
 which often results in a better orientation of the training data.
 
 ![](./images/mls2_0607.png)
@@ -509,13 +505,12 @@ sensitive to small variations in the training data. For example, if you
 just remove the widest *Iris versicolor* from the iris training set (the
 one with petals 4.8 cm long and 1.8 cm wide) and train a new Decision
 Tree, you may get the model represented in
-[Figure 6-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#decision_tree_instability_plot).
+[Figure 6-8]
 As you can see, it looks very different from the previous Decision Tree
-([Figure 6-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#decision_tree_decision_boundaries_plot)).
+([Figure 6-2]
 Actually, since the training algorithm used by
 Scikit-Learn is
-stochastic,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
-.totri-footnote}^ you may [get very] different models
+stochastic,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) you may [get very] different models
 even on the same training data (unless you set the
 [`random_state`] hyperparameter).
 
@@ -593,16 +588,15 @@ Exercises
         1.5% higher). Congratulations, you have trained a Random Forest
         classifier!
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
 Graphviz is an open source graph visualization software package,
 available at [*http://www.graphviz.org/*](http://www.graphviz.org/).
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
 P is the set of problems that can be solved in polynomial time. NP is
 the set of problems whose solutions can be verified in polynomial time.
 An NP-Hard problem is a problem to which any NP problem can be reduced
@@ -611,16 +605,16 @@ major open mathematical question is whether or not P = NP. If P ≠ NP
 (which seems likely), then no polynomial algorithm will ever be found
 for any NP-Complete problem (except perhaps on a quantum computer).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
 log~2~ is the binary logarithm. It is equal to log~2~(*m*) = log(*m*) /
 log(2).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
 A reduction of entropy is often called an *information gain*.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
 See Sebastian Raschka's [interesting analysis for more
 details](https://homl.info/19).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html-marker)
 It randomly selects the set of features to evaluate at each node.

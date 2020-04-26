@@ -100,11 +100,11 @@ tf.Tensor(9, shape=(), dtype=int32)
 Chaining Transformations
 ------------------------
 
-Once []{}
+Once 
 you have a dataset, you can apply all sorts of transformations to it by
 calling its transformation methods. Each method returns a new dataset,
 so you can chain transformations like this (this chain is illustrated in
-[Figure 13-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#chaining_transformations_diagram)):
+[Figure 13-1]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> dataset = dataset.repeat(3).batch(7)
@@ -156,7 +156,7 @@ usually want to spawn multiple threads to speed things up: it's as
 simple as setting the `num_parallel_calls` argument. Note that the
 function you pass to the `map()` method must be convertible to a TF
 Function (see
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
+[Lab 12]
 
 While the `map()` method applies a transformation to each item, the
 `apply()` method applies a transformation to the dataset as a whole. For
@@ -198,7 +198,7 @@ Shuffling the Data
 As you know, Gradient
 Descent works best when the instances in the training set are
 independent and identically distributed (see
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)).
+[Lab 4]
 A simple way to ensure this is to shuffle the instances, using the
 `shuffle()` method. It will create a new dataset that will start by
 filling up a buffer with the first items of the source dataset. Then,
@@ -208,8 +208,7 @@ has iterated entirely through the source dataset. At this point it
 continues to pull out items randomly from the buffer until it is empty.
 You must specify the buffer size, and it is important to make it large
 enough, or else shuffling will not be very
-effective.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^ Just don't exceed the amount of RAM you have, and even
+effective.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Just don't exceed the amount of RAM you have, and even
 if you have plenty of it, there's no need to go beyond the dataset's
 size. You can provide a random seed if you want the same random order
 every time you run your program. For example, the following code creates
@@ -421,13 +420,13 @@ Looks good! We can now apply the function to the dataset.
 Putting Everything Together
 ---------------------------
 
-To []{}
+To 
 make the code reusable, let's put together everything we have discussed
 so far into a small helper function: it will create and return a dataset
 that will efficiently load California housing data from multiple CSV
 files, preprocess it, shuffle it, optionally repeat it, and batch it
 (see
-[Figure 13-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#input_pipeline_diagram)):
+[Figure 13-2]
 
 ``` {data-type="programlisting" code-language="python"}
 def csv_reader_dataset(filepaths, repeat=1, n_readers=5,
@@ -456,13 +455,12 @@ Prefetching
 By calling `prefetch(1)` at
 the end, we are creating a dataset that will do its best to always be
 one batch
-ahead.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^ In other words, while our training algorithm is
+ahead.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) In other words, while our training algorithm is
 working on one batch, the dataset will already be working in parallel on
 getting the next batch ready (e.g., reading the data from disk and
 preprocessing it). This can improve performance dramatically, as is
 illustrated in
-[Figure 13-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#prefetching_diagram).
+[Figure 13-3]
 If we also ensure that loading and preprocessing are multithreaded (by
 setting `num_parallel_calls` when calling `interleave()` and `map()`),
 we can exploit multiple cores on the CPU and hopefully make preparing
@@ -527,11 +525,10 @@ test_set = csv_reader_dataset(test_filepaths)
 ```
 
 And now we can simply build and train a Keras model using these
-datasets.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^ All we need to do is pass the training and validation
+datasets.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) All we need to do is pass the training and validation
 datasets to the `fit()` method, instead of `X_train, y_train`,
 `X_valid`, and
-`y_valid`:^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
+`y_valid`: ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="python"}
@@ -555,7 +552,7 @@ still use NumPy arrays instead of datasets if you want (but of course
 they need to have been loaded and preprocessed first).
 
 If you want to build your own custom training loop (as in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)),
+[Lab 12]
 you can just iterate over the training set, very naturally:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -564,7 +561,7 @@ for X_batch, y_batch in train_set:
 ```
 
 In fact, it is even possible to create a TF Function (see
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab))
+[Lab 12]
 that performs the whole training loop:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -593,7 +590,7 @@ use TFRecords instead.
 If you are happy with CSV files (or whatever other format you are
 using), you do not *have* to use TFRecords. As the saying goes, if it
 ain't broke, don't fix it! TFRecords are useful when the bottleneck
-during training is loading and parsing the data. []{}
+during training is loading and parsing the data. 
 
 
 
@@ -695,8 +692,7 @@ message Person {
 
 This definition says we are using version 3 of the protobuf format, and
 it specifies that each `Person`
-object^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^ may (optionally) have a `name` of type `string`, an
+object^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) may (optionally) have a `name` of type `string`, an
 `id` of type `int32`, and zero or more `email` fields, each of type
 `string`. The numbers `1`, `2`, and `3` are the field identifiers: they
 will be used in each record's binary representation. Once you have a
@@ -750,7 +746,7 @@ operations (and neither are the other operations in this code), so they
 cannot be included in a TensorFlow Function (except by wrapping them in
 a `tf.py_function()` operation, which would make the code slower and
 less portable, as we saw in
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)).
+[Lab 12]
 Fortunately, TensorFlow does include special protobuf definitions for
 which it provides parsing operations.
 
@@ -789,8 +785,7 @@ numerical fields, for a more efficient [encoding. A]
 `Int64List`. A `Features` (with an `s`) contains a dictionary that maps
 a feature name to the corresponding feature value. And finally, an
 `Example` contains only a `Features`
-object.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^ Here is how you could create a `tf.train.Example`
+object.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Here is how you could create a `tf.train.Example`
 representing the same person as earlier and write it to a TFRecord file:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -913,7 +908,7 @@ document's author, title, and publication date. TensorFlow's
 Handling Lists of Lists Using the SequenceExample Protobuf
 ----------------------------------------------------------
 
-Here []{}
+Here 
 is the definition of the `SequenceExample` protobuf:
 
 ``` {data-type="programlisting" code-language="java"}
@@ -952,7 +947,7 @@ parsed_content = tf.RaggedTensor.from_sparse(parsed_feature_lists["content"])
 
 Now that you know how to efficiently store, load, and parse data, the
 next step is to prepare it so that it can be fed to a neural
-network. []{}
+network. 
 
 
 
@@ -1043,7 +1038,7 @@ Encoding Categorical Features Using One-Hot Vectors
 Consider the
 `ocean_proximity` feature in the California housing dataset we explored
 in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab):
+[Lab 2]
 it is a categorical feature with five possible values: `"<1H OCEAN"`,
 `"INLAND"`, `"NEAR OCEAN"`, `"NEAR BAY"`, and `"ISLAND"`. We need to
 encode this feature before we feed it to a neural network. Since there
@@ -1167,13 +1162,13 @@ are trainable, they will gradually improve during training; and as they
 represent fairly similar categories, Gradient Descent will certainly end
 up pushing them closer together, while it will tend to move them away
 from the `"INLAND"` category's embedding (see
-[Figure 13-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#embedding_diagram)).
+[Figure 13-4]
 Indeed, the better the representation, the easier it will be for the
 neural network to make accurate predictions, so training tends to make
 embeddings useful representations of the categories.
 This is called *representation learning* (we will
 see other types of representation learning in
-[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)).
+[Lab 17]
 
 ![](./images/mls2_1304.png)
 
@@ -1192,8 +1187,7 @@ The idea of using vectors to represent words dates back to the 1960s,
 and many sophisticated techniques have been used to generate useful
 vectors, including using neural networks. But things really took off in
 2013, when Tomáš Mikolov and other Google researchers published a
-[paper](https://homl.info/word2vec)^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^ describing an efficient technique to learn word
+[paper](https://homl.info/word2vec)^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) describing an efficient technique to learn word
 embeddings using neural networks, significantly outperforming previous
 attempts. This allowed them to learn embeddings on a very large corpus
 of text: they trained a neural network to predict the words near any
@@ -1206,7 +1200,7 @@ organized along meaningful axes in the embedding space. Here is a famous
 example: if you compute King -- Man + Woman (adding and subtracting the
 embedding vectors of these words), then the result will be very close to
 the embedding of the word Queen (see
-[Figure 13-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#word_embedding_diagram)).
+[Figure 13-5]
 In other words, the word embeddings encode the concept of gender!
 Similarly, you can compute Madrid -- Spain + France, and the result is
 close to Paris, which seems to show that the notion of capital city was
@@ -1446,7 +1440,7 @@ layers or use Keras's (or even use the Feature Columns API), all the
 preprocessing will be done on the fly. During training, however, it may
 be preferable to perform preprocessing ahead of time. Let's see why we'd
 want to do that and how we'd go about
-it. []{}
+it. 
 
 
 
@@ -1541,7 +1535,7 @@ case, things are much simpler: just use TFDS!
 The TensorFlow Datasets (TFDS) Project
 ======================================
 
-The []{}
+The 
 [TensorFlow Datasets](https://tensorflow.org/datasets) project makes it
 very easy to download common datasets, from small ones like MNIST or
 Fashion MNIST to huge datasets like ImageNet (you will need quite a bit
@@ -1614,7 +1608,7 @@ Learning often involves large amounts of data, and knowing how to load,
 parse, and preprocess it efficiently is a crucial skill to have. In the
 next lab, we will look at convolutional neural networks, which are
 among the most successful neural net architectures for image processing
-and many other applications. []{}
+and many other applications. 
 
 
 
@@ -1649,7 +1643,7 @@ Exercises
     features. What about text?
 
 9.  Load the Fashion MNIST dataset (introduced in
-    [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab));
+    [Lab 10]
     split it into a training set, a validation set, and a test set;
     shuffle the training set; and save each [dataset] to
     multiple TFRecord files. Each record should be a serialized
@@ -1696,7 +1690,7 @@ Exercises
     5.  Add an `Embedding` layer and compute the mean embedding for each
         review, multiplied by the square root of the number of words
         (see
-        [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)).
+        [Lab 16]
         This rescaled mean embedding can then be passed to the rest of
         your model.
 
@@ -1706,12 +1700,11 @@ Exercises
     7.  Use TFDS to load the same dataset more easily:
         `tfds.load("imdb_reviews")`.
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 Imagine a sorted deck of cards on your left: suppose you just take the
 top three cards and shuffle them, then pick one randomly and put it to
 your right, keeping the other two in your hands. Take another card on
@@ -1720,37 +1713,37 @@ randomly, and put it on your right. When you are done going through all
 the cards like this, you will have a deck of cards on your right: do you
 think it will be perfectly shuffled?
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 In general, just prefetching one batch is fine, but in some cases you
 may need to prefetch a few more. Alternatively, you can let TensorFlow
 decide automatically by passing `tf.data.experimental.AUTOTUNE` (this is
 an experimental feature for now).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 But check out the `tf.data.experimental.prefetch_to_device()` function,
 which can prefetch data directly to the GPU.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 Support for datasets is specific to tf.keras; this will not work in
 other implementations of the Keras API.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 The `fit()` method will take care of repeating the training dataset.
 Alternatively, you could call `repeat()` on the training dataset so that
 it repeats forever and specify the `steps_per_epoch` argument when
 calling the `fit()` method. This may be useful in some rare cases, for
 example if you want to use a shuffle buffer that crosses over epochs.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 Since protobuf objects are meant to be serialized and transmitted, they
 are called *messages*.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 This lab contains the bare minimum you need to know about protobufs
 to use TFRecords. To learn more about protobufs, please visit
 [*https://homl.info/protobuf*](https://homl.info/protobuf).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 Why was `Example` even defined, since it contains no more than a
 `Features` object? Well, TensorFlow's developers may one day decide to
 add more fields to it. As long as the new `Example` definition still
@@ -1758,16 +1751,16 @@ contains the `features` field, with the same ID, it will be backward
 compatible. This extensibility is one of the great features of
 protobufs.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)
 Tomas Mikolov et al., "Distributed Representations of Words and Phrases
 and Their Compositionality," *Proceedings of the 26th International
 Conference on Neural Information Processing Systems* 2 (2013):
 3111--3119.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)^
+^[10]
 Malvina Nissim et al., "Fair Is Better Than Sensational: Man Is to
 Doctor as Woman Is to Doctor," arXiv preprint arXiv:1905.09866 (2019).
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html-marker)^
+^[11]
 For large images, you could use `tf.io.encode_jpeg()` instead. This
 would save a lot of space, but it would lose a bit of image quality.

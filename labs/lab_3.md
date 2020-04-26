@@ -6,11 +6,11 @@
 ===================================
 
 In
-[Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab)
+[Lab 1]
 I mentioned that the most common supervised learning tasks are
 regression (predicting values) and classification (predicting classes).
 In
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)
+[Lab 2]
 we explored a regression task, predicting housing values, using various
 algorithms such as Linear Regression, Decision Trees, and Random Forests
 (which will be explained in further detail in later labs). Now we
@@ -21,7 +21,7 @@ will turn our attention to classification systems.
 MNIST
 =====
 
-In []{}
+In 
 this lab we will be using the MNIST dataset, which is a set of
 70,000 small images of digits handwritten by high school students and
 employees of the US Census Bureau. Each image is labeled with the digit
@@ -34,7 +34,7 @@ sooner or later.
 Scikit-Learn provides many helper functions to
 download popular datasets. MNIST is one of them. The following code
 fetches the MNIST
-dataset:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
+dataset: ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -101,7 +101,7 @@ let's cast `y` to integer:
 ```
 
 To give you a feel for the complexity of the classification task,
-[Figure 3-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#more_digits_plot)
+[Figure 3-1]
 shows a few more images from the MNIST dataset.
 
 ![](./images/mls2_0301.png)
@@ -142,7 +142,7 @@ y_test_5 = (y_test == 5)
 ```
 
 Now let's pick a classifier and train it. A good place to
-start []{}
+start 
 is with a *Stochastic Gradient Descent* (SGD) classifier, using
 Scikit-Learn's `SGDClassifier` class. This classifier has the advantage
 of being capable of handling very large datasets efficiently. This is in
@@ -196,14 +196,14 @@ Measuring Accuracy Using Cross-Validation
 
 A good way to evaluate a
 model is to use cross-validation, just as you did in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
+[Lab 2]
 
 
 ##### Implementing Cross-Validation
 
 Occasionally you will need more control over the cross-validation
 process than what Scikit-Learn provides off the shelf. In these cases,
-you can implement cross-validation yourself. The []{}
+you can implement cross-validation yourself. The 
 following code does roughly the same thing as Scikit-Learn's
 `cross_val_score()` function, and it prints the same result:
 
@@ -226,9 +226,9 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
     print(n_correct / len(y_pred))  # prints 0.9502, 0.96565, and 0.96495
 ```
 
-The `StratifiedKFold` class []{}
+The `StratifiedKFold` class 
 performs stratified sampling (as explained in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab))
+[Lab 2]
 to produce folds that contain a representative ratio of each class. At
 each iteration the code creates a clone of the classifier, trains that
 clone on the training folds, and makes predictions on the test fold.
@@ -242,7 +242,7 @@ Remember that K-fold cross-validation means splitting the training set
 into K folds (in this case, three), then making predictions and
 evaluating them on each fold using a model trained on the remaining
 folds (see
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab)):
+[Lab 2]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.model_selection import cross_val_score
@@ -251,7 +251,7 @@ array([0.96355, 0.93795, 0.95615])
 ```
 
 Wow!
-Above []{}
+Above 
 93% accuracy (ratio of correct predictions) on all cross-validation
 folds? This looks amazing, doesn't it? Well, before you get too excited,
 let's look at a very dumb classifier that just classifies every single
@@ -352,7 +352,7 @@ may prefer a more concise metric. An interesting one to look at is the
 accuracy of the positive predictions; this
 is []{#Mprecision03} []{#precis03} called the *precision* of the
 classifier ([Equation
-3-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#equation_three_one)).
+3-1]
 
 
 ##### [Equation 3-1. ] Precision
@@ -398,7 +398,7 @@ precision is typically used along with another metric named *recall*,
 also called *sensitivity* or the *true positive rate* (TPR): this is the
 ratio of positive instances that are correctly detected by the
 classifier ([Equation
-3-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#equation_three_two)).
+3-2]
 
 
 ##### [Equation 3-2. ] Recall
@@ -435,7 +435,7 @@ role="presentation" style="text-align: center; position: relative;"}
 *FN* is, of course, the number of false negatives.
 
 If you are confused about the confusion matrix,
-[Figure 3-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#confusion_matrix_diagram)
+[Figure 3-2]
 may help.
 
 ![](./images/mls2_0302.png)
@@ -463,11 +463,11 @@ its accuracy. When it claims an image represents a 5, it is correct only
 
 It is often convenient to combine precision and recall into a single
 metric
-called []{}
+called 
 the *F~1~ score*, in particular if you need a simple way to compare two
 classifiers. The F~1~ score is the *harmonic mean* of precision and
 recall ([Equation
-3-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#equation_three_three)).
+3-3]
 Whereas the regular mean treats all values equally, the harmonic mean
 gives much more weight to low values. As a result, the classifier will
 only get a high F~1~ score if both recall and precision are high.
@@ -596,7 +596,7 @@ makes its classification decisions. For each
 instance, it computes a score based on a *decision function*. If that
 score is greater than a threshold, it assigns the instance to the
 positive class; otherwise it assigns it to the negative class.
-[Figure 3-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#decision_threshold_diagram)
+[Figure 3-3]
 shows a few digits positioned from the lowest score on the left to the
 highest score on the right. Suppose the *decision threshold* is
 positioned at the central arrow (between the two 5s): you will find 4
@@ -665,7 +665,7 @@ precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)
 
 Finally, use Matplotlib to plot precision and recall as functions of the
 threshold value
-([Figure 3-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#precision_recall_vs_threshold_plot)):
+([Figure 3-4]
 
 ``` {data-type="programlisting" code-language="python"}
 def plot_precision_recall_vs_threshold(precisions, recalls, thresholds):
@@ -684,11 +684,11 @@ plt.show()
 
 You may wonder why the precision curve is bumpier than the recall curve
 in
-[Figure 3-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#precision_recall_vs_threshold_plot).
+[Figure 3-4]
 The reason is that precision may sometimes go down when you raise the
 threshold (although in general it will go up). To understand why, look
 back at
-[Figure 3-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#decision_threshold_diagram)
+[Figure 3-3]
 and notice what happens when you start from the central threshold and
 move it just one digit to the right: precision goes from 4/5 (80%) down
 to 3/4 (75%). On the other hand, recall can only go down when the
@@ -697,7 +697,7 @@ threshold is increased, which explains why its curve looks smooth.
 
 Another way to select a good precision/recall trade-off is to plot
 precision directly against recall, as shown in
-[Figure 3-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#precision_vs_recall_plot)
+[Figure 3-5]
 (the same threshold as earlier is highlighted).
 
 ![](./images/mls2_0305.png)
@@ -742,7 +742,7 @@ high-precision classifier is not very useful if its recall is too low!
 ###### Tip
 
 If someone says, "Let's reach 99% precision," you should ask, "At what
-recall?" []{}
+recall?" 
 
 
 
@@ -775,7 +775,7 @@ fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)
 
 Then you can plot the FPR against the TPR using Matplotlib. This code
 produces the plot in
-[Figure 3-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#roc_curve_plot):
+[Figure 3-6]
 
 ``` {data-type="programlisting" code-language="python"}
 def plot_roc_curve(fpr, tpr, label=None):
@@ -826,7 +826,7 @@ Let's now train a `RandomForestClassifier` and compare its ROC curve and
 ROC AUC score to those of the `SGDClassifier`. First, you need to get
 scores for each instance in the training set. But due to the way it
 works (see
-[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab)),
+[Lab 7]
 the `RandomForestClassifier` class does not have a `decision_function()`
 method. Instead, it has a `predict_proba()` method. Scikit-Learn
 classifiers generally have one or the other, or both. The
@@ -854,7 +854,7 @@ fpr_forest, tpr_forest, thresholds_forest = roc_curve(y_train_5,y_scores_forest)
 
 Now you are ready to plot the ROC curve. It is useful to plot the first
 ROC curve as well to see how they compare
-([Figure 3-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#roc_curve_comparison_plot)):
+([Figure 3-7]
 
 ``` {data-type="programlisting" code-language="python"}
 plt.plot(fpr, tpr, "b:", label="SGD")
@@ -866,7 +866,7 @@ plt.show()
 ![](./images/mls2_0307.png)
 
 As you can see in
-[Figure 3-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#roc_curve_comparison_plot),
+[Figure 3-7]
 the `RandomForestClassifier`'s ROC curve looks much better than the
 `SGDClassifier`'s: it comes much closer to the top-left corner. As a
 result, its ROC AUC score is also significantly better:
@@ -883,7 +883,7 @@ You now know how to train binary classifiers, choose the appropriate
 metric for your task, evaluate your classifiers using cross-validation,
 select the precision/recall trade-off that fits your needs, and use ROC
 curves and ROC AUC scores to compare various models. Now let's try to
-detect more than just the 5s. []{}
+detect more than just the 5s. 
 
 
 
@@ -892,7 +892,7 @@ detect more than just the 5s. []{}
 Multiclass Classification
 =========================
 
-Whereas []{}
+Whereas 
 binary classifiers distinguish between two classes, *multiclass
 classifiers* (also called *multinomial classifiers*) can distinguish
 between more than two classes.
@@ -934,7 +934,7 @@ Scikit-Learn detects when you try to use a binary classification
 algorithm for a multiclass classification task, and it automatically
 runs OvR or OvO, depending on the algorithm. Let's try this with a
 Support Vector Machine classifier (see
-[Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)),
+[Lab 5]
 using the `sklearn.svm.SVC` class:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -1036,7 +1036,7 @@ array([0.8489802 , 0.87129356, 0.86988048])
 It gets over 84% on all test folds. If you used a random classifier, you
 would get 10% accuracy, so this is not such a bad score, but you can
 still do much better. Simply scaling the inputs (as discussed in
-[Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab))
+[Lab 2]
 increases accuracy above 89%:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -1056,7 +1056,7 @@ Error Analysis
 If this were a real project,
 you would now follow the steps in your Machine Learning project
 checklist (see
-[Appendix B](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html#project_checklist_appendix)).
+[Appendix B]
 You'd explore data preparation options, try out multiple models
 (shortlisting the best ones and fine-tuning their hyperparameters using
 `GridSearchCV`), and automate as much as possible. Here, we will assume
@@ -1174,8 +1174,7 @@ trouble classifying them (e.g., the 5 in the first row and second column
 truly looks like a badly written 3). However, most misclassified images
 seem like obvious errors to us, and it's hard to understand why the
 classifier made the mistakes it
-did.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
-.totri-footnote}^ The reason is that we used a simple `SGDClassifier`,
+did.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html) The reason is that we used a simple `SGDClassifier`,
 which is a linear model. All it does is assign a weight per class to
 each pixel, and when it sees a new image it just sums up the weighted
 pixel intensities to get a score for each class. So since 3s and 5s
@@ -1293,7 +1292,7 @@ value labels.
 
 
 Let's start by creating the training and test sets by taking the MNIST
-images and adding noise to their pixel intensities []{}
+images and adding noise to their pixel intensities 
 with NumPy's `randint()` function. The target images will be the
 original images:
 
@@ -1391,26 +1390,26 @@ available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
 By default Scikit-Learn caches downloaded datasets in a directory called
 *\$HOME/scikit\_learn\_data*.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
 Shuffling may be a bad idea in some contexts---for example, if you are
 working on time series data (such as stock market prices or weather
 conditions). We will explore this in the next labs.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
 But remember that our brain is a fantastic pattern recognition system,
 and our visual system does a lot of complex preprocessing before any
 information reaches our consciousness, so the fact that it feels simple
 does not mean that it is.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
 Scikit-Learn offers a few other averaging options and multilabel
 classifier metrics; see the documentation for more details.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker)
 You can use the `shift()` function from the
 `scipy.ndimage.interpolation` module. For example,
 `shift(image, [2, 1], cval=0)` shifts the image two pixels down and one

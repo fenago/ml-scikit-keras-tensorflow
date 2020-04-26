@@ -9,19 +9,15 @@
 exciting fields of Machine Learning today, and also one of the oldest.
 It has been around since the 1950s, producing many interesting
 applications over the
-years,^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ particularly in games (e.g., *TD-Gammon*, a
+years,^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) particularly in games (e.g., *TD-Gammon*, a
 Backgammon-playing program) and in machine control, but seldom making
 the headline news. But a revolution took place in 2013, when researchers
 from a British startup called DeepMind [demonstrated a system that could
 learn to play just about any Atari game from
-scratch](https://homl.info/dqn),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ eventually [outperforming
-humans](https://homl.info/dqn2)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ in most of them, using only raw pixels as inputs and
+scratch](https://homl.info/dqn),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) eventually [outperforming
+humans](https://homl.info/dqn2)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) in most of them, using only raw pixels as inputs and
 without any prior knowledge of the rules of the
-games.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ This was the first of a series of amazing feats,
+games.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) This was the first of a series of amazing feats,
 culminating in March 2016 with the victory of their system AlphaGo
 against Lee Sedol, a legendary professional player of the game of Go,
 and in May 2017 against Ke Jie, the world champion. No program had ever
@@ -60,7 +56,7 @@ trial and error to maximize its pleasure and minimize its pain.
 
 This is quite a broad setting, which can apply to a wide variety of
 tasks. Here are a few examples (see
-[Figure 18-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_examples_diagram)):
+[Figure 18-1]
 
 a.  The agent can be the program controlling a robot. In this case, the
     environment is the real world, the agent observes the environment
@@ -109,7 +105,7 @@ The algorithm a software
 agent uses to determine its actions is called its
 *policy*. The policy could be a neural network taking observations as
 inputs and outputting the action to take (see
-[Figure 18-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_with_nn_policy_diagram)).
+[Figure 18-2]
 
 ![](./images/mls2_1802.png)
 
@@ -131,7 +127,7 @@ two *policy parameters* you can tweak: the probability *p* and the angle
 range *r*. One possible learning algorithm could be to try out many
 different values for these parameters, and pick the combination that
 performs best (see
-[Figure 18-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#policy_search_diagram)).
+[Figure 18-3]
 This is an example of *policy search*, in this case using a brute force
 approach. When the *policy space* is too large
 (which is generally the case), finding a good set of parameters this way
@@ -141,11 +137,9 @@ Another way to explore the
 policy space is to use *genetic algorithms*. For example, you could
 randomly create a first generation of 100 policies and try them out,
 then "kill" the 80 worst
-policies^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ and make the 20 survivors produce 4 offspring each. An
+policies^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) and make the 20 survivors produce 4 offspring each. An
 offspring is a copy of its
-parent^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ plus some random variation. The surviving policies
+parent^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) plus some random variation. The surviving policies
 plus their offspring together constitute the second generation. You can
 continue to iterate through generations this way until you find a good
 policy.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
@@ -156,8 +150,7 @@ policy.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/
 Yet another approach is to use optimization techniques, by evaluating
 the gradients of the rewards with regard to the policy parameters, then
 tweaking these parameters by following the gradients toward higher
-rewards.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^ We will discuss this  []{}approach,
+rewards.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) We will discuss this  approach,
 is called *policy gradients* (PG), in more detail later in this lab.
 Going back to the vacuum cleaner robot, you could slightly increase *p*
 and evaluate whether doing so increases the amount of dust picked up by
@@ -226,7 +219,7 @@ array([-0.01258566, -0.00156614,  0.04207708, -0.00180545])
 Here, we've created a CartPole environment. This is a 2D simulation in
 which a cart can be accelerated left or right in order to balance a pole
 placed on top of it (see
-[Figure 18-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#cart_pole_diagram)).
+[Figure 18-4]
 You can get the list of all available environments by running
 `gym.envs.registry.all()`. After the environment is created, you must
 initialize it using the `reset()` method. This returns the first
@@ -238,7 +231,7 @@ means right), the angle of the pole (`0.0` = vertical), and its angular
 velocity (positive means clockwise).
 
 Now let's display this environment by calling its `render()` method (see
-[Figure 18-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#cart_pole_diagram)).
+[Figure 18-4]
 On Windows, this requires first installing an X Server, such as VcXsrv
 or Xming:
 
@@ -374,7 +367,7 @@ simulation in the [Jupyter
 notebooks](https://github.com/ageron/handson-ml2), you will see that the
 cart oscillates left and right more and more strongly until the pole
 tilts too much. Let's see if a neural network can come up with a better
-policy. []{}
+policy. 
 
 
 
@@ -388,7 +381,7 @@ observation as input, and it will output the action to be executed. More
 precisely, it will estimate a probability for each action, and then we
 will select an action randomly, according to the estimated probabilities
 (see
-[Figure 18-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#neural_network_policy_diagram)).
+[Figure 18-5]
 In the case of the CartPole environment, there are just two possible
 actions (left or right), so we only need one output neuron. It will
 output the probability *p* of action 0 (left), and of course the
@@ -476,7 +469,7 @@ evaluate an action based on the sum of all the rewards that come after
 it, usually applying a *discount factor* *γ* (gamma) at each step. This
 sum of discounted rewards is called the action's *return*. Consider the
 example in
-[Figure 18-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#discounted_rewards_diagram)).
+[Figure 18-6]
 If an agent decides to go right three times in a row and gets +10 reward
 after the first step, 0 after the second step, and finally --50 after
 the third step, then assuming we use a discount factor *γ* = 0.8, the
@@ -563,7 +556,7 @@ def play_one_step(env, obs, model, loss_fn):
 Let's walk though this function:
 
 -   Within the `GradientTape` block (see
-    [Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)),
+    [Lab 12]
     we start by calling the model, giving it a single observation (we
     reshape the observation so it becomes a batch containing a single
     instance, as the model expects a batch). This outputs the
@@ -658,7 +651,7 @@ array([-22, -40, -50])
 ```
 
 The call to `discount_rewards()` returns exactly what we expect (see
-[Figure 18-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#discounted_rewards_diagram)).
+[Figure 18-6]
 You can verify that the function `discount_and_normalize_rewards()` does
 indeed return the normalized action advantages for each action in both
 episodes. Notice that the first episode was much worse than the second,
@@ -747,7 +740,7 @@ the neural network to imitate it before using policy gradients to
 improve it.
 
 
-The []{}
+The 
 simple policy gradients algorithm we just trained solved the CartPole
 task, but it would not scale well to larger and more complex tasks.
 Indeed, it is highly *sample inefficient*, meaning it needs to explore
@@ -763,7 +756,7 @@ algorithms we will look at now are less direct: the agent learns to
 estimate the expected return for each state, or for each action in each
 state, then it uses this knowledge to decide how to act. To understand
 these algorithms, we must first introduce *Markov decision
-processes*. []{}
+processes*. 
 
 
 
@@ -779,7 +772,7 @@ each step. The probability for it to evolve from a state *s* to a state
 *s*′ is fixed, and it depends only on the pair (*s*, *s*′), not on past
 states (this is why we say that the system has no memory).
 
-[Figure 18-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#markov_chain_diagram)
+[Figure 18-7]
 shows an example of a Markov chain with four states.
 
 ![](./images/mls2_1807.png)
@@ -804,7 +797,7 @@ some reward (positive or negative), and the agent's goal is to find a
 policy that will maximize reward over time.
 
 For example, the MDP represented in
-[Figure 18-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#mdp_diagram)
+[Figure 18-8]
 has three states (represented by circles) and up to three possible
 discrete actions at each step (represented by diamonds).
 
@@ -835,7 +828,7 @@ discounted future rewards the agent can expect on average after it
 reaches a state *s*, assuming it acts optimally. He showed that if the
 agent acts optimally, then the *Bellman Optimality
 Equation* applies (see [Equation
-18-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#bellman_optimality_equation)).
+18-1]
 This recursive equation says that if the agent acts optimally, then the
 optimal value of the current state is equal to the reward it will get on
 average after taking one optimal action, plus the expected optimal value
@@ -851,13 +844,13 @@ In this equation:
 
 -   *T*(*s*, *a*, *s*′) is the transition probability from state *s* to
     state *s*′, given that the agent chose action *a*. For example, in
-    [Figure 18-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#mdp_diagram),
+    [Figure 18-8]
     *T*(*s*~2~, *a*~1~, *s*~0~) = 0.8.
 
 -   *R*(*s*, *a*, *s*′) is the reward that the agent gets when it goes
     from state *s* to state *s*′, given that the agent chose action *a*.
     For example, in
-    [Figure 18-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#mdp_diagram),
+    [Figure 18-8]
     *R*(*s*~2~, *a*~1~, *s*~0~) = +40.
 
 -   *γ* is the discount factor.
@@ -867,7 +860,7 @@ the optimal state value of every possible state: you first initialize
 all the state value estimates to zero, and then you iteratively
 update them using the *Value
 Iteration* algorithm (see [Equation
-18-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#value_iteration_equation)).
+18-2]
 A remarkable result is that, given enough time, these estimates are
 guaranteed to converge to the optimal state values, corresponding to the
 optimal [policy].
@@ -902,7 +895,7 @@ outcome of this action, assuming it acts optimally after that action.
 Here is how it works: once again, you start by
 initializing all the Q-Value estimates to zero, then you update them
 using the *Q-Value Iteration* algorithm (see [Equation
-18-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#q_value_iteration_equation)).
+18-3]
 
 
 ##### [Equation 18-3. ] Q-Value Iteration algorithm
@@ -916,7 +909,7 @@ the action with the highest Q-Value for that state:
 $\pi^{*}\left( s \right) = \operatorname{argmax}\limits_{a}\, Q^{*}\left( s,a \right)$.
 
 Let's apply this algorithm to the MDP represented in
-[Figure 18-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#mdp_diagram).
+[Figure 18-8]
 First, we need to define the MDP:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -947,7 +940,7 @@ for state, actions in enumerate(possible_actions):
 ```
 
 Now let's run the Q-Value Iteration algorithm. It applies [Equation
-18-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#q_value_iteration_equation)
+18-3]
 repeatedly, to all Q-Values, for every state and every possible action:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -991,7 +984,7 @@ discount factor to 0.95, the optimal policy changes: in state *s*~1~ the
 best action becomes *a*~2~ (go through the fire!). This makes sense
 because the more you value future rewards, the more you are willing to
 put up with some pain now for the promise of future
-bliss. []{}
+bliss. 
 
 
 
@@ -999,7 +992,7 @@ bliss. []{}
 Temporal Difference Learning
 ============================
 
-Reinforcement Learning []{}
+Reinforcement Learning 
 problems with discrete actions can often be modeled as Markov decision
 processes, but the agent initially has no idea what the transition
 probabilities are (it does not know *T*(*s*, *a*, *s*′)), and it does
@@ -1018,7 +1011,7 @@ uses an *exploration policy*---for example, a purely random policy---to
 explore the MDP, and as it progresses, the TD Learning algorithm updates
 the estimates of the state values based on the transitions and rewards
 that are actually observed (see [Equation
-18-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#td_learning_equation)).
+18-4]
 
 
 ##### [Equation 18-4. ] TD Learning algorithm
@@ -1039,7 +1032,7 @@ In this equation:
 A more concise way of writing the first form of this equation is to use
 the notation $a\underset{\alpha}{\leftarrow}b$, which means *a*~*k*+1~ ←
 (1 -- *α*) · *a*~*k*~ + *α* ·*b*~*k*~. So, the first line of [Equation
-18-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#td_learning_equation)
+18-4]
 can be rewritten like this:
 $V\left( s \right)\underset{\alpha}{\leftarrow}r + \gamma \cdot V\left( s' \right)$.
 
@@ -1067,7 +1060,7 @@ Similarly, the Q-Learning algorithm
 is an adaptation of the Q-Value Iteration algorithm to the situation
 where the transition probabilities and the rewards are initially unknown
 (see [Equation
-18-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#q_learning_equation)).
+18-5]
 Q-Learning works by watching an agent play (e.g., randomly) and
 gradually improving its estimates of the Q-Values. Once it has
 [accurate] Q-Value estimates (or close enough), then the
@@ -1113,7 +1106,7 @@ def exploration_policy(state):
 Next, after we initialize the Q-Values just like earlier, we are ready
 to run the Q-Learning algorithm with learning rate decay (using power
 scheduling, introduced in
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)):
+[Lab 11]
 
 ``` {data-type="programlisting" code-language="python"}
 alpha0 = 0.05 # initial learning rate
@@ -1134,7 +1127,7 @@ for iteration in range(10000):
 This algorithm will converge to the optimal Q-Values, but it will take
 many iterations, and possibly quite a lot of hyperparameter tuning. As
 you can see in
-[Figure 18-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#q_value_plot),
+[Figure 18-9]
 the Q-Value Iteration algorithm (left) converges very quickly, in fewer
 than 20 iterations, while the Q-Learning algorithm (right) takes about
 8,000 iterations to converge. Obviously, not knowing the transition
@@ -1180,7 +1173,7 @@ Alternatively, rather than relying only on chance for exploration,
 another approach is to encourage the exploration policy to try actions
 that it has not tried much before. This can be implemented as a bonus
 added to the Q-Value estimates, as shown in [Equation
-18-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#exploration_function_equation).
+18-6]
 
 
 ##### [Equation 18-6. ] Q-Learning using an exploration function
@@ -1207,7 +1200,7 @@ The
 main problem with Q-Learning is that it does not scale well to large (or
 even medium) MDPs with many states and actions. For example, suppose you
 wanted to use Q-Learning to train an agent to play *Ms. Pac-Man* (see
-[Figure 18-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_examples_diagram)).
+[Figure 18-1]
 There are about 150 pellets that Ms. Pac-Man can eat, each of which can
 be present or absent (i.e., already eaten). So, the number of possible
 states is greater than 2^150^ ≈ 10^45^. And if you add all the possible
@@ -1242,7 +1235,7 @@ optimally) and discount it, and this gives us an estimate of the sum of
 future discounted rewards. By summing the reward *r* and the future
 discounted value estimate, we get a target Q-Value *y*(*s*, *a*) for the
 state-action pair (*s*, *a*), as shown in [Equation
-18-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#target_q_value_equation).
+18-7]
 
 
 ##### [Equation 18-7. ] Target Q-Value
@@ -1256,7 +1249,7 @@ squared error between the estimated Q-Value *Q*(*s*, *a*) and the target
 Q-Value (or the Huber loss to reduce the algorithm's sensitivity to
 large errors). And that's all for the basic Deep Q-Learning algorithm!
 Let's see how to implement it to solve the CartPole
-environment. []{}
+environment. 
 
 
 
@@ -1388,7 +1381,7 @@ Let's go through this code:
     for each possible action in each experience's next state. Since we
     assume that the agent will be playing optimally, we only keep the
     maximum Q-Value for each next state. Next, we use [Equation
-    18-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#target_q_value_equation)
+    18-7]
     to compute the target Q-Value for each experience's state-action
     pair.
 
@@ -1441,7 +1434,7 @@ to fill up (if we don't wait enough, then there will not be enough
 diversity in the replay buffer). And that's it, we just implemented the
 Deep Q-Learning algorithm!
 
-[Figure 18-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#dqn_rewards_plot)
+[Figure 18-10]
 shows the total rewards the agent got during each episode.
 
 ![](./images/mls2_1810.png)
@@ -1499,7 +1492,7 @@ too).
 
 The basic Deep Q-Learning algorithm we've been using so far would be too
 unstable to learn to play Atari games. So how did DeepMind do it? Well,
-they tweaked the algorithm! []{}
+they tweaked the algorithm! 
 
 
 
@@ -1515,7 +1508,7 @@ Q-Learning algorithm that can stabilize and speed up training.
 Fixed Q-Value Targets
 ---------------------
 
-In []{}
+In 
 the basic Deep Q-Learning algorithm, the model is used both to make
 predictions and to set its own targets. This can lead to a situation
 analogous to a dog chasing its own tail. This feedback loop can make the
@@ -1662,7 +1655,7 @@ Dueling DQN
 -----------
 
 The *Dueling DQN*
-algorithm []{}
+algorithm 
 (DDQN, not to be confused with Double DQN, although both techniques can
 easily be combined) was introduced in yet another [2015
 paper](https://homl.info/ddqn)^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
@@ -1728,7 +1721,7 @@ is fast, scalable, easy to use, and customizable: you can create your
 own environments and neural nets, and you can customize pretty much any
 component. In this section we will use TF-Agents to train an agent to
 play *Breakout*, the famous Atari game (see
-[Figure 18-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#breakout_plot)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^),
+[Figure 18-11]
 using the DQN algorithm (you can easily switch to another algorithm if
 you prefer).
 
@@ -2031,7 +2024,7 @@ env = suite_atari.load(
 ```
 
 The result of all this preprocessing is shown in
-[Figure 18-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#preprocessed_breakout_plot).
+[Figure 18-12]
 You can see that the resolution is much lower, but sufficient to play
 the game. Moreover, frames are stacked along the channels dimension, so
 red represents the frame from three steps ago, green is two steps ago,
@@ -2071,9 +2064,9 @@ Training Architecture
 ---------------------
 
 A TF-Agents training
-program []{}
+program 
 is usually split into two parts that run in parallel, as you can see in
-[Figure 18-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#tf_agents_architecture_diagram):
+[Figure 18-13]
 on the left, a *driver* explores the *environment* using a *collect
 policy* to choose actions, and it collects *trajectories* (i.e.,
 experiences), sending them to an *observer*, which saves them to a
@@ -2108,7 +2101,7 @@ This figure begs a few questions, which I'll attempt to answer here:
     that takes a trajectory as an argument. You can use an observer to
     save the trajectories to a replay buffer, or to save them to a
     TFRecord file (see
-    [Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)),
+    [Lab 13]
     or to compute metrics, or for anything else. Moreover, you can pass
     multiple observers to the driver, and it will broadcast the
     trajectories to all of them.
@@ -2141,7 +2134,7 @@ let's start by creating the Deep Q-Network.
 Creating the Deep Q-Network
 ---------------------------
 
-The []{}
+The 
 TF-Agents library provides many networks in the `tf_agents.networks`
 package and its subpackages. We will use the
 `tf_agents.networks.q_network.QNetwork` class:
@@ -2184,7 +2177,7 @@ network that processes the observations, followed by a dense output
 layer that outputs one Q-Value per action. TF-Agent's `EncodingNetwork`
 class implements a neural network architecture found in various agents
 (see
-[Figure 18-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#encoding_network_diagram)).
+[Figure 18-14]
 
 It may have one or more inputs. For example, if each observation is
 composed of some sensor data plus an image from a camera, you will have
@@ -2304,7 +2297,7 @@ it.
 Creating the Replay Buffer and the Corresponding Observer
 ---------------------------------------------------------
 
-The []{}
+The 
 TF-Agents library provides various replay buffer implementations in the
 `tf_agents.replay_buffers` package. Some are purely written in Python
 (their module names start with `py_`), and others are written based on
@@ -2312,7 +2305,7 @@ TensorFlow (their module names start with `tf_`). We will use the
 `TFUniformReplayBuffer` class in the
 `tf_agents.replay_buffers.tf_uniform_replay_buffer` package. It provides
 a high-performance implementation of a replay buffer with uniform
-sampling:^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+sampling: ^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 from tf_agents.replay_buffers import tf_uniform_replay_buffer
@@ -2434,7 +2427,7 @@ train_metrics = [
 Discounting the rewards makes sense for training or to implement a
 policy, as it makes it possible to balance the importance of immediate
 rewards with future rewards. However, once an episode is over, we can
-evaluate how good it was overall []{}s by summing the
+evaluate how good it was overall s by summing the
 *undiscounted* rewards. For this reason, the `AverageReturnMetric`
 computes the sum of undiscounted rewards for each episode, and it keeps
 track of the streaming mean of these sums over all the episodes it
@@ -2468,7 +2461,7 @@ Creating the Collect Driver
 ---------------------------
 
 As we explored in
-[Figure 18-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#tf_agents_architecture_diagram),
+[Figure 18-13]
 a driver is an object that explores an environment using a given policy,
 collects experiences, and broadcasts them to some observers. At each
 step, the following things happen:
@@ -2564,7 +2557,7 @@ some algorithms, such as PER). For example, the following code will
 sample a small batch of two trajectories (subepisodes), each containing
 three consecutive steps. These [subepisodes] are shown
 in
-[Figure 18-15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#sub_episodes_plot)
+[Figure 18-15]
 (each row contains three consecutive steps from an episode):
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -2599,7 +2592,7 @@ several lives left.
 Each trajectory is a concise representation of a sequence of consecutive
 time steps and action steps, designed to avoid redundancy. How so? Well,
 as you can see in
-[Figure 18-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#trajectory_transition_diagram),
+[Figure 18-16]
 transition *n* is composed of time step *n*, action step *n*, and time
 step *n* + 1, while transition *n* + 1 is composed of time step *n* + 1,
 action step *n* + 1, and time step *n* + 2. If we just stored these two
@@ -2767,7 +2760,7 @@ Actor-Critic algorithms
     (critic). It's a bit like an athlete (the agent) learning with the
     help of a coach (the DQN).
 
-[*Asynchronous Advantage Actor-Critic*](https://homl.info/a3c)^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^ (A3C)
+[*Asynchronous Advantage Actor-Critic*](https://homl.info/a3c)^[23]
 
 :   An important
     Actor-Critic variant introduced by DeepMind researchers in 2016,
@@ -2787,7 +2780,7 @@ Actor-Critic algorithms
     synchronous, so gradient updates are performed over larger batches,
     which allows the model to better utilize the power of the GPU.
 
-[*Soft Actor-Critic*](https://homl.info/sac)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^ (SAC)
+[*Soft Actor-Critic*](https://homl.info/sac)^[24]
 
 :   An Actor-Critic variant
     proposed in 2018 by Tuomas Haarnoja and other UC Berkeley
@@ -2896,30 +2889,29 @@ Exercises
     try to use RL to make the agent learn on its own how to use the
     motors to achieve that goal. Have fun!
 
-Solutions to these exercises are available in
-[Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
+Solutions to these exercises are available in the solutions file.
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 For more details, be sure to check out Richard Sutton and Andrew Barto's
 course on RL, [*Reinforcement Learning: An
 Introduction*](https://homl.info/126) (MIT Press).
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 Volodymyr Mnih et al., "Playing Atari with Deep Reinforcement Learning,"
 arXiv preprint arXiv:1312.5602 (2013).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 Volodymyr Mnih et al., "Human-Level Control Through Deep Reinforcement
 Learning," *Nature* 518 (2015): 529--533.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 Check out the videos of DeepMind's system learning to play *Space
 Invaders*, *Breakout*, and other video games at
 [*https://homl.info/dqn3*](https://homl.info/dqn3).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 Image (a) is from NASA (public domain). (b) is a screenshot from the
 *Ms. Pac-Man* game, copyright Atari (fair use in this lab). Images
 (c) and (d) are reproduced from Wikipedia. (c) was created by user
@@ -2928,109 +2920,109 @@ Stevertigo and released under [Creative Commons BY-SA
 public domain. (e) was reproduced from Pixabay, released under [Creative
 Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 It is often better to give the poor performers a slight chance of
 survival, to preserve some diversity in the "gene pool."
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 If there is a single parent, this is called *asexual reproduction*. With
 two (or more) parents, it is called *sexual reproduction*. An
 offspring's genome (in this case a set of policy parameters) is randomly
 composed of parts of its parents' genomes.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 One interesting example of a genetic algorithm used for Reinforcement
 Learning is the [*NeuroEvolution of Augmenting
 Topologies*](https://homl.info/neat) (NEAT) algorithm.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)
 This is called *Gradient Ascent*. It's just like Gradient Descent but in
 the opposite direction: maximizing instead of minimizing.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[10]
 OpenAI is an artificial intelligence research company, funded in part by
 Elon Musk. Its stated goal is to promote and develop friendly AIs that
 will benefit humanity (rather than exterminate it).
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[11]
 Ronald J. Williams, "Simple Statistical Gradient-Following Algorithms
 for Connectionist Reinforcement Leaning," *Machine Learning* 8 (1992) :
 229--256.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[12]
 Richard Bellman, "A Markovian Decision Process," *Journal of Mathematics
 and Mechanics* 6, no. 5 (1957): 679--684.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[13]
 A great [2018 post](https://homl.info/rlhard) by Alex Irpan nicely lays
 out RL's biggest difficulties and [limitations].
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[14]
 Hado van Hasselt et al., "Deep Reinforcement Learning with Double
 Q-Learning," *Proceedings of the 30th AAAI Conference on Artificial
 Intelligence* (2015): 2094--2100.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[15]
 Tom Schaul et al., "Prioritized Experience Replay," arXiv preprint
 arXiv:1511.05952 (2015).
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[16]
 It could also just be that the rewards are noisy, in which case there
 are better methods for estimating an experience's importance (see the
 paper for some examples).
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[17]
 Ziyu Wang et al., "Dueling Network Architectures for Deep Reinforcement
 Learning," arXiv preprint arXiv:1511.06581 (2015).
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[18]
 Matteo Hessel et al., "Rainbow: Combining Improvements in Deep
 Reinforcement Learning," arXiv preprint arXiv:1710.02298 (2017):
 3215--3222.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[19]
 If you don't know this game, it's simple: a ball bounces around and
 breaks bricks when it touches them. You control a paddle near the bottom
 of the screen. The paddle can go left or right, and you must get the
 ball to break every brick, while preventing it from touching the bottom
 of the screen.
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[20]
 Since there are only three primary colors, you cannot just display an
 image with four color channels. For this reason, I combined the last
 channel with the first three to get the RGB image represented here.
 Purple is actually a mix of blue and red, but the agent sees four
 independent channels.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[21]
 At the time of this writing, there is no prioritized experience replay
 buffer yet, but one will likely be open sourced soon.
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[22]
 For a comparison of this algorithm's performance on various Atari games,
 see figure 3 in DeepMind's [2015 paper](https://homl.info/dqn2).
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[23]
 Volodymyr Mnih et al., "Asynchonous Methods for Deep Reinforcement
 Learning," *Proceedings of the 33rd International Conference on Machine
 Learning* (2016): 1928--1937.
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[24]
 Tuomas Haarnoja et al., "Soft Actor-Critic: Off-Policy Maximum Entropy
 Deep Reinforcement Learning with a Stochastic Actor," *Proceedings of
 the 35th International Conference on Machine Learning* (2018):
 1856--1865.
 
-^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[25]
 John Schulman et al., "Proximal Policy Optimization Algorithms," arXiv
 preprint arXiv:1707.06347 (2017).
 
-^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[26]
 John Schulman et al., "Trust Region Policy Optimization," *Proceedings
 of the 32nd International Conference on Machine Learning* (2015):
 1889--1897.
 
-^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html-marker)^
+^[27]
 Deepak Pathak et al., "Curiosity-Driven Exploration by Self-Supervised
 Prediction," *Proceedings of the 34th International Conference on
 Machine Learning* (2017): 2778--2787.
