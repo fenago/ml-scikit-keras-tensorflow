@@ -36,12 +36,12 @@ Next, activate the new environment:
     $ conda activate tf2
 
 ## Windows
-If you're on Windows, and you want to go through chapter 18 on Reinforcement Learning, then you will also need to run the following command. It installs a Windows-compatible fork of the atari-py library.
+If you're on Windows, and you want to go through Lab 18 on Reinforcement Learning, then you will also need to run the following command. It installs a Windows-compatible fork of the atari-py library.
 
     $ pip install --no-index -f https://github.com/Kojoley/atari-py/releases atari_py
 
 
-> **Warning**: TensorFlow Transform (used in chapter 13) and TensorFlow-AddOns (used in chapter 16) are not yet available on Windows, but the TensorFlow team is working on it.
+> **Warning**: TensorFlow Transform (used in Lab 13) and TensorFlow-AddOns (used in Lab 16) are not yet available on Windows, but the TensorFlow team is working on it.
 
 
 ## Start Jupyter

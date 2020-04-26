@@ -13,10 +13,10 @@ scipy==1.4.1
 ##### Machine Learning packages
 scikit-learn==0.22
 
-# Optional: the XGBoost library is only used in chapter 7
+# Optional: the XGBoost library is only used in Lab 7
 xgboost==1.0.2
 
-# Optional: the transformers library is only using in chapter 16
+# Optional: the transformers library is only using in Lab 16
 transformers==2.8.0
 
 ##### TensorFlow-related packages
@@ -30,7 +30,7 @@ transformers==2.8.0
 
 tensorflow==2.1.0
 
-# Optional: the TF Serving API library is just needed for chapter 19.
+# Optional: the TF Serving API library is just needed for Lab 19.
 tensorflow-serving-api==2.1.0
 #tensorflow-serving-api-gpu==2.1.0
 
@@ -40,15 +40,15 @@ tensorflow-datasets==2.1.0
 tensorflow-hub==0.7.0
 tensorflow-probability==0.9.0
 
-# Optional: only used in chapter 13.
+# Optional: only used in Lab 13.
 # NOT AVAILABLE ON WINDOWS
 tfx==0.21.2
 
-# Optional: only used in chapter 16.
+# Optional: only used in Lab 16.
 # NOT AVAILABLE ON WINDOWS
 tensorflow-addons==0.8.3
 
-##### Reinforcement Learning library (chapter 18)
+##### Reinforcement Learning library (Lab 18)
 
 # There are a few dependencies you need to install first, check out:
 # https://github.com/openai/gym#installing-everything
@@ -68,7 +68,7 @@ pydot==1.4.1
 opencv-python==4.2.0.32
 pyglet==1.5.0
 
-#pyvirtualdisplay # needed in chapter 16, if on a headless server
+#pyvirtualdisplay # needed in Lab 16, if on a headless server
                   # (i.e., without screen, e.g., Colab or VM)
 
 
@@ -87,12 +87,12 @@ nbdime==2.0.0
 # tutorial).
 numexpr==2.7.1
 
-# Optional: these libraries can be useful in the classification chapter,
+# Optional: these libraries can be useful in the classification Lab,
 # exercise 4.
 nltk==3.4.5
 urlextract==0.14.0
 
-# Optional: these libraries are only used in chapter 16
+# Optional: these libraries are only used in Lab 16
 spacy==2.2.4
 ftfy==5.7
 

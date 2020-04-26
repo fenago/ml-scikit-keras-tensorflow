@@ -1,6 +1,6 @@
 
-[Appendix B. ] Machine Learning Project Checklist
-========================================================
+Machine Learning Project Checklist
+==================================
 
 This[]{#idm45728431727352}[]{#idm45728431726280} checklist can guide you
 through your Machine Learning projects. There are eight main steps:
