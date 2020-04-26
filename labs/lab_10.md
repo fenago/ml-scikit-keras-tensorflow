@@ -17,7 +17,8 @@ their biological cousins. Some researchers even argue that we should
 drop the biological analogy altogether (e.g., by saying "units" rather
 than "neurons"), lest we restrict our creativity to biologically
 plausible
-systems.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
+systems.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
 .totri-footnote}^
 
 ANNs are at the very core of Deep Learning. They are versatile,
@@ -51,7 +52,7 @@ came to be!
 From Biological to Artificial Neurons
 =====================================
 
-Surprisingly, ANNs []{#ANNboi10} []{#Nbio10} have
+Surprisingly, ANNs have
 been around for quite a while: they were first introduced back in 1943
 by the neurophysiologist Warren McCulloch and the mathematician Walter
 Pitts. In their [landmark
@@ -127,7 +128,8 @@ times longer. Near its extremity the axon splits off into many branches
 called *telodendria*, and at the tip of these branches are minuscule
 structures called *synaptic terminals* (or simply *synapses*), which are
 connected to the dendrites or cell bodies of other
-neurons.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) Biological neurons produce short electrical impulses
+neurons.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) Biological neurons produce short electrical impulses
 called *action potentials* (APs, or just *signals*) which travel along
 the axons and make the synapses release chemical signals called
 *neurotransmitters*. When a neuron receives a sufficient amount of these
@@ -206,7 +208,7 @@ example).
 The Perceptron
 --------------
 
-The *Perceptron* is []{#percept10} one of the simplest ANN architectures,
+The *Perceptron* is one of the simplest ANN architectures,
 invented in 1957 by Frank Rosenblatt. It is based on a slightly
 different artificial neuron (see
 [Figure 10-4]
@@ -344,7 +346,8 @@ are incapable of learning complex patterns (just like Logistic
 Regression classifiers). However, if the training instances are linearly
 separable, Rosenblatt demonstrated that this algorithm would converge to
 a
-solution.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) This is called the *Perceptron
+solution.
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) This is called the *Perceptron
 convergence theorem*.
 
 Scikit-Learn provides a `Perceptron` class that
@@ -548,13 +551,14 @@ The *hyperbolic tangent* function: tanh(*z*) = 2*σ*(2*z*) -- 1
 
 The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*)
 
-:   The ReLU function []{#rectified10} []{#ReLU1} []{#AFrelu10} is
+:   The ReLU function is
     continuous but unfortunately not differentiable at *z* = 0 (the
     slope changes abruptly, which can make Gradient Descent bounce
     around), and its derivative is 0 for *z* \< 0. In practice, however,
     it works very well and has the advantage of being fast to compute,
     so it has become the
-    default.^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+    default.
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     Most importantly, the fact that it does not have a maximum output
     value helps reduce some issues during Gradient Descent (we will come
     back to this in
@@ -607,7 +611,7 @@ activation function, which is a smooth variant of ReLU: softplus(*z*) =
 log(1 + exp(*z*)). It is close to 0 when *z* is negative, and close to
 *z* when *z* is positive. Finally, if you want to guarantee that the
 predictions will fall within a given range of values, then you can use
-the []{#logsig10} []{#siglog10} logistic function or
+the logistic function or
 the hyperbolic tangent, and then scale the labels to the appropriate
 range: 0 to 1 for the logistic function and --1 to 1 for the hyperbolic
 [tangent].
@@ -728,7 +732,7 @@ Keras!
 Implementing MLPs with Keras
 ============================
 
-Keras []{#ANNmlp10} []{#Kmlp10} is a high-level Deep Learning API that
+Keras is a high-level Deep Learning API that
 allows you to easily build, train, evaluate, and execute all sorts of
 neural networks. Its documentation (or specification) is available at
 [*https://keras.io/*](https://keras.io/). The [reference
@@ -1234,7 +1238,8 @@ the validation set, your model is probably overfitting the training set
 the validation set).
 
 And that's it! The neural network is
-trained.^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+trained.
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 At each epoch during training, Keras displays the number of instances
 processed so far (along with a progress bar), the mean training time per
 sample, and the loss and accuracy (or any other extra metrics you asked
@@ -1478,13 +1483,15 @@ One
 example of a nonsequential neural network is a *Wide & Deep* neural
 network. This neural network architecture was introduced in a [2016
 paper](https://homl.info/widedeep) by Heng-Tze Cheng et
-al.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+al.
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 It connects all or part of the inputs directly to the output layer, as
 shown in
 [Figure 10-14]
 This architecture makes it possible for the neural network to learn both
 deep patterns (using the deep path) and simple rules (through the short
-path).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+path).
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 In contrast, a regular MLP forces all the data to flow through the full
 stack of layers; thus, simple patterns in the data may end up being
 distorted by this sequence of transformations.
@@ -1506,7 +1513,8 @@ model = keras.Model(inputs=[input_], outputs=[output])
 Let's go through each line of this code:
 
 -   First, we need to create an `Input`
-    object.^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+    object.
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     This is a specification of the kind of input the model will get,
     including its `shape` and `dtype`. A model may actually have
     multiple inputs, as we will see shortly.
@@ -1565,7 +1573,8 @@ this. Note that we specified `inputs=[input_A, input_B]` when creating
 the model. Now we can compile the model as usual, but when we call the
 `fit()` method, instead of passing a single input matrix `X_train`, we
 must pass a pair of matrices `(X_train_A, X_train_B)`: one per
-input.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+input.
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 The same is true for `X_valid`, and also for `X_test` and `X_new` when
 you call `evaluate()` or `predict()`:
 
@@ -2069,7 +2078,7 @@ now.
 Fine-Tuning Neural Network Hyperparameters
 ==========================================
 
-The []{#ANNfine10} []{#HPneural10} flexibility of neural networks is also
+The flexibility of neural networks is also
 one of their main drawbacks: there are many hyperparameters to tweak.
 Not only can you use any imaginable network architecture, but even in a
 simple MLP you can change the number of layers, the number of neurons
@@ -2492,7 +2501,8 @@ networks for image processing, recurrent neural networks for sequential
 data, autoencoders for representation learning,
 and generative adversarial
 networks to model and generate
-data.^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+data.
+^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 
 
 

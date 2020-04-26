@@ -2,10 +2,10 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 13. ] Loading and Preprocessing Data [with TensorFlow]
+[Lab 13. ] Loading and Preprocessing Data with TensorFlow
 ======================================================================================
 
-So []{#Dloadtensor13} far we have used only
+So far we have used only
 datasets that fit in memory, but Deep Learning systems are often trained
 on very large datasets that will not fit in RAM. Ingesting a large
 dataset and preprocessing it efficiently can be tricky to implement with
@@ -63,7 +63,7 @@ So let's get started!
 The Data API
 ============
 
-The []{#TFload13} whole Data
+The whole Data
 API revolves around the concept of a *dataset*: as you might suspect,
 this represents a sequence of data items. Usually you will use datasets
 that gradually read data from disk, but for simplicity let's create a
@@ -208,7 +208,8 @@ has iterated entirely through the source dataset. At this point it
 continues to pull out items randomly from the buffer until it is empty.
 You must specify the buffer size, and it is important to make it large
 enough, or else shuffling will not be very
-effective.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Just don't exceed the amount of RAM you have, and even
+effective.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Just don't exceed the amount of RAM you have, and even
 if you have plenty of it, there's no need to go beyond the dataset's
 size. You can provide a random seed if you want the same random order
 every time you run your program. For example, the following code creates
@@ -455,7 +456,8 @@ Prefetching
 By calling `prefetch(1)` at
 the end, we are creating a dataset that will do its best to always be
 one batch
-ahead.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) In other words, while our training algorithm is
+ahead.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) In other words, while our training algorithm is
 working on one batch, the dataset will already be working in parallel on
 getting the next batch ready (e.g., reading the data from disk and
 preprocessing it). This can improve performance dramatically, as is
@@ -525,7 +527,8 @@ test_set = csv_reader_dataset(test_filepaths)
 ```
 
 And now we can simply build and train a Keras model using these
-datasets.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) All we need to do is pass the training and validation
+datasets.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) All we need to do is pass the training and validation
 datasets to the `fit()` method, instead of `X_train, y_train`,
 `X_valid`, and
 `y_valid`: ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
@@ -600,7 +603,7 @@ during training is loading and parsing the data.
 The TFRecord Format
 ===================
 
-The []{#TFloadrecord13} TFRecord format is
+The TFRecord format is
 TensorFlow's preferred format for storing large amounts of data and
 reading it efficiently. It is a very simple binary format that just
 contains a sequence of binary records of varying sizes (each record is
@@ -736,7 +739,8 @@ method. This is the binary data that is ready to be saved or transmitted
 over the network. When reading or receiving this binary data, we can
 parse it using the `ParseFromString()` method, and we get a copy of the
 object that was
-serialized.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
+serialized.
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
 .totri-footnote}^
 
 We could save the serialized `Person` object to a TFRecord file, then we
@@ -785,7 +789,8 @@ numerical fields, for a more efficient [encoding. A]
 `Int64List`. A `Features` (with an `s`) contains a dictionary that maps
 a feature name to the corresponding feature value. And finally, an
 `Example` contains only a `Features`
-object.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Here is how you could create a `tf.train.Example`
+object.
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Here is how you could create a `tf.train.Example`
 representing the same person as earlier and write it to a TFRecord file:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -956,7 +961,7 @@ network.
 Preprocessing the Input Features
 ================================
 
-Preparing []{#Dpre13} []{#preproc13} []{#TFloadinput13} your data for a
+Preparing your data for a
 neural network requires converting all features into numerical features,
 generally normalizing them, and more. In particular, if your data
 contains categorical features or text features, they need to be
@@ -1649,7 +1654,8 @@ Exercises
     multiple TFRecord files. Each record should be a serialized
     `Example` protobuf with two features: the serialized image (use
     `tf.io.serialize_tensor()` to serialize each image), and the
-    label.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker}^
+    label.
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker}^
     Then use tf.data to create an efficient dataset for each set.
     Finally, use a Keras model to train these datasets, including a
     preprocessing layer to standardize each input feature. Try to make

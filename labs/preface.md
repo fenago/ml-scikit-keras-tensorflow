@@ -105,7 +105,7 @@ of Machine Learning through concrete working examples and just a little
 bit of theory. While you can read this course without picking up your
 laptop, I highly recommend you experiment with the code examples
 available online as Jupyter notebooks at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -378,7 +378,7 @@ Code Examples
 There is a series of Jupyter notebooks full of
 supplemental material, such as code examples and exercises, available
 for download at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 Some of the code examples in the course leave out repetitive sections or
 details that are obvious or unrelated to Machine Learning. This keeps

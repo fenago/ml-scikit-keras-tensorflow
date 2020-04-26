@@ -300,7 +300,7 @@ tackle, and the types of techniques that you would use for each task.
 Types of Machine Learning Systems
 =================================
 
-There []{#MLtype01} are so many different types of Machine Learning
+There are so many different types of Machine Learning
 systems that it is useful to classify them in broad categories, based on
 the following criteria:
 
@@ -353,7 +353,8 @@ Another typical task is to predict a *target*
 numeric value, such as the price of a car, given a set of *features*
 (mileage, age, brand, etc.) called *predictors*.
 This sort of task is called *regression*
-([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) To train the system, you need to give it many examples
+([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) To train the system, you need to give it many examples
 of cars, including both their predictors and their labels (i.e., their
 prices).
 
@@ -815,7 +816,8 @@ role="presentation" style="text-align: center; position: relative;"}
 
 
 This model has two *model parameters*, *θ*~0~ and
-*θ*~1~.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) By tweaking these parameters, you can make your model
+*θ*~1~.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) By tweaking these parameters, you can make your model
 represent any linear function, as shown in
 [Figure 1-18]
 
@@ -873,7 +875,8 @@ To whet your appetite,
 shows the Python code that loads the data, prepares
 it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) creates a scatterplot for visualization, and then
 trains a linear model and makes a
-prediction.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
+prediction.
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^
 
 
@@ -983,7 +986,7 @@ from making accurate predictions.
 Main Challenges of Machine Learning
 ===================================
 
-In []{#MLchallenge01} short, since your main task is to select a learning
+In short, since your main task is to select a learning
 algorithm and train it on some data, the two things that can go wrong
 are "bad algorithm" and "bad data." Let's start with examples of bad
 data.
@@ -1024,7 +1027,8 @@ on algorithm development versus spending it on corpus development."
 The idea that data matters more than algorithms for complex problems was
 further popularized by Peter Norvig et al. in a paper titled ["The
 Unreasonable Effectiveness of Data"](https://homl.info/7), published in
-2009.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker}^
+2009.
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker}^
 It should be noted, however, that small- and medium-sized datasets are
 still very common, and it is not always easy or cheap to get extra
 training data⁠---so don't abandon algorithms just yet.
@@ -1316,7 +1320,7 @@ that.
 Testing and Validating
 ======================
 
-The []{#MLtest01} only way to know how well a model will generalize to
+The only way to know how well a model will generalize to
 new cases is to actually try it out on new cases. One way to do that is
 to put your model in production and monitor how well it performs. This
 works well, but if your model is horribly bad, your users will

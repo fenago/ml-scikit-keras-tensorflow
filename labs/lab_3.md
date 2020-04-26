@@ -121,7 +121,8 @@ want one fold to be missing some digits). Moreover, some learning
 algorithms are sensitive to the order of the training instances, and
 they perform poorly if they get many similar instances in a row.
 Shuffling the dataset ensures that this won't
-happen.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
+happen.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^
 
 
@@ -183,7 +184,7 @@ model's performance.
 Performance Measures
 ====================
 
-Evaluating []{#CPperform03} a classifier is often
+Evaluating a classifier is often
 significantly trickier than evaluating a regressor, so we will spend a
 large part of this lab on this topic. There are many performance
 measures available, so grab another coffee and get ready to learn many
@@ -350,7 +351,7 @@ array([[54579,     0],
 The confusion matrix gives you a lot of information, but sometimes you
 may prefer a more concise metric. An interesting one to look at is the
 accuracy of the positive predictions; this
-is []{#Mprecision03} []{#precis03} called the *precision* of the
+is called the *precision* of the
 classifier ([Equation
 3-1]
 
@@ -446,7 +447,7 @@ may help.
 Precision and Recall
 --------------------
 
-Scikit-Learn []{#SLmetrics03} provides several functions to compute
+Scikit-Learn provides several functions to compute
 classifier metrics, including precision and recall:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -1174,7 +1175,8 @@ trouble classifying them (e.g., the 5 in the first row and second column
 truly looks like a badly written 3). However, most misclassified images
 seem like obvious errors to us, and it's hard to understand why the
 classifier made the mistakes it
-did.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html) The reason is that we used a simple `SGDClassifier`,
+did.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html) The reason is that we used a simple `SGDClassifier`,
 which is a linear model. All it does is assign a weight per class to
 each pixel, and when it sees a new image it just sums up the weighted
 pixel intensities to get a score for each class. So since 3s and 5s
@@ -1256,7 +1258,8 @@ classifier's score on pictures of Alice. One simple option is to give
 each label a weight equal to its *support* (i.e., the number of
 instances with that target label). To do this,
 simply set `average="weighted"` in the preceding
-code.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
+code.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^
 
 
@@ -1342,7 +1345,8 @@ Exercises
 
 2.  Write a function that can shift an MNIST image in any direction
     (left, right, up, or down) by one
-    pixel.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
+    pixel.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
     .totri-footnote}^ Then, for each image in the training set, create
     four shifted copies (one per direction) and add them to the training
     set. Finally, train your best model on this expanded training set
@@ -1386,7 +1390,7 @@ Exercises
 
 Solutions to these exercises can be found in the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 

@@ -48,7 +48,7 @@ Deep Learning!
 The Vanishing/Exploding Gradients Problems
 ==========================================
 
-As []{#DNNvanish11} []{#vanish11} we discussed in
+As we discussed in
 [Lab 10]
 the backpropagation algorithm works by going from the output layer to
 the input layer, propagating the error gradient along the way. Once the
@@ -74,7 +74,8 @@ one of the reasons deep neural networks were mostly abandoned in the
 early 2000s. It wasn't clear what caused the gradients to be so unstable
 when training a DNN, but some light was shed in a [2010
 paper](https://homl.info/47) by Xavier Glorot and Yoshua
-Bengio.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) The authors found a few suspects, including the
+Bengio.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) The authors found a few suspects, including the
 combination of the
 popular 
 logistic sigmoid activation function and the weight initialization
@@ -219,7 +220,8 @@ weighted sum of its inputs are negative for all instances in the
 training set. When this happens, it just keeps outputting zeros, and
 Gradient Descent does not affect it anymore because the gradient of the
 ReLU function is zero when its input is
-negative.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
+negative.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
 .totri-footnote}^
 
 To solve this problem, you may want to use a
@@ -250,8 +252,9 @@ datasets it runs the risk of overfitting the training set.
 
 Last but not least, a [2015 paper](https://homl.info/50) by Djork-Arné
 Clevert et
-al.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) proposed a new
-activation []{#AFelu11} []{#elu11} []{#expoelu11} function called the
+al.
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) proposed a new
+activation function called the
 *exponential linear unit* (ELU) that outperformed all the ReLU variants
 in the authors' experiments: training time was reduced, and the neural
 network performed better on the test set.
@@ -296,7 +299,7 @@ network will be slower than a ReLU network.
 
 Then, a [2017
 paper](https://homl.info/selu)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) by Günter Klambauer et al. introduced
-the []{#selu11} []{#AFselu11} Scaled ELU (SELU) activation function: as
+the Scaled ELU (SELU) activation function: as
 its name suggests, it is a scaled variant of the ELU activation
 function. The authors showed that if you build a neural network composed
 exclusively of a stack of dense layers, and if all hidden layers use the
@@ -723,7 +726,8 @@ Another popular technique to mitigate the
 exploding gradients problem is to clip the gradients during
 backpropagation so that they never exceed some threshold. This is called
 [*Gradient
-Clipping*](https://homl.info/52).^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+Clipping*](https://homl.info/52).
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 This technique is most often used in recurrent neural networks, as Batch
 Normalization is tricky to use in RNNs, as we will see in
 [Lab 15]
@@ -766,7 +770,7 @@ the validation set.
 Reusing Pretrained Layers
 =========================
 
-It []{#DNNpretrain11} []{#Lpre11} []{#pretrain11} is generally not a good
+It is generally not a good
 idea to train a very large DNN from scratch: instead, you should always
 try to find an existing neural network that accomplishes a similar task
 to the one you are trying to tackle (we will discuss how to find them in
@@ -1049,7 +1053,7 @@ learning.
 Faster Optimizers
 =================
 
-Training []{#DNNfast11} a very large deep neural
+Training a very large deep neural
 network can be painfully slow. So far we have seen four ways to speed up
 training (and reach a better solution): applying a good initialization
 strategy for the connection weights, using a good activation function,
@@ -1072,7 +1076,8 @@ slowly, but it will quickly pick up momentum until it eventually reaches
 terminal velocity (if there is some friction or air resistance). This is
 the very simple idea behind *momentum optimization*, [proposed by Boris
 Polyak in
-1964](https://homl.info/54).^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+1964](https://homl.info/54).
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 In contrast, regular Gradient Descent will simply take small, regular
 steps down the slope, so the algorithm will take much more time to reach
 the bottom.
@@ -1317,7 +1322,8 @@ optimization and RMSProp: just like momentum optimization, it keeps
 track of an exponentially decaying average of past gradients; and just
 like RMSProp, it keeps track of an exponentially decaying average of
 past squared gradients (see [Equation
-11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adam_algorithm)).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adam_algorithm)).
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
 
 
 ##### [Equation 11-8. ] Adam algorithm
@@ -1735,7 +1741,7 @@ Avoiding Overfitting Through Regularization
 >
 > John von Neumann, cited by Enrico Fermi in *Nature* 427
 
-With thousands []{#DNNover11} []{#Oavoid11} []{#Ravoid11} of parameters,
+With thousands of parameters,
 you can fit the whole zoo. Deep neural networks typically have tens of
 thousands of parameters, sometimes even millions. This gives them an
 incredible amount of freedom and means they can fit a huge variety of

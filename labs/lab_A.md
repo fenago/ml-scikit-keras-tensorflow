@@ -5,9 +5,9 @@
 
 ###### Note
 
-Solutions []{#exsol20} to the coding exercises are available in the
+Solutions to the coding exercises are available in the
 online Jupyter notebooks at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -128,7 +128,7 @@ online Jupyter notebooks at
 =============================================================================================================================================================
 
 See the Jupyter notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -137,7 +137,7 @@ See the Jupyter notebooks available at
 ===============================================================================================================================================
 
 See the Jupyter notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -164,7 +164,8 @@ See the Jupyter notebooks available at
 
 3.  Gradient Descent cannot get stuck in a local minimum when training a
     Logistic Regression model because the cost function is
-    convex.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
+    convex.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^
 
 4.  If the optimization problem is convex (such as Linear Regression or
@@ -242,7 +243,7 @@ See the Jupyter notebooks available at
     Regression classifiers.
 
 12. See the Jupyter notebooks available at
-    [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+    [*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -326,7 +327,7 @@ See the Jupyter notebooks available at
 
 For the solutions to exercises 8, 9, and 10, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -387,7 +388,7 @@ notebooks available at
 
 For the solutions to exercises 7 and 8, please see the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -457,7 +458,7 @@ available at
 
 For the solutions to exercises 8 and 9, please see the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -555,7 +556,7 @@ available at
 
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -645,7 +646,7 @@ notebooks available at
 
 For the solutions to exercises 10 to 13, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -726,7 +727,8 @@ notebooks available at
     [Lab 2]
     then you need one output neuron, using no activation function at all
     in the output
-    layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
+    layer.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^
 
 8.  Backpropagation is a technique used to train artificial neural
@@ -754,7 +756,8 @@ notebooks available at
     MLP: the number of hidden layers, the number of neurons in each
     hidden layer, and the activation function used in each hidden layer
     and in the output
-    layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
+    layer.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^ In general, the ReLU activation function (or one
     of its variants; see
     [Lab 11]
@@ -768,7 +771,7 @@ notebooks available at
     hidden layer.
 
 10. See the Jupyter notebooks available at
-    [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+    [*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -858,7 +861,7 @@ notebooks available at
 
 For the solution to exercise 8, please see the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -972,7 +975,7 @@ available at
 
 For the solutions to exercises 12 and 13, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1118,7 +1121,7 @@ notebooks available at
 
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1277,7 +1280,7 @@ notebooks available at
 
 For the solutions to exercises 9 to 11, please see the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1398,7 +1401,7 @@ available at
 
 For the solutions to exercises 9 and 10, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1499,7 +1502,7 @@ notebooks available at
 
 For the solutions to exercises 8 to 11, please see the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1605,7 +1608,7 @@ available at
 
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1738,7 +1741,7 @@ notebooks available at
 
 For the solutions to exercises 8, 9, and 10, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -1872,7 +1875,7 @@ notebooks available at
 
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 

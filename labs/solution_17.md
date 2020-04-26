@@ -101,6 +101,6 @@
 
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 

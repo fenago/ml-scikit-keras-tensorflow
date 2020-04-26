@@ -111,7 +111,8 @@ during training pushes it to discover and exploit patterns in the data.
 The relationship between memory, perception, and 
 pattern matching was [famously studied by William Chase and Herbert
 Simon in the early
-1970s](https://homl.info/111).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) They observed that expert chess players were able to
+1970s](https://homl.info/111).
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) They observed that expert chess players were able to
 memorize the positions of all the pieces in a game by looking at the
 board for just five seconds, a task that most people would find
 impossible. However, this was only the case when the pieces were placed
@@ -232,7 +233,7 @@ generated labels, in this case simply equal to the inputs).
 Stacked Autoencoders
 ====================
 
-Just []{#Astack17} like other
+Just like other
 neural networks we have discussed, autoencoders can have multiple hidden
 layers. In this case they are called *stacked autoencoders* (or *deep
 autoencoders*). Adding more layers helps the autoencoder learn more
@@ -316,7 +317,8 @@ Let's go through this code:
     probability that the pixel should be black. Framing it this way
     (rather than as a regression problem) tends to make the model
     converge
-    faster.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
+    faster.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
     .totri-footnote}^
 
 -   Finally, we train the model using `X_train` as both the inputs and
@@ -415,7 +417,7 @@ application is for unsupervised pretraining.
 Unsupervised Pretraining Using Stacked Autoencoders
 ---------------------------------------------------
 
-As []{#Aunsup17} []{#SAunsup17} []{#Pstack17} []{#ULpretrain17} we discussed
+As we discussed
 in
 [Lab 11]
 if you are tackling a complex supervised task but you do not have a lot
@@ -585,7 +587,8 @@ convolutional neural networks are far better suited than dense networks
 to work with images. So if you want to build an autoencoder for images
 (e.g., for unsupervised pretraining or dimensionality reduction), you
 will need to build a [*convolutional
-autoencoder*](https://homl.info/convae).^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) The encoder is a regular CNN composed of convolutional
+autoencoder*](https://homl.info/convae).
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) The encoder is a regular CNN composed of convolutional
 layers and pooling layers. It typically reduces the spatial
 dimensionality of the inputs (i.e., height and width) while increasing
 the depth (i.e., the number of feature maps). The decoder must do the
@@ -886,11 +889,12 @@ between 0.1 and 0.2), as shown in
 Variational Autoencoders
 ========================
 
-Another important category []{#Avariat17} []{#varauto17} of autoencoders
+Another important category of autoencoders
 was [introduced in 2013](https://homl.info/115) by Diederik Kingma and
 Max Welling and quickly became one of the most popular types of
 autoencoders: *variational
-autoencoders*.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
+autoencoders*.
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
 .totri-footnote}^
 
 They are quite different from all the autoencoders we have discussed so
@@ -1428,7 +1432,8 @@ as training was very unstable, but Alec Radford et al. finally succeeded
 in late 2015, after experimenting with many different architectures and
 hyperparameters. They called their architecture [*deep convolutional
 GANs*](https://homl.info/dcgan)
-(DCGANs).^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+(DCGANs).
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
 Here are the main guidelines they proposed for building stable
 convolutional GANs:
 

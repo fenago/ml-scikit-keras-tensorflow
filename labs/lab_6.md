@@ -66,7 +66,8 @@ export_graphviz(
 
 Then you can use the `dot` command-line tool from the Graphviz package
 to convert this *.dot* file to a variety of formats, such as PDF or
-PNG.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) This command line converts the *.dot* file to a *.png*
+PNG.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) This command line converts the *.dot* file to a *.png*
 image file:
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -279,7 +280,8 @@ Making predictions requires traversing the
 Decision Tree from the root to a leaf. Decision Trees generally are
 approximately balanced, so traversing the Decision Tree requires going
 through roughly *O*(log~2~(*m*))
-nodes.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) Since each node only requires checking the value of
+nodes.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) Since each node only requires checking the value of
 one feature, the overall prediction complexity is *O*(log~2~(*m*)),
 independent of the number of features. So predictions are very fast,
 even when dealing with large training sets.
@@ -331,7 +333,8 @@ impurity is slightly faster to compute, so it is a good default.
 However, when they differ, Gini impurity tends to isolate the most
 frequent class in its own branch of the tree, while entropy tends to
 produce slightly more balanced
-trees.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
+trees.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
 .totri-footnote}^
 
 

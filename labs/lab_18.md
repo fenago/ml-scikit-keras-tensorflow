@@ -17,7 +17,8 @@ learn to play just about any Atari game from
 scratch](https://homl.info/dqn),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) eventually [outperforming
 humans](https://homl.info/dqn2)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) in most of them, using only raw pixels as inputs and
 without any prior knowledge of the rules of the
-games.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) This was the first of a series of amazing feats,
+games.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) This was the first of a series of amazing feats,
 culminating in March 2016 with the victory of their system AlphaGo
 against Lee Sedol, a legendary professional player of the game of Go,
 and in May 2017 against Ke Jie, the world champion. No program had ever
@@ -142,7 +143,8 @@ offspring is a copy of its
 parent^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) plus some random variation. The surviving policies
 plus their offspring together constitute the second generation. You can
 continue to iterate through generations this way until you find a good
-policy.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
+policy.
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
 .totri-footnote}^
 
 ![](./images/mls2_1803.png)
@@ -150,7 +152,8 @@ policy.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/
 Yet another approach is to use optimization techniques, by evaluating
 the gradients of the rewards with regard to the policy parameters, then
 tweaking these parameters by following the gradients toward higher
-rewards.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) We will discuss this  approach,
+rewards.
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) We will discuss this  approach,
 is called *policy gradients* (PG), in more detail later in this lab.
 Going back to the vacuum cleaner robot, you could slightly increase *p*
 and evaluate whether doing so increases the amount of dust picked up by
@@ -165,7 +168,7 @@ agent to live in⁠---so it's time to introduce OpenAI Gym.
 Introduction to OpenAI Gym
 ==========================
 
-One []{#RLopenai18} []{#openai18} of the challenges of Reinforcement
+One of the challenges of Reinforcement
 Learning is that in order to train an agent, you first need to have a
 working environment. If you want to program an agent that will learn to
 play an Atari game, you will need an Atari game simulator. If you want
@@ -364,7 +367,7 @@ This code is hopefully self-explanatory. Let's look at the result:
 Even with 500 tries, this policy never managed to keep the pole upright
 for more than 68 consecutive steps. Not great. If you look at the
 simulation in the [Jupyter
-notebooks](https://github.com/ageron/handson-ml2), you will see that the
+notebooks](https://github.com/fenago/ml-scikit-keras-tensorflow), you will see that the
 cart oscillates left and right more and more strongly until the pole
 tilts too much. Let's see if a neural network can come up with a better
 policy. 
@@ -764,7 +767,7 @@ processes*.
 Markov Decision Processes
 =========================
 
-In []{#RLmarkov18} []{#markov18} the early 20th century, the mathematician
+In the early 20th century, the mathematician
 Andrey Markov studied stochastic processes with no memory,
 called *Markov chains*. Such a process has a fixed
 number of states, and it randomly evolves from one state to another at
@@ -789,7 +792,8 @@ state*). Markov chains can have very different dynamics, and they are
 heavily used in thermodynamics, chemistry, statistics, and much more.
 
 Markov decision processes were [first described in the 1950s by Richard
-Bellman](https://homl.info/133).^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+Bellman](https://homl.info/133).
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 They resemble Markov chains but with a twist: at each step, an agent can
 choose one of several possible actions, and the transition probabilities
 depend on the chosen action. Moreover, some state transitions return
@@ -1468,7 +1472,8 @@ hidden layer instead of two).
 Reinforcement Learning is notoriously difficult, largely because of the
 training instabilities and the huge sensitivity to the choice of
 hyperparameter values and random
-seeds.^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+seeds.
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 As the researcher Andrej Karpathy put it: "\[Supervised learning\] wants
 to work. \[...\] RL must be forced to work." You will need time,
 patience, perseverance, and perhaps a bit of luck too. This is a major
@@ -1618,7 +1623,8 @@ One reasonable approach is to measure the magnitude of the TD error *δ*
 = *r* + *γ*·*V*(*s*′) -- *V*(*s*). A large TD error indicates that a
 transition (*s*, *r*, *s*′) is very surprising, and thus probably worth
 learning
-from.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+from.
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 When an experience is recorded in the replay buffer, its priority is set
 to a very large value, to ensure that it gets sampled at least once.
 However, once it is sampled (and every time it is sampled), the TD error
@@ -1690,7 +1696,8 @@ The rest of the algorithm is just the same as
 earlier. In fact, you can build a Double Dueling DQN and combine it with
 prioritized experience replay! More generally, many RL techniques can be
 combined, as DeepMind demonstrated in a [2017
-paper](https://homl.info/rainbow).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+paper](https://homl.info/rainbow).
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 The paper's authors combined six different
 techniques into an agent called *Rainbow*, which largely outperformed
 the state of the art.
@@ -1707,7 +1714,7 @@ reuse scalable and well-tested libraries, such as TF-Agents.
 The TF-Agents Library
 =====================
 
-The []{#RLagents18} [TF-Agents
+The [TF-Agents
 library](https://github.com/tensorflow/agents) is a Reinforcement
 Learning library based on TensorFlow, developed at Google and open
 sourced in 2018. Just like OpenAI Gym, it provides many off-the-shelf
@@ -2029,7 +2036,8 @@ You can see that the resolution is much lower, but sufficient to play
 the game. Moreover, frames are stacked along the channels dimension, so
 red represents the frame from three steps ago, green is two steps ago,
 blue is the previous frame, and purple is the current
-frame.^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+frame.
+^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 From this single observation, the agent can see that the ball is going
 toward the lower-left corner, and that it should continue to move the
 paddle to the left (as it did in the previous steps).
@@ -2734,7 +2742,8 @@ agent will be superhuman (at least at *Breakout*). You can also try
 training this DQN agent on other Atari games: it can achieve superhuman
 skill at most action games, but it is not so good at games with
 long-running
-storylines.^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+storylines.
+^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
 
 
 

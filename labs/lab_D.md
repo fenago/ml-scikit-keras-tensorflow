@@ -2,7 +2,7 @@
 [Appendix D. ] Autodiff
 ==============================
 
-This []{#autodiff23} []{#CMauto23} []{#TFauto23} appendix explains how
+This appendix explains how
 TensorFlow's autodifferentiation (autodiff) feature works, and how it
 compares to other solutions.
 

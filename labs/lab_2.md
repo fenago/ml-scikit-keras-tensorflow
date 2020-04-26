@@ -8,7 +8,8 @@
 In this lab you will work through an example
 project end to end, pretending to be a recently hired data scientist at
 a real estate
-company.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) Here are the main steps you will go through:
+company.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) Here are the main steps you will go through:
 
 1.  Look at the big picture.
 
@@ -126,7 +127,8 @@ median housing price) will be fed to another Machine Learning system
 (see
 [Figure 2-2]
 along with many other
-signals.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) This downstream system will determine whether it is
+signals.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) This downstream system will determine whether it is
 worth investing in a given area or not. Getting this right is critical,
 as it directly affects [revenue].
 
@@ -406,7 +408,8 @@ Machine Learning notations that we will use throughout this course:
     labels) of all instances in the dataset. There is one row per
     instance, and the *i*^th^ row is equal to the transpose of
     **x**^(*i*)^, noted
-    (**x**^(*i*)^)^⊺^.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
+    (**x**^(*i*)^)^⊺^.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
     .totri-footnote}^
 
     -   For example, if the first district is as just described, then
@@ -701,10 +704,10 @@ you can start coding now!
 Get the Data
 ============
 
-It's []{#EPdown02} time to get your hands dirty. Don't hesitate to pick
+It's time to get your hands dirty. Don't hesitate to pick
 up your laptop and walk through the following code examples in a Jupyter
 notebook. The full Jupyter notebook is available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 
@@ -713,7 +716,8 @@ Create the Workspace
 
 First you will need to have Python installed. It
 is probably already installed on your system. If not, you can get it at
-[*https://www.python.org/*](https://www.python.org/).^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
+[*https://www.python.org/*](https://www.python.org/).
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
 .totri-footnote}^
 
 Next you need to create a workspace directory for your Machine Learning
@@ -737,7 +741,8 @@ macOS), install a Scientific Python distribution such as Anaconda and
 use its packaging system, or just use Python's own packaging system,
 pip, which is included by default with the Python binary installers
 (since Python
-2.7.9).^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) You can check to see if pip is installed by typing the
+2.7.9).
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) You can check to see if pip is installed by typing the
 following command:
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -898,7 +903,7 @@ import os
 import tarfile
 import urllib
 
-DOWNLOAD_ROOT = "https://raw.githubusercontent.com/ageron/handson-ml2/master/"
+DOWNLOAD_ROOT = "https://raw.githubusercontent.com/fenago/ml-scikit-keras-tensorflow/master/"
 HOUSING_PATH = os.path.join("datasets", "housing")
 HOUSING_URL = DOWNLOAD_ROOT + "datasets/housing/housing.tgz"
 
@@ -989,7 +994,8 @@ The `count`, `mean`, `min`, and `max` rows are self-explanatory. Note
 that the null values are ignored (so, for example, the `count` of
 `total_bedrooms` is 20,433, not 20,640). The `std` row shows the
 *standard deviation*, which measures how dispersed the values
-are.^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+are.
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 The 25%, 50%, and 75% rows show the corresponding *percentiles*: a
 percentile indicates the value below which a given percentage of
 observations in a group of observations fall. For example, 25% of the
@@ -1306,7 +1312,7 @@ exploring the data.
 Discover and Visualize the Data to Gain Insights
 ================================================
 
-So []{#EPvisual02} far you
+So far you
 have only taken a quick glance at the data to get a general
 understanding of the kind of data you are manipulating. Now the goal is
 to go into a little more depth.
@@ -1563,7 +1569,7 @@ exploration step.
 Prepare the Data for Machine Learning Algorithms
 ================================================
 
-It's []{#EPdataprep02} time to prepare the data for
+It's time to prepare the data for
 your Machine Learning algorithms. Instead of doing this manually, you
 should write functions for this purpose, for several good reasons:
 
@@ -1729,7 +1735,8 @@ Consistency
         method that measures the quality of the predictions, given a
         test set (and the corresponding labels, in the case of
         supervised learning
-        algorithms).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+        algorithms).
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 Inspection
 
@@ -2368,7 +2375,7 @@ my_model_loaded = joblib.load("my_model.pkl")
 Fine-Tune Your Model
 ====================
 
-Let's assume []{#EPfine02} []{#Mfine02} that you now
+Let's assume that you now
 have a shortlist of promising models. You now need to fine-tune them.
 Let's look at a few ways you can do that.
 
@@ -2765,7 +2772,8 @@ the task, the raters may need to be experts, or they could be
 nonspecialists, such as workers on a crowdsourcing platform (e.g.,
 Amazon Mechanical Turk). In some applications they could even be the
 users themselves, responding for example via surveys or repurposed
-captchas.^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+captchas.
+^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
 
 Either way, you need to put in place a monitoring system (with or
 without human raters to evaluate the live model), as well as all the
@@ -2875,7 +2883,7 @@ The following exercises are all based on this lab's housing dataset:
 
 Solutions to these exercises can be found in the Jupyter notebooks
 available at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 
 

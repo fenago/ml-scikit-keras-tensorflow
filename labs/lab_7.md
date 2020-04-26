@@ -166,7 +166,7 @@ classifier achieves over 91.2% accuracy!
 Bagging and Pasting
 ===================
 
-One []{#ELbag07} way to get a
+One way to get a
 diverse set of classifiers is to use very different training algorithms,
 as just discussed. Another approach is to use the same training
 algorithm for every predictor and train them on different random subsets
@@ -176,7 +176,8 @@ method is called
 aggregating*^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^). When sampling is performed *without* replacement, it
 is called
-[*pasting*](https://homl.info/21).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
+[*pasting*](https://homl.info/21).
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^
 
 In other words, both bagging and pasting allow training instances to be
@@ -194,7 +195,8 @@ The aggregation function is typically the
 voting classifier) for classification, or the average for regression.
 Each individual predictor has a higher bias than if it were trained on
 the original training set, but aggregation reduces both bias and
-variance.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html) Generally, the net result is that the ensemble has a
+variance.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html) Generally, the net result is that the ensemble has a
 similar bias but a lower variance than a single predictor trained on the
 original training set.
 
@@ -273,7 +275,8 @@ not be sampled at all. By default a `BaggingClassifier` samples *m*
 training instances with replacement (`bootstrap=True`), where *m* is the
 size of the training set. This means that only about 63% of the training
 instances are sampled on average for each
-predictor.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html) The remaining 37% of the training instances that are
+predictor.
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html) The remaining 37% of the training instances that are
 not sampled are called *out-of-bag* (oob) instances. Note that they are
 not the same 37% for all predictors.
 
@@ -346,11 +349,13 @@ subset of the input features.
 This technique is particularly useful when you are dealing with
 high-dimensional inputs (such as images). Sampling both training
 instances and features is called the [*Random Patches*
-method](https://homl.info/22).^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html) Keeping all training instances (by setting
+method](https://homl.info/22).
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html) Keeping all training instances (by setting
 `bootstrap=False` and `max_samples=1.0`) but sampling features (by
 setting `bootstrap_features` to `True` and/or `max_features` to a value
 smaller than `1.0`) is called the [*Random Subspaces*
-method](https://homl.info/23).^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
+method](https://homl.info/23).
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^
 
 Sampling features results in even more predictor diversity, trading a
@@ -389,7 +394,8 @@ With a few exceptions, a `RandomForestClassifier` has all the
 hyperparameters of a `DecisionTreeClassifier` (to control how trees are
 grown), plus all the hyperparameters of a `BaggingClassifier` to control
 the ensemble
-itself.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
+itself.
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 
 The Random Forest algorithm introduces extra randomness when growing
 trees; instead of searching for the very best feature when splitting a
@@ -502,7 +508,7 @@ Boosting
 ========
 
 *Boosting* (originally called *hypothesis boosting*)
-refers []{#ELboost07} to any
+refers to any
 Ensemble method that can combine several weak learners into a strong
 learner. The general idea of most boosting methods is to train
 predictors sequentially, each trying to correct its predecessor. There
@@ -579,7 +585,8 @@ $$r_{j} = \frac{\sum\limits_{\binom{i = 1}{{\hat{y}}_{j}^{(i)} \neq y^{(i)}}}^{m
 The predictor's weight *α*~*j*~ is then computed using [Equation
 7-2]
 where *η* is the learning rate hyperparameter (defaults to
-1).^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
+1).
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 The more accurate the predictor is, the higher its weight will be. If it
 is just guessing randomly, then its weight will be close to zero.
 However, if it is most often wrong (i.e., less accurate than random
@@ -674,7 +681,8 @@ Gradient Boosting
 
 Another very popular
 boosting algorithm is [*Gradient
-Boosting*](https://homl.info/28).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
+Boosting*](https://homl.info/28).
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 Just like AdaBoost, Gradient Boosting works by sequentially adding
 predictors to an ensemble, each one correcting its predecessor. However,
 instead of tweaking the instance weights at every iteration like
@@ -877,7 +885,8 @@ Stacking
 The 
 last Ensemble method we will discuss in this lab is called
 *stacking* (short for [*stacked
-generalization*](https://homl.info/29)).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
+generalization*](https://homl.info/29)).
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 It is based on a simple idea: instead of using trivial functions (such
 as hard voting) to aggregate the predictions of all predictors in an
 ensemble, why don't we train a model to perform this aggregation?
@@ -892,7 +901,8 @@ makes the final prediction (3.0).
 ![](./images/mls2_0712.png)
 
 To train the blender, a common approach is to use a hold-out
-set.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
+set.
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 Let's see how it works. First, the training set is split into two
 subsets. The first subset is used to train the predictors in the first
 layer (see

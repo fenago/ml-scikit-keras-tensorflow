@@ -2,7 +2,7 @@
 [Appendix F. ] Special Data Structures
 =============================================
 
-In []{#TFspecial25} this appendix we will take a very quick look at the
+In this appendix we will take a very quick look at the
 data structures supported by TensorFlow, beyond regular float or integer
 tensors. This includes strings, ragged tensors, sparse tensors, tensor
 arrays, sets, and queues.

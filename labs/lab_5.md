@@ -180,7 +180,7 @@ instances (we will discuss duality later in the lab).
 Nonlinear SVM Classification
 ============================
 
-Although []{#SVMnonlinear05} []{#nonlinSVM05} []{#CPnonlinear05} linear SVM
+Although linear SVM
 classifiers are efficient and work surprisingly well in many cases, many
 datasets are not even close to being linearly separable. One approach to
 handling nonlinear datasets is to add more features, such as polynomial
@@ -390,7 +390,8 @@ Computational Complexity
 The `LinearSVC` class is based on the `liblinear`
 library, which implements an [optimized algorithm](https://homl.info/13)
 for linear
-SVMs.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) It does not support the kernel trick, but it scales
+SVMs.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) It does not support the kernel trick, but it scales
 almost linearly with the number of training instances and the number of
 features. Its training time complexity is roughly *O*(*m* × *n*).
 
@@ -402,7 +403,8 @@ default tolerance is fine.
 The `SVC` class is based on the `libsvm` library,
 which implements [an algorithm](https://homl.info/14) that supports the
 kernel
-trick.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) The training time complexity is usually between
+trick.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) The training time complexity is usually between
 *O*(*m*^2^ × *n*) and *O*(*m*^3^ × *n*). Unfortunately, this means that
 it gets dreadfully slow when the number of training instances gets large
 (e.g., hundreds of thousands of instances). This algorithm is perfect
@@ -546,7 +548,8 @@ it is a 2D plane because this dataset has two features (petal width and
 petal length). The decision boundary is the set of points where the
 decision function is equal to 0: it is the intersection of two planes,
 which is a straight line (represented by the thick solid
-line).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
+line).
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^
 
 ![](./images/mls2_0512.png)
@@ -641,7 +644,8 @@ Such problems are known as *Quadratic Programming*
 (QP) problems. Many off-the-shelf solvers are available to solve QP
 problems by using a variety of techniques that are outside the scope of
 this
-course.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
+course.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^
 
 The general problem formulation is given by [Equation
@@ -958,7 +962,8 @@ you can still use Gradient Descent using any
 It is also possible to implement online kernelized SVMs, as described in
 the papers ["Incremental and Decremental Support Vector Machine
 Learning"](https://homl.info/17)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) and ["Fast Kernel Classifiers with Online and Active
-Learning"](https://homl.info/18).^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) These kernelized SVMs are implemented in Matlab and
+Learning"](https://homl.info/18).
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) These kernelized SVMs are implemented in Matlab and
 C++. For large-scale nonlinear problems, you may want to consider using
 neural networks instead (see
 [Part II]

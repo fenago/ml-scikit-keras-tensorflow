@@ -410,7 +410,8 @@ outputting 200 feature maps of size 150 × 100, with stride 1 and
 channels), then the number of parameters is (5 × 5 × 3 + 1) × 200 =
 15,200 (the + 1 corresponds to the bias terms), which is fairly small
 compared to a fully connected
-layer.^[7]
+layer.
+^[7]
 However, each of the 200 feature maps contains 150 × 100 neurons, and
 each of these neurons needs to compute a weighted sum of its 5 × 5 × 3 =
 75 inputs: that’s a total of 225 million float multiplications. Not as
@@ -418,7 +419,8 @@ bad as a fully connected layer, but still quite computationally
 intensive. Moreover, if the feature maps are represented using 32-bit
 floats, then the convolutional layer’s output will occupy 200 × 150 ×
 100 × 32 = 96 million bits (12 MB) of
-RAM.^[8]
+RAM.
+^[8]
 And that’s just for one instance—if a training batch contains 100
 instances, then this layer will use up 1.2 GB of RAM!
 
@@ -1242,7 +1244,8 @@ SENet
 
 The winning architecture in the ILSVRC 2017 challenge was the
 [Squeeze-and-Excitation Network
-(SENet)](https://homl.info/senet).^[22]
+(SENet)](https://homl.info/senet).
+^[22]
 This architecture extends existing architectures such as inception
 networks and ResNets, and boosts their performance. This allowed SENet
 to win the competition with an astonishing 2.25% top-five error rate!
@@ -1610,7 +1613,7 @@ history = model.fit(train_set, epochs=5, validation_data=valid_set)
 This will be very slow, unless you have a GPU. If you do not, then you
 should run this lab’s notebook in Colab, using a GPU runtime (it’s
 free!). See the instructions at
-[*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
 After training the model for a few epochs, its validation accuracy
 should reach about 75–80% and stop making much progress. This means that
@@ -1836,7 +1839,8 @@ is fed a 224 × 224 image (see the left side of
 If we feed the FCN a 448 × 448 image (see the right side of
 [Figure 14-25]
 the bottleneck layer will now output 14 × 14 feature
-maps.^[27]
+maps.
+^[27]
 Since the dense output layer was replaced by a convolutional layer using
 10 filters of size 7 × 7, with `"valid"` padding and stride 1, the
 output will be composed of 10 features maps, each of size 8 × 8 (since

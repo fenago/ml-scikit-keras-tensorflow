@@ -64,7 +64,7 @@ vectors and matrices are; how to transpose them, multiply them, and
 inverse them; and what partial derivatives are. If you are unfamiliar
 with these concepts, please go through the linear algebra and calculus
 introductory tutorials available as Jupyter notebooks in the [online
-supplemental material](https://github.com/ageron/handson-ml2). For those
+supplemental material](https://github.com/fenago/ml-scikit-keras-tensorflow). For those
 who are truly allergic to mathematics, you should still go through this
 lab and simply skip the equations; hopefully, the text will be
 sufficient to help you understand most of the concepts.
@@ -77,7 +77,7 @@ Linear Regression
 
 In
 [Lab 1]
-we []{#TMlinear04} []{#RPlinear04} looked at a
+we looked at a
 simple regression model of life satisfaction: *life\_satisfaction* =
 *θ*~0~ + *θ*~1~ × *GDP\_per\_capita*.
 
@@ -164,7 +164,8 @@ of **θ** that minimizes the RMSE. In practice, it is simpler to minimize
 the mean squared error (MSE) than the RMSE, and it leads to the same
 result (because the value that minimizes a function also minimizes its
 square
-root).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
+root).
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 The MSE of a Linear Regression hypothesis *h*~**θ**~ on a training set
@@ -370,7 +371,7 @@ memory.
 Gradient Descent
 ================
 
-*Gradient Descent* is []{#TMgradient04} a generic
+*Gradient Descent* is a generic
 optimization algorithm capable of finding optimal solutions to a wide
 range of problems. The general idea of Gradient Descent is to tweak
 parameters iteratively in order to minimize a cost function.
@@ -430,7 +431,8 @@ function*, which means that if you pick any two points on the curve, the
 line segment joining them never crosses the curve. This implies that
 there are no local minima, just one global minimum. It is also a
 continuous function with a slope that never changes
-abruptly.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html) These two facts have a great consequence: Gradient
+abruptly.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html) These two facts have a great consequence: Gradient
 Descent is guaranteed to approach arbitrarily close the global minimum
 (if you wait long enough and if the learning rate is not too high).
 
@@ -441,7 +443,8 @@ different scales.
 shows Gradient Descent on a training set where features 1 and 2 have the
 same scale (on the left), and on a training set where feature 1 has much
 smaller values than feature 2 (on the
-right).^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
+right).
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 ![](./images/mls2_0407.png)
@@ -809,7 +812,7 @@ Polynomial Regression
 =====================
 
 What if your
-data []{#TMpolyreg04} is more complex than a straight line? Surprisingly,
+data is more complex than a straight line? Surprisingly,
 you can use a linear model to fit nonlinear data. A simple way to do
 this is to add powers of each feature as new features, then train a
 linear model on this extended set of features. This technique is called
@@ -888,7 +891,7 @@ features!
 Learning Curves
 ===============
 
-If []{#TMlearncurv04} []{#learncurve04} you perform high-degree Polynomial
+If you perform high-degree Polynomial
 Regression, you will likely fit the training data much better than with
 plain Linear Regression. For example,
 [Figure 4-14]
@@ -1027,7 +1030,8 @@ expressed as the sum of three very different errors:
 :   This part of the generalization error is due to wrong assumptions,
     such as assuming that the data is linear when it is actually
     quadratic. A high-bias model is most likely to underfit the training
-    data.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
+    data.
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
     .totri-footnote}^
 
 *Variance*
@@ -1056,7 +1060,7 @@ trade-off.
 Regularized Linear Models
 =========================
 
-As []{#TMreglin04} we saw in Labs
+As we saw in Labs
 [1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab){.totri-footnote}
 and
 [2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab){.totri-footnote},
@@ -1104,7 +1108,8 @@ model. If *α* = 0, then Ridge Regression is just Linear Regression. If
 result is a flat line going through the data's mean. [Equation
 4-8]
 presents the Ridge Regression cost
-function.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
+function.
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 
@@ -1117,7 +1122,8 @@ Note that the bias term *θ*~0~ is not regularized (the sum starts at *i*
 = 1, not 0). If we define **w** as the vector of feature weights (*θ*~1~
 to *θ*~*n*~), then the regularization term is equal to ½(∥ **w**
 ∥~2~)^2^, where ∥ **w** ∥~2~ represents the ℓ~2~ norm of the weight
-vector.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+vector.
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 For Gradient Descent, just add *α***w** to the MSE gradient vector
 ([Equation
 4-6]
@@ -1649,7 +1655,8 @@ based on these two features, estimate the probability that a new flower
 is an *Iris virginica*. The dashed line represents the points where the
 model estimates a 50% probability: this is the model's decision
 boundary. Note that it is a linear
-boundary.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+boundary.
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 Each parallel line represents the points where the model outputs a
 specific probability, from 15% (bottom left) to 90% (top right). All the
 flowers beyond the top-right line have an over 90% chance of being *Iris

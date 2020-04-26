@@ -79,7 +79,8 @@ unlikely that a random point will be "extreme" along any dimension). But
 in a 10,000-dimensional unit hypercube, this probability is greater than
 99.999999%. Most points in a high-dimensional hypercube are very close
 to the
-border.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
+border.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^
 
 Here is a more troublesome difference: if you pick two points randomly
@@ -115,7 +116,7 @@ across all dimensions.
 Main Approaches for Dimensionality Reduction
 ============================================
 
-Before []{#DRapp08} we dive into specific dimensionality reduction
+Before we dive into specific dimensionality reduction
 algorithms, let's take a look at the two main approaches to reducing
 dimensionality: projection and Manifold Learning.
 
@@ -262,7 +263,8 @@ of variance, as it will most likely lose less information than the other
 projections. Another way to justify this choice is that it is the axis
 that minimizes the mean squared distance between the original dataset
 and its projection onto that axis. This is the rather simple idea behind
-[PCA](https://homl.info/pca){.orm:hideurl}.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
+[PCA](https://homl.info/pca){.orm:hideurl}.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^
 
 
@@ -619,7 +621,7 @@ Kernel PCA
 
 In
 [Lab 5]
-we []{#PCAkernel08} []{#kernalpca04} discussed the
+we discussed the
 kernel trick, a mathematical technique that implicitly maps instances
 into a very high-dimensional space (called the
 *feature space*), enabling nonlinear classification and regression with
@@ -631,7 +633,8 @@ space*.
 It turns out that the same trick can be applied to PCA, making it
 possible to perform complex nonlinear projections for dimensionality
 reduction. This is called [*Kernel PCA*
-(kPCA)](https://homl.info/33).^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html) It is often good at preserving clusters of
+(kPCA)](https://homl.info/33).
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html) It is often good at preserving clusters of
 [instances] after projection, or sometimes even
 unrolling datasets that lie close to a twisted manifold.
 

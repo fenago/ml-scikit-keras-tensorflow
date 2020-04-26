@@ -74,7 +74,8 @@
     [Lab 2]
     then you need one output neuron, using no activation function at all
     in the output
-    layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
+    layer.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^
 
 8.  Backpropagation is a technique used to train artificial neural
@@ -102,7 +103,8 @@
     MLP: the number of hidden layers, the number of neurons in each
     hidden layer, and the activation function used in each hidden layer
     and in the output
-    layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
+    layer.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^ In general, the ReLU activation function (or one
     of its variants; see
     [Lab 11]
@@ -116,4 +118,4 @@
     hidden layer.
     
     10. See the Jupyter notebooks available at
-    [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
+    [*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).

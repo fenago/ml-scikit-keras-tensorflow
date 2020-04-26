@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 12. ] Custom Models and Training [with TensorFlow]
+[Lab 12. ] Custom Models and Training with TensorFlow
 ==================================================================================
 
 Up until now,
@@ -102,7 +102,8 @@ well documented.
 
 At the lowest level, each TensorFlow operation (*op* for short) is
 implemented using highly efficient C++
-code.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) Many operations have multiple
+code.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) Many operations have multiple
 implementations called *kernels*: each kernel is dedicated to a specific
 device type, such as CPUs, GPUs, or even TPUs
 (*tensor processing units*). As you may know, GPUs can dramatically
@@ -178,7 +179,7 @@ OK, it's time to start coding!
 Using TensorFlow like NumPy
 ===========================
 
-TensorFlow's API []{#NPtensor12} revolves around
+TensorFlow's API revolves around
 *tensors*, which flow from operation to operation---hence the name
 Tensor*Flow*. A tensor is very similar to a NumPy `ndarray`: it is
 usually a multidimensional array, but it can also hold a scalar (a
@@ -493,7 +494,7 @@ algorithms!
 Customizing Models and Training Algorithms
 ==========================================
 
-Let's []{#Mtensor12} start by creating a custom loss function, which is a
+Let's start by creating a custom loss function, which is a
 simple and common use case.
 
 
@@ -645,7 +646,8 @@ Let's walk through this code:
     of the instance losses, weighted by the sample weights, if any, and
     divided by the batch size (not by the sum of weights, so this is
     *not* the weighted
-    mean).^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
+    mean).
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
     .totri-footnote}^ Other possible values are `"sum"` and `"none"`.
 
 -   The `call()` method takes the labels and predictions, computes all
@@ -988,7 +990,8 @@ Let's walk through this code:
     to the appropriate activation function using the
     `keras.activations.get()` function (it accepts functions, standard
     strings like `"relu"` or `"selu"`, or simply
-    `None`).^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
+    `None`).
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
     .totri-footnote}^
 
 -   The `build()` method's role is to create the layer's variables by
@@ -1096,7 +1099,8 @@ We already looked at
 creating custom model classes in
 [Lab 10]
 when we discussed the Subclassing
-API.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+API.
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
 It's straightforward: subclass the `keras.Model` class, create layers
 and variables in the constructor, and implement the `call()` method to
 do whatever you want the model to do. Suppose you want to build the
@@ -1266,7 +1270,8 @@ Let's go through this code:
 -   Then the `call()` method computes the reconstruction loss (the mean
     squared difference between the reconstruction and the inputs), and
     adds it to the model's list of losses using the `add_loss()`
-    method.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+    method.
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
     Notice that we scale down the reconstruction loss by multiplying it
     by 0.05 (this is a hyperparameter you can tune). This ensures that
     the reconstruction loss does not dominate the main loss.
@@ -1766,7 +1771,8 @@ executes the operations in the graph, in the appropriate order (and in
 parallel when it can). As a result, a TF Function will usually run much
 faster than the original Python function, especially if it performs
 complex
-computations.^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+computations.
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
 Most of the time you will not really need to know more than that: when
 you want to boost a Python function, just transform it into a TF
 Function. That's all!

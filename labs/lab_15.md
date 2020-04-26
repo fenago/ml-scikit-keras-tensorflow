@@ -54,7 +54,7 @@ attention mechanisms. Let's get started!
 Recurrent Neurons and Layers
 ============================
 
-Up []{#RNNneurons15} []{#Nrecurr15} []{#Lrecurr15} to now we have focused
+Up to now we have focused
 on feedforward neural networks, where the activations flow only in one
 direction, from the input layer to the output layer (a few exceptions
 are discussed in
@@ -288,7 +288,7 @@ let's start coding!
 Forecasting a Time Series
 =========================
 
-Suppose []{#RNNforecast15} []{#Sforecast15} you are
+Suppose you are
 studying the number of active users per hour on your website, or the
 daily temperature in your city, or your company's financial health,
 measured quarterly using multiple metrics. In all these cases, the data
@@ -675,7 +675,8 @@ to sequences (i.e., it reshapes the outputs from \[*batch size* × *time
 steps*, *output dimensions*\] to \[*batch size*, *time steps*, *output
 dimensions*\]; in this example the number of output dimensions is 10,
 since the `Dense` layer has 10
-units).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) Here is the updated model:
+units).
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) Here is the updated model:
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential([
@@ -744,7 +745,7 @@ it.
 Handling Long Sequences
 =======================
 
-To []{#Slong15} []{#RNNlong15} train an RNN on long
+To train an RNN on long
 sequences, we must run it over many time steps, making the unrolled RNN
 a very deep network. Just like any deep neural network it may suffer
 from the unstable gradients problem, discussed in
@@ -843,7 +844,8 @@ class LNSimpleRNNCell(keras.layers.Layer):
 ```
 
 The code is quite
-straightforward.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) Our `LNSimpleRNNCell` class inherits from the
+straightforward.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) Our `LNSimpleRNNCell` class inherits from the
 `keras.layers.Layer` class, just like any custom layer. The constructor
 takes the number of units and the desired activation function, and it
 sets the `state_size` and [`output_size`] attributes,
@@ -890,7 +892,7 @@ with the short-term memory problem.
 Tackling the Short-Term Memory Problem
 --------------------------------------
 
-Due []{#LSshort15} []{#short15} to the transformations that the data goes
+Due to the transformations that the data goes
 through when traversing an RNN, some information is lost at each time
 step. After a while, the RNN's state contains virtually no trace of the
 first inputs. This can be a showstopper. Imagine Dory the
@@ -911,7 +913,8 @@ The *Long Short-Term Memory* (LSTM) cell was
 gradually improved over the years by several researchers, such as [Alex
 Graves](https://homl.info/graves), [Haşim
 Sak](https://homl.info/94),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) and [Wojciech
-Zaremba](https://homl.info/95).^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) If you consider the LSTM cell as a black box, it can
+Zaremba](https://homl.info/95).
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) If you consider the LSTM cell as a black box, it can
 be used very much like a basic cell, except it will perform much better;
 training will converge faster, and it will detect long-term dependencies
 in the data. In Keras, you can simply use the `LSTM` layer instead of
@@ -1050,7 +1053,8 @@ In a regular LSTM cell, the gate controllers can look only at the input
 be a good idea to give them a bit more context by letting them peek at
 the long-term state as well. This idea was [proposed by Felix Gers and
 Jürgen Schmidhuber in
-2000](https://homl.info/96).^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+2000](https://homl.info/96).
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
 They proposed an LSTM variant with extra
 connections called *peephole connections*: the previous long-term state
 **c**~(*t*--1)~ is added as an input to the controllers of the forget

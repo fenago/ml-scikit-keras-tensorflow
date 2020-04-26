@@ -21,7 +21,8 @@ versioning, gracefully transition from one model to the next, possibly
 roll back to the previous model in case of problems, and
 perhaps run multiple different models in parallel
 to perform *A/B
-experiments*.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) If your product becomes successful, your service may
+experiments*.
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) If your product becomes successful, your service may
 start to get plenty of *queries per second* (QPS),
 and it must scale up to support the load. A great solution to scale up
 your service, as we will see in this lab, is to use TF Serving,
@@ -58,13 +59,14 @@ get started!
 Serving a TensorFlow Model
 ==========================
 
-Once []{#TFserv19} you have trained a TensorFlow model, you can easily
+Once you have trained a TensorFlow model, you can easily
 use it in any Python code: if it's a tf.keras model, just call its
 `predict()` method! But as your infrastructure grows, there comes a
 point where it is preferable to wrap your model in a small service whose
 sole role is to make predictions and have the rest of the infrastructure
 query it (e.g., via a REST or gRPC
-API).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) This decouples your model from the rest of the
+API).
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) This decouples your model from the rest of the
 infrastructure, making it possible to easily switch model versions or
 scale the service up as needed (independently from the rest of your
 infrastructure), perform A/B experiments, and ensure that all your
@@ -390,7 +392,8 @@ to strings and back) and in terms of payload size: many floats end up
 being represented using over 15 characters, which translates to over 120
 bits for 32-bit floats! This will result in high latency and bandwidth
 usage when transferring large NumPy
-arrays.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) So let's use gRPC instead.
+arrays.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) So let's use gRPC instead.
 
 
 ###### Tip
@@ -486,7 +489,8 @@ checks for new model versions. If it finds one, it will automatically
 handle the transition gracefully: by default, it will answer pending
 requests (if any) with the previous model version, while handling new
 requests with the new
-version.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) As soon as every pending request has been answered,
+version.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) As soon as every pending request has been answered,
 the previous model version is unloaded. You can see this at work in the
 TensorFlow Serving logs:
 
@@ -566,7 +570,7 @@ Creating a Prediction Service on GCP AI Platform
 Before you can deploy a model, there's a little bit of setup to take
 care of:
 
-1.  Log []{#PScreat19} []{#GCPcreat19} in to your Google account, and then
+1.  Log in to your Google account, and then
     go to the [Google Cloud Platform (GCP)
     console](https://console.cloud.google.com/) (see
     [Figure 19-3]
@@ -709,7 +713,7 @@ service!
 Using the Prediction Service
 ----------------------------
 
-Under []{#GCPuse19} []{#PSuse19} the hood, AI Platform just runs TF
+Under the hood, AI Platform just runs TF
 Serving, so in principle you could use the same code as earlier, if you
 knew which URL to query. There's just one problem: GCP also takes care
 of encryption and authentication. Encryption is based on SSL/TLS, and
@@ -868,7 +872,7 @@ device?
 Deploying a Model to a Mobile or Embedded Device
 ================================================
 
-If []{#TFscalemobile19} you
+If you
 need to deploy your model to a mobile or embedded device, a large model
 may simply take too long to download and use too much RAM and CPU, all
 of which will make your app unresponsive, heat the device, and drain its
@@ -1021,7 +1025,8 @@ user's browser? This can be useful in many scenarios, such as:
     data, and you want to protect the user's privacy by making the
     predictions on the client side so that the private data never has to
     leave the user's
-    machine.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
+    machine.
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
     .totri-footnote}^
 
 For all these scenarios, you can export your model to a special format
@@ -1063,7 +1068,7 @@ Using GPUs to Speed Up Computations
 
 In
 [Lab 11]
-we discussed []{#TFspeed19} several techniques that
+we discussed several techniques that
 can considerably speed up training: better weight initialization, Batch
 Normalization, sophisticated optimizers, and so on. But even with all of
 these techniques, training a large neural network on a single machine
@@ -1123,7 +1128,8 @@ devices are supported at this point.
 
 If you go for an Nvidia GPU card, you will need to
 install the appropriate Nvidia drivers and several Nvidia
-libraries.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+libraries.
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 These include the *Compute
 Unified Device Architecture* library (CUDA), which allows developers to
 use CUDA-enabled GPUs for all sorts of computations (not just graphics
@@ -1191,7 +1197,8 @@ tests:
 The `gpu_device_name()` function gives the first GPU's name: by default,
 operations will run on this GPU. The `list_physical_devices()` function
 returns the list of all available GPU devices (just one in this
-example).^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+example).
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 
 Now, what if you don't want to invest time and money in getting your own
 GPU card? Just use a GPU VM on the cloud!
@@ -1207,7 +1214,8 @@ preconfigured with all the drivers and libraries you need (including
 TensorFlow). Google Cloud Platform enforces various GPU quotas, both
 worldwide and per region: you cannot just create thousands of GPU VMs
 without prior authorization from
-Google.^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+Google.
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 By default, the worldwide GPU quota is zero, so you cannot use any GPU
 VMs. Therefore, the very first thing you need to do is to request a
 higher worldwide quota. In the GCP console, open the navigation menu and
@@ -1600,7 +1608,8 @@ number of intra-op threads, use
 [`tf.config.threading.set_intra_op_parallelism_threads()`].
 This is useful if you want do not want TensorFlow to use all the CPU
 cores or if you want it to be
-single-threaded.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+single-threaded.
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 
 
 With that, you have all you need to run any operation on any device, and
@@ -1713,7 +1722,8 @@ In short, model parallelism may speed up running or training some types
 of neural networks, but not all, and it requires special care and
 tuning, such as making sure that devices that need to communicate the
 most run on the same
-machine.^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+machine.
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 Let's look at a much simpler and generally more efficient option: data
 parallelism.
 
@@ -1800,7 +1810,8 @@ soon as the parameters are updated, the first 18 replicas can start
 working again immediately, without having to wait for the 2 slowest
 replicas. This setup is generally described as
 having 18 replicas plus 2 *spare
-replicas*.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+replicas*.
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 
 
 
@@ -2009,7 +2020,8 @@ class, or an instance of the `tf.distribute.ReductionToOneDevice` class.
 The default NCCL option is based on the `tf.distribute.NcclAllReduce`
 class, which is usually faster, but this depends on the number and types
 of GPUs, so you may want to give the alternatives a
-try.^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+try.
+^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 
 If you want to try using data parallelism with centralized parameters,
 replace the [`MirroredStrategy`] with the
@@ -2292,7 +2304,8 @@ Black Box Hyperparameter Tuning on AI Platform
 
 AI Platform provides a powerful Bayesian optimization hyperparameter
 tuning service called [Google
-Vizier](https://homl.info/vizier).^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+Vizier](https://homl.info/vizier).
+^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
 To use it, you need to pass a YAML configuration file when creating the
 job (`--config tuning.yaml`). For example, it may look like this:
 
@@ -2419,7 +2432,7 @@ useful for your projects, big or small.
 If you find errors, please
 send feedback. More generally, I would love to know what you think, so
 please don't hesitate to contact me via O'Reilly, through the
-*ageron/handson-ml2* GitHub project, or on Twitter at \@aureliengeron.
+*fenago/ml-scikit-keras-tensorflow* GitHub project, or on Twitter at \@aureliengeron.
 
 Going forward, my best advice to you is to practice and practice: try
 going through all the exercises (if you have not done so already), play

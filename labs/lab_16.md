@@ -13,7 +13,8 @@ things, such as the ability to recognize cats in pictures, play chess,
 compose music, or escape a maze, but, interestingly, he chose a
 linguistic task. More specifically, he devised a
 *chatbot* capable of fooling its interlocutor into thinking it was
-human.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html) This test does have its weaknesses: a set of hardcoded
+human.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html) This test does have its weaknesses: a set of hardcoded
 rules can fool unsuspecting or naive humans (e.g., the machine could
 give vague predefined answers in response to some keywords; it could
 pretend that it is joking or drunk, to get a pass on its weirdest
@@ -181,7 +182,8 @@ So, it is often safer to split across time---but this implicitly assumes
 that the patterns the RNN can learn in the past (in the training set)
 will still exist in the future. In other words, we assume that the time
 series is *stationary* (at least in a wide
-sense).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html) For many time series this assumption is reasonable
+sense).
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html) For many time series this assumption is reasonable
 (e.g., chemical reactions should be fine, since the laws of chemistry
 don't change every day), but for many others it is not (e.g., financial
 markets are notoriously not stationary since patterns disappear as soon
@@ -934,7 +936,8 @@ matrix that was pretrained on a huge corpus:
 the Google News 7B corpus
 (seven billion words long!). Then it computes the mean of all the word
 embeddings, and the result is the sentence
-embedding.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html) We can then add two simple `Dense` layers to create a
+embedding.
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html) We can then add two simple `Dense` layers to create a
 good sentiment analysis model. By default, a `hub.KerasLayer` is not
 trainable, but you can set `trainable=True` when creating it to change
 that so that you can fine-tune it for your task.
@@ -1064,7 +1067,8 @@ handle if you implement this model:
     approximation of the loss based only on these logits.
     This *sampled softmax* technique was
     [introduced in 2015 by Sébastien Jean et
-    al.](https://homl.info/104).^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    al.](https://homl.info/104).
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     In TensorFlow you can use the `tf.nn.sampled_softmax_loss()`
     function for this during training and use the normal softmax
     function at inference time (sampled softmax cannot be used at
@@ -1260,7 +1264,7 @@ problem.
 Attention Mechanisms
 ====================
 
-Consider []{#NLPatten16} the path from the word
+Consider the path from the word
 "milk" to its translation "lait" in
 [Figure 16-3]
 it is quite long! This means that a representation of this word (along
@@ -1278,7 +1282,8 @@ much shorter, so the short-term memory limitations of RNNs have much
 less impact. Attention mechanisms revolutionized neural machine
 translation (and NLP in general), allowing a significant improvement in
 the state of the art, especially for long sentences (over 30
-words).^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+words).
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 
 [Figure 16-6]
 shows this model's architecture (slightly simplified, as we will see).

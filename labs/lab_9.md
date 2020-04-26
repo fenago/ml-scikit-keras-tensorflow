@@ -74,7 +74,7 @@ detection.
 Clustering
 ==========
 
-As []{#ULcluster09} you enjoy a hike in the
+As you enjoy a hike in the
 mountains, you stumble upon a plant you have never seen before. You look
 around and you notice a few more. They are not identical, yet they are
 sufficiently similar for you to know that they most likely belong to the
@@ -192,7 +192,7 @@ anomaly detection.
 K-Means
 -------
 
-Consider []{#CAkmean09} the
+Consider the
 unlabeled dataset represented in
 [Figure 9-2]
 you can clearly see five blobs of instances. The K-Means algorithm is a
@@ -200,7 +200,8 @@ simple algorithm capable of clustering this kind of dataset very quickly
 and efficiently, often in just a few iterations. It was proposed by
 Stuart Lloyd at Bell Labs in 1957 as a technique for pulse-code
 modulation, but it was only published outside of the company [in
-1982](https://homl.info/36).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) In 1965, Edward W. Forgy had published virtually the
+1982](https://homl.info/36).
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) In 1965, Edward W. Forgy had published virtually the
 same algorithm, so K-Means 
 is sometimes referred to as Lloyd--Forgy.
 
@@ -313,7 +314,8 @@ their locations as centroids). Then label the instances, update the
 centroids, label the instances, update the centroids, and so on until
 the centroids stop moving. The algorithm is guaranteed to converge in a
 finite number of steps (usually quite small); it will not oscillate
-forever.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
+forever.
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
 .totri-footnote}^
 
 You can see the algorithm in action in
@@ -406,7 +408,8 @@ a predictor's `score()` method must always respect Scikit-Learn's
 An important improvement to the K-Means algorithm,
 *K-Means++*, was proposed in a [2006 paper](https://homl.info/37) by
 David Arthur and Sergei
-Vassilvitskii.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) They introduced a smarter initialization step that
+Vassilvitskii.
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) They introduced a smarter initialization step that
 tends to select centroids that are distant from one another, and this
 improvement makes the K-Means algorithm much less likely to converge to
 a suboptimal solution. They showed that the additional computation
@@ -441,7 +444,8 @@ hyperparameter to `"random"`. You will rarely need to do this.
 Another 
 important improvement to the K-Means algorithm was proposed in a [2003
 paper](https://homl.info/38) by Charles
-Elkan.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) It considerably accelerates the algorithm by avoiding
+Elkan.
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) It considerably accelerates the algorithm by avoiding
 many unnecessary distance calculations. Elkan achieved this by
 exploiting the triangle inequality (i.e., that a straight line is always
 the shortest distance between two
@@ -454,7 +458,8 @@ although you probably will never need to).
 
 Yet another important variant of the K-Means algorithm was proposed in a
 [2010 paper](https://homl.info/39) by David
-Sculley.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) Instead of using the full dataset at each iteration,
+Sculley.
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html) Instead of using the full dataset at each iteration,
 the algorithm is capable of using mini-batches, moving the centroids
 just slightly at each iteration. This speeds up the algorithm typically
 by a factor of three or four and makes it possible to cluster huge
@@ -1233,7 +1238,7 @@ Gaussian Mixtures
 =================
 
 A *Gaussian mixture model* (GMM)
-is []{#ULgaussian09} a probabilistic model that
+is a probabilistic model that
 assumes that the instances were generated from a mixture of several
 Gaussian distributions whose parameters are unknown. All the instances
 generated from a single Gaussian distribution form a cluster that
@@ -1253,7 +1258,8 @@ process:
 -   For each instance, a cluster is picked randomly from among *k*
     clusters. The probability of choosing the *j*^th^ cluster is defined
     by the cluster's weight,
-    *ϕ*^(*j*)^.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
+    *ϕ*^(*j*)^.
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
     .totri-footnote}^ The index of the cluster chosen for the *i*^th^
     instance is noted *z*^(*i*)^.
 
