@@ -6,7 +6,7 @@
 ==================================================================================
 
 Up until now,
-we've[]{#idm45728465491208}[]{#idm45728465490184}[]{#idm45728465489240}
+we've []{}
 used only TensorFlow's high-level API, tf.keras, but it already got us
 pretty far: we built various neural network architectures, including
 regression and classification nets, Wide & Deep nets, and
@@ -30,7 +30,7 @@ feature. But first, let's take a quick tour of TensorFlow.
 
 ###### Note
 
-TensorFlow 2.0 (beta) was[]{#idm45728465484472} released in June 2019,
+TensorFlow 2.0 (beta) was released in June 2019,
 making TensorFlow much easier to use. The first edition of this course
 used TF 1, while this edition uses TF 2.
 
@@ -40,7 +40,7 @@ used TF 1, while this edition uses TF 2.
 A Quick Tour of TensorFlow
 ==========================
 
-As[]{#idm45728465481336} you know, TensorFlow is a powerful library for
+As you know, TensorFlow is a powerful library for
 numerical computation, particularly well suited and fine-tuned for
 large-scale Machine Learning (but you could use it for anything else
 that requires heavy computations). It was developed by the Google Brain
@@ -54,15 +54,15 @@ processing, recommender systems, and time series forecasting.
 
 So what does TensorFlow offer? Here's a summary:
 
--   Its[]{#idm45728465477784} core is very similar to NumPy, but with
+-   Its core is very similar to NumPy, but with
     GPU support.
 
 -   It supports distributed computing (across multiple devices and
     servers).
 
--   It[]{#idm45728465474888} includes a kind of just-in-time (JIT)
+-   It includes a kind of just-in-time (JIT)
     compiler that allows it to optimize computations for speed and
-    memory usage. It[]{#idm45728465473880} works by extracting the
+    memory usage. It works by extracting the
     *computation graph* from a Python function, then optimizing it
     (e.g., by pruning unused nodes), and finally running it efficiently
     (e.g., by automatically running independent operations in parallel).
@@ -83,7 +83,7 @@ So what does TensorFlow offer? Here's a summary:
 
 TensorFlow offers many more features built on top of these core
 features: the most important is of course
-`tf.keras`,^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465466760){#idm45728465466760-marker
+`tf.keras`,^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
 .totri-footnote}^ but it also has data loading and preprocessing ops
 (`tf.data`, `tf.io`, etc.), image processing ops (`tf.image`), signal
 processing ops (`tf.signal`), and more (see
@@ -103,20 +103,20 @@ well documented.
 
 At the lowest level, each TensorFlow operation (*op* for short) is
 implemented using highly efficient C++
-code.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465458200){#idm45728465458200-marker
-.totri-footnote}^ Many operations have[]{#idm45728465457320} multiple
+code.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
+.totri-footnote}^ Many operations have multiple
 implementations called *kernels*: each kernel is dedicated to a specific
-device type, such as CPUs, GPUs, or even[]{#idm45728465456104} TPUs
+device type, such as CPUs, GPUs, or even TPUs
 (*tensor processing units*). As you may know, GPUs can dramatically
 speed up computations by splitting them into many smaller chunks and
 running them in parallel across many GPU threads. TPUs are even faster:
 they are custom ASIC chips built specifically for Deep Learning
-operations^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465454520){#idm45728465454520-marker
+operations^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
 .totri-footnote}^ (we will discuss how to use TensorFlow with GPUs or
 TPUs in
 [Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
 
-TensorFlow's architecture[]{#idm45728465451480} is shown in
+TensorFlow's architecture is shown in
 [Figure 12-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_architecture_diagram).
 Most of the time your code will use the high-level APIs (especially
 tf.keras and tf.data); but when you need more flexibility, you will use
@@ -127,7 +127,7 @@ even across multiple devices and machines if you tell it to.
 
 ![](./images/mls2_1202.png)
 
-TensorFlow[]{#idm45728465446232}[]{#idm45728465445496}[]{#idm45728465444824}
+TensorFlow []{}
 runs not only on Windows, Linux, and macOS, but also on mobile devices
 (using *TensorFlow Lite*), including both iOS and Android (see
 [Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
@@ -136,7 +136,7 @@ Swift APIs. There is even a JavaScript implementation called
 *TensorFlow.js* that makes it possible to run your models directly in
 your browser.
 
-There's[]{#idm45728465441400} more to TensorFlow than the library.
+There's more to TensorFlow than the library.
 TensorFlow is at the center of an extensive ecosystem of libraries.
 First, there's TensorBoard for visualization (see
 [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)).
@@ -145,7 +145,7 @@ which is a set of libraries built by Google to productionize TensorFlow
 projects: it includes tools for data validation, preprocessing, model
 analysis, and serving (with TF Serving; see
 [Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).
-Google's[]{#idm45728465437624} *TensorFlow Hub* provides a way to easily
+Google's *TensorFlow Hub* provides a way to easily
 download and reuse pretrained neural networks. You can also get many
 neural network architectures, some of them pretrained, in TensorFlow's
 [model garden](https://github.com/tensorflow/models/). Check out the
@@ -158,13 +158,13 @@ whatever you are trying to do.
 
 ###### Tip
 
-More[]{#idm45728465432440} and more ML papers are released along with
+More and more ML papers are released along with
 their implementations, and sometimes even with pretrained models. Check
 out [*https://paperswithcode.com/*](https://paperswithcode.com/) to
 easily find them.
 
 
-Last[]{#idm45728465429080}[]{#idm45728465428072} but not least,
+Last but not least,
 TensorFlow has a dedicated team of passionate and helpful developers, as
 well as a large community contributing to improving it. To ask technical
 questions, you should use
@@ -181,7 +181,7 @@ OK, it's time to start coding!
 Using TensorFlow like NumPy
 ===========================
 
-TensorFlow's API[]{#NPtensor12} revolves[]{#idm45728465419816} around
+TensorFlow's API []{#NPtensor12} revolves around
 *tensors*, which flow from operation to operation---hence the name
 Tensor*Flow*. A tensor is very similar to a NumPy `ndarray`: it is
 usually a multidimensional array, but it can also hold a scalar (a
@@ -194,7 +194,7 @@ so let's see how to create and manipulate them.
 Tensors and Operations
 ----------------------
 
-You[]{#idm45728465415224} can create a tensor with `tf.constant()`. For
+You can create a tensor with `tf.constant()`. For
 example, here is a tensor representing a matrix with two rows and three
 columns of floats:
 
@@ -280,14 +280,14 @@ every time you call this operation. The same is true of
 Many functions and classes have aliases. For example, `tf.add()` and
 `tf.math.add()` are the same function. This allows TensorFlow to have
 concise names for the most common
-operations^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465167720){#idm45728465167720-marker
+operations^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
 .totri-footnote}^ while preserving well-organized packages.
 
 
 
 ##### Keras' Low-Level API
 
-The[]{#idm45728465163864} Keras API has its own low-level API, located
+The Keras API has its own low-level API, located
 in `keras.backend`. It includes functions like `square()`, `exp()`, and
 `sqrt()`. In tf.keras, these functions generally just call the
 corresponding TensorFlow operations. If you want to write code that will
@@ -314,7 +314,7 @@ array([[11., 26.],
 Tensors and NumPy
 -----------------
 
-Tensors[]{#idm45728465110008} play nice with NumPy: you can create a
+Tensors play nice with NumPy: you can create a
 tensor from a NumPy array, and vice versa. You can even apply TensorFlow
 operations to NumPy arrays and NumPy operations to tensors:
 
@@ -348,7 +348,7 @@ when you create a tensor from a NumPy array, make sure to set
 Type Conversions
 ----------------
 
-Type conversions[]{#idm45728465029976}[]{#idm45728465029000} can
+Type conversions can
 significantly hurt performance, and they can easily go unnoticed when
 they are done automatically. To avoid this, TensorFlow does not perform
 any type conversions automatically: it just raises an exception if you
@@ -379,7 +379,7 @@ convert types:
 Variables
 ---------
 
-The `tf.Tensor` values[]{#idm45728464888920}[]{#idm45728464888184} we've
+The `tf.Tensor` values we've
 seen so far are immutable: you cannot modify them. This means that we
 cannot use regular tensors to implement weights in a neural network,
 since they need to be tweaked by backpropagation. Plus, other parameters
@@ -427,7 +427,7 @@ variables manually.
 Other Data Structures
 ---------------------
 
-TensorFlow[]{#idm45728464756440} supports several other data structures,
+TensorFlow supports several other data structures,
 including the following (please see the "Tensors and Operations" section
 in the notebook or
 [Appendix F](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html#structures_appendix)
@@ -435,25 +435,25 @@ for more details):
 
 Sparse tensors (`tf.SparseTensor`)
 
-:   Efficiently[]{#idm45728464752040} represent tensors containing
+:   Efficiently represent tensors containing
     mostly zeros. The `tf.sparse` package contains operations for sparse
     tensors.
 
 Tensor arrays (`tf.TensorArray`)
 
-:   Are[]{#idm45728464749032} lists of tensors. They have a fixed size
+:   Are lists of tensors. They have a fixed size
     by default but can optionally be made dynamic. All tensors they
     contain must have the same shape and data type.
 
 Ragged tensors (`tf.RaggedTensor`)
 
-:   Represent[]{#idm45728464746264} static lists of lists of tensors,
+:   Represent static lists of lists of tensors,
     where every tensor has the same shape and data type. The `tf.ragged`
     package contains operations for ragged tensors.
 
 String tensors
 
-:   Are[]{#idm45728464743592} regular tensors of type `tf.string`. These
+:   Are regular tensors of type `tf.string`. These
     represent byte strings, not Unicode strings, so if you create a
     string tensor using a Unicode string (e.g., a regular Python 3
     string like `"café"`), then it will get encoded to UTF-8
@@ -470,7 +470,7 @@ String tensors
 
 Sets
 
-:   Are[]{#idm45728464737208} represented as regular tensors (or sparse
+:   Are represented as regular tensors (or sparse
     tensors). For example, `tf.constant([[1, 2], [3, 4]])` represents
     the two sets {1, 2} and {3, 4}. More generally, each set is
     represented by a vector in the tensor's last axis. You can
@@ -480,7 +480,7 @@ Queues
 
 :   Store tensors across multiple steps. TensorFlow offers various kinds
     of queues: simple First In, First Out (FIFO) queues (FIFOQueue),
-    queues that can[]{#idm45728464733576}[]{#idm45728464732872}
+    queues that can []{}
     prioritize some items (`PriorityQueue`), shuffle their items
     (`RandomShuffleQueue`), and batch items of different shapes by
     padding (`PaddingFIFOQueue`). These classes are all in the
@@ -488,7 +488,7 @@ Queues
 
 With tensors, operations, variables, and various data structures at your
 disposal, you are now ready to customize your models and training
-algorithms![]{#idm45728464729992}
+algorithms! []{}
 
 
 
@@ -497,7 +497,7 @@ algorithms![]{#idm45728464729992}
 Customizing Models and Training Algorithms
 ==========================================
 
-Let's[]{#Mtensor12} start by creating a custom loss function, which is a
+Let's []{#Mtensor12} start by creating a custom loss function, which is a
 simple and common use case.
 
 
@@ -505,18 +505,18 @@ simple and common use case.
 Custom Loss Functions
 ---------------------
 
-Suppose[]{#idm45728464723768}[]{#idm45728464722760} you want to train a
+Suppose you want to train a
 regression model, but your training set is a bit noisy. Of course, you
 start by trying to clean up your dataset by removing or fixing the
 outliers, but that turns out to be insufficient; the dataset is still
-noisy. Which loss function should you use? The[]{#idm45728464721432}
+noisy. Which loss function should you use? The []{}
 mean squared error might penalize large errors too much and cause your
 model to be imprecise. The mean absolute error would not penalize
 outliers as much, but training might take a while to converge, and the
 trained model might not be very precise. This is probably a good time to
 use the Huber loss (introduced in
 [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab))
-instead of the good old MSE. The[]{#idm45728464719224} Huber loss is not
+instead of the good old MSE. The Huber loss is not
 currently part of the official Keras API, but it is available in
 tf.keras (just use an instance of the `keras.losses.Huber` class). But
 let's pretend it's not there: implementing it is easy as pie! Just
@@ -566,7 +566,7 @@ But what happens to this custom loss when you save the model?
 Saving and Loading Models That Contain Custom Components
 --------------------------------------------------------
 
-Saving[]{#idm45728464539864}[]{#idm45728464538856} a model containing a
+Saving a model containing a
 custom loss function works fine, as Keras saves the name of the
 function. Whenever you load it, you'll need to provide a dictionary that
 maps the function name to the actual function. More generally, when you
@@ -649,7 +649,7 @@ Let's walk through this code:
     of the instance losses, weighted by the sample weights, if any, and
     divided by the batch size (not by the sum of weights, so this is
     *not* the weighted
-    mean).^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728464152024){#idm45728464152024-marker
+    mean).^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
     .totri-footnote}^ Other possible values are `"sum"` and `"none"`.
 
 -   The `call()` method takes the labels and predictions, computes all
@@ -693,7 +693,7 @@ constraints. Let's look at these now.
 Custom Activation Functions, Initializers, Regularizers, and Constraints
 ------------------------------------------------------------------------
 
-Most[]{#idm45728464074696}[]{#idm45728464124200} Keras functionalities,
+Most Keras functionalities,
 such as losses, regularizers, constraints, initializers, metrics,
 activation functions, layers, and even full models, can be customized in
 very much the same way. Most of the time, you will just need to write a
@@ -770,19 +770,19 @@ a bit different, as we will see now.
 Custom Metrics
 --------------
 
-Losses[]{#idm45728463758104}[]{#idm45728463757096} and metrics are
+Losses and metrics are
 conceptually not the same thing: losses (e.g., cross entropy) are used
 by Gradient Descent to *train* a model, so they must be differentiable
 (at least where they are evaluated), and their gradients should not be 0
 everywhere. Plus, it's OK if they are not easily interpretable by
-humans. In contrast, []{#idm45728463755320}metrics (e.g., accuracy) are
+humans. In contrast,  []{}metrics (e.g., accuracy) are
 used to *evaluate* a model: they must be more easily interpretable, and
 they can be non-differentiable or have 0 gradients everywhere.
 
 That said, in most cases, defining a custom metric function is exactly
 the same as defining a custom loss function. In fact, we could even use
 the Huber loss function we created earlier as a
-metric;^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463753080){#idm45728463753080-marker
+metric;^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
 .totri-footnote}^ it would work just fine (and persistence would also
 work the same way, in this case only saving the name of the function,
 `"huber_fn"`):
@@ -826,7 +826,7 @@ weights). We used the same number of true and false positives as in the
 example we just discussed. After the first batch, it returns a precision
 of 80%; then after the second batch, it returns 50% (which is the
 overall precision so far, not the second batch's precision).
-This[]{#idm45728463677032}[]{#idm45728463607944} is called a *streaming
+This is called a *streaming
 metric* (or *stateful metric*), as it is gradually updated, batch after
 batch.
 
@@ -870,7 +870,7 @@ class HuberMetric(keras.metrics.Metric):
 ```
 
 Let's walk through this
-code:^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463579624){#idm45728463579624-marker
+code:^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
 .totri-footnote}^
 
 -   The constructor uses the `add_weight()` method to create the
@@ -921,7 +921,7 @@ seem like a walk in the park!
 Custom Layers
 -------------
 
-You[]{#idm45728463292168}[]{#idm45728463291160} may occasionally want to
+You may occasionally want to
 build an architecture that contains an exotic layer for which TensorFlow
 does not provide a default implementation. In this case, you will need
 to create a custom layer. Or you may simply want to build a very
@@ -993,7 +993,7 @@ Let's walk through this code:
     to the appropriate activation function using the
     `keras.activations.get()` function (it accepts functions, standard
     strings like `"relu"` or `"selu"`, or simply
-    `None`).^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463111208){#idm45728463111208-marker
+    `None`).^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
     .totri-footnote}^
 
 -   The `build()` method's role is to create the layer's variables by
@@ -1001,7 +1001,7 @@ Let's walk through this code:
     method is called the first time the layer is used. At that point,
     Keras will know the shape of this layer's inputs, and it will pass
     it to the `build()`
-    method,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463107576){#idm45728463107576-marker
+    method,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
     .totri-footnote}^ which is often necessary to create some of the
     weights. For example, we need to know the number of neurons in the
     previous layer in order to create the connection weights matrix
@@ -1097,11 +1097,11 @@ custom models.
 Custom Models
 -------------
 
-We[]{#idm45728462948408}[]{#idm45728462947512} already looked at
+We already looked at
 creating custom model classes in
 [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab),
 when we discussed the Subclassing
-API.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462945544){#idm45728462945544-marker}^
+API.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
 It's straightforward: subclass the `keras.Model` class, create layers
 and variables in the constructor, and implement the `call()` method to
 do whatever you want the model to do. Suppose you want to build the
@@ -1110,7 +1110,7 @@ model represented in
 
 ![](./images/mls2_1203.png)
 
-The[]{#idm45728462940296} inputs go through a first dense layer, then
+The inputs go through a first dense layer, then
 through a *residual block* composed of two dense layers and an addition
 operation (as we will see in
 [Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
@@ -1206,7 +1206,7 @@ custom training loop.
 Losses and Metrics Based on Model Internals
 -------------------------------------------
 
-The[]{#idm45728462250456}[]{#idm45728462249448} custom losses and
+The custom losses and
 metrics we defined earlier were all based on the labels and the
 predictions (and optionally sample weights). There will be times when
 you want to define losses based on other parts of your model, such as
@@ -1219,7 +1219,7 @@ any part of the model you want, then pass the result to the `add_loss()`
 method.For example, let's build a custom regression MLP model composed
 of a stack of five hidden layers plus an output layer. This custom model
 will also have an auxiliary output on top of the upper hidden layer.
-The[]{#idm45728462246840} loss associated to this auxiliary output will
+The loss associated to this auxiliary output will
 be called the *reconstruction loss* (see
 [Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab)):
 it is the mean squared difference between the reconstruction and the
@@ -1271,7 +1271,7 @@ Let's go through this code:
 -   Then the `call()` method computes the reconstruction loss (the mean
     squared difference between the reconstruction and the inputs), and
     adds it to the model's list of losses using the `add_loss()`
-    method.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462009848){#idm45728462009848-marker}^
+    method.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
     Notice that we scale down the reconstruction loss by multiplying it
     by 0.05 (this is a hyperparameter you can tune). This ensures that
     the reconstruction loss does not dominate the main loss.
@@ -1309,7 +1309,7 @@ we need to look at how to compute gradients automatically in TensorFlow.
 Computing Gradients Using Autodiff
 ----------------------------------
 
-To[]{#idm45728462000600}[]{#idm45728461999624}[]{#idm45728461998648}
+To []{}
 understand how to use autodiff (see
 [Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab)
 and
@@ -1399,7 +1399,7 @@ dz_dw2 = tape.gradient(z, w2) # RuntimeError!
 
 If you need to call `gradient()` more than once, you must make the tape
 persistent and delete it each time you are done with it to free
-resources:^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728461650984){#idm45728461650984-marker}^
+resources:^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 with tf.GradientTape(persistent=True) as tape:
@@ -1526,7 +1526,7 @@ even if you build your own custom training loops, as we will see now.
 Custom Training Loops
 ---------------------
 
-In[]{#idm45728461183496}[]{#idm45728461182488} some rare cases, the
+In some rare cases, the
 `fit()` method may not be flexible enough for what you need to do. For
 example, the [Wide & Deep paper](https://homl.info/widedeep) we
 discussed in
@@ -1658,7 +1658,7 @@ There's a lot going on in this code, so let's walk through it:
 
 -   At the end of each epoch, we display the status bar again to make it
     look
-    complete^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728460588856){#idm45728460588856-marker}^
+    complete^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
     and to print a line feed, and we reset the states of the mean loss
     and the metrics.
 
@@ -1689,12 +1689,12 @@ and it's easy to make a mistake. But on the bright side, you get full
 control, so it's your call.
 
 Now that you know how to customize any part of your
-models^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728460558120){#idm45728460558120-marker}^
+models^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
 and training algorithms, let's see how you can use TensorFlow's
 automatic graph generation feature: it can speed up your custom code
 considerably, and it will also make it portable to any platform
 supported by TensorFlow (see
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)).[]{#idm45728460556344}
+[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)). []{}
 
 
 
@@ -1703,7 +1703,7 @@ supported by TensorFlow (see
 TensorFlow Functions and Graphs
 ===============================
 
-In[]{#idm45728460553928} TensorFlow 1, graphs were unavoidable (as were
+In TensorFlow 1, graphs were unavoidable (as were
 the complexities that came with them) because they were a central part
 of TensorFlow's API. In TensorFlow 2, they are still there, but not as
 central, and they're much (much!) simpler to use. To show just how
@@ -1771,7 +1771,7 @@ executes the operations in the graph, in the appropriate order (and in
 parallel when it can). As a result, a TF Function will usually run much
 faster than the original Python function, especially if it performs
 complex
-computations.^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728460360984){#idm45728460360984-marker}^
+computations.^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
 Most of the time you will not really need to know more than that: when
 you want to boost a Python function, just transform it into a TF
 Function. That's all!
@@ -1821,7 +1821,7 @@ model.
 AutoGraph and Tracing
 ---------------------
 
-So how[]{#idm45728460298440}[]{#idm45728460296696} does TensorFlow
+So how does TensorFlow
 generate graphs? It starts by analyzing the Python function's source
 code to capture all the control flow statements, such as `for` loops,
 `while` loops, and `if` statements, as well as `break`, `continue`, and
@@ -1846,15 +1846,15 @@ graph.
 
 ![](./images/mls2_1204.png)
 
-Next, TensorFlow[]{#idm45728460265272} calls this "upgraded" function,
+Next, TensorFlow calls this "upgraded" function,
 but instead of passing the argument, it passes a *symbolic tensor*---a
 tensor without any actual value, only a name, a data type, and a shape.
 For example, if you call `sum_squares(tf.constant(10))`, then the
 `tf__sum_squares()` function will be called with a symbolic tensor of
-type int32 and shape \[\]. The function will[]{#idm45728460262584} run
+type int32 and shape \[\]. The function will run
 in *graph mode*, meaning that each TensorFlow operation will add a node
 in the graph to represent itself and its output tensor(s) (as opposed to
-the regular mode, called[]{#idm45728460261160} *eager execution*, or
+the regular mode, called *eager execution*, or
 *eager mode*). In graph mode, TF operations do not perform any
 computations. This should feel familiar if you know TensorFlow 1, as
 graph mode was the default mode. In
@@ -1879,7 +1879,7 @@ meant to be pretty, but it can sometimes help for debugging.
 TF Function Rules
 -----------------
 
-Most[]{#idm45728460254568}[]{#idm45728460253544} of the time, converting
+Most of the time, converting
 a Python function that performs TensorFlow operations into a TF Function
 is trivial: decorate it with `@tf.function` or let Keras take care of it
 for you. However, there are a few rules to respect:
@@ -2037,72 +2037,72 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465466760-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 TensorFlow includes another Deep Learning API called the *Estimators
 API*, but the TensorFlow team recommends using `tf.keras` instead.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465458200-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 If you ever need to (but you probably won't), you can write your own
 operations using the C++ API.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465454520-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 To learn more about TPUs and how they work, check out
 [*https://homl.info/tpus*](https://homl.info/tpus).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728465167720-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 A notable exception is `tf.math.log()`, which is commonly used but
 doesn't have a `tf.log()` alias (as it might be confused with logging).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728464152024-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 It would not be a good idea to use a weighted mean: if you did, then two
 instances with the same weight but in different batches would have a
 different impact on training, depending on the total weight of each
 batch.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463753080-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 However, the Huber loss is seldom used as a metric (the MAE or MSE is
 preferred).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463579624-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 This class is for illustration purposes only. A simpler and better
 implementation would just subclass the `keras.metrics.Mean` class; see
 the "Streaming metrics" section of the notebook for an example.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463111208-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 This function is specific to tf.keras. You could use
 `keras.layers.Activation` instead.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728463107576-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker){.totri-footnote}^
 The Keras API calls this argument `input_shape`, but since it also
 includes the batch dimension, I prefer to call it `batch_input_shape`.
 Same for `compute_output_shape()`.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462945544-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)^
 The name "Subclassing API" usually refers only to the creation of custom
 models by subclassing, although many other things can be created by
 subclassing, as we saw in this lab.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728462009848-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)^
 You can also call `add_loss()` on any layer inside the model, as the
 model recursively gathers losses from all of its layers.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728461650984-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)^
 If the tape goes out of scope, for example when the function that used
 it returns, Python's garbage collector will delete it for you.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728460588856-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)^
 The truth is we did not process every single instance in the training
 set, because we sampled instances randomly: some were processed more
 than once, while others were not processed at all. Likewise, if the
 training set size is not a multiple of the batch size, we will miss a
 few instances. In practice that's fine.
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728460558120-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)^
 With the exception of optimizers, as very few people ever customize
 these; see the "Custom Optimizers" section in the notebook for an
 example.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#idm45728460360984-marker)^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html-marker)^
 However, in this trivial example, the computation graph is so small that
 there is nothing at all to optimize, so `tf_cube()` actually runs much
 slower than `cube()`.

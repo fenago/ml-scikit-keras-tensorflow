@@ -5,7 +5,7 @@
 [Lab 5. ] Support Vector Machines
 ============================================
 
-A *Support Vector Machine* (SVM) is[]{#idm45728481784856} a powerful and
+A *Support Vector Machine* (SVM) is a powerful and
 versatile Machine Learning model, capable of performing linear or
 nonlinear classification, regression, and even outlier detection. It is
 one of the most popular models in Machine Learning, and anyone
@@ -21,7 +21,7 @@ and how they work.
 Linear SVM Classification
 =========================
 
-The[]{#idm45728481715704}[]{#idm45728481714664}[]{#idm45728481713976}
+The []{}
 fundamental idea behind SVMs is best explained with some pictures.
 [Figure 5-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#large_margin_classification_plot)
 shows part of the iris dataset that was introduced at the end of
@@ -39,12 +39,12 @@ not only separates the two classes but also stays as far away from the
 closest training instances as possible. You can think of an SVM
 classifier as fitting the widest possible street (represented by the
 parallel dashed lines) between the classes.
-This[]{#idm45728481710104}[]{#idm45728481709384} is called *large margin
+This is called *large margin
 classification*.
 
 ![](./images/mls2_0501.png)
 
-Notice[]{#idm45728481705608} that adding more training instances "off
+Notice that adding more training instances "off
 the street" will not affect the decision boundary at all: it is fully
 determined (or "supported") by the instances located on the edge of the
 street. These instances are called the *support vectors* (they are
@@ -60,7 +60,7 @@ SVMs are sensitive to the feature scales, as you can see in
 [Figure 5-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#sensitivity_to_feature_scales_plot):
 in the left plot, the vertical scale is much larger than the horizontal
 scale, so the widest possible street is close to horizontal.
-After[]{#idm45728481699144} feature scaling (e.g., using Scikit-Learn's
+After feature scaling (e.g., using Scikit-Learn's
 `StandardScaler`), the decision boundary in the right plot looks much
 better.
 
@@ -70,9 +70,9 @@ better.
 Soft Margin Classification
 --------------------------
 
-If[]{#idm45728481695512}[]{#idm45728481694760} we strictly impose that
+If we strictly impose that
 all instances must be off the street and on the right side,
-this[]{#idm45728481693560}[]{#idm45728481692872} is called *hard margin
+this is called *hard margin
 classification*. There are two main issues with hard margin
 classification. First, it only works if the data is linearly separable.
 Second, it is sensitive to outliers.
@@ -85,13 +85,13 @@ without the outlier, and it will probably not generalize as well.
 
 ![](./images/mls2_0503.png)
 
-To[]{#idm45728481687032} avoid these issues, use a more flexible model.
+To avoid these issues, use a more flexible model.
 The objective is to find a good balance between keeping the street as
 large as possible and limiting the *margin violations* (i.e., instances
 that end up in the middle of the street or even on the wrong side). This
 is called *soft margin classification*.
 
-When[]{#idm45728481684616} creating an SVM model using Scikit-Learn, we
+When creating an SVM model using Scikit-Learn, we
 can specify a number of hyperparameters. `C` is one of those
 hyperparameters. If we set it to a low value, then we end up with the
 model on the left of
@@ -110,7 +110,7 @@ If your SVM model is overfitting, you can try regularizing it by
 reducing `C`.
 
 
-The[]{#idm45728481677640}[]{#idm45728481676904} following Scikit-Learn
+The following Scikit-Learn
 code loads the iris dataset, scales the features, and then trains a
 linear SVM model (using the `LinearSVC` class with `C=1` and the *hinge
 loss* function, described shortly) to detect *Iris virginica* flowers:
@@ -180,7 +180,7 @@ instances (we will discuss duality later in the lab).
 Nonlinear SVM Classification
 ============================
 
-Although[]{#SVMnonlinear05}[]{#nonlinSVM05}[]{#CPnonlinear05} linear SVM
+Although []{#SVMnonlinear05} []{#nonlinSVM05} []{#CPnonlinear05} linear SVM
 classifiers are efficient and work surprisingly well in many cases, many
 datasets are not even close to being linearly separable. One approach to
 handling nonlinear datasets is to add more features, such as polynomial
@@ -227,13 +227,13 @@ polynomial_svm_clf.fit(X, y)
 Polynomial Kernel
 -----------------
 
-Adding[]{#idm45728481404824} polynomial features is simple to implement
+Adding polynomial features is simple to implement
 and can work great with all sorts of Machine Learning algorithms (not
 just SVMs). That said, at a low polynomial degree, this method cannot
 deal with very complex datasets, and with a high polynomial degree it
 creates a huge number of features, making the model too slow.
 
-Fortunately, when[]{#idm45728481403240} using SVMs you can apply an
+Fortunately, when using SVMs you can apply an
 almost miraculous mathematical technique called the *kernel trick*
 (explained in a moment). The kernel trick makes it possible to get the
 same result as if you had added many polynomial features, even with very
@@ -281,14 +281,14 @@ part of the hyperparameter space.
 Similarity Features
 -------------------
 
-Another technique[]{#idm45728481297240}[]{#idm45728481296120} to tackle
+Another technique to tackle
 nonlinear problems is to add features computed using a *similarity
 function*, which measures how much each instance resembles a particular
 *landmark*. For example, let's take the 1D dataset discussed earlier and
 add two landmarks to it at *x*~1~ = --2 and *x*~1~ = 1 (see the left
 plot in
 [Figure 5-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#kernel_method_plot)).
-Next, let's define[]{#idm45728481292136}[]{#idm45728481291464} the
+Next, let's define the
 similarity function to be the Gaussian *Radial Basis Function* (RBF)
 with *γ* = 0.3 (see [Equation
 5-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#grbf_function)).
@@ -360,7 +360,7 @@ to the `C` hyperparameter).
 ![](./images/mls2_0509.png)
 
 Other
-kernels[]{#idm45728481200616}[]{#idm45728481199880}[]{#idm45728481199240}
+kernels []{}
 exist but are used much more rarely. Some kernels are specialized for
 specific data structures. *String kernels* are sometimes used when
 classifying text documents or DNA sequences (e.g., using the *string
@@ -387,23 +387,23 @@ data structure.
 Computational Complexity
 ------------------------
 
-The `LinearSVC` class[]{#idm45728481192376} is based on the `liblinear`
+The `LinearSVC` class is based on the `liblinear`
 library, which implements an [optimized algorithm](https://homl.info/13)
 for linear
-SVMs.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728481190408){#idm45728481190408-marker
+SVMs.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ It does not support the kernel trick, but it scales
 almost linearly with the number of training instances and the number of
 features. Its training time complexity is roughly *O*(*m* × *n*).
 
-The[]{#idm45728481187368} algorithm takes longer if you require very
+The algorithm takes longer if you require very
 high precision. This is controlled by the tolerance hyperparameter *ϵ*
 (called `tol` in Scikit-Learn). In most classification tasks, the
 default tolerance is fine.
 
-The `SVC` class[]{#idm45728481184008} is based on the `libsvm` library,
+The `SVC` class is based on the `libsvm` library,
 which implements [an algorithm](https://homl.info/14) that supports the
 kernel
-trick.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728481182040){#idm45728481182040-marker
+trick.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ The training time complexity is usually between
 *O*(*m*^2^ × *n*) and *O*(*m*^3^ × *n*). Unfortunately, this means that
 it gets dreadfully slow when the number of training instances gets large
@@ -414,7 +414,7 @@ instance has few nonzero features). In this case, the algorithm scales
 roughly with the average number of nonzero features per instance.
 [Table 5-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_classification_algorithm_comparison)
 compares Scikit-Learn's SVM classification
-classes.[]{#idm45728481175032}[]{#idm45728481174024}[]{#idm45728481173080}[]{#idm45728481172136}
+classes. []{}
 
   Class             Time complexity                      Out-of-core support   Scaling required   Kernel trick
   ----------------- ------------------------------------ --------------------- ------------------ --------------
@@ -432,7 +432,7 @@ classes.[]{#idm45728481175032}[]{#idm45728481174024}[]{#idm45728481173080}[]{#id
 SVM Regression
 ==============
 
-As[]{#idm45728481127288}[]{#idm45728481126312} mentioned earlier, the
+As mentioned earlier, the
 SVM algorithm is versatile: not only does it support linear and
 nonlinear classification, but it also supports linear and nonlinear
 regression. To use SVMs for regression instead of classification, the
@@ -510,7 +510,7 @@ getting started with Machine Learning, you can safely skip it and go
 straight to the exercises at the end of this lab, and come back
 later when you want to get a deeper understanding of SVMs.
 
-First, a word[]{#idm45728481030984} about notations. In
+First, a word about notations. In
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)
 we used the convention of putting all the model parameters in one vector
 **θ**, including the bias term *θ*~0~ and the input feature weights
@@ -525,7 +525,7 @@ will be added to the input feature vectors.
 Decision Function and Predictions
 ---------------------------------
 
-The[]{#idm45728481022888} linear SVM classifier model predicts the class
+The linear SVM classifier model predicts the class
 of a new instance **x** by simply computing the decision function
 **w**^⊺^ **x** + *b* = *w*~1~ *x*~1~ + ⋯ + *w*~*n*~ *x*~*n*~ + *b*. If
 the result is positive, the predicted class *ŷ* is the positive class
@@ -548,7 +548,7 @@ it is a 2D plane because this dataset has two features (petal width and
 petal length). The decision boundary is the set of points where the
 decision function is equal to 0: it is the intersection of two planes,
 which is a straight line (represented by the thick solid
-line).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480959240){#idm45728480959240-marker
+line).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^
 
 ![](./images/mls2_0512.png)
@@ -566,7 +566,7 @@ margin) or limiting them (soft margin).
 Training Objective
 ------------------
 
-Consider[]{#idm45728480950392} the slope of the decision function: it is
+Consider the slope of the decision function: it is
 equal to the norm of the weight vector, ∥ **w** ∥. If we divide this
 slope by 2, the points where the decision function is equal to ±1 are
 going to be twice as far away from the decision boundary. In other
@@ -587,7 +587,7 @@ positive instances (if *y*^(*i*)^ = 1), then we can express this
 constraint as *t*^(*i*)^(**w**^⊺^ **x**^(*i*)^ + *b*) ≥ 1 for all
 instances.
 
-We[]{#idm45728480934840} can therefore express the hard margin linear
+We can therefore express the hard margin linear
 SVM classifier objective as the constrained optimization problem in
 [Equation
 5-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#hard_margin_objective).
@@ -611,9 +611,9 @@ differentiable at **w** = 0. Optimization algorithms work much better on
 differentiable functions.
 
 
-To get the soft margin objective, we need to[]{#idm45728480897096}
+To get the soft margin objective, we need to []{}
 introduce a *slack variable* *ζ*^(*i*)^ ≥ 0 for each
-instance:^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480894344){#idm45728480894344-marker
+instance:^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ *ζ*^(*i*)^ measures how much the *i*^th^ instance is
 allowed to violate the margin. We now have two conflicting objectives:
 make the slack variables as small as possible to reduce the margin
@@ -640,11 +640,11 @@ Quadratic Programming
 
 The hard margin and soft margin problems are both convex quadratic
 optimization problems with linear constraints.
-Such[]{#idm45728480843656} problems are known as *Quadratic Programming*
+Such problems are known as *Quadratic Programming*
 (QP) problems. Many off-the-shelf solvers are available to solve QP
 problems by using a variety of techniques that are outside the scope of
 this
-course.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480842232){#idm45728480842232-marker
+course.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^
 
 The general problem formulation is given by [Equation
@@ -706,14 +706,14 @@ optimization problem.
 The Dual Problem
 ----------------
 
-Given[]{#idm45728480711368}[]{#idm45728480710392}[]{#idm45728480709720}
+Given []{}
 a constrained optimization problem, known as the *primal problem*, it is
 possible to express a different but closely related problem, called its
 *dual problem*. The [solution] to the dual problem
 typically gives a lower bound to the solution of the primal problem, but
 under some conditions it can have the same solution as the primal
 problem. Luckily, the SVM problem happens to meet these
-conditions,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480707160){#idm45728480707160-marker
+conditions,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ so you can choose to solve the primal problem or the
 dual problem; both will have the same solution. [Equation
 5-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_dual_form)
@@ -756,7 +756,7 @@ primal does not. So what is this kernel trick, anyway?
 Kernelized SVMs
 ---------------
 
-Suppose[]{#idm45728480611848}[]{#idm45728480610824} you want to apply a
+Suppose you want to apply a
 second-degree polynomial transformation to a two-dimensional training
 set (such as the moons training set), then train a linear SVM classifier
 on the transformed training set. [Equation
@@ -780,7 +780,7 @@ x_{2} \\
 Notice that the transformed vector is 3D instead of 2D. Now let's look
 at what happens to a couple of 2D vectors, **a** and **b**, if we apply
 this second-degree polynomial mapping and then compute the dot
-product^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480581784){#idm45728480581784-marker
+product^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ of the transformed vectors (See [Equation
 5-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#kernel_trick_for_second_degree_polynomial_mapping)).
 
@@ -829,7 +829,7 @@ algorithm, but this trick makes the whole process much more
 computationally efficient.
 
 The function *K*(**a**, **b**) = (**a**^⊺^ **b**)^2^ is
-a[]{#idm45728480481944}[]{#idm45728480481208} second-degree polynomial
+a second-degree polynomial
 kernel. In Machine Learning, a *kernel* is a function capable of
 computing the dot product *ϕ*(**a**)^⊺^ *ϕ*(**b**), based only on the
 original vectors **a** and **b**, without having to compute (or even to
@@ -851,7 +851,7 @@ $$\begin{aligned}
 
 ##### Mercer's Theorem
 
-According[]{#idm45728480419416}[]{#idm45728480417960} to *Mercer's
+According to *Mercer's
 theorem*, if a function *K*(**a**, **b**) respects a few mathematical
 conditions called *Mercer's conditions* (e.g., *K* must be continuous
 and symmetric in its arguments so that *K*(**a**, **b**) = *K*(**b**,
@@ -863,7 +863,7 @@ In the case of the Gaussian RBF kernel, it can be shown that *ϕ* maps
 each training instance to an infinite-dimensional space, so it's a good
 thing you don't need to actually perform the mapping!
 
-Note[]{#idm45728480418472} that some frequently used kernels (such as
+Note that some frequently used kernels (such as
 the sigmoid kernel) don't respect all of Mercer's conditions, yet they
 generally work well in practice.
 
@@ -919,7 +919,7 @@ unfortunate side effect of the kernel trick.
 Online SVMs
 -----------
 
-Before[]{#idm45728480202904}[]{#idm45728480201928} concluding this
+Before concluding this
 lab, let's take a quick look at online SVM classifiers (recall that
 online learning means learning incrementally, typically as new instances
 arrive).
@@ -948,13 +948,13 @@ violations as small and as few as possible.
 
 ##### Hinge Loss
 
-The[]{#idm45728480167192}[]{#idm45728480166072} function *max*(0, 1 --
+The function *max*(0, 1 --
 *t*) is called the *hinge loss* function (see the following image). It
 is equal to 0 when *t* ≥ 1. Its derivative (slope) is equal to --1 if
 *t* \< 1 and 0 if *t* \> 1. It is not differentiable at *t* = 1, but
 just like for Lasso Regression (see ["Lasso
 Regression"](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#lasso_regression)),
-you can still use Gradient Descent using[]{#idm45728480160968} any
+you can still use Gradient Descent using any
 *subderivative* at *t* = 1 (i.e., any value between --1 and 0).
 
 ![](./images/mls2_0514.png)
@@ -962,9 +962,9 @@ you can still use Gradient Descent using[]{#idm45728480160968} any
 
 It is also possible to implement online kernelized SVMs, as described in
 the papers ["Incremental and Decremental Support Vector Machine
-Learning"](https://homl.info/17)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480156312){#idm45728480156312-marker
+Learning"](https://homl.info/17)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ and ["Fast Kernel Classifiers with Online and Active
-Learning"](https://homl.info/18).^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480154232){#idm45728480154232-marker
+Learning"](https://homl.info/18).^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
 .totri-footnote}^ These kernelized SVMs are implemented in Matlab and
 C++. For large-scale nonlinear problems, you may want to consider using
 neural networks instead (see
@@ -1015,37 +1015,37 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728481190408-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 Chih-Jen Lin et al., "A Dual Coordinate Descent Method for Large-Scale
 Linear SVM," *Proceedings of the 25th International Conference on
 Machine Learning* (2008): 408--415.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728481182040-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 John Platt, "Sequential Minimal Optimization: A Fast Algorithm for
 Training Support Vector Machines" (Microsoft Research technical report,
 April 21, 1998),
 [*https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf*](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480959240-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 More generally, when there are *n* features, the decision function is an
-*n*-dimensional *hyperplane*, and[]{#idm45728480957096} the decision
+*n*-dimensional *hyperplane*, and the decision
 boundary is an (*n* -- 1)-dimensional hyperplane.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480894344-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 Zeta (*ζ*) is the sixth letter of the Greek alphabet.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480842232-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 To learn more about Quadratic Programming, you can start by reading
 Stephen Boyd and Lieven Vandenberghe's course [*Convex
 Optimization*](https://homl.info/15) (Cambridge University Press, 2004)
 or watch Richard Brown's [series of video
 lectures](https://homl.info/16).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480707160-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 The objective function is convex, and the inequality constraints are
 continuously differentiable and convex functions.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480581784-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 As explained in
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab),
 the dot product of two vectors **a** and **b** is normally noted **a** ·
@@ -1055,11 +1055,11 @@ achieved by computing **a**^⊺^**b**. To remain consistent with the rest
 of the course, we will use this notation here, ignoring the fact that this
 technically results in a single-cell matrix rather than a scalar value.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480156312-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 Gert Cauwenberghs and Tomaso Poggio, "Incremental and Decremental
 Support Vector Machine Learning," *Proceedings of the 13th International
 Conference on Neural Information Processing Systems* (2000): 388--394.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#idm45728480154232-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html-marker){.totri-footnote}^
 Antoine Bordes et al., "Fast Kernel Classifiers with Online and Active
 Learning," *Journal of Machine Learning Research* 6 (2005): 1579--1619.

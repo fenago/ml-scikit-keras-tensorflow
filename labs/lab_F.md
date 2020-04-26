@@ -2,7 +2,7 @@
 [Appendix F. ] Special Data Structures
 =============================================
 
-In[]{#TFspecial25} this appendix we will take a very quick look at the
+In []{#TFspecial25} this appendix we will take a very quick look at the
 data structures supported by TensorFlow, beyond regular float or integer
 tensors. This includes strings, ragged tensors, sparse tensors, tensor
 arrays, sets, and queues.
@@ -12,7 +12,7 @@ arrays, sets, and queues.
 Strings
 =======
 
-Tensors[]{#idm45728430599960} can hold byte strings, which is useful in
+Tensors can hold byte strings, which is useful in
 particular for natural language processing (see
 [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab)):
 
@@ -32,7 +32,7 @@ automatically encodes it to UTF-8:
 It is also possible to create tensors representing Unicode strings. Just
 create an array of 32-bit integers, each representing a single Unicode
 code
-point:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html#idm45728430541496){#idm45728430541496-marker
+point:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -93,7 +93,7 @@ that?
 Ragged Tensors
 ==============
 
-A[]{#idm45728430403176} ragged tensor is a special kind of tensor that
+A ragged tensor is a special kind of tensor that
 represents a list of arrays of different sizes. More generally, it is a
 tensor with one or more *ragged dimensions*, meaning dimensions whose
 slices may have different lengths. In the ragged tensor `r`, the second
@@ -159,7 +159,7 @@ documentation of the `tf.RaggedTensor` class.
 Sparse Tensors
 ==============
 
-TensorFlow[]{#idm45728430166568} can also efficiently represent *sparse
+TensorFlow can also efficiently represent *sparse
 tensors* (i.e., tensors containing mostly zeros). Just create a
 `tf.SparseTensor`, specifying the indices and values of the nonzero
 elements and the tensor's shape. The indices must be listed in "reading
@@ -196,7 +196,7 @@ value to a sparse tensor, as this would not return a sparse tensor:
 Tensor Arrays
 =============
 
-A `tf.TensorArray` represents[]{#idm45728430043272} a list of tensors.
+A `tf.TensorArray` represents a list of tensors.
 This can be handy in dynamic models containing loops, to accumulate
 results and later compute some statistics. You can read or write tensors
 at any location in the array:
@@ -246,7 +246,7 @@ array([[1., 2.],
 Sets
 ====
 
-TensorFlow[]{#idm45728429912120} supports sets of integers or strings
+TensorFlow supports sets of integers or strings
 (but not floats). It represents them using regular tensors. For example,
 the set `{1, 5, 9}` is just represented as the tensor `[[1, 5, 9]]`.
 Note that the tensor must have at least two dimensions, and the sets
@@ -309,7 +309,7 @@ values.
 Queues
 ======
 
-A[]{#idm45728429721240} queue is a data structure to which you can push
+A queue is a data structure to which you can push
 data records, and later pull them out. TensorFlow implements several
 types of queues in the `tf.queue` package. They used to be very
 important when implementing efficient data loading and preprocessing
@@ -374,10 +374,10 @@ If a queue is already full and you try to enqueue another record, the
 `enqueue*()` method will freeze until a record is dequeued by another
 thread. Similarly, if a queue is empty and you try to dequeue a record,
 the `dequeue*()` method will freeze until records are pushed to the
-queue by another thread.[]{#idm45728429519528}
+queue by another thread. []{}
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html#idm45728430541496-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html-marker){.totri-footnote}^
 If you are not familiar with Unicode code points, please check out
 [*https://homl.info/unicode*](https://homl.info/unicode).

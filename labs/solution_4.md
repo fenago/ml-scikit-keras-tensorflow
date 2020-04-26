@@ -20,7 +20,7 @@
 
 3.  Gradient Descent cannot get stuck in a local minimum when training a
     Logistic Regression model because the cost function is
-    convex.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728432174040){#idm45728432174040-marker
+    convex.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^
 
 4.  If the optimization problem is convex (such as Linear Regression or

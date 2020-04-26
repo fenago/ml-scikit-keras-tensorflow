@@ -6,20 +6,20 @@ Preface
 The Machine Learning Tsunami
 ============================
 
-In 2006, Geoffrey Hinton[]{#idm45728513311832} et al. published [a
-paper](https://homl.info/136)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html#idm45728482147320){#idm45728482147320-marker
+In 2006, Geoffrey Hinton et al. published [a
+paper](https://homl.info/136)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html){-marker
 .totri-footnote}^ showing how to train a deep neural network capable of
 recognizing handwritten digits with state-of-the-art precision (\>98%).
 They branded this technique "Deep Learning." A deep neural
-network[]{#idm45728482030984} is a (very) simplified model of our
+network is a (very) simplified model of our
 cerebral cortex, composed of a stack of layers of artificial neurons.
 Training a deep neural net was widely considered impossible at the
-time,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html#idm45728513309272){#idm45728513309272-marker
+time,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html){-marker
 .totri-footnote}^ and most researchers had abandoned the idea in the
 late 1990s. This paper revived the interest of the scientific community,
 and before long many new papers demonstrated that Deep Learning was not
 only possible, but capable of mind-blowing achievements that no other
-Machine Learning (ML)[]{#idm45728513307992} technique could hope to
+Machine Learning (ML) technique could hope to
 match (with the help of tremendous computing power and great amounts of
 data). This enthusiasm soon extended to many other areas of Machine
 Learning.
@@ -35,7 +35,7 @@ Before you know it, it will be driving your car.
 Machine Learning in Your Projects
 =================================
 
-So, naturally[]{#idm45728462535304} you are excited about Machine
+So, naturally you are excited about Machine
 Learning and would love to join the party!
 
 Perhaps you would like to give your homemade robot a brain of its own?
@@ -66,7 +66,7 @@ implement it in your projects. Great idea!
 Objective and Approach
 ======================
 
-This[]{#idm45728482050904} course assumes that you know close to nothing
+This course assumes that you know close to nothing
 about Machine Learning. Its goal is to give you the concepts, tools, and
 intuition you need to implement programs capable of *learning from
 data*.
@@ -78,14 +78,14 @@ techniques that regularly win competitions.
 Rather than implementing our own toy versions of each algorithm, we will
 be using production-ready Python frameworks:
 
--   [Scikit-Learn](http://scikit-learn.org/) is[]{#idm45728482055736}
+-   [Scikit-Learn](http://scikit-learn.org/) is []{}
     very easy to use, yet it implements many Machine Learning algorithms
     efficiently, so it makes for a great entry point to learning Machine
     Learning. It was created by David Cournapeau in 2007, and is now led
     by a team of researchers at the French Institute for Research in
     Computer Science and Automation (Inria).
 
--   [TensorFlow](https://tensorflow.org/) is[]{#idm45728482052872} a
+-   [TensorFlow](https://tensorflow.org/) is a
     more complex library for distributed numerical computation. It makes
     it possible to train and run very large neural networks efficiently
     by distributing the computations across potentially hundreds of
@@ -94,7 +94,7 @@ be using production-ready Python frameworks:
     Learning applications. It was open sourced in November 2015, and
     version 2.0 was released in September 2019.
 
--   [Keras](https://keras.io/) is[]{#idm45728482279464} a high-level
+-   [Keras](https://keras.io/) is a high-level
     Deep Learning API that makes it very simple to train and run neural
     networks. It can run on top of either TensorFlow, Theano, or
     Microsoft Cognitive Toolkit (formerly known as CNTK). TensorFlow
@@ -115,7 +115,7 @@ available online as Jupyter notebooks at
 Prerequisites
 =============
 
-This[]{#idm45728482090824} course assumes that you have some Python
+This course assumes that you have some Python
 programming experience and that you are familiar with Python's main
 scientific libraries---in particular, [NumPy](http://numpy.org/),
 [pandas](http://pandas.pydata.org/), and
@@ -145,7 +145,7 @@ tutorial for linear algebra.
 Roadmap
 =======
 
-This[]{#idm45728501703000} course is organized in two parts. [Part I, *The
+This course is organized in two parts. [Part I, *The
 Fundamentals of [Machine
 Learning]*](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part01.html#fundamentals_part),
 covers the following topics:
@@ -267,7 +267,7 @@ details on what changed in the second edition.
 Other Resources
 ===============
 
-Many excellent resources[]{#idm45728481870776} are available to learn
+Many excellent resources are available to learn
 about Machine Learning. For example, Andrew Ng's [ML course on
 Coursera](https://homl.info/ngcourse) is amazing, although it requires a
 significant time investment (think months).
@@ -377,7 +377,7 @@ This element indicates a warning or caution.
 Code Examples
 =============
 
-There[]{#idm45728482292728} is a series of Jupyter notebooks full of
+There is a series of Jupyter notebooks full of
 supplemental material, such as code examples and exercises, available
 for download at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
@@ -466,7 +466,7 @@ environments, and a vast collection of text and video from O'Reilly and
 How to Contact Us
 =================
 
-Please address[]{#idm45728498195272}[]{#idm45728495264712} comments and
+Please address comments and
 questions concerning this course to the publisher:
 
 -   O'Reilly Media, Inc.
@@ -619,11 +619,11 @@ keep bringing me cookies and coffee! What more can one dream of?
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html#idm45728482147320-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker){.totri-footnote}^
 Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html#idm45728513309272-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html-marker){.totri-footnote}^
 Despite the fact that Yann LeCun's deep convolutional neural networks
 had worked well for image recognition since the 1990s, although they
 were not as general-purpose.

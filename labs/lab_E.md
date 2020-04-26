@@ -24,9 +24,9 @@ future.
 Hopfield Networks
 =================
 
-*Hopfield networks* were[]{#idm45728430736456}[]{#idm45728430735480}
+*Hopfield networks* were []{}
 first introduced by W. A. Little in 1974, then popularized by J.
-Hopfield in 1982. They[]{#idm45728430734568} are *associative memory*
+Hopfield in 1982. They are *associative memory*
 networks: you first teach them some patterns, and then when they see a
 new pattern they (hopefully) output the closest learned pattern. This
 made them useful for character recognition, in particular, before they
@@ -57,7 +57,7 @@ image and repeat the whole process. After a while, the network reaches a
 stable state. Generally, this corresponds to the training image that
 most resembles the input image.
 
-A so-called *energy function* is[]{#idm45728430725896} associated with
+A so-called *energy function* is associated with
 Hopfield nets. At each iteration, the energy decreases, so the network
 is guaranteed to eventually stabilize to a low-energy state. The
 training algorithm tweaks the weights in a way that decreases the energy
@@ -65,7 +65,7 @@ level of the training patterns, so the network is likely to stabilize in
 one of these low-energy configurations. Unfortunately, some patterns
 that were not in the training set also end up with low energy, so the
 network sometimes stabilizes in a configuration that was not learned.
-These[]{#idm45728430724504} are called *spurious patterns*.
+These are called *spurious patterns*.
 
 Another major flaw with Hopfield nets is that they don't scale very
 well---their memory capacity is roughly equal to 14% of the number of
@@ -82,7 +82,7 @@ Boltzmann Machines
 ==================
 
 *Boltzmann machines*
-were[]{#idm45728430720088}[]{#idm45728430719112}[]{#idm45728430718440}[]{#idm45728430717768}
+were []{}
 invented in 1985 by Geoffrey Hinton and Terrence Sejnowski. Just like
 Hopfield nets, they are fully connected ANNs, but they are based on
 *stochastic neurons*: instead of using a deterministic step function to
@@ -109,13 +109,13 @@ $$p\left( {s_{i}^{(\text{next}\text{step})} = 1} \right)\, = \,\sigma\left( \fra
 
 -   *N* is the number of neurons in the network.
 
--   *T* is a[]{#idm45728430681336} number called the network's
+-   *T* is a number called the network's
     *temperature*; the higher the temperature, the more random the
     output is (i.e., the more the probability approaches 50%).
 
 -   *σ* is the logistic function.
 
-Neurons[]{#idm45728430677992}[]{#idm45728430677256} in Boltzmann
+Neurons in Boltzmann
 machines are separated into two groups: *visible units* and *hidden
 units* (see
 [Figure E-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#boltzmann_machine_diagram)).
@@ -130,12 +130,12 @@ only be a function of the connection weights and bias terms, not of the
 original configuration (similarly, after you shuffle a deck of cards for
 long enough, the configuration of the deck does not depend on the
 initial state). When the network reaches this state where the original
-configuration is "forgotten," it is[]{#idm45728430673576} said to be in
+configuration is "forgotten," it is said to be in
 *thermal equilibrium* (although its configuration keeps changing all the
 time). By setting the network parameters appropriately, letting the
 network reach thermal equilibrium, and then observing its state, we can
 simulate a wide range of probability distributions.
-This[]{#idm45728430672056} is called a *generative model*.
+This is called a *generative model*.
 
 ![](./E_files/mls2_ae02.png)
 
@@ -169,7 +169,7 @@ train *restricted Boltzmann machines* (RBMs).
 Restricted Boltzmann Machines
 =============================
 
-An[]{#idm45728430663992}[]{#idm45728430662904} RBM is simply a Boltzmann
+An RBM is simply a Boltzmann
 machine in which there are no connections between visible units or
 between hidden units, only between visible and hidden units. For
 example,
@@ -178,10 +178,10 @@ represents an RBM with three visible units and four hidden units.
 
 ![](./E_files/mls2_ae03.png)
 
-A[]{#idm45728430658392} very efficient training algorithm called
+A very efficient training algorithm called
 *Contrastive Divergence* was [introduced in 2005 by Miguel Á.
 Carreira-Perpiñán and Geoffrey
-Hinton](https://homl.info/135).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430655976){#idm45728430655976-marker
+Hinton](https://homl.info/135).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
 .totri-footnote}^ Here is how it works: for each training instance
 **x**, the algorithm starts by feeding it to the network by setting the
 state of the visible units to *x*~1~, *x*~2~, ⋯, *x*~*n*~. Then you
@@ -215,7 +215,7 @@ the first success of Deep Learning based on multiple stacked RBMs.
 Deep Belief Nets
 ================
 
-Several[]{#idm45728430634664} layers of RBMs can be stacked; the hidden
+Several layers of RBMs can be stacked; the hidden
 units of the first-level RBM serve as the visible units for the
 second-layer RBM, and so on. Such an RBM stack is called a *deep belief
 net* (DBN).
@@ -225,7 +225,7 @@ possible to train DBNs one layer at a time using Contrastive Divergence,
 starting with the lower layers and then gradually moving up to the top
 layers. This led to the [groundbreaking article that kickstarted the
 Deep Learning tsunami in
-2006](https://homl.info/136).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430631880){#idm45728430631880-marker
+2006](https://homl.info/136).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
 .totri-footnote}^
 
 Just like RBMs, DBNs learn to reproduce the probability distribution of
@@ -293,7 +293,7 @@ stochastic nature of RBMs and DBNs, the caption will keep changing
 randomly, but it will generally be appropriate for the image. If you
 generate a few hundred captions, the most frequently generated ones will
 likely be a good description of the
-image.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430620168){#idm45728430620168-marker
+image.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
 .totri-footnote}^
 
 
@@ -303,7 +303,7 @@ Self-Organizing Maps
 ====================
 
 *Self-organizing maps* (SOMs)
-are[]{#idm45728430616616}[]{#idm45728430615576} quite different from all
+are quite different from all
 the other types of neural networks we have discussed so far. They are
 used to produce a low-dimensional representation of a high-dimensional
 dataset, generally for visualization, clustering, or classification. The
@@ -355,25 +355,25 @@ slightly closer to the input vector (but they don't update their weights
 as much as the winning neuron). Then the algorithm picks another
 training instance and repeats the process, again and again. This
 algorithm tends to make nearby neurons gradually specialize in similar
-inputs.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430606136){#idm45728430606136-marker
+inputs.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
 .totri-footnote}^
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430655976-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
 Miguel Á. Carreira-Perpiñán and Geoffrey E. Hinton, "On Contrastive
 Divergence Learning," *Proceedings of the 10th International Workshop on
 Artificial Intelligence and Statistics* (2005): 59--66.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430631880-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
 Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430620168-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
 See this video by Geoffrey Hinton for more details and a demo:
 [*https://homl.info/137*](https://homl.info/137).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#idm45728430606136-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html-marker){.totri-footnote}^
 You can imagine a class of young children with roughly similar skills.
 One child happens to be slightly better at basketball. This motivates
 them to practice more, especially with their friends. After a while,

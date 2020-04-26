@@ -5,25 +5,25 @@
 [Lab 7. ] Ensemble Learning and Random Forests
 =========================================================
 
-Suppose[]{#idm45728479552728}[]{#idm45728479551720}[]{#idm45728479551048}
+Suppose []{}
 you pose a complex question to thousands of random people, then
 aggregate their answers. In many cases you will find that this
 aggregated answer is better than an expert's answer. This is called the
 *wisdom of the crowd*. Similarly, if you aggregate the predictions of a
 group of predictors (such as classifiers or regressors), you will often
 get better predictions than with the best individual predictor.
-A[]{#idm45728479549432} group of predictors is called an *ensemble*;
+A group of predictors is called an *ensemble*;
 thus, this technique is called *Ensemble Learning*, and an Ensemble
-Learning algorithm[]{#idm45728479547752} is called an *Ensemble method*.
+Learning algorithm is called an *Ensemble method*.
 
-As[]{#idm45728479546184} an example of an Ensemble method, you can train
+As an example of an Ensemble method, you can train
 a group of Decision Tree classifiers, each on a different random subset
 of the training set. To make predictions, you obtain the predictions of
 all the individual trees, then predict the class that gets the most
 votes (see the last exercise in
 [Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab)).
 Such an ensemble of Decision
-Trees[]{#idm45728479543944}[]{#idm45728479543000} is called a *Random
+Trees is called a *Random
 Forest*, and despite its simplicity, this is one of the most powerful
 Machine Learning algorithms available today.
 
@@ -44,7 +44,7 @@ Random Forests.
 Voting Classifiers
 ==================
 
-Suppose[]{#idm45728479535448}[]{#idm45728479534440} you have trained a
+Suppose you have trained a
 few classifiers, each one achieving about 80% accuracy. You may have a
 Logistic Regression classifier, an SVM classifier, a Random Forest
 classifier, a K-Nearest Neighbors classifier, and perhaps a few more
@@ -55,14 +55,14 @@ classifier, a K-Nearest Neighbors classifier, and perhaps a few more
 
 A very simple way to create an even better classifier is to aggregate
 the predictions of each classifier and predict the class that gets the
-most votes. This[]{#idm45728479529672}[]{#idm45728479528904}
+most votes. This []{}
 majority-vote classifier is called a *hard voting* classifier (see
 [Figure 7-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#voting_classifier_prediction_diagram)).
 
 ![](./images/mls2_0702.png)
 
 Somewhat surprisingly, this voting classifier often achieves a higher
-accuracy than[]{#idm45728479524392}[]{#idm45728479523688} the best
+accuracy than the best
 classifier in the ensemble. In fact, even if each classifier is a *weak
 learner* (meaning it does only slightly better than random guessing),
 the ensemble can still be a *strong learner* (achieving high accuracy),
@@ -77,7 +77,7 @@ tails, and hence a majority of heads. If you do the math, you will find
 that the probability of obtaining a majority of heads after 1,000 tosses
 is close to 75%. The more you toss the coin, the higher the probability
 (e.g., with 10,000 tosses, the probability climbs over 97%).
-This[]{#idm45728479520856} is due to the *law of large numbers*: as you
+This is due to the *law of large numbers*: as you
 keep tossing the coin, the ratio of heads gets closer and closer to the
 probability of heads (51%).
 [Figure 7-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#law_of_large_numbers_plot)
@@ -99,14 +99,14 @@ for the wrong class, reducing the ensemble's accuracy.
 
 ###### Tip
 
-Ensemble methods[]{#idm45728479514408} work best when the predictors are
+Ensemble methods work best when the predictors are
 as independent from one another as possible. One way to get diverse
 classifiers is to train them using very different algorithms. This
 increases the chance that they will make very different types of errors,
 improving the ensemble's accuracy.
 
 
-The[]{#idm45728479512472} following code creates and trains a voting
+The following code creates and trains a voting
 classifier in Scikit-Learn, composed of three diverse classifiers (the
 training set is the moons dataset, introduced in
 [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)):
@@ -145,7 +145,7 @@ VotingClassifier 0.904
 There you have it! The voting classifier slightly outperforms all the
 individual [classifiers].
 
-If[]{#idm45728479399656} all classifiers are able to estimate class
+If all classifiers are able to estimate class
 probabilities (i.e., they all have a `predict_proba()` method), then you
 can tell Scikit-Learn to predict the class with the highest class
 probability, averaged over all the individual classifiers. This is
@@ -166,18 +166,18 @@ classifier achieves over 91.2% accuracy!
 Bagging and Pasting
 ===================
 
-One[]{#ELbag07}[]{#idm45728479336664}[]{#idm45728479335720} way to get a
+One []{#ELbag07} way to get a
 diverse set of classifiers is to use very different training algorithms,
 as just discussed. Another approach is to use the same training
 algorithm for every predictor and train them on different random subsets
 of the training set. When sampling is performed *with* replacement, this
 method is called
-[*bagging*](https://homl.info/20)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479333256){#idm45728479333256-marker
+[*bagging*](https://homl.info/20)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^ (short for *bootstrap
-aggregating*^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479331896){#idm45728479331896-marker
+aggregating*^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^). When sampling is performed *without* replacement, it
 is called
-[*pasting*](https://homl.info/21).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479329528){#idm45728479329528-marker
+[*pasting*](https://homl.info/21).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^
 
 In other words, both bagging and pasting allow training instances to be
@@ -190,12 +190,12 @@ predictor. This sampling and training process is represented in
 
 Once all predictors are trained, the ensemble can make a prediction for
 a new instance by simply aggregating the predictions of all predictors.
-The aggregation function is[]{#idm45728479324280} typically the
+The aggregation function is typically the
 *statistical mode* (i.e., the most frequent prediction, just like a hard
 voting classifier) for classification, or the average for regression.
 Each individual predictor has a higher bias than if it were trained on
 the original training set, but aggregation reduces both bias and
-variance.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479322744){#idm45728479322744-marker
+variance.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^ Generally, the net result is that the ensemble has a
 similar bias but a lower variance than a single predictor trained on the
 original training set.
@@ -212,11 +212,11 @@ they scale very well.
 Bagging and Pasting in Scikit-Learn
 -----------------------------------
 
-Scikit-Learn[]{#idm45728479317640}[]{#idm45728479316360} offers a simple
+Scikit-Learn offers a simple
 API for both bagging and pasting with the `BaggingClassifier` class (or
 `BaggingRegressor` for regression). The following code trains an
 ensemble of 500 Decision Tree
-classifiers:^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479314344){#idm45728479314344-marker
+classifiers:^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^ each is trained on 100 training instances randomly
 sampled from the training set with replacement (this is an example of
 bagging, but if you want to use pasting instead, just set
@@ -270,13 +270,13 @@ select the one that works best.
 Out-of-Bag Evaluation
 ---------------------
 
-With[]{#idm45728479225688}[]{#idm45728479224680} bagging, some instances
+With bagging, some instances
 may be sampled several times for any given predictor, while others may
 not be sampled at all. By default a `BaggingClassifier` samples *m*
 training instances with replacement (`bootstrap=True`), where *m* is the
 size of the training set. This means that only about 63% of the training
 instances are sampled on average for each
-predictor.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479221624){#idm45728479221624-marker
+predictor.^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^ The remaining 37% of the training instances that are
 not sampled are called *out-of-bag* (oob) instances. Note that they are
 not the same 37% for all predictors.
@@ -319,7 +319,7 @@ base estimator has a `predict_proba()` method), the decision function
 returns the class probabilities for each training instance. For example,
 the oob evaluation estimates that the first training instance has a
 68.25% probability of belonging to the positive class (and 31.75% of
-belonging to the[]{#idm45728479126168} negative class):
+belonging to the negative class):
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> bag_clf.oob_decision_function_
@@ -340,7 +340,7 @@ Random Patches and Random Subspaces
 ===================================
 
 The `BaggingClassifier`
-class[]{#idm45728479105128}[]{#idm45728479104152} supports sampling the
+class supports sampling the
 features as well. Sampling is controlled by two hyperparameters:
 `max_features` and `bootstrap_features`. They work the same way as
 `max_samples` and `bootstrap`, but for feature sampling instead of
@@ -350,12 +350,12 @@ subset of the input features.
 This technique is particularly useful when you are dealing with
 high-dimensional inputs (such as images). Sampling both training
 instances and features is called the [*Random Patches*
-method](https://homl.info/22).^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479068232){#idm45728479068232-marker
+method](https://homl.info/22).^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^ Keeping all training instances (by setting
 `bootstrap=False` and `max_samples=1.0`) but sampling features (by
 setting `bootstrap_features` to `True` and/or `max_features` to a value
 smaller than `1.0`) is called the [*Random Subspaces*
-method](https://homl.info/23).^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479037368){#idm45728479037368-marker
+method](https://homl.info/23).^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^
 
 Sampling features results in even more predictor diversity, trading a
@@ -367,16 +367,16 @@ bit more bias for a lower variance.
 Random Forests
 ==============
 
-As we have[]{#idm45728479033912}[]{#idm45728479032904} discussed, a
+As we have discussed, a
 [Random
-Forest](https://homl.info/24)^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479031272){#idm45728479031272-marker
+Forest](https://homl.info/24)^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker
 .totri-footnote}^ is an ensemble of Decision Trees, generally trained
 via the bagging method (or sometimes pasting), typically with
 `max_samples` set to the size of the training set. Instead of building a
 `BaggingClassifier` and passing it a `DecisionTreeClassifier`, you can
 instead use the `RandomForestClassifier` class, which is more convenient
 and optimized for Decision
-Trees^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479028376){#idm45728479028376-marker}^
+Trees^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 (similarly, there is a `RandomForestRegressor` class for regression
 tasks). The following code uses all available CPU cores to train a
 Random Forest classifier with 500 trees (each limited to maximum 16
@@ -395,7 +395,7 @@ With a few exceptions, a `RandomForestClassifier` has all the
 hyperparameters of a `DecisionTreeClassifier` (to control how trees are
 grown), plus all the hyperparameters of a `BaggingClassifier` to control
 the ensemble
-itself.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478969464){#idm45728478969464-marker}^
+itself.^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 
 The Random Forest algorithm introduces extra randomness when growing
 trees; instead of searching for the very best feature when splitting a
@@ -418,23 +418,23 @@ bag_clf = BaggingClassifier(
 Extra-Trees
 -----------
 
-When[]{#idm45728478901400}[]{#idm45728478900392}[]{#idm45728478899720}
+When []{}
 you are growing a tree in a Random Forest, at each node only a random
 subset of the features is considered for splitting (as discussed
 earlier). It is possible to make trees even more random by also using
 random thresholds for each feature rather than searching for the best
 possible thresholds (like regular Decision Trees do).
 
-A[]{#idm45728478897912} forest of such extremely random trees is called
+A forest of such extremely random trees is called
 an [*Extremely Randomized Trees*](https://homl.info/25)
-ensemble^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478896200){#idm45728478896200-marker}^
+ensemble^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 (or *Extra-Trees* for short). Once again, this technique trades more
 bias for a lower variance. It also makes Extra-Trees much faster to
 train than regular Random Forests, because finding the best possible
 threshold for each feature at every node is one of the most
 time-consuming tasks of growing a tree.
 
-You[]{#idm45728478893768} can create an Extra-Trees classifier using
+You can create an Extra-Trees classifier using
 Scikit-Learn's `ExtraTreesClassifier` class. Its API is identical to the
 `RandomForestClassifier` class. Similarly, the `ExtraTreesRegressor`
 class has the same API as the `RandomForestRegressor` class.
@@ -454,9 +454,9 @@ only way to know is to try both and compare them using cross-validation
 Feature Importance
 ------------------
 
-Yet[]{#idm45728478887160} another great quality of Random Forests is
+Yet another great quality of Random Forests is
 that they make it easy to measure the relative importance of each
-feature. Scikit-Learn[]{#idm45728478885880} measures a feature's
+feature. Scikit-Learn measures a feature's
 importance by looking at how much the tree nodes that use that feature
 reduce impurity on average (across all trees in the forest). More
 precisely, it is a weighted average, where each node's weight is equal
@@ -508,13 +508,13 @@ Boosting
 ========
 
 *Boosting* (originally called *hypothesis boosting*)
-refers[]{#idm45728478784648}[]{#ELboost07}[]{#idm45728478782696} to any
+refers []{#ELboost07} to any
 Ensemble method that can combine several weak learners into a strong
 learner. The general idea of most boosting methods is to train
 predictors sequentially, each trying to correct its predecessor. There
 are many boosting methods available, but by far the most popular are
-[*AdaBoost*](https://homl.info/26)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478780632){#idm45728478780632-marker}^
-(short for *Adaptive Boosting*) []{#idm45728478779032}and *Gradient
+[*AdaBoost*](https://homl.info/26)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
+(short for *Adaptive Boosting*)  []{}and *Gradient
 Boosting*. Let's start with AdaBoost.
 
 
@@ -522,13 +522,13 @@ Boosting*. Let's start with AdaBoost.
 AdaBoost
 --------
 
-One[]{#idm45728478775704}[]{#idm45728478774696} way for a new predictor
+One way for a new predictor
 to correct its predecessor is to pay a bit more attention to the
 training instances that the predecessor underfitted. This results in new
 predictors focusing more and more on the hard cases. This is the
 technique used by [AdaBoost].
 
-For example, when training an[]{#idm45728478772488} AdaBoost classifier,
+For example, when training an AdaBoost classifier,
 the algorithm first trains a base classifier (such as a Decision Tree)
 and uses it to make predictions on the training set. The algorithm then
 increases the relative weight of misclassified training instances. Then
@@ -543,7 +543,7 @@ so on (see
 shows the decision boundaries of five consecutive predictors on the
 moons dataset (in this example, each predictor is a highly regularized
 SVM classifier with an RBF
-kernel^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478766824){#idm45728478766824-marker}^).
+kernel^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^).
 The first classifier gets many instances wrong, so their weights get
 boosted. The second classifier therefore does a better job on these
 instances, and so on. The plot on the right represents the same sequence
@@ -585,7 +585,7 @@ $$r_{j} = \frac{\sum\limits_{\binom{i = 1}{{\hat{y}}_{j}^{(i)} \neq y^{(i)}}}^{m
 The predictor's weight *α*~*j*~ is then computed using [Equation
 7-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#predictor_weight),
 where *η* is the learning rate hyperparameter (defaults to
-1).^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478683224){#idm45728478683224-marker}^
+1).^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 The more accurate the predictor is, the higher its weight will be. If it
 is just guessing randomly, then its weight will be close to zero.
 However, if it is most often wrong (i.e., less accurate than random
@@ -637,9 +637,9 @@ predicted class is the one that receives the majority of weighted votes
 $$\hat{y}\left( \mathbf{x} \right) = \operatorname{argmax}\limits_{k}{\sum\limits_{\binom{j = 1}{{\hat{y}}_{j}{(\mathbf{x})} = k}}^{N}\alpha_{j}}\text{where} N\text{is}\text{the}\text{number}\text{of}\text{predictors.}$$
 
 
-Scikit-Learn[]{#idm45728478592632}[]{#idm45728478591928} uses a
+Scikit-Learn uses a
 multiclass version of AdaBoost called
-[*SAMME*](https://homl.info/27)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478590200){#idm45728478590200-marker}^
+[*SAMME*](https://homl.info/27)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 (which stands for *Stagewise Additive Modeling using a Multiclass
 Exponential loss function*). When there are just two classes, SAMME is
 equivalent to AdaBoost. If the predictors can estimate class
@@ -648,7 +648,7 @@ Scikit-Learn can use a variant of SAMME called *SAMME.R* (the *R* stands
 for "Real"), which relies on class probabilities rather than predictions
 and generally performs better.
 
-The[]{#idm45728478586568} following code trains an AdaBoost classifier
+The following code trains an AdaBoost classifier
 based on 200 *Decision Stumps* using Scikit-Learn's `AdaBoostClassifier`
 class (as you might expect, there is also an `AdaBoostRegressor` class).
 A Decision Stump is a Decision Tree with `max_depth=1`---in other words,
@@ -678,17 +678,17 @@ estimator.
 Gradient Boosting
 -----------------
 
-Another[]{#idm45728478548536}[]{#idm45728478547640} very popular
+Another very popular
 boosting algorithm is [*Gradient
-Boosting*](https://homl.info/28).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478546024){#idm45728478546024-marker}^
+Boosting*](https://homl.info/28).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 Just like AdaBoost, Gradient Boosting works by sequentially adding
 predictors to an ensemble, each one correcting its predecessor. However,
 instead of tweaking the instance weights at every iteration like
 AdaBoost does, this method tries to fit the new
-predictor[]{#idm45728478543640} to the *residual errors* made by the
+predictor to the *residual errors* made by the
 previous predictor.
 
-Let's[]{#idm45728478542136}[]{#idm45728478541400} go through a simple
+Let's go through a simple
 regression example, using Decision Trees as the base predictors (of
 course, Gradient Boosting also works great with regression tasks). This
 is called *Gradient Tree Boosting*, or *Gradient Boosted Regression
@@ -739,7 +739,7 @@ on the residual errors of the second tree. You can see that the
 ensemble's predictions gradually get better as trees are added to the
 ensemble.
 
-A[]{#idm45728478372984} simpler way to train GBRT ensembles is to use
+A simpler way to train GBRT ensembles is to use
 Scikit-Learn's `GradientBoostingRegressor` class. Much like the
 `RandomForestRegressor` class, it has hyperparameters to control the
 growth of Decision Trees (e.g., `max_depth`, `min_samples_leaf`), as
@@ -759,7 +759,7 @@ gbrt.fit(X, y)
 The `learning_rate` hyperparameter scales the contribution of each tree.
 If you set it to a low value, such as `0.1`, you will need more trees in
 the ensemble to fit the training set, but the predictions will usually
-generalize better. This[]{#idm45728478282568}[]{#idm45728478281864} is a
+generalize better. This is a
 regularization technique called *shrinkage*.
 [Figure 7-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#gbrt_learning_rate_plot)
 shows two GBRT ensembles trained with a low learning rate: the one on
@@ -805,7 +805,7 @@ and the best model's predictions are represented on the right.
 It is also possible to implement early stopping by actually stopping
 training early (instead of training a large number of trees first and
 then looking back to find the optimal number). You can do so by setting
-`warm_start=True`, which makes Scikit-Learn[]{#idm45728478143528} keep
+`warm_start=True`, which makes Scikit-Learn keep
 existing trees when the `fit()` method is called, allowing incremental
 training. The following code stops training when the validation error
 does not improve for five iterations in a row:
@@ -835,7 +835,7 @@ used for training each tree. For example, if `subsample=0.25`, then each
 tree is trained on 25% of the training instances, selected randomly. As
 you can probably guess by now, this technique trades a higher bias for a
 lower variance. It also speeds up training considerably.
-This[]{#idm45728477999112} is called *Stochastic Gradient Boosting*.
+This is called *Stochastic Gradient Boosting*.
 
 
 ###### Note
@@ -845,7 +845,7 @@ is controlled by the `loss` hyperparameter (see Scikit-Learn's
 documentation for more details).
 
 
-It[]{#idm45728477995976} is worth noting that an optimized
+It is worth noting that an optimized
 implementation of Gradient Boosting is available in the popular Python
 library [XGBoost](https://github.com/dmlc/xgboost), which stands for
 Extreme Gradient Boosting. This package was initially developed by
@@ -871,7 +871,7 @@ xgb_reg.fit(X_train, y_train,
 y_pred = xgb_reg.predict(X_val)
 ```
 
-You should definitely check it out![]{#idm45728477955608}
+You should definitely check it out! []{}
 
 
 
@@ -880,10 +880,10 @@ You should definitely check it out![]{#idm45728477955608}
 Stacking
 ========
 
-The[]{#idm45728477885640}[]{#idm45728477884632}[]{#idm45728477883960}
+The []{}
 last Ensemble method we will discuss in this lab is called
 *stacking* (short for [*stacked
-generalization*](https://homl.info/29)).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728477881896){#idm45728477881896-marker}^
+generalization*](https://homl.info/29)).^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 It is based on a simple idea: instead of using trivial functions (such
 as hard voting) to aggregate the predictions of all predictors in an
 ensemble, why don't we train a model to perform this aggregation?
@@ -891,14 +891,14 @@ ensemble, why don't we train a model to perform this aggregation?
 shows such an ensemble performing a regression task on a new instance.
 Each of the bottom three predictors predicts a different value (3.1,
 2.7, and 2.9), and then the final
-predictor[]{#idm45728477879592}[]{#idm45728477878920} (called a
+predictor (called a
 *blender*, or a *meta learner*) takes these predictions as inputs and
 makes the final prediction (3.0).
 
 ![](./images/mls2_0712.png)
 
 To train the blender, a common approach is to use a hold-out
-set.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728477874760){#idm45728477874760-marker}^
+set.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html){-marker}^
 Let's see how it works. First, the training set is split into two
 subsets. The first subset is used to train the predictors in the first
 layer (see
@@ -998,85 +998,85 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479333256-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 Leo Breiman, "Bagging Predictors," *Machine Learning* 24, no. 2 (1996):
 123--140.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479331896-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 In statistics, resampling with replacement is called *bootstrapping*.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479329528-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 Leo Breiman, "Pasting Small Votes for Classification in Large Databases
 and On-Line," *Machine Learning* 36, no. 1--2 (1999): 85--103.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479322744-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 Bias and variance were introduced in
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479314344-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 `max_samples` can alternatively be set to a float between 0.0 and 1.0,
 in which case the max number of instances to sample is equal to the size
 of the training set times `max_samples`.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479221624-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 As *m* grows, this ratio approaches 1 -- exp(--1) ≈ 63.212%.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479068232-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 Gilles Louppe and Pierre Geurts, "Ensembles on Random Patches," *Lecture
 Notes in Computer Science* 7523 (2012): 346--361.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479037368-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 Tin Kam Ho, "The Random Subspace Method for Constructing Decision
 Forests," *IEEE Transactions on Pattern Analysis and Machine
 Intelligence* 20, no. 8 (1998): 832--844.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479031272-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker){.totri-footnote}^
 Tin Kam Ho, "Random Decision Forests," *Proceedings of the Third
 International Conference on Document Analysis and Recognition* 1 (1995):
 278.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728479028376-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 The `BaggingClassifier` class remains useful if you want a bag of
 something other than Decision Trees.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478969464-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 There are a few notable exceptions: `splitter` is absent (forced to
 `"random"`), `presort` is absent (forced to `False`), `max_samples` is
 absent (forced to `1.0`), and `base_estimator` is absent (forced to
 `DecisionTreeClassifier` with the provided hyperparameters).
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478896200-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 Pierre Geurts et al., "Extremely Randomized Trees," *Machine Learning*
 63, no. 1 (2006): 3--42.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478780632-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 Yoav Freund and Robert E. Schapire, "A Decision-Theoretic Generalization
 of On-Line Learning and an Application to Boosting," *Journal of
 Computer and System Sciences* 55, no. 1 (1997): 119--139.
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478766824-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 This is just for illustrative purposes. SVMs are generally not good base
 predictors for AdaBoost; they are slow and tend to be unstable with it.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478683224-marker)^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 The original AdaBoost algorithm does not use a learning rate
 hyperparameter.
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478590200-marker)^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 For more details, see Ji Zhu et al., "Multi-Class AdaBoost," *Statistics
 and Its Interface* 2, no. 3 (2009): 349--360.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728478546024-marker)^
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 Gradient Boosting was first introduced in Leo Breiman's 1997 paper
 ["Arcing the Edge"](https://homl.info/arcing) and was further developed
 in the [1999 paper](https://homl.info/gradboost) "Greedy Function
 Approximation: A Gradient Boosting Machine" by Jerome H. Friedman.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728477881896-marker)^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 David H. Wolpert, "Stacked Generalization," *Neural Networks* 5, no. 2
 (1992): 241--259.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#idm45728477874760-marker)^
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html-marker)^
 Alternatively, it is possible to use out-of-fold predictions. In some
 contexts this is called *stacking*, while using a hold-out set is called
 *blending*. For many people these terms are synonymous.

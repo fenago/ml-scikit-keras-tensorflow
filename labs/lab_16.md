@@ -5,16 +5,16 @@
 [Lab 16. ] Natural Language Processing with [RNNs and Attention]
 ===========================================================================================
 
-When[]{#idm45728450510888}[]{#idm45728450509912} Alan Turing imagined
+When Alan Turing imagined
 his famous [Turing
-test](https://homl.info/turingtest)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728450508616){#idm45728450508616-marker
+test](https://homl.info/turingtest)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ in 1950, his objective was to evaluate a machine's
 ability to match human intelligence. He could have tested for many
 things, such as the ability to recognize cats in pictures, play chess,
 compose music, or escape a maze, but, interestingly, he chose a
-linguistic task. More specifically, he devised[]{#idm45728450507192} a
+linguistic task. More specifically, he devised a
 *chatbot* capable of fooling its interlocutor into thinking it was
-human.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728450505944){#idm45728450505944-marker
+human.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ This test does have its weaknesses: a set of hardcoded
 rules can fool unsuspecting or naive humans (e.g., the machine could
 give vague predefined answers in response to some keywords; it could
@@ -33,12 +33,12 @@ networks. We will therefore continue to explore RNNs (introduced in
 starting with a *character RNN*, trained to predict the next character
 in a sentence. This will allow us to generate some original text, and in
 the process we will see how to build a TensorFlow Dataset on a very long
-sequence. We will first[]{#idm45728450500856} use a *stateless RNN*
+sequence. We will first use a *stateless RNN*
 (which learns on random portions of text at each iteration, without any
 information on the rest of the text), then we will build a *stateful
 RNN* (which preserves the hidden state between training iterations and
 continues reading where it left off, allowing it to learn longer
-patterns). Next, we will build an RNN to[]{#idm45728450498616} perform
+patterns). Next, we will build an RNN to perform
 sentiment analysis (e.g., reading movie reviews and extracting the
 rater's feeling about the movie), this time treating sentences as
 sequences of words, rather than characters. Then we will show how RNNs
@@ -46,7 +46,7 @@ can be used to build an Encoder--Decoder architecture capable of
 performing neural machine translation (NMT). For this, we will use the
 seq2seq API provided by the TensorFlow Addons project.
 
-In the second part of this lab, we will[]{#idm45728450496776} look
+In the second part of this lab, we will look
 at *attention mechanisms*. As their name suggests, these are neural
 network components that learn to select the part of the inputs that the
 rest of the model should focus on at each time step. First we will see
@@ -66,7 +66,7 @@ Let's start with a simple and fun model that can write like Shakespeare
 Generating Shakespearean Text Using a Character RNN
 ===================================================
 
-In[]{#NLPtext16}[]{#idm45728450490568}[]{#idm45728450489608}[]{#RNNtext16}
+In []{#NLPtext16} []{#RNNtext16}
 a famous [2015 blog post](https://homl.info/charrnn) titled "The
 Unreasonable Effectiveness of Recurrent Neural Networks," Andrej
 Karpathy showed how to train an RNN to predict the next character in a
@@ -96,7 +96,7 @@ Creating the Training Dataset
 -----------------------------
 
 First,
-let's[]{#idm45728450480376}[]{#idm45728450479304}[]{#idm45728450478344}[]{#idm45728450477368}
+let's []{}
 download all of Shakespeare's work, using Keras's handy `get_file()`
 function and downloading the data from Andrej Karpathy's [Char-RNN
 project](https://github.com/karpathy/char-rnn):
@@ -157,7 +157,7 @@ in the text, so how do you split a sequential dataset?
 How to Split a Sequential Dataset
 ---------------------------------
 
-It[]{#idm45728450265752}[]{#idm45728450264808}[]{#idm45728450263896} is
+It is
 very important to avoid any overlap between the training set, the
 validation set, and the test set. For example, we can take the first 90%
 of the text for the training set, then the next 5% for the validation
@@ -183,7 +183,7 @@ So, it is often safer to split across time---but this implicitly assumes
 that the patterns the RNN can learn in the past (in the training set)
 will still exist in the future. In other words, we assume that the time
 series is *stationary* (at least in a wide
-sense).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728450196856){#idm45728450196856-marker
+sense).^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ For many time series this assumption is reasonable
 (e.g., chemical reactions should be fine, since the laws of chemistry
 don't change every day), but for many others it is not (e.g., financial
@@ -215,7 +215,7 @@ dataset = tf.data.Dataset.from_tensor_slices(encoded[:train_size])
 Chopping the Sequential Dataset into Multiple Windows
 -----------------------------------------------------
 
-The[]{#idm45728450238952}[]{#idm45728450164904}[]{#idm45728450163992}
+The []{}
 training set now consists of a single sequence of over a million
 characters, so we can't just train the neural network directly on it:
 the RNN would be equivalent to a deep net with over a million layers,
@@ -224,7 +224,7 @@ will use the dataset's `window()` method to convert this long sequence
 of characters into many smaller windows of text. Every instance in the
 dataset will be a fairly short substring of the whole text, and the RNN
 will be unrolled only over the length of these substrings.
-This[]{#idm45728450161992} is called *truncated backpropagation through
+This is called *truncated backpropagation through
 time*. Let's call the `window()` method to create a dataset of short
 text windows:
 
@@ -253,13 +253,13 @@ will contain 100 characters, 99 characters, and so on down to 1
 
 The `window()` method creates a dataset that contains windows, each of
 which is also represented as a dataset.
-It's[]{#idm45728450103800}[]{#idm45728450103096} a *nested dataset*,
+It's a *nested dataset*,
 analogous to a list of lists. This is useful when you want to transform
 each window by calling its dataset methods (e.g., to shuffle them or
 batch them). However, we cannot use a nested dataset directly for
 training, as our model will expect tensors as input, not datasets. So,
 we must call the `flat_map()` method: it converts a nested
-dataset[]{#idm45728450100872}[]{#idm45728450100168} into a *flat
+dataset into a *flat
 dataset* (one that does not contain datasets). For example, suppose {1,
 2, 3} represents a dataset containing the sequence of tensors 1, 2, and
 3. If you flatten the nested dataset {{1, 2}, {3, 4, 5, 6}}, you get
@@ -325,7 +325,7 @@ the model.
 Building and Training the Char-RNN Model
 ----------------------------------------
 
-To[]{#idm45728449920520}[]{#idm45728449931288} predict the next
+To predict the next
 character based on the previous 100 characters, we can use an RNN with 2
 `GRU` layers of 128 units each and 20% dropout on both the inputs
 (`dropout`) and the hidden states (`recurrent_dropout`). We can tweak
@@ -360,7 +360,7 @@ history = model.fit(dataset, epochs=20)
 Using the Char-RNN Model
 ------------------------
 
-Now[]{#idm45728449782936}[]{#idm45728449782072} we have a model that can
+Now we have a model that can
 predict the next character in text written by Shakespeare. To feed it
 some text, we first need to preprocess it like we did earlier, so let's
 create a little function for this:
@@ -389,7 +389,7 @@ new text.
 Generating Fake Shakespearean Text
 ----------------------------------
 
-To[]{#idm45728449731192}[]{#idm45728449730248} generate new text using
+To generate new text using
 the Char-RNN model, we could feed it some text, make the model predict
 the most likely next letter, add it at the end of the text, then give
 the extended text to the model to guess the next letter, and so on. But
@@ -400,7 +400,7 @@ probability equal to the estimated probability, using TensorFlow's
 interesting text. The `categorical()` function samples random class
 indices, given the class log probabilities (logits). To have more
 control over the diversity of the generated text, we can divide the
-logits by[]{#idm45728449727752} a number called the *temperature*, which
+logits by a number called the *temperature*, which
 we can tweak as we wish: a temperature close to 0 will favor the
 high-probability characters, while a very high temperature will give all
 characters an equal probability. The following `next_char()` function
@@ -456,7 +456,7 @@ Alternatively, you could use a stateful RNN.
 Stateful RNN
 ------------
 
-Until[]{#idm45728449404424}[]{#idm45728449403448}[]{#idm45728449402504}
+Until []{}
 now, we have used only *stateless RNNs*: at each training iteration the
 model starts with a hidden state full of zeros, then it updates this
 state at each time step, and after the last time step, it throws it
@@ -558,7 +558,7 @@ Now that we have built a character-level model, it's time to look at
 word-level models and tackle a common natural language processing task:
 *sentiment analysis*. In the process we will learn how to handle
 sequences of variable lengths using
-masking.[]{#idm45728449010488}[]{#idm45728449009512}
+masking. []{}
 
 
 
@@ -567,7 +567,7 @@ masking.[]{#idm45728449010488}[]{#idm45728449009512}
 Sentiment Analysis
 ==================
 
-If[]{#NLPsent16}[]{#idm45728449005432}[]{#idm45728449004488}[]{#idm45728449003816}
+If []{#NLPsent16} []{}
 MNIST is the "hello world" of computer vision, then the IMDb reviews
 dataset is the "hello world" of natural language processing: it consists
 of 50,000 movie reviews in English (25,000 for training, 25,000 for
@@ -592,7 +592,7 @@ integer represents a word. All punctuation was removed, and then words
 were converted to lowercase, split by spaces, and finally indexed by
 frequency (so low integers correspond to frequent words). The integers
 0, 1, and 2 are special: they represent the padding token,
-the[]{#idm45728448940712} *start-of-sequence* (SSS) token, and unknown
+the *start-of-sequence* (SSS) token, and unknown
 words, respectively. If you want to visualize a review, you can decode
 it like this:
 
@@ -621,7 +621,7 @@ best way to tokenize text: think of "San Francisco" or
 ["\#ILoveDeepLearning."]
 
 Fortunately, there are better options! The [2018
-paper](https://homl.info/subword)^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448821368){#idm45728448821368-marker
+paper](https://homl.info/subword)^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ by Taku Kudo introduced an unsupervised learning
 technique to tokenize and detokenize text at the subword level in a
 language-independent way, treating spaces like other characters. With
@@ -632,18 +632,18 @@ learned the word "smart" and it also learned that the suffix "est" means
 "the most," so it can infer the meaning of "smartest." Google's
 [*SentencePiece*](https://github.com/google/sentencepiece) project
 provides an open source implementation, described in a
-[paper](https://homl.info/sentencepiece)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448818648){#idm45728448818648-marker
+[paper](https://homl.info/sentencepiece)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ by Taku Kudo and John Richardson.
 
 Another option was proposed in an earlier
-[paper](https://homl.info/rarewords)^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448816664){#idm45728448816664-marker
+[paper](https://homl.info/rarewords)^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ by Rico Sennrich et al. that explored other ways of
-creating subword[]{#idm45728448815448} encodings (e.g., using *byte pair
+creating subword encodings (e.g., using *byte pair
 encoding*). Last but not least, the TensorFlow team released the
-[TF.Text](https://homl.info/tftext) library[]{#idm45728448813512} in
-June 2019, which implements[]{#idm45728448812648}[]{#idm45728448811976}
+[TF.Text](https://homl.info/tftext) library in
+June 2019, which implements []{}
 various tokenization strategies, including
-[WordPiece](https://homl.info/wordpiece)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448810520){#idm45728448810520-marker
+[WordPiece](https://homl.info/wordpiece)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ (a variant of byte pair encoding).
 
 If you want to deploy your model to a mobile device or a web browser,
@@ -675,7 +675,7 @@ def preprocess(X_batch, y_batch):
 It starts by truncating the reviews, keeping only the first 300
 characters of each: this will speed up training, and it won't impact
 performance too much because you can generally tell whether a review is
-positive or not in the first sentence or two. Then[]{#idm45728448771928}
+positive or not in the first sentence or two. Then []{}
 it uses *regular expressions* to replace `<br />` tags with spaces, and
 to replace any characters other than letters and quotes with spaces. For
 example, the text `"Well, I can't<br />"` will become `"Well  I can't"`.
@@ -805,16 +805,16 @@ for a few epochs.
 Masking
 -------
 
-As[]{#idm45728448179400}[]{#idm45728448178392} it stands, the model will
+As it stands, the model will
 need to learn that the padding tokens should be ignored. But we already
 know that! Why don't we tell the model to ignore the padding tokens, so
 that it can focus on the data that actually matters? It's actually
 trivial: simply add `mask_zero=True` when creating the `Embedding`
 layer. This means that padding tokens (whose ID is
-0)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448176488){#idm45728448176488-marker
+0)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ will be ignored by all downstream layers. That's all!
 
-The way this works is that the `Embedding` layer[]{#idm45728448174520}
+The way this works is that the `Embedding` layer []{}
 creates a *mask tensor* equal to `K.not_equal(inputs, 0)` (where
 `K = keras.backend`): it is a Boolean tensor with the same shape as the
 inputs, and it is equal to `False` anywhere the word IDs are 0, or
@@ -909,7 +909,7 @@ embeddings, let's see if we can't just reuse pretrained embeddings.
 Reusing Pretrained Embeddings
 -----------------------------
 
-The[]{#idm45728447995176}[]{#idm45728447994200}[]{#idm45728447993240}[]{#idm45728447992568}
+The []{}
 TensorFlow Hub project makes it easy to reuse pretrained model
 components in your own models. These model components are called
 *modules*. Simply browse the [TF Hub repository](https://tfhub.dev/),
@@ -934,15 +934,15 @@ model.compile(loss="binary_crossentropy", optimizer="adam",
 ```
 
 The `hub.KerasLayer` layer downloads the module from the given URL. This
-particular[]{#idm45728447986936} module is a *sentence encoder*: it
+particular module is a *sentence encoder*: it
 takes strings as input and encodes each one as a single vector (in this
 case, a 50-dimensional vector). Internally, it parses the string
 (splitting words on spaces) and embeds each word using an embedding
 matrix that was pretrained on a huge corpus:
-the[]{#idm45728447960344}[]{#idm45728447959640} Google News 7B corpus
+the Google News 7B corpus
 (seven billion words long!). Then it computes the mean of all the word
 embeddings, and the result is the sentence
-embedding.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447958408){#idm45728447958408-marker
+embedding.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker
 .totri-footnote}^ We can then add two simple `Dense` layers to create a
 good sentiment analysis model. By default, a `hub.KerasLayer` is not
 trainable, but you can set `trainable=True` when creating it to change
@@ -983,7 +983,7 @@ word embeddings or reusing pretrained embeddings. Let's now look at
 another important NLP task: *neural machine translation* (NMT), first
 using a pure Encoder--Decoder model, then improving it with attention
 mechanisms, and finally looking the extraordinary Transformer
-architecture.[]{#idm45728447797944}
+architecture. []{}
 
 
 
@@ -992,9 +992,9 @@ architecture.[]{#idm45728447797944}
 An Encoder--Decoder Network for Neural Machine Translation
 ==========================================================
 
-Let's[]{#NMT16}[]{#idm45728447748552}[]{#NLPenddec16}[]{#enddecmod16}
+Let's []{#NMT16} []{#NLPenddec16} []{#enddecmod16}
 take a look at a simple [neural machine translation
-model](https://homl.info/103)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447744792){#idm45728447744792-marker}^
+model](https://homl.info/103)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 that will translate English sentences to French (see
 [Figure 16-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#machine_translation_diagram)).
 
@@ -1005,7 +1005,7 @@ other words, the decoder is given as input the word that it *should*
 have output at the previous step (regardless of what it actually
 output). For the very first word, it is given the start-of-sequence
 (SOS) token. The decoder is expected to end the sentence with
-an[]{#idm45728447741880} end-of-sequence (EOS) token.
+an end-of-sequence (EOS) token.
 
 Note that the English sentences are reversed before they are fed to the
 encoder. For example, "I drink milk" is reversed to "milk drink I." This
@@ -1021,7 +1021,7 @@ word embeddings are what is actually fed to the encoder and the decoder.
 
 At each step, the decoder outputs a score for each word in the output
 vocabulary (i.e., French), and then
-the[]{#idm45728447736696}[]{#idm45728447735992} softmax layer turns
+the softmax layer turns
 these scores into probabilities. For example, at the first step the word
 "Je" may have a probability of 20%, "Tu" may have a probability of 1%,
 and so on. The word with the highest probability is output. This is very
@@ -1071,15 +1071,15 @@ handle if you implement this model:
     look only at the logits output by the model for the correct word and
     for a random sample of incorrect words, then compute an
     approximation of the loss based only on these logits.
-    This[]{#idm45728447724632} *sampled softmax* technique was
+    This *sampled softmax* technique was
     [introduced in 2015 by Sébastien Jean et
-    al.](https://homl.info/104).^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447722632){#idm45728447722632-marker}^
+    al.](https://homl.info/104).^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     In TensorFlow you can use the `tf.nn.sampled_softmax_loss()`
     function for this during training and use the normal softmax
     function at inference time (sampled softmax cannot be used at
     inference time because it requires knowing the target).
 
-The[]{#idm45728447720040} TensorFlow Addons project includes many
+The TensorFlow Addons project includes many
 sequence-to-sequence tools to let you easily build production-ready
 Encoder--Decoders. For example, the following code creates a basic
 Encoder--Decoder model, similar to the one represented in
@@ -1129,7 +1129,7 @@ is often a good idea to start training with the embedding of the target
 of the previous time step and gradually transition to using the
 embedding of the actual token that was output at the previous step. This
 idea was introduced in a [2015
-paper](https://homl.info/scheduledsampling)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447481592){#idm45728447481592-marker}^
+paper](https://homl.info/scheduledsampling)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 by Samy Bengio et al. The `ScheduledEmbeddingTrainingSampler` will
 randomly choose between the target or the actual output, with a
 probability that you can gradually change during training.
@@ -1139,7 +1139,7 @@ probability that you can gradually change during training.
 Bidirectional RNNs
 ------------------
 
-A[]{#idm45728447478408}[]{#idm45728447477672} each time step, a regular
+A each time step, a regular
 recurrent layer only looks at past and present inputs before generating
 its output. In other words, it is "causal," meaning it cannot look into
 the future. This type of RNN makes sense when forecasting time series,
@@ -1151,7 +1151,7 @@ For example, consider the phrases "the Queen of the United Kingdom,"
 layers on the same inputs, one reading the words from left to right and
 the other reading them from right to left. Then simply combine their
 outputs at each time step, typically by concatenating them.
-This[]{#idm45728447475800}[]{#idm45728447475112} is called a
+This is called a
 *bidirectional recurrent layer* (see
 [Figure 16-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#bidirectional_rnn_diagram)).
 
@@ -1180,7 +1180,7 @@ layer will output 20 values per time step.
 Beam Search
 -----------
 
-Suppose[]{#idm45728447443160} you train an Encoder--Decoder model, and
+Suppose you train an Encoder--Decoder model, and
 use it to translate the French sentence "Comment vas-tu?" to English.
 You are hoping that it will output the proper translation ("How are
 you?"), but unfortunately it outputs "How will you?" Looking at the
@@ -1195,7 +1195,7 @@ and fix mistakes it made earlier? One of the most common solutions is
 *beam search*: it keeps track of a short list of the *k* most promising
 sentences (say, the top three), and at each decoder step it tries to
 extend them by one word, keeping only the *k* most likely sentences. The
-parameter *k* is called[]{#idm45728447439672} the *beam width*.
+parameter *k* is called the *beam width*.
 
 For example, suppose you use the model to translate the sentence
 "Comment vas-tu?" using beam search with a beam width of 3. At the first
@@ -1207,7 +1207,7 @@ word for each sentence. Each model will output one estimated probability
 per word in the vocabulary. The first model will try to find the next
 word in the sentence "How," and perhaps it will output a probability of
 36% for the word "will," 32% for the word "are," 16% for the word "do,"
-and so on. Note[]{#idm45728447437304} that these are actually
+and so on. Note that these are actually
 *conditional* probabilities, given that the sentence starts with "How."
 The second model will try to complete the sentence "What"; it might
 output a conditional probability of 50% for the word "are," and so on.
@@ -1260,7 +1260,7 @@ With all this, you can get good translations for fairly short sentences
 model will be really bad at translating long sentences. Once again, the
 problem comes from the limited short-term memory of RNNs. *Attention
 mechanisms* are the game-changing innovation that addressed this
-problem.[]{#idm45728447349912}[]{#idm45728447349112}[]{#idm45728447231512}
+problem. []{}
 
 
 
@@ -1269,7 +1269,7 @@ problem.[]{#idm45728447349912}[]{#idm45728447349112}[]{#idm45728447231512}
 Attention Mechanisms
 ====================
 
-Consider[]{#NLPatten16}[]{#idm45728447227624} the path from the word
+Consider []{#NLPatten16} the path from the word
 "milk" to its translation "lait" in
 [Figure 16-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#machine_translation_diagram):
 it is quite long! This means that a representation of this word (along
@@ -1277,7 +1277,7 @@ with all the other words) needs to be carried over many steps before it
 is actually used. Can't we make this path shorter?
 
 This was the core idea in a groundbreaking [2014
-paper](https://homl.info/attention)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447224664){#idm45728447224664-marker}^
+paper](https://homl.info/attention)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 by Dzmitry Bahdanau et al. They introduced a technique that allowed the
 decoder to focus on the appropriate words (as encoded by the encoder) at
 each time step. For example, at the time step where the decoder needs to
@@ -1287,7 +1287,7 @@ much shorter, so the short-term memory limitations of RNNs have much
 less impact. Attention mechanisms revolutionized neural machine
 translation (and NLP in general), allowing a significant improvement in
 the state of the art, especially for long sentences (over 30
-words).^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447223160){#idm45728447223160-marker}^
+words).^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 
 [Figure 16-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#attention_diagram)
 shows this model's architecture (slightly simplified, as we will see).
@@ -1317,7 +1317,7 @@ jointly with the rest of the Encoder--Decoder model. This alignment
 model is illustrated on the righthand side of
 [Figure 16-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#attention_diagram).
 It starts with a time-distributed `Dense`
-layer^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447206792){#idm45728447206792-marker}^
+layer^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 with a single neuron, which receives as input all the encoder outputs,
 concatenated with the decoder's previous hidden state (e.g.,
 **h**~(2)~). This layer outputs a score (or energy) for each encoder
@@ -1326,10 +1326,10 @@ aligned with the decoder's previous hidden state. Finally, all the
 scores go through a softmax layer to get a final weight for each encoder
 output (e.g., *α*~(3,2)~). All the weights for a given decoder time step
 add up to 1 (since the softmax layer is not time-distributed). This
-particular attention mechanism[]{#idm45728447202584} is called *Bahdanau
+particular attention mechanism is called *Bahdanau
 attention* (named after the paper's first author). Since it concatenates
 the encoder output with the decoder's previous hidden state, it is
-sometimes[]{#idm45728447201176}[]{#idm45728447200472} called
+sometimes called
 *concatenative attention* (or *additive attention*).
 
 
@@ -1344,16 +1344,16 @@ words.
 
 Another common attention mechanism was proposed shortly after, in a
 [2015
-paper](https://homl.info/luongattention)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447194888){#idm45728447194888-marker}^
+paper](https://homl.info/luongattention)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 by Minh-Thang Luong et al. Because the goal of the attention mechanism
 is to measure the similarity between one of the encoder's outputs and
 the decoder's previous hidden state, the authors proposed to simply
-compute[]{#idm45728447193432} the *dot product* (see
+compute the *dot product* (see
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 of these two vectors, as this is often a fairly good similarity measure,
 and modern hardware can compute it much faster. For this to be possible,
 both vectors must have the same dimensionality.
-This[]{#idm45728447191128}[]{#idm45728447190456} is called *Luong
+This is called *Luong
 attention* (again, after the paper's first author), or sometimes
 *multiplicative attention*. The dot product gives a score, and all the
 scores (at a given decoder time step) go through a softmax layer to give
@@ -1407,10 +1407,10 @@ the desired attention mechanism (Luong attention in this example).
 Visual Attention
 ----------------
 
-Attention mechanisms[]{#idm45728447052920}[]{#idm45728447051912} are now
+Attention mechanisms are now
 used for a variety of purposes. One of their first applications beyond
 NMT was in generating image captions using [visual
-attention](https://homl.info/visualattention):^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447050344){#idm45728447050344-marker}^
+attention](https://homl.info/visualattention):^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 a convolutional neural network first processes the image and outputs
 some feature maps, then a decoder RNN equipped with an attention
 mechanism generates the caption, one word at a time. At each decoder
@@ -1427,7 +1427,7 @@ clearly, most of its attention was focused on the frisbee.
 
 ##### Explainability
 
-One[]{#idm45728447043528}[]{#idm45728447042792} extra benefit of
+One extra benefit of
 attention mechanisms is that they make it easier to understand what led
 the model to produce its output. This is called *explainability*. It can
 be especially useful when the model makes a mistake: for example, if an
@@ -1439,7 +1439,7 @@ explanation: perhaps the way the model learned to distinguish dogs from
 wolves is by checking whether or not there's a lot of snow around. You
 can then fix this by training the model with more images of wolves
 without snow, and dogs with snow. This example comes from a great [2016
-paper](https://homl.info/explainclass)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447039944){#idm45728447039944-marker}^
+paper](https://homl.info/explainclass)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 by Marco Tulio Ribeiro et al. that uses a different approach to
 explainability: learning an interpretable model locally around a
 classifier's prediction.
@@ -1458,13 +1458,13 @@ state-of-the-art models using only attention mechanisms.
 Attention Is All You Need: The Transformer Architecture
 -------------------------------------------------------
 
-In[]{#idm45728447035432}[]{#idm45728447034456} a groundbreaking [2017
-paper](https://homl.info/transformer),^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447032936){#idm45728447032936-marker}^
+In a groundbreaking [2017
+paper](https://homl.info/transformer),^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 a team of Google researchers suggested that "Attention Is All You Need."
 They managed to create an architecture called the *Transformer*, which
 significantly improved the state of the art in NMT without using any
 recurrent or convolutional
-layers,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447031032){#idm45728447031032-marker}^
+layers,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 just attention mechanisms (plus embedding layers, dense layers,
 normalization layers, and a few other bits and pieces). As an extra
 bonus, this architecture was also much faster to train and easier to
@@ -1502,7 +1502,7 @@ Let's walk through this figure:
     the previously output words (starting with a start-of-sequence
     token). So the model needs to be called repeatedly, predicting one
     more word at every round (which is fed to the decoder at the next
-    round, until[]{#idm45728447016232} the end-of-sequence token is
+    round, until the end-of-sequence token is
     output).
 
 -   Looking more closely, you can see that you are already familiar with
@@ -1517,7 +1517,7 @@ Let's walk through this figure:
     looking at one word at a time? Well, that's where the new components
     come in:
 
-    -   The[]{#idm45728446986504}[]{#idm45728446985800} encoder's
+    -   The encoder's
         *Multi-Head Attention* layer encodes each word's relationship
         with every other word in the same sentence, paying more
         attention to the most relevant ones. For example, the output of
@@ -1525,10 +1525,10 @@ Let's walk through this figure:
         the Queen of the United Kingdom" will depend on all the words in
         the sentence, but it will probably pay more attention to the
         words "United" and "Kingdom" than to the words "They" or
-        "welcomed." This[]{#idm45728446983752} attention mechanism is
+        "welcomed." This attention mechanism is
         called *self-attention* (the sentence is paying attention to
         itself). We will discuss exactly how it works shortly.
-        The[]{#idm45728446982408}[]{#idm45728446981368} decoder's
+        The decoder's
         *Masked Multi-Head Attention* layer does the same thing, but
         each word is only allowed to attend to words located before it.
         Finally, the decoder's upper Multi-Head Attention layer is where
@@ -1538,7 +1538,7 @@ Let's walk through this figure:
         output this word's translation.
 
     -   The *positional encodings*
-        are[]{#idm45728446978392}[]{#idm45728446977656} simply dense
+        are simply dense
         vectors (much like word embeddings) that represent the position
         of a word in the sentence. The *n*^th^ positional encoding is
         added to the word embedding of the *n*^th^ word in each
@@ -1651,7 +1651,7 @@ Multi-Head Attention layer.
 
 ### Multi-Head Attention
 
-To[]{#idm45728446701368}[]{#idm45728446700664}[]{#idm45728446699704}[]{#idm45728446699016}
+To []{}
 understand how a Multi-Head Attention layer works, we must first
 understand the *Scaled Dot-Product Attention* layer, which it is based
 on. Let's suppose the encoder analyzed the input sentence "They played
@@ -1821,7 +1821,7 @@ Moreover, the TF Hub team is currently porting several Transformer-based
 modules to TensorFlow 2, and they should be available soon. In the
 meantime, I hope I have demonstrated that it is not that hard to
 implement a Transformer yourself, and it is certainly a great
-exercise![]{#idm45728446360760}[]{#idm45728446359816}
+exercise! []{}
 
 
 
@@ -1831,14 +1831,14 @@ exercise![]{#idm45728446360760}[]{#idm45728446359816}
 Recent Innovations in Language Models
 =====================================
 
-The[]{#idm45728446357544}[]{#idm45728446356520}[]{#idm45728446355848}
+The []{}
 year 2018 has been called the "ImageNet moment for NLP": progress was
 astounding, with larger and larger LSTM and Transformer-based
 architectures trained on immense datasets. I highly recommend you check
 out the following papers, all published in 2018:
 
 -   The [ELMo
-    paper](https://homl.info/elmo)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446352872){#idm45728446352872-marker}^
+    paper](https://homl.info/elmo)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     by Matthew Peters introduced *Embeddings from Language Models*
     (ELMo): these are contextualized word embeddings learned from the
     internal states of a deep bidirectional language model. For example,
@@ -1846,7 +1846,7 @@ out the following papers, all published in 2018:
     United Kingdom" and in "queen bee."
 
 -   The [ULMFiT
-    paper](https://homl.info/ulmfit)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446349320){#idm45728446349320-marker}^
+    paper](https://homl.info/ulmfit)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     by Jeremy Howard and Sebastian Ruder demonstrated the effectiveness
     of unsupervised pretraining for NLP tasks: the authors trained an
     LSTM language model using self-supervised learning (i.e., generating
@@ -1859,7 +1859,7 @@ out the following papers, all published in 2018:
     from scratch on 10,000 examples.
 
 -   The [GPT
-    paper](https://homl.info/gpt)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446345800){#idm45728446345800-marker}^
+    paper](https://homl.info/gpt)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     by Alec Radford and other OpenAI researchers also demonstrated the
     effectiveness of unsupervised pretraining, but this time using a
     Transformer-like architecture. The authors pretrained a large but
@@ -1867,27 +1867,27 @@ out the following papers, all published in 2018:
     modules (using only Masked Multi-Head Attention layers) on a large
     dataset, once again trained using self-supervised learning. Then
     they fine-tuned it on various language tasks, using only minor
-    adaptations for each task. The[]{#idm45728446344488} tasks were
+    adaptations for each task. The tasks were
     quite diverse: they included text classification, *entailment*
     (whether sentence A entails sentence
-    B),^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446343240){#idm45728446343240-marker}^
+    B),^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     similarity (e.g., "Nice weather today" is very similar to "It is
     sunny"), and question answering (given a few paragraphs of text
     giving some context, the model must answer some multiple-choice
     questions). Just a few months later, in February 2019, Alec Radford,
     Jeffrey Wu, and other OpenAI researchers published the [GPT-2
-    paper,](https://homl.info/gpt2)^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446341448){#idm45728446341448-marker}^
+    paper,](https://homl.info/gpt2)^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     which proposed a very similar architecture, but larger still (with
     over 1.5 billion parameters!) and they showed that it could achieve
     good performance on many tasks without any fine-tuning.
-    This[]{#idm45728446340552} is called *zero-shot learning* (ZSL). A
+    This is called *zero-shot learning* (ZSL). A
     smaller version of the GPT-2 model (with "just" 117 million
     parameters) is available at
     [*https://github.com/openai/gpt-2*](https://github.com/openai/gpt-2),
     along with its pretrained weights.
 
 -   The [BERT
-    paper](https://homl.info/bert)^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446336712){#idm45728446336712-marker}^
+    paper](https://homl.info/bert)^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
     by Jacob Devlin and other Google researchers also demonstrates the
     effectiveness of self-supervised pretraining on a large corpus,
     using a similar architecture to GPT but non-masked Multi-Head
@@ -1899,7 +1899,7 @@ out the following papers, all published in 2018:
 
     Masked language model (MLM)
 
-    :   Each[]{#idm45728446332872} word in a sentence has a 15%
+    :   Each word in a sentence has a 15%
         probability of being masked, and the model is trained to predict
         the masked words. For example, if the original sentence is "She
         had fun at the birthday party," then the model may be given the
@@ -1914,7 +1914,7 @@ out the following papers, all published in 2018:
 
     Next sentence prediction (NSP)
 
-    :   The model[]{#idm45728446329976} is trained to predict whether
+    :   The model is trained to predict whether
         two sentences are consecutive or not. For example, it should
         predict that "The dog sleeps" and "It snores loudly" are
         consecutive sentences, while "The dog sleeps" and "The Earth
@@ -1930,11 +1930,11 @@ then fine-tuning them with very few architectural changes (or none at
 all). Things are moving fast; no one can say what architectures will
 prevail next year. Today, it's clearly Transformers, but tomorrow it
 might be CNNs (e.g., check out the [2018
-paper](https://homl.info/pervasiveattention)^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446326680){#idm45728446326680-marker}^
+paper](https://homl.info/pervasiveattention)^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 by Maha Elbayad et al., where the researchers use masked 2D
 convolutional layers for sequence-to-sequence tasks). Or it might even
 be RNNs, if they make a surprise comeback (e.g., check out the [2018
-paper](https://homl.info/indrnn)^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446325064){#idm45728446325064-marker}^
+paper](https://homl.info/indrnn)^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
 by Shuai Li et al. that shows that by making neurons independent of each
 other in a given RNN layer, it is possible to train much deeper RNNs
 capable of learning much longer sequences).
@@ -1968,7 +1968,7 @@ Exercises
 
 7.  When would you need to use sampled softmax?
 
-8.  *Embedded Reber grammars* were[]{#idm45728446313560} used by
+8.  *Embedded Reber grammars* were used by
     Hochreiter and Schmidhuber in [their paper](https://homl.info/93)
     about LSTMs. They are artificial grammars that produce strings such
     as "BPBTSXXVPSEPE." Check out Jenny Orr's [nice
@@ -1993,18 +1993,18 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728450508616-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Alan Turing, "Computing Machinery and Intelligence," *Mind* 49 (1950):
 433--460.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728450505944-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Of course, the word *chatbot* came much later. Turing called his test
 the *imitation game*: machine A and human B chat with human interrogator
 C via text messages; the interrogator asks questions to figure out which
 one is the machine (A or B). The machine passes the test if it can fool
 the interrogator, while the human B must try to help the interrogator.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728450196856-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 By definition, a stationary time series's mean, variance, and
 *autocorrelations* (i.e., correlations between values in the time series
 separated by a given interval) do not change over time. This is quite
@@ -2012,57 +2012,57 @@ restrictive; for example, it excludes time series with trends or
 cyclical patterns. RNNs are more tolerant in that they can learn trends
 and cyclical patterns.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448821368-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Taku Kudo, "Subword Regularization: Improving Neural Network Translation
 Models with Multiple Subword Candidates," arXiv preprint
 arXiv:1804.10959 (2018).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448818648-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Taku Kudo and John Richardson, "SentencePiece: A Simple and Language
 Independent Subword Tokenizer and Detokenizer for Neural Text
 Processing," arXiv preprint arXiv:1808.06226 (2018).
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448816664-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Rico Sennrich et al., "Neural Machine Translation of Rare Words with
 Subword Units," *Proceedings of the 54th Annual Meeting of the
 Association for Computational Linguistics* 1 (2016): 1715--1725.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448810520-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Yonghui Wu et al., "Google's Neural Machine Translation System: Bridging
 the Gap Between Human and Machine Translation," arXiv preprint
 arXiv:1609.08144 (2016).
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728448176488-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 Their ID is 0 only because they are the most frequent "words" in the
 dataset. It would probably be a good idea to ensure that the padding
 tokens are always encoded as 0, even if they are not the most frequent.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447958408-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker){.totri-footnote}^
 To be precise, the sentence embedding is equal to the mean word
 embedding multiplied by the square root of the number of words in the
 sentence. This compensates for the fact that the mean of *n* vectors
 gets shorter as *n* grows.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447744792-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Ilya Sutskever et al., "Sequence to Sequence Learning with Neural
 Networks," arXiv preprint arXiv:1409.3215 (2014).
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447722632-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Sébastien Jean et al., "On Using Very Large Target Vocabulary for Neural
 Machine Translation," *Proceedings of the 53rd Annual Meeting of the
 Association for Computational Linguistics and the 7th International
 Joint Conference on Natural Language Processing of the Asian Federation
 of Natural Language Processing* 1 (2015): 1--10.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447481592-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Samy Bengio et al., "Scheduled Sampling for Sequence Prediction with
 Recurrent Neural Networks," arXiv preprint arXiv:1506.03099 (2015).
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447224664-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Dzmitry Bahdanau et al., "Neural Machine Translation by Jointly Learning
 to Align and Translate," arXiv preprint arXiv:1409.0473 (2014).
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447223160-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 The most common metric used in NMT is the BiLingual Evaluation
 Understudy (BLEU) score, which compares each translation produced by the
 model with several good translations produced by humans: it counts the
@@ -2070,85 +2070,85 @@ number of *n*-grams (sequences of *n* words) that appear in any of the
 target translations and adjusts the score to take into account the
 frequency of the produced *n*-grams in the target translations.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447206792-marker)^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Recall that a time-distributed `Dense` layer is equivalent to a regular
 `Dense` layer that you apply independently at each time step (only much
 faster).
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447194888-marker)^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Minh-Thang Luong et al., "Effective Approaches to Attention-Based Neural
 Machine Translation," *Proceedings of the 2015 Conference on Empirical
 Methods in Natural Language Processing* (2015): 1412--1421.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447050344-marker)^
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Kelvin Xu et al., "Show, Attend and Tell: Neural Image Caption
 Generation with Visual Attention," *Proceedings of the 32nd
 International Conference on Machine Learning* (2015): 2048--2057.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447045752-marker)^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 This is a part of figure 3 from the paper. It is reproduced with the
 kind authorization of the authors.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447039944-marker)^
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Marco Tulio Ribeiro et al., "'Why Should I Trust You?': Explaining the
 Predictions of Any Classifier," *Proceedings of the 22nd ACM SIGKDD
 International Conference on Knowledge Discovery and Data Mining* (2016):
 1135--1144.
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447032936-marker)^
+^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Ashish Vaswani et al., "Attention Is All You Need," *Proceedings of the
 31st International Conference on Neural Information Processing Systems*
 (2017): 6000--6010.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447031032-marker)^
+^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Since the Transformer uses time-distributed `Dense` layers, you could
 argue that it uses 1D convolutional layers with a kernel size of 1.
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728447026264-marker)^
+^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 This is figure 1 from the paper, reproduced with the kind authorization
 of the authors.
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446366136-marker)^
+^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 This is the right part of figure 2 from the paper, reproduced with the
 kind authorization of the authors.
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446352872-marker)^
+^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Matthew Peters et al., "Deep Contextualized Word Representations,"
 *Proceedings of the 2018 Conference of the North American Lab of the
 Association for Computational Linguistics: Human Language Technologies*
 1 (2018): 2227--2237.
 
-^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446349320-marker)^
+^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Jeremy Howard and Sebastian Ruder, "Universal Language Model Fine-Tuning
 for Text Classification," *Proceedings of the 56th Annual Meeting of the
 Association for Computational Linguistics* 1 (2018): 328--339.
 
-^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446345800-marker)^
+^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Alec Radford et al., "Improving Language Understanding by Generative
 Pre-Training" (2018).
 
-^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446343240-marker)^
+^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 For example, the sentence "Jane had a lot of fun at her friend's
 birthday party" entails "Jane enjoyed the party," but it is contradicted
 by "Everyone hated the party" and it is unrelated to "The Earth is
 flat."
 
-^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446341448-marker)^
+^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Alec Radford et al., "Language Models Are Unsupervised Multitask
 Learners" (2019).
 
-^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446336712-marker)^
+^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Jacob Devlin et al., "BERT: Pre-training of Deep Bidirectional
 Transformers for Language Understanding," *Proceedings of the 2018
 Conference of the North American Lab of the Association for
 Computational Linguistics: Human Language Technologies* 1 (2019).
 
-^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446326680-marker)^
+^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Maha Elbayad et al., "Pervasive Attention: 2D Convolutional Neural
 Networks for Sequence-to-Sequence Prediction," arXiv preprint
 arXiv:1808.03867 (2018).
 
-^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#idm45728446325064-marker)^
+^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html-marker)^
 Shuai Li et al., "Independently Recurrent Neural Network (IndRNN):
 Building a Longer and Deeper RNN," *Proceedings of the IEEE Conference
 on Computer Vision and Pattern Recognition* (2018): 5457--5466.

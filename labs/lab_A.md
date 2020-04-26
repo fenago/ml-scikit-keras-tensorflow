@@ -5,7 +5,7 @@
 
 ###### Note
 
-Solutions[]{#exsol20} to the coding exercises are available in the
+Solutions []{#exsol20} to the coding exercises are available in the
 online Jupyter notebooks at
 [*https://github.com/ageron/handson-ml2*](https://github.com/ageron/handson-ml2).
 
@@ -164,7 +164,7 @@ See the Jupyter notebooks available at
 
 3.  Gradient Descent cannot get stuck in a local minimum when training a
     Logistic Regression model because the cost function is
-    convex.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728432174040){#idm45728432174040-marker
+    convex.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^
 
 4.  If the optimization problem is convex (such as Linear Regression or
@@ -336,7 +336,7 @@ notebooks available at
 
 1.  The depth of a well-balanced binary tree containing *m* leaves is
     equal to
-    log~2~(*m*),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728432088232){#idm45728432088232-marker
+    log~2~(*m*),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^ rounded up. A binary Decision Tree (one that makes
     only binary decisions, as is the case with all trees in
     Scikit-Learn) will end up more or less well balanced at the end of
@@ -726,7 +726,7 @@ notebooks available at
     [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
     then you need one output neuron, using no activation function at all
     in the output
-    layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431976808){#idm45728431976808-marker
+    layer.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^
 
 8.  Backpropagation is a technique used to train artificial neural
@@ -754,7 +754,7 @@ notebooks available at
     MLP: the number of hidden layers, the number of neurons in each
     hidden layer, and the activation function used in each hidden layer
     and in the output
-    layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431971048){#idm45728431971048-marker
+    layer.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
     .totri-footnote}^ In general, the ReLU activation function (or one
     of its variants; see
     [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab))
@@ -1868,7 +1868,7 @@ notebooks available at
         the previous strategy, and a bit harder to deploy, since it
         requires managing parameter servers. However, it is useful to
         train huge models that don't fit in GPU
-        RAM.[]{#idm45728431731960}
+        RAM. []{}
 
 For the solutions to exercises 9, 10, and 11, please see the Jupyter
 notebooks available at
@@ -1876,20 +1876,20 @@ notebooks available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728432174040-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
 If you draw a straight line between any two points on the curve, the
 line never crosses the curve.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728432088232-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
 log~2~ is the binary log; log~2~(*m*) = log(*m*) / log(2).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431976808-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
 When the values to predict can vary by many orders of magnitude, you may
 want to predict the logarithm of the target value rather than the target
 value directly. Simply computing the exponential of the neural network's
 output will give you the estimated value (since exp(log *v*) = *v*).
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#idm45728431971048-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html-marker){.totri-footnote}^
 In
 [Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab)
 we discuss many techniques that introduce additional hyperparameters:

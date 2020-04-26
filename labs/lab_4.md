@@ -5,7 +5,7 @@
 [Lab 4. ] Training Models
 ====================================
 
-So far[]{#idm45728485651800}[]{#idm45728485650520} we have treated
+So far we have treated
 Machine Learning models and their training algorithms mostly like black
 boxes. If you went through some of the exercises in the previous
 labs, you may have been surprised by how much you can get done
@@ -25,7 +25,7 @@ neural networks (discussed in
 [Part II](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part02.html#neural_nets_part)
 of this course).
 
-In this lab we will start by looking at the[]{#idm45728485570472}
+In this lab we will start by looking at the []{}
 Linear Regression model, one of the simplest models there is. We will
 discuss two very different ways to train it:
 
@@ -35,7 +35,7 @@ discuss two very different ways to train it:
     training set).
 
 -   Using an iterative optimization approach
-    called[]{#idm45728485567064} Gradient Descent (GD) that gradually
+    called Gradient Descent (GD) that gradually
     tweaks the model parameters to minimize the cost function over the
     training set, eventually converging to the same set of parameters as
     the first method. We will look at a few variants of Gradient Descent
@@ -43,7 +43,7 @@ discuss two very different ways to train it:
     [Part II](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/part02.html#neural_nets_part):
     Batch GD, Mini-batch GD, and Stochastic GD.
 
-Next we will look at[]{#idm45728485564136} Polynomial Regression, a more
+Next we will look at Polynomial Regression, a more
 complex model that can fit nonlinear datasets. Since this model has more
 parameters than Linear Regression, it is more prone to overfitting the
 training data, so we will look at how to detect whether or not this is
@@ -58,7 +58,7 @@ classification tasks: Logistic Regression and Softmax Regression.
 ###### Warning
 
 There will be quite a few math equations in this lab, using basic
-notions of[]{#idm45728485561320}[]{#idm45728485560616} linear algebra
+notions of linear algebra
 and calculus. To understand these equations, you will need to know what
 vectors and matrices are; how to transpose them, multiply them, and
 inverse them; and what partial derivatives are. If you are unfamiliar
@@ -77,7 +77,7 @@ Linear Regression
 
 In
 [Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab)
-we[]{#TMlinear04}[]{#idm45728485554344}[]{#RPlinear04} looked at a
+we []{#TMlinear04} []{#RPlinear04} looked at a
 simple regression model of life satisfaction: *life\_satisfaction* =
 *θ*~0~ + *θ*~1~ × *GDP\_per\_capita*.
 
@@ -86,7 +86,7 @@ This model is just a linear function of the input feature
 
 More generally, a linear model makes a prediction by simply computing a
 weighted sum of the input features,
-plus[]{#idm45728485547000}[]{#idm45728485546296} a constant called the
+plus a constant called the
 *bias term* (also called the *intercept term*), as shown in [Equation
 4-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#equation_four_one).
 
@@ -119,11 +119,11 @@ $\hat{y} = h_{\mathbf{\theta}}\left( \mathbf{x} \right) = \mathbf{\theta} \cdot 
 
 In this equation:
 
--   **θ** is[]{#idm45728485507528}[]{#idm45728485506792} the model's
+-   **θ** is the model's
     *parameter vector*, containing the bias term *θ*~0~ and the feature
     weights *θ*~1~ to *θ*~*n*~.
 
--   **x** is[]{#idm45728485501704}[]{#idm45728485500968} the instance's
+-   **x** is the instance's
     *feature vector*, containing *x*~0~ to *x*~*n*~, with *x*~0~ always
     equal to 1.
 
@@ -137,7 +137,7 @@ In this equation:
 
 ###### Note
 
-In[]{#idm45728485485864}[]{#idm45728485484504} Machine Learning, vectors
+In Machine Learning, vectors
 are often represented as *column vectors*, which are 2D arrays with a
 single column. If **θ** and **x** are column vectors, then the
 prediction is $\hat{y} = \mathbf{\theta}^{\intercal}\mathbf{x}$, where
@@ -150,7 +150,7 @@ use this notation to avoid switching between dot products and matrix
 multiplications.
 
 
-OK, that's the[]{#idm45728485472584} Linear Regression model---but how
+OK, that's the Linear Regression model---but how
 do we train it? Well, recall that training a model means setting its
 parameters so that the model best fits the training set. For this
 purpose, we first need a measure of how well (or poorly) the model fits
@@ -164,7 +164,7 @@ of **θ** that minimizes the RMSE. In practice, it is simpler to minimize
 the mean squared error (MSE) than the RMSE, and it leads to the same
 result (because the value that minimizes a function also minimizes its
 square
-root).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728485468808){#idm45728485468808-marker
+root).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 The MSE of a Linear Regression hypothesis *h*~**θ**~ on a training set
@@ -191,7 +191,7 @@ simplify notations, we will just write MSE(**θ**) instead of MSE(**X**,
 The Normal Equation
 -------------------
 
-To[]{#idm45728485438168}[]{#idm45728485437160}[]{#idm45728485436488}
+To []{}
 find the value of **θ** that minimizes the cost function, there is a
 *closed-form solution*---in other words, a mathematical equation that
 gives the result directly. This is called the *Normal Equation*
@@ -225,7 +225,7 @@ y = 4 + 3 * X + np.random.randn(100, 1)
 ![](./images/mls2_0401.png)
 
 Now let's compute $\hat{\mathbf{\theta}}$ using the Normal Equation.
-We[]{#idm45728485369048} will use the `inv()` function from NumPy's
+We will use the `inv()` function from NumPy's
 linear algebra module (`np.linalg`) to compute the inverse of a matrix,
 and the `dot()` method for matrix multiplication:
 
@@ -270,8 +270,8 @@ plt.show()
 
 ![](./images/mls2_0402.png)
 
-Performing[]{#idm45728485112760} Linear Regression using Scikit-Learn is
-simple:^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728485111624){#idm45728485111624-marker
+Performing Linear Regression using Scikit-Learn is
+simple:^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -308,7 +308,7 @@ array([[4.21509616],
        [2.77011339]])
 ```
 
-The[]{#idm45728485020904} pseudoinverse itself is computed using a
+The pseudoinverse itself is computed using a
 standard matrix factorization technique called *Singular Value
 Decomposition* (SVD) that can decompose the training set matrix **X**
 into the matrix multiplication of three matrices **U** **Σ** **V**^⊺^
@@ -329,7 +329,7 @@ features are redundant, but the pseudoinverse is always defined.
 Computational Complexity
 ------------------------
 
-The[]{#idm45728484934888} Normal Equation computes the inverse of
+The Normal Equation computes the inverse of
 **X**^⊺^ **X**, which is an (*n* + 1) × (*n* + 1) matrix (where *n* is
 the number of features). The *computational complexity* of inverting
 such a matrix is typically about *O*(*n*^2.4^) to *O*(*n*^3^), depending
@@ -361,7 +361,7 @@ many features) will take roughly twice as much time.
 Now we will look at a very different way to train a Linear Regression
 model, which is better suited for cases where there are a large number
 of features or too many training instances to fit in
-memory.[]{#idm45728484900040}[]{#idm45728484899064}
+memory. []{}
 
 
 
@@ -370,7 +370,7 @@ memory.[]{#idm45728484900040}[]{#idm45728484899064}
 Gradient Descent
 ================
 
-*Gradient Descent* is[]{#idm45728484895752}[]{#TMgradient04} a generic
+*Gradient Descent* is []{#TMgradient04} a generic
 optimization algorithm capable of finding optimal solutions to a wide
 range of problems. The general idea of Gradient Descent is to tweak
 parameters iteratively in order to minimize a cost function.
@@ -384,7 +384,7 @@ parameter vector **θ**, and it goes in the direction of descending
 gradient. Once the gradient is zero, you have reached a minimum!
 
 Concretely,
-you[]{#idm45728484891224}[]{#idm45728484890216}[]{#idm45728484889544}
+you []{}
 start by filling **θ** with random values (this is called *random
 initialization*). Then you improve it gradually, taking one baby step at
 a time, each step attempting to decrease the cost function (e.g., the
@@ -393,7 +393,7 @@ MSE), until the algorithm *converges* to a minimum (see
 
 ![](./images/mls2_0403.png)
 
-An[]{#idm45728484883688}[]{#idm45728484882952} important parameter in
+An important parameter in
 Gradient Descent is the size of the steps, determined by the *learning
 rate* hyperparameter. If the learning rate is too small, then the
 algorithm will have to go through many iterations to converge, which
@@ -416,7 +416,7 @@ convergence to the minimum difficult.
 [Figure 4-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#gradient_descent_pitfalls_diagram)
 shows the two main challenges with Gradient Descent. If the random
 initialization starts the algorithm on the left,
-then[]{#idm45728484872712}[]{#idm45728484872040} it will converge to a
+then it will converge to a
 *local minimum*, which is not as good as the *global minimum*. If it
 starts on the right, then it will take a very long time to cross the
 plateau. And if you stop too early, you will never reach the global
@@ -424,25 +424,25 @@ minimum.
 
 ![](./images/mls2_0406.png)
 
-Fortunately, the[]{#idm45728484867512}[]{#idm45728484866776} MSE cost
+Fortunately, the MSE cost
 function for a Linear Regression model happens to be a *convex
 function*, which means that if you pick any two points on the curve, the
 line segment joining them never crosses the curve. This implies that
 there are no local minima, just one global minimum. It is also a
 continuous function with a slope that never changes
-abruptly.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484865256){#idm45728484865256-marker
+abruptly.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^ These two facts have a great consequence: Gradient
 Descent is guaranteed to approach arbitrarily close the global minimum
 (if you wait long enough and if the learning rate is not too high).
 
-In fact, the []{#idm45728484863464}cost function has the shape of a
+In fact, the  []{}cost function has the shape of a
 bowl, but it can be an elongated bowl if the features have very
 different scales.
 [Figure 4-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#elongated_bowl_diagram)
 shows Gradient Descent on a training set where features 1 and 2 have the
 same scale (on the left), and on a training set where feature 1 has much
 smaller values than feature 2 (on the
-right).^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484861192){#idm45728484861192-marker
+right).^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 ![](./images/mls2_0407.png)
@@ -464,7 +464,7 @@ else it will take much longer to converge.
 
 This diagram also illustrates the fact that training a model means
 searching for a combination of model parameters that minimizes a cost
-function (over the training set). It[]{#idm45728484853880} is a search
+function (over the training set). It is a search
 in the model's *parameter space*: the more parameters a model has, the
 more dimensions this space has, and the harder the search is: searching
 for a needle in a 300-dimensional haystack is much trickier than in 3
@@ -476,11 +476,11 @@ of Linear Regression, the needle is simply at the bottom of the bowl.
 Batch Gradient Descent
 ----------------------
 
-To[]{#idm45728484850472}[]{#idm45728484849144} implement Gradient
+To implement Gradient
 Descent, you need to compute the gradient of the cost function with
 regard to each model parameter *θ*~*j*~. In other words, you need to
 calculate how much the cost function will change if you change *θ*~*j*~
-just a little bit. This[]{#idm45728484846440} is called a *partial
+just a little bit. This is called a *partial
 derivative*. It is like asking "What is the slope of the mountain under
 my feet if I face east?" and then asking the same question facing north
 (and so on for all other dimensions, if you can imagine a universe with
@@ -519,7 +519,7 @@ $$\nabla_{\mathbf{\theta}}\,\text{MSE}\left( \mathbf{\theta} \right) = \begin{pm
 Notice that this formula involves calculations over the full training
 set **X**, at each Gradient Descent step! This is why the algorithm is
 called *Batch Gradient Descent*: it uses the whole batch of training
-data at every step[]{#idm45728484777816} (actually, *Full Gradient
+data at every step (actually, *Full Gradient
 Descent* would probably be a better name). As a result it is terribly
 slow on very large training sets (but we will see much faster Gradient
 Descent algorithms shortly). However, Gradient Descent scales well with
@@ -532,7 +532,7 @@ Once you have the gradient vector, which points uphill, just go in the
 opposite direction to go downhill. This means subtracting
 ∇~**θ**~MSE(**θ**) from **θ**. This is where the learning rate *η* comes
 into
-play:^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484773384){#idm45728484773384-marker
+play:^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^ multiply the gradient vector by *η* to determine the
 size of the downhill step ([Equation
 4-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#gradient_descent_step)).
@@ -590,7 +590,7 @@ search can eliminate models that take too long to converge.
 You may wonder how to set the number of iterations. If it is too low,
 you will still be far away from the optimal solution when the algorithm
 stops; but if it is too high, you will waste time while the model
-parameters do not change anymore. A[]{#idm45728484701832} simple
+parameters do not change anymore. A simple
 solution is to set a very large number of iterations but to interrupt
 the algorithm when the gradient vector becomes tiny---that is, when its
 norm becomes smaller than a tiny number *ϵ* (called the
@@ -615,7 +615,7 @@ solution, then the algorithm may have to run about 10 times longer.
 Stochastic Gradient Descent
 ---------------------------
 
-The[]{#idm45728484693336}[]{#idm45728484692360}[]{#idm45728484691720}
+The []{}
 main problem with Batch Gradient Descent is the fact that it uses the
 whole training set to compute the gradients at every step, which makes
 it very slow when the training set is large. At the opposite extreme,
@@ -651,10 +651,10 @@ because it means that the algorithm can never settle at the minimum. One
 solution to this dilemma is to gradually reduce the learning rate. The
 steps start out large (which helps make quick progress and escape local
 minima), then get smaller and smaller, allowing the algorithm to settle
-at the global minimum. This[]{#idm45728484618584} process is akin to
+at the global minimum. This process is akin to
 *simulated annealing*, an algorithm inspired from the process in
 metallurgy of annealing, where molten metal is slowly cooled down.
-The[]{#idm45728484617208} function that determines the learning rate at
+The function that determines the learning rate at
 each iteration is called the *learning schedule*. If the learning rate
 is reduced too quickly, you may get stuck in a local minimum, or even
 end up frozen halfway to the minimum. If the learning rate is reduced
@@ -683,7 +683,7 @@ for epoch in range(n_epochs):
         theta = theta - eta * gradients
 ```
 
-By[]{#idm45728484612408} convention we iterate by rounds of *m*
+By convention we iterate by rounds of *m*
 iterations; each round is called an *epoch*. While the Batch Gradient
 Descent code iterated 1,000 times through the whole training set, this
 code goes through the training set only 50 times and reaches a pretty
@@ -712,7 +712,7 @@ approach generally converges more slowly.
 
 ###### Warning
 
-When[]{#idm45728484493752} using Stochastic Gradient Descent, the
+When using Stochastic Gradient Descent, the
 training instances must be independent and identically distributed (IID)
 to ensure that the parameters get pulled toward the global optimum, on
 average. A simple way to ensure this is to shuffle the instances during
@@ -752,13 +752,13 @@ Normal [Equation]:
 Mini-batch Gradient Descent
 ---------------------------
 
-The[]{#idm45728484353160}[]{#idm45728484352216} last Gradient Descent
+The last Gradient Descent
 algorithm we will look at is called *Mini-batch Gradient Descent*. It is
 simple to understand once you know Batch and Stochastic Gradient
 Descent: at each step, instead of computing the gradients based on the
 full training set (as in Batch GD) or based on just one instance (as in
 Stochastic GD), Mini-batch GD computes the gradients on small random
-sets of instances[]{#idm45728484350744} called *mini-batches*. The main
+sets of instances called *mini-batches*. The main
 advantage of Mini-batch GD over Stochastic GD is that you can get a
 performance boost from hardware optimization of matrix operations,
 especially when using GPUs.
@@ -781,7 +781,7 @@ schedule.
 ![](./images/mls2_0411.png)
 
 Let's compare the algorithms we've discussed so far for Linear
-Regression^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484338456){#idm45728484338456-marker
+Regression^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^ (recall that *m* is the number of training instances
 and *n* is the number of features); see
 [Table 4-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_regression_algorithm_comparison).
@@ -801,7 +801,7 @@ and *n* is the number of features); see
 
 There is almost no difference after training: all these algorithms end
 up with very similar models and make predictions in exactly the same
-way.[]{#idm45728484271512}
+way. []{}
 
 
 
@@ -811,8 +811,8 @@ way.[]{#idm45728484271512}
 Polynomial Regression
 =====================
 
-What[]{#idm45728484269048}[]{#idm45728484268312} if your
-data[]{#TMpolyreg04} is more complex than a straight line? Surprisingly,
+What if your
+data []{#TMpolyreg04} is more complex than a straight line? Surprisingly,
 you can use a linear model to fit nonlinear data. A simple way to do
 this is to add powers of each feature as new features, then train a
 linear model on this extended set of features. This technique is called
@@ -820,7 +820,7 @@ linear model on this extended set of features. This technique is called
 
 Let's look at an example. First, let's generate some nonlinear data,
 based on a simple *quadratic
-equation*^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484264360){#idm45728484264360-marker
+equation*^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^ (plus some noise; see
 [Figure 4-12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#quadratic_data_plot)):
 
@@ -883,7 +883,7 @@ features *a*^2^, *a*^3^, *b*^2^, and *b*^3^, but also the combinations
 features into an array containing (*n* + *d*)! / *d*!*n*! features,
 where *n*! is the *factorial* of *n*, equal to 1 × 2 × 3 × ⋯ × *n*.
 Beware of the combinatorial explosion of the number of
-features![]{#idm45728484033176}
+features! []{}
 
 
 
@@ -892,7 +892,7 @@ features![]{#idm45728484033176}
 Learning Curves
 ===============
 
-If[]{#TMlearncurv04}[]{#learncurve04} you perform high-degree Polynomial
+If []{#TMlearncurv04} []{#learncurve04} you perform high-degree Polynomial
 Regression, you will likely fit the training data much better than with
 plain Linear Regression. For example,
 [Figure 4-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#high_degree_polynomials_plot)
@@ -1022,7 +1022,7 @@ until the validation error reaches the training error.
 
 ##### The Bias/Variance Trade-off
 
-An[]{#idm45728483794936} important theoretical result of statistics and
+An important theoretical result of statistics and
 Machine Learning is the fact that a model's generalization error can be
 expressed as the sum of three very different errors:
 
@@ -1031,7 +1031,7 @@ expressed as the sum of three very different errors:
 :   This part of the generalization error is due to wrong assumptions,
     such as assuming that the data is linear when it is actually
     quadratic. A high-bias model is most likely to underfit the training
-    data.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483791832){#idm45728483791832-marker
+    data.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
     .totri-footnote}^
 
 *Variance*
@@ -1051,7 +1051,7 @@ expressed as the sum of three very different errors:
 Increasing a model's complexity will typically increase its variance and
 reduce its bias. Conversely, reducing a model's complexity increases its
 bias and reduces its variance. This is why it is called a
-trade-off.[]{#idm45728483787160}[]{#idm45728483786184}
+trade-off. []{}
 
 
 
@@ -1060,7 +1060,7 @@ trade-off.[]{#idm45728483787160}[]{#idm45728483786184}
 Regularized Linear Models
 =========================
 
-As[]{#idm45728483783960}[]{#TMreglin04} we saw in Labs
+As []{#TMreglin04} we saw in Labs
 [1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab){.totri-footnote}
 and
 [2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab){.totri-footnote},
@@ -1080,7 +1080,7 @@ Ridge Regression
 ----------------
 
 *Ridge Regression* (also called *Tikhonov regularization*)
-is[]{#idm45728483775400}[]{#idm45728483774664}[]{#idm45728483773752}[]{#idm45728483773080}[]{#idm45728483772408}
+is []{} []{}
 a regularized version of Linear Regression: a *regularization term*
 equal to $\alpha\sum_{i = 1}^{n}{\theta_{i}}^{2}$ is added to the cost
 function. This forces the learning algorithm to not only fit the data
@@ -1108,7 +1108,7 @@ model. If *α* = 0, then Ridge Regression is just Linear Regression. If
 result is a flat line going through the data's mean. [Equation
 4-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#ridge_cost_function)
 presents the Ridge Regression cost
-function.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483760200){#idm45728483760200-marker
+function.^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
 .totri-footnote}^
 
 
@@ -1121,7 +1121,7 @@ Note that the bias term *θ*~0~ is not regularized (the sum starts at *i*
 = 1, not 0). If we define **w** as the vector of feature weights (*θ*~1~
 to *θ*~*n*~), then the regularization term is equal to ½(∥ **w**
 ∥~2~)^2^, where ∥ **w** ∥~2~ represents the ℓ~2~ norm of the weight
-vector.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483654232){#idm45728483654232-marker}^
+vector.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 For Gradient Descent, just add *α***w** to the MSE gradient vector
 ([Equation
 4-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#mse_gradient_vector)).
@@ -1151,9 +1151,9 @@ As with Linear Regression, we can perform Ridge Regression either by
 computing a closed-form equation or by performing Gradient Descent. The
 pros and cons are the same. [Equation
 4-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#ridge_regression_solution)
-shows[]{#idm45728483642632} the closed-form solution, where **A** is the
+shows the closed-form solution, where **A** is the
 (*n* + 1) × (*n* + 1) *identity
-matrix*,^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483640072){#idm45728483640072-marker}^
+matrix*,^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 except with a 0 in the top-left cell, corresponding to the bias term.
 
 
@@ -1176,7 +1176,7 @@ array([[1.55071465]])
 ```
 
 And using Stochastic Gradient
-Descent:^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483623688){#idm45728483623688-marker}^
+Descent:^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> sgd_reg = SGDRegressor(penalty="l2")
@@ -1198,7 +1198,7 @@ Lasso Regression
 
 *Least Absolute Shrinkage and Selection Operator Regression* (usually
 simply called *Lasso Regression*)
-is[]{#idm45728483580904}[]{#idm45728483579928}[]{#idm45728483579256}
+is []{}
 another regularized version of Linear Regression: just like Ridge
 Regression, it adds a regularization term to the cost function, but it
 uses the ℓ~1~ norm of the weight vector instead of half the square of
@@ -1273,10 +1273,10 @@ training (it will still bounce around the optimum, but the steps will
 get smaller and smaller, so it will converge).
 
 
-The[]{#idm45728483462440}[]{#idm45728483461320} Lasso cost function is
+The Lasso cost function is
 not differentiable at *θ*~*i*~ = 0 (for *i* = 1, 2, ⋯, *n*), but
 Gradient Descent still works fine if you use a *subgradient vector*
-**g**^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483457688){#idm45728483457688-marker}^
+**g**^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 instead when any *θ*~*i*~ = 0. [Equation
 4-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#lasso_subgradient_vector)
 shows a subgradient vector equation you can use for Gradient Descent
@@ -1315,7 +1315,7 @@ Note that you could instead use `SGDRegressor(penalty="l1")`.
 Elastic Net
 -----------
 
-Elastic Net[]{#idm45728483392424}[]{#idm45728483391448} is a middle
+Elastic Net is a middle
 ground between Ridge Regression and Lasso Regression. The regularization
 term is a simple mix of both Ridge and Lasso's regularization terms, and
 you can control the mix ratio *r*. When *r* = 0, Elastic Net is
@@ -1357,7 +1357,7 @@ array([1.54333232])
 Early Stopping
 --------------
 
-A[]{#idm45728483305512} very different way to regularize iterative
+A very different way to regularize iterative
 learning algorithms such as Gradient Descent is to stop training as soon
 as the validation error reaches a minimum. This is called *early
 stopping*.
@@ -1417,7 +1417,7 @@ for epoch in range(1000):
 
 Note that with `warm_start=True`, when the `fit()` method is called it
 continues training where it left off, instead of restarting from
-scratch.[]{#idm45728483294744}
+scratch. []{}
 
 
 
@@ -1426,7 +1426,7 @@ scratch.[]{#idm45728483294744}
 Logistic Regression
 ===================
 
-As[]{#RPlogistic04}[]{#idm45728483104808}[]{#TMlogreg04}[]{#idm45728483102648}
+As []{#RPlogistic04} []{#TMlogreg04} []{}
 we discussed in
 [Lab 1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab),
 some regression algorithms can be used for classification (and vice
@@ -1444,7 +1444,7 @@ classifier.
 Estimating Probabilities
 ------------------------
 
-So[]{#idm45728483097048} how does Logistic Regression work? Just like a
+So how does Logistic Regression work? Just like a
 Linear Regression model, a Logistic Regression model computes a weighted
 sum of the input features (plus a bias term), but instead of outputting
 the result directly like the Linear Regression model does, it outputs
@@ -1458,7 +1458,7 @@ $$\hat{p} = h_{\mathbf{\theta}}\left( \mathbf{x} \right) = \sigma\left( \mathbf{
 
 
 The logistic---noted
-*σ*(·)---is[]{#idm45728483081176}[]{#idm45728483080472}[]{#idm45728483079832}
+*σ*(·)---is []{}
 a *sigmoid function* (i.e., *S*-shaped) that outputs a number between 0
 and 1. It is defined as shown in [Equation
 4-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#equation_four_fourteen)
@@ -1494,11 +1494,11 @@ positive and 0 if it is negative.
 
 ###### Note
 
-The score *t* is[]{#idm45728483034600} often called the *logit*. The
+The score *t* is often called the *logit*. The
 name comes from the fact that the logit function, defined as logit(*p*)
 = log(*p* / (1 -- *p*)), is the inverse of the logistic function.
 Indeed, if you compute the logit of the estimated probability *p*, you
-will find that the result is *t*. The[]{#idm45728483031048} logit is
+will find that the result is *t*. The logit is
 also called the *log-odds*, since it is the log of the ratio between the
 estimated probability for the positive class and the estimated
 probability for the negative class.
@@ -1510,7 +1510,7 @@ probability for the negative class.
 Training and Cost Function
 --------------------------
 
-Now you know[]{#idm45728483028040} how a Logistic Regression model
+Now you know how a Logistic Regression model
 estimates probabilities and makes predictions. But how is it trained?
 The objective of training is to set the parameter vector **θ** so that
 the model estimates high probabilities for positive instances (*y* = 1)
@@ -1537,7 +1537,7 @@ to 1, so the cost will be close to 0 if the estimated probability is
 close to 0 for a negative instance or close to 1 for a positive
 instance, which is precisely what we want.
 
-The[]{#idm45728483009192} cost function over the whole training set is
+The cost function over the whole training set is
 the average cost over all training instances. It can be written in a
 single expression called the *log loss*, shown in [Equation
 4-17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#logistic_regression_cost_function).
@@ -1580,8 +1580,8 @@ Mini-batch GD you would use a mini-batch at a time.
 Decision Boundaries
 -------------------
 
-Let's use[]{#idm45728482928088}[]{#idm45728482927080}
-the[]{#idm45728482926280}[]{#idm45728482925576} iris dataset to
+Let's use []{}
+the iris dataset to
 illustrate Logistic Regression. This is a famous dataset that contains
 the sepal and petal length and width of 150 iris flowers of three
 different species: *Iris setosa*, *Iris versicolor*, and *Iris
@@ -1613,7 +1613,7 @@ log_reg.fit(X, y)
 
 Let's look at the model's estimated probabilities for flowers with petal
 widths varying from 0 cm to 3 cm
-([Figure 4-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#logistic_regression_plot)):^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728482851304){#idm45728482851304-marker}^
+([Figure 4-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#logistic_regression_plot)):^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 X_new = np.linspace(0, 3, 1000).reshape(-1, 1)
@@ -1653,7 +1653,7 @@ based on these two features, estimate the probability that a new flower
 is an *Iris virginica*. The dashed line represents the points where the
 model estimates a 50% probability: this is the model's decision
 boundary. Note that it is a linear
-boundary.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728482703400){#idm45728482703400-marker}^
+boundary.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
 Each parallel line represents the points where the model outputs a
 specific probability, from 15% (bottom left) to 90% (top right). All the
 flowers beyond the top-right line have an over 90% chance of being *Iris
@@ -1680,7 +1680,7 @@ linear models), but its inverse: `C`. The higher the value of `C`, the
 Softmax Regression
 ------------------
 
-The[]{#RPsoft04}[]{#idm45728482680072}[]{#idm45728482679128}[]{#idm45728482678488}
+The []{#RPsoft04} []{}
 Logistic Regression model can be generalized to support multiple classes
 directly, without having to train and combine multiple binary
 classifiers (as discussed in
@@ -1691,7 +1691,7 @@ Regression*.
 The idea is simple: when given an instance **x**, the Softmax Regression
 model first computes a score *s*~*k*~(**x**) for each class *k*, then
 estimates the probability of each
-class[]{#idm45728482672904}[]{#idm45728482672200} by applying the
+class by applying the
 *softmax function* (also called the *normalized exponential*) to the
 scores. The equation to compute *s*~*k*~(**x**) should look familiar, as
 it is just like the equation for Linear Regression prediction (see
@@ -1704,7 +1704,7 @@ it is just like the equation for Linear Regression prediction (see
 $$s_{k}\left( \mathbf{x} \right) = \mathbf{x}^{\intercal}\mathbf{\theta}^{(k)}$$
 
 
-Note[]{#idm45728482618680} that each class has its own dedicated
+Note that each class has its own dedicated
 parameter vector **θ**^(*k*)^. All these vectors are typically stored as
 rows in a *parameter matrix* **Θ**.
 
@@ -1747,7 +1747,7 @@ classifier predicts the class with the highest estimated probability
 $$\hat{y} = \operatorname{argmax}\limits_{k}\,\sigma\left( {\mathbf{s}\left( \mathbf{x} \right)} \right)_{k} = \operatorname{argmax}\limits_{k}\, s_{k}\left( \mathbf{x} \right) = \operatorname{argmax}\limits_{k}\,\left( {\left( \mathbf{\theta}^{(k)} \right)^{\intercal}\mathbf{x}} \right)$$
 
 
-The *argmax* operator[]{#idm45728482555928} returns the value of a
+The *argmax* operator returns the value of a
 variable that maximizes a function. In this equation, it returns the
 value of *k* that maximizes the estimated probability
 *σ*(**s**(**x**))~*k*~.
@@ -1765,7 +1765,7 @@ Now that you know how the model estimates probabilities and makes
 predictions, let's take a look at training. The objective is to have a
 model that estimates a high probability for the target class (and
 consequently a low probability for the other classes).
-Minimizing[]{#idm45728482550584}[]{#idm45728482549640} the cost function
+Minimizing the cost function
 shown in [Equation
 4-22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#cross_entropy_cost_function),
 called the *cross entropy*, should lead to this objective because it
@@ -1803,7 +1803,7 @@ with a 1). Cross entropy measures the average number of bits you
 actually send per option. If your assumption about the weather is
 perfect, cross entropy will be equal to the entropy of the weather
 itself (i.e., its intrinsic unpredictability). But if your assumptions
-are wrong (e.g., if it rains often), cross entropy[]{#idm45728482524168}
+are wrong (e.g., if it rains often), cross entropy []{}
 will be greater by an amount called the *Kullback--Leibler (KL)
 divergence*.
 
@@ -1865,7 +1865,7 @@ labeled with 0.450 represents the 45% probability boundary). Notice that
 the model can predict a class that has an estimated probability below
 50%. For example, at the point where all decision boundaries meet, all
 classes have an equal estimated probability of
-33%.[]{#idm45728481811464}[]{#idm45728481810584}[]{#idm45728481746216}
+33%. []{}
 
 ![](./images/mls2_0425.png)
 
@@ -1932,7 +1932,7 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728485468808-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 It is often the case that a learning algorithm will try to optimize a
 different function than the performance measure used to evaluate the
 final model. This is generally because that function is easier to
@@ -1940,59 +1940,59 @@ compute, because it has useful differentiation properties that the
 performance measure lacks, or because we want to constrain the model
 during training, as you will see when we discuss regularization.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728485111624-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 Note that Scikit-Learn separates the bias term (`intercept_`) from the
 feature weights (`coef_`).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484865256-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 Technically speaking, its derivative is *Lipschitz continuous*.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484861192-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 Since feature 1 is smaller, it takes a larger change in *θ*~1~ to affect
 the cost function, which is why the bowl is elongated along the *θ*~1~
 axis.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484773384-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 Eta (*η*) is the seventh letter of the Greek alphabet.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484338456-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 While the Normal Equation can only perform Linear Regression, the
 Gradient Descent algorithms can be used to train many other models, as
 we will see.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728484264360-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 A quadratic equation is of the form *y* = *ax*^2^ + *bx* + *c*.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483791832-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 This notion of bias is not to be confused with the bias term of linear
 models.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483760200-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker){.totri-footnote}^
 It is common to use the notation *J*(**θ**) for cost functions that
 don't have a short name; we will often use this notation throughout the
 rest of this course. The context will make it clear which cost function is
 being discussed.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483654232-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 Norms are discussed in
 [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483640072-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 A square matrix full of 0s except for 1s on the main diagonal (top left
 to bottom right).
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483623688-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 Alternatively you can use the `Ridge` class with the `"sag"` solver.
 Stochastic Average GD is a variant of Stochastic GD. For more details,
 see the presentation ["Minimizing Finite Sums with the Stochastic
 Average Gradient Algorithm"](https://homl.info/12) by Mark Schmidt et
 al. from the University of British Columbia.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728483457688-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 You can think of a subgradient vector at a nondifferentiable point as an
 intermediate vector between the gradient vectors around that point.
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728482920184-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 Photos reproduced from the corresponding Wikipedia pages. *Iris
 virginica* photo by Frank Mayfield ([Creative Commons BY-SA
 2.0](https://creativecommons.org/licenses/by-sa/2.0/)), *Iris
@@ -2000,11 +2000,11 @@ versicolor* photo by D. Gordon E. Robertson ([Creative Commons BY-SA
 3.0](https://creativecommons.org/licenses/by-sa/3.0/)), *Iris setosa*
 photo public domain.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728482851304-marker)^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 NumPy's `reshape()` function allows one dimension to be --1, which means
 "unspecified": the value is inferred from the length of the array and
 the remaining dimensions.
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#idm45728482703400-marker)^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html-marker)^
 It is the the set of points **x** such that *θ*~0~ + *θ*~1~*x*~1~ +
 *θ*~2~*x*~2~ = 0, which defines a straight line.

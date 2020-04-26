@@ -5,7 +5,7 @@
 [Lab 8. ] Dimensionality Reduction
 =============================================
 
-Many[]{#idm45728477818264} Machine Learning problems involve thousands
+Many Machine Learning problems involve thousands
 or even millions of features for each training instance. Not only do all
 these features make training extremely slow, but they can also make it
 much harder to find a good solution, as we will see. This problem is
@@ -40,11 +40,11 @@ thus result in higher performance, but in general it won't; it will just
 speed up training.
 
 
-Apart[]{#idm45728477811560}[]{#idm45728477810536} from speeding up
+Apart from speeding up
 training, dimensionality reduction is also extremely useful for data
 visualization (or *DataViz*). Reducing the number of dimensions down to
 two (or three) makes it possible to plot a condensed view of
-a[]{#idm45728477808824}[]{#idm45728477808104} high-dimensional training
+a high-dimensional training
 set on a graph and often gain some important insights by visually
 detecting patterns, such as clusters. Moreover, DataViz is essential to
 communicate your conclusions to people who are not data scientists---in
@@ -61,9 +61,9 @@ dimensionality reduction techniques: PCA, Kernel PCA, and LLE.
 The Curse of Dimensionality
 ===========================
 
-We[]{#idm45728477804600}[]{#idm45728477803528} are so used to living in
+We are so used to living in
 three
-dimensions^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477802728){#idm45728477802728-marker
+dimensions^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^ that our intuition fails us when we try to imagine a
 high-dimensional space. Even a basic 4D hypercube is incredibly hard to
 picture in our minds (see
@@ -80,7 +80,7 @@ unlikely that a random point will be "extreme" along any dimension). But
 in a 10,000-dimensional unit hypercube, this probability is greater than
 99.999999%. Most points in a high-dimensional hypercube are very close
 to the
-border.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477794648){#idm45728477794648-marker
+border.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^
 
 Here is a more troublesome difference: if you pick two points randomly
@@ -116,7 +116,7 @@ across all dimensions.
 Main Approaches for Dimensionality Reduction
 ============================================
 
-Before[]{#DRapp08} we dive into specific dimensionality reduction
+Before []{#DRapp08} we dive into specific dimensionality reduction
 algorithms, let's take a look at the two main approaches to reducing
 dimensionality: projection and Manifold Learning.
 
@@ -125,11 +125,11 @@ dimensionality: projection and Manifold Learning.
 Projection
 ----------
 
-In[]{#idm45728477781608}[]{#idm45728477780872} most real-world problems,
+In most real-world problems,
 training instances are *not* spread out uniformly across all dimensions.
 Many features are almost constant, while others are highly correlated
 (as discussed earlier for MNIST). As a result, all training instances
-lie within (or close to) a[]{#idm45728477779464} much lower-dimensional
+lie within (or close to) a much lower-dimensional
 *subspace* of the high-dimensional space. This sounds very abstract, so
 let's look at an example. In
 [Figure 8-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dataset_3d_plot)
@@ -172,7 +172,7 @@ dataset on the right side of
 Manifold Learning
 -----------------
 
-The[]{#idm45728477758440} Swiss roll is an example of a 2D *manifold*.
+The Swiss roll is an example of a 2D *manifold*.
 Put simply, a 2D manifold is a 2D shape that can be bent and twisted in
 a higher-dimensional space. More generally, a *d*-dimensional manifold
 is a part of an *n*-dimensional space (where *d* \< *n*) that locally
@@ -182,7 +182,7 @@ in the third dimension.
 
 Many dimensionality reduction algorithms work by modeling the manifold
 on which the training instances lie; this is called *Manifold Learning*.
-It relies[]{#idm45728477753176}[]{#idm45728477752440} on the *manifold
+It relies on the *manifold
 assumption*, also called the *manifold hypothesis*, which holds that
 most real-world high-dimensional datasets lie close to a much
 lower-dimensional manifold. This assumption is very often empirically
@@ -222,7 +222,7 @@ lead to a better or simpler solution; it all depends on the dataset.
 Hopefully you now have a good sense of what the curse of dimensionality
 is and how dimensionality reduction algorithms can fight it, especially
 when the manifold assumption holds. The rest of this lab will go
-through some of the most popular algorithms.[]{#idm45728477744264}
+through some of the most popular algorithms. []{}
 
 ![](./images/mls2_0806.png)
 
@@ -233,7 +233,7 @@ through some of the most popular algorithms.[]{#idm45728477744264}
 PCA
 ===
 
-*Principal Component Analysis* (PCA)[]{#DRpca08}[]{#idm45728477737784}
+*Principal Component Analysis* (PCA) []{#DRpca08} []{}
 is by far the most popular dimensionality reduction algorithm. First it
 identifies the hyperplane that lies closest to the data, and then it
 projects the data onto it, just like in
@@ -244,7 +244,7 @@ projects the data onto it, just like in
 Preserving the Variance
 -----------------------
 
-Before[]{#idm45728477734248}[]{#idm45728477733224} you can project the
+Before you can project the
 training set onto a lower-dimensional hyperplane, you first need to
 choose the right hyperplane. For example, a simple 2D dataset is
 represented on the left in
@@ -263,7 +263,7 @@ of variance, as it will most likely lose less information than the other
 projections. Another way to justify this choice is that it is the axis
 that minimizes the mean squared distance between the original dataset
 and its projection onto that axis. This is the rather simple idea behind
-[PCA](https://homl.info/pca){.orm:hideurl}.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477727032){#idm45728477727032-marker
+[PCA](https://homl.info/pca){.orm:hideurl}.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^
 
 
@@ -272,7 +272,7 @@ and its projection onto that axis. This is the rather simple idea behind
 Principal Components
 --------------------
 
-PCA[]{#idm45728477723096} identifies the axis that accounts for the
+PCA identifies the axis that accounts for the
 largest amount of variance in the training set. In
 [Figure 8-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#pca_best_projection_plot),
 it is the solid line. It also finds a second axis, orthogonal to the
@@ -306,7 +306,7 @@ will generally remain the same.
 
 
 So how can you find the principal components of a training set? Luckily,
-there is a standard matrix factorization[]{#idm45728477712104} technique
+there is a standard matrix factorization technique
 called *Singular Value Decomposition* (SVD) that can decompose the
 training set matrix **X** into the matrix multiplication of three
 matrices **U** **Σ** **V**^⊺^, where **V** contains the unit vectors
@@ -324,7 +324,7 @@ $$\mathbf{V} = \begin{pmatrix}
 \end{pmatrix}$$
 
 
-The following Python[]{#idm45728477687224} code uses NumPy's `svd()`
+The following Python code uses NumPy's `svd()`
 function to obtain all the principal components of the training set,
 then extracts the two unit vectors that define the first two PCs:
 
@@ -339,7 +339,7 @@ c2 = Vt.T[:, 1]
 ###### Warning
 
 PCA assumes that the dataset is centered around the origin. As we will
-see, Scikit-Learn's PCA[]{#idm45728477642584} classes take care of
+see, Scikit-Learn's PCA classes take care of
 centering the data for you. If you implement PCA yourself (as in the
 preceding example), or if you use other libraries, don't forget to
 center the data first.
@@ -351,7 +351,7 @@ center the data first.
 Projecting Down to d Dimensions
 -------------------------------
 
-Once[]{#idm45728477639368} you have identified all the principal
+Once you have identified all the principal
 components, you can reduce the dimensionality of the dataset down to *d*
 dimensions by projecting it onto the hyperplane defined by the first *d*
 principal components. Selecting this hyperplane ensures that the
@@ -384,7 +384,7 @@ X2D = X_centered.dot(W2)
 ```
 
 There you have it! You now know how to reduce the
-dimensionality[]{#idm45728477616280} of any dataset down to any number
+dimensionality of any dataset down to any number
 of dimensions, while preserving as much variance as possible.
 
 
@@ -393,7 +393,7 @@ of dimensions, while preserving as much variance as possible.
 Using Scikit-Learn
 ------------------
 
-Scikit-Learn's `PCA` class[]{#idm45728477613496}[]{#idm45728477612248}
+Scikit-Learn's `PCA` class []{}
 uses SVD decomposition to implement PCA, just like we did earlier in
 this lab. The following code applies PCA to reduce the
 dimensionality of the dataset down to two dimensions (note that it
@@ -417,7 +417,7 @@ defines the first principal component is equal to
 Explained Variance Ratio
 ------------------------
 
-Another[]{#idm45728477518984}[]{#idm45728477518040}[]{#idm45728477517352}
+Another []{}
 useful piece of information is the *explained variance ratio* of each
 principal component, available via the `explained_variance_ratio_`
 variable. The ratio indicates the proportion of the dataset's variance
@@ -442,7 +442,7 @@ probably carries little information.
 Choosing the Right Number of Dimensions
 ---------------------------------------
 
-Instead[]{#idm45728477509960} of arbitrarily choosing the number of
+Instead of arbitrarily choosing the number of
 dimensions to reduce down to, it is simpler to choose the number of
 dimensions that add up to a sufficiently large portion of the variance
 (e.g., 95%). Unless, of course, you are reducing dimensionality for data
@@ -487,7 +487,7 @@ explained variance.
 PCA for Compression
 -------------------
 
-After[]{#idm45728477416712}[]{#idm45728477415464}[]{#idm45728477414792}
+After []{}
 dimensionality reduction, the training set takes up much less space. As
 an example, try applying PCA to the MNIST dataset while preserving 95%
 of its variance. You should find that each instance will have just over
@@ -497,14 +497,14 @@ original size! This is a reasonable compression ratio, and you can see
 how this size reduction can speed up a classification algorithm (such as
 an SVM classifier) tremendously.
 
-It is also possible to[]{#idm45728477406600}[]{#idm45728477405592}
+It is also possible to []{}
 decompress the reduced dataset back to 784 dimensions by applying the
 inverse transformation of the PCA projection. This won't give you back
 the original data, since the projection lost a bit of information
 (within the 5% variance that was dropped), but it will likely be close
 to the original data. The mean squared distance between the original
 data and the reconstructed data (compressed and then decompressed)
-is[]{#idm45728477404360}[]{#idm45728477403688} called the
+is called the
 *reconstruction error*.
 
 The following code compresses the MNIST dataset down to 154 dimensions,
@@ -525,7 +525,7 @@ mostly intact.
 
 ![](./images/mls2_0809.png)
 
-The[]{#idm45728477324056}[]{#idm45728477323320} equation of the inverse
+The equation of the inverse
 transformation is shown in [Equation
 8-3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#inverse_pca).
 
@@ -541,9 +541,9 @@ $$\mathbf{X}_{\text{recovered}} = \mathbf{X}_{d\text{-proj}}{\mathbf{W}_{d}}^{\i
 Randomized PCA
 --------------
 
-If[]{#idm45728477311144}[]{#idm45728477309448}[]{#idm45728477308536} you
+If you
 set the `svd_solver` hyperparameter to `"randomized"`,
-Scikit-Learn[]{#idm45728477306872} uses a stochastic algorithm called
+Scikit-Learn uses a stochastic algorithm called
 *Randomized PCA* that quickly finds an approximation of the first *d*
 principal components. Its computational complexity is *O*(*m* × *d*^2^)
 + *O*(*d*^3^), instead of *O*(*m* × *n*^2^) + *O*(*n*^3^) for the full
@@ -559,7 +559,7 @@ By default, `svd_solver` is actually set to `"auto"`: Scikit-Learn
 automatically uses the randomized PCA algorithm if *m* or *n* is greater
 than 500 and *d* is less than 80% of *m* or *n*, or else it uses the
 full SVD approach. If you want to force
-Scikit-Learn[]{#idm45728477258344} to use full SVD, you can set the
+Scikit-Learn to use full SVD, you can set the
 `svd_solver` hyperparameter to `"full"`.
 
 
@@ -568,7 +568,7 @@ Scikit-Learn[]{#idm45728477258344} to use full SVD, you can set the
 Incremental PCA
 ---------------
 
-One[]{#idm45728477247096}[]{#idm45728477246120} problem with the
+One problem with the
 preceding implementations of PCA is that they require the whole training
 set to fit in memory in order for the algorithm to run. Fortunately,
 *Incremental PCA* (IPCA) algorithms have been developed. They allow you
@@ -576,10 +576,10 @@ to split the training set into mini-batches and feed an IPCA algorithm
 one mini-batch at a time. This is useful for large training sets and for
 applying PCA online (i.e., on the fly, as new instances arrive).
 
-The[]{#idm45728477243848} following code splits the MNIST dataset into
+The following code splits the MNIST dataset into
 100 mini-batches (using NumPy's `array_split()` function) and feeds them
-to[]{#idm45728477242328} Scikit-Learn's [`IncrementalPCA`
-class](https://homl.info/32)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477240376){#idm45728477240376-marker
+to Scikit-Learn's [`IncrementalPCA`
+class](https://homl.info/32)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^ to reduce the dimensionality of the MNIST dataset down
 to 154 dimensions (just like before). Note that you must call the
 `partial_fit()` method with each mini-batch, rather than the `fit()`
@@ -596,7 +596,7 @@ for X_batch in np.array_split(X_train, n_batches):
 X_reduced = inc_pca.transform(X_train)
 ```
 
-Alternatively, you can use[]{#idm45728477197784} NumPy's `memmap` class,
+Alternatively, you can use NumPy's `memmap` class,
 which allows you to manipulate a large array stored in a binary file on
 disk as if it were entirely in memory; the class loads only the data it
 needs in memory, when it needs it. Since the `IncrementalPCA` class uses
@@ -621,24 +621,24 @@ Kernel PCA
 
 In
 [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)
-we[]{#PCAkernel08}[]{#kernalpca04}[]{#idm45728477084696} discussed the
+we []{#PCAkernel08} []{#kernalpca04} discussed the
 kernel trick, a mathematical technique that implicitly maps instances
-into a very high-dimensional[]{#idm45728477083768} space (called the
+into a very high-dimensional space (called the
 *feature space*), enabling nonlinear classification and regression with
 Support Vector Machines. Recall that a linear decision boundary in the
 high-dimensional feature space corresponds to a complex
-nonlinear[]{#idm45728477082344} decision boundary in the *original
+nonlinear decision boundary in the *original
 space*.
 
 It turns out that the same trick can be applied to PCA, making it
 possible to perform complex nonlinear projections for dimensionality
 reduction. This is called [*Kernel PCA*
-(kPCA)](https://homl.info/33).^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477079656){#idm45728477079656-marker
+(kPCA)](https://homl.info/33).^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^ It is often good at preserving clusters of
 [instances] after projection, or sometimes even
 unrolling datasets that lie close to a twisted manifold.
 
-The[]{#idm45728477077304} following code uses Scikit-Learn's `KernelPCA`
+The following code uses Scikit-Learn's `KernelPCA`
 class to perform kPCA with an RBF kernel (see
 [Lab 5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html#svm_lab)
 for more details about the RBF kernel and other kernels):
@@ -707,8 +707,8 @@ Note that reconstruction is not as easy as with linear PCA. Here's why.
 [Figure 8-11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#kernel_pca_diagram)
 shows the original Swiss roll 3D dataset (top left) and the resulting 2D
 dataset after kPCA is applied using an RBF kernel (top right). Thanks to
-the[]{#idm45728476877272} kernel trick, this transformation is
-mathematically equivalent to[]{#idm45728476876504} using the *feature
+the kernel trick, this transformation is
+mathematically equivalent to using the *feature
 map* φ to map the training set to an infinite-dimensional feature space
 (bottom right), then projecting the transformed training set down to 2D
 using linear PCA.
@@ -721,7 +721,7 @@ cannot compute the reconstructed point, and therefore we cannot compute
 the true reconstruction error. Fortunately, it is possible to find a
 point in the original space that would map close to the reconstructed
 point. This point is called
-the[]{#idm45728476874152}[]{#idm45728476873448} reconstruction
+the reconstruction
 *pre-image*. Once you have this pre-image, you can measure its squared
 distance to the original instance. You can then select the kernel and
 hyperparameters that minimize this reconstruction pre-image error.
@@ -731,9 +731,9 @@ hyperparameters that minimize this reconstruction pre-image error.
 You may be wondering how to perform this reconstruction. One solution is
 to train a supervised regression model, with the projected instances as
 the training set and the original instances as the targets.
-Scikit-Learn[]{#idm45728476866776} will do this automatically if you set
+Scikit-Learn will do this automatically if you set
 `fit_inverse_transform=True`, as shown in the following
-code:^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728476865320){#idm45728476865320-marker
+code:^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="python"}
@@ -761,7 +761,7 @@ You can then compute the reconstruction pre-image error:
 
 Now you can use grid search with cross-validation to find the kernel and
 hyperparameters that minimize this
-error.[]{#idm45728476718600}[]{#idm45728476717752}[]{#idm45728476716840}
+error. []{}
 
 
 
@@ -771,10 +771,10 @@ LLE
 ===
 
 [*Locally Linear Embedding*
-(LLE)](https://homl.info/lle)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728476713480){#idm45728476713480-marker
-.totri-footnote}^ is[]{#idm45728476773048} another powerful *nonlinear
+(LLE)](https://homl.info/lle)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
+.totri-footnote}^ is another powerful *nonlinear
 dimensionality reduction* (NLDR) technique.
-It[]{#idm45728476771768}[]{#idm45728476770856} is a Manifold Learning
+It is a Manifold Learning
 technique that does not rely on projections, like the previous
 algorithms do. In a nutshell, LLE works by first measuring how each
 training instance linearly relates to its closest neighbors (c.n.), and
@@ -783,7 +783,7 @@ where these local relationships are best preserved (more details
 shortly). This approach makes it particularly good at unrolling twisted
 manifolds, especially when there is not too much noise.
 
-The following code uses[]{#idm45728476769192} Scikit-Learn's
+The following code uses Scikit-Learn's
 `LocallyLinearEmbedding` class to unroll the Swiss roll:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -852,7 +852,7 @@ the matrix containing all **z**^(*i*)^.
 $$\hat{\mathbf{Z}} = \operatorname{argmin}\limits_{\mathbf{Z}}\sum\limits_{i = 1}^{m}\left( {\mathbf{z}^{(i)} - \sum\limits_{j = 1}^{m}{\hat{w}}_{i,j}\mathbf{z}^{(j)}} \right)^{2}$$
 
 
-Scikit-Learn's LLE implementation[]{#idm45728476531048} has the
+Scikit-Learn's LLE implementation has the
 following computational complexity: [*O*(*m* log(*m*)*n*
 log(*k*))] for finding the *k* nearest neighbors,
 *O*(*mnk*^3^) for optimizing the weights, and *O*(*dm*^2^) for
@@ -866,13 +866,13 @@ datasets.
 Other Dimensionality Reduction Techniques
 =========================================
 
-There[]{#idm45728476522168} are many other dimensionality reduction
-techniques, several of which are[]{#idm45728476521064} available in
+There are many other dimensionality reduction
+techniques, several of which are available in
 Scikit-Learn. Here are some of the most popular ones:
 
 Random Projections
 
-:   As[]{#idm45728476518168} its name suggests, projects the data to a
+:   As its name suggests, projects the data to a
     lower-dimensional space using a random linear projection. This may
     sound crazy, but it turns out that such a random projection is
     actually very likely to preserve distances well, as was demonstrated
@@ -885,20 +885,20 @@ Random Projections
 
 Multidimensional Scaling (MDS)
 
-:   Reduces[]{#idm45728476515080} dimensionality while trying to
+:   Reduces dimensionality while trying to
     preserve the distances between the instances.
 
 Isomap
 
-:   Creates[]{#idm45728476512872}[]{#idm45728476512136} a graph by
+:   Creates a graph by
     connecting each instance to its nearest neighbors, then reduces
     dimensionality while trying to preserve the *geodesic
-    distances*^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728476510664){#idm45728476510664-marker
+    distances*^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
     .totri-footnote}^ between the instances.
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
-:   Reduces dimensionality[]{#idm45728476508504} while trying to keep
+:   Reduces dimensionality while trying to keep
     similar instances close and dissimilar instances apart. It is mostly
     used for visualization, in particular to visualize clusters of
     instances in high-dimensional space (e.g., to visualize the MNIST
@@ -906,7 +906,7 @@ t-Distributed Stochastic Neighbor Embedding (t-SNE)
 
 Linear Discriminant Analysis (LDA)
 
-:   Is[]{#idm45728476506040} a classification algorithm, but during
+:   Is a classification algorithm, but during
     training it learns the most discriminative axes between the classes,
     and these axes can then be used to define a hyperplane onto which to
     project the data. The benefit of this approach is that the
@@ -979,50 +979,50 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477802728-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Well, four dimensions if you count time, and a few more if you are a
 string theorist.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477799288-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Watch a rotating tesseract projected into 3D space at
 [*https://homl.info/30*](https://homl.info/30). Image by Wikipedia user
 NerdBoy1392 ([Creative Commons BY-SA
 3.0](https://creativecommons.org/licenses/by-sa/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Tesseract*](https://en.wikipedia.org/wiki/Tesseract).
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477794648-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Fun fact: anyone you know is probably an extremist in at least one
 dimension (e.g., how much sugar they put in their coffee), if you
 consider enough dimensions.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477727032-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Karl Pearson, "On Lines and Planes of Closest Fit to Systems of Points
 in Space," *The London, Edinburgh, and Dublin Philosophical Magazine and
 Journal of Science* 2, no. 11 (1901): 559-572,
 [*https://homl.info/pca*](https://homl.info/pca).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477240376-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Scikit-Learn uses the algorithm described in David A. Ross et al.,
 "Incremental Learning for Robust Visual Tracking," *International
 Journal of Computer Vision* 77, no. 1--3 (2008): 125--141.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728477079656-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Bernhard Schölkopf et al., "Kernel Principal Component Analysis," in
 *Lecture Notes in Computer Science* 1327 (Berlin: Springer, 1997):
 583--588.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728476865320-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 If you set `fit_inverse_transform=True`, Scikit-Learn will use the
 algorithm (based on Kernel Ridge Regression) described in Gokhan H.
 Bakır et al., ["Learning to Find Pre-Images"](https://homl.info/34),
 *Proceedings of the 16th International Conference on Neural Information
 Processing Systems* (2004): 449--456.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728476713480-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 Sam T. Roweis and Lawrence K. Saul, "Nonlinear Dimensionality Reduction
 by Locally Linear Embedding," *Science* 290, no. 5500 (2000):
 2323--2326.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#idm45728476510664-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html-marker){.totri-footnote}^
 The geodesic distance between two nodes in a graph is the number of
 nodes on the shortest path between these nodes.

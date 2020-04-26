@@ -5,21 +5,21 @@
 [Lab 15. ] Processing Sequences Using [RNNs and CNNs]
 ================================================================================
 
-The[]{#idm45728453118520} batter hits the ball. The outfielder
+The batter hits the ball. The outfielder
 immediately starts running, anticipating the ball's trajectory. He
 tracks it, adapts his movements, and finally catches it (under a thunder
 of applause). Predicting the future is something you do all the time,
 whether you are finishing a friend's sentence or anticipating the smell
 of coffee at breakfast. In this lab we will discuss recurrent neural
 networks (RNNs), a class of nets that can predict the future (well, up
-to a point, of course). They[]{#idm45728453116888} can analyze time
+to a point, of course). They can analyze time
 series data such as stock prices, and tell you when to buy or sell.
-In[]{#idm45728453115672} autonomous driving systems, they can anticipate
+In autonomous driving systems, they can anticipate
 car trajectories and help avoid accidents. More generally,
-they[]{#idm45728453114776} can work on sequences of arbitrary lengths,
+they can work on sequences of arbitrary lengths,
 rather than on fixed-sized inputs like all the nets we have considered
 so far. For example, they can take sentences, documents, or audio
-samples as input, making[]{#idm45728453113480} them extremely useful for
+samples as input, making them extremely useful for
 natural language processing applications such as automatic translation
 or speech-to-text.
 
@@ -41,7 +41,7 @@ sequential data: for small sequences, a regular dense network can do the
 trick; and for very long sequences, such as audio samples or text,
 convolutional neural networks can actually work quite well too. We will
 discuss both of these possibilities, and we will finish this
-lab[]{#idm45728453107848} by implementing a *WaveNet*: this is a CNN
+lab by implementing a *WaveNet*: this is a CNN
 architecture capable of handling sequences of tens of thousands of time
 steps. In
 [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab),
@@ -54,7 +54,7 @@ attention mechanisms. Let's get started!
 Recurrent Neurons and Layers
 ============================
 
-Up[]{#RNNneurons15}[]{#Nrecurr15}[]{#Lrecurr15} to now we have focused
+Up []{#RNNneurons15} []{#Nrecurr15} []{#Lrecurr15} to now we have focused
 on feedforward neural networks, where the activations flow only in one
 direction, from the input layer to the output layer (a few exceptions
 are discussed in
@@ -64,14 +64,14 @@ network, except it also has connections pointing backward. Let's look at
 the simplest possible RNN, composed of one neuron receiving inputs,
 producing an output, and sending that output back to itself, as shown in
 [Figure 15-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#simple_rnn_diagram)
-(left). At[]{#idm45728453097384}[]{#idm45728453096680} each *time step*
+(left). At each *time step*
 *t* (also called a *frame*), this *recurrent neuron* receives the inputs
 **x**~(*t*)~ as well as its own output from the previous time step,
 *y*~(*t*--1)~. Since there is no previous output at the first time step,
 it is generally set to 0. We can represent this tiny network against the
 time axis, as shown in
 [Figure 15-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#simple_rnn_diagram)
-(right). This[]{#idm45728453090696} is called *unrolling the network
+(right). This is called *unrolling the network
 through time* (it's the same recurrent neuron represented once per time
 step).
 
@@ -96,7 +96,7 @@ recurrent layer can then be computed pretty much as you might expect, as
 shown in [Equation
 15-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#rnn_output_equation)
 (**b** is the bias vector and *ϕ*(·) is the activation function (e.g.,
-ReLU^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728453072056){#idm45728453072056-marker
+ReLU^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^).
 
 
@@ -163,7 +163,7 @@ outputs, so they are typically assumed to be all zeros.
 Memory Cells
 ------------
 
-Since[]{#idm45728452967128}[]{#idm45728452966424} the output of a
+Since the output of a
 recurrent neuron at time step *t* is a function of all the inputs from
 previous time steps, you could say it has a form of *memory*. A part of
 a neural network that preserves some state across time steps is called a
@@ -192,7 +192,7 @@ not always the case, as shown in
 Input and Output Sequences
 --------------------------
 
-An[]{#idm45728452950312}[]{#idm45728452949336} RNN can simultaneously
+An RNN can simultaneously
 take a sequence of inputs and produce a sequence of outputs (see the
 top-left network in
 [Figure 15-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#seq_to_seq_diagram)).
@@ -204,7 +204,7 @@ future (i.e., from *N* -- 1 days ago to tomorrow).
 Alternatively, you could feed the network a sequence of inputs and
 ignore all outputs except for the last one (see the top-right network in
 [Figure 15-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#seq_to_seq_diagram)).
-In other words, this[]{#idm45728452945000} is a *sequence-to-vector
+In other words, this is a *sequence-to-vector
 network*. For example, you could feed the network a sequence of words
 corresponding to a movie review, and the network would output a
 sentiment score (e.g., from --1 \[hate\] to +1 \[love\]).
@@ -213,12 +213,12 @@ Conversely, you could feed the network the same input vector over and
 over again at each time step and let it output a sequence (see the
 bottom-left network of
 [Figure 15-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#seq_to_seq_diagram)).
-This[]{#idm45728452942200} is a *vector-to-sequence network*. For
+This is a *vector-to-sequence network*. For
 example, the input could be an image (or the output of a CNN), and the
 output could be a caption for that image.
 
 Lastly, you could have a sequence-to-vector network,
-called[]{#idm45728452940248}[]{#idm45728452939464} an *encoder*,
+called an *encoder*,
 followed by a vector-to-sequence network, called a *decoder* (see the
 bottom-right network of
 [Figure 15-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#seq_to_seq_diagram)).
@@ -227,7 +227,7 @@ language to another. You would feed the network a sentence in one
 language, the encoder would convert this sentence into a single vector
 representation, and then the decoder would decode this vector into a
 sentence in another language. This two-step model,
-called[]{#idm45728452936584} an *Encoder--Decoder*, works much better
+called an *Encoder--Decoder*, works much better
 than trying to translate on the fly with a single sequence-to-sequence
 RNN (like the one represented at the top left): the last words of a
 sentence can affect the first words of the translation, so you need to
@@ -241,7 +241,7 @@ suggests).
 ![](./images/mls2_1504.png)
 
 Sounds promising, but how do you train a recurrent neural
-network?[]{#idm45728452930904}[]{#idm45728452929848}[]{#idm45728452928904}
+network? []{}
 
 
 
@@ -250,10 +250,10 @@ network?[]{#idm45728452930904}[]{#idm45728452929848}[]{#idm45728452928904}
 Training RNNs
 =============
 
-To[]{#idm45728452926552} train an RNN, the trick is to unroll it through
+To train an RNN, the trick is to unroll it through
 time (like we just did) and then simply use regular backpropagation (see
 [Figure 15-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#bptt_diagram)).
-This[]{#idm45728452924504} strategy is called *backpropagation through
+This strategy is called *backpropagation through
 time* (BPTT).
 
 Just like in regular backpropagation, there is a first forward pass
@@ -288,19 +288,19 @@ let's start coding!
 Forecasting a Time Series
 =========================
 
-Suppose[]{#RNNforecast15}[]{#Sforecast15}[]{#idm45728452904712} you are
+Suppose []{#RNNforecast15} []{#Sforecast15} you are
 studying the number of active users per hour on your website, or the
 daily temperature in your city, or your company's financial health,
 measured quarterly using multiple metrics. In all these cases, the data
 will be a sequence of one or more values per time step. This is called a
-*time series*. In[]{#idm45728452902952} the first two examples there is
+*time series*. In the first two examples there is
 a single value per time step, so these are *univariate time series*,
 while in the financial example there are multiple values per time step
-(e.g., the company's revenue, debt, and so on), so[]{#idm45728452901560}
+(e.g., the company's revenue, debt, and so on), so []{}
 it is a *multivariate time series*. A typical task is to predict future
-values, which[]{#idm45728452900232} is called *forecasting*. Another
+values, which is called *forecasting*. Another
 common task is to fill in the blanks: to predict (or rather "postdict")
-missing values from the past. This[]{#idm45728452898872} is called
+missing values from the past. This is called
 *imputation*. For example,
 [Figure 15-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#time_series_plot)
 shows 3 univariate time series, each of them 50 time steps long, and the
@@ -362,13 +362,13 @@ the targets are column vectors (e.g., `y_train` has a shape of \[7000,
 Baseline Metrics
 ----------------
 
-Before[]{#idm45728452632584}[]{#idm45728452631576} we start using RNNs,
+Before we start using RNNs,
 it is often a good idea to have a few baseline metrics, or else we may
 end up thinking our model works great when in fact it is doing worse
 than basic models. For example, the simplest approach is to predict the
 last value in each series. This is called *naive forecasting*, and it is
 sometimes surprisingly difficult to outperform. In this case,
-it[]{#idm45728452630104} gives us a mean squared error of about 0.020:
+it gives us a mean squared error of about 0.020:
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> y_pred = X_valid[:, -1]
@@ -400,7 +400,7 @@ than the naive approach!
 Implementing a Simple RNN
 -------------------------
 
-Let's[]{#idm45728452519560} see if we can beat that with a simple RNN:
+Let's see if we can beat that with a simple RNN:
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential([
@@ -448,9 +448,9 @@ simple RNN, that's a total of just three parameters.
 
 ##### Trend and Seasonality
 
-There[]{#idm45728452447240}[]{#idm45728452446232} are many other models
+There are many other models
 to forecast time series, such as *weighted moving average*
-models[]{#idm45728452445080} or *autoregressive integrated moving
+models or *autoregressive integrated moving
 average* (ARIMA) models. Some of them require you to first remove the
 trend and seasonality. For example, if you are studying the number of
 active users on your website, and it is growing by 10% every month, you
@@ -462,7 +462,7 @@ probably observe strong seasonality: since it sells well every summer, a
 similar pattern will be repeated every year. You would have to remove
 this seasonality from the time series, for example by computing the
 difference between the value at each time step and the value one year
-earlier (this technique[]{#idm45728452442904} is called *differencing*).
+earlier (this technique is called *differencing*).
 Again, after the model is trained and makes predictions, you would have
 to add the seasonal pattern back to get the final predictions.
 
@@ -480,7 +480,7 @@ let's try to add more recurrent layers!
 Deep RNNs
 ---------
 
-It[]{#idm45728452437816} is quite common to stack multiple layers of
+It is quite common to stack multiple layers of
 cells, as shown in
 [Figure 15-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#deep_rnn_diagram).
 This gives you a *deep RNN*.
@@ -549,7 +549,7 @@ function if you wanted.
 Forecasting Several Time Steps Ahead
 ------------------------------------
 
-So[]{#idm45728452283368} far we have only predicted the value at the
+So far we have only predicted the value at the
 next time step, but we could just as easily have predicted the value
 several steps ahead by changing the targets appropriately (e.g., to
 predict 10 steps ahead, just change the targets to be the value 10 steps
@@ -655,11 +655,11 @@ It may be surprising that the targets will contain values that appear in
 the inputs (there is a lot of overlap between `X_train` and `Y_train`).
 Isn't that cheating? Fortunately, not at all: at each time step, the
 model only knows about past time steps, so it cannot look ahead.
-It[]{#idm45728451843720}[]{#idm45728451843016} is said to be a *causal*
+It is said to be a *causal*
 model.
 
 
-To[]{#idm45728451840952}[]{#idm45728451839528} turn the model into a
+To turn the model into a
 sequence-to-sequence model, we must set `return_sequences=True` in all
 recurrent layers (even the last one), and we must apply the output
 `Dense` layer at every time step. Keras offers a `TimeDistributed` layer
@@ -675,7 +675,7 @@ to sequences (i.e., it reshapes the outputs from \[*batch size* × *time
 steps*, *output dimensions*\] to \[*batch size*, *time steps*, *output
 dimensions*\]; in this example the number of output dimensions is 10,
 since the `Dense` layer has 10
-units).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451829960){#idm45728451829960-marker
+units).^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ Here is the updated model:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -736,7 +736,7 @@ the predictions at each time step.
 Simple RNNs can be quite good at forecasting time series or handling
 other kinds of sequences, but they do not perform as well on long time
 series or sequences. Let's discuss why and see what we can do about
-it.[]{#idm45728451663208}[]{#idm45728451662232}
+it. []{}
 
 
 
@@ -745,7 +745,7 @@ it.[]{#idm45728451663208}[]{#idm45728451662232}
 Handling Long Sequences
 =======================
 
-To[]{#Slong15}[]{#RNNlong15}[]{#idm45728451658376} train an RNN on long
+To []{#Slong15} []{#RNNlong15} train an RNN on long
 sequences, we must run it over many time steps, making the unrolled RNN
 a very deep network. Just like any deep neural network it may suffer
 from the unstable gradients problem, discussed in
@@ -760,7 +760,7 @@ starting with the unstable gradients problem.
 Fighting the Unstable Gradients Problem
 ---------------------------------------
 
-Many[]{#idm45728451654216}[]{#idm45728451653240} of the tricks we used
+Many of the tricks we used
 in deep nets to alleviate the unstable gradients problem can also be
 used for RNNs: good parameter initialization, faster optimizers,
 dropout, and so on. However, nonsaturating activation functions (e.g.,
@@ -788,7 +788,7 @@ step). However, the same BN layer will be used at each time step, with
 the same parameters, regardless of the actual scale and offset of the
 inputs and hidden state. In practice, this does not yield good results,
 as was demonstrated by César Laurent et al. in a [2015
-paper](https://homl.info/rnnbn):^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451649896){#idm45728451649896-marker
+paper](https://homl.info/rnnbn):^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ the authors found that BN was slightly beneficial only
 when it was applied to the inputs, not to the hidden states. In other
 words, it was slightly better than nothing when applied between
@@ -798,10 +798,10 @@ but not within recurrent layers (i.e., horizontally). In Keras this can
 be done simply by adding a `BatchNormalization` layer before each
 recurrent layer, but don't expect too much from it.
 
-Another[]{#idm45728451646472} form of normalization often works better
+Another form of normalization often works better
 with RNNs: *Layer Normalization*. This idea was introduced by Jimmy Lei
 Ba et al. in a [2016
-paper](https://homl.info/layernorm):^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451644568){#idm45728451644568-marker
+paper](https://homl.info/layernorm):^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ it is very similar to Batch Normalization, but instead
 of normalizing across the batch dimension, it normalizes across the
 features dimension. One advantage is that it can compute the required
@@ -846,7 +846,7 @@ class LNSimpleRNNCell(keras.layers.Layer):
 ```
 
 The code is quite
-straightforward.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451635160){#idm45728451635160-marker
+straightforward.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ Our `LNSimpleRNNCell` class inherits from the
 `keras.layers.Layer` class, just like any custom layer. The constructor
 takes the number of units and the desired activation function, and it
@@ -894,11 +894,11 @@ with the short-term memory problem.
 Tackling the Short-Term Memory Problem
 --------------------------------------
 
-Due[]{#LSshort15}[]{#short15} to the transformations that the data goes
+Due []{#LSshort15} []{#short15} to the transformations that the data goes
 through when traversing an RNN, some information is lost at each time
 step. After a while, the RNN's state contains virtually no trace of the
 first inputs. This can be a showstopper. Imagine Dory the
-fish^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451445480){#idm45728451445480-marker
+fish^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ trying to translate a long sentence; by the time she's
 finished reading it, she has no clue how it started. To tackle this
 problem, various types of cells with long-term memory have been
@@ -910,15 +910,15 @@ long-term memory cells: the LSTM cell.
 
 ### LSTM cells
 
-The *Long Short-Term Memory* (LSTM) cell[]{#idm45728451440920} was
+The *Long Short-Term Memory* (LSTM) cell was
 [proposed in
-1997](https://homl.info/93)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451439480){#idm45728451439480-marker
+1997](https://homl.info/93)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ by Sepp Hochreiter and Jürgen Schmidhuber and
 gradually improved over the years by several researchers, such as [Alex
 Graves](https://homl.info/graves), [Haşim
-Sak](https://homl.info/94),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451436808){#idm45728451436808-marker
+Sak](https://homl.info/94),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ and [Wojciech
-Zaremba](https://homl.info/95).^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451435208){#idm45728451435208-marker
+Zaremba](https://homl.info/95).^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
 .totri-footnote}^ If you consider the LSTM cell as a black box, it can
 be used very much like a basic cell, except it will perform much better;
 training will converge faster, and it will detect long-term dependencies
@@ -966,14 +966,14 @@ Now let's open the box! The key idea is that the network can learn what
 to store in the long-term state, what to throw away, and what to read
 from it. As the long-term state **c**~(*t*--1)~ traverses the network
 from left to right, you can see that it first goes
-through[]{#idm45728451183976}[]{#idm45728451183272} a *forget gate*,
+through a *forget gate*,
 dropping some memories, and then it adds some new memories via the
 addition operation (which adds the memories that were selected by an
 *input gate*). The result **c**~(*t*)~ is sent straight out, without any
 further transformation. So, at each time step, some memories are dropped
 and some memories are added. Moreover, after the addition operation, the
 long-term state is copied and passed through the tanh function, and then
-the result is filtered by[]{#idm45728451180008} the *output gate*. This
+the result is filtered by the *output gate*. This
 produces the short-term state **h**~(*t*)~ (which is equal to the cell's
 output for this time step, **y**~(*t*)~). Now let's look at where new
 memories come from and how the gates work.
@@ -991,7 +991,7 @@ They all serve a different purpose:
     important parts are stored in the long-term state (and the rest is
     [dropped]).
 
--   The three other layers[]{#idm45728451165016} are *gate controllers*.
+-   The three other layers are *gate controllers*.
     Since they use the logistic activation function, their outputs range
     from 0 to 1. As you can see, their outputs are fed to element-wise
     multiplication operations, so if they output 0s they close the gate,
@@ -1058,8 +1058,8 @@ In a regular LSTM cell, the gate controllers can look only at the input
 be a good idea to give them a bit more context by letting them peek at
 the long-term state as well. This idea was [proposed by Felix Gers and
 Jürgen Schmidhuber in
-2000](https://homl.info/96).^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450956040){#idm45728450956040-marker}^
-They proposed an LSTM variant with[]{#idm45728450954936} extra
+2000](https://homl.info/96).^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+They proposed an LSTM variant with extra
 connections called *peephole connections*: the previous long-term state
 **c**~(*t*--1)~ is added as an input to the controllers of the forget
 gate and the input gate, and the current long-term state **c**~(*t*)~ is
@@ -1082,17 +1082,17 @@ variant is the GRU cell, which we will look at now.
 
 ### GRU cells
 
-The *Gated Recurrent Unit* (GRU) cell[]{#idm45728450945816} (see
+The *Gated Recurrent Unit* (GRU) cell (see
 [Figure 15-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#gru_cell_diagram))
 was proposed by Kyunghyun Cho et al. in a [2014
-paper](https://homl.info/97)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450943560){#idm45728450943560-marker}^
+paper](https://homl.info/97)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
 that also introduced the Encoder--Decoder network we discussed earlier.
 
 ![](./images/mls2_1510.png)
 
 The GRU cell is a simplified version of the LSTM cell, and it seems to
 perform just as
-well^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450939816){#idm45728450939816-marker}^
+well^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
 (which explains its growing popularity). These are the main
 simplifications:
 
@@ -1146,7 +1146,7 @@ convolutional layers.
 
 In
 [Lab 14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#cnn_lab),
-we[]{#idm45728450840440}[]{#idm45728450839704} saw that a 2D
+we saw that a 2D
 convolutional layer works by sliding several fairly small kernels (or
 filters) across an image, producing multiple 2D feature maps (one per
 kernel). Similarly, a 1D convolutional layer slides several kernels
@@ -1198,8 +1198,8 @@ recurrent layers entirely!
 
 ### WaveNet
 
-In[]{#idm45728450744664} a [2016
-paper](https://homl.info/wavenet),^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450743144){#idm45728450743144-marker}^
+In a [2016
+paper](https://homl.info/wavenet),^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
 Aaron van den Oord and other DeepMind researchers introduced an
 architecture called *WaveNet*. They stacked 1D convolutional layers,
 doubling the dilation rate (how spread apart each neuron's inputs are)
@@ -1227,7 +1227,7 @@ left-padded the input sequences with a number of zeros equal to the
 dilation rate before every layer, to preserve the same sequence length
 throughout the network. Here is how to implement a simplified WaveNet to
 tackle the same sequences as
-[earlier]:^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450736680){#idm45728450736680-marker}^
+[earlier]:^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential()
@@ -1268,7 +1268,7 @@ In
 [Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab),
 we will continue to explore RNNs, and we will see how they can tackle
 various NLP
-tasks.[]{#idm45728450532008}[]{#idm45728450531064}[]{#idm45728450530120}[]{#idm45728450529176}
+tasks. []{}
 
 
 
@@ -1324,7 +1324,7 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728453072056-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 Note that many researchers prefer to use the hyperbolic tangent (tanh)
 activation function in RNNs rather than the ReLU activation function.
 For example, take a look at Vu Pham et al.'s 2013 paper ["Dropout
@@ -1333,63 +1333,63 @@ Recognition"](https://homl.info/91). ReLU-based RNNs are also possible,
 as shown in Quoc V. Le et al.'s 2015 paper ["A Simple Way to Initialize
 Recurrent Networks of Rectified Linear Units"](https://homl.info/92).
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451829960-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 Note that a `TimeDistributed(Dense(n))` layer is equivalent to a
 `Conv1D(n, kernel_size=1)` layer.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451649896-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 César Laurent et al., "Batch Normalized Recurrent Neural Networks,"
 *Proceedings of the IEEE International Conference on Acoustics, Speech,
 and Signal Processing* (2016): 2657--2661.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451644568-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 Jimmy Lei Ba et al., "Layer Normalization," arXiv preprint
 arXiv:1607.06450 (2016).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451635160-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 It would have been simpler to inherit from `SimpleRNNCell` instead so
 that we wouldn't have to create an internal `SimpleRNNCell` or handle
 the `state_size` and `output_size` attributes, but the goal here was to
 show how to create a custom cell from scratch.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451445480-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 A character from the animated movies *Finding Nemo* and *Finding Dory*
 who has short-term memory loss.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451439480-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 Sepp Hochreiter and Jürgen Schmidhuber, "Long Short-Term Memory,"
 *Neural Computation* 9, no. 8 (1997): 1735--1780.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451436808-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 Haşim Sak et al., "Long Short-Term Memory Based Recurrent Neural Network
 Architectures for Large Vocabulary Speech Recognition," arXiv preprint
 arXiv:1402.1128 (2014).
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728451435208-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker){.totri-footnote}^
 Wojciech Zaremba et al., "Recurrent Neural Network Regularization,"
 arXiv preprint arXiv:1409.2329 (2014).
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450956040-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)^
 F. A. Gers and J. Schmidhuber, "Recurrent Nets That Time and Count,"
 *Proceedings of the IEEE-INNS-ENNS International Joint Conference on
 Neural Networks* (2000): 189--194.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450943560-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)^
 Kyunghyun Cho et al., "Learning Phrase Representations Using RNN
 Encoder-Decoder for Statistical Machine Translation," *Proceedings of
 the 2014 Conference on Empirical Methods in Natural Language Processing*
 (2014): 1724--1734.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450939816-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)^
 A 2015 paper by Klaus Greff et al., ["LSTM: A Search Space
 Odyssey"](https://homl.info/98), seems to show that all LSTM variants
 perform roughly the same.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450743144-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)^
 Aaron van den Oord et al., "WaveNet: A Generative Model for Raw Audio,"
 arXiv preprint arXiv:1609.03499 (2016).
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#idm45728450736680-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html-marker)^
 The complete WaveNet uses a few more tricks, such as skip connections
 like in a ResNet, and *Gated Activation Units* similar to those found in
 a GRU cell. Please see the notebook for more details.

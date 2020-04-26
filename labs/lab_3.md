@@ -21,7 +21,7 @@ will turn our attention to classification systems.
 MNIST
 =====
 
-In[]{#idm45728488574312}[]{#idm45728488573304}[]{#idm45728488572360}
+In []{}
 this lab we will be using the MNIST dataset, which is a set of
 70,000 small images of digits handwritten by high school students and
 employees of the US Census Bureau. Each image is labeled with the digit
@@ -31,10 +31,10 @@ new classification algorithm they are curious to see how it will perform
 on MNIST, and anyone who learns Machine Learning tackles this dataset
 sooner or later.
 
-Scikit-Learn[]{#idm45728488570648} provides many helper functions to
+Scikit-Learn provides many helper functions to
 download popular datasets. MNIST is one of them. The following code
 fetches the MNIST
-dataset:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728488569352){#idm45728488569352-marker
+dataset:^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -121,7 +121,7 @@ want one fold to be missing some digits). Moreover, some learning
 algorithms are sensitive to the order of the training instances, and
 they perform poorly if they get many similar instances in a row.
 Shuffling the dataset ensures that this won't
-happen.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728488324168){#idm45728488324168-marker
+happen.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^
 
 
@@ -130,7 +130,7 @@ happen.^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/
 Training a Binary Classifier
 ============================
 
-Let's simplify[]{#idm45728488322376}[]{#idm45728488302344} the problem
+Let's simplify the problem
 for now and only try to identify one digit---for example, the number 5.
 This "5-detector" will be an example of a *binary classifier*, capable
 of distinguishing between just two classes, 5 and not-5. Let's create
@@ -142,12 +142,12 @@ y_test_5 = (y_test == 5)
 ```
 
 Now let's pick a classifier and train it. A good place to
-start[]{#idm45728488292168}[]{#idm45728488291320}[]{#idm45728488290680}
+start []{}
 is with a *Stochastic Gradient Descent* (SGD) classifier, using
 Scikit-Learn's `SGDClassifier` class. This classifier has the advantage
 of being capable of handling very large datasets efficiently. This is in
 part because SGD deals with training instances independently, one at a
-time (which also makes SGD well suited[]{#idm45728488248440} for online
+time (which also makes SGD well suited for online
 learning), as we will see later. Let's create an `SGDClassifier` and
 train it on the whole training set:
 
@@ -183,7 +183,7 @@ model's performance.
 Performance Measures
 ====================
 
-Evaluating[]{#idm45728488180744}[]{#CPperform03} a classifier is often
+Evaluating []{#CPperform03} a classifier is often
 significantly trickier than evaluating a regressor, so we will spend a
 large part of this lab on this topic. There are many performance
 measures available, so grab another coffee and get ready to learn many
@@ -194,7 +194,7 @@ new concepts and acronyms!
 Measuring Accuracy Using Cross-Validation
 -----------------------------------------
 
-A[]{#idm45728488192856}[]{#idm45728488191880} good way to evaluate a
+A good way to evaluate a
 model is to use cross-validation, just as you did in
 [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
 
@@ -203,7 +203,7 @@ model is to use cross-validation, just as you did in
 
 Occasionally you will need more control over the cross-validation
 process than what Scikit-Learn provides off the shelf. In these cases,
-you can implement cross-validation yourself. The[]{#idm45728488188648}
+you can implement cross-validation yourself. The []{}
 following code does roughly the same thing as Scikit-Learn's
 `cross_val_score()` function, and it prints the same result:
 
@@ -226,7 +226,7 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
     print(n_correct / len(y_pred))  # prints 0.9502, 0.96565, and 0.96495
 ```
 
-The `StratifiedKFold` class[]{#idm45728488153752}[]{#idm45728488045256}
+The `StratifiedKFold` class []{}
 performs stratified sampling (as explained in
 [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab))
 to produce folds that contain a representative ratio of each class. At
@@ -251,7 +251,7 @@ array([0.96355, 0.93795, 0.95615])
 ```
 
 Wow!
-Above[]{#idm45728488025816}[]{#idm45728488024968}[]{#idm45728488024296}
+Above []{}
 93% accuracy (ratio of correct predictions) on all cross-validation
 folds? This looks amazing, doesn't it? Well, before you get too excited,
 let's look at a very dumb classifier that just classifies every single
@@ -290,7 +290,7 @@ than others).
 Confusion Matrix
 ----------------
 
-A[]{#idm45728487861528}[]{#idm45728487860520}[]{#idm45728487859576} much
+A much
 better way to evaluate the performance of a classifier is to look at the
 *confusion matrix*. The general idea is to count the number of times
 instances of class A are classified as class B. For example, to know the
@@ -350,7 +350,7 @@ array([[54579,     0],
 The confusion matrix gives you a lot of information, but sometimes you
 may prefer a more concise metric. An interesting one to look at is the
 accuracy of the positive predictions; this
-is[]{#Mprecision03}[]{#precis03} called the *precision* of the
+is []{#Mprecision03} []{#precis03} called the *precision* of the
 classifier ([Equation
 3-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#equation_three_one)).
 
@@ -393,7 +393,7 @@ A trivial way to have perfect precision is to make one single positive
 prediction and ensure it is correct (precision = 1/1 = 100%). But this
 would not be very useful, since the classifier would ignore all but one
 positive instance.
-So[]{#Mrecall03}[]{#recall03}[]{#idm45728487684168}[]{#idm45728487683496}
+So []{#Mrecall03} []{#recall03} []{}
 precision is typically used along with another metric named *recall*,
 also called *sensitivity* or the *true positive rate* (TPR): this is the
 ratio of positive instances that are correctly detected by the
@@ -446,7 +446,7 @@ may help.
 Precision and Recall
 --------------------
 
-Scikit-Learn[]{#SLmetrics03} provides several functions to compute
+Scikit-Learn []{#SLmetrics03} provides several functions to compute
 classifier metrics, including precision and recall:
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -463,7 +463,7 @@ its accuracy. When it claims an image represents a 5, it is correct only
 
 It is often convenient to combine precision and recall into a single
 metric
-called[]{#idm45728487626856}[]{#idm45728487618280}[]{#idm45728487617608}
+called []{}
 the *F~1~ score*, in particular if you need a simple way to compare two
 classifiers. The F~1~ score is the *harmonic mean* of precision and
 recall ([Equation
@@ -505,19 +505,19 @@ style="font-family: MathJax_Main; padding-left: 0.26em;"}[2]{#MathJax-Span-297
 style="font-family: MathJax_Main; padding-left: 0.26em;"}[×]{#MathJax-Span-298
 .mo
 style="font-family: MathJax_Main; padding-left: 0.208em;"}[[[[[precision]{#MathJax-Span-301
-.mtext style="font-family: MathJax_Main;"}[]{#MathJax-Span-302 .mspace
+.mtext style="font-family: MathJax_Main;"} []{#MathJax-Span-302 .mspace
 style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[×]{#MathJax-Span-303
 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[]{#MathJax-Span-304
+style="font-family: MathJax_Main; padding-left: 0.208em;"} []{#MathJax-Span-304
 .mspace
 style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[recall]{#MathJax-Span-305
 .mtext
 style="font-family: MathJax_Main; padding-left: 0.208em;"}]{#MathJax-Span-300
 .mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1007.67em, 4.373em, -1000.01em); top: -4.676em; left: 50%; margin-left: -3.854em;"}[[[precision]{#MathJax-Span-307
-.mtext style="font-family: MathJax_Main;"}[]{#MathJax-Span-308 .mspace
+.mtext style="font-family: MathJax_Main;"} []{#MathJax-Span-308 .mspace
 style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[+]{#MathJax-Span-309
 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[]{#MathJax-Span-310
+style="font-family: MathJax_Main; padding-left: 0.208em;"} []{#MathJax-Span-310
 .mspace
 style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[recall]{#MathJax-Span-311
 .mtext
@@ -592,7 +592,7 @@ Precision/Recall Trade-off
 --------------------------
 
 To understand this trade-off, let's look at how the `SGDClassifier`
-makes its classification decisions.[]{#idm45728487544520} For each
+makes its classification decisions. For each
 instance, it computes a score based on a *decision function*. If that
 score is greater than a threshold, it assigns the instance to the
 positive class; otherwise it assigns it to the negative class.
@@ -742,7 +742,7 @@ high-precision classifier is not very useful if its recall is too low!
 ###### Tip
 
 If someone says, "Let's reach 99% precision," you should ask, "At what
-recall?"[]{#idm45728487178856}[]{#idm45728487177880}[]{#idm45728487176936}[]{#idm45728487175992}
+recall?" []{}
 
 
 
@@ -752,12 +752,12 @@ The ROC Curve
 -------------
 
 The *receiver operating characteristic* (ROC)
-curve[]{#idm45728487153096}[]{#idm45728487152120} is another common tool
+curve is another common tool
 used with binary classifiers. It is very similar to the precision/recall
 curve, but instead of plotting precision versus recall, the ROC curve
 plots the *true positive rate* (another name for recall) against the
 *false positive rate* (FPR).
-The[]{#idm45728487150360}[]{#idm45728487149656} FPR is the ratio of
+The FPR is the ratio of
 negative instances that are incorrectly classified as positive. It is
 equal to 1 -- the *true negative rate* (TNR), which is the ratio of
 negative instances that are correctly classified as negative. The TNR is
@@ -795,7 +795,7 @@ top-left corner).
 
 ![](./images/mls2_0306.png)
 
-One[]{#idm45728487008408}[]{#idm45728487007704} way to compare
+One way to compare
 classifiers is to measure the *area under the curve* (AUC). A perfect
 classifier will have a ROC AUC equal to 1, whereas a purely random
 classifier will have a ROC AUC equal to 0.5. Scikit-Learn provides a
@@ -883,7 +883,7 @@ You now know how to train binary classifiers, choose the appropriate
 metric for your task, evaluate your classifiers using cross-validation,
 select the precision/recall trade-off that fits your needs, and use ROC
 curves and ROC AUC scores to compare various models. Now let's try to
-detect more than just the 5s.[]{#idm45728486802040}
+detect more than just the 5s. []{}
 
 
 
@@ -892,7 +892,7 @@ detect more than just the 5s.[]{#idm45728486802040}
 Multiclass Classification
 =========================
 
-Whereas[]{#idm45728486800808}[]{#idm45728486797672}[]{#idm45728486797032}
+Whereas []{}
 binary classifiers distinguish between two classes, *multiclass
 classifiers* (also called *multinomial classifiers*) can distinguish
 between more than two classes.
@@ -910,10 +910,10 @@ digit (a 0-detector, a 1-detector, a 2-detector, and so on). Then when
 you want to classify an image, you get the decision score from each
 classifier for that image and you select the class whose classifier
 outputs the highest score.
-This[]{#idm45728486793752}[]{#idm45728486793080} is called the
+This is called the
 *one-versus-the-rest* (OvR) strategy (also called *one-versus-all*).
 
-Another strategy[]{#idm45728486785128} is to train a binary classifier
+Another strategy is to train a binary classifier
 for every pair of digits: one to distinguish 0s and 1s, another to
 distinguish 0s and 2s, another for 1s and 2s, and so on. This is called
 the *one-versus-one* (OvO) strategy. If there are *N* classes, you need
@@ -1053,7 +1053,7 @@ array([0.89707059, 0.8960948 , 0.90693604])
 Error Analysis
 ==============
 
-If[]{#idm45728486358088}[]{#idm45728486357080} this were a real project,
+If this were a real project,
 you would now follow the steps in your Machine Learning project
 checklist (see
 [Appendix B](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html#project_checklist_appendix)).
@@ -1174,7 +1174,7 @@ trouble classifying them (e.g., the 5 in the first row and second column
 truly looks like a badly written 3). However, most misclassified images
 seem like obvious errors to us, and it's hard to understand why the
 classifier made the mistakes it
-did.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485976232){#idm45728485976232-marker
+did.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^ The reason is that we used a simple `SGDClassifier`,
 which is a linear model. All it does is assign a weight per class to
 each pixel, and when it sees a new image it just sums up the weighted
@@ -1196,7 +1196,7 @@ errors as well.
 Multilabel Classification
 =========================
 
-Until[]{#idm45728485972488}[]{#idm45728485971512} now each instance has
+Until now each instance has
 always been assigned to just one class. In some cases you may want your
 classifier to output multiple classes for each instance. Consider a
 face-recognition classifier: what should it do if it recognizes several
@@ -1255,9 +1255,9 @@ not be the case. In particular, if you have many more pictures of Alice
 than of Bob or Charlie, you may want to give more weight to the
 classifier's score on pictures of Alice. One simple option is to give
 each label a weight equal to its *support* (i.e., the number of
-instances with that target label). To[]{#idm45728485769304} do this,
+instances with that target label). To do this,
 simply set `average="weighted"` in the preceding
-code.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485767992){#idm45728485767992-marker
+code.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
 .totri-footnote}^
 
 
@@ -1266,7 +1266,7 @@ code.^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/97
 Multioutput Classification
 ==========================
 
-The[]{#idm45728485765592}[]{#idm45728485764616} last type of
+The last type of
 classification task we are going to discuss here is called
 *multioutput--multiclass classification* (or simply *multioutput
 classification*). It is simply a generalization of multilabel
@@ -1293,7 +1293,7 @@ value labels.
 
 
 Let's start by creating the training and test sets by taking the MNIST
-images and adding noise to their pixel intensities[]{#idm45728485759944}
+images and adding noise to their pixel intensities []{}
 with NumPy's `randint()` function. The target images will be the
 original images:
 
@@ -1343,7 +1343,7 @@ Exercises
 
 2.  Write a function that can shift an MNIST image in any direction
     (left, right, up, or down) by one
-    pixel.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485640728){#idm45728485640728-marker
+    pixel.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
     .totri-footnote}^ Then, for each image in the training set, create
     four shifted copies (one per direction) and add them to the training
     set. Finally, train your best model on this expanded training set
@@ -1391,26 +1391,26 @@ available at
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728488569352-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
 By default Scikit-Learn caches downloaded datasets in a directory called
 *\$HOME/scikit\_learn\_data*.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728488324168-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
 Shuffling may be a bad idea in some contexts---for example, if you are
 working on time series data (such as stock market prices or weather
 conditions). We will explore this in the next labs.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485976232-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
 But remember that our brain is a fantastic pattern recognition system,
 and our visual system does a lot of complex preprocessing before any
 information reaches our consciousness, so the fact that it feels simple
 does not mean that it is.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485767992-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
 Scikit-Learn offers a few other averaging options and multilabel
 classifier metrics; see the documentation for more details.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#idm45728485640728-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html-marker){.totri-footnote}^
 You can use the `shift()` function from the
 `scipy.ndimage.interpolation` module. For example,
 `shift(image, [2, 1], cval=0)` shifts the image two pixels down and one

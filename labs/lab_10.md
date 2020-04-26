@@ -5,7 +5,7 @@
 [Lab 10. ] Introduction to Artificial Neural Networks with Keras
 ===========================================================================
 
-Birds[]{#idm45728473377928} inspired us to fly, burdock plants inspired
+Birds inspired us to fly, burdock plants inspired
 Velcro, and nature has inspired countless more inventions. It seems only
 logical, then, to look at the brain's architecture for inspiration on
 how to build an intelligent machine. This is the logic that sparked
@@ -17,7 +17,7 @@ their biological cousins. Some researchers even argue that we should
 drop the biological analogy altogether (e.g., by saying "units" rather
 than "neurons"), lest we restrict our creativity to biologically
 plausible
-systems.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473375560){#idm45728473375560-marker
+systems.^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
 .totri-footnote}^
 
 ANNs are at the very core of Deep Learning. They are versatile,
@@ -51,15 +51,15 @@ came to be!
 From Biological to Artificial Neurons
 =====================================
 
-Surprisingly, ANNs[]{#ANNboi10}[]{#idm45728473367656}[]{#Nbio10} have
+Surprisingly, ANNs []{#ANNboi10} []{#Nbio10} have
 been around for quite a while: they were first introduced back in 1943
 by the neurophysiologist Warren McCulloch and the mathematician Walter
 Pitts. In their [landmark
-paper](https://homl.info/43)^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473364920){#idm45728473364920-marker
+paper](https://homl.info/43)^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
 .totri-footnote}^ "A Logical Calculus of Ideas Immanent in Nervous
 Activity," McCulloch and Pitts presented a simplified computational
 model of how biological neurons might work together in animal brains to
-perform[]{#idm45728473363416} complex computations using *propositional
+perform complex computations using *propositional
 logic*. This was the first artificial neural network architecture. Since
 then many other architectures have been invented, as we will see.
 
@@ -68,7 +68,7 @@ soon be conversing with truly intelligent machines. When it became clear
 in the 1960s that this promise would go unfulfilled (at least for quite
 a while), funding flew elsewhere, and ANNs entered a long winter. In the
 early 1980s, new architectures were invented and better training
-techniques were developed, sparking a[]{#idm45728473361384} revival of
+techniques were developed, sparking a revival of
 interest in *connectionism* (the study of neural networks). But progress
 was slow, and by the 1990s other powerful Machine Learning techniques
 were invented, such as Support Vector Machines (see
@@ -128,7 +128,7 @@ times longer. Near its extremity the axon splits off into many branches
 called *telodendria*, and at the tip of these branches are minuscule
 structures called *synaptic terminals* (or simply *synapses*), which are
 connected to the dendrites or cell bodies of other
-neurons.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473345912){#idm45728473345912-marker
+neurons.^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
 .totri-footnote}^ Biological neurons produce short electrical impulses
 called *action potentials* (APs, or just *signals*) which travel along
 the axons and make the synapses release chemical signals called
@@ -144,9 +144,9 @@ way, but they are organized in a vast network of billions, with each
 neuron typically connected to thousands of other neurons. Highly complex
 computations can be performed by a network of fairly simple neurons,
 much like a complex anthill can emerge from the combined efforts of
-simple ants. The[]{#idm45728473338424} architecture of biological neural
+simple ants. The architecture of biological neural
 networks
-(BNNs)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473337560){#idm45728473337560-marker
+(BNNs)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
 .totri-footnote}^ is still the subject of active research, but some
 parts of the brain have been mapped, and it seems that neurons are often
 organized in consecutive layers, especially in the cerebral cortex
@@ -162,7 +162,7 @@ Logical Computations with Neurons
 ---------------------------------
 
 McCulloch and
-Pitts[]{#idm45728473329992}[]{#idm45728473328968}[]{#idm45728473328296}
+Pitts []{}
 proposed a very simple model of the biological neuron, which later
 became known as an *artificial neuron*: it has one or more binary
 (on/off) inputs and one binary output. The artificial neuron activates
@@ -209,11 +209,11 @@ example).
 The Perceptron
 --------------
 
-The *Perceptron* is[]{#percept10} one of the simplest ANN architectures,
+The *Perceptron* is []{#percept10} one of the simplest ANN architectures,
 invented in 1957 by Frank Rosenblatt. It is based on a slightly
 different artificial neuron (see
 [Figure 10-4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#artificial_neuron_diagram))
-called[]{#idm45728473311752}[]{#idm45728473311032} a *threshold logic
+called a *threshold logic
 unit* (TLU), or sometimes a *linear threshold unit* (LTU). The inputs
 and output are numbers (instead of binary on/off values), and each input
 connection is associated with a weight. The TLU computes a weighted sum
@@ -224,7 +224,7 @@ and outputs the result: *h*~**w**~(**x**) = step(*z*), where *z* =
 
 ![](./images/mls2_1004.png)
 
-The[]{#idm45728473296872} most common step function used in Perceptrons
+The most common step function used in Perceptrons
 is the *Heaviside step function* (see [Equation
 10-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#step_functions_equation)).
 Sometimes the sign function is used instead.
@@ -255,11 +255,11 @@ TLU in this case means finding the right values for *w*~0~, *w*~1~, and
 *w*~2~ (the training algorithm is discussed shortly).
 
 A Perceptron is simply composed of a single layer of
-TLUs,^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473245720){#idm45728473245720-marker
+TLUs,^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
 .totri-footnote}^ with each TLU connected to all the inputs. When all
 the neurons in a layer are connected to every neuron in the previous
 layer (i.e., its input neurons), the
-layer[]{#idm45728473243944}[]{#idm45728473242904}[]{#idm45728473242232}[]{#idm45728473241560}[]{#idm45728473240888}[]{#idm45728473240216}[]{#idm45728473239272}
+layer []{} []{}
 is called a *fully connected layer*, or a *dense layer*. The inputs of
 the Perceptron are fed to special passthrough neurons called *input
 neurons*: they output whatever input they are fed. All the input neurons
@@ -301,7 +301,7 @@ In this equation:
     artificial neurons are TLUs, it is a step function (but we will
     discuss other activation functions shortly).
 
-So, how is a Perceptron trained? The[]{#idm45728473211144} Perceptron
+So, how is a Perceptron trained? The Perceptron
 training algorithm proposed by Rosenblatt was largely inspired by
 *Hebb's rule*. In his 1949 course *The Organization of Behavior* (Wiley),
 Donald Hebb suggested that when a biological neuron triggers another
@@ -309,7 +309,7 @@ neuron often, the connection between these two neurons grows stronger.
 Siegrid Löwel later summarized Hebb's idea in the catchy phrase, "Cells
 that fire together, wire together"; that is, the connection weight
 between two neurons tends to increase when they fire simultaneously.
-This[]{#idm45728473209048} rule later became known as Hebb's rule (or
+This rule later became known as Hebb's rule (or
 *Hebbian learning*). Perceptrons are trained using a variant of this
 rule that takes into account the error made by the network when it makes
 a prediction; the [Perceptron] learning rule reinforces
@@ -348,11 +348,11 @@ are incapable of learning complex patterns (just like Logistic
 Regression classifiers). However, if the training instances are linearly
 separable, Rosenblatt demonstrated that this algorithm would converge to
 a
-solution.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473173064){#idm45728473173064-marker
-.totri-footnote}^ This[]{#idm45728473172216} is called the *Perceptron
+solution.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
+.totri-footnote}^ This is called the *Perceptron
 convergence theorem*.
 
-Scikit-Learn[]{#idm45728473170536} provides a `Perceptron` class that
+Scikit-Learn provides a `Perceptron` class that
 implements a single-TLU network. It can be used pretty much as you would
 expect---for example, on the iris dataset (introduced in
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab)):
@@ -386,7 +386,7 @@ Perceptrons.
 
 In their 1969 monograph *Perceptrons*, Marvin Minsky and Seymour Papert
 highlighted a number of serious weaknesses of Perceptrons---in
-particular, the fact[]{#idm45728473095384} that they are incapable of
+particular, the fact that they are incapable of
 solving some trivial problems (e.g., the *Exclusive OR* (XOR)
 classification problem; see the left side of
 [Figure 10-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#xor_diagram)).
@@ -405,7 +405,7 @@ right side of
 with inputs (0, 0) or (1, 1), the network outputs 0, and with inputs (0,
 1) or (1, 0) it outputs 1. All connections have a weight equal to 1,
 except the four connections where the weight is shown. Try verifying
-that this network indeed solves the XOR problem![]{#idm45728473090840}
+that this network indeed solves the XOR problem! []{}
 
 ![](./images/mls2_1006.png)
 
@@ -415,7 +415,7 @@ that this network indeed solves the XOR problem![]{#idm45728473090840}
 The Multilayer Perceptron and Backpropagation
 ---------------------------------------------
 
-An[]{#MLPback10}[]{#back10}[]{#idm45728473083448}[]{#idm45728473082776}[]{#idm45728473081832}[]{#idm45728473081160}[]{#idm45728473080216}[]{#idm45728473079272}
+An []{#MLPback10} []{#back10} []{}
 MLP is composed of one (passthrough) *input layer*, one or more layers
 of TLUs, called *hidden layers*, and one final layer of TLUs called the
 *output layer* (see
@@ -430,14 +430,14 @@ is fully connected to the next layer.
 
 ###### Note
 
-The[]{#idm45728473072008} signal flows only in one direction (from the
+The signal flows only in one direction (from the
 inputs to the outputs), so this architecture is an example of a
 *feedforward neural network* (FNN).
 
 
 When an ANN contains a deep stack of hidden
-layers,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473070008){#idm45728473070008-marker
-.totri-footnote}^ it[]{#idm45728473069112} is called a *deep neural
+layers,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
+.totri-footnote}^ it is called a *deep neural
 network* (DNN). The field of Deep Learning studies DNNs, and more
 generally models containing deep stacks of computations. Even so, many
 people talk about Deep Learning whenever neural networks are involved
@@ -446,12 +446,12 @@ people talk about Deep Learning whenever neural networks are involved
 For many years researchers struggled to find a way to train MLPs,
 without success. But in 1986, David Rumelhart, Geoffrey Hinton, and
 Ronald Williams published a [groundbreaking
-paper](https://homl.info/44)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473066136){#idm45728473066136-marker}^
+paper](https://homl.info/44)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 that introduced the *backpropagation* training algorithm, which is still
 used today. In short, it is Gradient Descent (introduced in
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
 using an efficient technique for computing the gradients
-automatically:^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473063912){#idm45728473063912-marker}^
+automatically:^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 in just two passes through the network (one forward, one backward), the
 backpropagation algorithm is able to compute the gradient of the
 network's error with regard to every single model parameter. In other
@@ -463,7 +463,7 @@ whole process is repeated until the network converges to the solution.
 
 ###### Note
 
-Automatically[]{#idm45728473061400}[]{#idm45728473060696} computing
+Automatically computing
 gradients is called *automatic differentiation*, or *autodiff*. There
 are various autodiff techniques, with different pros and cons. The one
 used by backpropagation is called *reverse-mode autodiff*. It is fast
@@ -475,7 +475,7 @@ loss). If you want to learn more about autodiff, check out
 
 Let's run through this algorithm in a bit more detail:
 
--   It[]{#idm45728473055752} handles one mini-batch at a time (for
+-   It handles one mini-batch at a time (for
     example, containing 32 instances each), and it goes through the full
     training set multiple times. Each pass is called an *epoch*.
 
@@ -485,7 +485,7 @@ Let's run through this algorithm in a bit more detail:
     mini-batch). The result is passed on to the next layer, its output
     is computed and passed to the next layer, and so on until we get the
     output of the last layer, the output layer.
-    This[]{#idm45728473053032} is the *forward pass*: it is exactly like
+    This is the *forward pass*: it is exactly like
     making predictions, except all intermediate results are preserved
     since they are needed for the backward pass.
 
@@ -493,7 +493,7 @@ Let's run through this algorithm in a bit more detail:
     uses a loss function that compares the desired output and the actual
     output of the network, and returns some measure of the error).
 
--   Then[]{#idm45728473049704} it computes how much each output
+-   Then it computes how much each output
     connection contributed to the error. This is done analytically by
     applying the *chain rule* (perhaps the most fundamental rule in
     calculus), which makes this step fast and precise.
@@ -527,7 +527,7 @@ perfectly identical, and thus backpropagation will affect them in
 exactly the same way, so they will remain identical. In other words,
 despite having hundreds of neurons per layer, your model will act as if
 it had only one neuron per layer:
-it[]{#idm45728473043448}[]{#idm45728473042744} won't be too smart. If
+it won't be too smart. If
 instead you randomly initialize the weights, you *break the symmetry*
 and allow backpropagation to train a diverse team of neurons.
 
@@ -545,7 +545,7 @@ are two other popular choices:
 
 The *hyperbolic tangent* function: tanh(*z*) = 2*σ*(2*z*) -- 1
 
-:   Just[]{#idm45728473035640}[]{#idm45728473034888} like the logistic
+:   Just like the logistic
     function, this activation function is *S*-shaped, continuous, and
     differentiable, but its output value ranges from --1 to 1 (instead
     of 0 to 1 in the case of the logistic function). That range tends to
@@ -554,13 +554,13 @@ The *hyperbolic tangent* function: tanh(*z*) = 2*σ*(2*z*) -- 1
 
 The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*)
 
-:   The ReLU function[]{#rectified10}[]{#ReLU1}[]{#AFrelu10} is
+:   The ReLU function []{#rectified10} []{#ReLU1} []{#AFrelu10} is
     continuous but unfortunately not differentiable at *z* = 0 (the
     slope changes abruptly, which can make Gradient Descent bounce
     around), and its derivative is 0 for *z* \< 0. In practice, however,
     it works very well and has the advantage of being fast to compute,
     so it has become the
-    default.^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728472986728){#idm45728472986728-marker}^
+    default.^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     Most importantly, the fact that it does not have a maximum output
     value helps reduce some issues during Gradient Descent (we will come
     back to this in
@@ -584,7 +584,7 @@ theoretically approximate any continuous function.
 OK! You know where neural nets came from, what their architecture is,
 and how to compute their outputs. You've also learned about the
 backpropagation algorithm. But what exactly can you do with
-them?[]{#idm45728472976536}[]{#idm45728472975560}
+them? []{}
 
 
 
@@ -592,7 +592,7 @@ them?[]{#idm45728472976536}[]{#idm45728472975560}
 Regression MLPs
 ---------------
 
-First, MLPs can[]{#idm45728472973080}[]{#idm45728472972056} be used for
+First, MLPs can be used for
 regression tasks. If you want to predict a single value (e.g., the price
 of a house, given many of its features), then you just need a single
 output neuron: its output is the predicted value. For multivariate
@@ -608,21 +608,21 @@ any activation function for the output neurons, so they are free to
 output any range of values. If you want to guarantee that the output
 will always be positive, then you can use the ReLU activation function
 in the output layer. Alternatively,
-you[]{#idm45728472969080}[]{#idm45728472968104} can use the *softplus*
+you can use the *softplus*
 activation function, which is a smooth variant of ReLU: softplus(*z*) =
 log(1 + exp(*z*)). It is close to 0 when *z* is negative, and close to
 *z* when *z* is positive. Finally, if you want to guarantee that the
 predictions will fall within a given range of values, then you can use
-the[]{#logsig10}[]{#siglog10}[]{#idm45728472962536} logistic function or
+the []{#logsig10} []{#siglog10} logistic function or
 the hyperbolic tangent, and then scale the labels to the appropriate
 range: 0 to 1 for the logistic function and --1 to 1 for the hyperbolic
 [tangent].
 
 The loss function to use during training is typically
-the[]{#idm45728472960632} mean squared error, but if you have a lot of
+the mean squared error, but if you have a lot of
 outliers in the training set, you may prefer to use
-the[]{#idm45728472959336}[]{#idm45728472958376} mean absolute error
-instead. Alternatively, you[]{#idm45728472957288} can use the Huber
+the mean absolute error
+instead. Alternatively, you can use the Huber
 loss, which is a combination of both.
 
 
@@ -633,7 +633,7 @@ The Huber loss is quadratic when the error is smaller than a threshold
 linear part makes it less sensitive to outliers than the mean squared
 error, and the quadratic part allows it to converge faster and be more
 precise than the mean absolute
-error.[]{#idm45728472954232}[]{#idm45728472953256}[]{#idm45728472952312}
+error. []{}
 
 
 [Table 10-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#regression_mlp_architecture)
@@ -657,7 +657,7 @@ summarizes the typical architecture of a regression MLP.
 Classification MLPs
 -------------------
 
-MLPs[]{#idm45728472932648}[]{#idm45728472931672} can also be used for
+MLPs can also be used for
 classification tasks. For a binary classification problem, you just need
 a single output neuron using the logistic activation function: the
 output will be a number between 0 and 1, which you can interpret as the
@@ -682,7 +682,7 @@ If each instance can belong only to a single class, out of three or more
 possible classes (e.g., classes 0 through 9 for digit image
 classification), then you need to have one output neuron per class, and
 you should use the softmax activation
-function[]{#idm45728472927368}[]{#idm45728472926392} for the whole
+function for the whole
 output layer (see
 [Figure 10-9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#fnn_for_classification_diagram)).
 The softmax function (introduced in
@@ -690,11 +690,11 @@ The softmax function (introduced in
 will ensure that all the estimated probabilities are between 0 and 1 and
 that they add up to 1 (which is required if the classes are exclusive).
 This is called multiclass
-[classification].[]{#idm45728472923128}[]{#idm45728472922120}
+[classification]. []{}
 
 ![](./images/mls2_1009.png)
 
-Regarding[]{#idm45728472918584} the loss function, since we are
+Regarding the loss function, since we are
 predicting probability distributions, the cross-entropy loss (also
 called the log loss, see
 [Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab))
@@ -717,11 +717,11 @@ summarizes the typical architecture of a classification MLP.
 
 Before we go on, I recommend you go through exercise 1 at the end of
 this lab. You will play with various neural network architectures
-and visualize[]{#idm45728472899048} their outputs using the *TensorFlow
+and visualize their outputs using the *TensorFlow
 Playground*. This will be very useful to better understand MLPs,
 including the effects of all the hyperparameters (number of layers and
 neurons, activation functions, and
-more).[]{#idm45728472897608}[]{#idm45728472896632}
+more). []{}
 
 
 Now you have all the concepts you need to start implementing MLPs with
@@ -734,29 +734,29 @@ Keras!
 Implementing MLPs with Keras
 ============================
 
-Keras[]{#ANNmlp10}[]{#Kmlp10} is a high-level Deep Learning API that
+Keras []{#ANNmlp10} []{#Kmlp10} is a high-level Deep Learning API that
 allows you to easily build, train, evaluate, and execute all sorts of
 neural networks. Its documentation (or specification) is available at
 [*https://keras.io/*](https://keras.io/). The [reference
 implementation](https://github.com/keras-team/keras), also called Keras,
 was developed by François Chollet as part of a research
-project^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728472888936){#idm45728472888936-marker}^
+project^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 and was released as an open source project in March 2015. It quickly
 gained popularity, owing to its ease of use, flexibility, and beautiful
 design. To perform the heavy computations required by neural networks,
 this reference implementation relies on a computation backend. At
 present, you can choose from three popular open source Deep Learning
-libraries: TensorFlow, []{#idm45728472887896}Microsoft Cognitive Toolkit
-(CNTK), and[]{#idm45728472887032} Theano. Therefore, to avoid any
+libraries: TensorFlow,  []{}Microsoft Cognitive Toolkit
+(CNTK), and Theano. Therefore, to avoid any
 confusion, we will refer to this reference
-implementation[]{#idm45728472886120}[]{#idm45728472885176} as
+implementation as
 *multibackend Keras*.
 
 Since late 2016, other implementations have been released. You can now
 run Keras on Apache MXNet, Apple's Core ML, JavaScript or TypeScript (to
 run Keras code in a web browser), and PlaidML (which can run on all
 sorts of GPU devices, not just Nvidia). Moreover,
-TensorFlow[]{#idm45728472883352} itself now comes bundled with its own
+TensorFlow itself now comes bundled with its own
 Keras implementation, tf.keras. It only supports TensorFlow as the
 backend, but it has the advantage of offering some very useful extra
 features (see
@@ -770,7 +770,7 @@ modifications, such as changing the imports.
 
 ![](./images/mls2_1010.png)
 
-The[]{#idm45728472878712}[]{#idm45728472877976} most popular Deep
+The most popular Deep
 Learning library, after Keras and TensorFlow, is Facebook's
 [PyTorch](https://pytorch.org/) library. The good news is that its API
 is quite similar to Keras's (in part because both APIs were inspired by
@@ -795,7 +795,7 @@ let's start by installing TensorFlow.
 Installing TensorFlow 2
 -----------------------
 
-Assuming[]{#idm45728472872280} you installed Jupyter and Scikit-Learn by
+Assuming you installed Jupyter and Scikit-Learn by
 following the installation instructions in
 [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab),
 use pip to install TensorFlow. If you created an isolated environment
@@ -855,7 +855,7 @@ Building an Image Classifier Using the Sequential API
 -----------------------------------------------------
 
 First,
-we[]{#SAPIimage10}[]{#ICsequen10}[]{#CPimage10}[]{#idm45728472787416}[]{#idm45728472786744}
+we []{#SAPIimage10} []{#ICsequen10} []{#CPimage10} []{}
 need to load a dataset. In this lab we will tackle Fashion MNIST,
 which is a drop-in replacement of MNIST (introduced in
 [Lab 3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html#classification_lab)).
@@ -870,7 +870,7 @@ only about 83% on Fashion MNIST.
 
 ### Using Keras to load the dataset
 
-Keras[]{#idm45728472782520} provides some utility functions to fetch and
+Keras provides some utility functions to fetch and
 load common datasets, including MNIST, Fashion MNIST, and the California
 housing dataset we used in
 [Lab 2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab).
@@ -973,7 +973,7 @@ Let's go through this code line by line:
     using the ReLU activation function.
 
 -   Finally, we add a `Dense` output layer with 10 neurons (one per
-    class), using the[]{#idm45728472444072}[]{#idm45728472443096}
+    class), using the []{}
     softmax activation function (because the classes are exclusive).
 
 
@@ -1002,7 +1002,7 @@ model = keras.models.Sequential([
 
 ##### Using Code Examples from keras.io
 
-Code[]{#idm45728472396040} examples documented on keras.io will work
+Code examples documented on keras.io will work
 fine with tf.keras, but you need to change the imports. For example,
 consider this keras.io code:
 
@@ -1033,7 +1033,7 @@ previous approach. Many people also use
 
 
 The model's `summary()` method displays all the model's
-layers,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728472216728){#idm45728472216728-marker}^
+layers,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 including each layer's name (which is automatically generated unless you
 set it when creating the layer), its output shape (`None` means the
 batch size can be anything), and its number of parameters. The summary
@@ -1170,7 +1170,7 @@ target probability per class for each instance (such as one-hot vectors,
 e.g. `[0., 0., 0., 1., 0., 0., 0., 0., 0., 0.]` to represent class 3),
 then we would need to use the `"categorical_crossentropy"` loss instead.
 If we were doing binary classification (with one or more binary labels),
-then[]{#idm45728472010248}[]{#idm45728472009304}[]{#idm45728471990088}
+then []{}
 we would use the `"sigmoid"` (i.e., logistic) activation function in the
 output layer instead of the `"softmax"` activation function, and we
 would use the `"binary_crossentropy"` loss.
@@ -1240,7 +1240,7 @@ the validation set, your model is probably overfitting the training set
 the validation set).
 
 And that's it! The neural network is
-trained.^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471918072){#idm45728471918072-marker}^
+trained.^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 At each epoch during training, Keras displays the number of instances
 processed so far (along with a progress bar), the mean training time per
 sample, and the loss and accuracy (or any other extra metrics you asked
@@ -1408,7 +1408,7 @@ array([9, 2, 1])
 
 Now you know how to use the Sequential API to build, train, evaluate,
 and use a classification MLP. But what about
-regression?[]{#idm45728471659512}[]{#idm45728471658536}[]{#idm45728471657592}
+regression? []{}
 
 
 
@@ -1417,7 +1417,7 @@ regression?[]{#idm45728471659512}[]{#idm45728471658536}[]{#idm45728471657592}
 Building a Regression MLP Using the Sequential API
 --------------------------------------------------
 
-Let's[]{#idm45728471621304}[]{#idm45728471620296} switch to the
+Let's switch to the
 California housing problem and tackle it using a regression neural
 network. For simplicity, we will use Scikit-Learn's
 `fetch_california_housing()` function to load the data. This dataset is
@@ -1450,7 +1450,7 @@ Using the Sequential API to build, train, evaluate, and use a regression
 MLP to make predictions is quite similar to what we did for
 classification. The main differences are the fact that the output layer
 has a single neuron (since we only want to predict a single value) and
-uses no activation function, and the loss function[]{#idm45728471650056}
+uses no activation function, and the loss function []{}
 is the mean squared error. Since the dataset is quite noisy, we just use
 a single hidden layer with fewer neurons than before, to avoid
 overfitting:
@@ -1480,17 +1480,17 @@ Functional API.
 Building Complex Models Using the Functional API
 ------------------------------------------------
 
-One[]{#idm45728471387272}[]{#FAPIcomplex10}[]{#Mcomplex1}[]{#idm45728471384552}
+One []{#FAPIcomplex10} []{#Mcomplex1} []{}
 example of a nonsequential neural network is a *Wide & Deep* neural
 network. This neural network architecture was introduced in a [2016
 paper](https://homl.info/widedeep) by Heng-Tze Cheng et
-al.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471382680){#idm45728471382680-marker}^
+al.^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 It connects all or part of the inputs directly to the output layer, as
 shown in
 [Figure 10-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#wide_deep_diagram).
 This architecture makes it possible for the neural network to learn both
 deep patterns (using the deep path) and simple rules (through the short
-path).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471380600){#idm45728471380600-marker}^
+path).^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 In contrast, a regular MLP forces all the data to flow through the full
 stack of layers; thus, simple patterns in the data may end up being
 distorted by this sequence of transformations.
@@ -1512,7 +1512,7 @@ model = keras.Model(inputs=[input_], outputs=[output])
 Let's go through each line of this code:
 
 -   First, we need to create an `Input`
-    object.^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471243464){#idm45728471243464-marker}^
+    object.^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     This is a specification of the kind of input the model will get,
     including its `shape` and `dtype`. A model may actually have
     multiple inputs, as we will see shortly.
@@ -1571,7 +1571,7 @@ this. Note that we specified `inputs=[input_A, input_B]` when creating
 the model. Now we can compile the model as usual, but when we call the
 `fit()` method, instead of passing a single input matrix `X_train`, we
 must pass a pair of matrices `(X_train_A, X_train_B)`: one per
-input.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471099016){#idm45728471099016-marker}^
+input.^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 The same is true for `X_valid`, and also for `X_test` and `X_new` when
 you call `evaluate()` or `predict()`:
 
@@ -1589,7 +1589,7 @@ mse_test = model.evaluate((X_test_A, X_test_B), y_test)
 y_pred = model.predict((X_new_A, X_new_B))
 ```
 
-There[]{#idm45728471093224} are many use cases in which you may want to
+There are many use cases in which you may want to
 have multiple outputs:
 
 -   The task may demand it. For instance, you may want to locate and
@@ -1602,13 +1602,13 @@ have multiple outputs:
     cases you will get better results on all tasks by training a single
     neural network with one output per task. This is because the neural
     network can learn features in the data that are useful across tasks.
-    For[]{#idm45728470911496}[]{#idm45728470910552}[]{#idm45728470909912}
+    For []{}
     example, you could perform *multitask classification* on pictures of
     faces, using one output to classify the person's facial expression
     (smiling, surprised, etc.) and another output to identify whether
     they are wearing glasses or not.
 
--   Another use case is as[]{#idm45728470907464} a regularization
+-   Another use case is as a regularization
     technique (i.e., a training constraint whose objective is to reduce
     overfitting and thus improve the model's ability to generalize). For
     example, you may want to add some auxiliary outputs in a neural
@@ -1633,7 +1633,7 @@ model = keras.Model(inputs=[input_A, input_B], outputs=[output, aux_output])
 
 Each output will need its own loss function. Therefore, when we compile
 the model, we should pass a list of
-losses^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728470899304){#idm45728470899304-marker}^
+losses^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 (if we pass a single loss, Keras will assume that the same loss must be
 used for all outputs). By default, Keras will compute all these losses
 and simply add them up to get the final loss used for training. We care
@@ -1675,7 +1675,7 @@ y_pred_main, y_pred_aux = model.predict([X_new_A, X_new_B])
 
 As you can see, you can build any sort of architecture you want quite
 easily with the Functional API. Let's look at one last way you can build
-Keras models.[]{#idm45728470659176}[]{#idm45728470658440}
+Keras models. []{}
 
 
 
@@ -1683,7 +1683,7 @@ Keras models.[]{#idm45728470659176}[]{#idm45728470658440}
 Using the Subclassing API to Build Dynamic Models
 -------------------------------------------------
 
-Both[]{#idm45728470656376}[]{#idm45728470655640}[]{#idm45728470654968}
+Both []{}
 the Sequential API and the Functional API are declarative: you start by
 declaring which layers you want to use and how they should be connected,
 and only then can you start feeding the model some data for training or
@@ -1728,7 +1728,7 @@ model = WideAndDeepModel()
 This example looks very much like the Functional API, except we do not
 need to create the inputs; we just use the `input` argument to the
 `call()` method, and we separate the creation of the
-layers^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728470570648){#idm45728470570648-marker}^
+layers^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 in the constructor from their usage in the `call()` method. The big
 difference is that you can do pretty much anything you want in the
 `call()` method: `for` loops, `if` statements, low-level TensorFlow
@@ -1748,7 +1748,7 @@ API or the Functional API.
 
 ###### Tip
 
-Keras models[]{#idm45728470405384} can be used just like regular layers,
+Keras models can be used just like regular layers,
 so you can easily combine them to build complex architectures.
 
 
@@ -1761,7 +1761,7 @@ will want to save them!
 Saving and Restoring a Model
 ----------------------------
 
-When[]{#idm45728470401848}[]{#idm45728470400840}[]{#idm45728470399928}[]{#idm45728470399288}
+When []{}
 using the Sequential API or the Functional API, saving a trained Keras
 model is as simple as it gets:
 
@@ -1772,7 +1772,7 @@ model.fit([...])
 model.save("my_keras_model.h5")
 ```
 
-Keras[]{#idm45728470384840} will use the HDF5 format to save both the
+Keras will use the HDF5 format to save both the
 model's architecture (including every layer's hyperparameters) and the
 values of all the model parameters for every layer (e.g., connection
 weights and biases). It also saves the optimizer (including its
@@ -1812,7 +1812,7 @@ checkpoints? Use callbacks.
 Using Callbacks
 ---------------
 
-The `fit()` method[]{#idm45728470307784}[]{#idm45728470306776} accepts a
+The `fit()` method accepts a
 `callbacks` argument that lets you specify a list of objects that Keras
 will call at the start and end of training, at the start and end of each
 epoch, and even before and after processing each batch. For example, the
@@ -1869,7 +1869,7 @@ the end of training.
 
 ###### Tip
 
-There[]{#idm45728470035768} are many other callbacks available in the
+There are many other callbacks available in the
 [`keras.callbacks` package](https://keras.io/callbacks/).
 
 
@@ -1903,7 +1903,7 @@ your toolbox when using tf.keras: TensorBoard.
 Using TensorBoard for Visualization
 -----------------------------------
 
-TensorBoard[]{#idm45728469958760}[]{#idm45728469957736}[]{#idm45728469956792}
+TensorBoard []{}
 is a great interactive visualization tool that you can use to view the
 learning curves during training, compare learning curves between
 multiple runs, visualize the computation graph, analyze training
@@ -1912,7 +1912,7 @@ multidimensional data projected down to 3D and automatically clustered
 for you, and more! This tool is installed automatically when you install
 TensorFlow, so you already have it.
 
-To use it, you must modify[]{#idm45728469955144}[]{#idm45728469954440}
+To use it, you must modify []{}
 your program so that it outputs the data you want to visualize to
 special binary log files called *event files*. Each binary data record
 is called a *summary*. The TensorBoard server will monitor the log
@@ -2028,7 +2028,7 @@ to 3D), or the profiling traces. The `TensorBoard()` callback has
 options to log extra data too, such as embeddings (see
 [Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab)).
 
-Additionally, TensorFlow[]{#idm45728469761736} offers a lower-level API
+Additionally, TensorFlow offers a lower-level API
 in the `tf.summary` package. The following code creates a
 `SummaryWriter` using the `create_file_writer()` function, and it uses
 this writer as a context to log scalars, histograms, images, audio, and
@@ -2066,7 +2066,7 @@ visualization. You can already go ahead and use neural networks to
 tackle many problems! However, you may wonder how to choose the number
 of hidden layers, the number of neurons in the network, and all the
 other hyperparameters. Let's look at this
-now.[]{#idm45728469673784}[]{#idm45728469672936}
+now. []{}
 
 
 
@@ -2075,7 +2075,7 @@ now.[]{#idm45728469673784}[]{#idm45728469672936}
 Fine-Tuning Neural Network Hyperparameters
 ==========================================
 
-The[]{#ANNfine10}[]{#HPneural10} flexibility of neural networks is also
+The []{#ANNfine10} []{#HPneural10} flexibility of neural networks is also
 one of their main drawbacks: there are many hyperparameters to tweak.
 Not only can you use any imaginable network architecture, but even in a
 simple MLP you can change the number of layers, the number of neurons
@@ -2203,48 +2203,48 @@ Fortunately, there are many techniques to explore a search space much
 more efficiently than randomly. Their core idea is simple: when a region
 of the space turns out to be good, it should be explored more. Such
 techniques take care of the "zooming" process for you and lead to much
-better solutions in much less time. Here are some[]{#idm45728468980712}
+better solutions in much less time. Here are some []{}
 Python libraries you can use to optimize hyperparameters:
 
 [Hyperopt](https://github.com/hyperopt/hyperopt)
 
-:   A popular[]{#idm45728468977544} library for optimizing over all
+:   A popular library for optimizing over all
     sorts of complex search spaces (including real values, such as the
     learning rate, and discrete values, such as the number of layers).
 
 [Hyperas](https://github.com/maxpumperla/hyperas), [kopt](https://github.com/Avsecz/kopt), or [Talos](https://github.com/autonomio/talos)
 
 :   Useful libraries for
-    optimizing[]{#idm45728468973480}[]{#idm45728468972776}[]{#idm45728468972104}
+    optimizing []{}
     hyperparameters for Keras models (the first two are based on
     Hyperopt).
 
 [Keras Tuner](https://homl.info/kerastuner)
 
-:   An[]{#idm45728468969560} easy-to-use hyperparameter optimization
+:   An easy-to-use hyperparameter optimization
     library by Google for Keras models, with a hosted service for
     visualization and analysis.
 
 [Scikit-Optimize (`skopt`)](https://scikit-optimize.github.io/)
 
-:   A general-purpose[]{#idm45728468965800} optimization library. The
+:   A general-purpose optimization library. The
     `BayesSearchCV` class performs Bayesian optimization using an
     interface similar to `GridSearchCV`.
 
 [Spearmint](https://github.com/JasperSnoek/spearmint)
 
-:   A[]{#idm45728468962424} Bayesian optimization library.
+:   A Bayesian optimization library.
 
 [Hyperband](https://github.com/zygmuntz/hyperband)
 
-:   A[]{#idm45728468959768} fast hyperparameter tuning library based on
+:   A fast hyperparameter tuning library based on
     the recent [Hyperband
-    paper](https://homl.info/hyperband)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468958360){#idm45728468958360-marker}^
+    paper](https://homl.info/hyperband)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     by Lisha Li et al.
 
 [Sklearn-Deap](https://github.com/rsteca/sklearn-deap)
 
-:   A[]{#idm45728468955352} hyperparameter optimization library based on
+:   A hyperparameter optimization library based on
     evolutionary algorithms, with a `GridSearchCV`-like interface.
 
 Moreover, many companies offer services for hyperparameter optimization.
@@ -2258,11 +2258,11 @@ Other options include services by [Arimo](https://arimo.com/) and
 Hyperparameter tuning is still an active area of research, and
 evolutionary algorithms are making a comeback. For example, check out
 DeepMind's excellent [2017
-paper](https://homl.info/pbt),^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468948280){#idm45728468948280-marker}^
+paper](https://homl.info/pbt),^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 where the authors jointly optimize a population of models and their
 hyperparameters. Google has also used an evolutionary approach, not just
 to search for hyperparameters but also to look for the best neural
-network architecture for the problem; their AutoML[]{#idm45728468947160}
+network architecture for the problem; their AutoML []{}
 suite is already available as a [cloud
 service](https://cloud.google.com/automl/). Perhaps the days of building
 neural networks manually will soon be over? Check out Google's
@@ -2270,7 +2270,7 @@ neural networks manually will soon be over? Check out Google's
 evolutionary algorithms have been used successfully to train individual
 neural networks, replacing the ubiquitous Gradient Descent! For an
 example, see the [2017 post](https://homl.info/neuroevol) by
-Uber[]{#idm45728468870824} where the authors introduce their *Deep
+Uber where the authors introduce their *Deep
 Neuroevolution* technique.
 
 But despite all this exciting progress and all these tools and services,
@@ -2285,7 +2285,7 @@ values for some of the main hyperparameters.
 Number of Hidden Layers
 -----------------------
 
-For[]{#idm45728468867144}[]{#idm45728468866136} many problems, you can
+For many problems, you can
 begin with a single hidden layer and get reasonable results. An MLP with
 just one hidden layer can theoretically model even the most complex
 functions, provided it has enough neurons. But for complex problems,
@@ -2321,7 +2321,7 @@ neural network, you can initialize them to the values of the weights and
 biases of the lower layers of the first network. This way the network
 will not have to learn from scratch all the low-level structures that
 occur in most pictures; it will only have to learn the higher-level
-structures (e.g., hairstyles). This[]{#idm45728468861832} is called
+structures (e.g., hairstyles). This is called
 *transfer learning*.
 
 In summary, for many problems you can start with just one or two hidden
@@ -2348,7 +2348,7 @@ discuss this in
 Number of Neurons per Hidden Layer
 ----------------------------------
 
-The[]{#idm45728468855960}[]{#idm45728468854888} number of neurons in the
+The number of neurons in the
 input and output layers is determined by the type of input and output
 your task requires. For example, the MNIST task requires 28 × 28 = 784
 input neurons and 10 output neurons.
@@ -2394,7 +2394,7 @@ of layers instead of the number of neurons per layer.
 Learning Rate, Batch Size, and Other Hyperparameters
 ----------------------------------------------------
 
-The[]{#idm45728468848168}[]{#idm45728468847432} numbers of hidden layers
+The numbers of hidden layers
 and neurons are not the only hyperparameters you can tweak in an MLP.
 Here are some of the most important ones, as well as tips on how to set
 them:
@@ -2444,14 +2444,14 @@ Batch size
     not generalize as well as a model trained with a small batch size.
     In April 2018, Yann LeCun even tweeted "Friends don't let friends
     use mini-batches larger than 32," citing a [2018
-    paper](https://homl.info/smallbatch)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468834456){#idm45728468834456-marker}^
+    paper](https://homl.info/smallbatch)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     by Dominic Masters and Carlo Luschi which concluded that using small
     batches (from 2 to 32) was preferable because small batches led to
     better models in less training time. Other papers point in the
     opposite direction, however; in 2017, papers by [Elad Hoffer et
-    al.](https://homl.info/largebatch)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468832840){#idm45728468832840-marker}^
+    al.](https://homl.info/largebatch)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     and [Priya Goyal et
-    al.](https://homl.info/largebatch2)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468830952){#idm45728468830952-marker}^
+    al.](https://homl.info/largebatch2)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
     showed that it was possible to use very large batch sizes (up to
     8,192) using various techniques such as warming up the learning rate
     (i.e., starting training with a small learning rate, then ramping it
@@ -2485,7 +2485,7 @@ hyperparameter, make sure to update the learning rate as well.
 
 For more best practices regarding tuning neural network hyperparameters,
 check out the excellent [2018
-paper](https://homl.info/1cycle)^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468823608){#idm45728468823608-marker}^
+paper](https://homl.info/1cycle)^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 by Leslie Smith.
 
 This concludes our introduction to artificial neural networks and their
@@ -2496,9 +2496,9 @@ preprocess data efficiently using the Data API. And we will dive into
 other popular neural network architectures: convolutional neural
 networks for image processing, recurrent neural networks for sequential
 data, autoencoders for representation learning,
-and[]{#idm45728468821736}[]{#idm45728468820760} generative adversarial
+and generative adversarial
 networks to model and generate
-data.^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468819688){#idm45728468819688-marker}^
+data.^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
 
 
 
@@ -2632,73 +2632,73 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473375560-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 You can get the best of both worlds by being open to biological
 inspirations without being afraid to create biologically unrealistic
 models, as long as they work well.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473364920-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 Warren S. McCulloch and Walter Pitts, "A Logical Calculus of the Ideas
 Immanent in Nervous Activity," *The Bulletin of Mathematical Biology* 5,
 no. 4 (1943): 115--113.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473345912-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 They are not actually attached, just so close that they can very quickly
 exchange chemical signals.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473341832-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 Image by Bruce Blaus ([Creative Commons
 3.0](https://creativecommons.org/licenses/by/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Neuron*](https://en.wikipedia.org/wiki/Neuron).
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473337560-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 In the context of Machine Learning, the phrase "neural networks"
 generally refers to ANNs, not BNNs.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473333576-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 Drawing of a cortical lamination by S. Ramon y Cajal (public domain).
 Reproduced from
 [*https://en.wikipedia.org/wiki/Cerebral\_cortex*](https://en.wikipedia.org/wiki/Cerebral_cortex).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473245720-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 The name *Perceptron* is sometimes used to mean a tiny network with a
 single TLU.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473173064-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 Note that this solution is not unique: when data points are linearly
 separable, there is an infinity of hyperplanes that can separate them.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473070008-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker){.totri-footnote}^
 In the 1990s, an ANN with more than two hidden layers was considered
 deep. Nowadays, it is common to see ANNs with dozens of layers, or even
 hundreds, so the definition of "deep" is quite fuzzy.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473066136-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 David Rumelhart et al. "Learning Internal Representations by Error
 Propagation," (Defense Technical Information Center technical report,
 September 1985).
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728473063912-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 This technique was actually independently invented several times by
 various researchers in different fields, starting with Paul Werbos in
 1974.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728472986728-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Biological neurons seem to implement a roughly sigmoid (*S*-shaped)
 activation function, so researchers stuck to sigmoid functions for a
 very long time. But it turns out that ReLU generally works better in
 ANNs. This is one of the cases where the biological analogy was
 misleading.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728472888936-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Project ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating
 System).
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728472216728-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 You can use `keras.utils.plot_model()` to generate an image of your
 model.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471918072-marker)^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 If your training or validation data does not match the expected shape,
 you will get an exception. This is perhaps the most common error, so you
 should get familiar with the error message. The message is actually
@@ -2708,64 +2708,64 @@ get the following exception: "ValueError: Error when checking input:
 expected flatten\_input to have 3 dimensions, but got array with shape
 (60000, 784)."
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471382680-marker)^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Heng-Tze Cheng et al., "Wide & Deep Learning for Recommender Systems,"
 *Proceedings of the First Workshop on Deep Learning for Recommender
 Systems* (2016): 7--10.
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471380600-marker)^
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 The short path can also be used to provide manually engineered features
 to the neural network.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471243464-marker)^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 The name `input_` is used to avoid overshadowing Python's built-in
 `input()` function.
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728471099016-marker)^
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Alternatively, you can pass a dictionary mapping the input names to the
 input values, like `{"wide_input": X_train_A, "deep_input": X_train_B}`.
 This is especially useful when there are many inputs, to avoid getting
 the order wrong.
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728470899304-marker)^
+^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Alternatively, you can pass a dictionary that maps each output name to
 the corresponding loss. Just like for the inputs, this is useful when
 there are multiple outputs, to avoid getting the order wrong. The loss
 weights and metrics (discussed shortly) can also be set using
 dictionaries.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728470570648-marker)^
+^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Keras models have an `output` attribute, so we cannot use that name for
 the main output layer, which is why we renamed it to `main_output`.
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468958360-marker)^
+^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Lisha Li et al., "Hyperband: A Novel Bandit-Based Approach to
 Hyperparameter Optimization," *Journal of Machine Learning Research* 18
 (April 2018): 1--52.
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468948280-marker)^
+^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Max Jaderberg et al., "Population Based Training of Neural Networks,"
 arXiv preprint arXiv:1711.09846 (2017).
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468834456-marker)^
+^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Dominic Masters and Carlo Luschi, "Revisiting Small Batch Training for
 Deep Neural Networks," arXiv preprint arXiv:1804.07612 (2018).
 
-^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468832840-marker)^
+^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Elad Hoffer et al., "Train Longer, Generalize Better: Closing the
 Generalization Gap in Large Batch Training of Neural Networks,"
 *Proceedings of the 31st International Conference on Neural Information
 Processing Systems* (2017): 1729--1739.
 
-^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468830952-marker)^
+^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Priya Goyal et al., "Accurate, Large Minibatch SGD: Training ImageNet in
 1 Hour," arXiv preprint arXiv:1706.02677 (2017).
 
-^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468823608-marker)^
+^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 Leslie N. Smith, "A Disciplined Approach to Neural Network
 Hyper-Parameters: Part 1---Learning Rate, Batch Size, Momentum, and
 Weight Decay," arXiv preprint arXiv:1803.09820 (2018).
 
-^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#idm45728468819688-marker)^
+^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html-marker)^
 A few extra ANN architectures are presented in
 [Appendix E](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#other_ann_appendix).

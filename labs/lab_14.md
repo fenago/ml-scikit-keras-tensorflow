@@ -45,11 +45,11 @@ The Architecture of the Visual Cortex
 
 David H. Hubel and Torsten Wiesel performed a series of experiments on
 cats in
-[1958](https://homl.info/71)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456288744)^
+[1958](https://homl.info/71)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 and
-[1959](https://homl.info/72)^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456287080)^
+[1959](https://homl.info/72)^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 (and a [few years later on
-monkeys](https://homl.info/73)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456243912)^),
+monkeys](https://homl.info/73)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^),
 giving crucial insights into the structure of the visual cortex (the
 authors received the Nobel Prize in Physiology or Medicine in 1981 for
 their work). In particular, they showed that many neurons in the visual
@@ -78,10 +78,10 @@ of complex patterns in any area of the visual field.
 ###### Figure 14-1. Biological neurons in the visual cortex respond to specific patterns in small regions of the visual field called receptive fields; as the visual signal makes its way through consecutive brain modules, neurons respond to more complex patterns in larger receptive fields.
 
 These studies of the visual cortex inspired the
-[neocognitron](https://homl.info/74),^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456235400)^
+[neocognitron](https://homl.info/74),^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 introduced in 1980, which gradually evolved into what we now call
 *convolutional neural networks*. An important milestone was a [1998
-paper](https://homl.info/75)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456233080)^
+paper](https://homl.info/75)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 by Yann LeCun et al. that introduced the famous *LeNet-5* architecture,
 widely used by banks to recognize handwritten check numbers. This
 architecture has some building blocks that you already know, such as
@@ -105,7 +105,7 @@ Convolutional Layers
 ====================
 
 The most important building block of a CNN is the *convolutional
-layer*:^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456222664)^
+layer*:^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 neurons in the first convolutional layer are not connected to every
 single pixel in the input image (like they were in the layers discussed
 in previous labs), but only to pixels in their receptive fields (see
@@ -410,7 +410,7 @@ outputting 200 feature maps of size 150 × 100, with stride 1 and
 channels), then the number of parameters is (5 × 5 × 3 + 1) × 200 =
 15,200 (the + 1 corresponds to the bias terms), which is fairly small
 compared to a fully connected
-layer.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455831608)^
+layer.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 However, each of the 200 feature maps contains 150 × 100 neurons, and
 each of these neurons needs to compute a weighted sum of its 5 × 5 × 3 =
 75 inputs: that’s a total of 225 million float multiplications. Not as
@@ -418,7 +418,7 @@ bad as a fully connected layer, but still quite computationally
 intensive. Moreover, if the feature maps are represented using 32-bit
 floats, then the convolutional layer’s output will occupy 200 × 150 ×
 100 × 32 = 96 million bits (12 MB) of
-RAM.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455829432)^
+RAM.^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 And that’s just for one instance—if a training batch contains 100
 instances, then this layer will use up 1.2 GB of RAM!
 
@@ -458,7 +458,7 @@ inputs using an aggregation function such as the max or mean.
 [Figure 14-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#max_pooling_diagram)
 shows a *max pooling layer*, which is the most common type of pooling
 layer. In this example, we use a 2 × 2 *pooling
-kernel*,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455886344)^
+kernel*,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 with a stride of 2 and no padding. Only the max input value in each
 receptive field makes it to the next layer, while the other inputs are
 dropped. For example, in the lower-left receptive field in
@@ -786,7 +786,7 @@ AlexNet
 -------
 
 The [AlexNet CNN
-architecture](https://homl.info/80)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455239288)^
+architecture](https://homl.info/80)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 won the 2012 ImageNet ILSVRC challenge by a large margin: it achieved a
 top-five error rate of 17%, while the second best achieved only 26%! It
 was developed by Alex Krizhevsky (hence the name), Ilya Sutskever, and
@@ -913,7 +913,7 @@ In AlexNet, the hyperparameters are set as follows: *r* = 2, *α* =
 `Lambda` layer if you want to use it in a Keras model).
 
 A variant of AlexNet called [*ZF
-Net*](https://homl.info/zfnet)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455026856)^
+Net*](https://homl.info/zfnet)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 was developed by Matthew Zeiler and Rob Fergus and won the 2013 ILSVRC
 challenge. It is essentially AlexNet with a few tweaked hyperparameters
 (number of feature maps, kernel size, stride, etc.).
@@ -923,13 +923,13 @@ GoogLeNet
 
 The [GoogLeNet architecture](https://homl.info/81) was developed by
 Christian Szegedy et al. from Google
-Research,^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455022056)^
+Research,^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 and it won the ILSVRC 2014 challenge by pushing the top-five error rate
 below 7%. This great performance came in large part from the fact that
 the network was much deeper than previous CNNs (as you’ll see in
 [Figure 14-14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#googlenet_diagram)).
 This was made possible by subnetworks called *inception
-modules*,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455019320)^
+modules*,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 which allow GoogLeNet to use parameters much more efficiently than
 previous architectures: GoogLeNet actually has 10 times fewer parameters
 than AlexNet (roughly 6 million instead of 60 million).
@@ -1061,7 +1061,7 @@ VGGNet
 ------
 
 The runner-up in the ILSVRC 2014 challenge was
-[VGGNet](https://homl.info/83),^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454982744)^
+[VGGNet](https://homl.info/83),^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 developed by Karen Simonyan and Andrew Zisserman from the Visual
 Geometry Group (VGG) research lab at Oxford University. It had a very
 simple and classical architecture, with 2 or 3 convolutional layers and
@@ -1076,7 +1076,7 @@ ResNet
 
 Kaiming He et al. won the ILSVRC 2015 challenge using a [*Residual
 Network* (or
-*ResNet*)](https://homl.info/82),^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454977016)^
+*ResNet*)](https://homl.info/82),^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 that delivered an astounding top-five error rate under 3.6%. The winning
 variant used an extremely deep CNN composed of 152 layers (other
 variants had 34, 50, and 101 layers). It confirmed the general trend:
@@ -1147,7 +1147,7 @@ maps (see
 
 ResNet-34 is the ResNet with 34 layers (only counting the convolutional
 layers and the fully connected
-layer)^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454948344)^
+layer)^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 containing 3 residual units that output 64 feature maps, 4 RUs with 128
 maps, 6 RUs with 256 maps, and 3 RUs with 512 maps. We will implement
 this architecture later in this lab.
@@ -1165,7 +1165,7 @@ whopping 36 RUs with 1,024 maps, and finally 3 RUs with 2,048 maps.
 ###### Note
 
 Google’s
-[Inception-v4](https://homl.info/84)^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454944616)^
+[Inception-v4](https://homl.info/84)^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 architecture merged the ideas of GoogLeNet and ResNet and achieved a
 top-five error rate of close to 3% on ImageNet classification.
 
@@ -1173,7 +1173,7 @@ Xception
 --------
 
 Another variant of the GoogLeNet architecture is worth noting:
-[Xception](https://homl.info/xception)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454940440)^
+[Xception](https://homl.info/xception)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 (which stands for *Extreme Inception*) was proposed in 2016 by François
 Chollet (the author of Keras), and it significantly outperformed
 Inception-v3 on a huge vision task (350 million images and 17,000
@@ -1181,7 +1181,7 @@ classes). Just like Inception-v4, it merges the ideas of GoogLeNet and
 ResNet, but it replaces the inception modules with a special type of
 layer called a *depthwise separable convolution layer* (or *separable
 convolution layer* for
-short^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454936504)^).
+short^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^).
 These layers had been used before in some CNN architectures, but they
 were not as central as in the Xception architecture. While a regular
 convolutional layer uses filters that try to simultaneously capture
@@ -1231,7 +1231,7 @@ they even perform better, so you should consider using them by default
 The ILSVRC 2016 challenge was won by the CUImage team from the Chinese
 University of Hong Kong. They used an ensemble of many different
 techniques, including a sophisticated object-detection system called
-[GBD-Net](https://homl.info/gbdnet),^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454926552)^
+[GBD-Net](https://homl.info/gbdnet),^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 to achieve a top-five error rate below 3%. Although this result is
 unquestionably impressive, the complexity of the solution contrasted
 with the simplicity of ResNets. Moreover, one year later another fairly
@@ -1242,7 +1242,7 @@ SENet
 
 The winning architecture in the ILSVRC 2017 challenge was the
 [Squeeze-and-Excitation Network
-(SENet)](https://homl.info/senet).^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454921560)^
+(SENet)](https://homl.info/senet).^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 This architecture extends existing architectures such as inception
 networks and ResNets, and boosts their performance. This allowed SENet
 to win the competition with an astonishing 2.25% top-five error rate!
@@ -1444,7 +1444,7 @@ the estimated probability of each predicted class, use the
 `decode_predictions()` function. For each image, it returns an array
 containing the top *K* predictions, where each prediction is represented
 as an array containing the class
-identifier,^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454324552)^
+identifier,^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 its name, and the corresponding confidence score:
 
 ``` {data-type="programlisting" data-code-language="python"}
@@ -1677,7 +1677,7 @@ produce is good, so make sure it is worth the effort. If there are just
 a few thousand images to label, and you don’t plan to do this
 frequently, it may be preferable to do it yourself. Adriana Kovashka et
 al. wrote a very practical
-[paper](https://homl.info/crowd)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453463128)^
+[paper](https://homl.info/crowd)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 about crowdsourcing in computer vision. I recommend you check it out,
 even if you do not plan to use crowdsourcing.
 
@@ -1776,7 +1776,7 @@ Fully Convolutional Networks
 ----------------------------
 
 The idea of FCNs was first introduced in a [2015
-paper](https://homl.info/fcn)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453283112)^
+paper](https://homl.info/fcn)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 by Jonathan Long et al., for semantic segmentation (the task of
 classifying every pixel in an image according to the class of the object
 it belongs to). The authors pointed out that you could replace the dense
@@ -1809,7 +1809,7 @@ to 1 or more, as we will see shortly.
 Why is this important? Well, while a dense layer expects a specific
 input size (since it has one weight per input feature), a convolutional
 layer will happily process images of any
-size^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453276504)^
+size^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 (however, it does expect its inputs to have a specific number of
 channels, since each kernel contains a different set of weights for each
 input channel). Since an FCN contains only convolutional layers (and
@@ -1836,7 +1836,7 @@ is fed a 224 × 224 image (see the left side of
 If we feed the FCN a 448 × 448 image (see the right side of
 [Figure 14-25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#fcn_diagram)),
 the bottleneck layer will now output 14 × 14 feature
-maps.^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453269496)^
+maps.^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 Since the dense output layer was replaced by a convolutional layer using
 10 filters of size 7 × 7, with `"valid"` padding and stride 1, the
 output will be composed of 10 features maps, each of size 8 × 8 (since
@@ -1861,11 +1861,11 @@ You Only Look Once (YOLO)
 
 YOLO is an extremely fast and accurate object detection architecture
 proposed by Joseph Redmon et al. in a [2015
-paper](https://homl.info/yolo),^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453259080)^
+paper](https://homl.info/yolo),^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 and subsequently improved [in
-2016](https://homl.info/yolo2)^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453257320)^
+2016](https://homl.info/yolo2)^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 (YOLOv2) and [in
-2018](https://homl.info/yolo3)^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453255464)^
+2018](https://homl.info/yolo3)^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 (YOLOv3). It is so fast that it can run in real time on a video, as seen
 in Redmon’s [demo](https://homl.info/yolodemo).
 
@@ -1980,9 +1980,9 @@ GitHub. In particular, check out [Zihao Zang’s TensorFlow 2
 implementation](https://homl.info/yolotf2). Other object detection
 models are available in the TensorFlow Models project, many with
 pretrained weights; and some have even been ported to TF Hub, such as
-[SSD](https://homl.info/ssd)^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453226280)^
+[SSD](https://homl.info/ssd)^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 and
-[Faster-RCNN](https://homl.info/fasterrcnn),^[32](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453224360)^
+[Faster-RCNN](https://homl.info/fasterrcnn),^[32](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 which are both quite popular. SSD is also a “single shot” detection
 model, similar to YOLO. Faster R-CNN is more complex: the image first
 goes through a CNN, then the output is passed to a *Region Proposal
@@ -2035,7 +2035,7 @@ There are several solutions available for upsampling (increasing the
 size of an image), such as bilinear interpolation, but that only works
 reasonably well up to ×4 or ×8. Instead, they use a *transposed
 convolutional
-layer*:^[33](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453185320)^
+layer*:^[33](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 it is equivalent to first stretching the image by inserting empty rows
 and columns (full of zeros), then performing a regular convolution (see
 [Figure 14-27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#conv2d_transpose_diagram)).
@@ -2119,7 +2119,7 @@ object is distinguished from the others (e.g., it identifies each
 individual bicycle). At present, the instance segmentation models
 available in the TensorFlow Models project are based on the *Mask R-CNN*
 architecture, which was proposed in a [2017
-paper](https://homl.info/maskrcnn):^[34](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453150456)^
+paper](https://homl.info/maskrcnn):^[34](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 it extends the Faster R-CNN model by additionally producing a pixel mask
 for each bounding box. So not only do you get a bounding box around each
 object, with a set of estimated class probabilities, but you also get a
@@ -2139,7 +2139,7 @@ to in
 and *single-shot learning* (a system that can recognize an object after
 it has seen it just once). Some even explore completely novel
 architectures, such as Geoffrey Hinton’s [*capsule
-networks*](https://homl.info/capsnet)^[35](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453143336)^
+networks*](https://homl.info/capsnet)^[35](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html)^
 (I presented them in a couple of
 [videos](https://homl.info/capsnetvideos), with the corresponding code
 in a notebook). Now on to the next lab, where we will look at how to
@@ -2205,30 +2205,30 @@ Exercises
 Solutions to these exercises are available in
 [Appendix A](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html#solutions_appendix).
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456288744-marker)^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 David H. Hubel, “Single Unit Activity in Striate Cortex of Unrestrained
 Cats,” *The Journal of Physiology* 147 (1959): 226–238.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456287080-marker)^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 David H. Hubel and Torsten N. Wiesel, “Receptive Fields of Single
 Neurons in the Cat’s Striate Cortex,” *The Journal of Physiology* 148
 (1959): 574–591.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456243912-marker)^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 David H. Hubel and Torsten N. Wiesel, “Receptive Fields and Functional
 Architecture of Monkey Striate Cortex,” *The Journal of Physiology* 195
 (1968): 215–243.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456235400-marker)^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Kunihiko Fukushima, “Neocognitron: A Self-Organizing Neural Network
 Model for a Mechanism of Pattern Recognition Unaffected by Shift in
 Position,” *Biological Cybernetics* 36 (1980): 193–202.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456233080-marker)^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Yann LeCun et al., “Gradient-Based Learning Applied to Document
 Recognition,” *Proceedings of the IEEE* 86, no. 11 (1998): 2278–2324.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728456222664-marker)^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 A convolution is a mathematical operation that slides one function over
 another and measures the integral of their pointwise multiplication. It
 has deep connections with the Fourier transform and the Laplace
@@ -2236,16 +2236,16 @@ transform and is heavily used in signal processing. Convolutional layers
 actually use cross-correlations, which are very similar to convolutions
 (see [*https://homl.info/76*](https://homl.info/76) for more details).
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455831608-marker)^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 A fully connected layer with 150 × 100 neurons, each connected to all
 150 × 100 × 3 inputs, would have 150^2^ × 100^2^ × 3 = 675 million
 parameters!
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455829432-marker)^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 In the international system of units (SI), 1 MB = 1,000 KB = 1,000 ×
 1,000 bytes = 1,000 × 1,000 × 8 bits.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455886344-marker)^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Other kernels we’ve discussed so far had weights, but pooling kernels do
 not: they are just stateless sliding windows.
 
@@ -2253,81 +2253,81 @@ not: they are just stateless sliding windows.
 Yann LeCun et al., “Gradient-Based Learning Applied to Document
 Recognition,” *Proceedings of the IEEE* 86, no. 11 (1998): 2278–2324.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455239288-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Alex Krizhevsky et al., “ImageNet Classification with Deep Convolutional
 Neural Networks,” *\_Proceedings of the 25th International Conference on
 Neural Information Processing Systems* 1 (2012): 1097–1105.
 
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455026856-marker)^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Matthew D. Zeiler and Rob Fergus, “Visualizing and Understanding
 Convolutional Networks,” *Proceedings of the European Conference on
 Computer Vision* (2014): 818-833.
 
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455022056-marker)^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Christian Szegedy et al., “Going Deeper with Convolutions,” *Proceedings
 of the IEEE Conference on Computer Vision and Pattern Recognition*
 (2015): 1–9.
 
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728455019320-marker)^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 In the 2010 movie *Inception*, the characters keep going deeper and
 deeper into multiple layers of dreams; hence the name of these modules.
 
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454982744-marker)^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Karen Simonyan and Andrew Zisserman, “Very Deep Convolutional Networks
 for Large-Scale Image Recognition,” arXiv preprint arXiv:1409.1556
 (2014).
 
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454977016-marker)^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Kaiming He et al., “Deep Residual Learning for Image Recognition,” arXiv
 preprint arXiv:1512:03385 (2015).
 
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454948344-marker)^
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 It is a common practice when describing a neural network to count only
 layers with parameters.
 
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454944616-marker)^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Christian Szegedy et al., “Inception–v4, Inception-ResNet and the Impact
 of Residual Connections on Learning,” arXiv preprint arXiv:1602.07261
 (2016).
 
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454940440-marker)^
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 François Chollet, “Xception: Deep Learning with Depthwise Separable
 Convolutions,” arXiv preprint arXiv:1610.02357 (2016).
 
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454936504-marker)^
+^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 This name can sometimes be ambiguous, since spatially separable
 convolutions are often called “separable convolutions” as well.
 
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454926552-marker)^
+^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Xingyu Zeng et al., “Crafting GBD-Net for Object Detection,” *IEEE
 Transactions on Pattern Analysis and Machine Intelligence* 40, no. 9
 (2018): 2109–2123.
 
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454921560-marker)^
+^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Jie Hu et al., “Squeeze-and-Excitation Networks,” *Proceedings of the
 IEEE Conference on Computer Vision and Pattern Recognition* (2018):
 7132–7141.
 
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728454324552-marker)^
+^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 In the ImageNet dataset, each image is associated to a word in the
 [WordNet dataset](https://wordnet.princeton.edu/): the class ID is just
 a WordNet ID.
 
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453463128-marker)^
+^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Adriana Kovashka et al., “Crowdsourcing in Computer Vision,”
 *Foundations and Trends in Computer Graphics and Vision* 10, no. 3
 (2014): 177–243.
 
-^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453283112-marker)^
+^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Jonathan Long et al., “Fully Convolutional Networks for Semantic
 Segmentation,” *Proceedings of the IEEE Conference on Computer Vision
 and Pattern Recognition* (2015): 3431–3440.
 
-^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453276504-marker)^
+^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 There is one small exception: a convolutional layer using `"valid"`
 padding will complain if the input size is smaller than the kernel size.
 
-^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453269496-marker)^
+^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 This assumes we used only `"same"` padding in the network: indeed,
 `"valid"` padding would reduce the size of the feature maps. Moreover,
 448 can be neatly divided by 2 several times until we reach 7, without
@@ -2335,38 +2335,38 @@ any rounding error. If any layer uses a different stride than 1 or 2,
 then there may be some rounding error, so again the feature maps may end
 up being smaller.
 
-^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453259080-marker)^
+^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Joseph Redmon et al., “You Only Look Once: Unified, Real-Time Object
 Detection,” *Proceedings of the IEEE Conference on Computer Vision and
 Pattern Recognition* (2016): 779–788.
 
-^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453257320-marker)^
+^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Joseph Redmon and Ali Farhadi, “YOLO9000: Better, Faster, Stronger,”
 *Proceedings of the IEEE Conference on Computer Vision and Pattern
 Recognition* (2017): 6517–6525.
 
-^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453255464-marker)^
+^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Joseph Redmon and Ali Farhadi, “YOLOv3: An Incremental Improvement,”
 arXiv preprint arXiv:1804.02767 (2018).
 
-^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453226280-marker)^
+^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Wei Liu et al., “SSD: Single Shot Multibox Detector,” *Proceedings of
 the 14th European Conference on Computer Vision* 1 (2016): 21–37.
 
-^[32](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453224360-marker)^
+^[32](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Shaoqing Ren et al., “Faster R-CNN: Towards Real-Time Object Detection
 with Region Proposal Networks,” *Proceedings of the 28th International
 Conference on Neural Information Processing Systems* 1 (2015): 91–99.
 
-^[33](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453185320-marker)^
+^[33](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 This type of layer is sometimes referred to as a *deconvolution layer*,
 but it does *not* perform what mathematicians call a deconvolution, so
 this name should be avoided.
 
-^[34](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453150456-marker)^
+^[34](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Kaiming He et al., “Mask R-CNN,” arXiv preprint arXiv:1703.06870 (2017).
 
-^[35](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html#idm45728453143336-marker)^
+^[35](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch14.html-marker)^
 Geoffrey Hinton et al., “Matrix Capsules with EM Routing,” *Proceedings
 of the International Conference on Learning Representations* (2018).
 

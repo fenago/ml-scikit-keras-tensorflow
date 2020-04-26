@@ -2,7 +2,7 @@
 [Appendix D. ] Autodiff
 ==============================
 
-This[]{#autodiff23}[]{#CMauto23}[]{#TFauto23} appendix explains how
+This []{#autodiff23} []{#CMauto23} []{#TFauto23} appendix explains how
 TensorFlow's autodifferentiation (autodiff) feature works, and how it
 compares to other solutions.
 
@@ -20,7 +20,7 @@ them, starting with manual differentiation.
 Manual Differentiation
 ======================
 
-The[]{#idm45728431204984} first approach to compute derivatives is to
+The first approach to compute derivatives is to
 pick up a pencil and a piece of paper and use your calculus knowledge to
 derive the appropriate equation. For the function *f*(*x*, *y*) just
 defined, it is not too hard; you just need to use five rules:
@@ -59,7 +59,7 @@ options. Let's look at finite difference approximation now.
 Finite Difference Approximation
 ===============================
 
-Recall[]{#idm45728431136328} that the derivative *h*′(*x*~0~) of a
+Recall that the derivative *h*′(*x*~0~) of a
 function *h*(*x*) at a point *x*~0~ is the slope of the function at that
 point. More precisely, the derivative is defined as the limit of the
 slope of a straight line going through this point *x*~0~ and another
@@ -81,7 +81,7 @@ with regard to *x* at *x* = 3 and *y* = 4, we could compute *f*(3 + *ε*,
 4) -- *f*(3, 4) and divide the result by *ε*, using a very small value
 for *ε*. This type of numerical approximation of the derivative is
 called a *finite difference approximation*, and
-this[]{#idm45728431088904} specific equation is called *Newton's
+this specific equation is called *Newton's
 difference quotient*. That's exactly what the following code does:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -130,7 +130,7 @@ Forward-Mode Autodiff
 =====================
 
 [Figure D-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app04.html#symbolic_differentiation_diagram)
-shows how[]{#idm45728430991960} forward-mode autodiff works on an even
+shows how forward-mode autodiff works on an even
 simpler function, *g*(*x*, *y*) = 5 + *xy*. The graph for that function
 is represented on the left. After forward-mode autodiff, we get the
 graph on the right, which represents the partial derivative ∂*g*/∂*x* =
@@ -167,7 +167,7 @@ more complex function forward-mode autodiff can produce a huge graph
 that may be tough to simplify and lead to suboptimal performance.
 
 Note that we started with a computation graph, and forward-mode autodiff
-produced another computation graph. This[]{#idm45728430975432} is called
+produced another computation graph. This is called
 *symbolic differentiation*, and it has two nice features: first, once
 the computation graph of the derivative has been produced, we can use it
 as many times as we want to compute the derivatives of the given
@@ -178,7 +178,7 @@ compute third-order derivatives, and so on.
 
 But it is also possible to run forward-mode autodiff without
 constructing a graph (i.e., numerically, not symbolically), just by
-computing intermediate results on the fly. One[]{#idm45728430971960} way
+computing intermediate results on the fly. One way
 to do this is to use *dual numbers*, which are weird but fascinating
 numbers of the form *a* + *bε*, where *a* and *b* are real numbers and
 *ε* is an infinitesimal number such that *ε*^2^ = 0 (but *ε* ≠ 0). You
@@ -230,7 +230,7 @@ two passes through the graph. Let's see how.
 Reverse-Mode Autodiff
 =====================
 
-Reverse-mode autodiff[]{#idm45728430815480} is the solution implemented
+Reverse-mode autodiff is the solution implemented
 by TensorFlow. It first goes through the graph in the forward direction
 (i.e., from the inputs to the output) to compute the value of each node.
 Then it does a second pass, this time in the reverse direction (i.e.,
@@ -308,4 +308,4 @@ of the function's outputs with regard to its inputs. For example,
 suppose you implement a function that computes the square of its input:
 *f*(*x*) = *x*^2^. In that case you would need to provide the
 corresponding derivative function: *f*′(*x*) =
-2*x*.[]{#idm45728430747208}[]{#idm45728430746200}[]{#idm45728430745256}
+2*x*. []{}

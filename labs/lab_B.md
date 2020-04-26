@@ -2,7 +2,7 @@
 Machine Learning Project Checklist
 ==================================
 
-This[]{#idm45728431727352}[]{#idm45728431726280} checklist can guide you
+This checklist can guide you
 through your Machine Learning projects. There are eight main steps:
 
 1.  Frame the problem and look at the big picture.
@@ -29,7 +29,7 @@ Obviously, you should feel free to adapt this checklist to your needs.
 Frame the Problem and Look at the Big Picture
 =============================================
 
-1.  Define[]{#idm45728431714792} the objective in business terms.
+1.  Define the objective in business terms.
 
 2.  How will your solution be used?
 
@@ -61,7 +61,7 @@ Frame the Problem and Look at the Big Picture
 Get the Data
 ============
 
-Note: automate[]{#idm45728431701752} as much as possible so you can
+Note: automate as much as possible so you can
 easily get fresh data.
 
 1.  List the data you need and how much you need.
@@ -96,7 +96,7 @@ easily get fresh data.
 Explore the Data
 ================
 
-Note: try[]{#idm45728431688328} to get insights from a field expert for
+Note: try to get insights from a field expert for
 these steps.
 
 1.  Create a copy of the data for exploration (sampling it down to a
@@ -143,7 +143,7 @@ Prepare the Data
 
 Notes:
 
--   Work[]{#idm45728431667576} on copies of the data (keep the original
+-   Work on copies of the data (keep the original
     dataset intact).
 
 -   Write functions for all data transformations you apply, for five
@@ -197,7 +197,7 @@ Shortlist Promising Models
 
 Notes:
 
--   If[]{#idm45728431642200} the data is huge, you may want to sample
+-   If the data is huge, you may want to sample
     smaller training sets so you can train many different models in a
     reasonable time (be aware that this penalizes complex models such as
     large neural nets or Random Forests).
@@ -242,7 +242,7 @@ Notes:
 
 1.  Fine-tune the hyperparameters using cross-validation:
 
-    -   Treat[]{#idm45728431622424} your data transformation choices as
+    -   Treat your data transformation choices as
         hyperparameters, especially when you are not sure about them
         (e.g., if you're not sure whether to replace missing values with
         zeros or with the median value, or to just drop the rows).
@@ -251,7 +251,7 @@ Notes:
         prefer random search over grid search. If training is very long,
         you may prefer a Bayesian optimization approach (e.g., using
         Gaussian process priors, [as described by Jasper Snoek et
-        al.](https://homl.info/134)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html#idm45728431619304){#idm45728431619304-marker
+        al.](https://homl.info/134)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html){-marker
         .totri-footnote}^
 
 2.  Try Ensemble methods. Combining your best models will often produce
@@ -298,7 +298,7 @@ Present Your Solution
 Launch!
 =======
 
-1.  Get[]{#idm45728431602200} your solution ready for production (plug
+1.  Get your solution ready for production (plug
     into production data inputs, write unit tests, etc.).
 
 2.  Write monitoring code to check your system's live performance at

@@ -2,7 +2,7 @@
 [Appendix C. ] SVM Dual Problem
 ======================================
 
-To[]{#idm45728431592488}[]{#idm45728431591064}[]{#idm45728431590216}
+To []{}
 understand *duality*, you first need to understand the *Lagrange
 multipliers* method. The general idea is to transform a constrained
 optimization objective into an unconstrained one, by moving the
@@ -16,7 +16,7 @@ we start by defining a new function called the *Lagrangian* (or
 the original objective, multiplied by a new variable called a Lagrange
 multiplier.
 
-Joseph-Louis Lagrange[]{#idm45728431591544} showed that if
+Joseph-Louis Lagrange showed that if
 $\left( \hat{x},\hat{y} \right)$ is a solution to the constrained
 optimization problem, then there must exist an $\hat{\alpha}$ such that
 $\left( \hat{x},\hat{y},\hat{\alpha} \right)$ is a *stationary point* of
@@ -41,7 +41,7 @@ stationary point, and as it respects the constraint, it must be the
 solution to the constrained optimization problem.
 
 However,
-this[]{#idm45728431497896}[]{#idm45728431497192}[]{#idm45728431496488}
+this []{}
 method applies only to equality constraints. Fortunately, under some
 regularity conditions (which are respected by the SVM objectives), this
 method can be generalized to *inequality constraints* as well (e.g.,
@@ -71,11 +71,11 @@ $\left( \hat{\mathbf{w}},\hat{b},\hat{\alpha} \right)$ that respect the
 
 -   Verify ${\hat{\alpha}}^{(i)} \geq 0\text{for} i = 1,2,\cdots,m$.
 
--   Either[]{#idm45728431420584} ${\hat{\alpha}}^{(i)} = 0$ or the
+-   Either ${\hat{\alpha}}^{(i)} = 0$ or the
     *i*^th^ constraint must be an *active constraint*, meaning it must
     hold by equality:
     $t^{(i)}\left( {\hat{\mathbf{w}}}^{\intercal}\mathbf{x}^{(i)} + \hat{b} \right) = 1$.
-    This[]{#idm45728431401624} condition is called the *complementary
+    This condition is called the *complementary
     slackness* condition. It implies that either
     ${\hat{\alpha}}^{(i)} = 0$ or the *i*^th^ instance lies on the
     boundary (it is a support vector).

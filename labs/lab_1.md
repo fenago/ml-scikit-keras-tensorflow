@@ -5,14 +5,14 @@
 [Lab 1. ] The Machine Learning Landscape
 ===================================================
 
-When[]{#idm45728493908024} most people hear "Machine Learning," they
+When most people hear "Machine Learning," they
 picture a robot: a dependable butler or a deadly Terminator, depending
 on who you ask. But Machine Learning is not just a futuristic fantasy;
 it's already here. In fact, it has been around for decades in some
-specialized applications, []{#idm45728493906584}such as Optical
+specialized applications,  []{}such as Optical
 Character Recognition (OCR). But the first ML application that really
 became mainstream, improving the lives of hundreds of millions of
-people, took over the world back in the 1990s: []{#idm45728493905512}the
+people, took over the world back in the 1990s:  []{}the
 *spam filter*. It's not exactly a self-aware Skynet, but it does
 technically qualify as Machine Learning (it has actually learned so well
 that you seldom need to flag an email as spam anymore). It was followed
@@ -77,14 +77,14 @@ And a more engineering-oriented one:
 Your spam filter is a Machine Learning program that, given examples of
 spam emails (e.g., flagged by users) and examples of regular (nonspam,
 also called "ham") emails, can learn to flag spam. The examples that the
-system uses to learn are[]{#idm45728493876136} called the *training
+system uses to learn are called the *training
 set*. Each training example
-is[]{#idm45728493874888}[]{#idm45728493874184} called a *training
+is called a *training
 instance* (or *sample*). In this case, the task *T* is to flag spam for
-new emails, the experience *E* is[]{#idm45728493871640} the *training
+new emails, the experience *E* is the *training
 data*, and the performance measure *P* needs to be defined; for example,
 you can use the ratio of correctly classified emails.
-This[]{#idm45728493869512} particular performance measure is called
+This particular performance measure is called
 *accuracy*, and it is often used in classification tasks.
 
 If you just download a copy of Wikipedia, your computer has a lot more
@@ -97,7 +97,7 @@ copy of Wikipedia is not Machine Learning.
 Why Use Machine Learning?
 =========================
 
-Consider[]{#idm45728493866072}[]{#idm45728493865064} how you would write
+Consider how you would write
 a spam filter using traditional programming techniques
 ([Figure 1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#traditional_approach_diagram)):
 
@@ -189,7 +189,7 @@ To summarize, Machine Learning is great for:
 Examples of Applications
 ========================
 
-Let's look[]{#idm45728493836120} at some concrete examples of Machine
+Let's look at some concrete examples of Machine
 Learning tasks, along with the techniques that can tackle them:
 
 Analyzing images of products on a production line to automatically classify them
@@ -300,7 +300,7 @@ tackle, and the types of techniques that you would use for each task.
 Types of Machine Learning Systems
 =================================
 
-There[]{#MLtype01} are so many different types of Machine Learning
+There []{#MLtype01} are so many different types of Machine Learning
 systems that it is useful to classify them in broad categories, based on
 the following criteria:
 
@@ -337,23 +337,23 @@ learning, and Reinforcement [Learning].
 ### Supervised learning
 
 In *supervised learning*,
-the[]{#idm45728493787368}[]{#idm45728493786360}[]{#idm45728493785416}
+the []{}
 training set you feed to the algorithm includes the desired solutions,
 called *labels*
 ([Figure 1-5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#supervised_learning_diagram)).
 
 ![](./images/mls2_0105.png)
 
-A[]{#idm45728493781128}[]{#idm45728493780120} typical supervised
+A typical supervised
 learning task is *classification*. The spam filter is a good example of
 this: it is trained with many example emails along with their *class*
 (spam or ham), and it must learn how to classify new emails.
 
-Another[]{#idm45728493777496} typical task is to predict a *target*
+Another typical task is to predict a *target*
 numeric value, such as the price of a car, given a set of *features*
 (mileage, age, brand, etc.) called *predictors*.
-This[]{#idm45728493775368} sort of task is called *regression*
-([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493772936){#idm45728493772936-marker
+This sort of task is called *regression*
+([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^ To train the system, you need to give it many examples
 of cars, including both their predictors and their labels (i.e., their
 prices).
@@ -361,14 +361,14 @@ prices).
 
 ###### Note
 
-In Machine[]{#idm45728493770248}[]{#idm45728493769512} Learning an
+In Machine Learning an
 *attribute* is a data type (e.g., "mileage"), while a *feature* has
 several meanings, depending on the context, but generally means an
 attribute plus its value (e.g., "mileage = 15,000"). Many people use the
 words *attribute* and *feature* interchangeably.
 
 
-Note[]{#idm45728493766392} that some regression algorithms can be used
+Note that some regression algorithms can be used
 for classification as well, and vice versa. For example, *Logistic
 Regression* is commonly used for classification, as it can output a
 value that corresponds to the probability of belonging to a given class
@@ -376,7 +376,7 @@ value that corresponds to the probability of belonging to a given class
 
 ![](./images/mls2_0106.png)
 
-Here[]{#idm45728493761768} are some of the most important supervised
+Here are some of the most important supervised
 learning algorithms (covered in this course):
 
 -   k-Nearest Neighbors
@@ -390,7 +390,7 @@ learning algorithms (covered in this course):
 -   Decision Trees and Random Forests
 
 -   Neural
-    networks^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493754968){#idm45728493754968-marker
+    networks^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
     .totri-footnote}^
 
 
@@ -399,14 +399,14 @@ learning algorithms (covered in this course):
 ### Unsupervised learning
 
 In *unsupervised learning*, as
-you[]{#idm45728493751944}[]{#idm45728493750936} might guess, the
+you might guess, the
 training data is unlabeled
 ([Figure 1-7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#unsupervised_learning_diagram)).
 The system tries to learn without a teacher.
 
 ![](./images/mls2_0107.png)
 
-Here[]{#idm45728493746280} are some of the most important unsupervised
+Here are some of the most important unsupervised
 learning algorithms (most of these are covered in Labs
 [8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab){.totri-footnote}
 and
@@ -442,7 +442,7 @@ and
 
     -   Eclat
 
-For[]{#idm45728493726072}[]{#idm45728493725064}[]{#idm45728493724120}
+For []{}
 example, say you have a lot of data about your blog's visitors. You may
 want to run a *clustering* algorithm to try to detect groups of similar
 visitors
@@ -452,13 +452,13 @@ it finds those connections without your help. For example, it might
 notice that 40% of your visitors are males who love comic books and
 generally read your blog in the evening, while 20% are young sci-fi
 lovers who visit during the weekends. If
-you[]{#idm45728493721384}[]{#idm45728493720424} use a *hierarchical
+you use a *hierarchical
 clustering* algorithm, it may also subdivide each group into smaller
 groups. This may help you target your posts for each group.
 
 ![](./images/mls2_0108.png)
 
-*Visualization* algorithms[]{#idm45728493716216}[]{#idm45728493715240}
+*Visualization* algorithms []{}
 are also good examples of unsupervised learning algorithms: you feed
 them a lot of complex and unlabeled data, and they output a 2D or 3D
 representation of your data that can easily be plotted
@@ -470,13 +470,13 @@ and perhaps identify unsuspected patterns.
 
 ![](./images/mls2_0109.png)
 
-A[]{#idm45728493709192} related task is *dimensionality reduction*, in
+A related task is *dimensionality reduction*, in
 which the goal is to simplify the data without losing too much
 information. One way to do this is to merge several correlated features
 into one. For example, a car's mileage may be strongly correlated with
 its age, so the dimensionality reduction algorithm will merge them into
 one feature that represents the car's wear and tear.
-This[]{#idm45728493707256} is called *feature extraction*.
+This is called *feature extraction*.
 
 
 ###### Tip
@@ -488,7 +488,7 @@ algorithm). It will run much faster, the data will take up less disk and
 memory space, and in some cases it may also perform better.
 
 
-Yet[]{#idm45728493703880} another important unsupervised task is
+Yet another important unsupervised task is
 *anomaly detection*---for example, detecting unusual credit card
 transactions to prevent fraud, catching manufacturing defects, or
 automatically removing outliers from a dataset before feeding it to
@@ -497,7 +497,7 @@ during training, so it learns to recognize them; then, when it sees a
 new instance, it can tell whether it looks like a normal one or whether
 it is likely an anomaly (see
 [Figure 1-10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#anomaly_detection_diagram)).
-A very similar task[]{#idm45728493701016} is *novelty detection*: it
+A very similar task is *novelty detection*: it
 aims to detect new instances that look different from all instances in
 the training set. This requires having a very "clean" training set,
 devoid of any instance that you would like the algorithm to detect. For
@@ -510,7 +510,7 @@ anomalies (no offense to Chihuahuas).
 
 ![](./images/mls2_0110.png)
 
-Finally, another[]{#idm45728493696616} common unsupervised task is
+Finally, another common unsupervised task is
 *association rule learning*, in which the goal is to dig into large
 amounts of data and discover interesting relations between attributes.
 For example, suppose you own a supermarket. Running an association rule
@@ -523,7 +523,7 @@ these items close to one another.
 
 ### Semisupervised learning
 
-Since labeling[]{#idm45728493693560} data is usually time-consuming and
+Since labeling data is usually time-consuming and
 costly, you will often have plenty of unlabeled instances, and few
 labeled instances. Some algorithms can deal with data that's partially
 labeled. This is called *semisupervised learning*
@@ -531,21 +531,21 @@ labeled. This is called *semisupervised learning*
 
 ![](./images/mls2_0111.png)
 
-Some[]{#idm45728493687992} photo-hosting services, such as Google
+Some photo-hosting services, such as Google
 Photos, are good examples of this. Once you upload all your family
 photos to the service, it automatically recognizes that the same person
 A shows up in photos 1, 5, and 11, while another person B shows up in
 photos 2, 5, and 7. This is the unsupervised part of the algorithm
 (clustering). Now all the system needs is for you to tell it who these
 people are. Just add one label per
-person^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493686392){#idm45728493686392-marker
+person^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^ and it is able to name everyone in every photo, which
 is useful for searching photos.
 
 Most semisupervised learning algorithms are combinations of unsupervised
-and supervised algorithms. For[]{#idm45728493684984} example, *deep
+and supervised algorithms. For example, *deep
 belief networks* (DBNs) are based on unsupervised
-components[]{#idm45728493683656} called *restricted Boltzmann machines*
+components called *restricted Boltzmann machines*
 (RBMs) stacked on top of one another. RBMs are trained sequentially in
 an unsupervised manner, and then the whole system is fine-tuned using
 supervised learning techniques.
@@ -556,7 +556,7 @@ supervised learning techniques.
 ### Reinforcement Learning
 
 *Reinforcement Learning*
-is[]{#idm45728493680264}[]{#idm45728493679288}[]{#idm45728493678616}[]{#idm45728493677944}[]{#idm45728493677272}
+is []{} []{}
 a very different beast. The learning system, called an *agent* in this
 context, can observe the environment, select and perform actions, and
 get *rewards* in return (or *penalties* in the form of negative rewards,
@@ -592,12 +592,12 @@ data.
 
 ### Batch learning
 
-In *batch learning*, the[]{#idm45728493666888} system is incapable of
+In *batch learning*, the system is incapable of
 learning incrementally: it must be trained using all the available data.
 This will generally take a lot of time and computing resources, so it is
 typically done offline. First the system is trained, and then it is
 launched into production and runs without learning anymore; it just
-applies what it has learned. This is[]{#idm45728493665672} called
+applies what it has learned. This is called
 *offline learning*.
 
 If you want a batch learning system to know about new data (such as a
@@ -638,9 +638,9 @@ that are capable of learning incrementally.
 
 ### Online learning
 
-In *online learning*, you[]{#idm45728493657160} train the system
+In *online learning*, you train the system
 incrementally by feeding it data instances sequentially, either
-individually or in small groups[]{#idm45728493656168} called
+individually or in small groups called
 *mini-batches*. Each learning step is fast and cheap, so the system can
 learn about new data on the fly, as it arrives (see
 [Figure 1-13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#online_learning_diagram)).
@@ -655,7 +655,7 @@ instances, it does not need them anymore, so you can discard them
 (unless you want to be able to roll back to a previous state and
 "replay" the data). This can save a huge amount of space.
 
-Online[]{#idm45728493650472} learning algorithms can also be used to
+Online learning algorithms can also be used to
 train systems on huge datasets that cannot fit in one machine's main
 memory (this is called *out-of-core* learning). The algorithm loads part
 of the data, runs a training step on that data, and repeats the process
@@ -665,13 +665,13 @@ until it has run on all of the data (see
 
 ###### Warning
 
-Out-of-core[]{#idm45728493647112} learning is usually done offline
+Out-of-core learning is usually done offline
 (i.e., not on the live system), so *online learning* can be a confusing
 name. Think of it as *incremental learning*.
 
 
 One important parameter of online learning systems is how fast they
-should adapt to changing data: this[]{#idm45728493644696} is called the
+should adapt to changing data: this is called the
 *learning rate*. If you set a high learning rate, then your system will
 rapidly adapt to new data, but it will also tend to quickly forget the
 old data (you don't want a spam filter to flag only the latest kinds of
@@ -701,7 +701,7 @@ Instance-Based Versus Model-Based Learning
 
 One more way to categorize Machine Learning systems is by how they
 *generalize*. Most Machine Learning tasks are about
-making[]{#idm45728493637304} predictions. This means that given a number
+making predictions. This means that given a number
 of training examples, the system needs to be able to make good
 predictions for (generalize to) examples it has never seen before.
 Having a good performance measure on the training data is good, but
@@ -714,7 +714,7 @@ and model-based learning.
 
 ### Instance-based learning
 
-Possibly[]{#idm45728493633960} the most trivial form of learning is
+Possibly the most trivial form of learning is
 simply to learn by heart. If you were to create a spam filter this way,
 it would just flag all emails that are identical to emails that have
 already been flagged by users---not the worst solution, but certainly
@@ -722,7 +722,7 @@ not the best.
 
 Instead of just flagging emails that are identical to known spam emails,
 your spam filter could be programmed to also flag emails that are very
-similar to known spam emails. This[]{#idm45728493632248} requires a
+similar to known spam emails. This requires a
 *measure of similarity* between two emails. A (very basic) similarity
 measure between two emails could be to count the number of words they
 have in common. The system would flag an email as spam if it has many
@@ -743,14 +743,14 @@ of the most similar instances belong to that class.
 
 ### Model-based learning
 
-Another[]{#idm45728493624136} way to generalize from a set of examples
+Another way to generalize from a set of examples
 is to build a model of these examples and then use that model to make
 *predictions*. This is called *model-based learning*
 ([Figure 1-16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#model_based_learning_diagram)).
 
 ![](./images/mls2_0116.png)
 
-For example, suppose[]{#idm45728493618728} you want to know if money
+For example, suppose you want to know if money
 makes people happy, so you download the Better Life Index data from the
 [OECD's website](https://homl.info/4) and stats about gross domestic
 product (GDP) per capita from the [IMF's website](https://homl.info/5).
@@ -774,11 +774,11 @@ Let's plot the data for these countries
 ![](./images/mls2_0117.png)
 
 There does seem to be a trend here!
-Although[]{#idm45728493596408}[]{#idm45728493595704} the data is *noisy*
+Although the data is *noisy*
 (i.e., partly random), it looks like life satisfaction goes up more or
 less linearly as the country's GDP per capita increases. So you decide
 to model life satisfaction as a linear function of GDP per capita.
-This[]{#idm45728493593976}[]{#idm45728493593272} step is called *model
+This step is called *model
 selection*: you selected a *linear model* of life satisfaction with just
 one attribute, GDP per capita ([Equation
 1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#a_simple_linear_model)).
@@ -816,8 +816,8 @@ mathml="<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mr
 role="presentation" style="text-align: center; position: relative;"}
 
 
-This[]{#idm45728493582840} model has two *model parameters*, *θ*~0~ and
-*θ*~1~.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493580088){#idm45728493580088-marker
+This model has two *model parameters*, *θ*~0~ and
+*θ*~1~.^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^ By tweaking these parameters, you can make your model
 represent any linear function, as shown in
 [Figure 1-18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#tweaking_model_params_plot).
@@ -828,7 +828,7 @@ Before you can use your model, you need to define the parameter values
 *θ*~0~ and *θ*~1~. How can you know which values will make your model
 perform best? To answer this question, you need to specify a performance
 measure. You can
-either[]{#idm45728493573496}[]{#idm45728493572792}[]{#idm45728493572120}
+either []{}
 define a *utility function* (or *fitness function*) that measures how
 *good* your model is, or you can define a *cost function* that measures
 how *bad* it is. For Linear Regression problems, people typically use a
@@ -839,17 +839,17 @@ distance.
 This is where the Linear Regression algorithm comes in: you feed it your
 training examples, and it finds the parameters that make the linear
 model fit best to your data.
-This[]{#idm45728493568104}[]{#idm45728493567128} is called *training*
+This is called *training*
 the model. In our case, the algorithm finds that the optimal parameter
 values are *θ*~0~ = 4.85 and *θ*~1~ = 4.91 × 10^--5^.
 
 
 ###### Warning
 
-Confusingly, the same[]{#idm45728493562840} word "model" can refer to a
-*type of model* (e.g., Linear Regression),[]{#idm45728493560936} to a
+Confusingly, the same word "model" can refer to a
+*type of model* (e.g., Linear Regression), to a
 *fully specified model architecture* (e.g., Linear Regression with one
-input and one output), or[]{#idm45728493559624} to the *final trained
+input and one output), or to the *final trained
 model* ready to be used for predictions (e.g., Linear Regression with
 one input and one output, using *θ*~0~ = 4.85 and *θ*~1~ = 4.91 ×
 10^--5^). Model selection consists in choosing the type of model and
@@ -871,13 +871,13 @@ prediction: you look up Cyprus's GDP per capita, find \$22,587, and then
 apply your model and find that life satisfaction is likely to be
 somewhere around 4.85 + 22,587 × 4.91 × 10^-5^ = 5.96.
 
-To[]{#idm45728493550888} whet your appetite,
+To whet your appetite,
 [Example 1-1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#example_scikit_code)
 shows the Python code that loads the data, prepares
-it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493548920){#idm45728493548920-marker
+it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^ creates a scatterplot for visualization, and then
 trains a linear model and makes a
-prediction.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493547448){#idm45728493547448-marker
+prediction.^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^
 
 
@@ -919,7 +919,7 @@ print(model.predict(X_new)) # outputs [[ 5.96242338]]
 
 ###### Note
 
-If you had used an[]{#idm45728493541752} instance-based learning
+If you had used an instance-based learning
 algorithm instead, you would have found that Slovenia has the closest
 GDP per capita to that of Cyprus (\$20,732), and since the OECD data
 tells us that Slovenians' life satisfaction is 5.7, you would have
@@ -927,7 +927,7 @@ predicted a life satisfaction of 5.7 for Cyprus. If you zoom out a bit
 and look at the two next-closest countries, you will find Portugal and
 Spain with life satisfactions of 5.1 and 6.5, respectively. Averaging
 these three values, you get 5.77, which is pretty close to your
-model-based prediction. This[]{#idm45728493540424}[]{#idm45728493412264}
+model-based prediction. This []{}
 simple algorithm is called *k-Nearest Neighbors* regression (in this
 example, *k* = 3).
 
@@ -964,7 +964,7 @@ In summary:
     searched for the model parameter values that minimize a cost
     function).
 
--   Finally, you[]{#idm45728493354920} applied the model to make
+-   Finally, you applied the model to make
     predictions on new cases (this is called *inference*), hoping that
     this model will generalize well.
 
@@ -977,7 +977,7 @@ We have covered a lot of ground so far: you now know what Machine
 Learning is really about, why it is useful, what some of the most common
 categories of ML systems are, and what a typical project workflow looks
 like. Now let's look at what can go wrong in learning and prevent you
-from making accurate predictions.[]{#idm45728493351448}
+from making accurate predictions. []{}
 
 
 
@@ -987,7 +987,7 @@ from making accurate predictions.[]{#idm45728493351448}
 Main Challenges of Machine Learning
 ===================================
 
-In[]{#MLchallenge01} short, since your main task is to select a learning
+In []{#MLchallenge01} short, since your main task is to select a learning
 algorithm and train it on some data, the two things that can go wrong
 are "bad algorithm" and "bad data." Let's start with examples of bad
 data.
@@ -997,7 +997,7 @@ data.
 Insufficient Quantity of Training Data
 --------------------------------------
 
-For[]{#idm45728493346456} a toddler to learn what an apple is, all it
+For a toddler to learn what an apple is, all it
 takes is for you to point to an apple and say "apple" (possibly
 repeating this procedure a few times). Now the child is able to
 recognize apples in all sorts of colors and shapes. Genius.
@@ -1012,24 +1012,24 @@ examples (unless you can reuse parts of an existing model).
 ##### The Unreasonable Effectiveness of Data
 
 In a [famous paper](https://homl.info/6)
-published[]{#idm45728493341736}[]{#idm45728493340728} in 2001, Microsoft
+published in 2001, Microsoft
 researchers Michele Banko and Eric Brill showed that very different
 Machine Learning algorithms, including fairly simple ones, performed
 almost identically well on a complex problem of natural language
-disambiguation^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493339432){#idm45728493339432-marker
+disambiguation^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
 .totri-footnote}^ once they were given enough data (as you can see in
 [Figure 1-20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#banko_brill_2001_plot)).
 
 ![](./images/mls2_0120.png)
 
-As[]{#idm45728493315720} the authors put it, "these results suggest that
+As the authors put it, "these results suggest that
 we may want to reconsider the trade-off between spending time and money
 on algorithm development versus spending it on corpus development."
 
 The idea that data matters more than algorithms for complex problems was
 further popularized by Peter Norvig et al. in a paper titled ["The
 Unreasonable Effectiveness of Data"](https://homl.info/7), published in
-2009.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493313368){#idm45728493313368-marker}^
+2009.^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker}^
 It should be noted, however, that small- and medium-sized datasets are
 still very common, and it is not always easy or cheap to get extra
 training data⁠---so don't abandon algorithms just yet.
@@ -1041,7 +1041,7 @@ training data⁠---so don't abandon algorithms just yet.
 Nonrepresentative Training Data
 -------------------------------
 
-In[]{#idm45728493310328} order to generalize well, it is crucial that
+In order to generalize well, it is crucial that
 your training data be representative of the new cases you want to
 generalize to. This is true whether you use instance-based learning or
 model-based learning.
@@ -1068,10 +1068,10 @@ rich countries.
 
 It is crucial to use a training set that is representative of the cases
 you want to generalize to. This is often harder than it sounds: if the
-sample is too small, you will[]{#idm45728493303464} have *sampling
+sample is too small, you will have *sampling
 noise* (i.e., nonrepresentative data as a result of chance), but even
 very large samples can be nonrepresentative if the sampling method is
-flawed. This[]{#idm45728493302056} is called *sampling bias*.
+flawed. This is called *sampling bias*.
 
 
 ##### Examples of Sampling Bias
@@ -1113,7 +1113,7 @@ a large training set?
 Poor-Quality Data
 -----------------
 
-Obviously, if your training data[]{#idm45728493291192} is full of
+Obviously, if your training data is full of
 errors, outliers, and noise (e.g., due to poor-quality measurements), it
 will make it harder for the system to detect the underlying patterns, so
 your system is less likely to perform well. It is often well worth the
@@ -1137,17 +1137,17 @@ training data:
 Irrelevant Features
 -------------------
 
-As[]{#idm45728493285416} the saying goes: garbage in, garbage out. Your
+As the saying goes: garbage in, garbage out. Your
 system will only be capable of learning if the training data contains
 enough relevant features and not too many irrelevant ones. A critical
 part of the success of a Machine Learning project is coming up with a
-good set of features to train on. This[]{#idm45728493283960} process,
+good set of features to train on. This process,
 called *feature engineering*, involves the following steps:
 
--   *Feature selection* (selecting[]{#idm45728493281400} the most useful
+-   *Feature selection* (selecting the most useful
     features to train on among existing features)
 
--   *Feature extraction* (combining[]{#idm45728493279336} existing
+-   *Feature extraction* (combining existing
     features to produce a more useful one⁠---as we saw earlier,
     dimensionality reduction algorithms can help)
 
@@ -1162,7 +1162,7 @@ couple of examples of bad algorithms.
 Overfitting the Training Data
 -----------------------------
 
-Say[]{#idm45728493210296}[]{#idm45728493209288} you are visiting a
+Say you are visiting a
 foreign country and the taxi driver rips you off. You might be tempted
 to say that *all* taxi drivers in that country are thieves.
 Overgeneralizing is something that we humans do all too often, and
@@ -1211,7 +1211,7 @@ and noisiness of the training data. Here are possible solutions:
     remove outliers).
 
 
-Constraining[]{#idm45728493196344} a model to make it simpler and reduce
+Constraining a model to make it simpler and reduce
 the risk of overfitting is called *regularization*. For example, the
 linear model we defined earlier has two parameters, *θ*~0~ and *θ*~1~.
 This gives the learning algorithm two *degrees of freedom* to adapt the
@@ -1242,7 +1242,7 @@ to new examples that it did not see during training (squares).
 
 ![](./images/mls2_0123.png)
 
-The[]{#idm45728493185032} amount of regularization to apply during
+The amount of regularization to apply during
 learning can be controlled by a *hyperparameter*. A hyperparameter is a
 parameter of a learning algorithm (not of the model). As such, it is not
 affected by the learning algorithm itself; it must be set prior to
@@ -1260,7 +1260,7 @@ example in the next lab).
 Underfitting the Training Data
 ------------------------------
 
-As[]{#idm45728493181624}[]{#idm45728493180616} you might guess,
+As you might guess,
 *underfitting* is the opposite of overfitting: it occurs when your model
 is too simple to learn the underlying structure of the data. For
 example, a linear model of life satisfaction is prone to underfit;
@@ -1283,7 +1283,7 @@ Here are the main options for fixing this problem:
 Stepping Back
 -------------
 
-By[]{#idm45728493173112} now you know a lot about Machine Learning.
+By now you know a lot about Machine Learning.
 However, we went through so many concepts that you may be feeling a
 little lost, so let's step back and look at the big
 [picture]:
@@ -1312,7 +1312,7 @@ little lost, so let's step back and look at the big
 There's just one last important topic to cover: once you have trained a
 model, you don't want to just "hope" it generalizes to new cases. You
 want to evaluate it and fine-tune it if necessary. Let's see how to do
-that.[]{#idm45728493165400}
+that. []{}
 
 
 
@@ -1321,17 +1321,17 @@ that.[]{#idm45728493165400}
 Testing and Validating
 ======================
 
-The[]{#MLtest01} only way to know how well a model will generalize to
+The []{#MLtest01} only way to know how well a model will generalize to
 new cases is to actually try it out on new cases. One way to do that is
 to put your model in production and monitor how well it performs. This
 works well, but if your model is horribly bad, your users will
 complain---not the best idea.
 
-A[]{#idm45728493160312}[]{#idm45728493159576} better option is to split
+A better option is to split
 your data into two sets: the *training set* and the *test set*. As these
 names imply, you train your model using the training set, and you test
 it using the test set. The error
-rate[]{#idm45728493157736}[]{#idm45728493157032} on new cases is called
+rate on new cases is called
 the *generalization error* (or *out-of-sample error*), and by evaluating
 your model on the test set, you get an estimate of this error. This
 value tells you how well your model will perform on instances it has
@@ -1345,7 +1345,7 @@ model is overfitting the training data.
 ###### Tip
 
 It is common to use 80% of the data for
-training[]{#idm45728493153720}[]{#idm45728493152744} and *hold out* 20%
+training and *hold out* 20%
 for testing. However, this depends on the size of the dataset: if it
 contains 10 million instances, then holding out 1% means your test set
 will contain 100,000 instances, probably more than enough to get a good
@@ -1358,7 +1358,7 @@ Hyperparameter Tuning and Model Selection
 -----------------------------------------
 
 Evaluating a
-model[]{#idm45728493149464}[]{#idm45728493148456}[]{#idm45728493147512}[]{#idm45728493146568}
+model []{}
 is simple enough: just use a test set. But suppose you are hesitating
 between two types of models (say, a linear model and a polynomial
 model): how can you decide between them? One option is to train both and
@@ -1379,7 +1379,7 @@ on the test set, and you adapted the model and hyperparameters to
 produce the best model *for that particular set*. This means that the
 model is unlikely to perform as well on new data.
 
-A[]{#idm45728493142792}[]{#idm45728493142056}[]{#idm45728493141384}
+A []{}
 common solution to this problem is called *holdout validation*: you
 simply hold out part of the training set to evaluate several candidate
 models and select the best one. The new held-out set is called the
@@ -1400,7 +1400,7 @@ than the full training set. Why is this bad? Well, since the final model
 will be trained on the full training set, it is not ideal to compare
 candidate models trained on a much smaller training set. It would be
 like selecting the fastest sprinter to participate in a marathon.
-One[]{#idm45728493137336} way to solve this problem is to perform
+One way to solve this problem is to perform
 repeated *cross-validation*, using many small validation sets. Each
 model is evaluated once per validation set after it is trained on the
 rest of the data. By averaging out all the evaluations of a model, you
@@ -1414,7 +1414,7 @@ validation sets.
 Data Mismatch
 -------------
 
-In[]{#idm45728493134248}[]{#idm45728493133240} some cases, it's easy to
+In some cases, it's easy to
 get a large amount of data for training, but this data probably won't be
 perfectly representative of the data that will be used in production.
 For example, suppose you want to create a mobile app to take pictures of
@@ -1433,7 +1433,7 @@ on the web pictures, if you observe that the performance of the model on
 the validation set is disappointing, you will not know whether this is
 because your model has overfit the training set, or whether this is just
 due to the mismatch between the web pictures and the mobile app
-pictures. One[]{#idm45728493130856} solution is to hold out some of the
+pictures. One solution is to hold out some of the
 training pictures (from the web) in yet another set that Andrew Ng calls
 the *train-dev set*. After the model is trained (on the training set,
 *not* on the train-dev set), you can evaluate it on the train-dev set.
@@ -1459,8 +1459,8 @@ distance between the instances and the straight line is just noise,
 which can safely be ignored.
 
 In a [famous 1996
-paper](https://homl.info/8),^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493124488){#idm45728493124488-marker}^
-David Wolpert[]{#idm45728493123352} demonstrated that if you make
+paper](https://homl.info/8),^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker}^
+David Wolpert demonstrated that if you make
 absolutely no assumption about the data, then there is no reason to
 prefer one model over any other. This is called the *No Free Lunch*
 (NFL) theorem. For some datasets the best model is a linear model, while
@@ -1472,7 +1472,7 @@ assumptions about the data and evaluate only a few reasonable models.
 For example, for simple tasks you may evaluate linear models with
 various levels of regularization, and for a complex problem you may
 evaluate various neural
-networks.[]{#idm45728493120984}[]{#idm45728493120008}
+networks. []{}
 
 
 
@@ -1539,7 +1539,7 @@ Solutions to these exercises are available in
 
 
 
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493772936-marker){.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 Fun fact: this odd-sounding name is a statistics term introduced by
 Francis Galton while he was studying the fact that the children of tall
 people tend to be shorter than their parents. Since the children were
@@ -1547,53 +1547,53 @@ shorter, he called this *regression to the mean*. This name was then
 applied to the methods he used to analyze correlations between
 variables.
 
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493754968-marker){.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 Some neural network architectures can be unsupervised, such as
 autoencoders and restricted Boltzmann machines. They can also be
 semisupervised, such as in deep belief networks and unsupervised
 pretraining.
 
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493711032-marker){.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 Notice how animals are rather well separated from vehicles and how
 horses are close to deer but far from birds. Figure reproduced with
 permission from Richard Socher et al., "Zero-Shot Learning Through
 Cross-Modal Transfer," *Proceedings of the 26th International Conference
 on Neural Information Processing Systems* 1 (2013): 935--943.
 
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493686392-marker){.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 That's when the system works perfectly. In practice it often creates a
 few clusters per person, and sometimes mixes up two people who look
 alike, so you may need to provide a few labels per person and manually
 clean up some clusters.
 
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493580088-marker){.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 By convention, the Greek letter *θ* (theta) is frequently used to
 represent model parameters.
 
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493548920-marker){.totri-footnote}^
+^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 The `prepare_country_stats()` function's definition is not shown here
 (see this lab's Jupyter notebook if you want all the gory details).
 It's just boring pandas code that joins the life satisfaction data from
 the OECD with the GDP per capita data from the IMF.
 
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493547448-marker){.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 It's OK if you don't understand all the code yet; we will present
 Scikit-Learn in the following labs.
 
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493339432-marker){.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 For example, knowing whether to write "to," "two," or "too," depending
 on the context.
 
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493335752-marker){.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker){.totri-footnote}^
 Figure reproduced with permission from Michele Banko and Eric Brill,
 "Scaling to Very Very Large Corpora for Natural Language
 Disambiguation," *Proceedings of the 39th Annual Meeting of the
 Association for Computational Linguistics* (2001): 26--33.
 
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493313368-marker)^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)^
 Peter Norvig et al., "The Unreasonable Effectiveness of Data," *IEEE
 Intelligent Systems* 24, no. 2 (2009): 8--12.
 
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#idm45728493124488-marker)^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html-marker)^
 David Wolpert, "The Lack of A Priori Distinctions Between Learning
 Algorithms," *Neural Computation* 8, no. 7 (1996): 1341--1390.
