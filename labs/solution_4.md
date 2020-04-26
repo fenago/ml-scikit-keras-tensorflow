@@ -1,5 +1,7 @@
-[Lab 4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#linear_models_lab): Training Models
-===============================================================================================================================================
+<img align="right" src="../logo-small.png">
+
+
+**Solution**
 
 1.  If you have a training set with millions of features you can use
     Stochastic Gradient Descent or Mini-batch Gradient Descent, and
@@ -21,8 +23,8 @@
 3.  Gradient Descent cannot get stuck in a local minimum when training a
     Logistic Regression model because the cost function is
     convex.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+    
 
 4.  If the optimization problem is convex (such as Linear Regression or
     Logistic Regression), and assuming the learning rate is not too

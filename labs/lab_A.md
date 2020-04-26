@@ -165,8 +165,8 @@ See the Jupyter notebooks available at
 3.  Gradient Descent cannot get stuck in a local minimum when training a
     Logistic Regression model because the cost function is
     convex.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+    
 
 4.  If the optimization problem is convex (such as Linear Regression or
     Logistic Regression), and assuming the learning rate is not too
@@ -337,8 +337,8 @@ notebooks available at
 
 1.  The depth of a well-balanced binary tree containing *m* leaves is
     equal to
-    log~2~(*m*),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^ rounded up. A binary Decision Tree (one that makes
+    log~2~(*m*),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+     rounded up. A binary Decision Tree (one that makes
     only binary decisions, as is the case with all trees in
     Scikit-Learn) will end up more or less well balanced at the end of
     training, with one leaf per training instance if it is trained
@@ -728,8 +728,8 @@ notebooks available at
     then you need one output neuron, using no activation function at all
     in the output
     layer.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+    
 
 8.  Backpropagation is a technique used to train artificial neural
     networks. It first computes the gradients of the cost function with
@@ -757,8 +757,8 @@ notebooks available at
     hidden layer, and the activation function used in each hidden layer
     and in the output
     layer.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^ In general, the ReLU activation function (or one
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+     In general, the ReLU activation function (or one
     of its variants; see
     [Lab 11]
     is a good default for the hidden layers. For the output layer, in

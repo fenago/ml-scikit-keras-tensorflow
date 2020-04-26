@@ -670,8 +670,8 @@ care of:
     [Figure 19-6]
     set the name, description, Python version (3.5 or above), framework
     (TensorFlow), framework version (2.0 if available, or
-    1.13),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-    .totri-footnote}^ ML runtime version (2.0, if available or 1.13),
+    1.13),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+     ML runtime version (2.0, if available or 1.13),
     machine type (choose "Single core CPU" for now), model path on GCS
     (this is the full path to the actual version folder, e.g.,
     *gs://my-mnist-model-bucket/my\_mnist\_model/0002/*), scaling
@@ -808,8 +808,8 @@ GCE).
 
 Next, you must create a resource object that wraps access to the
 prediction
-service: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-.totri-footnote}^
+service: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+
 
 ``` {data-type="programlisting" code-language="python"}
 import googleapiclient.discovery
@@ -1026,8 +1026,8 @@ user's browser? This can be useful in many scenarios, such as:
     predictions on the client side so that the private data never has to
     leave the user's
     machine.
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker
-    .totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+    
 
 For all these scenarios, you can export your model to a special format
 that can be loaded by the [TensorFlow.js JavaScript
@@ -1129,7 +1129,7 @@ devices are supported at this point.
 If you go for an Nvidia GPU card, you will need to
 install the appropriate Nvidia drivers and several Nvidia
 libraries.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 These include the *Compute
 Unified Device Architecture* library (CUDA), which allows developers to
 use CUDA-enabled GPUs for all sorts of computations (not just graphics
@@ -1198,7 +1198,7 @@ The `gpu_device_name()` function gives the first GPU's name: by default,
 operations will run on this GPU. The `list_physical_devices()` function
 returns the list of all available GPU devices (just one in this
 example).
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 
 Now, what if you don't want to invest time and money in getting your own
 GPU card? Just use a GPU VM on the cloud!
@@ -1215,7 +1215,7 @@ TensorFlow). Google Cloud Platform enforces various GPU quotas, both
 worldwide and per region: you cannot just create thousands of GPU VMs
 without prior authorization from
 Google.
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 By default, the worldwide GPU quota is zero, so you cannot use any GPU
 VMs. Therefore, the very first thing you need to do is to request a
 higher worldwide quota. In the GCP console, open the navigation menu and
@@ -1436,7 +1436,7 @@ Placing Operations and Variables on Devices
 -------------------------------------------
 
 The TensorFlow
-[whitepaper](https://homl.info/67)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+[whitepaper](https://homl.info/67)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 presents a friendly *dynamic
 placer* algorithm that automagically distributes operations across all
 available devices, taking into account things like the measured
@@ -1471,10 +1471,10 @@ control:
 By default, all variables and all operations will be placed on the first
 GPU (named [`/gpu:0`]), except for variables and
 operations that don't have a GPU
-kernel: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+kernel: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 these are placed on the CPU (named `/cpu:0`). A tensor or variable's
 `device` attribute tells you which device it was placed
-on: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+on: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> a = tf.Variable(42.0)
@@ -1609,7 +1609,7 @@ number of intra-op threads, use
 This is useful if you want do not want TensorFlow to use all the CPU
 cores or if you want it to be
 single-threaded.
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 
 
 With that, you have all you need to run any operation on any device, and
@@ -1629,7 +1629,7 @@ do:
 -   You could train a model on a single GPU and perform all the
     preprocessing in parallel on the CPU, using the dataset's
     `prefetch()`
-    method^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+    method^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
     to prepare the next few batches in advance so that they are ready
     when the GPU needs them (see
     [Lab 13]
@@ -1723,7 +1723,7 @@ of neural networks, but not all, and it requires special care and
 tuning, such as making sure that devices that need to communicate the
 most run on the same
 machine.
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 Let's look at a much simpler and generally more efficient option: data
 parallelism.
 
@@ -1811,7 +1811,7 @@ working again immediately, without having to wait for the 2 slowest
 replicas. This setup is generally described as
 having 18 replicas plus 2 *spare
 replicas*.
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 
 
 
@@ -1863,7 +1863,7 @@ There are a few ways you can reduce the effect of stale gradients:
     in quite different directions.
 
 A [paper published by the Google Brain team in
-2016](https://homl.info/68)^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+2016](https://homl.info/68)^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 benchmarked various approaches and found that using synchronous updates
 with a few spare replicas was more efficient than using asynchronous
 updates, not only converging faster but also producing a better model.
@@ -2021,7 +2021,7 @@ The default NCCL option is based on the `tf.distribute.NcclAllReduce`
 class, which is usually faster, but this depends on the number and types
 of GPUs, so you may want to give the alternatives a
 try.
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 
 If you want to try using data parallelism with centralized parameters,
 replace the [`MirroredStrategy`] with the
@@ -2262,7 +2262,7 @@ chief) and 11 parameter servers (check out the other [available scale
 tiers](https://homl.info/scaletiers)). All these VMs will be based on AI
 Platform's 2.0 runtime (a VM configuration that includes TensorFlow 2.0
 and many other
-packages)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+packages)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 and Python 3.5. The training code is located in the
 */my\_project/src/trainer* directory, and the `gcloud` command will
 automatically bundle it into a pip package and upload it to GCS at
@@ -2305,7 +2305,7 @@ Black Box Hyperparameter Tuning on AI Platform
 AI Platform provides a powerful Bayesian optimization hyperparameter
 tuning service called [Google
 Vizier](https://homl.info/vizier).
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html){-marker}^
+^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
 To use it, you need to pass a YAML configuration file when creating the
 job (`--config tuning.yaml`). For example, it may look like this:
 

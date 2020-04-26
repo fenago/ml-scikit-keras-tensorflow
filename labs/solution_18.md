@@ -1,6 +1,7 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html#rl_lab): Reinforcement Learning
-============================================================================================================================================
+
+**Solution**
 
 1.  Reinforcement Learning is an area of Machine Learning aimed at
     creating agents capable of taking actions in an environment in a way

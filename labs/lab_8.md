@@ -80,8 +80,8 @@ in a 10,000-dimensional unit hypercube, this probability is greater than
 99.999999%. Most points in a high-dimensional hypercube are very close
 to the
 border.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
-.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html)
+
 
 Here is a more troublesome difference: if you pick two points randomly
 in a unit square, the distance between these two points will be, on
@@ -264,8 +264,8 @@ projections. Another way to justify this choice is that it is the axis
 that minimizes the mean squared distance between the original dataset
 and its projection onto that axis. This is the rather simple idea behind
 [PCA](https://homl.info/pca){.orm:hideurl}.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
-.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html)
+
 
 
 
@@ -733,8 +733,8 @@ to train a supervised regression model, with the projected instances as
 the training set and the original instances as the targets.
 Scikit-Learn will do this automatically if you set
 `fit_inverse_transform=True`, as shown in the following
-code: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
-.totri-footnote}^
+code: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html)
+
 
 ``` {data-type="programlisting" code-language="python"}
 rbf_pca = KernelPCA(n_components = 2, kernel="rbf", gamma=0.0433,
@@ -892,8 +892,8 @@ Isomap
 :   Creates a graph by
     connecting each instance to its nearest neighbors, then reduces
     dimensionality while trying to preserve the *geodesic
-    distances*^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html){-marker
-    .totri-footnote}^ between the instances.
+    distances*^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html)
+     between the instances.
 
 t-Distributed Stochastic Neighbor Embedding (t-SNE)
 

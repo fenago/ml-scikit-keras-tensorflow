@@ -96,8 +96,7 @@ recurrent layer can then be computed pretty much as you might expect, as
 shown in [Equation
 15-1]
 (**b** is the bias vector and *ϕ*(·) is the activation function (e.g.,
-ReLU^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker
-.totri-footnote}^).
+ReLU^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)).
 
 
 ##### [Equation 15-1. ] Output of a recurrent layer for a single instance
@@ -1054,7 +1053,7 @@ be a good idea to give them a bit more context by letting them peek at
 the long-term state as well. This idea was [proposed by Felix Gers and
 Jürgen Schmidhuber in
 2000](https://homl.info/96).
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
 They proposed an LSTM variant with extra
 connections called *peephole connections*: the previous long-term state
 **c**~(*t*--1)~ is added as an input to the controllers of the forget
@@ -1081,14 +1080,14 @@ variant is the GRU cell, which we will look at now.
 The *Gated Recurrent Unit* (GRU) cell (see
 [Figure 15-10]
 was proposed by Kyunghyun Cho et al. in a [2014
-paper](https://homl.info/97)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+paper](https://homl.info/97)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
 that also introduced the Encoder--Decoder network we discussed earlier.
 
 ![](./images/mls2_1510.png)
 
 The GRU cell is a simplified version of the LSTM cell, and it seems to
 perform just as
-well^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+well^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
 (which explains its growing popularity). These are the main
 simplifications:
 
@@ -1195,7 +1194,7 @@ recurrent layers entirely!
 ### WaveNet
 
 In a [2016
-paper](https://homl.info/wavenet),^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+paper](https://homl.info/wavenet),^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
 Aaron van den Oord and other DeepMind researchers introduced an
 architecture called *WaveNet*. They stacked 1D convolutional layers,
 doubling the dilation rate (how spread apart each neuron's inputs are)
@@ -1223,7 +1222,7 @@ left-padded the input sequences with a number of zeros equal to the
 dilation rate before every layer, to preserve the same sequence length
 throughout the network. Here is how to implement a simplified WaveNet to
 tackle the same sequences as
-[earlier]: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html){-marker}^
+[earlier]: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential()

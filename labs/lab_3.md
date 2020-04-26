@@ -34,8 +34,7 @@ sooner or later.
 Scikit-Learn provides many helper functions to
 download popular datasets. MNIST is one of them. The following code
 fetches the MNIST
-dataset: ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
-.totri-footnote}^
+dataset: ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html) 
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.datasets import fetch_openml
@@ -122,8 +121,7 @@ algorithms are sensitive to the order of the training instances, and
 they perform poorly if they get many similar instances in a row.
 Shuffling the dataset ensures that this won't
 happen.
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
-.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html) 
 
 
 
@@ -1259,8 +1257,7 @@ each label a weight equal to its *support* (i.e., the number of
 instances with that target label). To do this,
 simply set `average="weighted"` in the preceding
 code.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
-.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html) 
 
 
 
@@ -1346,8 +1343,8 @@ Exercises
 2.  Write a function that can shift an MNIST image in any direction
     (left, right, up, or down) by one
     pixel.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html){-marker
-    .totri-footnote}^ Then, for each image in the training set, create
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch03.html)
+     Then, for each image in the training set, create
     four shifted copies (one per direction) and add them to the training
     set. Finally, train your best model on this expanded training set
     and measure its accuracy on the test set. You should observe that

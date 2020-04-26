@@ -1,7 +1,7 @@
+<img align="right" src="../logo-small.png">
 
 
-[Lab 1]: The Machine Learning Landscape
-=======================================
+**Solution**
 
 1.  Machine Learning is about building systems that can learn from data.
     Learning means getting better at some task, given some performance

@@ -18,8 +18,7 @@ drop the biological analogy altogether (e.g., by saying "units" rather
 than "neurons"), lest we restrict our creativity to biologically
 plausible
 systems.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker
-.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 
 ANNs are at the very core of Deep Learning. They are versatile,
 powerful, and scalable, making them ideal to tackle large and highly
@@ -443,12 +442,12 @@ people talk about Deep Learning whenever neural networks are involved
 For many years researchers struggled to find a way to train MLPs,
 without success. But in 1986, David Rumelhart, Geoffrey Hinton, and
 Ronald Williams published a [groundbreaking
-paper](https://homl.info/44)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+paper](https://homl.info/44)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 that introduced the *backpropagation* training algorithm, which is still
 used today. In short, it is Gradient Descent (introduced in
 [Lab 4]
 using an efficient technique for computing the gradients
-automatically: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+automatically: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 in just two passes through the network (one forward, one backward), the
 backpropagation algorithm is able to compute the gradient of the
 network's error with regard to every single model parameter. In other
@@ -558,7 +557,7 @@ The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*)
     it works very well and has the advantage of being fast to compute,
     so it has become the
     default.
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
     Most importantly, the fact that it does not have a maximum output
     value helps reduce some issues during Gradient Descent (we will come
     back to this in
@@ -738,7 +737,7 @@ neural networks. Its documentation (or specification) is available at
 [*https://keras.io/*](https://keras.io/). The [reference
 implementation](https://github.com/keras-team/keras), also called Keras,
 was developed by François Chollet as part of a research
-project^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+project^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 and was released as an open source project in March 2015. It quickly
 gained popularity, owing to its ease of use, flexibility, and beautiful
 design. To perform the heavy computations required by neural networks,
@@ -1031,7 +1030,7 @@ previous approach. Many people also use
 
 
 The model's `summary()` method displays all the model's
-layers,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+layers,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 including each layer's name (which is automatically generated unless you
 set it when creating the layer), its output shape (`None` means the
 batch size can be anything), and its number of parameters. The summary
@@ -1239,7 +1238,7 @@ the validation set).
 
 And that's it! The neural network is
 trained.
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 At each epoch during training, Keras displays the number of instances
 processed so far (along with a progress bar), the mean training time per
 sample, and the loss and accuracy (or any other extra metrics you asked
@@ -1484,14 +1483,14 @@ example of a nonsequential neural network is a *Wide & Deep* neural
 network. This neural network architecture was introduced in a [2016
 paper](https://homl.info/widedeep) by Heng-Tze Cheng et
 al.
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 It connects all or part of the inputs directly to the output layer, as
 shown in
 [Figure 10-14]
 This architecture makes it possible for the neural network to learn both
 deep patterns (using the deep path) and simple rules (through the short
 path).
-^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 In contrast, a regular MLP forces all the data to flow through the full
 stack of layers; thus, simple patterns in the data may end up being
 distorted by this sequence of transformations.
@@ -1514,7 +1513,7 @@ Let's go through each line of this code:
 
 -   First, we need to create an `Input`
     object.
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
     This is a specification of the kind of input the model will get,
     including its `shape` and `dtype`. A model may actually have
     multiple inputs, as we will see shortly.
@@ -1574,7 +1573,7 @@ the model. Now we can compile the model as usual, but when we call the
 `fit()` method, instead of passing a single input matrix `X_train`, we
 must pass a pair of matrices `(X_train_A, X_train_B)`: one per
 input.
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 The same is true for `X_valid`, and also for `X_test` and `X_new` when
 you call `evaluate()` or `predict()`:
 
@@ -1636,7 +1635,7 @@ model = keras.Model(inputs=[input_A, input_B], outputs=[output, aux_output])
 
 Each output will need its own loss function. Therefore, when we compile
 the model, we should pass a list of
-losses^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+losses^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 (if we pass a single loss, Keras will assume that the same loss must be
 used for all outputs). By default, Keras will compute all these losses
 and simply add them up to get the final loss used for training. We care
@@ -1731,7 +1730,7 @@ model = WideAndDeepModel()
 This example looks very much like the Functional API, except we do not
 need to create the inputs; we just use the `input` argument to the
 `call()` method, and we separate the creation of the
-layers^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+layers^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 in the constructor from their usage in the `call()` method. The big
 difference is that you can do pretty much anything you want in the
 `call()` method: `for` loops, `if` statements, low-level TensorFlow
@@ -2242,7 +2241,7 @@ Python libraries you can use to optimize hyperparameters:
 
 :   A fast hyperparameter tuning library based on
     the recent [Hyperband
-    paper](https://homl.info/hyperband)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+    paper](https://homl.info/hyperband)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
     by Lisha Li et al.
 
 [Sklearn-Deap](https://github.com/rsteca/sklearn-deap)
@@ -2261,7 +2260,7 @@ Other options include services by [Arimo](https://arimo.com/) and
 Hyperparameter tuning is still an active area of research, and
 evolutionary algorithms are making a comeback. For example, check out
 DeepMind's excellent [2017
-paper](https://homl.info/pbt),^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+paper](https://homl.info/pbt),^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 where the authors jointly optimize a population of models and their
 hyperparameters. Google has also used an evolutionary approach, not just
 to search for hyperparameters but also to look for the best neural
@@ -2447,14 +2446,14 @@ Batch size
     not generalize as well as a model trained with a small batch size.
     In April 2018, Yann LeCun even tweeted "Friends don't let friends
     use mini-batches larger than 32," citing a [2018
-    paper](https://homl.info/smallbatch)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+    paper](https://homl.info/smallbatch)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
     by Dominic Masters and Carlo Luschi which concluded that using small
     batches (from 2 to 32) was preferable because small batches led to
     better models in less training time. Other papers point in the
     opposite direction, however; in 2017, papers by [Elad Hoffer et
-    al.](https://homl.info/largebatch)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+    al.](https://homl.info/largebatch)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
     and [Priya Goyal et
-    al.](https://homl.info/largebatch2)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+    al.](https://homl.info/largebatch2)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
     showed that it was possible to use very large batch sizes (up to
     8,192) using various techniques such as warming up the learning rate
     (i.e., starting training with a small learning rate, then ramping it
@@ -2488,7 +2487,7 @@ hyperparameter, make sure to update the learning rate as well.
 
 For more best practices regarding tuning neural network hyperparameters,
 check out the excellent [2018
-paper](https://homl.info/1cycle)^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+paper](https://homl.info/1cycle)^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 by Leslie Smith.
 
 This concludes our introduction to artificial neural networks and their
@@ -2502,7 +2501,7 @@ data, autoencoders for representation learning,
 and generative adversarial
 networks to model and generate
 data.
-^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html){-marker}^
+^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 
 
 

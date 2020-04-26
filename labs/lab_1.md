@@ -390,8 +390,8 @@ learning algorithms (covered in this course):
 -   Decision Trees and Random Forests
 
 -   Neural
-    networks^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-    .totri-footnote}^
+    networks^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
+    
 
 
 
@@ -876,8 +876,7 @@ shows the Python code that loads the data, prepares
 it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) creates a scatterplot for visualization, and then
 trains a linear model and makes a
 prediction.
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker
-.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
 
 
 ##### [Example 1-1. ] Training and running a linear model using Scikit-Learn
@@ -1028,7 +1027,7 @@ The idea that data matters more than algorithms for complex problems was
 further popularized by Peter Norvig et al. in a paper titled ["The
 Unreasonable Effectiveness of Data"](https://homl.info/7), published in
 2009.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker}^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
 It should be noted, however, that small- and medium-sized datasets are
 still very common, and it is not always easy or cheap to get extra
 training data⁠---so don't abandon algorithms just yet.
@@ -1458,7 +1457,7 @@ distance between the instances and the straight line is just noise,
 which can safely be ignored.
 
 In a [famous 1996
-paper](https://homl.info/8),^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html){-marker}^
+paper](https://homl.info/8),^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
 David Wolpert demonstrated that if you make
 absolutely no assumption about the data, then there is no reason to
 prefer one model over any other. This is called the *No Free Lunch*

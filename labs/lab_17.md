@@ -318,8 +318,8 @@ Let's go through this code:
     (rather than as a regression problem) tends to make the model
     converge
     faster.
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-    .totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
+    
 
 -   Finally, we train the model using `X_train` as both the inputs and
     the targets (and similarly, we use `X_valid` as both the validation
@@ -894,8 +894,7 @@ was [introduced in 2013](https://homl.info/115) by Diederik Kingma and
 Max Welling and quickly became one of the most popular types of
 autoencoders: *variational
 autoencoders*.
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker
-.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 
 They are quite different from all the autoencoders we have discussed so
 far, in these particular ways:
@@ -1156,7 +1155,7 @@ Generative Adversarial Networks
 
 Generative adversarial networks were proposed in a
 [2014
-paper](https://homl.info/gan)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+paper](https://homl.info/gan)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 by Ian Goodfellow et al., and although the idea got researchers excited
 almost instantly, it took a few years to overcome some of the
 difficulties of training GANs. Like many great ideas, it seems simple in
@@ -1390,9 +1389,9 @@ hyperparameters: you may have to spend a lot of effort fine-tuning them.
 
 These problems have kept researchers very busy since 2014: many papers
 were published on this topic, some proposing new cost
-functions^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+functions^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 (though a [2018
-paper](https://homl.info/gansequal)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+paper](https://homl.info/gansequal)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 by Google researchers questions their efficiency) or techniques to
 stabilize training or to avoid the mode collapse issue. For example, a
 popular technique called *experience replay*
@@ -1433,7 +1432,7 @@ in late 2015, after experimenting with many different architectures and
 hyperparameters. They called their architecture [*deep convolutional
 GANs*](https://homl.info/dcgan)
 (DCGANs).
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 Here are the main guidelines they proposed for building stable
 convolutional GANs:
 
@@ -1552,7 +1551,7 @@ If you add each image's class as an extra input to both the generator
 and the discriminator, they will both learn what each class looks like,
 and thus you will be able to control the class of each image produced by
 the generator. This is called a [*conditional
-GAN*](https://homl.info/cgan)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+GAN*](https://homl.info/cgan)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 (CGAN).
 
 
@@ -1568,7 +1567,7 @@ Progressive Growing of GANs
 ---------------------------
 
 An important technique was proposed in a [2018
-paper](https://homl.info/progan)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+paper](https://homl.info/progan)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 by Nvidia researchers Tero Karras et al.: they suggested generating
 small images at the beginning of training, then gradually adding
 convolutional layers to both the generator and the discriminator to
@@ -1642,7 +1641,7 @@ Equalized learning rate
     standard deviation (see
     [Lab 11]
     so parameters that have a larger dynamic
-    range^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+    range^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
     will take longer to train, while parameters with a small dynamic
     range may be updated too quickly, leading to instabilities. By
     rescaling the weights as part of the model itself rather than just
@@ -1685,7 +1684,7 @@ The
 state 
 of the art in high-resolution image generation was advanced once again
 by the same Nvidia team in a [2018
-paper](https://homl.info/stylegan)^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html){-marker}^
+paper](https://homl.info/stylegan)^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html)
 that introduced the popular StyleGAN architecture. The authors used
 *style transfer* techniques in the generator to ensure that the
 generated images have the same local structure as the training images,

@@ -32,8 +32,8 @@ automatically encodes it to UTF-8:
 It is also possible to create tensors representing Unicode strings. Just
 create an array of 32-bit integers, each representing a single Unicode
 code
-point: ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html){-marker
-.totri-footnote}^
+point: ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app06.html)
+
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> tf.constant([ord(c) for c in "café"])

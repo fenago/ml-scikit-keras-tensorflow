@@ -1,6 +1,7 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html#rnn_lab): Processing Sequences Using RNNs and CNNs
-===============================================================================================================================================================
+
+**Solution**
 
 1.  Here are a few RNN applications:
 

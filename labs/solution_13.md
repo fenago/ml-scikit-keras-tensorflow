@@ -1,6 +1,8 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html#data_lab): Loading and Preprocessing Data with TensorFlow
-======================================================================================================================================================================
+
+**Solution**
+
 
 1.  Ingesting a large dataset and preprocessing it efficiently can be a
     complex engineering challenge. The Data API makes it fairly simple.

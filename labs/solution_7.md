@@ -1,5 +1,8 @@
-[Lab 7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch07.html#ensembles_lab): Ensemble Learning and Random Forests
-================================================================================================================================================================
+<img align="right" src="../logo-small.png">
+
+
+**Solution**
+
 
 1.  If you have trained five different models and they all achieve 95%
     precision, you can try combining them into a voting ensemble, which

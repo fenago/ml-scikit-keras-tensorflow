@@ -549,8 +549,8 @@ petal length). The decision boundary is the set of points where the
 decision function is equal to 0: it is the intersection of two planes,
 which is a straight line (represented by the thick solid
 line).
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
-.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html)
+
 
 ![](./images/mls2_0512.png)
 
@@ -645,8 +645,8 @@ Such problems are known as *Quadratic Programming*
 problems by using a variety of techniques that are outside the scope of
 this
 course.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html){-marker
-.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html)
+
 
 The general problem formulation is given by [Equation
 5-5]

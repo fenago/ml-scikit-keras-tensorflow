@@ -1,6 +1,8 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html#unsupervised_learning_lab): Unsupervised Learning Techniques
-========================================================================================================================================================================
+
+**Solution**
+
 
 1.  In Machine Learning, clustering is the unsupervised task of grouping
     similar instances together. The notion of similarity depends on the

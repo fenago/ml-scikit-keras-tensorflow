@@ -144,8 +144,8 @@ parent^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9
 plus their offspring together constitute the second generation. You can
 continue to iterate through generations this way until you find a good
 policy.
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker
-.totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
+
 
 ![](./images/mls2_1803.png)
 
@@ -184,7 +184,7 @@ library like [PyBullet](https://pybullet.org/) or
 [MuJoCo](http://www.mujoco.org/) for 3D physics simulation.
 
 [*OpenAI
-Gym*](https://gym.openai.com/)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+Gym*](https://gym.openai.com/)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 is a toolkit that provides a wide variety of simulated environments
 (Atari games, board games, 2D and 3D physical simulations, and so on),
 so you can train agents, compare them, or develop new RL algorithms.
@@ -514,7 +514,7 @@ As
 discussed earlier, PG algorithms optimize the parameters of a policy by
 following the gradients toward higher rewards. One popular class of PG
 algorithms, called *REINFORCE algorithms*, was [introduced back in
-1992](https://homl.info/132)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+1992](https://homl.info/132)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 by Ronald Williams. Here is one common variant:
 
 1.  First, let the neural network policy play the game several times,
@@ -793,7 +793,7 @@ heavily used in thermodynamics, chemistry, statistics, and much more.
 
 Markov decision processes were [first described in the 1950s by Richard
 Bellman](https://homl.info/133).
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 They resemble Markov chains but with a twist: at each step, an agent can
 choose one of several possible actions, and the transition probabilities
 depend on the chosen action. Moreover, some state transitions return
@@ -1473,7 +1473,7 @@ Reinforcement Learning is notoriously difficult, largely because of the
 training instabilities and the huge sensitivity to the choice of
 hyperparameter values and random
 seeds.
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 As the researcher Andrej Karpathy put it: "\[Supervised learning\] wants
 to work. \[...\] RL must be forced to work." You will need time,
 patience, perseverance, and perhaps a bit of luck too. This is a major
@@ -1570,7 +1570,7 @@ Double DQN
 ----------
 
 In a [2015
-paper](https://homl.info/doubledqn),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+paper](https://homl.info/doubledqn),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 DeepMind researchers tweaked their DQN algorithm, increasing its
 performance and somewhat stabilizing training. They called this variant
 *Double DQN*. The update was based on the observation that the target
@@ -1614,7 +1614,7 @@ experiences *uniformly* from the replay buffer, why not sample important
 experiences more frequently? This idea is called
 *importance sampling* (IS) or *prioritized experience replay* (PER), and
 it was introduced in a [2015
-paper](https://homl.info/prioreplay)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+paper](https://homl.info/prioreplay)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 by DeepMind researchers (once again!).
 
 More specifically, experiences are considered "important" if they are
@@ -1624,7 +1624,7 @@ One reasonable approach is to measure the magnitude of the TD error *δ*
 transition (*s*, *r*, *s*′) is very surprising, and thus probably worth
 learning
 from.
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 When an experience is recorded in the replay buffer, its priority is set
 to a very large value, to ensure that it gets sampled at least once.
 However, once it is sampled (and every time it is sampled), the TD error
@@ -1664,7 +1664,7 @@ The *Dueling DQN*
 algorithm 
 (DDQN, not to be confused with Double DQN, although both techniques can
 easily be combined) was introduced in yet another [2015
-paper](https://homl.info/ddqn)^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+paper](https://homl.info/ddqn)^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 by DeepMind researchers. To understand how it works, we must first note
 that the Q-Value of a state-action pair (*s*, *a*) can be expressed as
 *Q*(*s*, *a*) = *V*(*s*) + *A*(*s*, *a*), where *V*(*s*) is the value of
@@ -1697,7 +1697,7 @@ earlier. In fact, you can build a Double Dueling DQN and combine it with
 prioritized experience replay! More generally, many RL techniques can be
 combined, as DeepMind demonstrated in a [2017
 paper](https://homl.info/rainbow).
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 The paper's authors combined six different
 techniques into an agent called *Rainbow*, which largely outperformed
 the state of the art.
@@ -2037,7 +2037,7 @@ the game. Moreover, frames are stacked along the channels dimension, so
 red represents the frame from three steps ago, green is two steps ago,
 blue is the previous frame, and purple is the current
 frame.
-^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 From this single observation, the agent can see that the ball is going
 toward the lower-left corner, and that it should continue to move the
 paddle to the left (as it did in the previous steps).
@@ -2313,7 +2313,7 @@ TensorFlow (their module names start with `tf_`). We will use the
 `TFUniformReplayBuffer` class in the
 `tf_agents.replay_buffers.tf_uniform_replay_buffer` package. It provides
 a high-performance implementation of a replay buffer with uniform
-sampling: ^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+sampling: ^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 
 ``` {data-type="programlisting" code-language="python"}
 from tf_agents.replay_buffers import tf_uniform_replay_buffer
@@ -2743,7 +2743,7 @@ training this DQN agent on other Atari games: it can achieve superhuman
 skill at most action games, but it is not so good at games with
 long-running
 storylines.
-^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 
 
 
@@ -2803,13 +2803,13 @@ Actor-Critic algorithms
     (contrary to all the previous algorithms, which learn very slowly).
     SAC is available in TF-Agents.
 
-[*Proximal Policy Optimization* (PPO)](https://homl.info/ppo)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+[*Proximal Policy Optimization* (PPO)](https://homl.info/ppo)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 
 :   An algorithm based on
     A2C that clips the loss function to avoid excessively large weight
     updates (which often lead to training instabilities). PPO is a
     simplification of the previous [*Trust Region Policy
-    Optimization*](https://homl.info/trpo)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+    Optimization*](https://homl.info/trpo)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
     (TRPO) algorithm, also by John Schulman and other OpenAI
     researchers. OpenAI made the news in April 2019 with their AI called
     OpenAI Five, based on the PPO algorithm, which defeated the world
@@ -2820,7 +2820,7 @@ Actor-Critic algorithms
 <!-- -->
 ```
 
-[*Curiosity-based exploration*](https://homl.info/curiosity)^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html){-marker}^
+[*Curiosity-based exploration*](https://homl.info/curiosity)^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 
 :   A recurring problem in RL is the sparsity of
     the rewards, which makes learning very slow and inefficient. Deepak

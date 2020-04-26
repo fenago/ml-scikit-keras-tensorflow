@@ -1,5 +1,8 @@
-[Lab 10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html#ann_lab): Introduction to Artificial Neural Networks with Keras
-============================================================================================================================================================================
+<img align="right" src="../logo-small.png">
+
+
+**Solution**
+
 
 1.  Visit the [TensorFlow
     Playground](https://playground.tensorflow.org/) and play around with
@@ -75,8 +78,8 @@
     then you need one output neuron, using no activation function at all
     in the output
     layer.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+    
 
 8.  Backpropagation is a technique used to train artificial neural
     networks. It first computes the gradients of the cost function with
@@ -104,8 +107,8 @@
     hidden layer, and the activation function used in each hidden layer
     and in the output
     layer.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^ In general, the ReLU activation function (or one
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+     In general, the ReLU activation function (or one
     of its variants; see
     [Lab 11]
     is a good default for the hidden layers. For the output layer, in

@@ -1,6 +1,7 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html#nlp_lab): Natural Language Processing with RNNs and Attention
-==========================================================================================================================================================================
+
+**Solution**
 
 1.  Stateless RNNs can only capture patterns whose length is less than,
     or equal to, the size of the windows the RNN is trained on.

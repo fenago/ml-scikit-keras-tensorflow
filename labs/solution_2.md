@@ -1,4 +1,6 @@
-[Lab 2]: End-to-End Machine Learning Project
-============================================
+<img align="right" src="../logo-small.png">
+
+
+**Solution**
 
 Check lab's jupyter notebook for solution. 

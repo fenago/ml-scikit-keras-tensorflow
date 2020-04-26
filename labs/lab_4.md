@@ -165,8 +165,8 @@ the mean squared error (MSE) than the RMSE, and it leads to the same
 result (because the value that minimizes a function also minimizes its
 square
 root).
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
-.totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+
 
 The MSE of a Linear Regression hypothesis *h*~**θ**~ on a training set
 **X** is calculated using [Equation
@@ -272,8 +272,8 @@ plt.show()
 ![](./images/mls2_0402.png)
 
 Performing Linear Regression using Scikit-Learn is
-simple: ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
-.totri-footnote}^
+simple: ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.linear_model import LinearRegression
@@ -444,8 +444,8 @@ shows Gradient Descent on a training set where features 1 and 2 have the
 same scale (on the left), and on a training set where feature 1 has much
 smaller values than feature 2 (on the
 right).
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
-.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+
 
 ![](./images/mls2_0407.png)
 
@@ -1031,8 +1031,8 @@ expressed as the sum of three very different errors:
     such as assuming that the data is linear when it is actually
     quadratic. A high-bias model is most likely to underfit the training
     data.
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
-    .totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+    
 
 *Variance*
 
@@ -1109,8 +1109,8 @@ result is a flat line going through the data's mean. [Equation
 4-8]
 presents the Ridge Regression cost
 function.
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker
-.totri-footnote}^
+^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+
 
 
 ##### [Equation 4-8. ] Ridge Regression cost function
@@ -1123,7 +1123,7 @@ Note that the bias term *θ*~0~ is not regularized (the sum starts at *i*
 to *θ*~*n*~), then the regularization term is equal to ½(∥ **w**
 ∥~2~)^2^, where ∥ **w** ∥~2~ represents the ℓ~2~ norm of the weight
 vector.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 For Gradient Descent, just add *α***w** to the MSE gradient vector
 ([Equation
 4-6]
@@ -1155,7 +1155,7 @@ pros and cons are the same. [Equation
 4-9]
 shows the closed-form solution, where **A** is the
 (*n* + 1) × (*n* + 1) *identity
-matrix*,^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+matrix*,^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 except with a 0 in the top-left cell, corresponding to the bias term.
 
 
@@ -1178,7 +1178,7 @@ array([[1.55071465]])
 ```
 
 And using Stochastic Gradient
-Descent: ^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+Descent: ^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> sgd_reg = SGDRegressor(penalty="l2")
@@ -1278,7 +1278,7 @@ get smaller and smaller, so it will converge).
 The Lasso cost function is
 not differentiable at *θ*~*i*~ = 0 (for *i* = 1, 2, ⋯, *n*), but
 Gradient Descent still works fine if you use a *subgradient vector*
-**g**^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+**g**^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 instead when any *θ*~*i*~ = 0. [Equation
 4-11]
 shows a subgradient vector equation you can use for Gradient Descent
@@ -1615,7 +1615,7 @@ log_reg.fit(X, y)
 
 Let's look at the model's estimated probabilities for flowers with petal
 widths varying from 0 cm to 3 cm
-([Figure 4-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#logistic_regression_plot)): ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+([Figure 4-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#logistic_regression_plot)): ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 
 ``` {data-type="programlisting" code-language="python"}
 X_new = np.linspace(0, 3, 1000).reshape(-1, 1)
@@ -1656,7 +1656,7 @@ is an *Iris virginica*. The dashed line represents the points where the
 model estimates a 50% probability: this is the model's decision
 boundary. Note that it is a linear
 boundary.
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html){-marker}^
+^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 Each parallel line represents the points where the model outputs a
 specific probability, from 15% (bottom left) to 90% (top right). All the
 flowers beyond the top-right line have an over 90% chance of being *Iris

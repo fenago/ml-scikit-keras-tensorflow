@@ -1,11 +1,13 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#trees_lab): Decision Trees
-======================================================================================================================================
+
+**Solution**
+
 
 1.  The depth of a well-balanced binary tree containing *m* leaves is
     equal to
-    log~2~(*m*),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html){-marker
-    .totri-footnote}^ rounded up. A binary Decision Tree (one that makes
+    log~2~(*m*),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+     rounded up. A binary Decision Tree (one that makes
     only binary decisions, as is the case with all trees in
     Scikit-Learn) will end up more or less well balanced at the end of
     training, with one leaf per training instance if it is trained

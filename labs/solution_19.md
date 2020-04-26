@@ -1,6 +1,7 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab): Training and Deploying TensorFlow Models [at Scale]
-=================================================================================================================================================================================================
+
+**Solution**
 
 1.  A SavedModel contains a TensorFlow model, including its architecture
     (a computation graph) and its weights. It is stored as a directory
@@ -152,7 +153,7 @@ output will give you the estimated value (since exp(log *v*) = *v*).
 
 In
 [Lab 11]
-we discuss many techniques that introduce additional hyperparameters:
+we discussed many techniques that introduce additional hyperparameters:
 type of weight initialization, activation function hyperparameters
 (e.g., the amount of leak in leaky ReLU), Gradient Clipping threshold,
 type of optimizer and its hyperparameters (e.g., the momentum

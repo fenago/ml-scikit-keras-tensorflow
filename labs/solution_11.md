@@ -1,5 +1,8 @@
-[Lab 11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#deep_lab): Training Deep Neural Networks
-=====================================================================================================================================================
+<img align="right" src="../logo-small.png">
+
+
+**Solution**
+
 
 1.  No, all weights should be sampled independently; they should not all
     have the same initial value. One important goal of sampling weights

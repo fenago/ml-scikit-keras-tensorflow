@@ -221,8 +221,7 @@ training set. When this happens, it just keeps outputting zeros, and
 Gradient Descent does not affect it anymore because the gradient of the
 ReLU function is zero when its input is
 negative.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker
-.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 
 To solve this problem, you may want to use a
 variant of the ReLU function, such as the *leaky ReLU*. This function is
@@ -699,14 +698,14 @@ default, but the `fit()` method sets to it to `1` during training. If
 you ever need to write a custom layer, and it must behave differently
 during training and testing, add a `training` argument to the `call()`
 method and use this argument in the method to decide what to
-compute^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+compute^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 (we will discuss custom layers in
 [Lab 12]
 
 `BatchNormalization` has become one of the most-used layers in deep
 neural networks, to the point that it is often omitted in the diagrams,
 as it is assumed that BN is added after every layer. But a recent
-[paper](https://homl.info/fixup)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+[paper](https://homl.info/fixup)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 by Hongyi Zhang et al. may change this assumption: by using a novel
 *fixed-update* (fixup) weight initialization technique, the authors
 managed to train a very deep neural [network] (10,000
@@ -727,7 +726,7 @@ exploding gradients problem is to clip the gradients during
 backpropagation so that they never exceed some threshold. This is called
 [*Gradient
 Clipping*](https://homl.info/52).
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 This technique is most often used in recurrent neural networks, as Batch
 Normalization is tricky to use in RNNs, as we will see in
 [Lab 15]
@@ -1077,7 +1076,7 @@ terminal velocity (if there is some friction or air resistance). This is
 the very simple idea behind *momentum optimization*, [proposed by Boris
 Polyak in
 1964](https://homl.info/54).
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 In contrast, regular Gradient Descent will simply take small, regular
 steps down the slope, so the algorithm will take much more time to reach
 the bottom.
@@ -1161,7 +1160,7 @@ Nesterov Accelerated Gradient
 
 One small variant to
 momentum optimization, proposed by [Yurii Nesterov in
-1983](https://homl.info/55),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+1983](https://homl.info/55),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 is almost always faster than vanilla momentum 
 optimization. The *Nesterov Accelerated Gradient* (NAG) method, also
 known as *Nesterov momentum optimization*, measures the gradient of the
@@ -1217,7 +1216,7 @@ steepest slope, which does not point straight toward the global optimum,
 then it very slowly goes down to the bottom of the valley. It would be
 nice if the algorithm could correct its direction earlier to point a bit
 more toward the global optimum. The [*AdaGrad*
-algorithm](https://homl.info/56)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+algorithm](https://homl.info/56)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 achieves this correction by scaling down the gradient vector along the
 steepest dimensions (see [Equation
 11-6]
@@ -1277,7 +1276,7 @@ RMSProp
 As we've seen, AdaGrad runs the risk of
 slowing down a bit too fast
 and never converging to the global optimum. The *RMSProp*
-algorithm^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+algorithm^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 fixes this by accumulating only the gradients from the most recent
 iterations (as opposed to all the gradients since the beginning of
 training). It does so by using exponential decay in the first step (see
@@ -1315,7 +1314,7 @@ algorithm of many researchers until Adam optimization came around.
 Adam and Nadam Optimization
 ---------------------------
 
-[*Adam*](https://homl.info/59),^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+[*Adam*](https://homl.info/59),^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 which 
 stands for *adaptive moment estimation*, combines the ideas of momentum
 optimization and RMSProp: just like momentum optimization, it keeps
@@ -1323,7 +1322,7 @@ track of an exponentially decaying average of past gradients; and just
 like RMSProp, it keeps track of an exponentially decaying average of
 past squared gradients (see [Equation
 11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adam_algorithm)).
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 
 
 ##### [Equation 11-8. ] Adam algorithm
@@ -1407,7 +1406,7 @@ Nadam
 :   Nadam optimization is Adam optimization plus the Nesterov trick, so
     it will often converge slightly faster than Adam. In [his report
     introducing this
-    technique](https://homl.info/nadam),^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+    technique](https://homl.info/nadam),^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
     the researcher Timothy Dozat compares many different optimizers on
     various tasks and finds that Nadam generally outperforms Adam but is
     sometimes outperformed by RMSProp.
@@ -1418,7 +1417,7 @@ Nadam
 Adaptive optimization methods (including RMSProp, Adam, and Nadam
 optimization) are often great, converging fast to a good solution.
 However, a [2017
-paper](https://homl.info/60)^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+paper](https://homl.info/60)^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 by Ashia C. Wilson et al. showed that they can lead to solutions that
 generalize poorly on some datasets. So when you are disappointed by your
 model's performance, try using plain Nesterov Accelerated Gradient
@@ -1563,7 +1562,7 @@ These are the most commonly used learning schedules:
 
 :   Contrary to the other approaches, *1cycle*
     (introduced in a [2018
-    paper](https://homl.info/1cycle)^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+    paper](https://homl.info/1cycle)^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
     by Leslie Smith) starts by increasing the initial learning rate
     *η*~0~, growing linearly up to *η*~1~ halfway through training. Then
     it decreases the learning rate linearly down to *η*~0~ again during
@@ -1585,7 +1584,7 @@ These are the most commonly used learning schedules:
     neural network [architecture]).
 
 A [2013
-paper](https://homl.info/63)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+paper](https://homl.info/63)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 by Andrew Senior et al. compared the performance of some of the most
 popular learning schedules when using momentum optimization to train
 deep neural networks for speech recognition. The authors concluded that,
@@ -1817,9 +1816,9 @@ Dropout
 *Dropout* is one of the most popular
 regularization techniques for deep neural networks. It was [proposed in
 a
-paper](https://homl.info/64)^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+paper](https://homl.info/64)^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 by Geoffrey Hinton in 2012 and further detailed in a [2014
-paper](https://homl.info/65)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+paper](https://homl.info/65)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 by Nitish Srivastava et al., and it has proven to be highly successful:
 even the state-of-the-art neural networks get a 1--2% accuracy boost
 simply by adding dropout. This may not sound like a lot, but when a
@@ -1950,14 +1949,14 @@ Monte Carlo (MC) Dropout
 ------------------------
 
 In 2016, a
-[paper](https://homl.info/mcdropout)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+[paper](https://homl.info/mcdropout)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 by Yarin Gal and Zoubin Ghahramani added a few more good reasons to use
 dropout:
 
 -   First, the paper established a profound connection between dropout
     networks (i.e., neural networks containing a `Dropout` layer before
     every weight layer) and approximate Bayesian
-    inference,^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+    inference,^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
     giving dropout a solid mathematical justification.
 
 -   Second, the authors introduced a powerful technique called *MC
@@ -2064,7 +2063,7 @@ If your model contains other layers that behave in a special way during
 training (such as `BatchNormalization` layers), then you should not
 force training mode like we just did. Instead, you should replace the
 `Dropout` layers with the following `MCDropout`
-class: ^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html){-marker}^
+class: ^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 
 ``` {data-type="programlisting" code-language="python"}
 class MCDropout(keras.layers.Dropout):

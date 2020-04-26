@@ -1,7 +1,7 @@
+<img align="right" src="../logo-small.png">
 
 
-[Lab 17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html#autoencoders_lab): Representation Learning and Generative Learning Using Autoencoders and GANs
-===========================================================================================================================================================================================================
+**Solution**
 
 1.  Here are some of the main tasks that autoencoders are used for:
 

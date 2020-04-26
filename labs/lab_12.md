@@ -647,8 +647,8 @@ Let's walk through this code:
     divided by the batch size (not by the sum of weights, so this is
     *not* the weighted
     mean).
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
-    .totri-footnote}^ Other possible values are `"sum"` and `"none"`.
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+     Other possible values are `"sum"` and `"none"`.
 
 -   The `call()` method takes the labels and predictions, computes all
     the instance losses, and returns them.
@@ -867,8 +867,7 @@ class HuberMetric(keras.metrics.Metric):
 ```
 
 Let's walk through this
-code: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
-.totri-footnote}^
+code: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
 
 -   The constructor uses the `add_weight()` method to create the
     variables needed to keep track of the metric's state over multiple
@@ -991,16 +990,16 @@ Let's walk through this code:
     `keras.activations.get()` function (it accepts functions, standard
     strings like `"relu"` or `"selu"`, or simply
     `None`).
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
-    .totri-footnote}^
+^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+    
 
 -   The `build()` method's role is to create the layer's variables by
     calling the `add_weight()` method for each weight. The `build()`
     method is called the first time the layer is used. At that point,
     Keras will know the shape of this layer's inputs, and it will pass
     it to the `build()`
-    method,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker
-    .totri-footnote}^ which is often necessary to create some of the
+    method,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+     which is often necessary to create some of the
     weights. For example, we need to know the number of neurons in the
     previous layer in order to create the connection weights matrix
     (i.e., the [`"kernel"`]): this corresponds to the
@@ -1100,7 +1099,7 @@ creating custom model classes in
 [Lab 10]
 when we discussed the Subclassing
 API.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
 It's straightforward: subclass the `keras.Model` class, create layers
 and variables in the constructor, and implement the `call()` method to
 do whatever you want the model to do. Suppose you want to build the
@@ -1271,7 +1270,7 @@ Let's go through this code:
     squared difference between the reconstruction and the inputs), and
     adds it to the model's list of losses using the `add_loss()`
     method.
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
     Notice that we scale down the reconstruction loss by multiplying it
     by 0.05 (this is a hyperparameter you can tune). This ensures that
     the reconstruction loss does not dominate the main loss.
@@ -1399,7 +1398,7 @@ dz_dw2 = tape.gradient(z, w2) # RuntimeError!
 
 If you need to call `gradient()` more than once, you must make the tape
 persistent and delete it each time you are done with it to free
-resources: ^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+resources: ^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
 
 ``` {data-type="programlisting" code-language="python"}
 with tf.GradientTape(persistent=True) as tape:
@@ -1658,7 +1657,7 @@ There's a lot going on in this code, so let's walk through it:
 
 -   At the end of each epoch, we display the status bar again to make it
     look
-    complete^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+    complete^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
     and to print a line feed, and we reset the states of the mean loss
     and the metrics.
 
@@ -1689,7 +1688,7 @@ and it's easy to make a mistake. But on the bright side, you get full
 control, so it's your call.
 
 Now that you know how to customize any part of your
-models^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+models^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
 and training algorithms, let's see how you can use TensorFlow's
 automatic graph generation feature: it can speed up your custom code
 considerably, and it will also make it portable to any platform
@@ -1772,7 +1771,7 @@ parallel when it can). As a result, a TF Function will usually run much
 faster than the original Python function, especially if it performs
 complex
 computations.
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html){-marker}^
+^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
 Most of the time you will not really need to know more than that: when
 you want to boost a Python function, just transform it into a TF
 Function. That's all!

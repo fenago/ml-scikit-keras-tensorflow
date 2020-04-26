@@ -469,8 +469,8 @@ we can exploit multiple cores on the CPU and hopefully make preparing
 one batch of data shorter than running a training step on the GPU: this
 way the GPU will be almost 100% utilized (except for the data transfer
 time from the CPU to the
-GPU^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^), and training will run much faster.
+GPU^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+), and training will run much faster.
 
 ![](./images/mls2_1303.png)
 
@@ -531,8 +531,8 @@ datasets.
 ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) All we need to do is pass the training and validation
 datasets to the `fit()` method, instead of `X_train, y_train`,
 `X_valid`, and
-`y_valid`: ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^
+`y_valid`: ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential([...])
@@ -740,8 +740,8 @@ over the network. When reading or receiving this binary data, we can
 parse it using the `ParseFromString()` method, and we get a copy of the
 object that was
 serialized.
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker
-.totri-footnote}^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+
 
 We could save the serialized `Person` object to a TFRecord file, then we
 could load and parse it: everything would work fine. However,
@@ -1218,7 +1218,7 @@ example, although they correctly learn that Man is to King as Woman is
 to Queen, they also seem to learn that Man is to Doctor as Woman is to
 Nurse: quite a sexist bias! To be fair, this particular example is
 probably exaggerated, as was pointed out in a [2019
-paper](https://homl.info/fairembeds)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker}^
+paper](https://homl.info/fairembeds)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
 by Malvina Nissim et al. Nevertheless, ensuring fairness in Deep
 Learning algorithms is an important and active research topic.
 
@@ -1655,7 +1655,7 @@ Exercises
     `Example` protobuf with two features: the serialized image (use
     `tf.io.serialize_tensor()` to serialize each image), and the
     label.
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html){-marker}^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
     Then use tf.data to create an efficient dataset for each set.
     Finally, use a Keras model to train these datasets, including a
     preprocessing layer to standardize each input feature. Try to make

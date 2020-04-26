@@ -252,8 +252,8 @@ Notes:
         you may prefer a Bayesian optimization approach (e.g., using
         Gaussian process priors, [as described by Jasper Snoek et
         al.](https://homl.info/134)).
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html){-marker
-        .totri-footnote}^
+^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app02.html)
+        
 
 2.  Try Ensemble methods. Combining your best models will often produce
     better performance than running them individually.

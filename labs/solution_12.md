@@ -1,6 +1,8 @@
+<img align="right" src="../logo-small.png">
 
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab): Custom Models and Training with TensorFlow
-========================================================================================================================================================================
+
+**Solution**
+
 
 1.  TensorFlow is an open-source library for numerical computation,
     particularly well suited and fine-tuned for large-scale Machine

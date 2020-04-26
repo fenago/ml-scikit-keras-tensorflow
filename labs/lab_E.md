@@ -226,8 +226,8 @@ starting with the lower layers and then gradually moving up to the top
 layers. This led to the [groundbreaking article that kickstarted the
 Deep Learning tsunami in
 2006](https://homl.info/136).
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
-.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html)
+
 
 Just like RBMs, DBNs learn to reproduce the probability distribution of
 their inputs, without any supervision. However, they are much better at
@@ -295,8 +295,8 @@ randomly, but it will generally be appropriate for the image. If you
 generate a few hundred captions, the most frequently generated ones will
 likely be a good description of the
 image.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
-.totri-footnote}^
+^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html)
+
 
 
 
@@ -358,8 +358,8 @@ as much as the winning neuron). Then the algorithm picks another
 training instance and repeats the process, again and again. This
 algorithm tends to make nearby neurons gradually specialize in similar
 inputs.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html){-marker
-.totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html)
+
 
 
 

@@ -109,8 +109,8 @@ constant 3, the third operation represents the power operation (`**`),
 and the final operation represents the output of this function (it is an
 identity operation, meaning it will do nothing more than copy the output
 of the addition
-operation^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html){-marker
-.totri-footnote}^). Each operation has a list of input and output
+operation^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html)
+). Each operation has a list of input and output
 tensors that you can easily access using the operation's `inputs` and
 `outputs` attributes. For example, let's get the list of inputs and
 outputs of the power operation:
@@ -148,8 +148,8 @@ graph's `get_operation_by_name()` or `get_tensor_by_name()` methods:
 
 The concrete function also contains the function definition (represented
 as a protocol
-buffer^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html){-marker
-.totri-footnote}^), which includes the function's signature. This
+buffer^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html)
+), which includes the function's signature. This
 signature allows the concrete function to know which placeholders to
 feed with the input values, and which tensors to return:
 

@@ -988,7 +988,7 @@ An Encoder--Decoder Network for Neural Machine Translation
 
 Let's 
 take a look at a simple [neural machine translation
-model](https://homl.info/103)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+model](https://homl.info/103)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 that will translate English sentences to French (see
 [Figure 16-3]
 
@@ -1068,7 +1068,7 @@ handle if you implement this model:
     This *sampled softmax* technique was
     [introduced in 2015 by Sébastien Jean et
     al.](https://homl.info/104).
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     In TensorFlow you can use the `tf.nn.sampled_softmax_loss()`
     function for this during training and use the normal softmax
     function at inference time (sampled softmax cannot be used at
@@ -1124,7 +1124,7 @@ is often a good idea to start training with the embedding of the target
 of the previous time step and gradually transition to using the
 embedding of the actual token that was output at the previous step. This
 idea was introduced in a [2015
-paper](https://homl.info/scheduledsampling)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/scheduledsampling)^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 by Samy Bengio et al. The `ScheduledEmbeddingTrainingSampler` will
 randomly choose between the target or the actual output, with a
 probability that you can gradually change during training.
@@ -1272,7 +1272,7 @@ with all the other words) needs to be carried over many steps before it
 is actually used. Can't we make this path shorter?
 
 This was the core idea in a groundbreaking [2014
-paper](https://homl.info/attention)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/attention)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 by Dzmitry Bahdanau et al. They introduced a technique that allowed the
 decoder to focus on the appropriate words (as encoded by the encoder) at
 each time step. For example, at the time step where the decoder needs to
@@ -1283,7 +1283,7 @@ less impact. Attention mechanisms revolutionized neural machine
 translation (and NLP in general), allowing a significant improvement in
 the state of the art, especially for long sentences (over 30
 words).
-^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 
 [Figure 16-6]
 shows this model's architecture (slightly simplified, as we will see).
@@ -1313,7 +1313,7 @@ jointly with the rest of the Encoder--Decoder model. This alignment
 model is illustrated on the righthand side of
 [Figure 16-6]
 It starts with a time-distributed `Dense`
-layer^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+layer^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 with a single neuron, which receives as input all the encoder outputs,
 concatenated with the decoder's previous hidden state (e.g.,
 **h**~(2)~). This layer outputs a score (or energy) for each encoder
@@ -1340,7 +1340,7 @@ words.
 
 Another common attention mechanism was proposed shortly after, in a
 [2015
-paper](https://homl.info/luongattention)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/luongattention)^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 by Minh-Thang Luong et al. Because the goal of the attention mechanism
 is to measure the similarity between one of the encoder's outputs and
 the decoder's previous hidden state, the authors proposed to simply
@@ -1406,7 +1406,7 @@ Visual Attention
 Attention mechanisms are now
 used for a variety of purposes. One of their first applications beyond
 NMT was in generating image captions using [visual
-attention](https://homl.info/visualattention): ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+attention](https://homl.info/visualattention): ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 a convolutional neural network first processes the image and outputs
 some feature maps, then a decoder RNN equipped with an attention
 mechanism generates the caption, one word at a time. At each decoder
@@ -1435,7 +1435,7 @@ explanation: perhaps the way the model learned to distinguish dogs from
 wolves is by checking whether or not there's a lot of snow around. You
 can then fix this by training the model with more images of wolves
 without snow, and dogs with snow. This example comes from a great [2016
-paper](https://homl.info/explainclass)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/explainclass)^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 by Marco Tulio Ribeiro et al. that uses a different approach to
 explainability: learning an interpretable model locally around a
 classifier's prediction.
@@ -1455,12 +1455,12 @@ Attention Is All You Need: The Transformer Architecture
 -------------------------------------------------------
 
 In a groundbreaking [2017
-paper](https://homl.info/transformer),^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/transformer),^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 a team of Google researchers suggested that "Attention Is All You Need."
 They managed to create an architecture called the *Transformer*, which
 significantly improved the state of the art in NMT without using any
 recurrent or convolutional
-layers,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+layers,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 just attention mechanisms (plus embedding layers, dense layers,
 normalization layers, and a few other bits and pieces). As an extra
 bonus, this architecture was also much faster to train and easier to
@@ -1834,7 +1834,7 @@ architectures trained on immense datasets. I highly recommend you check
 out the following papers, all published in 2018:
 
 -   The [ELMo
-    paper](https://homl.info/elmo)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    paper](https://homl.info/elmo)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     by Matthew Peters introduced *Embeddings from Language Models*
     (ELMo): these are contextualized word embeddings learned from the
     internal states of a deep bidirectional language model. For example,
@@ -1842,7 +1842,7 @@ out the following papers, all published in 2018:
     United Kingdom" and in "queen bee."
 
 -   The [ULMFiT
-    paper](https://homl.info/ulmfit)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    paper](https://homl.info/ulmfit)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     by Jeremy Howard and Sebastian Ruder demonstrated the effectiveness
     of unsupervised pretraining for NLP tasks: the authors trained an
     LSTM language model using self-supervised learning (i.e., generating
@@ -1855,7 +1855,7 @@ out the following papers, all published in 2018:
     from scratch on 10,000 examples.
 
 -   The [GPT
-    paper](https://homl.info/gpt)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    paper](https://homl.info/gpt)^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     by Alec Radford and other OpenAI researchers also demonstrated the
     effectiveness of unsupervised pretraining, but this time using a
     Transformer-like architecture. The authors pretrained a large but
@@ -1866,13 +1866,13 @@ out the following papers, all published in 2018:
     adaptations for each task. The tasks were
     quite diverse: they included text classification, *entailment*
     (whether sentence A entails sentence
-    B),^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    B),^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     similarity (e.g., "Nice weather today" is very similar to "It is
     sunny"), and question answering (given a few paragraphs of text
     giving some context, the model must answer some multiple-choice
     questions). Just a few months later, in February 2019, Alec Radford,
     Jeffrey Wu, and other OpenAI researchers published the [GPT-2
-    paper,](https://homl.info/gpt2)^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    paper,](https://homl.info/gpt2)^[28](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     which proposed a very similar architecture, but larger still (with
     over 1.5 billion parameters!) and they showed that it could achieve
     good performance on many tasks without any fine-tuning.
@@ -1883,7 +1883,7 @@ out the following papers, all published in 2018:
     along with its pretrained weights.
 
 -   The [BERT
-    paper](https://homl.info/bert)^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+    paper](https://homl.info/bert)^[29](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     by Jacob Devlin and other Google researchers also demonstrates the
     effectiveness of self-supervised pretraining on a large corpus,
     using a similar architecture to GPT but non-masked Multi-Head
@@ -1926,11 +1926,11 @@ then fine-tuning them with very few architectural changes (or none at
 all). Things are moving fast; no one can say what architectures will
 prevail next year. Today, it's clearly Transformers, but tomorrow it
 might be CNNs (e.g., check out the [2018
-paper](https://homl.info/pervasiveattention)^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/pervasiveattention)^[30](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 by Maha Elbayad et al., where the researchers use masked 2D
 convolutional layers for sequence-to-sequence tasks). Or it might even
 be RNNs, if they make a surprise comeback (e.g., check out the [2018
-paper](https://homl.info/indrnn)^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html){-marker}^
+paper](https://homl.info/indrnn)^[31](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 by Shuai Li et al. that shows that by making neurons independent of each
 other in a given RNN layer, it is possible to train much deeper RNNs
 capable of learning much longer sequences).

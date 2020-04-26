@@ -334,8 +334,8 @@ However, when they differ, Gini impurity tends to isolate the most
 frequent class in its own branch of the tree, while entropy tends to
 produce slightly more balanced
 trees.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html){-marker
-.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html)
+
 
 
 

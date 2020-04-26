@@ -409,8 +409,8 @@ Machine Learning notations that we will use throughout this course:
     instance, and the *i*^th^ row is equal to the transpose of
     **x**^(*i*)^, noted
     (**x**^(*i*)^)^⊺^.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-    .totri-footnote}^
+^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+    
 
     -   For example, if the first district is as just described, then
         the matrix **X** looks like this:
@@ -717,8 +717,7 @@ Create the Workspace
 First you will need to have Python installed. It
 is probably already installed on your system. If not, you can get it at
 [*https://www.python.org/*](https://www.python.org/).
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^
+^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 Next you need to create a workspace directory for your Machine Learning
 code and datasets. Open a terminal and type the following commands
@@ -752,8 +751,7 @@ pip 19.3.1 from [...]/lib/python3.7/site-packages/pip (python 3.7)
 
 You should make sure you have a recent version of pip installed. To
 upgrade the pip module, type the following (the exact version may
-differ): ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker
-.totri-footnote}^
+differ): ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="shell-session"}
 $ python3 -m pip install --user -U pip
@@ -879,7 +877,7 @@ In typical environments your data would be
 available in a relational database (or some other common data store) and
 spread across multiple tables/documents/files. To access it, you would
 first need to get your credentials and access
-authorizations^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+authorizations^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 and familiarize yourself with the data schema. In this project, however,
 things are much simpler: you will just download a single compressed
 file, *housing.tgz*, which contains a comma-separated values (CSV) file
@@ -896,7 +894,7 @@ the data is also useful if you need to install the dataset on multiple
 machines.
 
 Here is the function to fetch the
-data: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+data: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="python"}
 import os
@@ -995,7 +993,7 @@ that the null values are ignored (so, for example, the `count` of
 `total_bedrooms` is 20,433, not 20,640). The `std` row shows the
 *standard deviation*, which measures how dispersed the values
 are.
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 The 25%, 50%, and 75% rows show the corresponding *percentiles*: a
 percentile indicates the value below which a given percentage of
 observations in a group of observations fall. For example, 25% of the
@@ -1117,7 +1115,7 @@ def split_train_test(data, test_ratio):
 ```
 
 You can then use this function like
-this: ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+this: ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> train_set, test_set = split_train_test(housing, 0.2)
@@ -1135,7 +1133,7 @@ you want to avoid.
 One solution is to save the test set on the first run and then load it
 in subsequent runs. Another option is to set the random number
 generator's seed (e.g., with
-`np.random.seed(42)`)^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+`np.random.seed(42)`)^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 before calling `np.random.permutation()` so that it always generates the
 same shuffled indices.
 
@@ -1179,7 +1177,7 @@ ever gets deleted. If this is not possible, then you can try to use the
 most stable features to build a unique identifier. For example, a
 district's latitude and longitude are guaranteed to be stable for a few
 million years, so you could combine them into an ID like
-so: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+so: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="python"}
 housing_with_id["id"] = housing["longitude"] * 1000 + housing["latitude"]
@@ -1371,7 +1369,7 @@ The radius of each circle represents the district's population (option
 `s`), and the color represents the price (option `c`). We will use a
 predefined color map (option `cmap`) called `jet`, which ranges from
 blue (low values) to red (high
-prices): ^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+prices): ^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="python"}
 housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4,
@@ -1692,7 +1690,7 @@ housing_tr = pd.DataFrame(X, columns=housing_num.columns,
 
 Scikit-Learn's API is remarkably well designed.
 These are the [main design
-principles](https://homl.info/11): ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+principles](https://homl.info/11): ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 Consistency
 
@@ -1736,7 +1734,7 @@ Consistency
         test set (and the corresponding labels, in the case of
         supervised learning
         algorithms).
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 Inspection
 
@@ -1796,7 +1794,7 @@ each of which represents a category. So this attribute is a categorical
 attribute. Most Machine Learning algorithms prefer to work with numbers,
 so let's convert these categories from text to numbers. For this, we
 can use Scikit-Learn's `OrdinalEncoder`
-class: ^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+class: ^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.preprocessing import OrdinalEncoder
@@ -1841,7 +1839,7 @@ while the others will be 0 (cold). The new attributes are sometimes
 called *dummy* attributes.
 Scikit-Learn provides a `OneHotEncoder` class to
 convert categorical values into one-hot
-vectors: ^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+vectors: ^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.preprocessing import OneHotEncoder
@@ -1859,7 +1857,7 @@ a matrix with thousands of columns, and the matrix is full of 0s except
 for a single 1 per row. Using up tons of memory mostly to store zeros
 would be very wasteful, so instead a sparse matrix only stores the
 location of the nonzero elements. You can use it mostly like a normal 2D
-array,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+array,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 but if you really want to convert it to a (dense)
 NumPy array, just call the `toarray()` method:
 
@@ -2083,7 +2081,7 @@ First we import the `ColumnTransformer` class, next we get the list of
 numerical column names and the list of categorical column names, and
 then we construct a `ColumnTransformer`. The constructor requires a list
 of tuples, where each tuple contains a
-name,^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+name,^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 a transformer, and a list of names (or indices) of columns that the
 transformer should be applied to. In this example, we specify that the
 numerical columns should be transformed using the `num_pipeline` that we
@@ -2704,7 +2702,7 @@ application, and finally your code will simply call the model's
 rather than every time the model is used). Alternatively, you can wrap
 the model within a dedicated web service that your web application can
 query through a REST
-API^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+API^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 (see
 [Figure 2-17]
 This makes it easier to upgrade your model to new versions without
@@ -2773,7 +2771,7 @@ nonspecialists, such as workers on a crowdsourcing platform (e.g.,
 Amazon Mechanical Turk). In some applications they could even be the
 users themselves, responding for example via surveys or repurposed
 captchas.
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html){-marker}^
+^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 
 Either way, you need to put in place a monitoring system (with or
 without human raters to evaluate the live model), as well as all the

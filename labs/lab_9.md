@@ -315,8 +315,8 @@ centroids, label the instances, update the centroids, and so on until
 the centroids stop moving. The algorithm is guaranteed to converge in a
 finite number of steps (usually quite small); it will not oscillate
 forever.
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^
+^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html)
+
 
 You can see the algorithm in action in
 [Figure 9-4]
@@ -449,8 +449,8 @@ Elkan.
 many unnecessary distance calculations. Elkan achieved this by
 exploiting the triangle inequality (i.e., that a straight line is always
 the shortest distance between two
-points^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^) and by keeping track of lower and upper bounds for
+points^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html)
+) and by keeping track of lower and upper bounds for
 distances between instances and centroids. This is the algorithm the
 `KMeans` class uses by default (you can force it to use the original
 algorithm by setting the `algorithm` hyperparameter to `"full"`,
@@ -1259,8 +1259,8 @@ process:
     clusters. The probability of choosing the *j*^th^ cluster is defined
     by the cluster's weight,
     *ϕ*^(*j*)^.
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-    .totri-footnote}^ The index of the cluster chosen for the *i*^th^
+^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html)
+     The index of the cluster chosen for the *i*^th^
     instance is noted *z*^(*i*)^.
 
 -   If *z*^(*i*)^=*j*, meaning the *i*^th^ instance has been assigned to
@@ -1278,8 +1278,8 @@ variables.
 ![](./images/mls2_0916.png)
 
 Here is how to interpret the
-figure: ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html){-marker
-.totri-footnote}^
+figure: ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch09.html)
+
 
 -   The circles represent random variables.
 
