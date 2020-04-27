@@ -19,9 +19,6 @@ By using concrete examples, minimal theory, and two production-ready Python fram
 - Dive into neural net architectures, including convolutional nets, recurrent nets, and deep reinforcement learning
 - Learn techniques for training and scaling deep neural nets
 
-### Preface
-		* <host-ip>:<port>/lab/workspaces/preface
-
 ### Labs
 
 Labs for this course are available at path shared below. Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. 
@@ -64,9 +61,9 @@ Labs for this course are available at path shared below. Elev8ed Notebooks (powe
 		* <host-ip>:<port>/lab/workspaces/lab18_Reinforcement_Learning
 19. ##### Training and Deploying TensorFlow Models at Scale
 		* <host-ip>:<port>/lab/workspaces/lab19_TensorFlow_Models
-20.	##### Capsule Networks
+20. ##### Capsule Networks
 		* <host-ip>:<port>/lab/workspaces/lab20_Capsule
-21.	##### TensorFlow Reproducibility
+21. ##### TensorFlow Reproducibility
 		* <host-ip>:<port>/lab/workspaces/lab21_Reproducibility
 
 
