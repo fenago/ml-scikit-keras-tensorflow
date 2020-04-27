@@ -40,9 +40,7 @@
     other than those mentioned in
     [Lab 18]
 
-    Music personalization
-
-    :   The environment is a user's personalized web radio. The agent is
+    Music personalization: The environment is a user's personalized web radio. The agent is
         the software deciding what song to play next for that user. Its
         possible actions are to play any song in the catalog (it must
         try to choose a song the user will enjoy) or to play an
@@ -52,9 +50,7 @@
         to an ad, a negative reward when the user skips a song or an ad,
         and a very negative reward if the user leaves.
 
-    Marketing
-
-    :   The environment is your company's marketing department. The
+    Marketing: The environment is your company's marketing department. The
         agent is the software that defines which customers a mailing
         campaign should be sent to, given their profile and purchase
         history (for each customer it has two possible actions: send or
@@ -62,9 +58,7 @@
         mailing campaign, and a positive reward for estimated revenue
         generated from this campaign.
 
-    Product delivery
-
-    :   Let the agent control a fleet of delivery trucks, deciding what
+    Product delivery: Let the agent control a fleet of delivery trucks, deciding what
         they should pick up at the depots, where they should go, what
         they should drop off, and so on. It will get positive rewards
         for each product delivered on time, and negative rewards for

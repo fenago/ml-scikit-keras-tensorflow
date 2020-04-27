@@ -1356,9 +1356,7 @@ principles](https://homl.info/11): ^[17]
 
 Consistency: All objects share a consistent and simple interface:
 
-    Estimators
-
-    :   Any object that can estimate some
+    Estimators: Any object that can estimate some
         parameters based on a dataset is called an *estimator* (e.g., an
         `imputer` is an estimator). The estimation itself is performed
         by the `fit()` method, and it takes only a dataset as a
@@ -1368,9 +1366,7 @@ Consistency: All objects share a consistent and simple interface:
         (such as an `imputer`'s `strategy`), and it must be set as an
         instance variable (generally via a constructor parameter).
 
-    Transformers
-
-    :   Some estimators (such as an `imputer`) can
+    Transformers: Some estimators (such as an `imputer`) can
         also transform a dataset; these are called *transformers*. Once
         again, the API is simple: the transformation is
         [performed] by the `transform()` method with the
@@ -1381,9 +1377,7 @@ Consistency: All objects share a consistent and simple interface:
         equivalent to calling `fit()` and then `transform()` (but
         sometimes `fit_transform()` is optimized and runs much faster).
 
-    Predictors
-
-    :   Finally, some estimators, given a dataset,
+    Predictors: Finally, some estimators, given a dataset,
         are capable of making predictions; they are called *predictors*.
         For example, the `LinearRegression` model in the previous
         lab was a predictor: given a country's GDP per capita, it

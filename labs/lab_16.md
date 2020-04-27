@@ -1905,9 +1905,7 @@ out the following papers, all published in 2018:
     importantly, the authors proposed two pretraining tasks that explain
     most of the model's strength:
 
-    Masked language model (MLM)
-
-    :   Each word in a sentence has a 15%
+    Masked language model (MLM): Each word in a sentence has a 15%
         probability of being masked, and the model is trained to predict
         the masked words. For example, if the original sentence is "She
         had fun at the birthday party," then the model may be given the
@@ -1920,9 +1918,7 @@ out the following papers, all published in 2018:
         fine-tuning), and a 10% chance of being left alone (to bias the
         model toward the correct answer).
 
-    Next sentence prediction (NSP)
-
-    :   The model is trained to predict whether
+    Next sentence prediction (NSP): The model is trained to predict whether
         two sentences are consecutive or not. For example, it should
         predict that "The dog sleeps" and "It snores loudly" are
         consecutive sentences, while "The dog sleeps" and "The Earth
