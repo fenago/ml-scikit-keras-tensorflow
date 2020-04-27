@@ -65,6 +65,16 @@ Labs for this course are available at path shared below. Elev8ed Notebooks (powe
 19. ##### Training and Deploying TensorFlow Models at Scale
 		* <host-ip>:<port>/lab/workspaces/lab19_TensorFlow_Models
 
+
+### Scientific Python tutorials (NumPy, Matplotlib, Pandas)
+		* <host-ip>:<port>/lab/workspaces/lab_tools
+
+### Math Tutorials (Linear Algebra, Differential Calculus)
+		* <host-ip>:<port>/lab/workspaces/lab_maths
+
+### Misc (list of equations in the course)
+		* <host-ip>:<port>/lab/workspaces/lab_equations
+
 ### Extra
 
 1. ##### Machine Learning Project Checklist
@@ -79,3 +89,5 @@ Labs for this course are available at path shared below. Elev8ed Notebooks (powe
 		* <host-ip>:<port>/lab/workspaces/lab__Data_Structures
 6. ##### TensorFlow Graphs
 		* <host-ip>:<port>/lab/workspaces/lab_TensorFlow_Graphs
+
+

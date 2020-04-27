@@ -13,8 +13,7 @@ Strings
 =======
 
 Tensors can hold byte strings, which is useful in
-particular for natural language processing (see
-[Lab 16]
+particular for natural language processing (see lab 16)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> tf.constant(b"hello world")
