@@ -1958,29 +1958,21 @@ most papers that use them, so TF-Agents provides a handy
 `AtariPreprocessing` wrapper that implements them. Here is the list of
 preprocessing steps it supports:
 
-Grayscale and downsampling
-
-:   Observations are converted to grayscale and downsampled (by default
+Grayscale and downsampling: Observations are converted to grayscale and downsampled (by default
     to 84 × 84 pixels).
 
-Max pooling
-
-:   The last two frames of the game are max-pooled using a 1 × 1 filter.
+Max pooling: The last two frames of the game are max-pooled using a 1 × 1 filter.
     This is to remove the flickering that occurs in some Atari games due
     to the limited number of sprites that the Atari 2600 could display
     in each frame.
 
-Frame skipping
-
-:   The agent only gets to see every *n* frames of the game (by default
+Frame skipping: The agent only gets to see every *n* frames of the game (by default
     *n* = 4), and its actions are repeated for each frame, collecting
     all the rewards. This effectively speeds up the game from the
     perspective of the agent, and it also speeds up training because
     rewards are less delayed.
 
-End on life lost
-
-:   In some games, the rewards are just based on the score, so the agent
+End on life lost: In some games, the rewards are just based on the score, so the agent
     gets no immediate penalty for losing a life. One solution is to end
     the game immediately whenever a life is lost. There is some debate
     over the actual benefits of this strategy, so it is off by default.
@@ -2731,9 +2723,7 @@ Overview of Some Popular RL Algorithms
 Before we finish this lab, let's take a quick
 look at a few popular RL algorithms:
 
-Actor-Critic algorithms
-
-:   A family of RL
+Actor-Critic algorithms: A family of RL
     algorithms that combine Policy Gradients with Deep Q-Networks. An
     Actor-Critic agent contains two neural networks: a policy net and a
     DQN. The DQN is trained normally, by learning from the agent's
@@ -2745,9 +2735,7 @@ Actor-Critic algorithms
     (critic). It's a bit like an athlete (the agent) learning with the
     help of a coach (the DQN).
 
-[*Asynchronous Advantage Actor-Critic*](https://homl.info/a3c) ^[23]
-
-:   An important
+[*Asynchronous Advantage Actor-Critic*](https://homl.info/a3c) ^[23]: An important
     Actor-Critic variant introduced by DeepMind researchers in 2016,
     where multiple agents learn in parallel, exploring different copies
     of the environment. At regular intervals, but asynchronously (hence
@@ -2758,16 +2746,12 @@ Actor-Critic algorithms
     estimating the Q-Values, the DQN estimates the advantage of each
     action (hence the second A in the name), which stabilizes training.
 
-[*Advantage Actor-Critic*](https://homl.info/a2c) (A2C)
-
-:   A variant of the A3C
+[*Advantage Actor-Critic*](https://homl.info/a2c) (A2C): A variant of the A3C
     algorithm that removes the asynchronicity. All model updates are
     synchronous, so gradient updates are performed over larger batches,
     which allows the model to better utilize the power of the GPU.
 
-[*Soft Actor-Critic*](https://homl.info/sac) ^[24]
-
-:   An Actor-Critic variant
+[*Soft Actor-Critic*](https://homl.info/sac) ^[24]: An Actor-Critic variant
     proposed in 2018 by Tuomas Haarnoja and other UC Berkeley
     researchers. It learns not only rewards, but also to maximize the
     entropy of its actions. In other words, it tries to be as
@@ -2779,9 +2763,7 @@ Actor-Critic algorithms
     (contrary to all the previous algorithms, which learn very slowly).
     SAC is available in TF-Agents.
 
-[*Proximal Policy Optimization* (PPO)](https://homl.info/ppo) ^[25]
-
-:   An algorithm based on
+[*Proximal Policy Optimization* (PPO)](https://homl.info/ppo) ^[25]: An algorithm based on
     A2C that clips the loss function to avoid excessively large weight
     updates (which often lead to training instabilities). PPO is a
     simplification of the previous [*Trust Region Policy
@@ -2792,9 +2774,7 @@ Actor-Critic algorithms
     champions at the multiplayer game *Dota 2*. PPO is also available in
     TF-Agents.
 
-[*Curiosity-based exploration*](https://homl.info/curiosity) ^[27]
-
-:   A recurring problem in RL is the sparsity of
+[*Curiosity-based exploration*](https://homl.info/curiosity) ^[27]: A recurring problem in RL is the sparsity of
     the rewards, which makes learning very slow and inefficient. Deepak
     Pathak and other UC Berkeley researchers have proposed an exciting
     way to tackle this issue: why not ignore the rewards, and just make

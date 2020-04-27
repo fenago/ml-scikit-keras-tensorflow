@@ -40,24 +40,18 @@ we looked at the most common unsupervised learning task: dimensionality
 reduction. In this lab we will look at a few more unsupervised
 learning tasks and algorithms:
 
-Clustering
-
-:   The goal is to group similar instances
+Clustering: The goal is to group similar instances
     together into *clusters*. Clustering is a great tool for data
     analysis, customer segmentation, recommender systems, search
     engines, image segmentation, semi-supervised learning,
     dimensionality reduction, and more.
 
-Anomaly detection
-
-:   The objective is to learn what "normal" data
+Anomaly detection: The objective is to learn what "normal" data
     looks like, and then use that to detect abnormal instances, such as
     defective items on a production line or a new trend in a time
     series.
 
-Density estimation
-
-:   This is the task of
+Density estimation: This is the task of
     estimating the *probability density function* (PDF) of the random
     process that generated the dataset. Density estimation is commonly
     used for anomaly detection: instances located in very low-density
@@ -109,9 +103,7 @@ model, only 5 instances out of 150 are assigned to the wrong cluster).
 Clustering is used in a wide variety of
 applications, including these:
 
-For customer segmentation
-
-:   You can cluster your
+For customer segmentation: You can cluster your
     customers based on their purchases and their activity on your
     website. This is useful to understand who your customers are and
     what they need, so you can adapt your products and marketing
@@ -119,15 +111,11 @@ For customer segmentation
     useful in *recommender systems* to suggest content that other users
     in the same cluster enjoyed.
 
-For data analysis
-
-:   When you analyze a new dataset, it can be
+For data analysis: When you analyze a new dataset, it can be
     helpful to run a clustering algorithm, and then analyze each cluster
     separately.
 
-As a dimensionality reduction technique
-
-:   Once a dataset has been
+As a dimensionality reduction technique: Once a dataset has been
     clustered, it is usually possible to measure each instance's
     *affinity* with each cluster (affinity is any measure of how well an
     instance fits into a cluster). Each instance's feature vector **x**
@@ -137,9 +125,7 @@ As a dimensionality reduction technique
     vector, but it can preserve enough information for further
     processing.
 
-For *anomaly detection* (also called *outlier detection*)
-
-:   Any instance that has a
+For *anomaly detection* (also called *outlier detection*): Any instance that has a
     low affinity to all the clus ters is likely to
     be an anomaly. For example, if you have clustered the users of your
     website based on their behavior, you can detect users with unusual
@@ -147,17 +133,13 @@ For *anomaly detection* (also called *outlier detection*)
     detection is particularly useful in detecting defects in
     manufacturing, or for *fraud detection*.
 
-For semi-supervised learning
-
-:   If you only have a few labels, you could
+For semi-supervised learning: If you only have a few labels, you could
     perform clustering and propagate the labels to all the instances in
     the same cluster. This technique can greatly increase the number of
     labels available for a subsequent supervised learning algorithm, and
     thus improve its performance.
 
-For search engines
-
-:   Some search engines let you search for images
+For search engines: Some search engines let you search for images
     that are similar to a reference image. To build such a system, you
     would first apply a clustering algorithm to all the images in your
     database; similar images would end up in the same cluster. Then when
@@ -165,9 +147,7 @@ For search engines
     trained clustering model to find this image's cluster, and you can
     then simply return all the images from this cluster.
 
-To segment an image
-
-:   By clustering pixels
+To segment an image: By clustering pixels
     according to their color, then replacing each pixel's color with the
     mean color of its cluster, it is possible to considerably reduce the
     number of different colors in the image. Image segmentation is used
@@ -1152,9 +1132,7 @@ Scikit-Learn implements
 several more clustering algorithms that you should take a look at. We
 cannot cover them all in detail here, but here is a brief overview:
 
-Agglomerative clustering
-
-:   A hierarchy of clusters is built from the
+Agglomerative clustering: A hierarchy of clusters is built from the
     bottom up. Think of many tiny bubbles floating on water and
     gradually attaching to each other until there's one big group of
     bubbles. Similarly, at each iteration, agglomerative clustering
@@ -1172,9 +1150,7 @@ Agglomerative clustering
     `sklearn.neighbors.kneighbors_graph()`). Without a connectivity
     matrix, the algorithm does not scale well to large datasets.
 
-BIRCH
-
-:   The BIRCH (Balanced Iterative Reducing and Clustering using
+BIRCH: The BIRCH (Balanced Iterative Reducing and Clustering using
     Hierarchies) algorithm
     was designed specifically for very large datasets, and it can be
     faster than batch K-Means, with similar results, as long as the
@@ -1184,9 +1160,7 @@ BIRCH
     store all the instances in the tree: this approach allows it to use
     limited memory, while handling huge datasets.
 
-Mean-Shift
-
-:   This algorithm starts by
+Mean-Shift: This algorithm starts by
     placing a circle centered on each instance; then for each circle it
     computes the mean of all the instances located within it, and it
     shifts the circle so that it is centered on the mean. Next, it
@@ -1204,9 +1178,7 @@ Mean-Shift
     internal density variations. Unfortunately, its computational
     complexity is O(*m*^2^), so it is not suited for large datasets.
 
-Affinity propagation
-
-:   This algorithm uses a voting system, where
+Affinity propagation: This algorithm uses a voting system, where
     instances vote for similar instances to be their representatives,
     and once the algorithm converges, each representative and its voters
     form a cluster. Affinity propagation can detect any number of
@@ -1214,9 +1186,7 @@ Affinity propagation
     computational complexity of O(*m*^2^), so it too is not suited for
     large datasets.
 
-Spectral clustering
-
-:   This algorithm takes a similarity matrix
+Spectral clustering: This algorithm takes a similarity matrix
     between the instances and creates a low-dimensional embedding from
     it (i.e., it reduces its dimensionality), then it uses another
     clustering algorithm in this low-dimensional space (Scikit-Learn's
@@ -1885,17 +1855,13 @@ Scikit-Learn
 implements  
 other algorithms dedicated to anomaly detection or novelty detection:
 
-PCA (and other dimensionality reduction techniques with an `inverse_transform()` method)
-
-:   If you compare the reconstruction error of a
+PCA (and other dimensionality reduction techniques with an `inverse_transform()` method): If you compare the reconstruction error of a
     normal instance with the reconstruction error of an anomaly, the
     latter will usually be much larger. This is a simple and often quite
     efficient anomaly detection approach (see this lab's exercises
     for an application of this approach).
 
-Fast-MCD (minimum covariance determinant)
-
-:   Implemented by the `EllipticEnvelope` class,
+Fast-MCD (minimum covariance determinant): Implemented by the `EllipticEnvelope` class,
     this algorithm is useful for outlier detection, in particular to
     clean up a dataset. It assumes that the normal instances (inliers)
     are generated from a single Gaussian distribution (not a mixture).
@@ -1907,9 +1873,7 @@ Fast-MCD (minimum covariance determinant)
     technique gives a better estimation of the elliptic envelope and
     thus makes the algorithm better at identifying the outliers.
 
-Isolation Forest
-
-:   This is an efficient
+Isolation Forest: This is an efficient
     algorithm for outlier detection, especially in high-dimensional
     datasets. The algorithm builds a Random Forest in which each
     Decision Tree is grown randomly: at each node, it picks a feature
@@ -1920,16 +1884,12 @@ Isolation Forest
     other instances, so on average (across all the Decision Trees) they
     tend to get isolated in fewer steps than normal instances.
 
-Local Outlier Factor (LOF)
-
-:   This algorithm is also good for outlier
+Local Outlier Factor (LOF): This algorithm is also good for outlier
     detection. It compares the density of instances around a given
     instance to the density around its neighbors. An anomaly is often
     more isolated than its *k* nearest neighbors.
 
-One-class SVM
-
-:   This algorithm is better
+One-class SVM: This algorithm is better
     suited for novelty detection. Recall that a kernelized SVM
     classifier separates two classes by first (implicitly) mapping all
     the instances to a high-dimensional space, then separating the two
@@ -1947,8 +1907,6 @@ One-class SVM
     novel when it is in fact normal. It works great, especially with
     high-dimensional datasets, but like all SVMs it does not scale to
     large [datasets]. 
-
-
 
 
 

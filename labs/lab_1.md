@@ -192,42 +192,28 @@ Examples of Applications
 Let's look at some concrete examples of Machine
 Learning tasks, along with the techniques that can tackle them:
 
-Analyzing images of products on a production line to automatically classify them
-
-:   This is image classification, typically performed using
+Analyzing images of products on a production line to automatically classify them: This is image classification, typically performed using
     convolutional neural networks (CNNs; see
     [Lab 14]
 
-Detecting tumors in brain scans
-
-:   This is semantic segmentation, where each pixel in the image is
+Detecting tumors in brain scans: This is semantic segmentation, where each pixel in the image is
     classified (as we want to determine the exact location and shape of
     tumors), typically using CNNs as well.
 
-Automatically classifying news articles
-
-:   This is natural language processing (NLP), and more specifically
+Automatically classifying news articles: This is natural language processing (NLP), and more specifically
     text classification, which can be tackled using recurrent neural
     networks (RNNs), CNNs, or Transformers (see
     [Lab 16]
 
-Automatically flagging offensive comments on discussion forums
+Automatically flagging offensive comments on discussion forums: This is also text classification, using the same NLP tools.
 
-:   This is also text classification, using the same NLP tools.
-
-Summarizing long documents automatically
-
-:   This is a branch of NLP called text summarization, again using the
+Summarizing long documents automatically: This is a branch of NLP called text summarization, again using the
     same tools.
 
-Creating a chatbot or a personal assistant
-
-:   This involves many NLP components, including natural language
+Creating a chatbot or a personal assistant: This involves many NLP components, including natural language
     understanding (NLU) and question-answering modules.
 
-Forecasting your company's revenue next year, based on many performance metrics
-
-:   This is a regression task (i.e., predicting values) that may be
+Forecasting your company's revenue next year, based on many performance metrics: This is a regression task (i.e., predicting values) that may be
     tackled using any regression model, such as a Linear Regression or
     Polynomial Regression model (see
     [Lab 4]
@@ -244,34 +230,24 @@ Forecasting your company's revenue next year, based on many performance metrics
     and
     [16]
 
-Making your app react to voice commands
-
-:   This is speech recognition, which requires processing audio samples:
+Making your app react to voice commands: This is speech recognition, which requires processing audio samples:
     since they are long and complex sequences, they are typically
     processed using RNNs, CNNs, or Transformers (see Labs
     [15]
     and
     [16]
 
-Detecting credit card fraud
-
-:   This is anomaly detection (see
+Detecting credit card fraud: This is anomaly detection (see
     [Lab 9]
 
-Segmenting clients based on their purchases so that you can design a different marketing strategy for each segment
-
-:   This is clustering (see
+Segmenting clients based on their purchases so that you can design a different marketing strategy for each segment: This is clustering (see
     [Lab 9]
 
-Representing a complex, high-dimensional dataset in a clear and insightful diagram
-
-:   This is data visualization, often involving dimensionality reduction
+Representing a complex, high-dimensional dataset in a clear and insightful diagram: This is data visualization, often involving dimensionality reduction
     techniques (see
     [Lab 8]
 
-Recommending a product that a client may be interested in, based on past purchases
-
-:   This is a recommender system. One approach is to feed past purchases
+Recommending a product that a client may be interested in, based on past purchases: This is a recommender system. One approach is to feed past purchases
     (and other information about the client) to an artificial neural
     network (see
     [Lab 10]
@@ -279,9 +255,7 @@ Recommending a product that a client may be interested in, based on past purchas
     would typically be trained on past sequences of purchases across all
     clients.
 
-Building an intelligent bot for a game
-
-:   This is often tackled using Reinforcement Learning (RL; see
+Building an intelligent bot for a game: This is often tackled using Reinforcement Learning (RL; see
     [Lab 18]
     which is a branch of Machine Learning that trains agents (such as
     bots) to pick the actions that will maximize their rewards over time
