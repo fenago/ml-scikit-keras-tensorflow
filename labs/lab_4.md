@@ -1930,7 +1930,7 @@ Exercises
 12. Implement Batch Gradient Descent with early stopping for Softmax
     Regression (without using Scikit-Learn).
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

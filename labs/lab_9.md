@@ -2028,7 +2028,7 @@ Exercises
     error is. If you plot a reconstructed image, you will see why: it
     tries to reconstruct a normal face.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

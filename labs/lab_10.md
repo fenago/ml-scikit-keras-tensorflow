@@ -2630,7 +2630,7 @@ Exercises
     checkpoints, use early stopping, and plot learning curves using
     TensorBoard.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

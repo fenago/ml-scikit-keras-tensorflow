@@ -1839,7 +1839,7 @@ Exercises
     Turn it into a conditional GAN where you can control the generated
     class.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

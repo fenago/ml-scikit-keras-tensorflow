@@ -1314,7 +1314,7 @@ Exercises
     model](https://homl.info/coconet), which was used for a nice Google
     doodle about Bach.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

@@ -1706,7 +1706,7 @@ Exercises
     7.  Use TFDS to load the same dataset more easily:
         `tfds.load("imdb_reviews")`.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

@@ -1532,7 +1532,7 @@ following questions:
 
 19. What can go wrong if you tune hyperparameters using the test set?
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

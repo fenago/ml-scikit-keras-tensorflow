@@ -2272,7 +2272,7 @@ Exercises
     6.  Retrain your model using 1cycle scheduling and see if it
         improves training speed and model accuracy.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

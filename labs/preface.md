@@ -7,13 +7,13 @@ The Machine Learning Tsunami
 ============================
 
 In 2006, Geoffrey Hinton et al. published [a
-paper](https://homl.info/136) ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) showing how to train a deep neural network capable of
+paper](https://homl.info/136) ^[1] showing how to train a deep neural network capable of
 recognizing handwritten digits with state-of-the-art precision (\>98%).
 They branded this technique "Deep Learning." A deep neural
 network is a (very) simplified model of our
 cerebral cortex, composed of a stack of layers of artificial neurons.
 Training a deep neural net was widely considered impossible at the
-time, ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) and most researchers had abandoned the idea in the
+time, ^[2] and most researchers had abandoned the idea in the
 late 1990s. This paper revived the interest of the scientific community,
 and before long many new papers demonstrated that Deep Learning was not
 only possible, but capable of mind-blowing achievements that no other
@@ -28,14 +28,11 @@ your web search results, powering your smartphone's speech recognition,
 recommending videos, and beating the world champion at the game of Go.
 Before you know it, it will be driving your car.
 
-
-
 Machine Learning in Your Projects
 =================================
 
 So, naturally you are excited about Machine
 Learning and would love to join the party!
-
 Perhaps you would like to give your homemade robot a brain of its own?
 Make it recognize faces? Or learn to walk around?
 
@@ -47,19 +44,13 @@ where to look. With Machine Learning, you could accomplish the following
 
 -   Segment customers and find the best marketing strategy for each
     group.
-
 -   Recommend products for each client based on what similar clients
     bought.
-
 -   Detect which transactions are likely to be fraudulent.
-
 -   Forecast next year's revenue.
 
 Whatever the reason, you have decided to learn Machine Learning and
 implement it in your projects. Great idea!
-
-
-
 
 Objective and Approach
 ======================
@@ -107,15 +98,12 @@ laptop, I highly recommend you experiment with the code examples
 available online as Jupyter notebooks at
 [*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
 
-
-
-
 Prerequisites
 =============
 
 This course assumes that you have some Python
 programming experience and that you are familiar with Python's main
-scientific libraries---in particular, [NumPy](http://numpy.org/),
+scientific libraries in particular, [NumPy](http://numpy.org/),
 [pandas](http://pandas.pydata.org/), and
 [Matplotlib](http://matplotlib.org/).
 
@@ -137,16 +125,12 @@ If you are not familiar with Python's scientific libraries, the provided
 Jupyter notebooks include a few tutorials. There is also a quick math
 tutorial for linear algebra.
 
-
-
-
 Roadmap
 =======
 
-This course is organized in two parts. [Part I, *The
-Fundamentals of [Machine
-Learning]*]
-covers the following topics:
+This course is organized in two parts. 
+
+**Part I, The Fundamentals of Machine Learning** covers the following topics:
 
 -   What Machine Learning is, what problems it tries to solve, and the
     main categories and fundamental concepts of its systems
@@ -176,9 +160,7 @@ covers the following topics:
 -   Other unsupervised learning techniques, including clustering,
     density estimation, and anomaly detection
 
-[Part II, *Neural Networks and Deep
-Learning*]
-covers the following topics:
+**Part II, Neural Networks and Deep Learning** covers the following topics:
 
 -   What neural nets are and what they're good for
 
@@ -210,120 +192,10 @@ Don't jump into deep waters too hastily: while Deep Learning is no doubt
 one of the most exciting areas in Machine Learning, you should master
 the fundamentals first. Moreover, most problems can be solved quite well
 using simpler techniques such as Random Forests and Ensemble methods
-(discussed in
-[Part I]
+
 Deep Learning is best suited for complex problems such as image
 recognition, speech recognition, or natural language processing,
 provided you have enough data, computing power, and patience.
-
-
-
-
-
-Changes in the Second Edition
-=============================
-
-This second edition has six main objectives:
-
-1.  Cover additional ML topics: more unsupervised learning techniques
-    (including clustering, anomaly detection, density estimation, and
-    mixture models); more techniques for training deep nets (including
-    self-normalized networks); additional computer vision techniques
-    (including Xception, SENet, object detection with YOLO, and semantic
-    segmentation using R-CNN); handling sequences using convolutional
-    neural networks (CNNs, including WaveNet); natural language
-    processing using recurrent neural networks (RNNs), CNNs, and
-    Transformers; and GANs.
-
-2.  Cover additional libraries and APIs (Keras, the Data API, TF-Agents
-    for Reinforcement Learning) and training and deploying TF models at
-    scale using the Distribution Strategies API, TF-Serving, and Google
-    Cloud AI Platform. Also briefly introduce TF Transform, TFLite, TF
-    Addons/Seq2Seq, and TensorFlow.js.
-
-3.  Discuss some of the latest important results from Deep Learning
-    research.
-
-4.  Migrate all TensorFlow labs to TensorFlow 2, and use
-    TensorFlow's implementation of the Keras API (tf.keras) whenever
-    possible.
-
-5.  Update the code examples to use the latest versions of Scikit-Learn,
-    NumPy, pandas, Matplotlib, and other libraries.
-
-6.  Clarify some sections and fix some errors, thanks to plenty of great
-    feedback from readers.
-
-Some labs were added, others were rewritten, and a few were
-reordered. See
-[*https://homl.info/changes2*](https://homl.info/changes2) for more
-details on what changed in the second edition.
-
-
-
-
-Other Resources
-===============
-
-Many excellent resources are available to learn
-about Machine Learning. For example, Andrew Ng's [ML course on
-Coursera](https://homl.info/ngcourse) is amazing, although it requires a
-significant time investment (think months).
-
-There are also many interesting websites about Machine Learning,
-including of course Scikit-Learn's exceptional [User
-Guide](https://homl.info/skdoc). You may also enjoy
-[Dataquest](https://www.dataquest.io/), which provides very nice
-interactive tutorials, and ML blogs such as those listed on
-[Quora](https://homl.info/1). Finally, the [Deep Learning
-website](http://deeplearning.net/) has a good list of resources to check
-out to learn more.
-
-There are many other introductory books about Machine Learning. In
-particular:
-
--   Joel Grus's [*Data Science from
-    Scratch*](https://homl.info/grusbook){.orm:hideurl} (O'Reilly)
-    presents the fundamentals of Machine Learning and implements some of
-    the main algorithms in pure Python (from scratch, as the name
-    suggests).
-
--   Stephen Marsland's *Machine Learning: An Algorithmic Perspective*
-    (Chapman & Hall) is a great introduction to Machine Learning,
-    covering a wide range of topics in depth with code examples in
-    Python (also from scratch, but using NumPy).
-
--   Sebastian Raschka's *Python Machine Learning* (Packt Publishing) is
-    also a great introduction to Machine Learning and leverages Python
-    open source libraries (Pylearn 2 and Theano).
-
--   François Chollet's *Deep Learning with Python* (Manning) is a very
-    practical course that covers a large range of topics in a clear and
-    concise way, as you might expect from the author of the excellent
-    Keras library. It favors code examples over mathematical theory.
-
--   Andriy Burkov's *The Hundred-Page Machine Learning Course* is very
-    short and covers an impressive range of topics, introducing them in
-    approachable terms without shying away from the math equations.
-
--   Yaser S. Abu-Mostafa, Malik Magdon-Ismail, and Hsuan-Tien Lin's
-    *Learning from Data* (AMLBook) is a rather theoretical approach to
-    ML that provides deep insights, in particular on the bias/variance
-    trade-off (see
-    [Lab 4]
-
--   Stuart Russell and Peter Norvig's *Artificial Intelligence: A Modern
-    Approach*, 3rd Edition (Pearson), is a great (and huge) course
-    covering an incredible amount of topics, including Machine Learning.
-    It helps put ML into perspective.
-
-Finally, joining ML competition websites such as
-[Kaggle.com](https://www.kaggle.com/){.orm:hideurl} will allow you to
-practice your skills on real-world problems, with help and insights from
-some of the best ML professionals out there.
-
-
-
 
 Conventions Used in This Course
 =============================
@@ -353,23 +225,13 @@ The following typographical conventions are used in this course:
 
 
 ###### Tip
-
 This element signifies a tip or suggestion.
 
-
-
 ###### Note
-
 This element signifies a general note.
 
-
-
 ###### Warning
-
 This element indicates a warning or caution.
-
-
-
 
 
 Code Examples
@@ -411,219 +273,11 @@ def square(x):
 result = square(3)  # result is 9
 ```
 
+#### References
 
-
-
-Using Code Examples
-===================
-
-This course is here to help you get your job done. In general, if example
-code is offered with this course, you may use it in your programs and
-documentation. You do not need to contact us for permission unless
-you're reproducing a significant portion of the code. For example,
-writing a program that uses several chunks of code from this course does
-not require permission. Selling or distributing a CD-ROM of examples
-from O'Reilly books does require permission. Answering a question by
-citing this course and quoting example code does not require permission.
-Incorporating a significant amount of example code from this course into
-your product's documentation does require permission.
-
-We appreciate, but do not require, attribution. An attribution usually
-includes the title, author, publisher, and ISBN. For example: "*Hands-On
-Machine Learning with Scikit-Learn, Keras, and TensorFlow*, 2nd Edition,
-by Aurélien Géron (O'Reilly). Copyright 2019 Kiwisoft S.A.S.,
-978-1-492-03264-9." If you feel your use of code examples falls outside
-fair use or the permission given above, feel free to contact us at
-[*permissions\@oreilly.com*](mailto:permissions@oreilly.com){.email}.
-
-
-
-
-O'Reilly Online Learning
-========================
-
-
-###### Note
-
-For almost 40 years, [*O'Reilly
-Media*](http://oreilly.com/){.orm:hideurl} has provided technology and
-business training, knowledge, and insight to help companies succeed.
-
-
-Our unique network of experts and innovators share their knowledge and
-expertise through books, articles, conferences, and our online learning
-platform. O'Reilly's online learning platform gives you on-demand access
-to live training courses, in-depth learning paths, interactive coding
-environments, and a vast collection of text and video from O'Reilly and
-200+ other publishers. For more information, please visit
-[*http://oreilly.com*](http://oreilly.com/){.orm:hideurl}.
-
-
-
-
-How to Contact Us
-=================
-
-Please address comments and
-questions concerning this course to the publisher:
-
--   O'Reilly Media, Inc.
--   1005 Gravenstein Highway North
--   Sebastopol, CA 95472
--   800-998-9938 (in the United States or Canada)
--   707-829-0515 (international or local)
--   707-829-0104 (fax)
-
-We have a web page for this course, where we list errata, examples, and
-any additional information. You can access this page at
-[*https://homl.info/oreilly2*](https://homl.info/oreilly2).
-
-To comment or ask technical questions about this course, send email to
-[*bookquestions\@oreilly.com*](mailto:bookquestions@oreilly.com){.email}.
-
-For more information about our books, courses, conferences, and news,
-see our website at [*http://www.oreilly.com*](http://www.oreilly.com/).
-
-Find us on Facebook:
-[*http://facebook.com/oreilly*](http://facebook.com/oreilly)
-
-Follow us on Twitter:
-[*http://twitter.com/oreillymedia*](http://twitter.com/oreillymedia)
-
-Watch us on YouTube:
-[*http://www.youtube.com/oreillymedia*](http://www.youtube.com/oreillymedia)
-
-
-
-
-Acknowledgments
-===============
-
-Never in my wildest dreams did I imagine that the first edition of this
-course would get such a large audience. I received so many messages from
-readers, many asking questions, some kindly pointing out errata, and
-most sending me encouraging words. I cannot express how grateful I am to
-all these readers for their tremendous support. Thank you all so very
-much! Please do not hesitate to [file issues on
-GitHub](https://homl.info/issues2) if you find errors in the code
-examples (or just to ask questions), or to submit
-[errata](https://homl.info/errata2) if you find errors in the text. Some
-readers also shared how this course helped them get their first job, or
-how it helped them solve a concrete problem they were working on. I find
-such feedback incredibly motivating. If you find this course helpful, I
-would love it if you could share your story with me, either privately
-(e.g., via [LinkedIn](https://www.linkedin.com/in/aurelien-geron/)) or
-publicly (e.g., in a tweet or through an [Amazon
-review](https://homl.info/amazon2)).
-
-I am also incredibly thankful to all the amazing people who took time
-out of their busy lives to review my course with such care. In particular,
-I would like to thank François Chollet for reviewing all the labs
-based on Keras and TensorFlow and giving me some great in-depth
-feedback. Since Keras is one of the main additions to this second
-edition, having its author review the course was invaluable. I highly
-recommend François's course [*Deep Learning with
-Python*](https://homl.info/cholletbook) (Manning): it has the
-conciseness, clarity, and depth of the Keras library itself. Special
-thanks as well to Ankur Patel, who reviewed every lab of this second
-edition and gave me excellent feedback, in particular on
-[Lab 9]
-which covers unsupervised learning techniques. He could write a whole
-course on the topic... oh, wait, he did! Do check out [*Hands-On
-Unsupervised Learning Using Python: How to Build Applied Machine
-Learning Solutions from Unlabeled Data*](https://homl.info/patel)
-(O'Reilly). Huge thanks as well to Olzhas Akpambetov, who reviewed all
-the labs in the second part of the course, tested much of the code,
-and offered many great suggestions. I'm grateful to Mark Daoust, Jon
-Krohn, Dominic Monn, and Josh Patterson for reviewing the second part of
-this course so thoroughly and offering their expertise. They left no stone
-unturned and provided amazingly useful feedback.
-
-While writing this second edition, I was fortunate enough to get plenty
-of help from members of the TensorFlow team---in particular Martin
-Wicke, who tirelessly answered dozens of my questions and dispatched the
-rest to the right people, including Karmel Allison, Paige Bailey, Eugene
-Brevdo, William Chargin, Daniel "Wolff" Dobson, Nick Felt, Bruce
-Fontaine, Goldie Gadde, Sandeep Gupta, Priya Gupta, Kevin Haas,
-Konstantinos Katsiapis ,Viacheslav Kovalevskyi, Allen Lavoie, Clemens
-Mewald, Dan Moldovan, Sean Morgan, Tom O'Malley, Alexandre Passos, André
-Susano Pinto, Anthony Platanios, Oscar Ramirez, Anna Revinskaya, Saurabh
-Saxena, Ryan Sepassi, Jiri Simsa, Xiaodan Song, Christina Sorokin,
-Dustin Tran, Todd Wang, Pete Warden (who also reviewed the first
-edition) Edd Wilder-James, and Yuefeng Zhou, all of whom were
-tremendously helpful. Huge thanks to all of you, and to all other
-members of the TensorFlow team, not just for your help, but also for
-making such a great library! Special thanks to Irene Giannoumis and
-Robert Crowe of the TFX team for reviewing Labs
-[13]
-and
-[19]
-in depth.
-
-Many thanks as well to O'Reilly's fantastic staff, in particular Nicole
-Taché, who gave me insightful feedback and was always cheerful,
-encouraging, and helpful: I could not dream of a better editor. Big
-thanks to Michele Cronin as well, who was very helpful (and patient) at
-the start of this second edition, and to Kristen Brown, the production
-editor for the second edition, who saw it through all the steps (she
-also coordinated fixes and updates for each reprint of the first
-edition). Thanks as well to Rachel Monaghan and Amanda Kersey for their
-thorough copyediting (respectively for the first and second edition),
-and to Johnny O'Toole who managed the relationship with Amazon and
-answered many of my questions. Thanks to Marie Beaugureau, Ben Lorica,
-Mike Loukides, and Laurel Ruma for believing in this project and helping
-me define its scope. Thanks to Matt Hacker and all of the Atlas team for
-answering all my technical questions regarding formatting, AsciiDoc, and
-LaTeX, and thanks to Nick Adams, Rebecca Demarest, Rachel Head, Judith
-McConville, Helen Monroe, Karen Montgomery, Rachel Roumeliotis, and
-everyone else at O'Reilly who contributed to this course.
-
-I would also like to thank my former Google colleagues, in particular
-the YouTube video classification team, for teaching me so much about
-Machine Learning. I could never have started the first edition without
-them. Special thanks to my personal ML gurus: Clément Courbet, Julien
-Dubois, Mathias Kende, Daniel Kitachewsky, James Pack, Alexander Pak,
-Anosh Raj, Vitor Sessak, Wiktor Tomczak, Ingrid von Glehn, and Rich
-Washington. And thanks to everyone else I worked with at YouTube and in
-the amazing Google research teams in Mountain View. Many thanks as well
-to Martin Andrews, Sam Witteveen, and Jason Zaman for welcoming me into
-their Google Developer Experts group in Singapore, with the kind support
-of Soonson Kwon, and for all the great discussions we had about Deep
-Learning and TensorFlow. Anyone interested in Deep Learning in Singapore
-should definitely join their [Deep Learning Singapore
-meetup](https://homl.info/meetupsg). Jason deserves special thanks for
-sharing some of his TFLite expertise for Lab 19!
-
-I will never forget the kind people who reviewed the first edition of
-this course, including David Andrzejewski, Lukas Biewald, Justin Francis,
-Vincent Guilbeau, Eddy Hung, Karim Matrah, Grégoire Mesnil, Salim
-Sémaoune, Iain Smears, Michel Tessier, Ingrid von Glehn, Pete Warden,
-and of course my dear brother Sylvain. Special thanks to Haesun Park,
-who gave me plenty of excellent feedback and caught several errors while
-he was writing the Korean translation of the first edition of this course.
-He also translated the Jupyter notebooks into Korean, not to mention
-TensorFlow's documentation. I do not speak Korean, but judging by the
-quality of his feedback, all his translations must be truly excellent!
-Haesun also kindly contributed some of the solutions to the exercises in
-this second edition.
-
-Last but not least, I am infinitely grateful to my beloved wife,
-Emmanuelle, and to our three wonderful children, Alexandre, Rémi, and
-Gabrielle, for encouraging me to work hard on this course. I'm also
-thankful to them for their insatiable curiosity: explaining some of the
-most difficult concepts in this course to my wife and children helped me
-clarify my thoughts and directly improved many parts of it. And they
-keep bringing me cookies and coffee! What more can one dream of?
-
-
-
-^[1]
-
-Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
+^[1] Geoffrey E. Hinton et al., "A Fast Learning Algorithm for Deep Belief
 Nets," *Neural Computation* 18 (2006): 1527--1554.
 
-^[2]
-
-Despite the fact that Yann LeCun's deep convolutional neural networks
+^[2] Despite the fact that Yann LeCun's deep convolutional neural networks
 had worked well for image recognition since the 1990s, although they
 were not as general-purpose.

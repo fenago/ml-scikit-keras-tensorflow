@@ -1984,7 +1984,7 @@ Exercises
 11. Use one of the recent language models (e.g., BERT) to generate more
     convincing Shakespearean text.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

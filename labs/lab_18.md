@@ -2898,7 +2898,7 @@ Exercises
     try to use RL to make the agent learn on its own how to use the
     motors to achieve that goal. Have fun!
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

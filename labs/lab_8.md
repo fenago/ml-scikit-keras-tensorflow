@@ -973,7 +973,7 @@ Exercises
     using other dimensionality reduction algorithms such as PCA, LLE, or
     MDS and compare the resulting visualizations.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

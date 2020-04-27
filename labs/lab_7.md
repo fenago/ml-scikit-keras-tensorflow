@@ -994,7 +994,7 @@ Exercises
     predictions. How does it compare to the voting classifier you
     trained earlier?
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

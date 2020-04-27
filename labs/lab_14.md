@@ -2206,7 +2206,7 @@ Exercises
     tutorial](https://homl.info/styletuto). It is a fun way to generate
     art using Deep Learning.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 ^[1]
 David H. Hubel, “Single Unit Activity in Striate Cortex of Unrestrained

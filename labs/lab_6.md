@@ -591,7 +591,7 @@ Exercises
         1.5% higher). Congratulations, you have trained a Random Forest
         classifier!
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

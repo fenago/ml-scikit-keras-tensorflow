@@ -2032,7 +2032,7 @@ Exercises
     2.  Try using a different optimizer with a different learning rate
         for the upper layers and the lower layers.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 

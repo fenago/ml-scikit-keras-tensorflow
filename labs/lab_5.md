@@ -1008,7 +1008,7 @@ Exercises
 
 10. Train an SVM regressor on the California housing dataset.
 
-Solutions to these exercises are available in the solutions file.
+**Solution for the exercises are available in the solutions file.**
 
 
 
