@@ -67,7 +67,7 @@ export_graphviz(
 Then you can use the `dot` command-line tool from the Graphviz package
 to convert this *.dot* file to a variety of formats, such as PDF or
 PNG.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) This command line converts the *.dot* file to a *.png*
+^[1] This command line converts the *.dot* file to a *.png*
 image file:
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -210,7 +210,7 @@ array([1])
 
 Perfect! Notice that the estimated probabilities would be identical
 anywhere else in the bottom-right rectangle of
-[Figure 6-2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html#decision_tree_decision_boundaries_plot)---for
+[Figure 6-2] for
 example, if the petals were 6 cm long and 1.5 cm wide (even though it
 seems obvious that it would most likely be an *Iris virginica* in this
 case).
@@ -265,7 +265,7 @@ optimal.
 
 Unfortunately, finding the optimal tree is known to
 be an *NP-Complete*
-problem: ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) it requires *O*(exp(*m*)) time, making the problem
+problem: ^[2] it requires *O*(exp(*m*)) time, making the problem
 intractable even for small training sets. This is why we must settle for
 a "reasonably good" solution.
 
@@ -281,7 +281,7 @@ Decision Tree from the root to a leaf. Decision Trees generally are
 approximately balanced, so traversing the Decision Tree requires going
 through roughly *O*(log~2~(*m*))
 nodes.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) Since each node only requires checking the value of
+^[3] Since each node only requires checking the value of
 one feature, the overall prediction complexity is *O*(log~2~(*m*)),
 independent of the number of features. So predictions are very fast,
 even when dealing with large training sets.
@@ -310,7 +310,7 @@ a wide variety of domains,
 including Shannon's
 *information theory*, where it measures the average information content
 of a
-message: ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) entropy is zero when all messages are identical. In
+message: ^[4] entropy is zero when all messages are identical. In
 Machine Learning, entropy is frequently used as an
 [impurity] measure: a set's entropy is zero when it
 contains instances of only one class. [Equation
@@ -334,7 +334,7 @@ However, when they differ, Gini impurity tends to isolate the most
 frequent class in its own branch of the tree, while entropy tends to
 produce slightly more balanced
 trees.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html)
+^[5]
 
 
 
@@ -513,7 +513,7 @@ As you can see, it looks very different from the previous Decision Tree
 ([Figure 6-2]
 Actually, since the training algorithm used by
 Scikit-Learn is
-stochastic, ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) you may [get very] different models
+stochastic, ^[6] you may [get very] different models
 even on the same training data (unless you set the
 [`random_state`] hyperparameter).
 

@@ -132,7 +132,7 @@
         possible word. Since common words are usually not very
         important, you'll want to use TF-IDF to reduce their weight.
         Instead of counting words, it is also common to count *n*-grams,
-        which are sequences of *n* consecutive words⁠---nice and simple.
+        which are sequences of *n* consecutive words⁠ nice and simple.
         Alternatively, you can encode each word using word embeddings,
         possibly pretrained. Rather than encoding words, it is also
         possible to encode each letter, or subword tokens (e.g.,

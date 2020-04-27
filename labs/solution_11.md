@@ -53,7 +53,7 @@
     (except in recurrent nets). The logistic activation function is also
     useful in the output layer when you need to estimate a probability
     (e.g., for binary classification), but is rarely used in hidden
-    layers (there are exceptions---for example, for the coding layer of
+    layers (there are exceptions for example, for the coding layer of
     variational autoencoders; see
     [Lab 17]
     Finally, the softmax activation function is useful in the output

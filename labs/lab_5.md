@@ -391,7 +391,7 @@ The `LinearSVC` class is based on the `liblinear`
 library, which implements an [optimized algorithm](https://homl.info/13)
 for linear
 SVMs.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) It does not support the kernel trick, but it scales
+^[1] It does not support the kernel trick, but it scales
 almost linearly with the number of training instances and the number of
 features. Its training time complexity is roughly *O*(*m* × *n*).
 
@@ -404,7 +404,7 @@ The `SVC` class is based on the `libsvm` library,
 which implements [an algorithm](https://homl.info/14) that supports the
 kernel
 trick.
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) The training time complexity is usually between
+^[2] The training time complexity is usually between
 *O*(*m*^2^ × *n*) and *O*(*m*^3^ × *n*). Unfortunately, this means that
 it gets dreadfully slow when the number of training instances gets large
 (e.g., hundreds of thousands of instances). This algorithm is perfect
@@ -549,7 +549,7 @@ petal length). The decision boundary is the set of points where the
 decision function is equal to 0: it is the intersection of two planes,
 which is a straight line (represented by the thick solid
 line).
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html)
+^[3]
 
 
 ![](./images/mls2_0512.png)
@@ -614,7 +614,7 @@ differentiable functions.
 
 To get the soft margin objective, we need to 
 introduce a *slack variable* *ζ*^(*i*)^ ≥ 0 for each
-instance: ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) *ζ*^(*i*)^ measures how much the *i*^th^ instance is
+instance: ^[4] *ζ*^(*i*)^ measures how much the *i*^th^ instance is
 allowed to violate the margin. We now have two conflicting objectives:
 make the slack variables as small as possible to reduce the margin
 violations, and make ½ **w**^⊺^ **w** as small as possible to increase
@@ -645,7 +645,7 @@ Such problems are known as *Quadratic Programming*
 problems by using a variety of techniques that are outside the scope of
 this
 course.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html)
+^[5]
 
 
 The general problem formulation is given by [Equation
@@ -714,7 +714,7 @@ possible to express a different but closely related problem, called its
 typically gives a lower bound to the solution of the primal problem, but
 under some conditions it can have the same solution as the primal
 problem. Luckily, the SVM problem happens to meet these
-conditions, ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) so you can choose to solve the primal problem or the
+conditions, ^[6] so you can choose to solve the primal problem or the
 dual problem; both will have the same solution. [Equation
 5-6]
 shows the dual form of the linear SVM objective (if you are interested
@@ -780,7 +780,7 @@ x_{2} \\
 Notice that the transformed vector is 3D instead of 2D. Now let's look
 at what happens to a couple of 2D vectors, **a** and **b**, if we apply
 this second-degree polynomial mapping and then compute the dot
-product^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) of the transformed vectors (See [Equation
+product^[7] of the transformed vectors (See [Equation
 5-9]
 
 
@@ -961,9 +961,9 @@ you can still use Gradient Descent using any
 
 It is also possible to implement online kernelized SVMs, as described in
 the papers ["Incremental and Decremental Support Vector Machine
-Learning"](https://homl.info/17)^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) and ["Fast Kernel Classifiers with Online and Active
+Learning"](https://homl.info/17)^[8] and ["Fast Kernel Classifiers with Online and Active
 Learning"](https://homl.info/18).
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) These kernelized SVMs are implemented in Matlab and
+^[9] These kernelized SVMs are implemented in Matlab and
 C++. For large-scale nonlinear problems, you may want to consider using
 neural networks instead (see
 [Part II]

@@ -108,7 +108,7 @@ constant 3, the third operation represents the power operation (`**`),
 and the final operation represents the output of this function (it is an
 identity operation, meaning it will do nothing more than copy the output
 of the addition
-operation^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html)
+operation^[1]
 ). Each operation has a list of input and output
 tensors that you can easily access using the operation's `inputs` and
 `outputs` attributes. For example, let's get the list of inputs and
@@ -147,7 +147,7 @@ graph's `get_operation_by_name()` or `get_tensor_by_name()` methods:
 
 The concrete function also contains the function definition (represented
 as a protocol
-buffer^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app07.html)
+buffer^[2]
 ), which includes the function's signature. This
 signature allows the concrete function to know which placeholders to
 feed with the input values, and which tensors to return:
@@ -422,7 +422,7 @@ Using TF Functions with tf.keras (or Not)
 By default, any custom function, layer, or model you use with tf.keras
 will automatically be converted to a TF Function; you do not need to do
 anything at all! However, in some cases you may want to deactivate this
-automatic conversion---for example, if your custom code cannot be turned
+automatic conversion for example, if your custom code cannot be turned
 into a TF Function, or if you just want to debug your code, which is
 much easier in eager mode. To do this, you can simply pass
 `dynamic=True` when creating the model or any of its layers:

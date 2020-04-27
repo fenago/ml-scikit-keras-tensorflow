@@ -74,7 +74,7 @@
     custom training loop whenever possible: writing a custom training
     loop is more error-prone, and it will be harder to reuse the custom
     code you write. However, in some cases writing a custom training
-    loop is necessary⁠---for example, if you want to use different
+    loop is necessary⁠ for example, if you want to use different
     optimizers for different parts of your neural network, like in the
     [Wide & Deep paper](https://homl.info/widedeep). A custom training
     loop can also be useful when debugging, or when trying to understand

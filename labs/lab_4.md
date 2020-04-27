@@ -165,7 +165,7 @@ the mean squared error (MSE) than the RMSE, and it leads to the same
 result (because the value that minimizes a function also minimizes its
 square
 root).
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+^[1]
 
 
 The MSE of a Linear Regression hypothesis *h*~**θ**~ on a training set
@@ -272,7 +272,7 @@ plt.show()
 ![](./images/mls2_0402.png)
 
 Performing Linear Regression using Scikit-Learn is
-simple: ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+simple: ^[2]
 
 
 ``` {data-type="programlisting" code-language="pycon"}
@@ -432,7 +432,7 @@ line segment joining them never crosses the curve. This implies that
 there are no local minima, just one global minimum. It is also a
 continuous function with a slope that never changes
 abruptly.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html) These two facts have a great consequence: Gradient
+^[3] These two facts have a great consequence: Gradient
 Descent is guaranteed to approach arbitrarily close the global minimum
 (if you wait long enough and if the learning rate is not too high).
 
@@ -444,7 +444,7 @@ shows Gradient Descent on a training set where features 1 and 2 have the
 same scale (on the left), and on a training set where feature 1 has much
 smaller values than feature 2 (on the
 right).
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+^[4]
 
 
 ![](./images/mls2_0407.png)
@@ -534,7 +534,7 @@ Once you have the gradient vector, which points uphill, just go in the
 opposite direction to go downhill. This means subtracting
 ∇~**θ**~MSE(**θ**) from **θ**. This is where the learning rate *η* comes
 into
-play: ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html) multiply the gradient vector by *η* to determine the
+play: ^[5] multiply the gradient vector by *η* to determine the
 size of the downhill step ([Equation
 4-7]
 
@@ -719,7 +719,7 @@ to ensure that the parameters get pulled toward the global optimum, on
 average. A simple way to ensure this is to shuffle the instances during
 training (e.g., pick each instance randomly, or shuffle the training set
 at the beginning of each epoch). If you do not shuffle the
-instances---for example, if the instances are sorted by label---then SGD
+instances for example, if the instances are sorted by label---then SGD
 will start by optimizing for one label, then the next, and so on, and it
 will not settle close to the global minimum.
 
@@ -782,7 +782,7 @@ schedule.
 ![](./images/mls2_0411.png)
 
 Let's compare the algorithms we've discussed so far for Linear
-Regression^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html) (recall that *m* is the number of training instances
+Regression^[6] (recall that *m* is the number of training instances
 and *n* is the number of features); see
 [Table 4-1]
 
@@ -820,7 +820,7 @@ linear model on this extended set of features. This technique is called
 
 Let's look at an example. First, let's generate some nonlinear data,
 based on a simple *quadratic
-equation*^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html) (plus some noise; see
+equation*^[7] (plus some noise; see
 [Figure 4-12]
 
 ``` {data-type="programlisting" code-language="python"}
@@ -1031,7 +1031,7 @@ expressed as the sum of three very different errors:
     such as assuming that the data is linear when it is actually
     quadratic. A high-bias model is most likely to underfit the training
     data.
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+^[8]
     
 
 *Variance*
@@ -1060,11 +1060,7 @@ trade-off.
 Regularized Linear Models
 =========================
 
-As we saw in Labs
-[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#landscape_lab){.totri-footnote}
-and
-[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html#project_lab){.totri-footnote},
-a good way to reduce overfitting is to regularize the model (i.e., to
+A good way to reduce overfitting is to regularize the model (i.e., to
 constrain it): the fewer degrees of freedom it has, the harder it will
 be for it to overfit the data. A simple way to regularize a polynomial
 model is to reduce the number of polynomial degrees.
@@ -1109,7 +1105,7 @@ result is a flat line going through the data's mean. [Equation
 4-8]
 presents the Ridge Regression cost
 function.
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+^[9]
 
 
 
@@ -1123,7 +1119,7 @@ Note that the bias term *θ*~0~ is not regularized (the sum starts at *i*
 to *θ*~*n*~), then the regularization term is equal to ½(∥ **w**
 ∥~2~)^2^, where ∥ **w** ∥~2~ represents the ℓ~2~ norm of the weight
 vector.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+^[10]
 For Gradient Descent, just add *α***w** to the MSE gradient vector
 ([Equation
 4-6]
@@ -1155,7 +1151,7 @@ pros and cons are the same. [Equation
 4-9]
 shows the closed-form solution, where **A** is the
 (*n* + 1) × (*n* + 1) *identity
-matrix*, ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+matrix*, ^[11]
 except with a 0 in the top-left cell, corresponding to the bias term.
 
 
@@ -1178,7 +1174,7 @@ array([[1.55071465]])
 ```
 
 And using Stochastic Gradient
-Descent: ^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+Descent: ^[12]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> sgd_reg = SGDRegressor(penalty="l2")
@@ -1278,7 +1274,7 @@ get smaller and smaller, so it will converge).
 The Lasso cost function is
 not differentiable at *θ*~*i*~ = 0 (for *i* = 1, 2, ⋯, *n*), but
 Gradient Descent still works fine if you use a *subgradient vector*
-**g**^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+**g**^[13]
 instead when any *θ*~*i*~ = 0. [Equation
 4-11]
 shows a subgradient vector equation you can use for Gradient Descent
@@ -1615,7 +1611,7 @@ log_reg.fit(X, y)
 
 Let's look at the model's estimated probabilities for flowers with petal
 widths varying from 0 cm to 3 cm
-([Figure 4-23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html#logistic_regression_plot)): ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+([Figure 4-23]
 
 ``` {data-type="programlisting" code-language="python"}
 X_new = np.linspace(0, 3, 1000).reshape(-1, 1)
@@ -1656,7 +1652,7 @@ is an *Iris virginica*. The dashed line represents the points where the
 model estimates a 50% probability: this is the model's decision
 boundary. Note that it is a linear
 boundary.
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+^[16]
 Each parallel line represents the points where the model outputs a
 specific probability, from 15% (bottom left) to 90% (top right). All the
 flowers beyond the top-right line have an over 90% chance of being *Iris

@@ -209,7 +209,7 @@ continues to pull out items randomly from the buffer until it is empty.
 You must specify the buffer size, and it is important to make it large
 enough, or else shuffling will not be very
 effective.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Just don't exceed the amount of RAM you have, and even
+^[1] Just don't exceed the amount of RAM you have, and even
 if you have plenty of it, there's no need to go beyond the dataset's
 size. You can provide a random seed if you want the same random order
 every time you run your program. For example, the following code creates
@@ -457,7 +457,7 @@ By calling `prefetch(1)` at
 the end, we are creating a dataset that will do its best to always be
 one batch
 ahead.
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) In other words, while our training algorithm is
+^[2] In other words, while our training algorithm is
 working on one batch, the dataset will already be working in parallel on
 getting the next batch ready (e.g., reading the data from disk and
 preprocessing it). This can improve performance dramatically, as is
@@ -469,7 +469,7 @@ we can exploit multiple cores on the CPU and hopefully make preparing
 one batch of data shorter than running a training step on the GPU: this
 way the GPU will be almost 100% utilized (except for the data transfer
 time from the CPU to the
-GPU^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+GPU^[3]
 ), and training will run much faster.
 
 ![](./images/mls2_1303.png)
@@ -528,10 +528,10 @@ test_set = csv_reader_dataset(test_filepaths)
 
 And now we can simply build and train a Keras model using these
 datasets.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) All we need to do is pass the training and validation
+^[4] All we need to do is pass the training and validation
 datasets to the `fit()` method, instead of `X_train, y_train`,
 `X_valid`, and
-`y_valid`: ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+`y_valid`: ^[5]
 
 
 ``` {data-type="programlisting" code-language="python"}
@@ -695,7 +695,7 @@ message Person {
 
 This definition says we are using version 3 of the protobuf format, and
 it specifies that each `Person`
-object^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) may (optionally) have a `name` of type `string`, an
+object^[6] may (optionally) have a `name` of type `string`, an
 `id` of type `int32`, and zero or more `email` fields, each of type
 `string`. The numbers `1`, `2`, and `3` are the field identifiers: they
 will be used in each record's binary representation. Once you have a
@@ -740,7 +740,7 @@ over the network. When reading or receiving this binary data, we can
 parse it using the `ParseFromString()` method, and we get a copy of the
 object that was
 serialized.
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+^[7]
 
 
 We could save the serialized `Person` object to a TFRecord file, then we
@@ -790,7 +790,7 @@ numerical fields, for a more efficient [encoding. A]
 a feature name to the corresponding feature value. And finally, an
 `Example` contains only a `Features`
 object.
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) Here is how you could create a `tf.train.Example`
+^[8] Here is how you could create a `tf.train.Example`
 representing the same person as earlier and write it to a TFRecord file:
 
 ``` {data-type="programlisting" code-language="python"}
@@ -1192,7 +1192,7 @@ The idea of using vectors to represent words dates back to the 1960s,
 and many sophisticated techniques have been used to generate useful
 vectors, including using neural networks. But things really took off in
 2013, when Tomáš Mikolov and other Google researchers published a
-[paper](https://homl.info/word2vec)^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html) describing an efficient technique to learn word
+[paper](https://homl.info/word2vec)^[9] describing an efficient technique to learn word
 embeddings using neural networks, significantly outperforming previous
 attempts. This allowed them to learn embeddings on a very large corpus
 of text: they trained a neural network to predict the words near any
@@ -1218,7 +1218,7 @@ example, although they correctly learn that Man is to King as Woman is
 to Queen, they also seem to learn that Man is to Doctor as Woman is to
 Nurse: quite a sexist bias! To be fair, this particular example is
 probably exaggerated, as was pointed out in a [2019
-paper](https://homl.info/fairembeds)^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+paper](https://homl.info/fairembeds)^[10]
 by Malvina Nissim et al. Nevertheless, ensuring fairness in Deep
 Learning algorithms is an important and active research topic.
 
@@ -1655,7 +1655,7 @@ Exercises
     `Example` protobuf with two features: the serialized image (use
     `tf.io.serialize_tensor()` to serialize each image), and the
     label.
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch13.html)
+^[11]
     Then use tf.data to create an efficient dataset for each set.
     Finally, use a Keras model to train these datasets, including a
     preprocessing layer to standardize each input feature. Try to make

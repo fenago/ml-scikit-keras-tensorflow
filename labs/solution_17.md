@@ -70,7 +70,7 @@
     distribution is typically similar to the training data. For example,
     since MNIST contains many images of each digit, the generative model
     would output roughly the same number of images of each digit. Some
-    generative models can be parametrized---for example, to generate
+    generative models can be parametrized for example, to generate
     only some kinds of outputs. An example of a generative autoencoder
     is the variational autoencoder.
 

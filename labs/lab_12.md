@@ -83,7 +83,7 @@ So what does TensorFlow offer? Here's a summary:
 
 TensorFlow offers many more features built on top of these core
 features: the most important is of course
-`tf.keras`, ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) but it also has data loading and preprocessing ops
+`tf.keras`, ^[1] but it also has data loading and preprocessing ops
 (`tf.data`, `tf.io`, etc.), image processing ops (`tf.image`), signal
 processing ops (`tf.signal`), and more (see
 [Figure 12-1]
@@ -103,14 +103,14 @@ well documented.
 At the lowest level, each TensorFlow operation (*op* for short) is
 implemented using highly efficient C++
 code.
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) Many operations have multiple
+^[2] Many operations have multiple
 implementations called *kernels*: each kernel is dedicated to a specific
 device type, such as CPUs, GPUs, or even TPUs
 (*tensor processing units*). As you may know, GPUs can dramatically
 speed up computations by splitting them into many smaller chunks and
 running them in parallel across many GPU threads. TPUs are even faster:
 they are custom ASIC chips built specifically for Deep Learning
-operations^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) (we will discuss how to use TensorFlow with GPUs or
+operations^[3] (we will discuss how to use TensorFlow with GPUs or
 TPUs in
 [Lab 19]
 
@@ -278,7 +278,7 @@ every time you call this operation. The same is true of
 Many functions and classes have aliases. For example, `tf.add()` and
 `tf.math.add()` are the same function. This allows TensorFlow to have
 concise names for the most common
-operations^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) while preserving well-organized packages.
+operations^[4] while preserving well-organized packages.
 
 
 
@@ -647,7 +647,7 @@ Let's walk through this code:
     divided by the batch size (not by the sum of weights, so this is
     *not* the weighted
     mean).
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+^[5]
      Other possible values are `"sum"` and `"none"`.
 
 -   The `call()` method takes the labels and predictions, computes all
@@ -780,7 +780,7 @@ they can be non-differentiable or have 0 gradients everywhere.
 That said, in most cases, defining a custom metric function is exactly
 the same as defining a custom loss function. In fact, we could even use
 the Huber loss function we created earlier as a
-metric;^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) it would work just fine (and persistence would also
+metric;^[6] it would work just fine (and persistence would also
 work the same way, in this case only saving the name of the function,
 `"huber_fn"`):
 
@@ -867,7 +867,7 @@ class HuberMetric(keras.metrics.Metric):
 ```
 
 Let's walk through this
-code: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+code: ^[7]
 
 -   The constructor uses the `add_weight()` method to create the
     variables needed to keep track of the metric's state over multiple
@@ -990,7 +990,7 @@ Let's walk through this code:
     `keras.activations.get()` function (it accepts functions, standard
     strings like `"relu"` or `"selu"`, or simply
     `None`).
-^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+^[8]
     
 
 -   The `build()` method's role is to create the layer's variables by
@@ -998,7 +998,7 @@ Let's walk through this code:
     method is called the first time the layer is used. At that point,
     Keras will know the shape of this layer's inputs, and it will pass
     it to the `build()`
-    method, ^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+    method, ^[9]
      which is often necessary to create some of the
     weights. For example, we need to know the number of neurons in the
     previous layer in order to create the connection weights matrix
@@ -1099,7 +1099,7 @@ creating custom model classes in
 [Lab 10]
 when we discussed the Subclassing
 API.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+^[10]
 It's straightforward: subclass the `keras.Model` class, create layers
 and variables in the constructor, and implement the `call()` method to
 do whatever you want the model to do. Suppose you want to build the
@@ -1270,7 +1270,7 @@ Let's go through this code:
     squared difference between the reconstruction and the inputs), and
     adds it to the model's list of losses using the `add_loss()`
     method.
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+^[11]
     Notice that we scale down the reconstruction loss by multiplying it
     by 0.05 (this is a hyperparameter you can tune). This ensures that
     the reconstruction loss does not dominate the main loss.
@@ -1398,7 +1398,7 @@ dz_dw2 = tape.gradient(z, w2) # RuntimeError!
 
 If you need to call `gradient()` more than once, you must make the tape
 persistent and delete it each time you are done with it to free
-resources: ^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+resources: ^[12]
 
 ``` {data-type="programlisting" code-language="python"}
 with tf.GradientTape(persistent=True) as tape:
@@ -1657,7 +1657,7 @@ There's a lot going on in this code, so let's walk through it:
 
 -   At the end of each epoch, we display the status bar again to make it
     look
-    complete^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+    complete^[13]
     and to print a line feed, and we reset the states of the mean loss
     and the metrics.
 
@@ -1688,15 +1688,11 @@ and it's easy to make a mistake. But on the bright side, you get full
 control, so it's your call.
 
 Now that you know how to customize any part of your
-models^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+models^[14]
 and training algorithms, let's see how you can use TensorFlow's
 automatic graph generation feature: it can speed up your custom code
 considerably, and it will also make it portable to any platform
-supported by TensorFlow (see
-[Lab 19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html#deployment_lab)). 
-
-
-
+supported by TensorFlow.
 
 
 TensorFlow Functions and Graphs
@@ -1771,7 +1767,7 @@ parallel when it can). As a result, a TF Function will usually run much
 faster than the original Python function, especially if it performs
 complex
 computations.
-^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+^[15]
 Most of the time you will not really need to know more than that: when
 you want to boost a Python function, just transform it into a TF
 Function. That's all!

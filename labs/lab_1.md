@@ -352,9 +352,8 @@ this: it is trained with many example emails along with their *class*
 Another typical task is to predict a *target*
 numeric value, such as the price of a car, given a set of *features*
 (mileage, age, brand, etc.) called *predictors*.
-This sort of task is called *regression*
-([Figure 1-6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html#regression_diagram)).
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) To train the system, you need to give it many examples
+This sort of task is called *regression*.
+To train the system, you need to give it many examples
 of cars, including both their predictors and their labels (i.e., their
 prices).
 
@@ -390,7 +389,7 @@ learning algorithms (covered in this course):
 -   Decision Trees and Random Forests
 
 -   Neural
-    networks^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
+    networks^[2]
     
 
 
@@ -407,10 +406,7 @@ The system tries to learn without a teacher.
 ![](./images/mls2_0107.png)
 
 Here are some of the most important unsupervised
-learning algorithms (most of these are covered in Labs
-[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch08.html#dimensionality_lab){.totri-footnote}
-and
-[9]
+learning algorithms (most of these are covered in Labs 8 and 9.
 
 -   Clustering
 
@@ -489,7 +485,7 @@ memory space, and in some cases it may also perform better.
 
 
 Yet another important unsupervised task is
-*anomaly detection*---for example, detecting unusual credit card
+*anomaly detection* for example, detecting unusual credit card
 transactions to prevent fraud, catching manufacturing defects, or
 automatically removing outliers from a dataset before feeding it to
 another learning algorithm. The system is shown mostly normal instances
@@ -538,7 +534,7 @@ A shows up in photos 1, 5, and 11, while another person B shows up in
 photos 2, 5, and 7. This is the unsupervised part of the algorithm
 (clustering). Now all the system needs is for you to tell it who these
 people are. Just add one label per
-person^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) and it is able to name everyone in every photo, which
+person^[4] and it is able to name everyone in every photo, which
 is useful for searching photos.
 
 Most semisupervised learning algorithms are combinations of unsupervised
@@ -817,7 +813,7 @@ role="presentation" style="text-align: center; position: relative;"}
 
 This model has two *model parameters*, *θ*~0~ and
 *θ*~1~.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) By tweaking these parameters, you can make your model
+^[5] By tweaking these parameters, you can make your model
 represent any linear function, as shown in
 [Figure 1-18]
 
@@ -873,10 +869,10 @@ somewhere around 4.85 + 22,587 × 4.91 × 10^-5^ = 5.96.
 To whet your appetite,
 [Example 1-1]
 shows the Python code that loads the data, prepares
-it, ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) creates a scatterplot for visualization, and then
+it, ^[6] creates a scatterplot for visualization, and then
 trains a linear model and makes a
 prediction.
-^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
+^[7]
 
 
 ##### [Example 1-1. ] Training and running a linear model using Scikit-Learn
@@ -1014,7 +1010,7 @@ published in 2001, Microsoft
 researchers Michele Banko and Eric Brill showed that very different
 Machine Learning algorithms, including fairly simple ones, performed
 almost identically well on a complex problem of natural language
-disambiguation^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) once they were given enough data (as you can see in
+disambiguation^[8] once they were given enough data (as you can see in
 [Figure 1-20]
 
 ![](./images/mls2_0120.png)
@@ -1027,7 +1023,7 @@ The idea that data matters more than algorithms for complex problems was
 further popularized by Peter Norvig et al. in a paper titled ["The
 Unreasonable Effectiveness of Data"](https://homl.info/7), published in
 2009.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
+^[10]
 It should be noted, however, that small- and medium-sized datasets are
 still very common, and it is not always easy or cheap to get extra
 training data⁠---so don't abandon algorithms just yet.
@@ -1457,7 +1453,7 @@ distance between the instances and the straight line is just noise,
 which can safely be ignored.
 
 In a [famous 1996
-paper](https://homl.info/8), ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
+paper](https://homl.info/8), ^[11]
 David Wolpert demonstrated that if you make
 absolutely no assumption about the data, then there is no reason to
 prefer one model over any other. This is called the *No Free Lunch*

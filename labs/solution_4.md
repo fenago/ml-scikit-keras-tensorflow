@@ -23,7 +23,7 @@
 3.  Gradient Descent cannot get stuck in a local minimum when training a
     Logistic Regression model because the cost function is
     convex.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+^[1]
     
 
 4.  If the optimization problem is convex (such as Linear Regression or
@@ -64,7 +64,7 @@
     is likely because your model is overfitting the training set. One
     way to try to fix this is to reduce the polynomial degree: a model
     with fewer degrees of freedom is less likely to overfit. Another
-    thing you can try is to regularize the model---for example, by
+    thing you can try is to regularize the model for example, by
     adding an ℓ~2~ penalty (Ridge) or an ℓ~1~ penalty (Lasso) to the
     cost function. This will also reduce the degrees of freedom of the
     model. Lastly, you can try to increase the size of the training set.

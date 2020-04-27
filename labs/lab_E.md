@@ -177,7 +177,7 @@ A very efficient training algorithm called
 *Contrastive Divergence* was [introduced in 2005 by Miguel Á.
 Carreira-Perpiñán and Geoffrey
 Hinton](https://homl.info/135).
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html) Here is how it works: for each training instance
+^[1] Here is how it works: for each training instance
 **x**, the algorithm starts by feeding it to the network by setting the
 state of the visible units to *x*~1~, *x*~2~, ⋯, *x*~*n*~. Then you
 compute the state of the hidden units by applying the stochastic
@@ -221,7 +221,7 @@ starting with the lower layers and then gradually moving up to the top
 layers. This led to the [groundbreaking article that kickstarted the
 Deep Learning tsunami in
 2006](https://homl.info/136).
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html)
+^[2]
 
 
 Just like RBMs, DBNs learn to reproduce the probability distribution of
@@ -290,7 +290,7 @@ randomly, but it will generally be appropriate for the image. If you
 generate a few hundred captions, the most frequently generated ones will
 likely be a good description of the
 image.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html)
+^[3]
 
 
 
@@ -353,7 +353,7 @@ as much as the winning neuron). Then the algorithm picks another
 training instance and repeats the process, again and again. This
 algorithm tends to make nearby neurons gradually specialize in similar
 inputs.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html)
+^[4]
 
 
 

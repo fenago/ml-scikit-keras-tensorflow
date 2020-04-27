@@ -75,7 +75,7 @@ early 2000s. It wasn't clear what caused the gradients to be so unstable
 when training a DNN, but some light was shed in a [2010
 paper](https://homl.info/47) by Xavier Glorot and Yoshua
 Bengio.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) The authors found a few suspects, including the
+^[1] The authors found a few suspects, including the
 combination of the
 popular 
 logistic sigmoid activation function and the weight initialization
@@ -115,7 +115,7 @@ gradients. We don't want the signal to die out, nor do we want it to
 explode and saturate. For the signal to flow properly, the authors argue
 that we need the variance of the outputs of each layer to be equal to
 the variance of its
-inputs, ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) and we need the gradients to have equal variance
+inputs, ^[2] and we need the gradients to have equal variance
 before and after flowing through a layer in the reverse direction
 (please check out the paper if you are interested in the mathematical
 details). It is actually not
@@ -152,7 +152,7 @@ training considerably, and it is one of the tricks that led to the
 success of Deep Learning.
 
 Some
-papers^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) have provided similar strategies for different
+papers^[3] have provided similar strategies for different
 activation functions. These strategies differ only by the scale of the
 variance and whether they use *fan*~avg~ or *fan*~in~, as shown in
 [Table 11-1]
@@ -221,7 +221,7 @@ training set. When this happens, it just keeps outputting zeros, and
 Gradient Descent does not affect it anymore because the gradient of the
 ReLU function is zero when its input is
 negative.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+^[4]
 
 To solve this problem, you may want to use a
 variant of the ReLU function, such as the *leaky ReLU*. This function is
@@ -231,7 +231,7 @@ The hyperparameter *α* defines how much the function "leaks": it is the
 slope of the function for *z* \< 0 and is typically set to 0.01. This
 small slope ensures that leaky ReLUs never die; they can go into a long
 coma, but they have a chance to eventually wake up. A [2015
-paper](https://homl.info/49)^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) compared several variants of the ReLU activation
+paper](https://homl.info/49)^[5] compared several variants of the ReLU activation
 function, and one of its conclusions was that the leaky variants always
 outperformed the strict ReLU activation function. In fact, setting *α* =
 0.2 (a huge leak) seemed to result in better performance than *α* = 0.01
@@ -252,7 +252,7 @@ datasets it runs the risk of overfitting the training set.
 Last but not least, a [2015 paper](https://homl.info/50) by Djork-Arné
 Clevert et
 al.
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) proposed a new
+^[6] proposed a new
 activation function called the
 *exponential linear unit* (ELU) that outperformed all the ReLU variants
 in the authors' experiments: training time was reduced, and the neural
@@ -297,7 +297,7 @@ compensates for that slow computation, but still, at test time an ELU
 network will be slower than a ReLU network.
 
 Then, a [2017
-paper](https://homl.info/selu)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) by Günter Klambauer et al. introduced
+paper](https://homl.info/selu)^[7] by Günter Klambauer et al. introduced
 the Scaled ELU (SELU) activation function: as
 its name suggests, it is a scaled variant of the ELU activation
 function. The authors showed that if you build a neural network composed
@@ -369,8 +369,7 @@ model = keras.models.Sequential([
 For PReLU, replace `LeakyRelu(alpha=0.2)` with `PReLU()`. There is
 currently no official implementation of RReLU in Keras, but you can
 fairly easily implement your own (to learn how to do that, see the
-exercises at the end of
-[Lab 12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html#tensorflow_lab)). 
+exercises at the end of Lab 12.
 
 For SELU activation, set `activation="selu"` and
 `kernel_initializer="lecun_normal"` when creating a layer:
@@ -392,7 +391,7 @@ problems at the beginning of training, it doesn't guarantee that they
 won't come back during training.
 
 In a [2015
-paper](https://homl.info/51), ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) Sergey Ioffe and Christian Szegedy
+paper](https://homl.info/51), ^[8] Sergey Ioffe and Christian Szegedy
 proposed a technique called
 *Batch Normalization* (BN) that addresses these problems. The technique
 consists of adding an operation in the model just before or after the
@@ -592,7 +591,7 @@ As you can see, each BN layer adds four parameters per input: **γ**,
 parameters, which is 4 × 784). The last two parameters, **μ** and **σ**,
 are the moving averages; they are not affected by backpropagation, so
 Keras calls them
-"non-trainable"^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) (if you count the total number of BN parameters, 3,136
+"non-trainable"^[9] (if you count the total number of BN parameters, 3,136
 + 1,200 + 400, and divide by 2, you get 2,368, which is the total number
 of non-trainable parameters in this model).
 
@@ -698,14 +697,14 @@ default, but the `fit()` method sets to it to `1` during training. If
 you ever need to write a custom layer, and it must behave differently
 during training and testing, add a `training` argument to the `call()`
 method and use this argument in the method to decide what to
-compute^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+compute^[10]
 (we will discuss custom layers in
 [Lab 12]
 
 `BatchNormalization` has become one of the most-used layers in deep
 neural networks, to the point that it is often omitted in the diagrams,
 as it is assumed that BN is added after every layer. But a recent
-[paper](https://homl.info/fixup)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+[paper](https://homl.info/fixup)^[11]
 by Hongyi Zhang et al. may change this assumption: by using a novel
 *fixed-update* (fixup) weight initialization technique, the authors
 managed to train a very deep neural [network] (10,000
@@ -726,7 +725,7 @@ exploding gradients problem is to clip the gradients during
 backpropagation so that they never exceed some threshold. This is called
 [*Gradient
 Clipping*](https://homl.info/52).
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+^[12]
 This technique is most often used in recurrent neural networks, as Batch
 Normalization is tricky to use in RNNs, as we will see in
 [Lab 15]
@@ -838,7 +837,7 @@ Transfer Learning with Keras
 ----------------------------
 
 Let's look at an example. Suppose the Fashion
-MNIST dataset only contained eight classes---for example, all the
+MNIST dataset only contained eight classes for example, all the
 classes except for sandal and shirt. Someone built and trained a Keras
 model on that set and got reasonably good performance (\>90% accuracy).
 Let's call this model A. You now want to tackle a different task: you
@@ -973,8 +972,7 @@ with the labeled training [examples]).
 It is this technique that Geoffrey Hinton and his team used in 2006 and
 which led to the revival of neural networks and the success of Deep
 Learning. Until 2010, unsupervised pretraining---typically with
-restricted Boltzmann machines (RBMs; see
-[Appendix E](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app05.html#other_ann_appendix))---was
+restricted Boltzmann machines was
 the norm for deep nets, and only after the vanishing gradients problem
 was alleviated did it become much more common to train DNNs purely using
 supervised learning. Unsupervised pretraining (today typically using
@@ -1076,7 +1074,7 @@ terminal velocity (if there is some friction or air resistance). This is
 the very simple idea behind *momentum optimization*, [proposed by Boris
 Polyak in
 1964](https://homl.info/54).
-^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+^[13]
 In contrast, regular Gradient Descent will simply take small, regular
 steps down the slope, so the algorithm will take much more time to reach
 the bottom.
@@ -1160,7 +1158,7 @@ Nesterov Accelerated Gradient
 
 One small variant to
 momentum optimization, proposed by [Yurii Nesterov in
-1983](https://homl.info/55), ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+1983](https://homl.info/55), ^[14]
 is almost always faster than vanilla momentum 
 optimization. The *Nesterov Accelerated Gradient* (NAG) method, also
 known as *Nesterov momentum optimization*, measures the gradient of the
@@ -1216,7 +1214,7 @@ steepest slope, which does not point straight toward the global optimum,
 then it very slowly goes down to the bottom of the valley. It would be
 nice if the algorithm could correct its direction earlier to point a bit
 more toward the global optimum. The [*AdaGrad*
-algorithm](https://homl.info/56)^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+algorithm](https://homl.info/56)^[15]
 achieves this correction by scaling down the gradient vector along the
 steepest dimensions (see [Equation
 11-6]
@@ -1276,7 +1274,7 @@ RMSProp
 As we've seen, AdaGrad runs the risk of
 slowing down a bit too fast
 and never converging to the global optimum. The *RMSProp*
-algorithm^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+algorithm^[16]
 fixes this by accumulating only the gradients from the most recent
 iterations (as opposed to all the gradients since the beginning of
 training). It does so by using exponential decay in the first step (see
@@ -1314,7 +1312,7 @@ algorithm of many researchers until Adam optimization came around.
 Adam and Nadam Optimization
 ---------------------------
 
-[*Adam*](https://homl.info/59), ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+[*Adam*](https://homl.info/59), ^[17]
 which 
 stands for *adaptive moment estimation*, combines the ideas of momentum
 optimization and RMSProp: just like momentum optimization, it keeps
@@ -1322,7 +1320,7 @@ track of an exponentially decaying average of past gradients; and just
 like RMSProp, it keeps track of an exponentially decaying average of
 past squared gradients (see [Equation
 11-8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html#adam_algorithm)).
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+^[18]
 
 
 ##### [Equation 11-8. ] Adam algorithm
@@ -1406,7 +1404,7 @@ Nadam
 :   Nadam optimization is Adam optimization plus the Nesterov trick, so
     it will often converge slightly faster than Adam. In [his report
     introducing this
-    technique](https://homl.info/nadam), ^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+    technique](https://homl.info/nadam), ^[19]
     the researcher Timothy Dozat compares many different optimizers on
     various tasks and finds that Nadam generally outperforms Adam but is
     sometimes outperformed by RMSProp.
@@ -1417,7 +1415,7 @@ Nadam
 Adaptive optimization methods (including RMSProp, Adam, and Nadam
 optimization) are often great, converging fast to a good solution.
 However, a [2017
-paper](https://homl.info/60)^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+paper](https://homl.info/60)^[20]
 by Ashia C. Wilson et al. showed that they can lead to solutions that
 generalize poorly on some datasets. So when you are disappointed by your
 model's performance, try using plain Nesterov Accelerated Gradient
@@ -1562,7 +1560,7 @@ These are the most commonly used learning schedules:
 
 :   Contrary to the other approaches, *1cycle*
     (introduced in a [2018
-    paper](https://homl.info/1cycle)^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+    paper](https://homl.info/1cycle)^[21]
     by Leslie Smith) starts by increasing the initial learning rate
     *η*~0~, growing linearly up to *η*~1~ halfway through training. Then
     it decreases the learning rate linearly down to *η*~0~ again during
@@ -1584,7 +1582,7 @@ These are the most commonly used learning schedules:
     neural network [architecture]).
 
 A [2013
-paper](https://homl.info/63)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+paper](https://homl.info/63)^[22]
 by Andrew Senior et al. compared the performance of some of the most
 popular learning schedules when using momentum optimization to train
 deep neural networks for speech recognition. The authors concluded that,
@@ -1816,9 +1814,9 @@ Dropout
 *Dropout* is one of the most popular
 regularization techniques for deep neural networks. It was [proposed in
 a
-paper](https://homl.info/64)^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+paper](https://homl.info/64)^[23]
 by Geoffrey Hinton in 2012 and further detailed in a [2014
-paper](https://homl.info/65)^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+paper](https://homl.info/65)^[24]
 by Nitish Srivastava et al., and it has proven to be highly successful:
 even the state-of-the-art neural networks get a 1--2% accuracy boost
 simply by adding dropout. This may not sound like a lot, but when a
@@ -1949,14 +1947,14 @@ Monte Carlo (MC) Dropout
 ------------------------
 
 In 2016, a
-[paper](https://homl.info/mcdropout)^[25](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+[paper](https://homl.info/mcdropout)^[25]
 by Yarin Gal and Zoubin Ghahramani added a few more good reasons to use
 dropout:
 
 -   First, the paper established a profound connection between dropout
     networks (i.e., neural networks containing a `Dropout` layer before
     every weight layer) and approximate Bayesian
-    inference, ^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+    inference, ^[26]
     giving dropout a solid mathematical justification.
 
 -   Second, the authors introduced a powerful technique called *MC
@@ -2063,7 +2061,7 @@ If your model contains other layers that behave in a special way during
 training (such as `BatchNormalization` layers), then you should not
 force training mode like we just did. Instead, you should replace the
 `Dropout` layers with the following `MCDropout`
-class: ^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+class: ^[27]
 
 ``` {data-type="programlisting" code-language="python"}
 class MCDropout(keras.layers.Dropout):

@@ -9,7 +9,7 @@ In this lab you will work through an example
 project end to end, pretending to be a recently hired data scientist at
 a real estate
 company.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) Here are the main steps you will go through:
+^[1] Here are the main steps you will go through:
 
 1.  Look at the big picture.
 
@@ -67,7 +67,7 @@ domains. Here are a few places you can look to get data:
 In this lab we'll use the
  California Housing Prices
 dataset from the StatLib
-repository^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) (see
+repository^[2] (see
 [Figure 2-1]
 This dataset is based on data from the 1990 California census. It is not
 exactly recent (a nice house in the Bay Area was still affordable at the
@@ -128,7 +128,7 @@ median housing price) will be fed to another Machine Learning system
 [Figure 2-2]
 along with many other
 signals.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) This downstream system will determine whether it is
+^[3] This downstream system will determine whether it is
 worth investing in a given area or not. Getting this right is critical,
 as it directly affects [revenue].
 
@@ -409,7 +409,7 @@ Machine Learning notations that we will use throughout this course:
     instance, and the *i*^th^ row is equal to the transpose of
     **x**^(*i*)^, noted
     (**x**^(*i*)^)^⊺^.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+^[4]
     
 
     -   For example, if the first district is as just described, then
@@ -717,7 +717,7 @@ Create the Workspace
 First you will need to have Python installed. It
 is probably already installed on your system. If not, you can get it at
 [*https://www.python.org/*](https://www.python.org/).
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+^[5]
 
 Next you need to create a workspace directory for your Machine Learning
 code and datasets. Open a terminal and type the following commands
@@ -741,7 +741,7 @@ use its packaging system, or just use Python's own packaging system,
 pip, which is included by default with the Python binary installers
 (since Python
 2.7.9).
-^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) You can check to see if pip is installed by typing the
+^[6] You can check to see if pip is installed by typing the
 following command:
 
 ``` {data-type="programlisting" code-language="shell-session"}
@@ -751,7 +751,7 @@ pip 19.3.1 from [...]/lib/python3.7/site-packages/pip (python 3.7)
 
 You should make sure you have a recent version of pip installed. To
 upgrade the pip module, type the following (the exact version may
-differ): ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+differ): ^[7]
 
 ``` {data-type="programlisting" code-language="shell-session"}
 $ python3 -m pip install --user -U pip
@@ -766,7 +766,7 @@ Successfully installed pip-19.3.1
 If you would like to work in an isolated
 environment (which is strongly recommended so that you can work on
 different projects without having conflicting library versions), install
-virtualenv^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) by running the following pip command (again, if you
+virtualenv^[8] by running the following pip command (again, if you
 want virtualenv to be installed for all users on your machine, remove
 `--user` and run this command with administrator rights):
 
@@ -844,7 +844,7 @@ virtualenv instructions).
 
 Now create a new Python notebook by clicking the New button and
 selecting the appropriate Python
-version^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html) (see
+version^[9] (see
 [Figure 2-3]
 Doing that will create a new notebook file called *Untitled.ipynb* in
 your workspace, start a Jupyter Python kernel to run the notebook, and
@@ -877,7 +877,7 @@ In typical environments your data would be
 available in a relational database (or some other common data store) and
 spread across multiple tables/documents/files. To access it, you would
 first need to get your credentials and access
-authorizations^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+authorizations^[10]
 and familiarize yourself with the data schema. In this project, however,
 things are much simpler: you will just download a single compressed
 file, *housing.tgz*, which contains a comma-separated values (CSV) file
@@ -894,7 +894,7 @@ the data is also useful if you need to install the dataset on multiple
 machines.
 
 Here is the function to fetch the
-data: ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+data: ^[11]
 
 ``` {data-type="programlisting" code-language="python"}
 import os
@@ -993,7 +993,7 @@ that the null values are ignored (so, for example, the `count` of
 `total_bedrooms` is 20,433, not 20,640). The `std` row shows the
 *standard deviation*, which measures how dispersed the values
 are.
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+^[12]
 The 25%, 50%, and 75% rows show the corresponding *percentiles*: a
 percentile indicates the value below which a given percentage of
 observations in a group of observations fall. For example, 25% of the
@@ -1115,7 +1115,7 @@ def split_train_test(data, test_ratio):
 ```
 
 You can then use this function like
-this: ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+this: ^[13]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> train_set, test_set = split_train_test(housing, 0.2)
@@ -1133,7 +1133,7 @@ you want to avoid.
 One solution is to save the test set on the first run and then load it
 in subsequent runs. Another option is to set the random number
 generator's seed (e.g., with
-`np.random.seed(42)`)^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+`np.random.seed(42)`)^[14]
 before calling `np.random.permutation()` so that it always generates the
 same shuffled indices.
 
@@ -1177,7 +1177,7 @@ ever gets deleted. If this is not possible, then you can try to use the
 most stable features to build a unique identifier. For example, a
 district's latitude and longitude are guaranteed to be stable for a few
 million years, so you could combine them into an ID like
-so: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+so: ^[15]
 
 ``` {data-type="programlisting" code-language="python"}
 housing_with_id["id"] = housing["longitude"] * 1000 + housing["latitude"]
@@ -1369,7 +1369,7 @@ The radius of each circle represents the district's population (option
 `s`), and the color represents the price (option `c`). We will use a
 predefined color map (option `cmap`) called `jet`, which ranges from
 blue (low values) to red (high
-prices): ^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+prices): ^[16]
 
 ``` {data-type="programlisting" code-language="python"}
 housing.plot(kind="scatter", x="longitude", y="latitude", alpha=0.4,
@@ -1690,7 +1690,7 @@ housing_tr = pd.DataFrame(X, columns=housing_num.columns,
 
 Scikit-Learn's API is remarkably well designed.
 These are the [main design
-principles](https://homl.info/11): ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+principles](https://homl.info/11): ^[17]
 
 Consistency
 
@@ -1734,7 +1734,7 @@ Consistency
         test set (and the corresponding labels, in the case of
         supervised learning
         algorithms).
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+^[18]
 
 Inspection
 
@@ -1794,7 +1794,7 @@ each of which represents a category. So this attribute is a categorical
 attribute. Most Machine Learning algorithms prefer to work with numbers,
 so let's convert these categories from text to numbers. For this, we
 can use Scikit-Learn's `OrdinalEncoder`
-class: ^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+class: ^[19]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.preprocessing import OrdinalEncoder
@@ -1839,7 +1839,7 @@ while the others will be 0 (cold). The new attributes are sometimes
 called *dummy* attributes.
 Scikit-Learn provides a `OneHotEncoder` class to
 convert categorical values into one-hot
-vectors: ^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+vectors: ^[20]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.preprocessing import OneHotEncoder
@@ -1857,7 +1857,7 @@ a matrix with thousands of columns, and the matrix is full of 0s except
 for a single 1 per row. Using up tons of memory mostly to store zeros
 would be very wasteful, so instead a sparse matrix only stores the
 location of the nonzero elements. You can use it mostly like a normal 2D
-array, ^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+array, ^[21]
 but if you really want to convert it to a (dense)
 NumPy array, just call the `toarray()` method:
 
@@ -2081,7 +2081,7 @@ First we import the `ColumnTransformer` class, next we get the list of
 numerical column names and the list of categorical column names, and
 then we construct a `ColumnTransformer`. The constructor requires a list
 of tuples, where each tuple contains a
-name, ^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+name, ^[22]
 a transformer, and a list of names (or indices) of columns that the
 transformer should be applied to. In this example, we specify that the
 numerical columns should be transformed using the `num_pipeline` that we
@@ -2702,7 +2702,7 @@ application, and finally your code will simply call the model's
 rather than every time the model is used). Alternatively, you can wrap
 the model within a dedicated web service that your web application can
 query through a REST
-API^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+API^[23]
 (see
 [Figure 2-17]
 This makes it easier to upgrade your model to new versions without
@@ -2771,7 +2771,7 @@ nonspecialists, such as workers on a crowdsourcing platform (e.g.,
 Amazon Mechanical Turk). In some applications they could even be the
 users themselves, responding for example via surveys or repurposed
 captchas.
-^[24](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+^[24]
 
 Either way, you need to put in place a monitoring system (with or
 without human raters to evaluate the live model), as well as all the

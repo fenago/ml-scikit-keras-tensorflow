@@ -96,7 +96,7 @@ recurrent layer can then be computed pretty much as you might expect, as
 shown in [Equation
 15-1]
 (**b** is the bias vector and *ϕ*(·) is the activation function (e.g.,
-ReLU^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)).
+ReLU^[1]).
 
 
 ##### [Equation 15-1. ] Output of a recurrent layer for a single instance
@@ -675,7 +675,7 @@ steps*, *output dimensions*\] to \[*batch size*, *time steps*, *output
 dimensions*\]; in this example the number of output dimensions is 10,
 since the `Dense` layer has 10
 units).
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) Here is the updated model:
+^[2] Here is the updated model:
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential([
@@ -787,7 +787,7 @@ step). However, the same BN layer will be used at each time step, with
 the same parameters, regardless of the actual scale and offset of the
 inputs and hidden state. In practice, this does not yield good results,
 as was demonstrated by César Laurent et al. in a [2015
-paper](https://homl.info/rnnbn): ^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) the authors found that BN was slightly beneficial only
+paper](https://homl.info/rnnbn): ^[3] the authors found that BN was slightly beneficial only
 when it was applied to the inputs, not to the hidden states. In other
 words, it was slightly better than nothing when applied between
 recurrent layers (i.e., vertically in
@@ -799,7 +799,7 @@ recurrent layer, but don't expect too much from it.
 Another form of normalization often works better
 with RNNs: *Layer Normalization*. This idea was introduced by Jimmy Lei
 Ba et al. in a [2016
-paper](https://homl.info/layernorm): ^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) it is very similar to Batch Normalization, but instead
+paper](https://homl.info/layernorm): ^[4] it is very similar to Batch Normalization, but instead
 of normalizing across the batch dimension, it normalizes across the
 features dimension. One advantage is that it can compute the required
 statistics on the fly, at each time step, independently for each
@@ -844,7 +844,7 @@ class LNSimpleRNNCell(keras.layers.Layer):
 
 The code is quite
 straightforward.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) Our `LNSimpleRNNCell` class inherits from the
+^[5] Our `LNSimpleRNNCell` class inherits from the
 `keras.layers.Layer` class, just like any custom layer. The constructor
 takes the number of units and the desired activation function, and it
 sets the `state_size` and [`output_size`] attributes,
@@ -895,7 +895,7 @@ Due to the transformations that the data goes
 through when traversing an RNN, some information is lost at each time
 step. After a while, the RNN's state contains virtually no trace of the
 first inputs. This can be a showstopper. Imagine Dory the
-fish^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) trying to translate a long sentence; by the time she's
+fish^[6] trying to translate a long sentence; by the time she's
 finished reading it, she has no clue how it started. To tackle this
 problem, various types of cells with long-term memory have been
 introduced. They have proven so successful that the basic cells are not
@@ -908,12 +908,12 @@ long-term memory cells: the LSTM cell.
 
 The *Long Short-Term Memory* (LSTM) cell was
 [proposed in
-1997](https://homl.info/93)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) by Sepp Hochreiter and Jürgen Schmidhuber and
+1997](https://homl.info/93)^[7] by Sepp Hochreiter and Jürgen Schmidhuber and
 gradually improved over the years by several researchers, such as [Alex
 Graves](https://homl.info/graves), [Haşim
-Sak](https://homl.info/94), ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) and [Wojciech
+Sak](https://homl.info/94), ^[8] and [Wojciech
 Zaremba](https://homl.info/95).
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) If you consider the LSTM cell as a black box, it can
+^[9] If you consider the LSTM cell as a black box, it can
 be used very much like a basic cell, except it will perform much better;
 training will converge faster, and it will detect long-term dependencies
 in the data. In Keras, you can simply use the `LSTM` layer instead of
@@ -1053,7 +1053,7 @@ be a good idea to give them a bit more context by letting them peek at
 the long-term state as well. This idea was [proposed by Felix Gers and
 Jürgen Schmidhuber in
 2000](https://homl.info/96).
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
+^[10]
 They proposed an LSTM variant with extra
 connections called *peephole connections*: the previous long-term state
 **c**~(*t*--1)~ is added as an input to the controllers of the forget
@@ -1080,14 +1080,14 @@ variant is the GRU cell, which we will look at now.
 The *Gated Recurrent Unit* (GRU) cell (see
 [Figure 15-10]
 was proposed by Kyunghyun Cho et al. in a [2014
-paper](https://homl.info/97)^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
+paper](https://homl.info/97)^[11]
 that also introduced the Encoder--Decoder network we discussed earlier.
 
 ![](./images/mls2_1510.png)
 
 The GRU cell is a simplified version of the LSTM cell, and it seems to
 perform just as
-well^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
+well^[12]
 (which explains its growing popularity). These are the main
 simplifications:
 
@@ -1194,7 +1194,7 @@ recurrent layers entirely!
 ### WaveNet
 
 In a [2016
-paper](https://homl.info/wavenet), ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
+paper](https://homl.info/wavenet), ^[13]
 Aaron van den Oord and other DeepMind researchers introduced an
 architecture called *WaveNet*. They stacked 1D convolutional layers,
 doubling the dilation rate (how spread apart each neuron's inputs are)
@@ -1222,7 +1222,7 @@ left-padded the input sequences with a number of zeros equal to the
 dilation rate before every layer, to preserve the same sequence length
 throughout the network. Here is how to implement a simplified WaveNet to
 tackle the same sequences as
-[earlier]: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
+[earlier]: ^[14]
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential()

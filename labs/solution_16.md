@@ -6,7 +6,7 @@
 1.  Stateless RNNs can only capture patterns whose length is less than,
     or equal to, the size of the windows the RNN is trained on.
     Conversely, stateful RNNs can capture longer-term patterns. However,
-    implementing a stateful RNN is much harder⁠---especially preparing
+    implementing a stateful RNN is much harder⁠ especially preparing
     the dataset properly. Moreover, stateful RNNs do not always work
     better, in part because consecutive batches are not independent and
     identically distributed (IID). Gradient Descent is not fond of

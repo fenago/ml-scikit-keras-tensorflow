@@ -22,7 +22,7 @@ roll back to the previous model in case of problems, and
 perhaps run multiple different models in parallel
 to perform *A/B
 experiments*.
-^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) If your product becomes successful, your service may
+^[1] If your product becomes successful, your service may
 start to get plenty of *queries per second* (QPS),
 and it must scale up to support the load. A great solution to scale up
 your service, as we will see in this lab, is to use TF Serving,
@@ -66,7 +66,7 @@ point where it is preferable to wrap your model in a small service whose
 sole role is to make predictions and have the rest of the infrastructure
 query it (e.g., via a REST or gRPC
 API).
-^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) This decouples your model from the rest of the
+^[2] This decouples your model from the rest of the
 infrastructure, making it possible to easily switch model versions or
 scale the service up as needed (independently from the rest of your
 infrastructure), perform A/B experiments, and ensure that all your
@@ -251,7 +251,7 @@ is to install TF Serving.
 ### Installing TensorFlow Serving
 
 There are many ways to install TF Serving: using a Docker
-image, ^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) using the system's package manager, installing from
+image, ^[3] using the system's package manager, installing from
 source, and more. Let's use the Docker option, which is highly
 recommended by the TensorFlow team as it is simple to install, it will
 not mess with your system, and it offers high performance. You first
@@ -393,7 +393,7 @@ being represented using over 15 characters, which translates to over 120
 bits for 32-bit floats! This will result in high latency and bandwidth
 usage when transferring large NumPy
 arrays.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) So let's use gRPC instead.
+^[4] So let's use gRPC instead.
 
 
 ###### Tip
@@ -490,7 +490,7 @@ handle the transition gracefully: by default, it will answer pending
 requests (if any) with the previous model version, while handling new
 requests with the new
 version.
-^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) As soon as every pending request has been answered,
+^[5] As soon as every pending request has been answered,
 the previous model version is unloaded. You can see this at work in the
 TensorFlow Serving logs:
 
@@ -670,7 +670,7 @@ care of:
     [Figure 19-6]
     set the name, description, Python version (3.5 or above), framework
     (TensorFlow), framework version (2.0 if available, or
-    1.13), ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+    1.13), ^[6]
      ML runtime version (2.0, if available or 1.13),
     machine type (choose "Single core CPU" for now), model path on GCS
     (this is the full path to the actual version folder, e.g.,
@@ -808,7 +808,7 @@ GCE).
 
 Next, you must create a resource object that wraps access to the
 prediction
-service: ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+service: ^[7]
 
 
 ``` {data-type="programlisting" code-language="python"}
@@ -879,7 +879,7 @@ of which will make your app unresponsive, heat the device, and drain its
 battery. To avoid this, you need to make a mobile-friendly, lightweight,
 and efficient model, without sacrificing too much of its accuracy. The
 [TFLite](https://tensorflow.org/lite) library provides several
-tools^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) to help you deploy your models to mobile and embedded
+tools^[8] to help you deploy your models to mobile and embedded
 devices, with three main objectives:
 
 -   Reduce the model size, to shorten download time and reduce RAM
@@ -1026,7 +1026,7 @@ user's browser? This can be useful in many scenarios, such as:
     predictions on the client side so that the private data never has to
     leave the user's
     machine.
-^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[9]
     
 
 For all these scenarios, you can export your model to a special format
@@ -1129,7 +1129,7 @@ devices are supported at this point.
 If you go for an Nvidia GPU card, you will need to
 install the appropriate Nvidia drivers and several Nvidia
 libraries.
-^[10](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[10]
 These include the *Compute
 Unified Device Architecture* library (CUDA), which allows developers to
 use CUDA-enabled GPUs for all sorts of computations (not just graphics
@@ -1198,7 +1198,7 @@ The `gpu_device_name()` function gives the first GPU's name: by default,
 operations will run on this GPU. The `list_physical_devices()` function
 returns the list of all available GPU devices (just one in this
 example).
-^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[11]
 
 Now, what if you don't want to invest time and money in getting your own
 GPU card? Just use a GPU VM on the cloud!
@@ -1215,7 +1215,7 @@ TensorFlow). Google Cloud Platform enforces various GPU quotas, both
 worldwide and per region: you cannot just create thousands of GPU VMs
 without prior authorization from
 Google.
-^[12](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[12]
 By default, the worldwide GPU quota is zero, so you cannot use any GPU
 VMs. Therefore, the very first thing you need to do is to request a
 higher worldwide quota. In the GCP console, open the navigation menu and
@@ -1409,7 +1409,7 @@ several of which use TensorFlow. This is why the
 Colab Runtimes.
 
 Lastly, in some cases you may want to split a GPU into two or more
-*virtual GPUs*---for example, if you want to test a distribution
+*virtual GPUs* for example, if you want to test a distribution
 algorithm (this is a handy way to try out the code examples in the rest
 of this lab even if you have a single GPU, such as in a Colab
 Runtime). The following code splits the first GPU into two virtual
@@ -1436,7 +1436,7 @@ Placing Operations and Variables on Devices
 -------------------------------------------
 
 The TensorFlow
-[whitepaper](https://homl.info/67)^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+[whitepaper](https://homl.info/67)^[13]
 presents a friendly *dynamic
 placer* algorithm that automagically distributes operations across all
 available devices, taking into account things like the measured
@@ -1471,10 +1471,10 @@ control:
 By default, all variables and all operations will be placed on the first
 GPU (named [`/gpu:0`]), except for variables and
 operations that don't have a GPU
-kernel: ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+kernel: ^[14]
 these are placed on the CPU (named `/cpu:0`). A tensor or variable's
 `device` attribute tells you which device it was placed
-on: ^[15](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+on: ^[15]
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> a = tf.Variable(42.0)
@@ -1609,7 +1609,7 @@ number of intra-op threads, use
 This is useful if you want do not want TensorFlow to use all the CPU
 cores or if you want it to be
 single-threaded.
-^[16](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[16]
 
 
 With that, you have all you need to run any operation on any device, and
@@ -1629,7 +1629,7 @@ do:
 -   You could train a model on a single GPU and perform all the
     preprocessing in parallel on the CPU, using the dataset's
     `prefetch()`
-    method^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+    method^[17]
     to prepare the next few batches in advance so that they are ready
     when the GPU needs them (see
     [Lab 13]
@@ -1676,7 +1676,7 @@ is generally not much to be gained from this approach (see
 Intuitively, it may seem that an easy way to split the model is to place
 each layer on a different device, but this does not work because each
 layer needs to wait for the output of the previous layer before it can
-do anything. So perhaps you can slice it vertically---for example, with
+do anything. So perhaps you can slice it vertically for example, with
 the left half of each layer on one device, and the right part on another
 device? This is slightly better, since both halves of each layer can
 indeed work in parallel, but the problem is that each half of the next
@@ -1723,7 +1723,7 @@ of neural networks, but not all, and it requires special care and
 tuning, such as making sure that devices that need to communicate the
 most run on the same
 machine.
-^[18](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[18]
 Let's look at a much simpler and generally more efficient option: data
 parallelism.
 
@@ -1811,7 +1811,7 @@ working again immediately, without having to wait for the 2 slowest
 replicas. This setup is generally described as
 having 18 replicas plus 2 *spare
 replicas*.
-^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[19]
 
 
 
@@ -1863,7 +1863,7 @@ There are a few ways you can reduce the effect of stale gradients:
     in quite different directions.
 
 A [paper published by the Google Brain team in
-2016](https://homl.info/68)^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+2016](https://homl.info/68)^[20]
 benchmarked various approaches and found that using synchronous updates
 with a few spare replicas was more efficient than using asynchronous
 updates, not only converging faster but also producing a better model.
@@ -2021,7 +2021,7 @@ The default NCCL option is based on the `tf.distribute.NcclAllReduce`
 class, which is usually faster, but this depends on the number and types
 of GPUs, so you may want to give the alternatives a
 try.
-^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[21]
 
 If you want to try using data parallelism with centralized parameters,
 replace the [`MirroredStrategy`] with the
@@ -2048,7 +2048,7 @@ Training a Model on a TensorFlow Cluster
 
 A *TensorFlow cluster* is a group of TensorFlow
 processes running in parallel, usually on different machines, and
-talking to each other to complete some work---for example, training or
+talking to each other to complete some work for example, training or
 executing a neural network. Each TF process in the cluster is called a
 *task*, or a *TF server*. It has an IP address, a port, and a type (also
 called its *role* or its *job*). The type can be either `"worker"`,
@@ -2262,7 +2262,7 @@ chief) and 11 parameter servers (check out the other [available scale
 tiers](https://homl.info/scaletiers)). All these VMs will be based on AI
 Platform's 2.0 runtime (a VM configuration that includes TensorFlow 2.0
 and many other
-packages)^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+packages)^[22]
 and Python 3.5. The training code is located in the
 */my\_project/src/trainer* directory, and the `gcloud` command will
 automatically bundle it into a pip package and upload it to GCS at
@@ -2305,7 +2305,7 @@ Black Box Hyperparameter Tuning on AI Platform
 AI Platform provides a powerful Bayesian optimization hyperparameter
 tuning service called [Google
 Vizier](https://homl.info/vizier).
-^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+^[23]
 To use it, you need to pass a YAML configuration file when creating the
 job (`--config tuning.yaml`). For example, it may look like this:
 

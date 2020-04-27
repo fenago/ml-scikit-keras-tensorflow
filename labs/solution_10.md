@@ -11,7 +11,7 @@
 2.  Here is a neural network based on the original artificial neurons
     that computes *A* ⊕ *B* (where ⊕ represents the exclusive OR), using
     the fact that *A* ⊕ *B* = (*A* ∧ ¬ *B*) ∨ (¬ *A* ∧ *B*). There are
-    other solutions---for example, using the fact that *A* ⊕ *B* = (*A*
+    other solutions for example, using the fact that *A* ⊕ *B* = (*A*
     ∨ *B*) ∧ ¬(*A* ∧ *B*), or the fact that *A* ⊕ *B* = (*A* ∨ *B*) ∧ (¬
     *A* ∨ ¬ *B*), and so on.
 
@@ -66,7 +66,7 @@
         single row in the matrix, which is called *broadcasting*.
 
 7.  To classify email into spam or ham, you just need one neuron in the
-    output layer of a neural network---for example, indicating the
+    output layer of a neural network for example, indicating the
     probability that the email is spam. You would typically use the
     logistic activation function in the output layer when estimating a
     probability. If instead you want to tackle MNIST, you need 10
@@ -78,7 +78,7 @@
     then you need one output neuron, using no activation function at all
     in the output
     layer.
-^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+^[3]
     
 
 8.  Backpropagation is a technique used to train artificial neural
@@ -107,7 +107,7 @@
     hidden layer, and the activation function used in each hidden layer
     and in the output
     layer.
-^[4](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/app01.html)
+^[4]
      In general, the ReLU activation function (or one
     of its variants; see
     [Lab 11]
