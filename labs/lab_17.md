@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 17. ] Representation Learning and Generative Learning Using Autoencoders and GANs
+[Lab 17] Representation Learning and Generative Learning Using Autoencoders and GANs
 =================================================================================================
 
 Autoencoders 
@@ -810,7 +810,7 @@ computed using [Equation
 17-1]
 
 
-##### [Equation 17-1. ] Kullback--Leibler divergence
+##### [Equation 17-1] Kullback--Leibler divergence
 
 $$D_{KL}\left( P \parallel Q \right) = \sum\limits_{i}P\left( i \right)\log\frac{P\left( i \right)}{Q\left( i \right)}$$
 
@@ -822,7 +822,7 @@ batch). So the KL divergence simplifies to [Equation
 17-2]
 
 
-##### [Equation 17-2. ] KL divergence between the target sparsity *p* and the actual sparsity *q*
+##### [Equation 17-2] KL divergence between the target sparsity *p* and the actual sparsity *q*
 
 $$D_{KL}\left( p \parallel q \right) = p\,\log\frac{p}{q} + \left( 1 - p \right)\log\frac{1 - p}{1 - q}$$
 
@@ -960,7 +960,7 @@ features). Luckily, the equations simplify, so the latent loss can be
 computed quite simply using [Equation 17-3]
 
 
-##### [Equation 17-3. ] Variational autoencoder's latent loss
+##### [Equation 17-3] Variational autoencoder's latent loss
 
 $$\mathcal{L} = - \frac{1}{2}\sum\limits_{i = 1}^{n}\left\lbrack {1 + \log\left( {\sigma_{i}}^{2} \right) - {\sigma_{i}}^{2} - {\mu_{i}}^{2}} \right\rbrack$$
 
@@ -980,7 +980,7 @@ loss can then be computed as shown in [Equation
 This approach is more numerically stable and speeds up training.
 
 
-##### [Equation 17-4. ] Variational autoencoder's latent loss, rewritten using **γ** = log(**σ**^2^)
+##### [Equation 17-4] Variational autoencoder's latent loss, rewritten using **γ** = log(**σ**^2^)
 
 $$\mathcal{L} = - \frac{1}{2}\sum\limits_{i = 1}^{n}\left\lbrack {1 + \gamma_{i} - \exp\left( \gamma_{i} \right) - {\mu_{i}}^{2}} \right\rbrack$$
 

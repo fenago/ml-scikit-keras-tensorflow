@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 2. ] End-to-End Machine Learning Project
+[Lab 2] End-to-End Machine Learning Project
 ========================================================
 
 In this lab you will work through an example
@@ -224,7 +224,7 @@ predictions, with a higher weight for large errors. [Equation
 shows the mathematical formula to compute the RMSE.
 
 
-##### [Equation 2-1. ] Root Mean Square Error (RMSE)
+##### [Equation 2-1] Root Mean Square Error (RMSE)
 
 []{.MathJax_Preview style="color: inherit; display: none;"}
 
@@ -578,7 +578,7 @@ the average absolute deviation; see [Equation
 2-2]
 
 
-##### [Equation 2-2. ] Mean absolute error (MAE)
+##### [Equation 2-2] Mean absolute error (MAE)
 
 []{.MathJax_Preview style="color: inherit; display: none;"}
 

@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 5. ] Support Vector Machines
+[Lab 5] Support Vector Machines
 ============================================
 
 A *Support Vector Machine* (SVM) is a powerful and
@@ -294,7 +294,7 @@ with *γ* = 0.3 (see [Equation
 5-1]
 
 
-##### [Equation 5-1. ] Gaussian RBF
+##### [Equation 5-1] Gaussian RBF
 
 $${\phi_{\gamma}\left( \mathbf{x},\ell \right)} = {\exp\left( {- \gamma{\parallel {\mathbf{x} - \ell} \parallel}^{2}} \right)}$$
 
@@ -422,7 +422,7 @@ classes.
   `SGDClassifier`   *O*(*m* × *n*)                       Yes                   Yes                No
   `SVC`             *O*(*m*² × *n*) to *O*(*m*³ × *n*)   No                    Yes                Yes
 
-  : [Table 5-1. ] Comparison of Scikit-Learn classes for SVM
+  : [Table 5-1] Comparison of Scikit-Learn classes for SVM
   classification
 
 
@@ -533,7 +533,7 @@ the result is positive, the predicted class *ŷ* is the positive class
 5-2]
 
 
-##### [Equation 5-2. ] Linear SVM classifier prediction
+##### [Equation 5-2] Linear SVM classifier prediction
 
 $$\hat{y} = \begin{cases}
 0 & {\text{if}\mathbf{w}^{\intercal}\mathbf{x} + b < 0,} \\
@@ -594,7 +594,7 @@ SVM classifier objective as the constrained optimization problem in
 5-3]
 
 
-##### [Equation 5-3. ] Hard margin linear SVM classifier objective
+##### [Equation 5-3] Hard margin linear SVM classifier objective
 
 $$\begin{array}{cl}
  & {\operatorname{minimize}\limits_{\mathbf{w},b}{\frac{1}{2}\mathbf{w}^{\intercal}\mathbf{w}}} \\
@@ -624,7 +624,7 @@ constrained optimization problem in [Equation
 5-4]
 
 
-##### [Equation 5-4. ] Soft margin linear SVM classifier objective
+##### [Equation 5-4] Soft margin linear SVM classifier objective
 
 $$\begin{array}{cl}
  & {\operatorname{minimize}\limits_{\mathbf{w},b,\zeta}{\frac{1}{2}\mathbf{w}^{\intercal}\mathbf{w} + C\sum\limits_{i = 1}^{m}\zeta^{(i)}}} \\
@@ -652,7 +652,7 @@ The general problem formulation is given by [Equation
 5-5]
 
 
-##### [Equation 5-5. ] Quadratic Programming problem
+##### [Equation 5-5] Quadratic Programming problem
 
 $$\begin{aligned}
 {\underset{\mathbf{p}}{\text{Minimize}}} & {\frac{1}{2}\mathbf{p}^{\intercal}\mathbf{H}\mathbf{p} + \mathbf{f}^{\intercal}\mathbf{p}} \\
@@ -722,7 +722,7 @@ in knowing how to derive the dual problem from the primal problem, see
 [Appendix C]
 
 
-##### [Equation 5-6. ] Dual form of the linear SVM objective
+##### [Equation 5-6] Dual form of the linear SVM objective
 
 $$\begin{array}{r}
 {\operatorname{minimize}\limits_{\alpha}\frac{1}{2}\sum\limits_{i = 1}^{m}{\sum\limits_{j = 1}^{m}{\alpha^{(i)}\alpha^{(j)}t^{(i)}t^{(j)}{\mathbf{x}^{(i)}}^{\intercal}\mathbf{x}^{(j)}}} - \sum\limits_{i = 1}^{m}\alpha^{(i)}} \\
@@ -737,7 +737,7 @@ to compute $\hat{\mathbf{w}}$ and $\hat{b}$ that minimize the primal
 problem.
 
 
-##### [Equation 5-7. ] From the dual solution to the primal solution
+##### [Equation 5-7] From the dual solution to the primal solution
 
 $$\begin{array}{cl}
  & {\hat{\mathbf{w}} = \sum\limits_{i = 1}^{m}{\hat{\alpha}}^{(i)}t^{(i)}\mathbf{x}^{(i)}} \\
@@ -765,7 +765,7 @@ shows the second-degree polynomial mapping function *ϕ* that you want to
 apply.
 
 
-##### [Equation 5-8. ] Second-degree polynomial mapping
+##### [Equation 5-8] Second-degree polynomial mapping
 
 $$\phi\left( \mathbf{x} \right) = \phi\left( \begin{pmatrix}
 x_{1} \\
@@ -784,7 +784,7 @@ product^[7] of the transformed vectors (See [Equation
 5-9]
 
 
-##### [Equation 5-9. ] Kernel trick for a second-degree polynomial mapping
+##### [Equation 5-9] Kernel trick for a second-degree polynomial mapping
 
 $$\begin{array}{cl}
 {\phi\left( \mathbf{a} \right)^{\intercal}\phi\left( \mathbf{b} \right)} & { = \begin{pmatrix}
@@ -837,7 +837,7 @@ know about) the transformation *ϕ*. [Equation
 lists some of the most commonly used kernels.
 
 
-##### [Equation 5-10. ] Common kernels
+##### [Equation 5-10] Common kernels
 
 $$\begin{aligned}
 \text{Linear:} & { K\left( \mathbf{a},\mathbf{b} \right) = \mathbf{a}^{\intercal}\mathbf{b}} \\
@@ -884,7 +884,7 @@ possible to use the kernel trick ([Equation
 5-11]
 
 
-##### [Equation 5-11. ] Making predictions with a kernelized SVM
+##### [Equation 5-11] Making predictions with a kernelized SVM
 
 $$\begin{array}{cl}
 {h_{\hat{\mathbf{w}},\hat{b}}\left( {\phi\left( \mathbf{x}^{(n)} \right)} \right)} & {= \,{\hat{\mathbf{w}}}^{\intercal}\phi\left( \mathbf{x}^{(n)} \right) + \hat{b} = \left( {\sum\limits_{i = 1}^{m}{\hat{\alpha}}^{(i)}t^{(i)}\phi\left( \mathbf{x}^{(i)} \right)} \right)^{\intercal}\phi\left( \mathbf{x}^{(n)} \right) + \hat{b}} \\
@@ -901,7 +901,7 @@ term $\hat{b}$ ([Equation
 5-12]
 
 
-##### [Equation 5-12. ] Using the kernel trick to compute the bias term
+##### [Equation 5-12] Using the kernel trick to compute the bias term
 
 $$\begin{array}{cl}
 \hat{b} & {= \frac{1}{n_{s}}\sum\limits_{\binom{i = 1}{{\hat{\alpha}}^{(i)} > 0}}^{m}\left( {t^{(i)} - {\hat{\mathbf{w}}}^{\intercal}\phi\left( \mathbf{x}^{(i)} \right)} \right) = \frac{1}{n_{s}}\sum\limits_{\binom{i = 1}{{\hat{\alpha}}^{(i)} > 0}}^{m}\left( {t^{(i)} - \left( {\sum\limits_{j = 1}^{m}{\hat{\alpha}}^{(j)}t^{(j)}\phi\left( \mathbf{x}^{(j)} \right)} \right)^{\intercal}\phi\left( \mathbf{x}^{(i)} \right)} \right)} \\
@@ -931,7 +931,7 @@ which is derived from the primal problem. Unfortunately, Gradient
 Descent converges much more slowly than the methods based on QP.
 
 
-##### [Equation 5-13. ] Linear SVM classifier cost function
+##### [Equation 5-13] Linear SVM classifier cost function
 
 $$J\left( \mathbf{w},b \right) = \frac{1}{2}\mathbf{w}^{\intercal}\mathbf{w} + C{\sum\limits_{i = 1}^{m}max\left( {0,1 - t^{(i)}\left( \mathbf{w}^{\intercal}\mathbf{x}^{(i)} + b \right)} \right)}$$
 

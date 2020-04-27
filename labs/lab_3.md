@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 3. ] Classification
+[Lab 3] Classification
 ===================================
 
 In
@@ -354,7 +354,7 @@ classifier ([Equation
 3-1]
 
 
-##### [Equation 3-1. ] Precision
+##### [Equation 3-1] Precision
 
 []{.MathJax_Preview style="color: inherit; display: none;"}
 
@@ -400,7 +400,7 @@ classifier ([Equation
 3-2]
 
 
-##### [Equation 3-2. ] Recall
+##### [Equation 3-2] Recall
 
 []{.MathJax_Preview style="color: inherit; display: none;"}
 
@@ -472,7 +472,7 @@ gives much more weight to low values. As a result, the classifier will
 only get a high F~1~ score if both recall and precision are high.
 
 
-##### [Equation 3-3. ] F~1~
+##### [Equation 3-3] F~1~
 
 []{.MathJax_Preview style="color: inherit; display: none;"}
 

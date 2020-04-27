@@ -2,8 +2,8 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 1. ] The Machine Learning Landscape
-===================================================
+[Lab 1] The Machine Learning Landscape
+=======================================
 
 When most people hear "Machine Learning," they
 picture a robot: a dependable butler or a deadly Terminator, depending
@@ -761,7 +761,7 @@ shows an excerpt of what you get.
   Australia       50,962                 7.3
   United States   55,805                 7.2
 
-  : [Table 1-1. ] Does money make people happier?
+  : [Table 1-1] Does money make people happier?
 
 Let's plot the data for these countries
 ([Figure 1-17]
@@ -779,7 +779,7 @@ one attribute, GDP per capita ([Equation
 1-1]
 
 
-##### [Equation 1-1. ] A simple linear model
+##### [Equation 1-1] A simple linear model
 
 []{.MathJax_Preview style="color: inherit; display: none;"}
 
@@ -875,7 +875,7 @@ prediction.
 ^[7]
 
 
-##### [Example 1-1. ] Training and running a linear model using Scikit-Learn
+##### [Example 1-1] Training and running a linear model using Scikit-Learn
 
 ``` {data-type="programlisting" code-language="python"}
 import matplotlib.pyplot as plt

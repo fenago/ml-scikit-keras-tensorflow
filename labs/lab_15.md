@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 15. ] Processing Sequences Using [RNNs and CNNs]
+[Lab 15] Processing Sequences Using [RNNs and CNNs]
 ================================================================================
 
 The batter hits the ball. The outfielder
@@ -99,7 +99,7 @@ shown in [Equation
 ReLU^[1]).
 
 
-##### [Equation 15-1. ] Output of a recurrent layer for a single instance
+##### [Equation 15-1] Output of a recurrent layer for a single instance
 
 $\mathbf{y}_{(t)} = \phi\left( {{\mathbf{W}_{x}}^{\intercal}\mathbf{x}_{(t)}\, + \,{\mathbf{W}_{y}}^{\intercal}\mathbf{y}_{(t - 1)}\, + \,\mathbf{b}} \right)$
 
@@ -110,7 +110,7 @@ inputs at time step *t* in an input matrix **X**~(*t*)~ (see [Equation
 15-2]
 
 
-##### [Equation 15-2. ] Outputs of a layer of recurrent neurons for all instances in a mini-batch
+##### [Equation 15-2] Outputs of a layer of recurrent neurons for all instances in a mini-batch
 
 $$\begin{array}{cl}
 \mathbf{Y}_{(t)} & {= \phi\left( {\mathbf{X}_{(t)}\mathbf{W}_{x} + \mathbf{Y}_{(t - 1)}\mathbf{W}_{y} + \mathbf{b}} \right)} \\
@@ -1015,7 +1015,7 @@ state, and its output at each time step for a single instance (the
 equations for a whole mini-batch are very similar).
 
 
-##### [Equation 15-3. ] LSTM computations
+##### [Equation 15-3] LSTM computations
 
 $$\begin{aligned}
 \mathbf{i}_{(t)} & {= \sigma\left( {\mathbf{W}_{xi}}^{\intercal}\mathbf{x}_{(t)} + {\mathbf{W}_{hi}}^{\intercal}\mathbf{h}_{(t - 1)} + \mathbf{b}_{i} \right)} \\
@@ -1112,7 +1112,7 @@ summarizes how to compute the cell's state at each time step for a
 single instance.
 
 
-##### [Equation 15-4. ] GRU computations
+##### [Equation 15-4] GRU computations
 
 $$\begin{aligned}
 \mathbf{z}_{(t)} & {= \sigma\left( {\mathbf{W}_{xz}}^{\intercal}\mathbf{x}_{(t)} + {\mathbf{W}_{hz}}^{\intercal}\mathbf{h}_{(t - 1)} + \mathbf{b}_{z} \right)} \\

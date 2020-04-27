@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 11. ] Training Deep Neural Networks
+[Lab 11] Training Deep Neural Networks
 ===================================================
 
 In
@@ -131,7 +131,7 @@ is called *Xavier initialization* or *Glorot initialization*, after the
 paper's first author.
 
 
-##### [Equation 11-1. ] Glorot initialization (when using the logistic activation function)
+##### [Equation 11-1] Glorot initialization (when using the logistic activation function)
 
 $\begin{array}{l}
 {\text{Normal\ distribution\ with\ mean\ 0\ and\ variance~}\sigma^{2} = \frac{1}{\mathit{fan}_{\text{avg}}}} \\
@@ -172,7 +172,7 @@ see).
   He               ReLU and variants               2 / *fan*~in~
   LeCun            SELU                            1 / *fan*~in~
 
-  : [Table 11-1. ] Initialization parameters for each type of
+  : [Table 11-1] Initialization parameters for each type of
   activation function
 
 By default, Keras uses Glorot initialization with a uniform
@@ -263,7 +263,7 @@ graphs the function, and [Equation
 shows its definition.
 
 
-##### [Equation 11-2. ] ELU activation function
+##### [Equation 11-2] ELU activation function
 
 $$\operatorname{ELU}_{\alpha}\left( z \right) = \begin{cases}
 {\alpha\left( \exp\left( z \right) - 1 \right)} & {\text{if} z < 0} \\
@@ -414,7 +414,7 @@ is summarized step by step in [Equation
 11-3]
 
 
-##### [Equation 11-3. ] Batch Normalization algorithm
+##### [Equation 11-3] Batch Normalization algorithm
 
 $$\begin{aligned}
 {1.} & {\mathbf{\mu}_{B} = \frac{1}{m_{B}}\sum\limits_{i = 1}^{m_{B}}\mathbf{x}^{(i)}} \\
@@ -1099,7 +1099,7 @@ called the *momentum*, which must be set between 0 (high friction) and 1
 (no friction). A typical momentum value is 0.9.
 
 
-##### [Equation 11-4. ] Momentum algorithm
+##### [Equation 11-4] Momentum algorithm
 
 $$\begin{aligned}
 {1.} & \left. \mathbf{m}\leftarrow\beta\mathbf{m} - \eta\nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \right. \\
@@ -1167,7 +1167,7 @@ direction of the momentum, at **θ** + *β***m** (see [Equation
 11-5]
 
 
-##### [Equation 11-5. ] Nesterov Accelerated Gradient algorithm
+##### [Equation 11-5] Nesterov Accelerated Gradient algorithm
 
 $$\begin{aligned}
 {1.} & \left. \mathbf{m}\leftarrow\beta\mathbf{m} - \eta\nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} + \beta\mathbf{m} \right) \right. \\
@@ -1220,7 +1220,7 @@ steepest dimensions (see [Equation
 11-6]
 
 
-##### [Equation 11-6. ] AdaGrad algorithm
+##### [Equation 11-6] AdaGrad algorithm
 
 $$\begin{aligned}
 {1.} & \left. \mathbf{s}\leftarrow\mathbf{s} + \nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \otimes \nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \right. \\
@@ -1282,7 +1282,7 @@ training). It does so by using exponential decay in the first step (see
 11-7]
 
 
-##### [Equation 11-7. ] RMSProp algorithm
+##### [Equation 11-7] RMSProp algorithm
 
 $$\begin{aligned}
 {1.} & \left. \mathbf{s}\leftarrow\beta\mathbf{s} + \left( 1 - \beta \right)\nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \otimes \nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \right. \\
@@ -1323,7 +1323,7 @@ past squared gradients (see [Equation
 ^[18]
 
 
-##### [Equation 11-8. ] Adam algorithm
+##### [Equation 11-8] Adam algorithm
 
 $$\begin{aligned}
 {1.} & \left. \mathbf{m}\leftarrow\beta_{1}\mathbf{m} - \left( 1 - \beta_{1} \right)\nabla_{\mathbf{\theta}}J\left( \mathbf{\theta} \right) \right. \\
@@ -1479,7 +1479,7 @@ average, and \*\*\* is good).
   `Nadam`                              \*\*\*              \*\* or \*\*\*
   `AdaMax`                             \*\*\*              \*\* or \*\*\*
 
-  : [Table 11-2. ] Optimizer comparison
+  : [Table 11-2] Optimizer comparison
 
 
 
@@ -2157,7 +2157,7 @@ tuning. That said, please do not consider these defaults as hard rules!
   Optimizer                Momentum optimization (or RMSProp or Nadam)
   Learning rate schedule   1cycle
 
-  : [Table 11-3. ] Default DNN configuration
+  : [Table 11-3] Default DNN configuration
 
 If the network is a simple stack of dense layers, then it can
 self-normalize, and you should use the configuration in
@@ -2173,7 +2173,7 @@ instead.
   Optimizer                Momentum optimization (or RMSProp or Nadam)
   Learning rate schedule   1cycle
 
-  : [Table 11-4. ] DNN configuration for a self-normalizing net
+  : [Table 11-4] DNN configuration for a self-normalizing net
 
 Don't forget to normalize the input features! You should also try to
 reuse parts of a pretrained neural network if you can find one that

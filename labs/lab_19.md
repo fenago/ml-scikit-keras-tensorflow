@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 19. ] Training and Deploying TensorFlow [Models at Scale]
+[Lab 19] Training and Deploying TensorFlow [Models at Scale]
 =========================================================================================
 
 Once you have a beautiful model that makes amazing

@@ -40,7 +40,7 @@ From these rules, you can derive [Equation
 D-1]
 
 
-##### [Equation D-1. ] Partial derivatives of *f*(*x*, *y*)
+##### [Equation D-1] Partial derivatives of *f*(*x*, *y*)
 
 $$\begin{aligned}
 \frac{\partial f}{\partial x} & {= \frac{\partial\left( x^{2}y \right)}{\partial x} + \frac{\partial y}{\partial x} + \frac{\partial 2}{\partial x} = y\frac{\partial\left( x^{2} \right)}{\partial x} + 0 + 0 = 2xy} \\
@@ -67,7 +67,7 @@ point *x* on the function, as *x* gets infinitely close to *x*~0~ (see
 D-2]
 
 
-##### [Equation D-2. ] Definition of the derivative of a function *h*(*x*) at point *x*~0~
+##### [Equation D-2] Definition of the derivative of a function *h*(*x*) at point *x*~0~
 
 $$\begin{array}{cl}
 {h^{'}\left( x_{0} \right)} & {= \lim\limits_{x\rightarrow x_{0}}\frac{h\left( x \right) - h\left( x_{0} \right)}{x - x_{0}}} \\
@@ -191,7 +191,7 @@ Dual numbers can be added, multiplied, and so on, as shown in [Equation
 D-3]
 
 
-##### [Equation D-3. ] A few operations with dual numbers
+##### [Equation D-3] A few operations with dual numbers
 
 $$\begin{array}{cl}
  & {\lambda\left( a + b\varepsilon \right) = \lambda a + \lambda b\varepsilon} \\
@@ -252,7 +252,7 @@ heavily on the *chain rule*, shown in [Equation
 D-4]
 
 
-##### [Equation D-4. ] Chain rule
+##### [Equation D-4] Chain rule
 
 $$\frac{\partial f}{\partial x} = \frac{\partial f}{\partial n_{i}} \times \frac{\partial n_{i}}{\partial x}$$
 

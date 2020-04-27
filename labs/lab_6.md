@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 6. ] Decision Trees
+[Lab 6] Decision Trees
 ===================================
 
 Like SVMs, *Decision Trees* are versatile Machine
@@ -130,7 +130,7 @@ the *i*^th^ node. The depth-2 left node has a `gini` score equal to 1 --
 (0/54)^2^ -- (49/54)^2^ -- (5/54)^2^ ≈ 0.168.
 
 
-##### [Equation 6-1. ] Gini impurity
+##### [Equation 6-1] Gini impurity
 
 $$G_{i} = 1 - \sum\limits_{k = 1}^{n}{p_{i,k}}^{2}$$
 
@@ -232,7 +232,7 @@ that produces the purest subsets (weighted by their size). [Equation
 gives the cost function that the algorithm tries to minimize.
 
 
-##### [Equation 6-2. ] CART cost function for classification
+##### [Equation 6-2] CART cost function for classification
 
 $$\begin{array}{cl}
  & {J\left( k,t_{k} \right) = \frac{m_{\text{left}}}{m}G_{\text{left}} + \frac{m_{\text{right}}}{m}G_{\text{right}}} \\
@@ -322,7 +322,7 @@ has an entropy equal to --(49/54) log~2~ (49/54) -- (5/54) log~2~ (5/54)
 ≈ 0.445.
 
 
-##### [Equation 6-3. ] Entropy
+##### [Equation 6-3] Entropy
 
 $$H_{i} = - \sum\limits_{\binom{k = 1}{p_{i,k} \neq 0}}^{n}{p_{i,k}\log_{2}\left( p_{i,k} \right)}$$
 
@@ -458,7 +458,7 @@ the MSE. [Equation
 shows the cost function that the algorithm tries to minimize.
 
 
-##### [Equation 6-4. ] CART cost function for regression
+##### [Equation 6-4] CART cost function for regression
 
 $$J\left( k,t_{k} \right) = \frac{m_{\text{left}}}{m}\text{MSE}_{\text{left}} + \frac{m_{\text{right}}}{m}\text{MSE}_{\text{right}}\text{where}\left\{ \begin{array}{l}
 {\text{MSE}_{\text{node}} = \sum\limits_{i \in \text{node}}\left( {\hat{y}}_{\text{node}} - y^{(i)} \right)^{2}} \\

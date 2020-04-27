@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 18. ] Reinforcement Learning
+[Lab 18] Reinforcement Learning
 ============================================
 
 *Reinforcement Learning* (RL) is one of the most
@@ -831,7 +831,7 @@ average after taking one optimal action, plus the expected optimal value
 of all possible next states that this action can lead to.
 
 
-##### [Equation 18-1. ] Bellman Optimality Equation
+##### [Equation 18-1] Bellman Optimality Equation
 
 $$V^{*}\left( s \right) = \max\limits_{a}\sum\limits_{s'}{T\left( s,a,s' \right)\left\lbrack R\left( s,a,s' \right) + \gamma \cdot V^{*}\left( s' \right) \right\rbrack}\text{for}\text{all} s$$
 
@@ -862,7 +862,7 @@ guaranteed to converge to the optimal state values, corresponding to the
 optimal [policy].
 
 
-##### [Equation 18-2. ] Value Iteration algorithm
+##### [Equation 18-2] Value Iteration algorithm
 
 $$\left. V_{k + 1}\left( s \right)\leftarrow\max\limits_{a}\sum\limits_{s'}{T\left( s,a,s' \right)\left\lbrack R\left( s,a,s' \right) + \gamma \cdot V_{k}\left( s' \right) \right\rbrack}\text{for}\text{all} s \right.$$
 
@@ -894,7 +894,7 @@ using the *Q-Value Iteration* algorithm (see [Equation
 18-3]
 
 
-##### [Equation 18-3. ] Q-Value Iteration algorithm
+##### [Equation 18-3] Q-Value Iteration algorithm
 
 $$\left. Q_{k + 1}\left( s,a \right)\leftarrow\sum\limits_{s'}{T\left( s,a,s' \right)\left\lbrack R\left( s,a,s' \right) + \gamma \cdot \max\limits_{a'}\,{Q_{k}\left( s',a' \right)} \right\rbrack}\text{for}\text{all}\left( s,a \right) \right.$$
 
@@ -1010,7 +1010,7 @@ that are actually observed (see [Equation
 18-4]
 
 
-##### [Equation 18-4. ] TD Learning algorithm
+##### [Equation 18-4] TD Learning algorithm
 
 $$\left. V_{k + 1}\left( s \right)\leftarrow\left( 1 - \alpha \right)V_{k}\left( s \right) + \alpha\left( {r + \gamma \cdot V_{k}\left( s' \right)} \right)\text{or,~equivalently:~} V_{k + 1}\left( s \right)\leftarrow V_{k}\left( s \right) + \alpha \cdot \delta_{k}\left( s,r,s' \right)\text{with~}\delta_{k}\left( s,r,s\prime \right) = r + \gamma \cdot V_{k}\left( s' \right) - V_{k}\left( s \right) \right.$$
 
@@ -1064,7 +1064,7 @@ optimal policy is choosing the action that has the highest Q-Value
 (i.e., the greedy policy).
 
 
-##### [Equation 18-5. ] Q-Learning algorithm
+##### [Equation 18-5] Q-Learning algorithm
 
 $$Q\left( s,a \right)\underset{\alpha}{\leftarrow}r + \gamma \cdot \max\limits_{a'}~Q\left( s',a' \right)$$
 
@@ -1172,7 +1172,7 @@ added to the Q-Value estimates, as shown in [Equation
 18-6]
 
 
-##### [Equation 18-6. ] Q-Learning using an exploration function
+##### [Equation 18-6] Q-Learning using an exploration function
 
 $$Q\left( s,a \right)\underset{\alpha}{\leftarrow}r + \gamma \cdot \max\limits_{a'}~f\left( {Q\left( s',a' \right),N\left( s',a' \right)} \right)$$
 
@@ -1234,7 +1234,7 @@ state-action pair (*s*, *a*), as shown in [Equation
 18-7]
 
 
-##### [Equation 18-7. ] Target Q-Value
+##### [Equation 18-7] Target Q-Value
 
 $Q_{\text{target}}\left( s,a \right) = r + \gamma \cdot \max\limits_{a'}~Q_{\mathbf{\theta}}\left( s',a' \right)$
 

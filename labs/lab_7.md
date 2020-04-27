@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 7. ] Ensemble Learning and Random Forests
+[Lab 7] Ensemble Learning and Random Forests
 =========================================================
 
 Suppose 
@@ -574,7 +574,7 @@ its weighted error rate *r*~1~ is computed on the training set; see
 7-1]
 
 
-##### [Equation 7-1. ] Weighted error rate of the j^th^ predictor
+##### [Equation 7-1] Weighted error rate of the j^th^ predictor
 
 $$r_{j} = \frac{\sum\limits_{\binom{i = 1}{{\hat{y}}_{j}^{(i)} \neq y^{(i)}}}^{m}w^{(i)}}{\sum\limits_{i = 1}^{m}w^{(i)}}\text{where}{\hat{y}}_{j}^{(i)}\text{is}\text{the} j^{\text{th}}\text{predictor’s}\text{prediction}\text{for}\text{the} i^{\text{th}}\text{instance.}$$
 
@@ -590,7 +590,7 @@ However, if it is most often wrong (i.e., less accurate than random
 guessing), then its weight will be negative.
 
 
-##### [Equation 7-2. ] Predictor weight
+##### [Equation 7-2] Predictor weight
 
 $$\begin{array}{r}
 {\alpha_{j} = \eta\log\frac{1 - r_{j}}{r_{j}}} \\
@@ -603,7 +603,7 @@ Next, the AdaBoost algorithm updates the instance weights, using
 which boosts the weights of the misclassified instances.
 
 
-##### [Equation 7-3. ] Weight update rule
+##### [Equation 7-3] Weight update rule
 
 $$\begin{array}{cl}
  & {\text{for} i = 1,2,\cdots,m} \\
@@ -630,7 +630,7 @@ predicted class is the one that receives the majority of weighted votes
 7-4]
 
 
-##### [Equation 7-4. ] AdaBoost predictions
+##### [Equation 7-4] AdaBoost predictions
 
 $$\hat{y}\left( \mathbf{x} \right) = \operatorname{argmax}\limits_{k}{\sum\limits_{\binom{j = 1}{{\hat{y}}_{j}{(\mathbf{x})} = k}}^{N}\alpha_{j}}\text{where} N\text{is}\text{the}\text{number}\text{of}\text{predictors.}$$
 

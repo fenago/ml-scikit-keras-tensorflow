@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 4. ] Training Models
+[Lab 4] Training Models
 ====================================
 
 So far we have treated
@@ -91,7 +91,7 @@ plus a constant called the
 4-1]
 
 
-##### [Equation 4-1. ] Linear Regression model prediction
+##### [Equation 4-1] Linear Regression model prediction
 
 $$\hat{y} = \theta_{0} + \theta_{1}x_{1} + \theta_{2}x_{2} + \cdots + \theta_{n}x_{n}$$
 
@@ -112,7 +112,7 @@ shown in [Equation
 4-2]
 
 
-##### [Equation 4-2. ] Linear Regression model prediction (vectorized form)
+##### [Equation 4-2] Linear Regression model prediction (vectorized form)
 
 $\hat{y} = h_{\mathbf{\theta}}\left( \mathbf{x} \right) = \mathbf{\theta} \cdot \mathbf{x}$
 
@@ -173,7 +173,7 @@ The MSE of a Linear Regression hypothesis *h*~**θ**~ on a training set
 4-3]
 
 
-##### [Equation 4-3. ] MSE cost function for a Linear Regression model
+##### [Equation 4-3] MSE cost function for a Linear Regression model
 
 $$\text{MSE}\left( \mathbf{X},h_{\mathbf{\theta}} \right) = \frac{1}{m}\sum\limits_{i = 1}^{m}\left( \mathbf{\theta}^{\intercal}\mathbf{x}^{(i)} - y^{(i)} \right)^{2}$$
 
@@ -200,7 +200,7 @@ gives the result directly. This is called the *Normal Equation*
 4-4]
 
 
-##### [Equation 4-4. ] Normal Equation
+##### [Equation 4-4] Normal Equation
 
 $$\hat{\mathbf{\theta}} = \left( \mathbf{X}^{\intercal}\mathbf{X} \right)^{- 1}~\mathbf{X}^{\intercal}~\mathbf{y}$$
 
@@ -492,7 +492,7 @@ computes the partial derivative of the cost function with regard to
 parameter *θ*~*j*~, noted ∂ MSE(**θ**) / ∂θ~*j*~.
 
 
-##### [Equation 4-5. ] Partial derivatives of the cost function
+##### [Equation 4-5] Partial derivatives of the cost function
 
 $$\frac{\partial}{\partial\theta_{j}}\text{MSE}\left( \mathbf{\theta} \right) = \frac{2}{m}\sum\limits_{i = 1}^{m}\left( \mathbf{\theta}^{\intercal}\mathbf{x}^{(i)} - y^{(i)} \right)\, x_{j}^{(i)}$$
 
@@ -505,7 +505,7 @@ to compute them all in one go. The gradient vector, noted
 function (one for each model parameter).
 
 
-##### [Equation 4-6. ] Gradient vector of the cost function
+##### [Equation 4-6] Gradient vector of the cost function
 
 $$\nabla_{\mathbf{\theta}}\,\text{MSE}\left( \mathbf{\theta} \right) = \begin{pmatrix}
 {\frac{\partial}{\partial\theta_{0}}\text{MSE}\left( \mathbf{\theta} \right)} \\
@@ -539,7 +539,7 @@ size of the downhill step ([Equation
 4-7]
 
 
-##### [Equation 4-7. ] Gradient Descent step
+##### [Equation 4-7] Gradient Descent step
 
 $\mathbf{\theta}^{(\text{next\ step})} = \mathbf{\theta} - \eta\nabla_{\mathbf{\theta}}\,\text{MSE}\left( \mathbf{\theta} \right)$
 
@@ -794,7 +794,7 @@ and *n* is the number of features); see
   Stochastic GD     Fast        Yes                   Fast        ≥2            Yes                `SGDRegressor`
   Mini-batch GD     Fast        Yes                   Fast        ≥2            Yes                `SGDRegressor`
 
-  : [Table 4-1. ] Comparison of algorithms for Linear Regression
+  : [Table 4-1] Comparison of algorithms for Linear Regression
 
 
 ###### Note
@@ -1109,7 +1109,7 @@ function.
 
 
 
-##### [Equation 4-8. ] Ridge Regression cost function
+##### [Equation 4-8] Ridge Regression cost function
 
 ${J\left( \mathbf{\theta} \right)} = {\text{MSE}\left( \mathbf{\theta} \right)} + \alpha\frac{1}{2}\sum\limits_{i = 1}^{n}{\theta_{i}}^{2}$
 
@@ -1155,7 +1155,7 @@ matrix*, ^[11]
 except with a 0 in the top-left cell, corresponding to the bias term.
 
 
-##### [Equation 4-9. ] Ridge Regression closed-form solution
+##### [Equation 4-9] Ridge Regression closed-form solution
 
 $$\hat{\mathbf{\theta}} = \left( \mathbf{X}^{\intercal}\mathbf{X} + \alpha\mathbf{A} \right)^{- 1}~\mathbf{X}^{\intercal}~\mathbf{y}$$
 
@@ -1204,7 +1204,7 @@ the ℓ~2~ norm (see [Equation
 4-10]
 
 
-##### [Equation 4-10. ] Lasso Regression cost function
+##### [Equation 4-10] Lasso Regression cost function
 
 ${J\left( \mathbf{\theta} \right)} = {\text{MSE}\left( \mathbf{\theta} \right)} + {\alpha\sum\limits_{i = 1}^{n}\left| \theta_{i} \right|}$
 
@@ -1281,7 +1281,7 @@ shows a subgradient vector equation you can use for Gradient Descent
 with the Lasso cost function.
 
 
-##### [Equation 4-11. ] Lasso Regression subgradient vector
+##### [Equation 4-11] Lasso Regression subgradient vector
 
 ${g\left( \mathbf{\theta},J \right)} = {\nabla_{\mathbf{\theta}}\,\text{MSE}\left( \mathbf{\theta} \right)} + {\alpha\begin{pmatrix}
 {\operatorname{sign}\left( \theta_{1} \right)} \\
@@ -1322,7 +1322,7 @@ Lasso Regression (see [Equation
 4-12]
 
 
-##### [Equation 4-12. ] Elastic Net cost function
+##### [Equation 4-12] Elastic Net cost function
 
 ${J\left( \mathbf{\theta} \right)} = {\text{MSE}\left( \mathbf{\theta} \right)} + {r\alpha\sum\limits_{i = 1}^{n}\left| \theta_{i} \right|} + \frac{1 - r}{2}\alpha\sum\limits_{i = 1}^{n}{\theta_{i}}^{2}$
 
@@ -1450,7 +1450,7 @@ the *logistic* of this result (see [Equation
 4-13]
 
 
-##### [Equation 4-13. ] Logistic Regression model estimated probability (vectorized form)
+##### [Equation 4-13] Logistic Regression model estimated probability (vectorized form)
 
 $$\hat{p} = h_{\mathbf{\theta}}\left( \mathbf{x} \right) = \sigma\left( \mathbf{x}^{\intercal}\mathbf{\theta} \right)$$
 
@@ -1464,7 +1464,7 @@ and
 [Figure 4-21]
 
 
-##### [Equation 4-14. ] Logistic function
+##### [Equation 4-14] Logistic function
 
 $$\sigma\left( t \right) = \frac{1}{1 + \exp\left( - t \right)}$$
 
@@ -1477,7 +1477,7 @@ positive class, it can make its prediction *ŷ* easily (see [Equation
 4-15]
 
 
-##### [Equation 4-15. ] Logistic Regression model prediction
+##### [Equation 4-15] Logistic Regression model prediction
 
 $$\hat{y} = \begin{cases}
 0 & {\text{if}\hat{p} < 0.5} \\
@@ -1518,7 +1518,7 @@ captured by the cost function shown in [Equation
 for a single training instance **x**.
 
 
-##### [Equation 4-16. ] Cost function of a single training instance
+##### [Equation 4-16] Cost function of a single training instance
 
 ${c\left( \mathbf{\theta} \right)} = \left\{ \begin{matrix}
 {- \log\left( \hat{p} \right)} & {\text{if~}y = 1} \\
@@ -1541,7 +1541,7 @@ single expression called the *log loss*, shown in [Equation
 4-17]
 
 
-##### [Equation 4-17. ] Logistic Regression cost function (log loss)
+##### [Equation 4-17] Logistic Regression cost function (log loss)
 
 ${J\left( \mathbf{\theta} \right)} = {- \frac{1}{m}\sum\limits_{i = 1}^{m}\left\lbrack {y^{(i)}log\left\lbrack {\hat{p}}^{(i)} \right\rbrack + \left( 1 - y^{(i)} \right)log\left\lbrack {1 - {\hat{p}}^{(i)}} \right\rbrack} \right\rbrack}$
 
@@ -1557,7 +1557,7 @@ are given by [Equation
 4-18]
 
 
-##### [Equation 4-18. ] Logistic cost function partial derivatives
+##### [Equation 4-18] Logistic cost function partial derivatives
 
 $$\frac{\partial}{\partial\theta_{j}}\text{J}\left( \mathbf{\theta} \right) = \frac{1}{m}\sum\limits_{i = 1}^{m}\left( {\sigma\left( \mathbf{\theta}^{\intercal}\mathbf{x}^{(i)} \right) - y^{(i)}} \right)\, x_{j}^{(i)}$$
 
@@ -1698,7 +1698,7 @@ it is just like the equation for Linear Regression prediction (see
 4-19]
 
 
-##### [Equation 4-19. ] Softmax score for class k
+##### [Equation 4-19] Softmax score for class k
 
 $$s_{k}\left( \mathbf{x} \right) = \mathbf{x}^{\intercal}\mathbf{\theta}^{(k)}$$
 
@@ -1718,7 +1718,7 @@ generally called logits or log-odds (although they are actually
 unnormalized log-odds).
 
 
-##### [Equation 4-20. ] Softmax function
+##### [Equation 4-20] Softmax function
 
 $${\hat{p}}_{k} = \sigma\left( {\mathbf{s}\left( \mathbf{x} \right)} \right)_{k} = \frac{\exp\left( {s_{k}\left( \mathbf{x} \right)} \right)}{\sum\limits_{j = 1}^{K}{\exp\left( {s_{j}\left( \mathbf{x} \right)} \right)}}$$
 
@@ -1741,7 +1741,7 @@ classifier predicts the class with the highest estimated probability
 4-21]
 
 
-##### [Equation 4-21. ] Softmax Regression classifier prediction
+##### [Equation 4-21] Softmax Regression classifier prediction
 
 $$\hat{y} = \operatorname{argmax}\limits_{k}\,\sigma\left( {\mathbf{s}\left( \mathbf{x} \right)} \right)_{k} = \operatorname{argmax}\limits_{k}\, s_{k}\left( \mathbf{x} \right) = \operatorname{argmax}\limits_{k}\,\left( {\left( \mathbf{\theta}^{(k)} \right)^{\intercal}\mathbf{x}} \right)$$
 
@@ -1773,7 +1773,7 @@ class. Cross entropy is frequently used to measure how well a set of
 estimated class probabilities matches the target classes.
 
 
-##### [Equation 4-22. ] Cross entropy cost function
+##### [Equation 4-22] Cross entropy cost function
 
 ${J\left( \mathbf{\Theta} \right)} = {- \frac{1}{m}\sum\limits_{i = 1}^{m}\sum\limits_{k = 1}^{K}y_{k}^{(i)}\log\left( {\hat{p}}_{k}^{(i)} \right)}$
 
@@ -1817,7 +1817,7 @@ given by [Equation
 4-23]
 
 
-##### [Equation 4-23. ] Cross entropy gradient vector for class k
+##### [Equation 4-23] Cross entropy gradient vector for class k
 
 $$\nabla_{\mathbf{\theta}^{(k)}}\, J\left( \mathbf{\Theta} \right) = \frac{1}{m}\sum\limits_{i = 1}^{m}{\left( {{\hat{p}}_{k}^{(i)} - y_{k}^{(i)}} \right)\mathbf{x}^{(i)}}$$
 

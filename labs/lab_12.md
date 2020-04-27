@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 12. ] Custom Models and Training with TensorFlow
+[Lab 12] Custom Models and Training with TensorFlow
 ==================================================================================
 
 Up until now,

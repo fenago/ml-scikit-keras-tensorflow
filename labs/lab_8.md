@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 8. ] Dimensionality Reduction
+[Lab 8] Dimensionality Reduction
 =============================================
 
 Many Machine Learning problems involve thousands
@@ -316,7 +316,7 @@ shown in [Equation
 8-1]
 
 
-##### [Equation 8-1. ] Principal components matrix
+##### [Equation 8-1] Principal components matrix
 
 $$\mathbf{V} = \begin{pmatrix}
  \mid & \mid & & \mid \\
@@ -371,7 +371,7 @@ multiplication of the training set matrix **X** by the matrix
 8-2]
 
 
-##### [Equation 8-2. ] Projecting the training set down to *d* dimensions
+##### [Equation 8-2] Projecting the training set down to *d* dimensions
 
 $$\mathbf{X}_{d\text{-proj}} = \mathbf{X}\mathbf{W}_{d}$$
 
@@ -531,7 +531,7 @@ transformation is shown in [Equation
 8-3]
 
 
-##### [Equation 8-3. ] PCA inverse transformation, back to the original number of dimensions
+##### [Equation 8-3] PCA inverse transformation, back to the original number of dimensions
 
 $$\mathbf{X}_{\text{recovered}} = \mathbf{X}_{d\text{-proj}}{\mathbf{W}_{d}}^{\intercal}$$
 
@@ -817,7 +817,7 @@ The second constraint simply normalizes the weights for each training
 instance **x**^(*i*)^.
 
 
-##### [Equation 8-4. ] LLE step one: linearly modeling local relationships
+##### [Equation 8-4] LLE step one: linearly modeling local relationships
 
 $$\begin{array}{cl}
  & {\hat{\mathbf{W}} = \operatorname{argmin}\limits_{\mathbf{W}}\sum\limits_{i = 1}^{m}\left( {\mathbf{x}^{(i)} - \sum\limits_{j = 1}^{m}w_{i,j}\mathbf{x}^{(j)}} \right)^{2}} \\
@@ -846,7 +846,7 @@ the instances' images in the low-dimensional space. Note that **Z** is
 the matrix containing all **z**^(*i*)^.
 
 
-##### [Equation 8-5. ] LLE step two: reducing dimensionality while preserving relationships
+##### [Equation 8-5] LLE step two: reducing dimensionality while preserving relationships
 
 $$\hat{\mathbf{Z}} = \operatorname{argmin}\limits_{\mathbf{Z}}\sum\limits_{i = 1}^{m}\left( {\mathbf{z}^{(i)} - \sum\limits_{j = 1}^{m}{\hat{w}}_{i,j}\mathbf{z}^{(j)}} \right)^{2}$$
 

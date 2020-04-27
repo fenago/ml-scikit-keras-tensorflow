@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 9. ] Unsupervised Learning Techniques
+[Lab 9] Unsupervised Learning Techniques
 =====================================================
 
 Although most of the applications of Machine
@@ -1591,7 +1591,7 @@ information criterion* (AIC), defined in [Equation
 9-1]
 
 
-##### [Equation 9-1. ] Bayesian information criterion (BIC) and Akaike information criterion (AIC)
+##### [Equation 9-1] Bayesian information criterion (BIC) and Akaike information criterion (AIC)
 
 $$\begin{aligned}
 {BIC = \,} & {\,\log\left( m \right)p - 2\log\left( \hat{L} \right)} \\
@@ -1781,7 +1781,7 @@ computes the *posterior* distribution *p*(**z**\|**X**), which is the
 conditional probability of **z** given **X**.
 
 
-##### [Equation 9-2. ] Bayes' theorem
+##### [Equation 9-2] Bayes' theorem
 
 $$p\left( \mathbf{z} \middle| \mathbf{X} \right) = \text{posterior} = \frac{\text{likelihood}\operatorname{~\times~}\text{prior}}{\text{evidence}} = \frac{p\left( \mathbf{X} \middle| \mathbf{z} \right)\, p\left( \mathbf{z} \right)}{p\left( \mathbf{X} \right)}$$
 
@@ -1794,7 +1794,7 @@ which would require considering all possible combinations of cluster
 parameters and cluster assignments.
 
 
-##### [Equation 9-3. ] The evidence *p*(**X**) is often intractable
+##### [Equation 9-3] The evidence *p*(**X**) is often intractable
 
 $$p\left( \mathbf{X} \right) = \int{p\left( \mathbf{X} \middle| \mathbf{z} \right)p\left( \mathbf{z} \right)d\mathbf{z}}$$
 
@@ -1815,7 +1815,7 @@ log of the evidence does not depend on *q*, it is a constant term, so
 minimizing the KL divergence just requires maximizing the ELBO.
 
 
-##### [Equation 9-4. ] KL divergence from *q*(**z**) to *p*(**z**\|**X**)
+##### [Equation 9-4] KL divergence from *q*(**z**) to *p*(**z**\|**X**)
 
 $$\begin{array}{cl}
 {{D_{KL}\left( q \parallel p \right)} =} & {\,{\mathbb{E}}_{q}\left\lbrack {\log\frac{q\left( \mathbf{z} \right)}{p\left( \mathbf{z}\, \middle| \,\mathbf{X} \right)}} \right\rbrack} \\

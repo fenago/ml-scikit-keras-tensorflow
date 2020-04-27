@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 16. ] Natural Language Processing with [RNNs and Attention]
+[Lab 16] Natural Language Processing with [RNNs and Attention]
 ===========================================================================================
 
 When Alan Turing imagined
@@ -1372,7 +1372,7 @@ mechanisms are summarized in [Equation
 16-1]
 
 
-##### [Equation 16-1. ] Attention mechanisms
+##### [Equation 16-1] Attention mechanisms
 
 $$\begin{aligned}
 {\widetilde{\mathbf{h}}}_{(t)} & {= \sum\limits_{i}\alpha_{(t,i)}\mathbf{y}_{(i)}} \\
@@ -1569,7 +1569,7 @@ and represented at the bottom of
 embedding for the word located at the *p*^th^ position in the sentence.
 
 
-##### [Equation 16-2. ] Sine/cosine positional encodings
+##### [Equation 16-2] Sine/cosine positional encodings
 
 $$\begin{aligned}
 P_{p,2i} & {= \sin\left( p/10000^{2i/d} \right)} \\
@@ -1679,7 +1679,7 @@ except for a scaling factor. The equation is shown in [Equation
 in a vectorized form.
 
 
-##### [Equation 16-3. ] Scaled Dot-Product Attention
+##### [Equation 16-3] Scaled Dot-Product Attention
 
 $$\operatorname{Attention}\left( \mathbf{Q},\mathbf{K},\mathbf{V} \right) = \operatorname{softmax}\left( \frac{\mathbf{Q}\mathbf{K}^{\intercal}}{\sqrt{d_{keys}}} \right)\mathbf{V}$$
 

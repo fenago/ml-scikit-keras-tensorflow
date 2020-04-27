@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 13. ] Loading and Preprocessing Data with TensorFlow
+[Lab 13] Loading and Preprocessing Data with TensorFlow
 ======================================================================================
 
 So far we have used only

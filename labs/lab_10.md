@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 10. ] Introduction to Artificial Neural Networks with Keras
+[Lab 10] Introduction to Artificial Neural Networks with Keras
 ===========================================================================
 
 Birds inspired us to fly, burdock plants inspired
@@ -228,7 +228,7 @@ is the *Heaviside step function* (see [Equation
 Sometimes the sign function is used instead.
 
 
-##### [Equation 10-1. ] Common step functions used in Perceptrons (assuming threshold = 0)
+##### [Equation 10-1] Common step functions used in Perceptrons (assuming threshold = 0)
 
 $$\begin{aligned}
 {\operatorname{heaviside}\left( z \right) = \begin{cases}
@@ -276,7 +276,7 @@ makes it possible to efficiently compute the outputs of a layer of
 artificial neurons for several instances at once.
 
 
-##### [Equation 10-2. ] Computing the outputs of a fully connected layer
+##### [Equation 10-2] Computing the outputs of a fully connected layer
 
 $$h_{\mathbf{W},\mathbf{b}}\left( \mathbf{X} \right) = \phi\left( \mathbf{X}\mathbf{W} + \mathbf{b} \right)$$
 
@@ -319,7 +319,7 @@ would have contributed to the correct prediction. The rule is shown in
 10-3]
 
 
-##### [Equation 10-3. ] Perceptron learning rule (weight update)
+##### [Equation 10-3] Perceptron learning rule (weight update)
 
 $${w_{i,j}}^{(\text{next}\text{step})} = w_{i,j} + \eta\left( y_{j} - {\hat{y}}_{j} \right)x_{i}$$
 
@@ -646,7 +646,7 @@ summarizes the typical architecture of a regression MLP.
   Output activation             None, or ReLU/softplus (if positive outputs) or logistic/tanh (if bounded outputs)
   Loss function                 MSE or MAE/Huber (if outliers)
 
-  : [Table 10-1. ] Typical regression MLP architecture
+  : [Table 10-1] Typical regression MLP architecture
 
 
 
@@ -707,7 +707,7 @@ summarizes the typical architecture of a classification MLP.
   Output layer activation   Logistic                Logistic                           Softmax
   Loss function             Cross entropy           Cross entropy                      Cross entropy
 
-  : [Table 10-2. ] Typical classification MLP architecture
+  : [Table 10-2] Typical classification MLP architecture
 
 
 ###### Tip
