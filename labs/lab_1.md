@@ -753,43 +753,7 @@ one attribute, GDP per capita ([Equation
 1-1]
 
 
-##### [Equation 1-1] A simple linear model
-
-[]{.MathJax_Preview style="color: inherit; display: none;"}
-
-
-[[[[[[[life_satisfaction]{#MathJax-Span-4 .mtext
-style="font-family: MathJax_Main;"}[=]{#MathJax-Span-5 .mo
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[[[[θ]{#MathJax-Span-7
-.mi
-style="font-family: MathJax_Math-italic;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.139em, 1000.47em, 4.167em, -1000.01em); top: -4.008em; left: 0em;"}[[0]{#MathJax-Span-8
-.mn
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; top: -3.854em; left: 0.465em;"}]{style="display: inline-block; position: relative; width: 0.877em; height: 0px;"}]{#MathJax-Span-6
-.msub style="padding-left: 0.26em;"}[+]{#MathJax-Span-9 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[[[[θ]{#MathJax-Span-11
-.mi
-style="font-family: MathJax_Math-italic;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.139em, 1000.47em, 4.167em, -1000.01em); top: -4.008em; left: 0em;"}[[1]{#MathJax-Span-12
-.mn
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; top: -3.854em; left: 0.465em;"}]{style="display: inline-block; position: relative; width: 0.877em; height: 0px;"}]{#MathJax-Span-10
-.msub style="padding-left: 0.208em;"}[×]{#MathJax-Span-13 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[GDP_per_capita]{#MathJax-Span-14
-.mtext
-style="font-family: MathJax_Main; padding-left: 0.208em;"}]{#MathJax-Span-3
-.mrow}]{#MathJax-Span-2
-.mrow}[]{style="display: inline-block; width: 0px; height: 2.111em;"}]{style="position: absolute; clip: rect(1.237em, 1019.45em, 2.47em, -1000.01em); top: -2.105em; left: 0em;"}]{style="display: inline-block; position: relative; width: 19.437em; height: 0px; font-size: 103%;"}[]{style="display: inline-block; overflow: hidden; vertical-align: -0.262em; border-left: 0px solid; width: 0px; height: 1.009em;"}]{#MathJax-Span-1
-.math
-style="width: 20.054em; display: inline-block;"}[$$\text{life_satisfaction} = \theta_{0} + \theta_{1} \times \text{GDP_per_capita}$$]{.MJX_Assistive_MathML
-.MJX_Assistive_MathML_Block
-role="presentation"}]{#MathJax-Element-1-Frame .MathJax tabindex="0"
-mathml="<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mrow><mtext>life_satisfaction</mtext><mo>=</mo><msub><mi>&#x3B8;</mi><mn>0</mn></msub><mo>+</mo><msub><mi>&#x3B8;</mi><mn>1</mn></msub><mo>&#xD7;</mo><mtext>GDP_per_capita</mtext></mrow></math>"
-role="presentation" style="text-align: center; position: relative;"}
-
-
-This model has two *model parameters*, *θ*~0~ and
-*θ*~1~.
-^[5] By tweaking these parameters, you can make your model
-represent any linear function, as shown in
-[Figure 1-18]
+![](./images/1.png)
 
 ![](./images/mls2_0118.png)
 

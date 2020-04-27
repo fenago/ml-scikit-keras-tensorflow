@@ -356,34 +356,7 @@ classifier ([Equation
 
 ##### [Equation 3-1] Precision
 
-[]{.MathJax_Preview style="color: inherit; display: none;"}
-
-
-[[[[[[[precision]{#MathJax-Span-252 .mtext
-style="font-family: MathJax_Main;"}[=]{#MathJax-Span-253 .mo
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[[[[[T[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-256
-.mi
-style="font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-257
-.mi style="font-family: MathJax_Math-italic;"}]{#MathJax-Span-255
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1001.45em, 4.167em, -1000.01em); top: -4.676em; left: 50%; margin-left: -0.717em;"}[[[T[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-259
-.mi
-style="font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-260
-.mi style="font-family: MathJax_Math-italic;"}[+]{#MathJax-Span-261 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[F[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-262
-.mi
-style="font-family: MathJax_Math-italic; padding-left: 0.208em;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-263
-.mi style="font-family: MathJax_Math-italic;"}]{#MathJax-Span-258
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1004.18em, 4.27em, -1000.01em); top: -3.339em; left: 50%; margin-left: -2.054em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 4.27em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1004.28em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 4.27em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-254
-.mfrac style="padding-left: 0.26em;"}]{#MathJax-Span-251
-.mrow}]{#MathJax-Span-250
-.mrow}[]{style="display: inline-block; width: 0px; height: 2.111em;"}]{style="position: absolute; clip: rect(0.62em, 1009.63em, 3.036em, -1000.01em); top: -2.105em; left: 0em;"}]{style="display: inline-block; position: relative; width: 9.617em; height: 0px; font-size: 103%;"}[]{style="display: inline-block; overflow: hidden; vertical-align: -0.845em; border-left: 0px solid; width: 0px; height: 2.28em;"}]{#MathJax-Span-249
-.math
-style="width: 9.926em; display: inline-block;"}[$$\text{precision} = \frac{TP}{TP + FP}$$]{.MJX_Assistive_MathML
-.MJX_Assistive_MathML_Block
-role="presentation"}]{#MathJax-Element-7-Frame .MathJax tabindex="0"
-mathml="<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mrow><mtext>precision</mtext><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>P</mi></mrow></mfrac></mrow></math>"
-role="presentation" style="text-align: center; position: relative;"}
-
+![](./images/6.png)
 
 *TP* is the number of true positives, and *FP* is the number of false
 positives.
@@ -402,34 +375,7 @@ classifier ([Equation
 
 ##### [Equation 3-2] Recall
 
-[]{.MathJax_Preview style="color: inherit; display: none;"}
-
-
-[[[[[[[recall]{#MathJax-Span-267 .mtext
-style="font-family: MathJax_Main;"}[=]{#MathJax-Span-268 .mo
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[[[[[T[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-271
-.mi
-style="font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-272
-.mi style="font-family: MathJax_Math-italic;"}]{#MathJax-Span-270
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1001.45em, 4.167em, -1000.01em); top: -4.676em; left: 50%; margin-left: -0.717em;"}[[[T[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-274
-.mi
-style="font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-275
-.mi style="font-family: MathJax_Math-italic;"}[+]{#MathJax-Span-276 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[F[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-277
-.mi
-style="font-family: MathJax_Math-italic; padding-left: 0.208em;"}[N[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-278
-.mi style="font-family: MathJax_Math-italic;"}]{#MathJax-Span-273
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1004.28em, 4.27em, -1000.01em); top: -3.339em; left: 50%; margin-left: -2.157em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 4.424em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1004.43em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 4.424em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-269
-.mfrac style="padding-left: 0.26em;"}]{#MathJax-Span-266
-.mrow}]{#MathJax-Span-265
-.mrow}[]{style="display: inline-block; width: 0px; height: 2.111em;"}]{style="position: absolute; clip: rect(0.62em, 1008.29em, 3.036em, -1000.01em); top: -2.105em; left: 0em;"}]{style="display: inline-block; position: relative; width: 8.28em; height: 0px; font-size: 103%;"}[]{style="display: inline-block; overflow: hidden; vertical-align: -0.845em; border-left: 0px solid; width: 0px; height: 2.28em;"}]{#MathJax-Span-264
-.math
-style="width: 8.537em; display: inline-block;"}[$$\text{recall} = \frac{TP}{TP + FN}$$]{.MJX_Assistive_MathML
-.MJX_Assistive_MathML_Block
-role="presentation"}]{#MathJax-Element-8-Frame .MathJax tabindex="0"
-mathml="<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mrow><mtext>recall</mtext><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mi>F</mi><mi>N</mi></mrow></mfrac></mrow></math>"
-role="presentation" style="text-align: center; position: relative;"}
-
+![](./images/7.png)
 
 *FN* is, of course, the number of false negatives.
 
@@ -438,8 +384,6 @@ If you are confused about the confusion matrix,
 may help.
 
 ![](./images/mls2_0302.png)
-
-
 
 
 Precision and Recall
@@ -472,93 +416,7 @@ gives much more weight to low values. As a result, the classifier will
 only get a high F~1~ score if both recall and precision are high.
 
 
-##### [Equation 3-3] F~1~
-
-[]{.MathJax_Preview style="color: inherit; display: none;"}
-
-
-[[[[[[[[[[F[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-283
-.mi
-style="font-family: MathJax_Math-italic;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1000.73em, 4.167em, -1000.01em); top: -4.008em; left: 0em;"}[[1]{#MathJax-Span-284
-.mn
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; top: -3.854em; left: 0.671em;"}]{style="display: inline-block; position: relative; width: 1.082em; height: 0px;"}]{#MathJax-Span-282
-.msub}[=]{#MathJax-Span-285 .mo
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[[[[2]{#MathJax-Span-287
-.mn
-style="font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1000.47em, 4.167em, -1000.01em); top: -4.676em; left: 50%; margin-left: -0.255em;"}[[[[[[1]{#MathJax-Span-290
-.mn
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.396em, 1000.32em, 4.167em, -1000.01em); top: -4.419em; left: 50%; margin-left: -0.152em;"}[[precision]{#MathJax-Span-291
-.mtext
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.396em, 1002.68em, 4.321em, -1000.01em); top: -3.648em; left: 50%; margin-left: -1.334em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.83em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1002.84em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 2.83em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-289
-.mfrac}[+]{#MathJax-Span-292 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[[[[1]{#MathJax-Span-294
-.mn
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.396em, 1000.32em, 4.167em, -1000.01em); top: -4.419em; left: 50%; margin-left: -0.152em;"}[[recall]{#MathJax-Span-295
-.mtext
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.345em, 1001.66em, 4.167em, -1000.01em); top: -3.596em; left: 50%; margin-left: -0.82em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 1.751em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1001.76em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 1.751em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-293
-.mfrac style="padding-left: 0.208em;"}]{#MathJax-Span-288
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(2.985em, 1006.28em, 4.681em, -1000.01em); top: -3.185em; left: 50%; margin-left: -3.134em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 6.429em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1006.39em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 6.429em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-286
-.mfrac style="padding-left: 0.26em;"}[=]{#MathJax-Span-296 .mo
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[2]{#MathJax-Span-297
-.mn
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[×]{#MathJax-Span-298
-.mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[[[[[precision]{#MathJax-Span-301
-.mtext style="font-family: MathJax_Main;"} []{#MathJax-Span-302 .mspace
-style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[×]{#MathJax-Span-303
-.mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"} []{#MathJax-Span-304
-.mspace
-style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[recall]{#MathJax-Span-305
-.mtext
-style="font-family: MathJax_Main; padding-left: 0.208em;"}]{#MathJax-Span-300
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1007.67em, 4.373em, -1000.01em); top: -4.676em; left: 50%; margin-left: -3.854em;"}[[[precision]{#MathJax-Span-307
-.mtext style="font-family: MathJax_Main;"} []{#MathJax-Span-308 .mspace
-style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[+]{#MathJax-Span-309
-.mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"} []{#MathJax-Span-310
-.mspace
-style="height: 0em; vertical-align: 0em; width: 0.157em; display: inline-block; overflow: hidden;"}[recall]{#MathJax-Span-311
-.mtext
-style="font-family: MathJax_Main; padding-left: 0.208em;"}]{#MathJax-Span-306
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1007.67em, 4.373em, -1000.01em); top: -3.339em; left: 50%; margin-left: -3.854em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 7.818em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1007.83em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 7.818em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-299
-.mfrac}[=]{#MathJax-Span-312 .mo
-style="font-family: MathJax_Main; padding-left: 0.26em;"}[[[[[T[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-315
-.mi
-style="font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-316
-.mi style="font-family: MathJax_Math-italic;"}]{#MathJax-Span-314
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.19em, 1001.45em, 4.167em, -1000.01em); top: -4.676em; left: 50%; margin-left: -0.717em;"}[[[T[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-318
-.mi
-style="font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.105em;"}]{#MathJax-Span-319
-.mi style="font-family: MathJax_Math-italic;"}[+]{#MathJax-Span-320 .mo
-style="font-family: MathJax_Main; padding-left: 0.208em;"}[[[[[F[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.054em;"}]{#MathJax-Span-323
-.mi
-style="font-size: 70.7%; font-family: MathJax_Math-italic;"}[N[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.054em;"}]{#MathJax-Span-324
-.mi
-style="font-size: 70.7%; font-family: MathJax_Math-italic;"}[+]{#MathJax-Span-325
-.mo
-style="font-size: 70.7%; font-family: MathJax_Main;"}[F[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.054em;"}]{#MathJax-Span-326
-.mi
-style="font-size: 70.7%; font-family: MathJax_Math-italic;"}[P[]{style="display: inline-block; overflow: hidden; height: 1px; width: 0.054em;"}]{#MathJax-Span-327
-.mi
-style="font-size: 70.7%; font-family: MathJax_Math-italic;"}]{#MathJax-Span-322
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.396em, 1002.79em, 4.219em, -1000.01em); top: -4.47em; left: 50%; margin-left: -1.386em;"}[[2]{#MathJax-Span-328
-.mn
-style="font-size: 70.7%; font-family: MathJax_Main;"}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(3.396em, 1000.32em, 4.167em, -1000.01em); top: -3.648em; left: 50%; margin-left: -0.152em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 2.882em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1002.89em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 2.882em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-321
-.mfrac style="padding-left: 0.208em;"}]{#MathJax-Span-317
-.mrow}[]{style="display: inline-block; width: 0px; height: 4.013em;"}]{style="position: absolute; clip: rect(2.933em, 1005.77em, 4.527em, -1000.01em); top: -3.082em; left: 50%; margin-left: -2.877em;"}[[]{style="display: inline-block; overflow: hidden; vertical-align: 0em; border-top: 1.3px solid; width: 5.915em; height: 0px;"}[]{style="display: inline-block; width: 0px; height: 1.082em;"}]{style="position: absolute; clip: rect(0.877em, 1005.92em, 1.237em, -1000.01em); top: -1.283em; left: 0em;"}]{style="display: inline-block; position: relative; width: 5.915em; height: 0px; margin-right: 0.105em; margin-left: 0.105em;"}]{#MathJax-Span-313
-.mfrac style="padding-left: 0.26em;"}]{#MathJax-Span-281
-.mrow}]{#MathJax-Span-280
-.mrow}[]{style="display: inline-block; width: 0px; height: 2.111em;"}]{style="position: absolute; clip: rect(0.568em, 1027.26em, 3.653em, -1000.01em); top: -2.105em; left: 0em;"}]{style="display: inline-block; position: relative; width: 27.252em; height: 0px; font-size: 103%;"}[]{style="display: inline-block; overflow: hidden; vertical-align: -1.48em; border-left: 0px solid; width: 0px; height: 2.915em;"}]{#MathJax-Span-279
-.math
-style="width: 28.075em; display: inline-block;"}[$$\mathit{F}_{1} = \frac{2}{\frac{1}{\text{precision}} + \frac{1}{\text{recall}}} = 2 \times \frac{\text{precision}\, \times \,\text{recall}}{\text{precision}\, + \,\text{recall}} = \frac{TP}{TP + \frac{FN + FP}{2}}$$]{.MJX_Assistive_MathML
-.MJX_Assistive_MathML_Block
-role="presentation"}]{#MathJax-Element-9-Frame .MathJax tabindex="0"
-mathml="<math xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><mrow><msub><mi mathvariant=\"italic\">F</mi><mn>1</mn></msub><mo>=</mo><mfrac><mn>2</mn><mrow><mfrac><mn>1</mn><mtext>precision</mtext></mfrac><mo>+</mo><mfrac><mn>1</mn><mtext>recall</mtext></mfrac></mrow></mfrac><mo>=</mo><mn>2</mn><mo>&#xD7;</mo><mfrac><mrow><mtext>precision</mtext><mspace width=\"0.166667em\" /><mo>&#xD7;</mo><mspace width=\"0.166667em\" /><mtext>recall</mtext></mrow><mrow><mtext>precision</mtext><mspace width=\"0.166667em\" /><mo>+</mo><mspace width=\"0.166667em\" /><mtext>recall</mtext></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>T</mi><mi>P</mi></mrow><mrow><mi>T</mi><mi>P</mi><mo>+</mo><mfrac><mrow><mi>F</mi><mi>N</mi><mo>+</mo><mi>F</mi><mi>P</mi></mrow><mn>2</mn></mfrac></mrow></mfrac></mrow></math>"
-role="presentation" style="text-align: center; position: relative;"}
-
-
-To compute the F~1~ score, simply call the `f1_score()` function:
+![](./images/8.png)
 
 ``` {data-type="programlisting" code-language="pycon"}
 >>> from sklearn.metrics import f1_score
@@ -1391,7 +1249,7 @@ available at
 
 
 ^[1] By default Scikit-Learn caches downloaded datasets in a directory called
-*\$HOME/scikit_learn_data*.
+*\$HOME/scikit\_learn\_data*.
 
 ^[2] Shuffling may be a bad idea in some contexts for example, if you are
 working on time series data (such as stock market prices or weather
