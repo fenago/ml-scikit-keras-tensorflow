@@ -61,6 +61,18 @@ Let's start with a simple and fun model that can write like Shakespeare
 (well, sort of).
 
 
+#### Lab Environment
+Notebooks are ready to run. All packages have been installed. There is no requirement for any setup.
+
+**Note:** Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+
+All Notebooks are present in `work/ml-scikit-keras-tensorflow` folder.
+
+You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab16_Natural_Language`
+
+To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
+
+
 
 Generating Shakespearean Text Using a Character RNN
 ===================================================

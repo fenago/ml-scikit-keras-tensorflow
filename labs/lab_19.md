@@ -2,7 +2,7 @@
 <img align="right" src="../logo-small.png">
 
 
-[Lab 19] Training and Deploying TensorFlow [Models at Scale]
+[Lab 19] Training and Deploying TensorFlow Models at Scale
 =========================================================================================
 
 Once you have a beautiful model that makes amazing
@@ -22,7 +22,8 @@ roll back to the previous model in case of problems, and
 perhaps run multiple different models in parallel
 to perform *A/B
 experiments*.
-^[1] If your product becomes successful, your service may
+
+If your product becomes successful, your service may
 start to get plenty of *queries per second* (QPS),
 and it must scale up to support the load. A great solution to scale up
 your service, as we will see in this lab, is to use TF Serving,
@@ -54,6 +55,18 @@ to train models across multiple devices and servers using the
 Distribution Strategies API. That's a lot of topics to discuss, so let's
 get started!
 
+
+
+#### Lab Environment
+Notebooks are ready to run. All packages have been installed. There is no requirement for any setup.
+
+**Note:** Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+
+All Notebooks are present in `work/ml-scikit-keras-tensorflow` folder.
+
+You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab19_TensorFlow_Models`
+
+To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
 
 
 Serving a TensorFlow Model

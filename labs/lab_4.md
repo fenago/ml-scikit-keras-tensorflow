@@ -55,6 +55,21 @@ Finally, we will look at two more models that are commonly used for
 classification tasks: Logistic Regression and Softmax Regression.
 
 
+#### Pre-reqs:
+- Google Chrome (Recommended)
+
+#### Lab Environment
+Notebooks are ready to run. All packages have been installed. There is no requirement for any setup.
+
+**Note:** Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+
+All Notebooks are present in `work/ml-scikit-keras-tensorflow` folder.
+
+You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab4_Training`
+
+To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
+
+
 ###### Warning
 
 There will be quite a few math equations in this lab, using basic
@@ -68,8 +83,6 @@ supplemental material](https://github.com/fenago/ml-scikit-keras-tensorflow). Fo
 who are truly allergic to mathematics, you should still go through this
 lab and simply skip the equations; hopefully, the text will be
 sufficient to help you understand most of the concepts.
-
-
 
 
 Linear Regression

@@ -40,6 +40,20 @@ multiple objects in an image and placing bounding boxes around them) and
 semantic segmentation (classifying each pixel according to the class of
 the object it belongs to).
 
+
+#### Lab Environment
+Notebooks are ready to run. All packages have been installed. There is no requirement for any setup.
+
+**Note:** Elev8ed Notebooks (powered by Jupyter) will be accessible at the port given to you by your instructor. Password for jupyterLab : `1234`
+
+All Notebooks are present in `work/ml-scikit-keras-tensorflow` folder.
+
+You can access jupyter lab at `<host-ip>:<port>/lab/workspaces/lab14_Computer_Vision`
+
+To copy and paste: use **Control-C** and to paste inside of a terminal, use **Control-V**
+
+
+
 The Architecture of the Visual Cortex
 =====================================
 
