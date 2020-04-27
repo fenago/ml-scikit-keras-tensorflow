@@ -78,7 +78,7 @@ of complex patterns in any area of the visual field.
 ###### Figure 14-1. Biological neurons in the visual cortex respond to specific patterns in small regions of the visual field called receptive fields; as the visual signal makes its way through consecutive brain modules, neurons respond to more complex patterns in larger receptive fields.
 
 These studies of the visual cortex inspired the
-[neocognitron](https://homl.info/74),^[4]
+[neocognitron](https://homl.info/74), ^[4]
 introduced in 1980, which gradually evolved into what we now call
 *convolutional neural networks*. An important milestone was a [1998
 paper](https://homl.info/75)^[5]
@@ -460,7 +460,7 @@ inputs using an aggregation function such as the max or mean.
 [Figure 14-8]
 shows a *max pooling layer*, which is the most common type of pooling
 layer. In this example, we use a 2 × 2 *pooling
-kernel*,^[9]
+kernel*, ^[9]
 with a stride of 2 and no padding. Only the max input value in each
 receptive field makes it to the next layer, while the other inputs are
 dropped. For example, in the lower-left receptive field in
@@ -925,13 +925,13 @@ GoogLeNet
 
 The [GoogLeNet architecture](https://homl.info/81) was developed by
 Christian Szegedy et al. from Google
-Research,^[13]
+Research, ^[13]
 and it won the ILSVRC 2014 challenge by pushing the top-five error rate
 below 7%. This great performance came in large part from the fact that
 the network was much deeper than previous CNNs (as you’ll see in
 [Figure 14-14]
 This was made possible by subnetworks called *inception
-modules*,^[14]
+modules*, ^[14]
 which allow GoogLeNet to use parameters much more efficiently than
 previous architectures: GoogLeNet actually has 10 times fewer parameters
 than AlexNet (roughly 6 million instead of 60 million).
@@ -1063,7 +1063,7 @@ VGGNet
 ------
 
 The runner-up in the ILSVRC 2014 challenge was
-[VGGNet](https://homl.info/83),^[15]
+[VGGNet](https://homl.info/83), ^[15]
 developed by Karen Simonyan and Andrew Zisserman from the Visual
 Geometry Group (VGG) research lab at Oxford University. It had a very
 simple and classical architecture, with 2 or 3 convolutional layers and
@@ -1078,7 +1078,7 @@ ResNet
 
 Kaiming He et al. won the ILSVRC 2015 challenge using a [*Residual
 Network* (or
-*ResNet*)](https://homl.info/82),^[16]
+*ResNet*)](https://homl.info/82), ^[16]
 that delivered an astounding top-five error rate under 3.6%. The winning
 variant used an extremely deep CNN composed of 152 layers (other
 variants had 34, 50, and 101 layers). It confirmed the general trend:
@@ -1233,7 +1233,7 @@ they even perform better, so you should consider using them by default
 The ILSVRC 2016 challenge was won by the CUImage team from the Chinese
 University of Hong Kong. They used an ensemble of many different
 techniques, including a sophisticated object-detection system called
-[GBD-Net](https://homl.info/gbdnet),^[21]
+[GBD-Net](https://homl.info/gbdnet), ^[21]
 to achieve a top-five error rate below 3%. Although this result is
 unquestionably impressive, the complexity of the solution contrasted
 with the simplicity of ResNets. Moreover, one year later another fairly
@@ -1447,7 +1447,7 @@ the estimated probability of each predicted class, use the
 `decode_predictions()` function. For each image, it returns an array
 containing the top *K* predictions, where each prediction is represented
 as an array containing the class
-identifier,^[23]
+identifier, ^[23]
 its name, and the corresponding confidence score:
 
 ``` {data-type="programlisting" data-code-language="python"}
@@ -1865,7 +1865,7 @@ You Only Look Once (YOLO)
 
 YOLO is an extremely fast and accurate object detection architecture
 proposed by Joseph Redmon et al. in a [2015
-paper](https://homl.info/yolo),^[28]
+paper](https://homl.info/yolo), ^[28]
 and subsequently improved [in
 2016](https://homl.info/yolo2)^[29]
 (YOLOv2) and [in
@@ -1986,7 +1986,7 @@ models are available in the TensorFlow Models project, many with
 pretrained weights; and some have even been ported to TF Hub, such as
 [SSD](https://homl.info/ssd)^[31]
 and
-[Faster-RCNN](https://homl.info/fasterrcnn),^[32]
+[Faster-RCNN](https://homl.info/fasterrcnn), ^[32]
 which are both quite popular. SSD is also a “single shot” detection
 model, similar to YOLO. Faster R-CNN is more complex: the image first
 goes through a CNN, then the output is passed to a *Region Proposal

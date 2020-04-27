@@ -83,7 +83,7 @@ So what does TensorFlow offer? Here's a summary:
 
 TensorFlow offers many more features built on top of these core
 features: the most important is of course
-`tf.keras`,^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) but it also has data loading and preprocessing ops
+`tf.keras`, ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html) but it also has data loading and preprocessing ops
 (`tf.data`, `tf.io`, etc.), image processing ops (`tf.image`), signal
 processing ops (`tf.signal`), and more (see
 [Figure 12-1]
@@ -998,7 +998,7 @@ Let's walk through this code:
     method is called the first time the layer is used. At that point,
     Keras will know the shape of this layer's inputs, and it will pass
     it to the `build()`
-    method,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
+    method, ^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch12.html)
      which is often necessary to create some of the
     weights. For example, we need to know the number of neurons in the
     previous layer in order to create the connection weights matrix

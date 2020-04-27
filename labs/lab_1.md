@@ -873,7 +873,7 @@ somewhere around 4.85 + 22,587 × 4.91 × 10^-5^ = 5.96.
 To whet your appetite,
 [Example 1-1]
 shows the Python code that loads the data, prepares
-it,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) creates a scatterplot for visualization, and then
+it, ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html) creates a scatterplot for visualization, and then
 trains a linear model and makes a
 prediction.
 ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
@@ -1457,7 +1457,7 @@ distance between the instances and the straight line is just noise,
 which can safely be ignored.
 
 In a [famous 1996
-paper](https://homl.info/8),^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
+paper](https://homl.info/8), ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch01.html)
 David Wolpert demonstrated that if you make
 absolutely no assumption about the data, then there is no reason to
 prefer one model over any other. This is called the *No Free Lunch*

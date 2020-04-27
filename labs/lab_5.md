@@ -714,7 +714,7 @@ possible to express a different but closely related problem, called its
 typically gives a lower bound to the solution of the primal problem, but
 under some conditions it can have the same solution as the primal
 problem. Luckily, the SVM problem happens to meet these
-conditions,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) so you can choose to solve the primal problem or the
+conditions, ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch05.html) so you can choose to solve the primal problem or the
 dual problem; both will have the same solution. [Equation
 5-6]
 shows the dual form of the linear SVM objective (if you are interested

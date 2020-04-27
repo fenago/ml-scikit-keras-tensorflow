@@ -684,9 +684,9 @@ autoencoder to learn useful features is to add noise to its inputs,
 training it to recover the original, noise-free inputs. This idea has
 been around since the 1980s (e.g., it is mentioned in Yann LeCun's 1987
 master's thesis). In a [2008
-paper](https://homl.info/113),^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) Pascal Vincent et al. showed that autoencoders could
+paper](https://homl.info/113), ^[5](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) Pascal Vincent et al. showed that autoencoders could
 also be used for feature extraction. In a [2010
-paper](https://homl.info/114),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) Vincent et
+paper](https://homl.info/114), ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch17.html) Vincent et
 al. introduced *stacked denoising autoencoders*.
 
 The noise can be pure Gaussian noise added to the inputs, or it can be

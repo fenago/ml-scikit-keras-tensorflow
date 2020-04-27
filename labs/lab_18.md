@@ -9,12 +9,12 @@
 exciting fields of Machine Learning today, and also one of the oldest.
 It has been around since the 1950s, producing many interesting
 applications over the
-years,^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) particularly in games (e.g., *TD-Gammon*, a
+years, ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) particularly in games (e.g., *TD-Gammon*, a
 Backgammon-playing program) and in machine control, but seldom making
 the headline news. But a revolution took place in 2013, when researchers
 from a British startup called DeepMind [demonstrated a system that could
 learn to play just about any Atari game from
-scratch](https://homl.info/dqn),^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) eventually [outperforming
+scratch](https://homl.info/dqn), ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) eventually [outperforming
 humans](https://homl.info/dqn2)^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html) in most of them, using only raw pixels as inputs and
 without any prior knowledge of the rules of the
 games.
@@ -1570,7 +1570,7 @@ Double DQN
 ----------
 
 In a [2015
-paper](https://homl.info/doubledqn),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
+paper](https://homl.info/doubledqn), ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch18.html)
 DeepMind researchers tweaked their DQN algorithm, increasing its
 performance and somewhat stabilizing training. They called this variant
 *Double DQN*. The update was based on the observation that the target

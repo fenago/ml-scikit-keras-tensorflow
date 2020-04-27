@@ -7,13 +7,13 @@ The Machine Learning Tsunami
 ============================
 
 In 2006, Geoffrey Hinton et al. published [a
-paper](https://homl.info/136)^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) showing how to train a deep neural network capable of
+paper](https://homl.info/136) ^[1](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) showing how to train a deep neural network capable of
 recognizing handwritten digits with state-of-the-art precision (\>98%).
 They branded this technique "Deep Learning." A deep neural
 network is a (very) simplified model of our
 cerebral cortex, composed of a stack of layers of artificial neurons.
 Training a deep neural net was widely considered impossible at the
-time,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) and most researchers had abandoned the idea in the
+time, ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/preface01.html) and most researchers had abandoned the idea in the
 late 1990s. This paper revived the interest of the scientific community,
 and before long many new papers demonstrated that Deep Learning was not
 only possible, but capable of mind-blowing achievements that no other

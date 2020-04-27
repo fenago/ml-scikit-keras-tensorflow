@@ -251,7 +251,7 @@ is to install TF Serving.
 ### Installing TensorFlow Serving
 
 There are many ways to install TF Serving: using a Docker
-image,^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) using the system's package manager, installing from
+image, ^[3](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html) using the system's package manager, installing from
 source, and more. Let's use the Docker option, which is highly
 recommended by the TensorFlow team as it is simple to install, it will
 not mess with your system, and it offers high performance. You first
@@ -670,7 +670,7 @@ care of:
     [Figure 19-6]
     set the name, description, Python version (3.5 or above), framework
     (TensorFlow), framework version (2.0 if available, or
-    1.13),^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
+    1.13), ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch19.html)
      ML runtime version (2.0, if available or 1.13),
     machine type (choose "Single core CPU" for now), model path on GCS
     (this is the full path to the actual version folder, e.g.,

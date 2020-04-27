@@ -1,6 +1,5 @@
-
-[Appendix D. ] Autodiff
-==============================
+Autodiff
+========
 
 This appendix explains how
 TensorFlow's autodifferentiation (autodiff) feature works, and how it

@@ -513,7 +513,7 @@ As you can see, it looks very different from the previous Decision Tree
 ([Figure 6-2]
 Actually, since the training algorithm used by
 Scikit-Learn is
-stochastic,^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) you may [get very] different models
+stochastic, ^[6](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch06.html) you may [get very] different models
 even on the same training data (unless you set the
 [`random_state`] hyperparameter).
 

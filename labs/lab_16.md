@@ -1455,12 +1455,12 @@ Attention Is All You Need: The Transformer Architecture
 -------------------------------------------------------
 
 In a groundbreaking [2017
-paper](https://homl.info/transformer),^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
+paper](https://homl.info/transformer), ^[20](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 a team of Google researchers suggested that "Attention Is All You Need."
 They managed to create an architecture called the *Transformer*, which
 significantly improved the state of the art in NMT without using any
 recurrent or convolutional
-layers,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
+layers, ^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
 just attention mechanisms (plus embedding layers, dense layers,
 normalization layers, and a few other bits and pieces). As an extra
 bonus, this architecture was also much faster to train and easier to
@@ -1866,7 +1866,7 @@ out the following papers, all published in 2018:
     adaptations for each task. The tasks were
     quite diverse: they included text classification, *entailment*
     (whether sentence A entails sentence
-    B),^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
+    B), ^[27](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch16.html)
     similarity (e.g., "Nice weather today" is very similar to "It is
     sunny"), and question answering (given a few paragraphs of text
     giving some context, the model must answer some multiple-choice

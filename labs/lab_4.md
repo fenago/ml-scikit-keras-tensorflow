@@ -1155,7 +1155,7 @@ pros and cons are the same. [Equation
 4-9]
 shows the closed-form solution, where **A** is the
 (*n* + 1) × (*n* + 1) *identity
-matrix*,^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
+matrix*, ^[11](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch04.html)
 except with a 0 in the top-left cell, corresponding to the bias term.
 
 

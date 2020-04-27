@@ -1,6 +1,6 @@
 
-[Appendix C. ] SVM Dual Problem
-======================================
+SVM Dual Problem
+=================
 
 To 
 understand *duality*, you first need to understand the *Lagrange

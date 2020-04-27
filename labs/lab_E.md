@@ -1,24 +1,19 @@
-
-[Appendix E. ] Other Popular ANN Architectures
-=====================================================
+Other Popular ANN Architectures
+===============================
 
 In this appendix I will give a quick overview of a few historically
 important neural network architectures that are much less used today
 than deep Multilayer Perceptrons
-([Lab 10]
 convolutional neural networks
-([Lab 14]
 recurrent neural networks
-([Lab 15]
-or autoencoders
-([Lab 17]
+or autoencoders.
+
 They are often mentioned in the literature, and some are still used in a
 range of applications, so it is worth knowing about them. Additionally,
 we will discuss *deep belief nets*, which were the state of the art in
 Deep Learning until the early 2010s. They are still the subject of very
 active research, so they may well come back with a vengeance in the
 future.
-
 
 
 Hopfield Networks

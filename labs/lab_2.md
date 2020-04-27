@@ -1857,7 +1857,7 @@ a matrix with thousands of columns, and the matrix is full of 0s except
 for a single 1 per row. Using up tons of memory mostly to store zeros
 would be very wasteful, so instead a sparse matrix only stores the
 location of the nonzero elements. You can use it mostly like a normal 2D
-array,^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+array, ^[21](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 but if you really want to convert it to a (dense)
 NumPy array, just call the `toarray()` method:
 
@@ -2081,7 +2081,7 @@ First we import the `ColumnTransformer` class, next we get the list of
 numerical column names and the list of categorical column names, and
 then we construct a `ColumnTransformer`. The constructor requires a list
 of tuples, where each tuple contains a
-name,^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
+name, ^[22](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch02.html)
 a transformer, and a list of names (or indices) of columns that the
 transformer should be applied to. In this example, we specify that the
 numerical columns should be transformed using the `num_pipeline` that we

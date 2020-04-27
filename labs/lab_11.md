@@ -115,7 +115,7 @@ gradients. We don't want the signal to die out, nor do we want it to
 explode and saturate. For the signal to flow properly, the authors argue
 that we need the variance of the outputs of each layer to be equal to
 the variance of its
-inputs,^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) and we need the gradients to have equal variance
+inputs, ^[2](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) and we need the gradients to have equal variance
 before and after flowing through a layer in the reverse direction
 (please check out the paper if you are interested in the mathematical
 details). It is actually not
@@ -392,7 +392,7 @@ problems at the beginning of training, it doesn't guarantee that they
 won't come back during training.
 
 In a [2015
-paper](https://homl.info/51),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) Sergey Ioffe and Christian Szegedy
+paper](https://homl.info/51), ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html) Sergey Ioffe and Christian Szegedy
 proposed a technique called
 *Batch Normalization* (BN) that addresses these problems. The technique
 consists of adding an operation in the model just before or after the
@@ -1160,7 +1160,7 @@ Nesterov Accelerated Gradient
 
 One small variant to
 momentum optimization, proposed by [Yurii Nesterov in
-1983](https://homl.info/55),^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+1983](https://homl.info/55), ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 is almost always faster than vanilla momentum 
 optimization. The *Nesterov Accelerated Gradient* (NAG) method, also
 known as *Nesterov momentum optimization*, measures the gradient of the
@@ -1314,7 +1314,7 @@ algorithm of many researchers until Adam optimization came around.
 Adam and Nadam Optimization
 ---------------------------
 
-[*Adam*](https://homl.info/59),^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+[*Adam*](https://homl.info/59), ^[17](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
 which 
 stands for *adaptive moment estimation*, combines the ideas of momentum
 optimization and RMSProp: just like momentum optimization, it keeps
@@ -1406,7 +1406,7 @@ Nadam
 :   Nadam optimization is Adam optimization plus the Nesterov trick, so
     it will often converge slightly faster than Adam. In [his report
     introducing this
-    technique](https://homl.info/nadam),^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+    technique](https://homl.info/nadam), ^[19](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
     the researcher Timothy Dozat compares many different optimizers on
     various tasks and finds that Nadam generally outperforms Adam but is
     sometimes outperformed by RMSProp.
@@ -1956,7 +1956,7 @@ dropout:
 -   First, the paper established a profound connection between dropout
     networks (i.e., neural networks containing a `Dropout` layer before
     every weight layer) and approximate Bayesian
-    inference,^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
+    inference, ^[26](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch11.html)
     giving dropout a solid mathematical justification.
 
 -   Second, the authors introduced a powerful technique called *MC

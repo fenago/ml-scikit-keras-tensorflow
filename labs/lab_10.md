@@ -253,7 +253,7 @@ TLU in this case means finding the right values for *w*~0~, *w*~1~, and
 *w*~2~ (the training algorithm is discussed shortly).
 
 A Perceptron is simply composed of a single layer of
-TLUs,^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) with each TLU connected to all the inputs. When all
+TLUs, ^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) with each TLU connected to all the inputs. When all
 the neurons in a layer are connected to every neuron in the previous
 layer (i.e., its input neurons), the
 layer  
@@ -433,7 +433,7 @@ inputs to the outputs), so this architecture is an example of a
 
 
 When an ANN contains a deep stack of hidden
-layers,^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) it is called a *deep neural
+layers, ^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html) it is called a *deep neural
 network* (DNN). The field of Deep Learning studies DNNs, and more
 generally models containing deep stacks of computations. Even so, many
 people talk about Deep Learning whenever neural networks are involved
@@ -1030,7 +1030,7 @@ previous approach. Many people also use
 
 
 The model's `summary()` method displays all the model's
-layers,^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
+layers, ^[14](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 including each layer's name (which is automatically generated unless you
 set it when creating the layer), its output shape (`None` means the
 batch size can be anything), and its number of parameters. The summary
@@ -2260,7 +2260,7 @@ Other options include services by [Arimo](https://arimo.com/) and
 Hyperparameter tuning is still an active area of research, and
 evolutionary algorithms are making a comeback. For example, check out
 DeepMind's excellent [2017
-paper](https://homl.info/pbt),^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
+paper](https://homl.info/pbt), ^[23](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch10.html)
 where the authors jointly optimize a population of models and their
 hyperparameters. Google has also used an evolutionary approach, not just
 to search for hyperparameters but also to look for the best neural

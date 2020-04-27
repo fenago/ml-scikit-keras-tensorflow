@@ -911,7 +911,7 @@ The *Long Short-Term Memory* (LSTM) cell was
 1997](https://homl.info/93)^[7](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) by Sepp Hochreiter and Jürgen Schmidhuber and
 gradually improved over the years by several researchers, such as [Alex
 Graves](https://homl.info/graves), [Haşim
-Sak](https://homl.info/94),^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) and [Wojciech
+Sak](https://homl.info/94), ^[8](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) and [Wojciech
 Zaremba](https://homl.info/95).
 ^[9](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html) If you consider the LSTM cell as a black box, it can
 be used very much like a basic cell, except it will perform much better;
@@ -1194,7 +1194,7 @@ recurrent layers entirely!
 ### WaveNet
 
 In a [2016
-paper](https://homl.info/wavenet),^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
+paper](https://homl.info/wavenet), ^[13](https://learning.oreilly.com/library/view/hands-on-machine-learning/9781492032632/ch15.html)
 Aaron van den Oord and other DeepMind researchers introduced an
 architecture called *WaveNet*. They stacked 1D convolutional layers,
 doubling the dilation rate (how spread apart each neuron's inputs are)
