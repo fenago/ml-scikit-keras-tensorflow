@@ -298,30 +298,22 @@ False
 
 The `step()` method executes the given action and returns four values:
 
-`obs`
-
-:   This is the new observation. The cart is now moving toward the right
+`obs` : This is the new observation. The cart is now moving toward the right
     (`obs[1] > 0`). The pole is still tilted toward the right
     (`obs[2] > 0`), but its angular velocity is now negative
     (`obs[3] < 0`), so it will likely be tilted toward the left after
     the next step.
 
-`reward`
-
-:   In this environment, you get a reward of 1.0 at every step, no
+`reward` : In this environment, you get a reward of 1.0 at every step, no
     matter what you do, so the goal is to keep the episode running as
     long as possible.
 
-`done`
-
-:   This value will be `True` when the episode is over. This will happen
+`done` : This value will be `True` when the episode is over. This will happen
     when the pole tilts too much, or goes off the screen, or after 200
     steps (in this last case, you have won). After that, the environment
     must be reset before it can be used again.
 
-`info`
-
-:   This environment-specific dictionary can provide some extra
+`info` : This environment-specific dictionary can provide some extra
     information that you may find useful for debugging or for training.
     For example, in some games it may indicate how many lives the agent
     has.
@@ -1906,13 +1898,9 @@ As their name suggests, they wrap an environment, forwarding every call
 to it, but also adding some extra functionality. Here are some of the
 available wrappers:
 
-`ActionClipWrapper`
+`ActionClipWrapper` : Clips the actions to the action spec.
 
-:   Clips the actions to the action spec.
-
-`ActionDiscretizeWrapper`
-
-:   Quantizes a continuous action space to a discrete action space. For
+`ActionDiscretizeWrapper` : Quantizes a continuous action space to a discrete action space. For
     example, if the original environment's action space is the
     continuous range from --1.0 to +1.0, but you want to use an
     algorithm that only supports discrete action spaces, such as a DQN,
@@ -1922,19 +1910,13 @@ available wrappers:
     possible actions: 0, 1, 2, 3, 4. These actions correspond to the
     actions --1.0, --0.5, 0.0, 0.5, and 1.0 in the original environment.
 
-`ActionRepeat`
-
-:   Repeats each action over *n* steps, while accumulating the rewards.
+`ActionRepeat` : Repeats each action over *n* steps, while accumulating the rewards.
     In many environments, this can speed up training significantly.
 
-`RunStats`
-
-:   Records environment statistics such as the number of steps and the
+`RunStats` : Records environment statistics such as the number of steps and the
     number of episodes.
 
-`TimeLimit`
-
-:   Interrupts the environment if it runs for longer than a maximum
+`TimeLimit` : Interrupts the environment if it runs for longer than a maximum
     number of steps.
 
 To create a wrapped environment, you must create a wrapper, passing the
@@ -2326,16 +2308,12 @@ replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(
 
 Let's look at each of these arguments:
 
-`data_spec`
-
-:   The specification of the data that will be saved in the replay
+`data_spec` : The specification of the data that will be saved in the replay
     buffer. The DQN agent knowns what the collected data will look like,
     and it makes the data spec available via its `collect_data_spec`
     attribute, so that's what we give the replay buffer.
 
-`batch_size`
-
-:   The number of trajectories that will be added at each step. In our
+`batch_size` : The number of trajectories that will be added at each step. In our
     case, it will be one, since the driver will just execute one action
     per step and collect one trajectory. If the environment were a
     *batched environment*, meaning an environment that takes a batch of
@@ -2351,9 +2329,7 @@ Let's look at each of these arguments:
     executes them in the environments (one action per environment), then
     it returns all the resulting observations.
 
-`max_length`
-
-:   The maximum size of the replay buffer. We created a large replay
+`max_length` : The maximum size of the replay buffer. We created a large replay
     buffer that can store one million trajectories (as was done in the
     2015 DQN paper). This will require a lot of RAM.
 
@@ -2815,10 +2791,6 @@ Actor-Critic algorithms
     OpenAI Five, based on the PPO algorithm, which defeated the world
     champions at the multiplayer game *Dota 2*. PPO is also available in
     TF-Agents.
-
-```{=html}
-<!-- -->
-```
 
 [*Curiosity-based exploration*](https://homl.info/curiosity) ^[27]
 

@@ -349,24 +349,18 @@ latter requires specifying the shapes when creating the queue):
 
 Other queue types include:
 
-`PaddingFIFOQueue`
-
-:   Same as `FIFOQueue`, but its `dequeue_many()` method supports
+`PaddingFIFOQueue` : Same as `FIFOQueue`, but its `dequeue_many()` method supports
     dequeueing multiple records of different shapes. It automatically
     pads the shortest records to ensure all the records in the batch
     have the same shape.
 
-`PriorityQueue`
-
-:   A queue that dequeues records in a prioritized order. The priority
+`PriorityQueue` : A queue that dequeues records in a prioritized order. The priority
     must be a 64-bit integer included as the first element of each
     record. Surprisingly, records with a lower priority will be dequeued
     first. Records with the same priority will be dequeued in FIFO
     order.
 
-`RandomShuffleQueue`
-
-:   A queue whose records are dequeued in random order. This was useful
+`RandomShuffleQueue` : A queue whose records are dequeued in random order. This was useful
     to implement a shuffle buffer before tf.data existed.
 
 If a queue is already full and you try to enqueue another record, the

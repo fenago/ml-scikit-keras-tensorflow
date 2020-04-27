@@ -280,45 +280,31 @@ That's it! TF Serving is running. It loaded our MNIST model (version 1),
 and it is serving it through both gRPC (on port 8500) and REST (on port
 8501). Here is what all the command-line options mean:
 
-`-it`
-
-:   Makes the container interactive (so you can press Ctrl-C to stop it)
+`-it` : Makes the container interactive (so you can press Ctrl-C to stop it)
     and displays the server's output.
 
-`--rm`
-
-:   Deletes the container when you stop it (no need to clutter your
+`--rm` : Deletes the container when you stop it (no need to clutter your
     machine with interrupted containers). However, it does not delete
     the image.
 
-`-p 8500:8500`
-
-:   Makes the Docker engine forward the host's TCP port 8500 to the
+`-p 8500:8500` : Makes the Docker engine forward the host's TCP port 8500 to the
     container's TCP port 8500. By default, TF Serving uses this port to
     serve the gRPC API.
 
-`-p 8501:8501`
-
-:   Forwards the host's TCP port 8501 to the container's TCP port 8501.
+`-p 8501:8501` : Forwards the host's TCP port 8501 to the container's TCP port 8501.
     By default, TF Serving uses this port to serve the REST API.
 
-`-v "$ML_PATH/my_mnist_model:/models/my_mnist_model"`
-
-:   Makes the host's `$ML_PATH/my_mnist_model` directory available to
+`-v "$ML_PATH/my_mnist_model:/models/my_mnist_model"` : Makes the host's `$ML_PATH/my_mnist_model` directory available to
     the container at the path */models/mnist\_model*. On Windows, you
     may need to replace `/` with `\` in the host path (but not in the
     container path).
 
-`-e MODEL_NAME=my_mnist_model`
-
-:   Sets the container's `MODEL_NAME` environment variable, so TF
+`-e MODEL_NAME=my_mnist_model` : Sets the container's `MODEL_NAME` environment variable, so TF
     Serving knows which model to serve. By default, it will look for
     models in the */models* directory, and it will automatically serve
     the latest version it finds.
 
-`tensorflow/serving`
-
-:   This is the name of the image to run.
+`tensorflow/serving` : This is the name of the image to run.
 
 Now let's go back to Python and query this server, first using the REST
 API, then the gRPC API.

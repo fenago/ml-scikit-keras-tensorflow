@@ -1475,20 +1475,14 @@ This can be achieved by imposing constraints on the covariance matrices.
 To do this, set the `covariance_type` hyperparameter to one of the
 following values:
 
-`"spherical"`
-
-:   All clusters must be spherical, but they can have different
+`"spherical"` : All clusters must be spherical, but they can have different
     diameters (i.e., different variances).
 
-`"diag"`
-
-:   Clusters can take on any ellipsoidal shape of any size, but the
+`"diag"` : Clusters can take on any ellipsoidal shape of any size, but the
     ellipsoid's axes must be parallel to the coordinate axes (i.e., the
     covariance matrices must be diagonal).
 
-`"tied"`
-
-:   All clusters must have the same ellipsoidal shape, size, and
+`"tied"` : All clusters must have the same ellipsoidal shape, size, and
     orientation (i.e., all clusters share the same covariance matrix).
 
 By default, `covariance_type` is equal to `"full"`, which means that
