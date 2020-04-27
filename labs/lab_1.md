@@ -1531,63 +1531,44 @@ following questions:
 **Solution for the exercises are available in the solutions file.**
 
 
-
-^[1]
-
-Fun fact: this odd-sounding name is a statistics term introduced by
+^[1]  Fun fact: this odd-sounding name is a statistics term introduced by
 Francis Galton while he was studying the fact that the children of tall
 people tend to be shorter than their parents. Since the children were
 shorter, he called this *regression to the mean*. This name was then
 applied to the methods he used to analyze correlations between
 variables.
 
-^[2]
-
-Some neural network architectures can be unsupervised, such as
+^[2]  Some neural network architectures can be unsupervised, such as
 autoencoders and restricted Boltzmann machines. They can also be
 semisupervised, such as in deep belief networks and unsupervised
 pretraining.
 
-^[3]
-
-Notice how animals are rather well separated from vehicles and how
+^[3]  Notice how animals are rather well separated from vehicles and how
 horses are close to deer but far from birds. Figure reproduced with
 permission from Richard Socher et al., "Zero-Shot Learning Through
 Cross-Modal Transfer," *Proceedings of the 26th International Conference
 on Neural Information Processing Systems* 1 (2013): 935--943.
 
-^[4]
-
-That's when the system works perfectly. In practice it often creates a
+^[4]  That's when the system works perfectly. In practice it often creates a
 few clusters per person, and sometimes mixes up two people who look
 alike, so you may need to provide a few labels per person and manually
 clean up some clusters.
 
-^[5]
-
-By convention, the Greek letter *θ* (theta) is frequently used to
+^[5]  By convention, the Greek letter *θ* (theta) is frequently used to
 represent model parameters.
 
-^[6]
-
-The `prepare_country_stats()` function's definition is not shown here
+^[6]  The `prepare_country_stats()` function's definition is not shown here
 (see this lab's Jupyter notebook if you want all the gory details).
 It's just boring pandas code that joins the life satisfaction data from
 the OECD with the GDP per capita data from the IMF.
 
-^[7]
-
-It's OK if you don't understand all the code yet; we will present
+^[7]  It's OK if you don't understand all the code yet; we will present
 Scikit-Learn in the following labs.
 
-^[8]
-
-For example, knowing whether to write "to," "two," or "too," depending
+^[8]  For example, knowing whether to write "to," "two," or "too," depending
 on the context.
 
-^[9]
-
-Figure reproduced with permission from Michele Banko and Eric Brill,
+^[9]  Figure reproduced with permission from Michele Banko and Eric Brill,
 "Scaling to Very Very Large Corpora for Natural Language
 Disambiguation," *Proceedings of the 39th Annual Meeting of the
 Association for Computational Linguistics* (2001): 26--33.

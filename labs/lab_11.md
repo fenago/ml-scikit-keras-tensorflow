@@ -231,7 +231,7 @@ The hyperparameter *α* defines how much the function "leaks": it is the
 slope of the function for *z* \< 0 and is typically set to 0.01. This
 small slope ensures that leaky ReLUs never die; they can go into a long
 coma, but they have a chance to eventually wake up. A [2015
-paper](https://homl.info/49)^[5] compared several variants of the ReLU activation
+paper](https://homl.info/49) ^[5] compared several variants of the ReLU activation
 function, and one of its conclusions was that the leaky variants always
 outperformed the strict ReLU activation function. In fact, setting *α* =
 0.2 (a huge leak) seemed to result in better performance than *α* = 0.01
@@ -297,7 +297,7 @@ compensates for that slow computation, but still, at test time an ELU
 network will be slower than a ReLU network.
 
 Then, a [2017
-paper](https://homl.info/selu)^[7] by Günter Klambauer et al. introduced
+paper](https://homl.info/selu) ^[7] by Günter Klambauer et al. introduced
 the Scaled ELU (SELU) activation function: as
 its name suggests, it is a scaled variant of the ELU activation
 function. The authors showed that if you build a neural network composed
@@ -704,7 +704,7 @@ compute^[10]
 `BatchNormalization` has become one of the most-used layers in deep
 neural networks, to the point that it is often omitted in the diagrams,
 as it is assumed that BN is added after every layer. But a recent
-[paper](https://homl.info/fixup)^[11]
+[paper](https://homl.info/fixup) ^[11]
 by Hongyi Zhang et al. may change this assumption: by using a novel
 *fixed-update* (fixup) weight initialization technique, the authors
 managed to train a very deep neural [network] (10,000
@@ -1214,7 +1214,7 @@ steepest slope, which does not point straight toward the global optimum,
 then it very slowly goes down to the bottom of the valley. It would be
 nice if the algorithm could correct its direction earlier to point a bit
 more toward the global optimum. The [*AdaGrad*
-algorithm](https://homl.info/56)^[15]
+algorithm](https://homl.info/56) ^[15]
 achieves this correction by scaling down the gradient vector along the
 steepest dimensions (see [Equation
 11-6]
@@ -1415,7 +1415,7 @@ Nadam
 Adaptive optimization methods (including RMSProp, Adam, and Nadam
 optimization) are often great, converging fast to a good solution.
 However, a [2017
-paper](https://homl.info/60)^[20]
+paper](https://homl.info/60) ^[20]
 by Ashia C. Wilson et al. showed that they can lead to solutions that
 generalize poorly on some datasets. So when you are disappointed by your
 model's performance, try using plain Nesterov Accelerated Gradient
@@ -1560,7 +1560,7 @@ These are the most commonly used learning schedules:
 
 :   Contrary to the other approaches, *1cycle*
     (introduced in a [2018
-    paper](https://homl.info/1cycle)^[21]
+    paper](https://homl.info/1cycle) ^[21]
     by Leslie Smith) starts by increasing the initial learning rate
     *η*~0~, growing linearly up to *η*~1~ halfway through training. Then
     it decreases the learning rate linearly down to *η*~0~ again during
@@ -1582,7 +1582,7 @@ These are the most commonly used learning schedules:
     neural network [architecture]).
 
 A [2013
-paper](https://homl.info/63)^[22]
+paper](https://homl.info/63) ^[22]
 by Andrew Senior et al. compared the performance of some of the most
 popular learning schedules when using momentum optimization to train
 deep neural networks for speech recognition. The authors concluded that,
@@ -1814,9 +1814,9 @@ Dropout
 *Dropout* is one of the most popular
 regularization techniques for deep neural networks. It was [proposed in
 a
-paper](https://homl.info/64)^[23]
+paper](https://homl.info/64) ^[23]
 by Geoffrey Hinton in 2012 and further detailed in a [2014
-paper](https://homl.info/65)^[24]
+paper](https://homl.info/65) ^[24]
 by Nitish Srivastava et al., and it has proven to be highly successful:
 even the state-of-the-art neural networks get a 1--2% accuracy boost
 simply by adding dropout. This may not sound like a lot, but when a
@@ -1947,7 +1947,7 @@ Monte Carlo (MC) Dropout
 ------------------------
 
 In 2016, a
-[paper](https://homl.info/mcdropout)^[25]
+[paper](https://homl.info/mcdropout) ^[25]
 by Yarin Gal and Zoubin Ghahramani added a few more good reasons to use
 dropout:
 
@@ -2274,16 +2274,12 @@ Exercises
 
 
 
-^[1]
-
-Xavier Glorot and Yoshua Bengio, "Understanding the Difficulty of
+^[1] Xavier Glorot and Yoshua Bengio, "Understanding the Difficulty of
 Training Deep Feedforward Neural Networks," *Proceedings of the 13th
 International Conference on Artificial Intelligence and Statistics*
 (2010): 249--256.
 
-^[2]
-
-Here's an analogy: if you set a microphone amplifier's knob too close to
+^[2] Here's an analogy: if you set a microphone amplifier's knob too close to
 zero, people won't hear your voice, but if you set it too close to the
 max, your voice will be saturated and people won't understand what you
 are saying. Now imagine a chain of such amplifiers: they all need to be
@@ -2291,137 +2287,105 @@ set properly in order for your voice to come out loud and clear at the
 end of the chain. Your voice has to come out of each amplifier at the
 same amplitude as it came in.
 
-^[3]
-
-E.g., Kaiming He et al., "Delving Deep into Rectifiers: Surpassing
+^[3] E.g., Kaiming He et al., "Delving Deep into Rectifiers: Surpassing
 Human-Level Performance on ImageNet Classification," *Proceedings of the
 2015 IEEE International Conference on Computer Vision* (2015):
 1026--1034.
 
-^[4]
-
-Unless it is part of the first hidden layer, a dead neuron may sometimes
+^[4] Unless it is part of the first hidden layer, a dead neuron may sometimes
 come back to life: Gradient Descent may indeed tweak neurons in the
 layers below in such a way that the weighted sum of the dead neuron's
 inputs is positive again.
 
-^[5]
-
-Bing Xu et al., "Empirical Evaluation of Rectified Activations in
+^[5] Bing Xu et al., "Empirical Evaluation of Rectified Activations in
 Convolutional Network," arXiv preprint arXiv:1505.00853 (2015).
 
-^[6]
-
-Djork-Arné Clevert et al., "Fast and Accurate Deep Network Learning by
+^[6] Djork-Arné Clevert et al., "Fast and Accurate Deep Network Learning by
 Exponential Linear Units (ELUs)," *Proceedings of the International
 Conference on Learning Representations* (2016).
 
-^[7]
-
-Günter Klambauer et al., "Self-Normalizing Neural Networks,"
+^[7] Günter Klambauer et al., "Self-Normalizing Neural Networks,"
 *Proceedings of the 31st International Conference on Neural Information
 Processing Systems* (2017): 972--981.
 
-^[8]
-
-Sergey Ioffe and Christian Szegedy, "Batch Normalization: Accelerating
+^[8] Sergey Ioffe and Christian Szegedy, "Batch Normalization: Accelerating
 Deep Network Training by Reducing Internal Covariate Shift,"
 *Proceedings of the 32nd International Conference on Machine Learning*
 (2015): 448--456.
 
-^[9]
-
-However, they are estimated during training, based on the training data,
+^[9] However, they are estimated during training, based on the training data,
 so arguably they *are* trainable. In Keras, "non-trainable" really means
 "untouched by backpropagation."
 
-^[10]
-The Keras API also specifies a `keras.backend.learning_phase()` function
+^[10] The Keras API also specifies a `keras.backend.learning_phase()` function
 that should return `1` during training and `0` otherwise.
 
-^[11]
-Hongyi Zhang et al., "Fixup Initialization: Residual Learning Without
+^[11] Hongyi Zhang et al., "Fixup Initialization: Residual Learning Without
 Normalization," arXiv preprint arXiv:1901.09321 (2019).
 
-^[12]
-Razvan Pascanu et al., "On the Difficulty of Training Recurrent Neural
+^[12] Razvan Pascanu et al., "On the Difficulty of Training Recurrent Neural
 Networks," *Proceedings of the 30th International Conference on Machine
 Learning* (2013): 1310--1318.
 
-^[13]
-Boris T. Polyak, "Some Methods of Speeding Up the Convergence of
+^[13] Boris T. Polyak, "Some Methods of Speeding Up the Convergence of
 Iteration Methods," *USSR Computational Mathematics and Mathematical
 Physics* 4, no. 5 (1964): 1--17.
 
-^[14]
-Yurii Nesterov, "A Method for Unconstrained Convex Minimization Problem
+^[14] Yurii Nesterov, "A Method for Unconstrained Convex Minimization Problem
 with the Rate of Convergence O(1/k^2^)," *Doklady AN USSR* 269 (1983):
 543--547.
 
-^[15]
-John Duchi et al., "Adaptive Subgradient Methods for Online Learning and
+^[15] John Duchi et al., "Adaptive Subgradient Methods for Online Learning and
 Stochastic Optimization," *Journal of Machine Learning Research* 12
 (2011): 2121--2159.
 
-^[16]
-This algorithm was created by Geoffrey Hinton and Tijmen Tieleman in
+^[16] This algorithm was created by Geoffrey Hinton and Tijmen Tieleman in
 2012 and presented by Geoffrey Hinton in his Coursera class on neural
 networks (slides: [*https://homl.info/57*](https://homl.info/57); video:
 [*https://homl.info/58*](https://homl.info/58)). Amusingly, since the
 authors did not write a paper to describe the algorithm, researchers
 often cite "slide 29 in lecture 6" in their papers.
 
-^[17]
-Diederik P. Kingma and Jimmy Ba, "Adam: A Method for Stochastic
+^[17] Diederik P. Kingma and Jimmy Ba, "Adam: A Method for Stochastic
 Optimization," arXiv preprint arXiv:1412.6980 (2014).
 
-^[18]
-These are estimations of the mean and (uncentered) variance of the
+^[18] These are estimations of the mean and (uncentered) variance of the
 gradients. The mean is often called the *first moment* while the
 variance is often called the *second moment*, hence the name of the
 algorithm.
 
-^[19]
-Timothy Dozat, "Incorporating Nesterov Momentum into Adam" (2016).
+^[19] Timothy Dozat, "Incorporating Nesterov Momentum into Adam" (2016).
 
-^[20]
-Ashia C. Wilson et al., "The Marginal Value of Adaptive Gradient Methods
+^[20] Ashia C. Wilson et al., "The Marginal Value of Adaptive Gradient Methods
 in Machine Learning," *Advances in Neural Information Processing
 Systems* 30 (2017): 4148--4158.
 
-^[21]
-Leslie N. Smith, "A Disciplined Approach to Neural Network
+^[21] Leslie N. Smith, "A Disciplined Approach to Neural Network
 Hyper-Parameters: Part 1---Learning Rate, Batch Size, Momentum, and
 Weight Decay," arXiv preprint arXiv:1803.09820 (2018).
 
-^[22]
-Andrew Senior et al., "An Empirical Study of Learning Rates in Deep
+^[22] Andrew Senior et al., "An Empirical Study of Learning Rates in Deep
 Neural Networks for Speech Recognition," *Proceedings of the IEEE
 International Conference on Acoustics, Speech, and Signal Processing*
 (2013): 6724--6728.
 
-^[23]
-Geoffrey E. Hinton et al., "Improving Neural Networks by Preventing
+^[23] Geoffrey E. Hinton et al., "Improving Neural Networks by Preventing
 Co-Adaptation of Feature Detectors," arXiv preprint arXiv:1207.0580
 (2012).
 
-^[24]
-Nitish Srivastava et al., "Dropout: A Simple Way to Prevent Neural
+^[24] Nitish Srivastava et al., "Dropout: A Simple Way to Prevent Neural
 Networks from Overfitting," *Journal of Machine Learning Research* 15
 (2014): 1929--1958.
 
-^[25]
-Yarin Gal and Zoubin Ghahramani, "Dropout as a Bayesian Approximation:
+^[25] Yarin Gal and Zoubin Ghahramani, "Dropout as a Bayesian Approximation:
 Representing Model Uncertainty in Deep Learning," *Proceedings of the
 33rd International Conference on Machine Learning* (2016): 1050--1059.
 
-^[26]
-Specifically, they show that training a dropout network is
+^[26] Specifically, they show that training a dropout network is
 mathematically equivalent to approximate Bayesian inference in a
 specific type of probabilistic model called a *Deep Gaussian Process*.
 
-^[27]
-This `MCDropout` class will work with all Keras APIs, including the
+^[27] This `MCDropout` class will work with all Keras APIs, including the
 Sequential API. If you only care about the Functional API or the
 Subclassing API, you do not have to create an `MCDropout` class; you can
 create a regular `Dropout` layer and call it with `training=True`.

@@ -45,11 +45,11 @@ The Architecture of the Visual Cortex
 
 David H. Hubel and Torsten Wiesel performed a series of experiments on
 cats in
-[1958](https://homl.info/71)^[1]
+[1958](https://homl.info/71) ^[1]
 and
-[1959](https://homl.info/72)^[2]
+[1959](https://homl.info/72) ^[2]
 (and a [few years later on
-monkeys](https://homl.info/73)^[3]
+monkeys](https://homl.info/73) ^[3]
 giving crucial insights into the structure of the visual cortex (the
 authors received the Nobel Prize in Physiology or Medicine in 1981 for
 their work). In particular, they showed that many neurons in the visual
@@ -81,7 +81,7 @@ These studies of the visual cortex inspired the
 [neocognitron](https://homl.info/74), ^[4]
 introduced in 1980, which gradually evolved into what we now call
 *convolutional neural networks*. An important milestone was a [1998
-paper](https://homl.info/75)^[5]
+paper](https://homl.info/75) ^[5]
 by Yann LeCun et al. that introduced the famous *LeNet-5* architecture,
 widely used by banks to recognize handwritten check numbers. This
 architecture has some building blocks that you already know, such as
@@ -717,7 +717,7 @@ LeNet-5
 -------
 
 The [LeNet-5
-architecture](https://homl.info/lenet5)^[10]
+architecture](https://homl.info/lenet5) ^[10]
 is perhaps the most widely known CNN architecture. As mentioned earlier,
 it was created by Yann LeCun in 1998 and has been widely used for
 handwritten digit recognition (MNIST). It is composed of the layers
@@ -788,7 +788,7 @@ AlexNet
 -------
 
 The [AlexNet CNN
-architecture](https://homl.info/80)^[11]
+architecture](https://homl.info/80) ^[11]
 won the 2012 ImageNet ILSVRC challenge by a large margin: it achieved a
 top-five error rate of 17%, while the second best achieved only 26%! It
 was developed by Alex Krizhevsky (hence the name), Ilya Sutskever, and
@@ -915,7 +915,7 @@ In AlexNet, the hyperparameters are set as follows: *r* = 2, *α* =
 `Lambda` layer if you want to use it in a Keras model).
 
 A variant of AlexNet called [*ZF
-Net*](https://homl.info/zfnet)^[12]
+Net*](https://homl.info/zfnet) ^[12]
 was developed by Matthew Zeiler and Rob Fergus and won the 2013 ILSVRC
 challenge. It is essentially AlexNet with a few tweaked hyperparameters
 (number of feature maps, kernel size, stride, etc.).
@@ -1149,7 +1149,7 @@ maps (see
 
 ResNet-34 is the ResNet with 34 layers (only counting the convolutional
 layers and the fully connected
-layer)^[17]
+layer) ^[17]
 containing 3 residual units that output 64 feature maps, 4 RUs with 128
 maps, 6 RUs with 256 maps, and 3 RUs with 512 maps. We will implement
 this architecture later in this lab.
@@ -1167,7 +1167,7 @@ whopping 36 RUs with 1,024 maps, and finally 3 RUs with 2,048 maps.
 ###### Note
 
 Google’s
-[Inception-v4](https://homl.info/84)^[18]
+[Inception-v4](https://homl.info/84) ^[18]
 architecture merged the ideas of GoogLeNet and ResNet and achieved a
 top-five error rate of close to 3% on ImageNet classification.
 
@@ -1175,7 +1175,7 @@ Xception
 --------
 
 Another variant of the GoogLeNet architecture is worth noting:
-[Xception](https://homl.info/xception)^[19]
+[Xception](https://homl.info/xception) ^[19]
 (which stands for *Extreme Inception*) was proposed in 2016 by François
 Chollet (the author of Keras), and it significantly outperformed
 Inception-v3 on a huge vision task (350 million images and 17,000
@@ -1680,7 +1680,7 @@ produce is good, so make sure it is worth the effort. If there are just
 a few thousand images to label, and you don’t plan to do this
 frequently, it may be preferable to do it yourself. Adriana Kovashka et
 al. wrote a very practical
-[paper](https://homl.info/crowd)^[24]
+[paper](https://homl.info/crowd) ^[24]
 about crowdsourcing in computer vision. I recommend you check it out,
 even if you do not plan to use crowdsourcing.
 
@@ -1779,7 +1779,7 @@ Fully Convolutional Networks
 ----------------------------
 
 The idea of FCNs was first introduced in a [2015
-paper](https://homl.info/fcn)^[25]
+paper](https://homl.info/fcn) ^[25]
 by Jonathan Long et al., for semantic segmentation (the task of
 classifying every pixel in an image according to the class of the object
 it belongs to). The authors pointed out that you could replace the dense
@@ -1867,9 +1867,9 @@ YOLO is an extremely fast and accurate object detection architecture
 proposed by Joseph Redmon et al. in a [2015
 paper](https://homl.info/yolo), ^[28]
 and subsequently improved [in
-2016](https://homl.info/yolo2)^[29]
+2016](https://homl.info/yolo2) ^[29]
 (YOLOv2) and [in
-2018](https://homl.info/yolo3)^[30]
+2018](https://homl.info/yolo3) ^[30]
 (YOLOv3). It is so fast that it can run in real time on a video, as seen
 in Redmon’s [demo](https://homl.info/yolodemo).
 
@@ -1984,7 +1984,7 @@ GitHub. In particular, check out [Zihao Zang’s TensorFlow 2
 implementation](https://homl.info/yolotf2). Other object detection
 models are available in the TensorFlow Models project, many with
 pretrained weights; and some have even been ported to TF Hub, such as
-[SSD](https://homl.info/ssd)^[31]
+[SSD](https://homl.info/ssd) ^[31]
 and
 [Faster-RCNN](https://homl.info/fasterrcnn), ^[32]
 which are both quite popular. SSD is also a “single shot” detection
@@ -2143,7 +2143,7 @@ to in
 and *single-shot learning* (a system that can recognize an object after
 it has seen it just once). Some even explore completely novel
 architectures, such as Geoffrey Hinton’s [*capsule
-networks*](https://homl.info/capsnet)^[35]
+networks*](https://homl.info/capsnet) ^[35]
 (I presented them in a couple of
 [videos](https://homl.info/capsnetvideos), with the corresponding code
 in a notebook). Now on to the next lab, where we will look at how to
@@ -2208,168 +2208,135 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
-^[1]
-David H. Hubel, “Single Unit Activity in Striate Cortex of Unrestrained
+
+
+^[1] David H. Hubel, “Single Unit Activity in Striate Cortex of Unrestrained
 Cats,” *The Journal of Physiology* 147 (1959): 226–238.
 
-^[2]
-David H. Hubel and Torsten N. Wiesel, “Receptive Fields of Single
+^[2] David H. Hubel and Torsten N. Wiesel, “Receptive Fields of Single
 Neurons in the Cat’s Striate Cortex,” *The Journal of Physiology* 148
 (1959): 574–591.
 
-^[3]
-David H. Hubel and Torsten N. Wiesel, “Receptive Fields and Functional
+^[3] David H. Hubel and Torsten N. Wiesel, “Receptive Fields and Functional
 Architecture of Monkey Striate Cortex,” *The Journal of Physiology* 195
 (1968): 215–243.
 
-^[4]
-Kunihiko Fukushima, “Neocognitron: A Self-Organizing Neural Network
+^[4] Kunihiko Fukushima, “Neocognitron: A Self-Organizing Neural Network
 Model for a Mechanism of Pattern Recognition Unaffected by Shift in
 Position,” *Biological Cybernetics* 36 (1980): 193–202.
 
-^[5]
-Yann LeCun et al., “Gradient-Based Learning Applied to Document
+^[5] Yann LeCun et al., “Gradient-Based Learning Applied to Document
 Recognition,” *Proceedings of the IEEE* 86, no. 11 (1998): 2278–2324.
 
-^[6]
-A convolution is a mathematical operation that slides one function over
+^[6] A convolution is a mathematical operation that slides one function over
 another and measures the integral of their pointwise multiplication. It
 has deep connections with the Fourier transform and the Laplace
 transform and is heavily used in signal processing. Convolutional layers
 actually use cross-correlations, which are very similar to convolutions
 (see [*https://homl.info/76*](https://homl.info/76) for more details).
 
-^[7]
-A fully connected layer with 150 × 100 neurons, each connected to all
+^[7] A fully connected layer with 150 × 100 neurons, each connected to all
 150 × 100 × 3 inputs, would have 150^2^ × 100^2^ × 3 = 675 million
 parameters!
 
-^[8]
-In the international system of units (SI), 1 MB = 1,000 KB = 1,000 ×
+^[8] In the international system of units (SI), 1 MB = 1,000 KB = 1,000 ×
 1,000 bytes = 1,000 × 1,000 × 8 bits.
 
-^[9]
-Other kernels we’ve discussed so far had weights, but pooling kernels do
+^[9] Other kernels we’ve discussed so far had weights, but pooling kernels do
 not: they are just stateless sliding windows.
 
-^[10]
-Yann LeCun et al., “Gradient-Based Learning Applied to Document
+^[10] Yann LeCun et al., “Gradient-Based Learning Applied to Document
 Recognition,” *Proceedings of the IEEE* 86, no. 11 (1998): 2278–2324.
 
-^[11]
-Alex Krizhevsky et al., “ImageNet Classification with Deep Convolutional
+^[11] Alex Krizhevsky et al., “ImageNet Classification with Deep Convolutional
 Neural Networks,” *\_Proceedings of the 25th International Conference on
 Neural Information Processing Systems* 1 (2012): 1097–1105.
 
-^[12]
-Matthew D. Zeiler and Rob Fergus, “Visualizing and Understanding
+^[12] Matthew D. Zeiler and Rob Fergus, “Visualizing and Understanding
 Convolutional Networks,” *Proceedings of the European Conference on
 Computer Vision* (2014): 818-833.
 
-^[13]
-Christian Szegedy et al., “Going Deeper with Convolutions,” *Proceedings
+^[13] Christian Szegedy et al., “Going Deeper with Convolutions,” *Proceedings
 of the IEEE Conference on Computer Vision and Pattern Recognition*
 (2015): 1–9.
 
-^[14]
-In the 2010 movie *Inception*, the characters keep going deeper and
+^[14] In the 2010 movie *Inception*, the characters keep going deeper and
 deeper into multiple layers of dreams; hence the name of these modules.
 
-^[15]
-Karen Simonyan and Andrew Zisserman, “Very Deep Convolutional Networks
+^[15] Karen Simonyan and Andrew Zisserman, “Very Deep Convolutional Networks
 for Large-Scale Image Recognition,” arXiv preprint arXiv:1409.1556
 (2014).
 
-^[16]
-Kaiming He et al., “Deep Residual Learning for Image Recognition,” arXiv
+^[16] Kaiming He et al., “Deep Residual Learning for Image Recognition,” arXiv
 preprint arXiv:1512:03385 (2015).
 
-^[17]
-It is a common practice when describing a neural network to count only
+^[17] It is a common practice when describing a neural network to count only
 layers with parameters.
 
-^[18]
-Christian Szegedy et al., “Inception–v4, Inception-ResNet and the Impact
+^[18] Christian Szegedy et al., “Inception–v4, Inception-ResNet and the Impact
 of Residual Connections on Learning,” arXiv preprint arXiv:1602.07261
 (2016).
 
-^[19]
-François Chollet, “Xception: Deep Learning with Depthwise Separable
+^[19] François Chollet, “Xception: Deep Learning with Depthwise Separable
 Convolutions,” arXiv preprint arXiv:1610.02357 (2016).
 
-^[20]
-This name can sometimes be ambiguous, since spatially separable
+^[20] This name can sometimes be ambiguous, since spatially separable
 convolutions are often called “separable convolutions” as well.
 
-^[21]
-Xingyu Zeng et al., “Crafting GBD-Net for Object Detection,” *IEEE
+^[21] Xingyu Zeng et al., “Crafting GBD-Net for Object Detection,” *IEEE
 Transactions on Pattern Analysis and Machine Intelligence* 40, no. 9
 (2018): 2109–2123.
 
-^[22]
-Jie Hu et al., “Squeeze-and-Excitation Networks,” *Proceedings of the
+^[22] Jie Hu et al., “Squeeze-and-Excitation Networks,” *Proceedings of the
 IEEE Conference on Computer Vision and Pattern Recognition* (2018):
 7132–7141.
 
-^[23]
-In the ImageNet dataset, each image is associated to a word in the
+^[23] In the ImageNet dataset, each image is associated to a word in the
 [WordNet dataset](https://wordnet.princeton.edu/): the class ID is just
 a WordNet ID.
 
-^[24]
-Adriana Kovashka et al., “Crowdsourcing in Computer Vision,”
+^[24] Adriana Kovashka et al., “Crowdsourcing in Computer Vision,”
 *Foundations and Trends in Computer Graphics and Vision* 10, no. 3
 (2014): 177–243.
 
-^[25]
-Jonathan Long et al., “Fully Convolutional Networks for Semantic
+^[25] Jonathan Long et al., “Fully Convolutional Networks for Semantic
 Segmentation,” *Proceedings of the IEEE Conference on Computer Vision
 and Pattern Recognition* (2015): 3431–3440.
 
-^[26]
-There is one small exception: a convolutional layer using `"valid"`
+^[26] There is one small exception: a convolutional layer using `"valid"`
 padding will complain if the input size is smaller than the kernel size.
 
-^[27]
-This assumes we used only `"same"` padding in the network: indeed,
+^[27] This assumes we used only `"same"` padding in the network: indeed,
 `"valid"` padding would reduce the size of the feature maps. Moreover,
 448 can be neatly divided by 2 several times until we reach 7, without
 any rounding error. If any layer uses a different stride than 1 or 2,
 then there may be some rounding error, so again the feature maps may end
 up being smaller.
 
-^[28]
-Joseph Redmon et al., “You Only Look Once: Unified, Real-Time Object
+^[28] Joseph Redmon et al., “You Only Look Once: Unified, Real-Time Object
 Detection,” *Proceedings of the IEEE Conference on Computer Vision and
 Pattern Recognition* (2016): 779–788.
 
-^[29]
-Joseph Redmon and Ali Farhadi, “YOLO9000: Better, Faster, Stronger,”
+^[29] Joseph Redmon and Ali Farhadi, “YOLO9000: Better, Faster, Stronger,”
 *Proceedings of the IEEE Conference on Computer Vision and Pattern
 Recognition* (2017): 6517–6525.
 
-^[30]
-Joseph Redmon and Ali Farhadi, “YOLOv3: An Incremental Improvement,”
+^[30] Joseph Redmon and Ali Farhadi, “YOLOv3: An Incremental Improvement,”
 arXiv preprint arXiv:1804.02767 (2018).
 
-^[31]
-Wei Liu et al., “SSD: Single Shot Multibox Detector,” *Proceedings of
+^[31] Wei Liu et al., “SSD: Single Shot Multibox Detector,” *Proceedings of
 the 14th European Conference on Computer Vision* 1 (2016): 21–37.
 
-^[32]
-Shaoqing Ren et al., “Faster R-CNN: Towards Real-Time Object Detection
+^[32] Shaoqing Ren et al., “Faster R-CNN: Towards Real-Time Object Detection
 with Region Proposal Networks,” *Proceedings of the 28th International
 Conference on Neural Information Processing Systems* 1 (2015): 91–99.
 
-^[33]
-This type of layer is sometimes referred to as a *deconvolution layer*,
+^[33] This type of layer is sometimes referred to as a *deconvolution layer*,
 but it does *not* perform what mathematicians call a deconvolution, so
 this name should be avoided.
 
-^[34]
-Kaiming He et al., “Mask R-CNN,” arXiv preprint arXiv:1703.06870 (2017).
+^[34] Kaiming He et al., “Mask R-CNN,” arXiv preprint arXiv:1703.06870 (2017).
 
-^[35]
-Geoffrey Hinton et al., “Matrix Capsules with EM Routing,” *Proceedings
+^[35] Geoffrey Hinton et al., “Matrix Capsules with EM Routing,” *Proceedings
 of the International Conference on Learning Representations* (2018).
 

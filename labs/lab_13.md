@@ -1192,7 +1192,7 @@ The idea of using vectors to represent words dates back to the 1960s,
 and many sophisticated techniques have been used to generate useful
 vectors, including using neural networks. But things really took off in
 2013, when Tomáš Mikolov and other Google researchers published a
-[paper](https://homl.info/word2vec)^[9] describing an efficient technique to learn word
+[paper](https://homl.info/word2vec) ^[9] describing an efficient technique to learn word
 embeddings using neural networks, significantly outperforming previous
 attempts. This allowed them to learn embeddings on a very large corpus
 of text: they trained a neural network to predict the words near any
@@ -1218,7 +1218,7 @@ example, although they correctly learn that Man is to King as Woman is
 to Queen, they also seem to learn that Man is to Doctor as Woman is to
 Nurse: quite a sexist bias! To be fair, this particular example is
 probably exaggerated, as was pointed out in a [2019
-paper](https://homl.info/fairembeds)^[10]
+paper](https://homl.info/fairembeds) ^[10]
 by Malvina Nissim et al. Nevertheless, ensuring fairness in Deep
 Learning algorithms is an important and active research topic.
 
@@ -1710,9 +1710,7 @@ Exercises
 
 
 
-^[1]
-
-Imagine a sorted deck of cards on your left: suppose you just take the
+^[1] Imagine a sorted deck of cards on your left: suppose you just take the
 top three cards and shuffle them, then pick one randomly and put it to
 your right, keeping the other two in your hands. Take another card on
 your left, shuffle the three cards in your hands and pick one of them
@@ -1720,54 +1718,38 @@ randomly, and put it on your right. When you are done going through all
 the cards like this, you will have a deck of cards on your right: do you
 think it will be perfectly shuffled?
 
-^[2]
-
-In general, just prefetching one batch is fine, but in some cases you
+^[2] In general, just prefetching one batch is fine, but in some cases you
 may need to prefetch a few more. Alternatively, you can let TensorFlow
 decide automatically by passing `tf.data.experimental.AUTOTUNE` (this is
 an experimental feature for now).
 
-^[3]
-
-But check out the `tf.data.experimental.prefetch_to_device()` function,
+^[3] But check out the `tf.data.experimental.prefetch_to_device()` function,
 which can prefetch data directly to the GPU.
 
-^[4]
-
-Support for datasets is specific to tf.keras; this will not work in
+^[4] Support for datasets is specific to tf.keras; this will not work in
 other implementations of the Keras API.
 
-^[5]
-
-The `fit()` method will take care of repeating the training dataset.
+^[5] The `fit()` method will take care of repeating the training dataset.
 Alternatively, you could call `repeat()` on the training dataset so that
 it repeats forever and specify the `steps_per_epoch` argument when
 calling the `fit()` method. This may be useful in some rare cases, for
 example if you want to use a shuffle buffer that crosses over epochs.
 
-^[6]
-
-Since protobuf objects are meant to be serialized and transmitted, they
+^[6] Since protobuf objects are meant to be serialized and transmitted, they
 are called *messages*.
 
-^[7]
-
-This lab contains the bare minimum you need to know about protobufs
+^[7] This lab contains the bare minimum you need to know about protobufs
 to use TFRecords. To learn more about protobufs, please visit
 [*https://homl.info/protobuf*](https://homl.info/protobuf).
 
-^[8]
-
-Why was `Example` even defined, since it contains no more than a
+^[8] Why was `Example` even defined, since it contains no more than a
 `Features` object? Well, TensorFlow's developers may one day decide to
 add more fields to it. As long as the new `Example` definition still
 contains the `features` field, with the same ID, it will be backward
 compatible. This extensibility is one of the great features of
 protobufs.
 
-^[9]
-
-Tomas Mikolov et al., "Distributed Representations of Words and Phrases
+^[9] Tomas Mikolov et al., "Distributed Representations of Words and Phrases
 and Their Compositionality," *Proceedings of the 26th International
 Conference on Neural Information Processing Systems* 2 (2013):
 3111--3119.

@@ -908,7 +908,7 @@ long-term memory cells: the LSTM cell.
 
 The *Long Short-Term Memory* (LSTM) cell was
 [proposed in
-1997](https://homl.info/93)^[7] by Sepp Hochreiter and Jürgen Schmidhuber and
+1997](https://homl.info/93) ^[7] by Sepp Hochreiter and Jürgen Schmidhuber and
 gradually improved over the years by several researchers, such as [Alex
 Graves](https://homl.info/graves), [Haşim
 Sak](https://homl.info/94), ^[8] and [Wojciech
@@ -1080,7 +1080,7 @@ variant is the GRU cell, which we will look at now.
 The *Gated Recurrent Unit* (GRU) cell (see
 [Figure 15-10]
 was proposed by Kyunghyun Cho et al. in a [2014
-paper](https://homl.info/97)^[11]
+paper](https://homl.info/97) ^[11]
 that also introduced the Encoder--Decoder network we discussed earlier.
 
 ![](./images/mls2_1510.png)
@@ -1317,9 +1317,7 @@ Exercises
 **Solution for the exercises are available in the solutions file.**
 
 
-
-^[1]
-
+^[1] 
 Note that many researchers prefer to use the hyperbolic tangent (tanh)
 activation function in RNNs rather than the ReLU activation function.
 For example, take a look at Vu Pham et al.'s 2013 paper ["Dropout
@@ -1328,71 +1326,58 @@ Recognition"](https://homl.info/91). ReLU-based RNNs are also possible,
 as shown in Quoc V. Le et al.'s 2015 paper ["A Simple Way to Initialize
 Recurrent Networks of Rectified Linear Units"](https://homl.info/92).
 
-^[2]
-
+^[2] 
 Note that a `TimeDistributed(Dense(n))` layer is equivalent to a
 `Conv1D(n, kernel_size=1)` layer.
 
-^[3]
-
+^[3] 
 César Laurent et al., "Batch Normalized Recurrent Neural Networks,"
 *Proceedings of the IEEE International Conference on Acoustics, Speech,
 and Signal Processing* (2016): 2657--2661.
 
-^[4]
-
+^[4] 
 Jimmy Lei Ba et al., "Layer Normalization," arXiv preprint
 arXiv:1607.06450 (2016).
 
-^[5]
-
+^[5] 
 It would have been simpler to inherit from `SimpleRNNCell` instead so
 that we wouldn't have to create an internal `SimpleRNNCell` or handle
 the `state_size` and `output_size` attributes, but the goal here was to
 show how to create a custom cell from scratch.
 
-^[6]
-
+^[6] 
 A character from the animated movies *Finding Nemo* and *Finding Dory*
 who has short-term memory loss.
 
-^[7]
-
+^[7] 
 Sepp Hochreiter and Jürgen Schmidhuber, "Long Short-Term Memory,"
 *Neural Computation* 9, no. 8 (1997): 1735--1780.
 
-^[8]
-
+^[8] 
 Haşim Sak et al., "Long Short-Term Memory Based Recurrent Neural Network
 Architectures for Large Vocabulary Speech Recognition," arXiv preprint
 arXiv:1402.1128 (2014).
 
-^[9]
-
+^[9] 
 Wojciech Zaremba et al., "Recurrent Neural Network Regularization,"
 arXiv preprint arXiv:1409.2329 (2014).
 
-^[10]
-F. A. Gers and J. Schmidhuber, "Recurrent Nets That Time and Count,"
+^[10] F. A. Gers and J. Schmidhuber, "Recurrent Nets That Time and Count,"
 *Proceedings of the IEEE-INNS-ENNS International Joint Conference on
 Neural Networks* (2000): 189--194.
 
-^[11]
-Kyunghyun Cho et al., "Learning Phrase Representations Using RNN
+^[11] Kyunghyun Cho et al., "Learning Phrase Representations Using RNN
 Encoder-Decoder for Statistical Machine Translation," *Proceedings of
 the 2014 Conference on Empirical Methods in Natural Language Processing*
 (2014): 1724--1734.
 
-^[12]
-A 2015 paper by Klaus Greff et al., ["LSTM: A Search Space
+^[12] A 2015 paper by Klaus Greff et al., ["LSTM: A Search Space
 Odyssey"](https://homl.info/98), seems to show that all LSTM variants
 perform roughly the same.
 
-^[13]
-Aaron van den Oord et al., "WaveNet: A Generative Model for Raw Audio,"
+^[13] Aaron van den Oord et al., "WaveNet: A Generative Model for Raw Audio,"
 arXiv preprint arXiv:1609.03499 (2016).
 
-^[14]
-The complete WaveNet uses a few more tricks, such as skip connections
+^[14] The complete WaveNet uses a few more tricks, such as skip connections
 like in a ResNet, and *Gated Activation Units* similar to those found in
 a GRU cell. Please see the notebook for more details.

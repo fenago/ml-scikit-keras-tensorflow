@@ -1436,7 +1436,7 @@ Placing Operations and Variables on Devices
 -------------------------------------------
 
 The TensorFlow
-[whitepaper](https://homl.info/67)^[13]
+[whitepaper](https://homl.info/67) ^[13]
 presents a friendly *dynamic
 placer* algorithm that automagically distributes operations across all
 available devices, taking into account things like the measured
@@ -1863,7 +1863,7 @@ There are a few ways you can reduce the effect of stale gradients:
     in quite different directions.
 
 A [paper published by the Google Brain team in
-2016](https://homl.info/68)^[20]
+2016](https://homl.info/68) ^[20]
 benchmarked various approaches and found that using synchronous updates
 with a few spare replicas was more efficient than using asynchronous
 updates, not only converging faster but also producing a better model.
@@ -2262,7 +2262,7 @@ chief) and 11 parameter servers (check out the other [available scale
 tiers](https://homl.info/scaletiers)). All these VMs will be based on AI
 Platform's 2.0 runtime (a VM configuration that includes TensorFlow 2.0
 and many other
-packages)^[22]
+packages) ^[22]
 and Python 3.5. The training code is located in the
 */my\_project/src/trainer* directory, and the `gcloud` command will
 automatically bundle it into a pip package and upload it to GCS at

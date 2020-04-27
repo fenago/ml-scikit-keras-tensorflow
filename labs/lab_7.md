@@ -172,7 +172,7 @@ as just discussed. Another approach is to use the same training
 algorithm for every predictor and train them on different random subsets
 of the training set. When sampling is performed *with* replacement, this
 method is called
-[*bagging*](https://homl.info/20)^[1] (short for *bootstrap
+[*bagging*](https://homl.info/20) ^[1] (short for *bootstrap
 aggregating*^[2] ). When sampling is performed *without* replacement, it
 is called
 [*pasting*](https://homl.info/21).
@@ -366,7 +366,7 @@ Random Forests
 
 As we have discussed, a
 [Random
-Forest](https://homl.info/24)^[9] is an ensemble of Decision Trees, generally trained
+Forest](https://homl.info/24) ^[9] is an ensemble of Decision Trees, generally trained
 via the bagging method (or sometimes pasting), typically with
 `max_samples` set to the size of the training set. Instead of building a
 `BaggingClassifier` and passing it a `DecisionTreeClassifier`, you can
@@ -510,7 +510,7 @@ Ensemble method that can combine several weak learners into a strong
 learner. The general idea of most boosting methods is to train
 predictors sequentially, each trying to correct its predecessor. There
 are many boosting methods available, but by far the most popular are
-[*AdaBoost*](https://homl.info/26)^[13]
+[*AdaBoost*](https://homl.info/26) ^[13]
 (short for *Adaptive Boosting*)  and *Gradient
 Boosting*. Let's start with AdaBoost.
 
@@ -637,7 +637,7 @@ $$\hat{y}\left( \mathbf{x} \right) = \operatorname{argmax}\limits_{k}{\sum\limit
 
 Scikit-Learn uses a
 multiclass version of AdaBoost called
-[*SAMME*](https://homl.info/27)^[16]
+[*SAMME*](https://homl.info/27) ^[16]
 (which stands for *Stagewise Additive Modeling using a Multiclass
 Exponential loss function*). When there are just two classes, SAMME is
 equivalent to AdaBoost. If the predictors can estimate class
@@ -998,94 +998,64 @@ Exercises
 
 
 
-^[1]
-
-Leo Breiman, "Bagging Predictors," *Machine Learning* 24, no. 2 (1996):
+^[1] Leo Breiman, "Bagging Predictors," *Machine Learning* 24, no. 2 (1996):
 123--140.
 
-^[2]
+^[2] In statistics, resampling with replacement is called *bootstrapping*.
 
-In statistics, resampling with replacement is called *bootstrapping*.
-
-^[3]
-
-Leo Breiman, "Pasting Small Votes for Classification in Large Databases
+^[3] Leo Breiman, "Pasting Small Votes for Classification in Large Databases
 and On-Line," *Machine Learning* 36, no. 1--2 (1999): 85--103.
 
-^[4]
-
-Bias and variance were introduced in
-[Lab 4]
-
-^[5]
-
-`max_samples` can alternatively be set to a float between 0.0 and 1.0,
+^[4] Bias and variance were introduced in
+[Lab 4] ^[5] `max_samples` can alternatively be set to a float between 0.0 and 1.0,
 in which case the max number of instances to sample is equal to the size
 of the training set times `max_samples`.
 
-^[6]
+^[6] As *m* grows, this ratio approaches 1 -- exp(--1) ≈ 63.212%.
 
-As *m* grows, this ratio approaches 1 -- exp(--1) ≈ 63.212%.
-
-^[7]
-
-Gilles Louppe and Pierre Geurts, "Ensembles on Random Patches," *Lecture
+^[7] Gilles Louppe and Pierre Geurts, "Ensembles on Random Patches," *Lecture
 Notes in Computer Science* 7523 (2012): 346--361.
 
-^[8]
-
-Tin Kam Ho, "The Random Subspace Method for Constructing Decision
+^[8] Tin Kam Ho, "The Random Subspace Method for Constructing Decision
 Forests," *IEEE Transactions on Pattern Analysis and Machine
 Intelligence* 20, no. 8 (1998): 832--844.
 
-^[9]
-
-Tin Kam Ho, "Random Decision Forests," *Proceedings of the Third
+^[9] Tin Kam Ho, "Random Decision Forests," *Proceedings of the Third
 International Conference on Document Analysis and Recognition* 1 (1995):
 278.
 
-^[10]
-The `BaggingClassifier` class remains useful if you want a bag of
+^[10] The `BaggingClassifier` class remains useful if you want a bag of
 something other than Decision Trees.
 
-^[11]
-There are a few notable exceptions: `splitter` is absent (forced to
+^[11] There are a few notable exceptions: `splitter` is absent (forced to
 `"random"`), `presort` is absent (forced to `False`), `max_samples` is
 absent (forced to `1.0`), and `base_estimator` is absent (forced to
 `DecisionTreeClassifier` with the provided hyperparameters).
 
-^[12]
-Pierre Geurts et al., "Extremely Randomized Trees," *Machine Learning*
+^[12] Pierre Geurts et al., "Extremely Randomized Trees," *Machine Learning*
 63, no. 1 (2006): 3--42.
 
-^[13]
-Yoav Freund and Robert E. Schapire, "A Decision-Theoretic Generalization
+^[13] Yoav Freund and Robert E. Schapire, "A Decision-Theoretic Generalization
 of On-Line Learning and an Application to Boosting," *Journal of
 Computer and System Sciences* 55, no. 1 (1997): 119--139.
 
-^[14]
-This is just for illustrative purposes. SVMs are generally not good base
+^[14] This is just for illustrative purposes. SVMs are generally not good base
 predictors for AdaBoost; they are slow and tend to be unstable with it.
 
-^[15]
-The original AdaBoost algorithm does not use a learning rate
+^[15] The original AdaBoost algorithm does not use a learning rate
 hyperparameter.
 
-^[16]
-For more details, see Ji Zhu et al., "Multi-Class AdaBoost," *Statistics
+^[16] For more details, see Ji Zhu et al., "Multi-Class AdaBoost," *Statistics
 and Its Interface* 2, no. 3 (2009): 349--360.
 
-^[17]
-Gradient Boosting was first introduced in Leo Breiman's 1997 paper
+^[17] Gradient Boosting was first introduced in Leo Breiman's 1997 paper
 ["Arcing the Edge"](https://homl.info/arcing) and was further developed
 in the [1999 paper](https://homl.info/gradboost) "Greedy Function
 Approximation: A Gradient Boosting Machine" by Jerome H. Friedman.
 
-^[18]
-David H. Wolpert, "Stacked Generalization," *Neural Networks* 5, no. 2
+^[18] David H. Wolpert, "Stacked Generalization," *Neural Networks* 5, no. 2
 (1992): 241--259.
 
-^[19]
-Alternatively, it is possible to use out-of-fold predictions. In some
+^[19] Alternatively, it is possible to use out-of-fold predictions. In some
 contexts this is called *stacking*, while using a hold-out set is called
 *blending*. For many people these terms are synonymous.

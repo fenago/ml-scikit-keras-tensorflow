@@ -961,7 +961,7 @@ you can still use Gradient Descent using any
 
 It is also possible to implement online kernelized SVMs, as described in
 the papers ["Incremental and Decremental Support Vector Machine
-Learning"](https://homl.info/17)^[8] and ["Fast Kernel Classifiers with Online and Active
+Learning"](https://homl.info/17) ^[8] and ["Fast Kernel Classifiers with Online and Active
 Learning"](https://homl.info/18).
 ^[9] These kernelized SVMs are implemented in Matlab and
 C++. For large-scale nonlinear problems, you may want to consider using
@@ -1012,45 +1012,31 @@ Exercises
 
 
 
-^[1]
-
-Chih-Jen Lin et al., "A Dual Coordinate Descent Method for Large-Scale
+^[1] Chih-Jen Lin et al., "A Dual Coordinate Descent Method for Large-Scale
 Linear SVM," *Proceedings of the 25th International Conference on
 Machine Learning* (2008): 408--415.
 
-^[2]
-
-John Platt, "Sequential Minimal Optimization: A Fast Algorithm for
+^[2] John Platt, "Sequential Minimal Optimization: A Fast Algorithm for
 Training Support Vector Machines" (Microsoft Research technical report,
 April 21, 1998),
 [*https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf*](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/tr-98-14.pdf).
 
-^[3]
-
-More generally, when there are *n* features, the decision function is an
+^[3] More generally, when there are *n* features, the decision function is an
 *n*-dimensional *hyperplane*, and the decision
 boundary is an (*n* -- 1)-dimensional hyperplane.
 
-^[4]
+^[4] Zeta (*ζ*) is the sixth letter of the Greek alphabet.
 
-Zeta (*ζ*) is the sixth letter of the Greek alphabet.
-
-^[5]
-
-To learn more about Quadratic Programming, you can start by reading
+^[5] To learn more about Quadratic Programming, you can start by reading
 Stephen Boyd and Lieven Vandenberghe's course [*Convex
 Optimization*](https://homl.info/15) (Cambridge University Press, 2004)
 or watch Richard Brown's [series of video
 lectures](https://homl.info/16).
 
-^[6]
-
-The objective function is convex, and the inequality constraints are
+^[6] The objective function is convex, and the inequality constraints are
 continuously differentiable and convex functions.
 
-^[7]
-
-As explained in
+^[7] As explained in
 [Lab 4]
 the dot product of two vectors **a** and **b** is normally noted **a** ·
 **b**. However, in Machine Learning, vectors are frequently represented
@@ -1059,13 +1045,9 @@ achieved by computing **a**^⊺^**b**. To remain consistent with the rest
 of the course, we will use this notation here, ignoring the fact that this
 technically results in a single-cell matrix rather than a scalar value.
 
-^[8]
-
-Gert Cauwenberghs and Tomaso Poggio, "Incremental and Decremental
+^[8] Gert Cauwenberghs and Tomaso Poggio, "Incremental and Decremental
 Support Vector Machine Learning," *Proceedings of the 13th International
 Conference on Neural Information Processing Systems* (2000): 388--394.
 
-^[9]
-
-Antoine Bordes et al., "Fast Kernel Classifiers with Online and Active
+^[9] Antoine Bordes et al., "Fast Kernel Classifiers with Online and Active
 Learning," *Journal of Machine Learning Research* 6 (2005): 1579--1619.

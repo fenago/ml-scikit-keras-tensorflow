@@ -15,7 +15,7 @@ the headline news. But a revolution took place in 2013, when researchers
 from a British startup called DeepMind [demonstrated a system that could
 learn to play just about any Atari game from
 scratch](https://homl.info/dqn), ^[2] eventually [outperforming
-humans](https://homl.info/dqn2)^[3] in most of them, using only raw pixels as inputs and
+humans](https://homl.info/dqn2) ^[3] in most of them, using only raw pixels as inputs and
 without any prior knowledge of the rules of the
 games.
 ^[4] This was the first of a series of amazing feats,
@@ -184,7 +184,7 @@ library like [PyBullet](https://pybullet.org/) or
 [MuJoCo](http://www.mujoco.org/) for 3D physics simulation.
 
 [*OpenAI
-Gym*](https://gym.openai.com/)^[10]
+Gym*](https://gym.openai.com/) ^[10]
 is a toolkit that provides a wide variety of simulated environments
 (Atari games, board games, 2D and 3D physical simulations, and so on),
 so you can train agents, compare them, or develop new RL algorithms.
@@ -514,7 +514,7 @@ As
 discussed earlier, PG algorithms optimize the parameters of a policy by
 following the gradients toward higher rewards. One popular class of PG
 algorithms, called *REINFORCE algorithms*, was [introduced back in
-1992](https://homl.info/132)^[11]
+1992](https://homl.info/132) ^[11]
 by Ronald Williams. Here is one common variant:
 
 1.  First, let the neural network policy play the game several times,
@@ -1614,7 +1614,7 @@ experiences *uniformly* from the replay buffer, why not sample important
 experiences more frequently? This idea is called
 *importance sampling* (IS) or *prioritized experience replay* (PER), and
 it was introduced in a [2015
-paper](https://homl.info/prioreplay)^[15]
+paper](https://homl.info/prioreplay) ^[15]
 by DeepMind researchers (once again!).
 
 More specifically, experiences are considered "important" if they are
@@ -1664,7 +1664,7 @@ The *Dueling DQN*
 algorithm 
 (DDQN, not to be confused with Double DQN, although both techniques can
 easily be combined) was introduced in yet another [2015
-paper](https://homl.info/ddqn)^[17]
+paper](https://homl.info/ddqn) ^[17]
 by DeepMind researchers. To understand how it works, we must first note
 that the Q-Value of a state-action pair (*s*, *a*) can be expressed as
 *Q*(*s*, *a*) = *V*(*s*) + *A*(*s*, *a*), where *V*(*s*) is the value of
@@ -2769,7 +2769,7 @@ Actor-Critic algorithms
     (critic). It's a bit like an athlete (the agent) learning with the
     help of a coach (the DQN).
 
-[*Asynchronous Advantage Actor-Critic*](https://homl.info/a3c)^[23]
+[*Asynchronous Advantage Actor-Critic*](https://homl.info/a3c) ^[23]
 
 :   An important
     Actor-Critic variant introduced by DeepMind researchers in 2016,
@@ -2789,7 +2789,7 @@ Actor-Critic algorithms
     synchronous, so gradient updates are performed over larger batches,
     which allows the model to better utilize the power of the GPU.
 
-[*Soft Actor-Critic*](https://homl.info/sac)^[24]
+[*Soft Actor-Critic*](https://homl.info/sac) ^[24]
 
 :   An Actor-Critic variant
     proposed in 2018 by Tuomas Haarnoja and other UC Berkeley
@@ -2803,13 +2803,13 @@ Actor-Critic algorithms
     (contrary to all the previous algorithms, which learn very slowly).
     SAC is available in TF-Agents.
 
-[*Proximal Policy Optimization* (PPO)](https://homl.info/ppo)^[25]
+[*Proximal Policy Optimization* (PPO)](https://homl.info/ppo) ^[25]
 
 :   An algorithm based on
     A2C that clips the loss function to avoid excessively large weight
     updates (which often lead to training instabilities). PPO is a
     simplification of the previous [*Trust Region Policy
-    Optimization*](https://homl.info/trpo)^[26]
+    Optimization*](https://homl.info/trpo) ^[26]
     (TRPO) algorithm, also by John Schulman and other OpenAI
     researchers. OpenAI made the news in April 2019 with their AI called
     OpenAI Five, based on the PPO algorithm, which defeated the world
@@ -2820,7 +2820,7 @@ Actor-Critic algorithms
 <!-- -->
 ```
 
-[*Curiosity-based exploration*](https://homl.info/curiosity)^[27]
+[*Curiosity-based exploration*](https://homl.info/curiosity) ^[27]
 
 :   A recurring problem in RL is the sparsity of
     the rewards, which makes learning very slow and inefficient. Deepak

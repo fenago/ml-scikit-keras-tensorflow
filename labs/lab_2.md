@@ -1133,7 +1133,7 @@ you want to avoid.
 One solution is to save the test set on the first run and then load it
 in subsequent runs. Another option is to set the random number
 generator's seed (e.g., with
-`np.random.seed(42)`)^[14]
+`np.random.seed(42)`) ^[14]
 before calling `np.random.permutation()` so that it always generates the
 same shuffled indices.
 
@@ -2879,80 +2879,55 @@ The following exercises are all based on this lab's housing dataset:
 
 5.  Automatically explore some preparation options using `GridSearchCV`.
 
-Solutions to these exercises can be found in the Jupyter notebooks
-available at
-[*https://github.com/fenago/ml-scikit-keras-tensorflow*](https://github.com/fenago/ml-scikit-keras-tensorflow).
+**Solutions to these exercises can be found in the Jupyter notebooks.**
 
-
-
-^[1]
-
-The example project is fictitious; the goal is to illustrate the main
+^[1] The example project is fictitious; the goal is to illustrate the main
 steps of a Machine Learning project, not to learn anything about the
 real estate business.
 
-^[2]
-
-The original dataset appeared in R. Kelley Pace and Ronald Barry,
+^[2] The original dataset appeared in R. Kelley Pace and Ronald Barry,
 "Sparse Spatial Autoregressions," *Statistics & Probability Letters* 33,
 no. 3 (1997): 291--297.
 
-^[3]
-
-A piece of information fed to a Machine Learning system is often called
+^[3] A piece of information fed to a Machine Learning system is often called
 a *signal*, in reference to Claude Shannon's information theory, which
 he developed at Bell Labs to improve telecommunications. His theory: you
 want a high signal-to-noise ratio.
 
-^[4]
-
-Recall that the transpose operator flips a column vector into a row
+^[4] Recall that the transpose operator flips a column vector into a row
 vector (and vice versa).
 
-^[5]
-
-The latest version of Python 3 is recommended. Python 2.7+ may work too,
+^[5] The latest version of Python 3 is recommended. Python 2.7+ may work too,
 but now that it's deprecated, all major scientific libraries are
 dropping support for it, so you should migrate to Python 3 as soon as
 possible.
 
-^[6]
-
-I'll show the installation steps using pip in a bash shell on a Linux or
+^[6] I'll show the installation steps using pip in a bash shell on a Linux or
 macOS system. You may need to adapt these commands to your own system.
 On Windows, I recommend installing Anaconda instead.
 
-^[7]
-
-If you want to upgrade pip for all users on your machine rather than
+^[7] If you want to upgrade pip for all users on your machine rather than
 just your own user, you should remove the `--user` option and make sure
 you have administrator rights (e.g., by adding `sudo` before the whole
 command on Linux or macOS).
 
-^[8]
-
-Alternative tools include venv (very similar to virtualenv and included
+^[8] Alternative tools include venv (very similar to virtualenv and included
 in the standard library), virtualenvwrapper (provides extra
 functionalities on top of virtualenv), pyenv (allows easy switching
 between Python versions), and pipenv (a great packaging tool by the same
 author as the popular `requests` library, built on top of pip and
 virtualenv).
 
-^[9]
-
-Note that Jupyter can handle multiple versions of Python, and even many
+^[9] Note that Jupyter can handle multiple versions of Python, and even many
 other languages such as R or Octave.
 
-^[10]
-You might also need to check legal constraints, such as private fields
+^[10] You might also need to check legal constraints, such as private fields
 that should never be copied to unsafe data stores.
 
-^[11]
-In a real project you would save this code in a Python file, but for now
+^[11] In a real project you would save this code in a Python file, but for now
 you can just write it in your Jupyter notebook.
 
-^[12]
-The standard deviation is generally denoted *σ* (the Greek letter
+^[12] The standard deviation is generally denoted *σ* (the Greek letter
 sigma), and it is the square root of the *variance*, which is the
 average of the squared deviation from the mean. When a feature has a
 bell-shaped *normal distribution* (also called a *Gaussian
@@ -2960,59 +2935,47 @@ distribution*), which is very common, the "68-95-99.7" rule applies:
 about 68% of the values fall within 1*σ* of the mean, 95% within 2*σ*,
 and 99.7% within 3*σ*.
 
-^[13]
-In this course, when a code example contains a mix of code and outputs, as
+^[13] In this course, when a code example contains a mix of code and outputs, as
 is the case here, it is formatted like in the Python interpreter, for
 better readability: the code lines are prefixed with `>>>` (or `...` for
 indented blocks), and the outputs have no prefix.
 
-^[14]
-You will often see people set the random seed to 42. This number has no
+^[14] You will often see people set the random seed to 42. This number has no
 special property, other than to be the Answer to the Ultimate Question
 of Life, the Universe, and Everything.
 
-^[15]
-The location information is actually quite coarse, and as a result many
+^[15] The location information is actually quite coarse, and as a result many
 districts will have the exact same ID, so they will end up in the same
 set (test or train). This introduces some unfortunate sampling bias.
 
-^[16]
-If you are reading this in grayscale, grab a red pen and scribble over
+^[16] If you are reading this in grayscale, grab a red pen and scribble over
 most of the coastline from the Bay Area down to San Diego (as you might
 expect). You can add a patch of yellow around Sacramento as well.
 
-^[17]
-For more details on the design principles, see Lars Buitinck et al.,
+^[17] For more details on the design principles, see Lars Buitinck et al.,
 "API Design for Machine Learning Software: Experiences from the
 Scikit-Learn Project" ," arXiv preprint arXiv:1309.0238 (2013).
 
-^[18]
-Some predictors also provide methods to measure the confidence of their
+^[18] Some predictors also provide methods to measure the confidence of their
 predictions.
 
-^[19]
-This class is available in Scikit-Learn 0.20 and later. If you use an
+^[19] This class is available in Scikit-Learn 0.20 and later. If you use an
 earlier version, please consider upgrading, or use the pandas
 `Series.factorize()` method.
 
-^[20]
-Before Scikit-Learn 0.20, the method could only encode integer
+^[20] Before Scikit-Learn 0.20, the method could only encode integer
 categorical values, but since 0.20 it can also handle other types of
 inputs, including text categorical inputs.
 
-^[21]
-See SciPy's documentation for more details.
+^[21] See SciPy's documentation for more details.
 
-^[22]
-Just like for pipelines, the name can be anything as long as it does not
+^[22] Just like for pipelines, the name can be anything as long as it does not
 contain double underscores.
 
-^[23]
-In a nutshell, a REST (or RESTful) API is an HTTP-based API that follows
+^[23] In a nutshell, a REST (or RESTful) API is an HTTP-based API that follows
 some conventions, such as using standard HTTP verbs to read, update,
 create, or delete resources (GET, POST, PUT, and DELETE) and using JSON
 for the inputs and outputs.
 
-^[24]
-A captcha is a test to ensure a user is not a robot. These tests have
+^[24] A captcha is a test to ensure a user is not a robot. These tests have
 often been used as a cheap way to label training data.

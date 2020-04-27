@@ -561,7 +561,7 @@ pretrained in an unsupervised fashion, using this greedy layerwise
 approach. They used restricted Boltzmann machines (RBMs; see
 [Appendix E]
 for this purpose, but in [2007 Yoshua Bengio et al.
-showed](https://homl.info/112)^[3] that autoencoders worked just as well. For several
+showed](https://homl.info/112) ^[3] that autoencoders worked just as well. For several
 years this was the only efficient way to train deep nets, until many of
 the techniques introduced in
 [Lab 11]
@@ -1155,7 +1155,7 @@ Generative Adversarial Networks
 
 Generative adversarial networks were proposed in a
 [2014
-paper](https://homl.info/gan)^[10]
+paper](https://homl.info/gan) ^[10]
 by Ian Goodfellow et al., and although the idea got researchers excited
 almost instantly, it took a few years to overcome some of the
 difficulties of training GANs. Like many great ideas, it seems simple in
@@ -1391,7 +1391,7 @@ These problems have kept researchers very busy since 2014: many papers
 were published on this topic, some proposing new cost
 functions^[11]
 (though a [2018
-paper](https://homl.info/gansequal)^[12]
+paper](https://homl.info/gansequal) ^[12]
 by Google researchers questions their efficiency) or techniques to
 stabilize training or to avoid the mode collapse issue. For example, a
 popular technique called *experience replay*
@@ -1551,7 +1551,7 @@ If you add each image's class as an extra input to both the generator
 and the discriminator, they will both learn what each class looks like,
 and thus you will be able to control the class of each image produced by
 the generator. This is called a [*conditional
-GAN*](https://homl.info/cgan)^[15]
+GAN*](https://homl.info/cgan) ^[15]
 (CGAN).
 
 
@@ -1567,7 +1567,7 @@ Progressive Growing of GANs
 ---------------------------
 
 An important technique was proposed in a [2018
-paper](https://homl.info/progan)^[16]
+paper](https://homl.info/progan) ^[16]
 by Nvidia researchers Tero Karras et al.: they suggested generating
 small images at the beginning of training, then gradually adding
 convolutional layers to both the generator and the discriminator to
@@ -1684,7 +1684,7 @@ The
 state 
 of the art in high-resolution image generation was advanced once again
 by the same Nvidia team in a [2018
-paper](https://homl.info/stylegan)^[18]
+paper](https://homl.info/stylegan) ^[18]
 that introduced the popular StyleGAN architecture. The authors used
 *style transfer* techniques in the generator to ensure that the
 generated images have the same local structure as the training images,

@@ -594,15 +594,10 @@ Exercises
 **Solution for the exercises are available in the solutions file.**
 
 
-
-^[1]
-
-Graphviz is an open source graph visualization software package,
+^[1] Graphviz is an open source graph visualization software package,
 available at [*http://www.graphviz.org/*](http://www.graphviz.org/).
 
-^[2]
-
-P is the set of problems that can be solved in polynomial time. NP is
+^[2] P is the set of problems that can be solved in polynomial time. NP is
 the set of problems whose solutions can be verified in polynomial time.
 An NP-Hard problem is a problem to which any NP problem can be reduced
 in polynomial time. An NP-Complete problem is both NP and NP-Hard. A
@@ -610,20 +605,12 @@ major open mathematical question is whether or not P = NP. If P ≠ NP
 (which seems likely), then no polynomial algorithm will ever be found
 for any NP-Complete problem (except perhaps on a quantum computer).
 
-^[3]
-
-log~2~ is the binary logarithm. It is equal to log~2~(*m*) = log(*m*) /
+^[3] log~2~ is the binary logarithm. It is equal to log~2~(*m*) = log(*m*) /
 log(2).
 
-^[4]
+^[4] A reduction of entropy is often called an *information gain*.
 
-A reduction of entropy is often called an *information gain*.
-
-^[5]
-
-See Sebastian Raschka's [interesting analysis for more
+^[5] See Sebastian Raschka's [interesting analysis for more
 details](https://homl.info/19).
 
-^[6]
-
-It randomly selects the set of features to evaluate at each node.
+^[6] It randomly selects the set of features to evaluate at each node.

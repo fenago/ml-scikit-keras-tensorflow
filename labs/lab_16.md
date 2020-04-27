@@ -1988,171 +1988,131 @@ Exercises
 
 
 
-^[1]
-
-Alan Turing, "Computing Machinery and Intelligence," *Mind* 49 (1950):
+^[1]  Alan Turing, "Computing Machinery and Intelligence," *Mind* 49 (1950):
 433--460.
 
-^[2]
-
-Of course, the word *chatbot* came much later. Turing called his test
+^[2]  Of course, the word *chatbot* came much later. Turing called his test
 the *imitation game*: machine A and human B chat with human interrogator
 C via text messages; the interrogator asks questions to figure out which
 one is the machine (A or B). The machine passes the test if it can fool
 the interrogator, while the human B must try to help the interrogator.
 
-^[3]
-
-By definition, a stationary time series's mean, variance, and
+^[3]  By definition, a stationary time series's mean, variance, and
 *autocorrelations* (i.e., correlations between values in the time series
 separated by a given interval) do not change over time. This is quite
 restrictive; for example, it excludes time series with trends or
 cyclical patterns. RNNs are more tolerant in that they can learn trends
 and cyclical patterns.
 
-^[4]
-
-Taku Kudo, "Subword Regularization: Improving Neural Network Translation
+^[4]  Taku Kudo, "Subword Regularization: Improving Neural Network Translation
 Models with Multiple Subword Candidates," arXiv preprint
 arXiv:1804.10959 (2018).
 
-^[5]
-
-Taku Kudo and John Richardson, "SentencePiece: A Simple and Language
+^[5]  Taku Kudo and John Richardson, "SentencePiece: A Simple and Language
 Independent Subword Tokenizer and Detokenizer for Neural Text
 Processing," arXiv preprint arXiv:1808.06226 (2018).
 
-^[6]
-
-Rico Sennrich et al., "Neural Machine Translation of Rare Words with
+^[6]  Rico Sennrich et al., "Neural Machine Translation of Rare Words with
 Subword Units," *Proceedings of the 54th Annual Meeting of the
 Association for Computational Linguistics* 1 (2016): 1715--1725.
 
-^[7]
-
-Yonghui Wu et al., "Google's Neural Machine Translation System: Bridging
+^[7]  Yonghui Wu et al., "Google's Neural Machine Translation System: Bridging
 the Gap Between Human and Machine Translation," arXiv preprint
 arXiv:1609.08144 (2016).
 
-^[8]
-
-Their ID is 0 only because they are the most frequent "words" in the
+^[8]  Their ID is 0 only because they are the most frequent "words" in the
 dataset. It would probably be a good idea to ensure that the padding
 tokens are always encoded as 0, even if they are not the most frequent.
 
-^[9]
-
-To be precise, the sentence embedding is equal to the mean word
+^[9]  To be precise, the sentence embedding is equal to the mean word
 embedding multiplied by the square root of the number of words in the
 sentence. This compensates for the fact that the mean of *n* vectors
 gets shorter as *n* grows.
 
-^[10]
-Ilya Sutskever et al., "Sequence to Sequence Learning with Neural
+^[10] Ilya Sutskever et al., "Sequence to Sequence Learning with Neural
 Networks," arXiv preprint arXiv:1409.3215 (2014).
 
-^[11]
-Sébastien Jean et al., "On Using Very Large Target Vocabulary for Neural
+^[11] Sébastien Jean et al., "On Using Very Large Target Vocabulary for Neural
 Machine Translation," *Proceedings of the 53rd Annual Meeting of the
 Association for Computational Linguistics and the 7th International
 Joint Conference on Natural Language Processing of the Asian Federation
 of Natural Language Processing* 1 (2015): 1--10.
 
-^[12]
-Samy Bengio et al., "Scheduled Sampling for Sequence Prediction with
+^[12] Samy Bengio et al., "Scheduled Sampling for Sequence Prediction with
 Recurrent Neural Networks," arXiv preprint arXiv:1506.03099 (2015).
 
-^[13]
-Dzmitry Bahdanau et al., "Neural Machine Translation by Jointly Learning
+^[13] Dzmitry Bahdanau et al., "Neural Machine Translation by Jointly Learning
 to Align and Translate," arXiv preprint arXiv:1409.0473 (2014).
 
-^[14]
-The most common metric used in NMT is the BiLingual Evaluation
+^[14] The most common metric used in NMT is the BiLingual Evaluation
 Understudy (BLEU) score, which compares each translation produced by the
 model with several good translations produced by humans: it counts the
 number of *n*-grams (sequences of *n* words) that appear in any of the
 target translations and adjusts the score to take into account the
 frequency of the produced *n*-grams in the target translations.
 
-^[15]
-Recall that a time-distributed `Dense` layer is equivalent to a regular
+^[15] Recall that a time-distributed `Dense` layer is equivalent to a regular
 `Dense` layer that you apply independently at each time step (only much
 faster).
 
-^[16]
-Minh-Thang Luong et al., "Effective Approaches to Attention-Based Neural
+^[16] Minh-Thang Luong et al., "Effective Approaches to Attention-Based Neural
 Machine Translation," *Proceedings of the 2015 Conference on Empirical
 Methods in Natural Language Processing* (2015): 1412--1421.
 
-^[17]
-Kelvin Xu et al., "Show, Attend and Tell: Neural Image Caption
+^[17] Kelvin Xu et al., "Show, Attend and Tell: Neural Image Caption
 Generation with Visual Attention," *Proceedings of the 32nd
 International Conference on Machine Learning* (2015): 2048--2057.
 
-^[18]
-This is a part of figure 3 from the paper. It is reproduced with the
+^[18] This is a part of figure 3 from the paper. It is reproduced with the
 kind authorization of the authors.
 
-^[19]
-Marco Tulio Ribeiro et al., "'Why Should I Trust You?': Explaining the
+^[19] Marco Tulio Ribeiro et al., "'Why Should I Trust You?': Explaining the
 Predictions of Any Classifier," *Proceedings of the 22nd ACM SIGKDD
 International Conference on Knowledge Discovery and Data Mining* (2016):
 1135--1144.
 
-^[20]
-Ashish Vaswani et al., "Attention Is All You Need," *Proceedings of the
+^[20] Ashish Vaswani et al., "Attention Is All You Need," *Proceedings of the
 31st International Conference on Neural Information Processing Systems*
 (2017): 6000--6010.
 
-^[21]
-Since the Transformer uses time-distributed `Dense` layers, you could
+^[21] Since the Transformer uses time-distributed `Dense` layers, you could
 argue that it uses 1D convolutional layers with a kernel size of 1.
 
-^[22]
-This is figure 1 from the paper, reproduced with the kind authorization
+^[22] This is figure 1 from the paper, reproduced with the kind authorization
 of the authors.
 
-^[23]
-This is the right part of figure 2 from the paper, reproduced with the
+^[23] This is the right part of figure 2 from the paper, reproduced with the
 kind authorization of the authors.
 
-^[24]
-Matthew Peters et al., "Deep Contextualized Word Representations,"
+^[24] Matthew Peters et al., "Deep Contextualized Word Representations,"
 *Proceedings of the 2018 Conference of the North American Lab of the
 Association for Computational Linguistics: Human Language Technologies*
 1 (2018): 2227--2237.
 
-^[25]
-Jeremy Howard and Sebastian Ruder, "Universal Language Model Fine-Tuning
+^[25] Jeremy Howard and Sebastian Ruder, "Universal Language Model Fine-Tuning
 for Text Classification," *Proceedings of the 56th Annual Meeting of the
 Association for Computational Linguistics* 1 (2018): 328--339.
 
-^[26]
-Alec Radford et al., "Improving Language Understanding by Generative
+^[26] Alec Radford et al., "Improving Language Understanding by Generative
 Pre-Training" (2018).
 
-^[27]
-For example, the sentence "Jane had a lot of fun at her friend's
+^[27] For example, the sentence "Jane had a lot of fun at her friend's
 birthday party" entails "Jane enjoyed the party," but it is contradicted
 by "Everyone hated the party" and it is unrelated to "The Earth is
 flat."
 
-^[28]
-Alec Radford et al., "Language Models Are Unsupervised Multitask
+^[28] Alec Radford et al., "Language Models Are Unsupervised Multitask
 Learners" (2019).
 
-^[29]
-Jacob Devlin et al., "BERT: Pre-training of Deep Bidirectional
+^[29] Jacob Devlin et al., "BERT: Pre-training of Deep Bidirectional
 Transformers for Language Understanding," *Proceedings of the 2018
 Conference of the North American Lab of the Association for
 Computational Linguistics: Human Language Technologies* 1 (2019).
 
-^[30]
-Maha Elbayad et al., "Pervasive Attention: 2D Convolutional Neural
+^[30] Maha Elbayad et al., "Pervasive Attention: 2D Convolutional Neural
 Networks for Sequence-to-Sequence Prediction," arXiv preprint
 arXiv:1808.03867 (2018).
 
-^[31]
-Shuai Li et al., "Independently Recurrent Neural Network (IndRNN):
+^[31] Shuai Li et al., "Independently Recurrent Neural Network (IndRNN):
 Building a Longer and Deeper RNN," *Proceedings of the IEEE Conference
 on Computer Vision and Pattern Recognition* (2018): 5457--5466.

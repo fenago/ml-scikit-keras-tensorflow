@@ -55,7 +55,7 @@ Surprisingly, ANNs have
 been around for quite a while: they were first introduced back in 1943
 by the neurophysiologist Warren McCulloch and the mathematician Walter
 Pitts. In their [landmark
-paper](https://homl.info/43)^[2] "A Logical Calculus of Ideas Immanent in Nervous
+paper](https://homl.info/43) ^[2] "A Logical Calculus of Ideas Immanent in Nervous
 Activity," McCulloch and Pitts presented a simplified computational
 model of how biological neurons might work together in animal brains to
 perform complex computations using *propositional
@@ -145,7 +145,7 @@ computations can be performed by a network of fairly simple neurons,
 much like a complex anthill can emerge from the combined efforts of
 simple ants. The architecture of biological neural
 networks
-(BNNs)^[5] is still the subject of active research, but some
+(BNNs) ^[5] is still the subject of active research, but some
 parts of the brain have been mapped, and it seems that neurons are often
 organized in consecutive layers, especially in the cerebral cortex
 (i.e., the outer layer of your brain), as shown in
@@ -442,7 +442,7 @@ people talk about Deep Learning whenever neural networks are involved
 For many years researchers struggled to find a way to train MLPs,
 without success. But in 1986, David Rumelhart, Geoffrey Hinton, and
 Ronald Williams published a [groundbreaking
-paper](https://homl.info/44)^[10]
+paper](https://homl.info/44) ^[10]
 that introduced the *backpropagation* training algorithm, which is still
 used today. In short, it is Gradient Descent (introduced in
 [Lab 4]
@@ -2241,7 +2241,7 @@ Python libraries you can use to optimize hyperparameters:
 
 :   A fast hyperparameter tuning library based on
     the recent [Hyperband
-    paper](https://homl.info/hyperband)^[22]
+    paper](https://homl.info/hyperband) ^[22]
     by Lisha Li et al.
 
 [Sklearn-Deap](https://github.com/rsteca/sklearn-deap)
@@ -2446,14 +2446,14 @@ Batch size
     not generalize as well as a model trained with a small batch size.
     In April 2018, Yann LeCun even tweeted "Friends don't let friends
     use mini-batches larger than 32," citing a [2018
-    paper](https://homl.info/smallbatch)^[24]
+    paper](https://homl.info/smallbatch) ^[24]
     by Dominic Masters and Carlo Luschi which concluded that using small
     batches (from 2 to 32) was preferable because small batches led to
     better models in less training time. Other papers point in the
     opposite direction, however; in 2017, papers by [Elad Hoffer et
-    al.](https://homl.info/largebatch)^[25]
+    al.](https://homl.info/largebatch) ^[25]
     and [Priya Goyal et
-    al.](https://homl.info/largebatch2)^[26]
+    al.](https://homl.info/largebatch2) ^[26]
     showed that it was possible to use very large batch sizes (up to
     8,192) using various techniques such as warming up the learning rate
     (i.e., starting training with a small learning rate, then ramping it
@@ -2487,7 +2487,7 @@ hyperparameter, make sure to update the learning rate as well.
 
 For more best practices regarding tuning neural network hyperparameters,
 check out the excellent [2018
-paper](https://homl.info/1cycle)^[27]
+paper](https://homl.info/1cycle) ^[27]
 by Leslie Smith.
 
 This concludes our introduction to artificial neural networks and their
@@ -2634,83 +2634,59 @@ Exercises
 
 
 
-^[1]
-
-You can get the best of both worlds by being open to biological
+^[1] You can get the best of both worlds by being open to biological
 inspirations without being afraid to create biologically unrealistic
 models, as long as they work well.
 
-^[2]
-
-Warren S. McCulloch and Walter Pitts, "A Logical Calculus of the Ideas
+^[2] Warren S. McCulloch and Walter Pitts, "A Logical Calculus of the Ideas
 Immanent in Nervous Activity," *The Bulletin of Mathematical Biology* 5,
 no. 4 (1943): 115--113.
 
-^[3]
-
-They are not actually attached, just so close that they can very quickly
+^[3] They are not actually attached, just so close that they can very quickly
 exchange chemical signals.
 
-^[4]
-
-Image by Bruce Blaus ([Creative Commons
+^[4] Image by Bruce Blaus ([Creative Commons
 3.0](https://creativecommons.org/licenses/by/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Neuron*](https://en.wikipedia.org/wiki/Neuron).
 
-^[5]
-
-In the context of Machine Learning, the phrase "neural networks"
+^[5] In the context of Machine Learning, the phrase "neural networks"
 generally refers to ANNs, not BNNs.
 
-^[6]
-
-Drawing of a cortical lamination by S. Ramon y Cajal (public domain).
+^[6] Drawing of a cortical lamination by S. Ramon y Cajal (public domain).
 Reproduced from
 [*https://en.wikipedia.org/wiki/Cerebral\_cortex*](https://en.wikipedia.org/wiki/Cerebral_cortex).
 
-^[7]
-
-The name *Perceptron* is sometimes used to mean a tiny network with a
+^[7] The name *Perceptron* is sometimes used to mean a tiny network with a
 single TLU.
 
-^[8]
-
-Note that this solution is not unique: when data points are linearly
+^[8] Note that this solution is not unique: when data points are linearly
 separable, there is an infinity of hyperplanes that can separate them.
 
-^[9]
-
-In the 1990s, an ANN with more than two hidden layers was considered
+^[9] In the 1990s, an ANN with more than two hidden layers was considered
 deep. Nowadays, it is common to see ANNs with dozens of layers, or even
 hundreds, so the definition of "deep" is quite fuzzy.
 
-^[10]
-David Rumelhart et al. "Learning Internal Representations by Error
+^[10] David Rumelhart et al. "Learning Internal Representations by Error
 Propagation," (Defense Technical Information Center technical report,
 September 1985).
 
-^[11]
-This technique was actually independently invented several times by
+^[11] This technique was actually independently invented several times by
 various researchers in different fields, starting with Paul Werbos in
 1974.
 
-^[12]
-Biological neurons seem to implement a roughly sigmoid (*S*-shaped)
+^[12] Biological neurons seem to implement a roughly sigmoid (*S*-shaped)
 activation function, so researchers stuck to sigmoid functions for a
 very long time. But it turns out that ReLU generally works better in
 ANNs. This is one of the cases where the biological analogy was
 misleading.
 
-^[13]
-Project ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating
+^[13] Project ONEIROS (Open-ended Neuro-Electronic Intelligent Robot Operating
 System).
 
-^[14]
-You can use `keras.utils.plot_model()` to generate an image of your
+^[14] You can use `keras.utils.plot_model()` to generate an image of your
 model.
 
-^[15]
-If your training or validation data does not match the expected shape,
+^[15] If your training or validation data does not match the expected shape,
 you will get an exception. This is perhaps the most common error, so you
 should get familiar with the error message. The message is actually
 quite clear: for example, if you try to train this model with an array
@@ -2719,64 +2695,51 @@ get the following exception: "ValueError: Error when checking input:
 expected flatten\_input to have 3 dimensions, but got array with shape
 (60000, 784)."
 
-^[16]
-Heng-Tze Cheng et al., "Wide & Deep Learning for Recommender Systems,"
+^[16] Heng-Tze Cheng et al., "Wide & Deep Learning for Recommender Systems,"
 *Proceedings of the First Workshop on Deep Learning for Recommender
 Systems* (2016): 7--10.
 
-^[17]
-The short path can also be used to provide manually engineered features
+^[17] The short path can also be used to provide manually engineered features
 to the neural network.
 
-^[18]
-The name `input_` is used to avoid overshadowing Python's built-in
+^[18] The name `input_` is used to avoid overshadowing Python's built-in
 `input()` function.
 
-^[19]
-Alternatively, you can pass a dictionary mapping the input names to the
+^[19] Alternatively, you can pass a dictionary mapping the input names to the
 input values, like `{"wide_input": X_train_A, "deep_input": X_train_B}`.
 This is especially useful when there are many inputs, to avoid getting
 the order wrong.
 
-^[20]
-Alternatively, you can pass a dictionary that maps each output name to
+^[20] Alternatively, you can pass a dictionary that maps each output name to
 the corresponding loss. Just like for the inputs, this is useful when
 there are multiple outputs, to avoid getting the order wrong. The loss
 weights and metrics (discussed shortly) can also be set using
 dictionaries.
 
-^[21]
-Keras models have an `output` attribute, so we cannot use that name for
+^[21] Keras models have an `output` attribute, so we cannot use that name for
 the main output layer, which is why we renamed it to `main_output`.
 
-^[22]
-Lisha Li et al., "Hyperband: A Novel Bandit-Based Approach to
+^[22] Lisha Li et al., "Hyperband: A Novel Bandit-Based Approach to
 Hyperparameter Optimization," *Journal of Machine Learning Research* 18
 (April 2018): 1--52.
 
-^[23]
-Max Jaderberg et al., "Population Based Training of Neural Networks,"
+^[23] Max Jaderberg et al., "Population Based Training of Neural Networks,"
 arXiv preprint arXiv:1711.09846 (2017).
 
-^[24]
-Dominic Masters and Carlo Luschi, "Revisiting Small Batch Training for
+^[24] Dominic Masters and Carlo Luschi, "Revisiting Small Batch Training for
 Deep Neural Networks," arXiv preprint arXiv:1804.07612 (2018).
 
-^[25]
-Elad Hoffer et al., "Train Longer, Generalize Better: Closing the
+^[25] Elad Hoffer et al., "Train Longer, Generalize Better: Closing the
 Generalization Gap in Large Batch Training of Neural Networks,"
 *Proceedings of the 31st International Conference on Neural Information
 Processing Systems* (2017): 1729--1739.
 
-^[26]
-Priya Goyal et al., "Accurate, Large Minibatch SGD: Training ImageNet in
+^[26] Priya Goyal et al., "Accurate, Large Minibatch SGD: Training ImageNet in
 1 Hour," arXiv preprint arXiv:1706.02677 (2017).
 
-^[27]
-Leslie N. Smith, "A Disciplined Approach to Neural Network
+^[27] Leslie N. Smith, "A Disciplined Approach to Neural Network
 Hyper-Parameters: Part 1---Learning Rate, Batch Size, Momentum, and
 Weight Decay," arXiv preprint arXiv:1803.09820 (2018).
 
-^[28]
-A few extra ANN architectures are presented in
-[Appendix E]
+^[28] A few extra ANN architectures are presented in
+[Appendix E] 

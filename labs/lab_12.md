@@ -780,7 +780,7 @@ they can be non-differentiable or have 0 gradients everywhere.
 That said, in most cases, defining a custom metric function is exactly
 the same as defining a custom loss function. In fact, we could even use
 the Huber loss function we created earlier as a
-metric;^[6] it would work just fine (and persistence would also
+metric; ^[6] it would work just fine (and persistence would also
 work the same way, in this case only saving the name of the function,
 `"huber_fn"`):
 
@@ -2032,81 +2032,57 @@ Exercises
 
 
 
-^[1]
-
-TensorFlow includes another Deep Learning API called the *Estimators
+^[1] TensorFlow includes another Deep Learning API called the *Estimators
 API*, but the TensorFlow team recommends using `tf.keras` instead.
 
-^[2]
-
-If you ever need to (but you probably won't), you can write your own
+^[2] If you ever need to (but you probably won't), you can write your own
 operations using the C++ API.
 
-^[3]
-
-To learn more about TPUs and how they work, check out
+^[3] To learn more about TPUs and how they work, check out
 [*https://homl.info/tpus*](https://homl.info/tpus).
 
-^[4]
-
-A notable exception is `tf.math.log()`, which is commonly used but
+^[4] A notable exception is `tf.math.log()`, which is commonly used but
 doesn't have a `tf.log()` alias (as it might be confused with logging).
 
-^[5]
-
-It would not be a good idea to use a weighted mean: if you did, then two
+^[5] It would not be a good idea to use a weighted mean: if you did, then two
 instances with the same weight but in different batches would have a
 different impact on training, depending on the total weight of each
 batch.
 
-^[6]
-
-However, the Huber loss is seldom used as a metric (the MAE or MSE is
+^[6] However, the Huber loss is seldom used as a metric (the MAE or MSE is
 preferred).
 
-^[7]
-
-This class is for illustration purposes only. A simpler and better
+^[7] This class is for illustration purposes only. A simpler and better
 implementation would just subclass the `keras.metrics.Mean` class; see
 the "Streaming metrics" section of the notebook for an example.
 
-^[8]
-
-This function is specific to tf.keras. You could use
+^[8] This function is specific to tf.keras. You could use
 `keras.layers.Activation` instead.
 
-^[9]
-
-The Keras API calls this argument `input_shape`, but since it also
+^[9] The Keras API calls this argument `input_shape`, but since it also
 includes the batch dimension, I prefer to call it `batch_input_shape`.
 Same for `compute_output_shape()`.
 
-^[10]
-The name "Subclassing API" usually refers only to the creation of custom
+^[10] The name "Subclassing API" usually refers only to the creation of custom
 models by subclassing, although many other things can be created by
 subclassing, as we saw in this lab.
 
-^[11]
-You can also call `add_loss()` on any layer inside the model, as the
+^[11] You can also call `add_loss()` on any layer inside the model, as the
 model recursively gathers losses from all of its layers.
 
-^[12]
-If the tape goes out of scope, for example when the function that used
+^[12] If the tape goes out of scope, for example when the function that used
 it returns, Python's garbage collector will delete it for you.
 
-^[13]
-The truth is we did not process every single instance in the training
+^[13] The truth is we did not process every single instance in the training
 set, because we sampled instances randomly: some were processed more
 than once, while others were not processed at all. Likewise, if the
 training set size is not a multiple of the batch size, we will miss a
 few instances. In practice that's fine.
 
-^[14]
-With the exception of optimizers, as very few people ever customize
+^[14] With the exception of optimizers, as very few people ever customize
 these; see the "Custom Optimizers" section in the notebook for an
 example.
 
-^[15]
-However, in this trivial example, the computation graph is so small that
+^[15] However, in this trivial example, the computation graph is so small that
 there is nothing at all to optimize, so `tf_cube()` actually runs much
 slower than `cube()`.

@@ -580,7 +580,7 @@ applying PCA online (i.e., on the fly, as new instances arrive).
 The following code splits the MNIST dataset into
 100 mini-batches (using NumPy's `array_split()` function) and feeds them
 to Scikit-Learn's [`IncrementalPCA`
-class](https://homl.info/32)^[5] to reduce the dimensionality of the MNIST dataset down
+class](https://homl.info/32) ^[5] to reduce the dimensionality of the MNIST dataset down
 to 154 dimensions (just like before). Note that you must call the
 `partial_fit()` method with each mini-batch, rather than the `fit()`
 method with the whole training set:
@@ -771,7 +771,7 @@ LLE
 ===
 
 [*Locally Linear Embedding*
-(LLE)](https://homl.info/lle)^[8] is another powerful *nonlinear
+(LLE)](https://homl.info/lle) ^[8] is another powerful *nonlinear
 dimensionality reduction* (NLDR) technique.
 It is a Manifold Learning
 technique that does not rely on projections, like the previous
@@ -977,59 +977,41 @@ Exercises
 
 
 
-^[1]
-
-Well, four dimensions if you count time, and a few more if you are a
+^[1] Well, four dimensions if you count time, and a few more if you are a
 string theorist.
 
-^[2]
-
-Watch a rotating tesseract projected into 3D space at
+^[2] Watch a rotating tesseract projected into 3D space at
 [*https://homl.info/30*](https://homl.info/30). Image by Wikipedia user
 NerdBoy1392 ([Creative Commons BY-SA
 3.0](https://creativecommons.org/licenses/by-sa/3.0/)). Reproduced from
 [*https://en.wikipedia.org/wiki/Tesseract*](https://en.wikipedia.org/wiki/Tesseract).
 
-^[3]
-
-Fun fact: anyone you know is probably an extremist in at least one
+^[3] Fun fact: anyone you know is probably an extremist in at least one
 dimension (e.g., how much sugar they put in their coffee), if you
 consider enough dimensions.
 
-^[4]
-
-Karl Pearson, "On Lines and Planes of Closest Fit to Systems of Points
+^[4] Karl Pearson, "On Lines and Planes of Closest Fit to Systems of Points
 in Space," *The London, Edinburgh, and Dublin Philosophical Magazine and
 Journal of Science* 2, no. 11 (1901): 559-572,
 [*https://homl.info/pca*](https://homl.info/pca).
 
-^[5]
-
-Scikit-Learn uses the algorithm described in David A. Ross et al.,
+^[5] Scikit-Learn uses the algorithm described in David A. Ross et al.,
 "Incremental Learning for Robust Visual Tracking," *International
 Journal of Computer Vision* 77, no. 1--3 (2008): 125--141.
 
-^[6]
-
-Bernhard Schölkopf et al., "Kernel Principal Component Analysis," in
+^[6] Bernhard Schölkopf et al., "Kernel Principal Component Analysis," in
 *Lecture Notes in Computer Science* 1327 (Berlin: Springer, 1997):
 583--588.
 
-^[7]
-
-If you set `fit_inverse_transform=True`, Scikit-Learn will use the
+^[7] If you set `fit_inverse_transform=True`, Scikit-Learn will use the
 algorithm (based on Kernel Ridge Regression) described in Gokhan H.
 Bakır et al., ["Learning to Find Pre-Images"](https://homl.info/34),
 *Proceedings of the 16th International Conference on Neural Information
 Processing Systems* (2004): 449--456.
 
-^[8]
-
-Sam T. Roweis and Lawrence K. Saul, "Nonlinear Dimensionality Reduction
+^[8] Sam T. Roweis and Lawrence K. Saul, "Nonlinear Dimensionality Reduction
 by Locally Linear Embedding," *Science* 290, no. 5500 (2000):
 2323--2326.
 
-^[9]
-
-The geodesic distance between two nodes in a graph is the number of
+^[9] The geodesic distance between two nodes in a graph is the number of
 nodes on the shortest path between these nodes.

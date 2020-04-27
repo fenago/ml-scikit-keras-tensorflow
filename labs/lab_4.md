@@ -1930,88 +1930,61 @@ Exercises
 
 
 
-^[1]
-
-It is often the case that a learning algorithm will try to optimize a
+^[1] It is often the case that a learning algorithm will try to optimize a
 different function than the performance measure used to evaluate the
 final model. This is generally because that function is easier to
 compute, because it has useful differentiation properties that the
 performance measure lacks, or because we want to constrain the model
 during training, as you will see when we discuss regularization.
 
-^[2]
-
-Note that Scikit-Learn separates the bias term (`intercept_`) from the
+^[2] Note that Scikit-Learn separates the bias term (`intercept_`) from the
 feature weights (`coef_`).
 
-^[3]
+^[3] Technically speaking, its derivative is *Lipschitz continuous*.
 
-Technically speaking, its derivative is *Lipschitz continuous*.
-
-^[4]
-
-Since feature 1 is smaller, it takes a larger change in *θ*~1~ to affect
+^[4] Since feature 1 is smaller, it takes a larger change in *θ*~1~ to affect
 the cost function, which is why the bowl is elongated along the *θ*~1~
 axis.
 
-^[5]
+^[5] Eta (*η*) is the seventh letter of the Greek alphabet.
 
-Eta (*η*) is the seventh letter of the Greek alphabet.
-
-^[6]
-
-While the Normal Equation can only perform Linear Regression, the
+^[6] While the Normal Equation can only perform Linear Regression, the
 Gradient Descent algorithms can be used to train many other models, as
 we will see.
 
-^[7]
+^[7] A quadratic equation is of the form *y* = *ax*^2^ + *bx* + *c*.
 
-A quadratic equation is of the form *y* = *ax*^2^ + *bx* + *c*.
-
-^[8]
-
-This notion of bias is not to be confused with the bias term of linear
+^[8] This notion of bias is not to be confused with the bias term of linear
 models.
 
-^[9]
-
-It is common to use the notation *J*(**θ**) for cost functions that
+^[9] It is common to use the notation *J*(**θ**) for cost functions that
 don't have a short name; we will often use this notation throughout the
 rest of this course. The context will make it clear which cost function is
 being discussed.
 
-^[10]
-Norms are discussed in
-[Lab 2]
-
-^[11]
-A square matrix full of 0s except for 1s on the main diagonal (top left
+^[10] Norms are discussed in
+[Lab 2] ^[11] A square matrix full of 0s except for 1s on the main diagonal (top left
 to bottom right).
 
-^[12]
-Alternatively you can use the `Ridge` class with the `"sag"` solver.
+^[12] Alternatively you can use the `Ridge` class with the `"sag"` solver.
 Stochastic Average GD is a variant of Stochastic GD. For more details,
 see the presentation ["Minimizing Finite Sums with the Stochastic
 Average Gradient Algorithm"](https://homl.info/12) by Mark Schmidt et
 al. from the University of British Columbia.
 
-^[13]
-You can think of a subgradient vector at a nondifferentiable point as an
+^[13] You can think of a subgradient vector at a nondifferentiable point as an
 intermediate vector between the gradient vectors around that point.
 
-^[14]
-Photos reproduced from the corresponding Wikipedia pages. *Iris
+^[14] Photos reproduced from the corresponding Wikipedia pages. *Iris
 virginica* photo by Frank Mayfield ([Creative Commons BY-SA
 2.0](https://creativecommons.org/licenses/by-sa/2.0/)), *Iris
 versicolor* photo by D. Gordon E. Robertson ([Creative Commons BY-SA
 3.0](https://creativecommons.org/licenses/by-sa/3.0/)), *Iris setosa*
 photo public domain.
 
-^[15]
-NumPy's `reshape()` function allows one dimension to be --1, which means
+^[15] NumPy's `reshape()` function allows one dimension to be --1, which means
 "unspecified": the value is inferred from the length of the array and
 the remaining dimensions.
 
-^[16]
-It is the the set of points **x** such that *θ*~0~ + *θ*~1~*x*~1~ +
+^[16] It is the the set of points **x** such that *θ*~0~ + *θ*~1~*x*~1~ +
 *θ*~2~*x*~2~ = 0, which defines a straight line.
