@@ -2251,7 +2251,7 @@ not: they are just stateless sliding windows.
 Recognition,” *Proceedings of the IEEE* 86, no. 11 (1998): 2278–2324.
 
 ^[11] Alex Krizhevsky et al., “ImageNet Classification with Deep Convolutional
-Neural Networks,” *\_Proceedings of the 25th International Conference on
+Neural Networks,” *_Proceedings of the 25th International Conference on
 Neural Information Processing Systems* 1 (2012): 1097–1105.
 
 ^[12] Matthew D. Zeiler and Rob Fergus, “Visualizing and Understanding

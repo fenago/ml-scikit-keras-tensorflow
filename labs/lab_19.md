@@ -139,7 +139,7 @@ models need to be served using other tools (e.g., Flask).
 
 
 A SavedModel represents a version of your model. It is stored as a
-directory containing a *saved\_model.pb* file, which defines the
+directory containing a *saved_model.pb* file, which defines the
 computation graph (represented as a serialized protocol buffer), and a
 *variables* subdirectory containing the variable values. For models
 containing a large number of weights, these variable values may be split
@@ -295,7 +295,7 @@ and it is serving it through both gRPC (on port 8500) and REST (on port
     By default, TF Serving uses this port to serve the REST API.
 
 `-v "$ML_PATH/my_mnist_model:/models/my_mnist_model"` : Makes the host's `$ML_PATH/my_mnist_model` directory available to
-    the container at the path */models/mnist\_model*. On Windows, you
+    the container at the path */models/mnist_model*. On Windows, you
     may need to replace `/` with `\` in the host path (but not in the
     container path).
 
@@ -457,7 +457,7 @@ TensorFlow model remotely, using either REST or gRPC.
 ### Deploying a new model version
 
 Now let's create a new model version and export a SavedModel to the
-*my\_mnist\_model/0002* directory, just like earlier:
+*my_mnist_model/0002* directory, just like earlier:
 
 ``` {data-type="programlisting" code-language="python"}
 model = keras.models.Sequential([...])
@@ -503,7 +503,7 @@ for a short period.
 As you can see, TF Serving makes it quite simple to deploy new models.
 Moreover, if you discover that version 2 does not work as well as you
 expected, then rolling back to version 1 is as simple as removing the
-*my\_mnist\_model/0002* directory.
+*my_mnist_model/0002* directory.
 
 
 ###### Tip
@@ -627,13 +627,13 @@ care of:
     where you want the bucket to be hosted, and the rest of the options
     should be fine by default. Then click Create.
 
-6.  Upload the *my\_mnist\_model* folder you created earlier (including
+6.  Upload the *my_mnist_model* folder you created earlier (including
     one or more versions) to your bucket. To do this, just go to the GCS
-    Browser, click the bucket, then drag and drop the *my\_mnist\_model*
+    Browser, click the bucket, then drag and drop the *my_mnist_model*
     folder from your system to the bucket (see
     [Figure 19-4]
     Alternatively, you can click "Upload folder" and select the
-    *my\_mnist\_model* folder to upload. By default, the maximum size
+    *my_mnist_model* folder to upload. By default, the maximum size
     for a SavedModel is 250 MB, but it is possible to request a higher
     quota.
 
@@ -660,7 +660,7 @@ care of:
      ML runtime version (2.0, if available or 1.13),
     machine type (choose "Single core CPU" for now), model path on GCS
     (this is the full path to the actual version folder, e.g.,
-    *gs://my-mnist-model-bucket/my\_mnist\_model/0002/*), scaling
+    *gs://my-mnist-model-bucket/my_mnist_model/0002/*), scaling
     (choose automatic), and minimum number of TF Serving containers to
     have running at all times (leave this field empty). Then click Save.
 
@@ -2246,7 +2246,7 @@ Platform's 2.0 runtime (a VM configuration that includes TensorFlow 2.0
 and many other
 packages) ^[22]
 and Python 3.5. The training code is located in the
-*/my\_project/src/trainer* directory, and the `gcloud` command will
+*/my_project/src/trainer* directory, and the `gcloud` command will
 automatically bundle it into a pip package and upload it to GCS at
 *gs://my-staging-bucket*. Next, AI Platform will start several VMs,
 deploy the package to them, and run the `trainer.task` module. Lastly,
@@ -2254,7 +2254,7 @@ the `--job-dir` argument and the extra arguments (i.e., all the
 arguments located after the `--` separator) will be passed to the
 training program: the chief task will usually use the `--job-dir`
 argument to find out where to save the final model on GCS, in this case
-at *gs://my-mnist-model-bucket/trained\_model*. And that's it! In the
+at *gs://my-mnist-model-bucket/trained_model*. And that's it! In the
 GCP console, you can then open the navigation menu, scroll down to the
 Artificial Intelligence section, and open AI Platform → Jobs. You should
 see your job running, and if you click it you will see graphs showing
@@ -2267,7 +2267,7 @@ Logs to access the detailed logs using Stackdriver.
 If you place the training data on GCS, you can create a
 `tf.data.TextLineDataset` or `tf.data.TFRecordDataset` to access it:
 just use the GCS paths as the filenames (e.g.,
-*gs://my-data-bucket/my\_data\_001.csv*). These datasets rely on the
+*gs://my-data-bucket/my_data_001.csv*). These datasets rely on the
 `tf.io.gfile` package to access files: it supports both local files and
 GCS files (but make sure the service account you use has access to GCS).
 

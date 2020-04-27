@@ -49,7 +49,7 @@ tree_clf.fit(X, y)
 
 You can visualize the trained Decision Tree by first using the
 `export_graphviz()` method to output a graph definition file called
-*iris\_tree.dot*:
+*iris_tree.dot*:
 
 ``` {data-type="programlisting" code-language="python"}
 from sklearn.tree import export_graphviz

@@ -1025,7 +1025,7 @@ you can download a corpus of millions of text
 documents and automatically generate labeled data from it. For example,
 you could randomly mask out some words and train a model to predict what
 the missing words are (e.g., it should predict that the missing word in
-the sentence "What \_\_\_ you saying?" is probably "are" or "were"). If
+the sentence "What ___ you saying?" is probably "are" or "were"). If
 you can train a model to reach good performance on this task, then it
 will already know quite a lot about language, and you can certainly
 reuse it for your actual task and fine-tune it on your labeled data (we

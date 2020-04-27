@@ -78,8 +78,8 @@ Linear Regression
 In
 [Lab 1]
 we looked at a
-simple regression model of life satisfaction: *life\_satisfaction* =
-*θ*~0~ + *θ*~1~ × *GDP\_per\_capita*.
+simple regression model of life satisfaction: *life_satisfaction* =
+*θ*~0~ + *θ*~1~ × *GDP_per_capita*.
 
 This model is just a linear function of the input feature
 `GDP_per_capita`. *θ*~0~ and *θ*~1~ are the model's parameters.

@@ -1391,7 +1391,7 @@ available at
 
 
 ^[1] By default Scikit-Learn caches downloaded datasets in a directory called
-*\$HOME/scikit\_learn\_data*.
+*\$HOME/scikit_learn_data*.
 
 ^[2] Shuffling may be a bad idea in some contexts for example, if you are
 working on time series data (such as stock market prices or weather

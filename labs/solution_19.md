@@ -5,7 +5,7 @@
 
 1.  A SavedModel contains a TensorFlow model, including its architecture
     (a computation graph) and its weights. It is stored as a directory
-    containing a *saved\_model.pb* file, which defines the computation
+    containing a *saved_model.pb* file, which defines the computation
     graph (represented as a serialized protocol buffer), and a
     *variables* subdirectory containing the variable values. For models
     containing a large number of weights, these variable values may be

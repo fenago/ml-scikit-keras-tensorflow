@@ -2628,7 +2628,7 @@ generally refers to ANNs, not BNNs.
 
 ^[6] Drawing of a cortical lamination by S. Ramon y Cajal (public domain).
 Reproduced from
-[*https://en.wikipedia.org/wiki/Cerebral\_cortex*](https://en.wikipedia.org/wiki/Cerebral_cortex).
+[*https://en.wikipedia.org/wiki/Cerebral_cortex*](https://en.wikipedia.org/wiki/Cerebral_cortex).
 
 ^[7] The name *Perceptron* is sometimes used to mean a tiny network with a
 single TLU.
@@ -2666,7 +2666,7 @@ should get familiar with the error message. The message is actually
 quite clear: for example, if you try to train this model with an array
 containing flattened images (`X_train.reshape(-1, 784)`), then you will
 get the following exception: "ValueError: Error when checking input:
-expected flatten\_input to have 3 dimensions, but got array with shape
+expected flatten_input to have 3 dimensions, but got array with shape
 (60000, 784)."
 
 ^[16] Heng-Tze Cheng et al., "Wide & Deep Learning for Recommender Systems,"
