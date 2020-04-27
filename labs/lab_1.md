@@ -1530,6 +1530,8 @@ following questions:
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 ^[1]  Fun fact: this odd-sounding name is a statistics term introduced by
 Francis Galton while he was studying the fact that the children of tall

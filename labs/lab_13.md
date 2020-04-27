@@ -1708,6 +1708,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] Imagine a sorted deck of cards on your left: suppose you just take the

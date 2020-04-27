@@ -1010,6 +1010,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] Chih-Jen Lin et al., "A Dual Coordinate Descent Method for Large-Scale

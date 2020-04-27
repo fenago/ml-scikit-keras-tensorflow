@@ -593,6 +593,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 ^[1] Graphviz is an open source graph visualization software package,
 available at [*http://www.graphviz.org/*](http://www.graphviz.org/).

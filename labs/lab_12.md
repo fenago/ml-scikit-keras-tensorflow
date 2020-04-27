@@ -2030,6 +2030,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] TensorFlow includes another Deep Learning API called the *Estimators

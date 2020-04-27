@@ -996,6 +996,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] Leo Breiman, "Bagging Predictors," *Machine Learning* 24, no. 2 (1996):
