@@ -2420,56 +2420,15 @@ Exercises
 
 
 
-
-Thank You!
-==========
-
-Before we close the last lab of this course, I would like to thank you
-for reading it up to the last paragraph. I truly hope that you had as
-much pleasure reading this course as I had writing it, and that it will be
-useful for your projects, big or small.
-
-If you find errors, please
-send feedback. More generally, I would love to know what you think, so
-please don't hesitate to contact me via O'Reilly, through the
-*fenago/ml-scikit-keras-tensorflow* GitHub project, or on Twitter at \@aureliengeron.
-
-Going forward, my best advice to you is to practice and practice: try
-going through all the exercises (if you have not done so already), play
-with the Jupyter notebooks, join Kaggle.com or some other ML community,
-watch ML courses, read papers, attend conferences, and meet experts. It
-also helps tremendously to have a concrete project to work on, whether
-it is for work or for fun (ideally for both), so if there's anything you
-have always dreamt of building, give it a shot! Work incrementally;
-don't shoot for the moon right away, but stay focused on your project
-and build it piece by piece. It will require patience and perseverance,
-but when you have a walking robot, or a working chatbot, or whatever
-else you fancy to build, it will be immensely rewarding.
-
-My greatest hope is that this course will inspire you to build a wonderful
-ML application that will benefit all of us! What will it be?
-
----*Aurélien Géron, June 17, 2019*
-
-
-
-^[1]
-
-An A/B experiment consists in testing two different versions of your
+^[1] An A/B experiment consists in testing two different versions of your
 product on different subsets of users in order to check which version
 works best and get other insights.
 
-^[2]
-
-A REST (or RESTful) API is an API that uses standard HTTP verbs, such as
+^[2] A REST (or RESTful) API is an API that uses standard HTTP verbs, such as
 GET, POST, PUT, and DELETE, and uses JSON inputs and outputs. The gRPC
 protocol is more complex but more efficient. Data is exchanged using
 protocol buffers (see
-[Lab 13]
-
-^[3]
-
-If you are not familiar with Docker, it allows you to easily download a
+[Lab 13] ^[3] If you are not familiar with Docker, it allows you to easily download a
 set of applications packaged in a *Docker image* (including all their
 dependencies and usually some good default configuration) and then run
 them on your system using a *Docker engine*. When you run an image, the
@@ -2480,113 +2439,86 @@ more lightweight, as the container relies directly on the host's kernel.
 This means that the image does not need to include or run its own
 kernel.
 
-^[4]
-
-To be fair, this can be mitigated by serializing the data first and
+^[4] To be fair, this can be mitigated by serializing the data first and
 encoding it to Base64 before creating the REST request. Moreover, REST
 requests can be compressed using gzip, which reduces the payload size
 significantly.
 
-^[5]
-
-If the SavedModel contains some example instances in the *assets/extra*
+^[5] If the SavedModel contains some example instances in the *assets/extra*
 directory, you can configure TF Serving to execute the model on these
 instances before starting to serve new requests with it. This is called
 *model warmup*: it will ensure that everything is properly loaded,
 avoiding long response times for the first requests.
 
-^[6]
-
-At the time of this writing, TensorFlow version 2 is not available yet
+^[6] At the time of this writing, TensorFlow version 2 is not available yet
 on AI Platform, but that's OK: you can use 1.13, and it will run your
 TF 2 SavedModels just fine.
 
-^[7]
-
-If you get an error saying that module `google.appengine` was not found,
+^[7] If you get an error saying that module `google.appengine` was not found,
 set `cache_discovery=False` in the call to the `build()` method; see
 [*https://stackoverflow.com/q/55561354*](https://stackoverflow.com/q/55561354).
 
-^[8]
-
-Also check out TensorFlow's [Graph Transform
+^[8] Also check out TensorFlow's [Graph Transform
 Tool](https://homl.info/tfgtt) for modifying and optimizing
 computational graphs.
 
-^[9]
-
-If you're interested in this topic, check out [*federated
+^[9] If you're interested in this topic, check out [*federated
 learning*](https://tensorflow.org/federated).
 
-^[10]
-Please check the docs for detailed and up-to-date installation
+^[10] Please check the docs for detailed and up-to-date installation
 instructions, as they change quite often.
 
-^[11]
-Many code examples in this lab use experimental APIs. They are very
+^[11] Many code examples in this lab use experimental APIs. They are very
 likely to be moved to the core API in future versions. So if an
 experimental function fails, try simply removing the word
 `experimental`, and hopefully it will work. If not, then perhaps the API
 has changed a bit; please check the Jupyter notebook, as I will ensure
 it contains the correct code.
 
-^[12]
-Presumably, these quotas are meant to stop bad guys who might be tempted
+^[12] Presumably, these quotas are meant to stop bad guys who might be tempted
 to use GCP with stolen credit cards to mine cryptocurrencies.
 
-^[13]
-Martín Abadi et al., "TensorFlow: Large-Scale Machine Learning on
+^[13] Martín Abadi et al., "TensorFlow: Large-Scale Machine Learning on
 Heterogeneous Distributed Systems" Google Research whitepaper (2015).
 
-^[14]
-As we saw in
-[Lab 12]
-a kernel is a variable or operation's implementation for a specific data
+^[14] As we saw in
+[Lab 12] a kernel is a variable or operation's implementation for a specific data
 type and device type. For example, there is a GPU kernel for the
 `float32` `tf.matmul()` operation, but there is no GPU kernel for
 `int32` `tf.matmul()` (only a CPU kernel).
 
-^[15]
-You can also use `tf.debugging.set_log_device_placement(True)` to log
+^[15] You can also use `tf.debugging.set_log_device_placement(True)` to log
 all device placements.
 
-^[16]
-This can be useful if you want to guarantee perfect reproducibility, as
+^[16] This can be useful if you want to guarantee perfect reproducibility, as
 I explain in [this video](https://homl.info/repro), based on TF 1.
 
-^[17]
-At the time of this writing it only prefetches the data to the CPU RAM,
+^[17] At the time of this writing it only prefetches the data to the CPU RAM,
 but you can use `tf.data.experimental.prefetch_to_device()` to make it
 prefetch the data and push it to the device of your choice so that the
 GPU does not waste time waiting for the data to be transferred.
 
-^[18]
-If you are interested in going further with model parallelism, check out
+^[18] If you are interested in going further with model parallelism, check out
 [Mesh TensorFlow](https://github.com/tensorflow/mesh).
 
-^[19]
-This name is slightly confusing because it sounds like some replicas are
+^[19] This name is slightly confusing because it sounds like some replicas are
 special, doing nothing. In reality, all replicas are equivalent: they
 all work hard to be among the fastest at each training step, and the
 losers vary at every step (unless some devices are really slower than
 others). However, it does mean that if a server crashes, training will
 continue just fine.
 
-^[20]
-Jianmin Chen et al., "Revisiting Distributed Synchronous SGD," arXiv
+^[20] Jianmin Chen et al., "Revisiting Distributed Synchronous SGD," arXiv
 preprint arXiv:1604.00981 (2016).
 
-^[21]
-For more details on AllReduce algorithms, read this [great
+^[21] For more details on AllReduce algorithms, read this [great
 post](https://homl.info/uenopost) by Yuichiro Ueno, and this page on
 [scaling with NCCL](https://homl.info/ncclalgo).
 
-^[22]
-At the time of this writing, the 2.0 runtime is not yet available, but
+^[22] At the time of this writing, the 2.0 runtime is not yet available, but
 it should be ready by the time you read this. Check out the [list of
 available runtimes](https://homl.info/runtimes).
 
-^[23]
-Daniel Golovin et al., "Google Vizier: A Service for Black-Box
+^[23] Daniel Golovin et al., "Google Vizier: A Service for Black-Box
 Optimization," *Proceedings of the 23rd ACM SIGKDD International
 Conference on Knowledge Discovery and Data Mining* (2017): 1487--1495.

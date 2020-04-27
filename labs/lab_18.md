@@ -2902,31 +2902,21 @@ Exercises
 
 
 
-^[1]
-
-For more details, be sure to check out Richard Sutton and Andrew Barto's
+^[1] For more details, be sure to check out Richard Sutton and Andrew Barto's
 course on RL, [*Reinforcement Learning: An
 Introduction*](https://homl.info/126) (MIT Press).
 
-^[2]
-
-Volodymyr Mnih et al., "Playing Atari with Deep Reinforcement Learning,"
+^[2] Volodymyr Mnih et al., "Playing Atari with Deep Reinforcement Learning,"
 arXiv preprint arXiv:1312.5602 (2013).
 
-^[3]
-
-Volodymyr Mnih et al., "Human-Level Control Through Deep Reinforcement
+^[3] Volodymyr Mnih et al., "Human-Level Control Through Deep Reinforcement
 Learning," *Nature* 518 (2015): 529--533.
 
-^[4]
-
-Check out the videos of DeepMind's system learning to play *Space
+^[4] Check out the videos of DeepMind's system learning to play *Space
 Invaders*, *Breakout*, and other video games at
 [*https://homl.info/dqn3*](https://homl.info/dqn3).
 
-^[5]
-
-Image (a) is from NASA (public domain). (b) is a screenshot from the
+^[5] Image (a) is from NASA (public domain). (b) is a screenshot from the
 *Ms. Pac-Man* game, copyright Atari (fair use in this lab). Images
 (c) and (d) are reproduced from Wikipedia. (c) was created by user
 Stevertigo and released under [Creative Commons BY-SA
@@ -2934,113 +2924,87 @@ Stevertigo and released under [Creative Commons BY-SA
 public domain. (e) was reproduced from Pixabay, released under [Creative
 Commons CC0](https://creativecommons.org/publicdomain/zero/1.0/).
 
-^[6]
-
-It is often better to give the poor performers a slight chance of
+^[6] It is often better to give the poor performers a slight chance of
 survival, to preserve some diversity in the "gene pool."
 
-^[7]
-
-If there is a single parent, this is called *asexual reproduction*. With
+^[7] If there is a single parent, this is called *asexual reproduction*. With
 two (or more) parents, it is called *sexual reproduction*. An
 offspring's genome (in this case a set of policy parameters) is randomly
 composed of parts of its parents' genomes.
 
-^[8]
-
-One interesting example of a genetic algorithm used for Reinforcement
+^[8] One interesting example of a genetic algorithm used for Reinforcement
 Learning is the [*NeuroEvolution of Augmenting
 Topologies*](https://homl.info/neat) (NEAT) algorithm.
 
-^[9]
-
-This is called *Gradient Ascent*. It's just like Gradient Descent but in
+^[9] This is called *Gradient Ascent*. It's just like Gradient Descent but in
 the opposite direction: maximizing instead of minimizing.
 
-^[10]
-OpenAI is an artificial intelligence research company, funded in part by
+^[10] OpenAI is an artificial intelligence research company, funded in part by
 Elon Musk. Its stated goal is to promote and develop friendly AIs that
 will benefit humanity (rather than exterminate it).
 
-^[11]
-Ronald J. Williams, "Simple Statistical Gradient-Following Algorithms
+^[11] Ronald J. Williams, "Simple Statistical Gradient-Following Algorithms
 for Connectionist Reinforcement Leaning," *Machine Learning* 8 (1992) :
 229--256.
 
-^[12]
-Richard Bellman, "A Markovian Decision Process," *Journal of Mathematics
+^[12] Richard Bellman, "A Markovian Decision Process," *Journal of Mathematics
 and Mechanics* 6, no. 5 (1957): 679--684.
 
-^[13]
-A great [2018 post](https://homl.info/rlhard) by Alex Irpan nicely lays
+^[13] A great [2018 post](https://homl.info/rlhard) by Alex Irpan nicely lays
 out RL's biggest difficulties and [limitations].
 
-^[14]
-Hado van Hasselt et al., "Deep Reinforcement Learning with Double
+^[14] Hado van Hasselt et al., "Deep Reinforcement Learning with Double
 Q-Learning," *Proceedings of the 30th AAAI Conference on Artificial
 Intelligence* (2015): 2094--2100.
 
-^[15]
-Tom Schaul et al., "Prioritized Experience Replay," arXiv preprint
+^[15] Tom Schaul et al., "Prioritized Experience Replay," arXiv preprint
 arXiv:1511.05952 (2015).
 
-^[16]
-It could also just be that the rewards are noisy, in which case there
+^[16] It could also just be that the rewards are noisy, in which case there
 are better methods for estimating an experience's importance (see the
 paper for some examples).
 
-^[17]
-Ziyu Wang et al., "Dueling Network Architectures for Deep Reinforcement
+^[17] Ziyu Wang et al., "Dueling Network Architectures for Deep Reinforcement
 Learning," arXiv preprint arXiv:1511.06581 (2015).
 
-^[18]
-Matteo Hessel et al., "Rainbow: Combining Improvements in Deep
+^[18] Matteo Hessel et al., "Rainbow: Combining Improvements in Deep
 Reinforcement Learning," arXiv preprint arXiv:1710.02298 (2017):
 3215--3222.
 
-^[19]
-If you don't know this game, it's simple: a ball bounces around and
+^[19] If you don't know this game, it's simple: a ball bounces around and
 breaks bricks when it touches them. You control a paddle near the bottom
 of the screen. The paddle can go left or right, and you must get the
 ball to break every brick, while preventing it from touching the bottom
 of the screen.
 
-^[20]
-Since there are only three primary colors, you cannot just display an
+^[20] Since there are only three primary colors, you cannot just display an
 image with four color channels. For this reason, I combined the last
 channel with the first three to get the RGB image represented here.
 Purple is actually a mix of blue and red, but the agent sees four
 independent channels.
 
-^[21]
-At the time of this writing, there is no prioritized experience replay
+^[21] At the time of this writing, there is no prioritized experience replay
 buffer yet, but one will likely be open sourced soon.
 
-^[22]
-For a comparison of this algorithm's performance on various Atari games,
+^[22] For a comparison of this algorithm's performance on various Atari games,
 see figure 3 in DeepMind's [2015 paper](https://homl.info/dqn2).
 
-^[23]
-Volodymyr Mnih et al., "Asynchonous Methods for Deep Reinforcement
+^[23] Volodymyr Mnih et al., "Asynchonous Methods for Deep Reinforcement
 Learning," *Proceedings of the 33rd International Conference on Machine
 Learning* (2016): 1928--1937.
 
-^[24]
-Tuomas Haarnoja et al., "Soft Actor-Critic: Off-Policy Maximum Entropy
+^[24] Tuomas Haarnoja et al., "Soft Actor-Critic: Off-Policy Maximum Entropy
 Deep Reinforcement Learning with a Stochastic Actor," *Proceedings of
 the 35th International Conference on Machine Learning* (2018):
 1856--1865.
 
-^[25]
-John Schulman et al., "Proximal Policy Optimization Algorithms," arXiv
+^[25] John Schulman et al., "Proximal Policy Optimization Algorithms," arXiv
 preprint arXiv:1707.06347 (2017).
 
-^[26]
-John Schulman et al., "Trust Region Policy Optimization," *Proceedings
+^[26] John Schulman et al., "Trust Region Policy Optimization," *Proceedings
 of the 32nd International Conference on Machine Learning* (2015):
 1889--1897.
 
-^[27]
-Deepak Pathak et al., "Curiosity-Driven Exploration by Self-Supervised
+^[27] Deepak Pathak et al., "Curiosity-Driven Exploration by Self-Supervised
 Prediction," *Proceedings of the 34th International Conference on
 Machine Learning* (2017): 2778--2787.

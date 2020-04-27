@@ -1842,98 +1842,69 @@ Exercises
 **Solution for the exercises are available in the solutions file.**
 
 
-
-^[1]
-
-William G. Chase and Herbert A. Simon, "Perception in Chess," *Cognitive
+^[1] William G. Chase and Herbert A. Simon, "Perception in Chess," *Cognitive
 Psychology* 4, no. 1 (1973): 55--81.
 
-^[2]
-
-You might be tempted to use the accuracy metric, but it would not work
+^[2] You might be tempted to use the accuracy metric, but it would not work
 properly, since this metric expects the labels to be either 0 or 1 for
 each pixel. You can easily work around this problem by creating a custom
 metric that computes the accuracy after rounding the targets and
 predictions to 0 or 1.
 
-^[3]
-
-Yoshua Bengio et al., "Greedy Layer-Wise Training of Deep Networks,"
+^[3] Yoshua Bengio et al., "Greedy Layer-Wise Training of Deep Networks,"
 *Proceedings of the 19th International Conference on Neural Information
 Processing Systems* (2006): 153--160.
 
-^[4]
-
-Jonathan Masci et al., "Stacked Convolutional Auto-Encoders for
+^[4] Jonathan Masci et al., "Stacked Convolutional Auto-Encoders for
 Hierarchical Feature Extraction," *Proceedings of the 21st International
 Conference on Artificial Neural Networks* 1 (2011): 52--59.
 
-^[5]
-
-Pascal Vincent et al., "Extracting and Composing Robust Features with
+^[5] Pascal Vincent et al., "Extracting and Composing Robust Features with
 Denoising Autoencoders," *Proceedings of the 25th International
 Conference on Machine Learning* (2008): 1096--1103.
 
-^[6]
-
-Pascal Vincent et al., "Stacked Denoising Autoencoders: Learning Useful
+^[6] Pascal Vincent et al., "Stacked Denoising Autoencoders: Learning Useful
 Representations in a Deep Network with a Local Denoising Criterion,"
 *Journal of Machine Learning Research* 11 (2010): 3371--3408.
 
-^[7]
-
-Diederik Kingma and Max Welling, "Auto-Encoding Variational Bayes,"
+^[7] Diederik Kingma and Max Welling, "Auto-Encoding Variational Bayes,"
 arXiv preprint arXiv:1312.6114 (2013).
 
-^[8]
-
-Variational autoencoders are actually more general; the codings are not
+^[8] Variational autoencoders are actually more general; the codings are not
 limited to Gaussian distributions.
 
-^[9]
-
-For more mathematical details, check out the original paper on
+^[9] For more mathematical details, check out the original paper on
 variational autoencoders, or Carl Doersch's [great
 tutorial](https://homl.info/116) (2016).
 
-^[10]
-Ian Goodfellow et al., "Generative Adversarial Nets," *Proceedings of
+^[10] Ian Goodfellow et al., "Generative Adversarial Nets," *Proceedings of
 the 27th International Conference on Neural Information Processing
 Systems* 2 (2014): 2672--2680.
 
-^[11]
-For a nice comparison of the main GAN losses, check out this great
+^[11] For a nice comparison of the main GAN losses, check out this great
 [GitHub project by Hwalsuk Lee](https://homl.info/ganloss).
 
-^[12]
-Mario Lucic et al., "Are GANs Created Equal? A Large-Scale Study,"
+^[12] Mario Lucic et al., "Are GANs Created Equal? A Large-Scale Study,"
 *Proceedings of the 32nd International Conference on Neural Information
 Processing Systems* (2018): 698--707.
 
-^[13]
-Alec Radford et al., "Unsupervised Representation Learning with Deep
+^[13] Alec Radford et al., "Unsupervised Representation Learning with Deep
 Convolutional Generative Adversarial Networks," arXiv preprint
 arXiv:1511.06434 (2015).
 
-^[14]
-Reproduced with the kind authorization of the authors.
+^[14] Reproduced with the kind authorization of the authors.
 
-^[15]
-Mehdi Mirza and Simon Osindero, "Conditional Generative Adversarial
+^[15] Mehdi Mirza and Simon Osindero, "Conditional Generative Adversarial
 Nets," arXiv preprint arXiv:1411.1784 (2014).
 
-^[16]
-Tero Karras et al., "Progressive Growing of GANs for Improved Quality,
+^[16] Tero Karras et al., "Progressive Growing of GANs for Improved Quality,
 Stability, and Variation," *Proceedings of the International Conference
 on Learning Representations* (2018).
 
-^[17]
-The dynamic range of a variable is the ratio between the highest and the
+^[17] The dynamic range of a variable is the ratio between the highest and the
 lowest value it may take.
 
-^[18]
-Tero Karras et al., "A Style-Based Generator Architecture for Generative
+^[18] Tero Karras et al., "A Style-Based Generator Architecture for Generative
 Adversarial Networks," arXiv preprint arXiv:1812.04948 (2018).
 
-^[19]
-Reproduced with the kind authorization of the authors.
+^[19] Reproduced with the kind authorization of the authors.
