@@ -1,7 +1,7 @@
 Other Popular ANN Architectures
 ===============================
 
-In this appendix I will give a quick overview of a few historically
+In this lab I will give a quick overview of a few historically
 important neural network architectures that are much less used today
 than deep Multilayer Perceptrons
 convolutional neural networks

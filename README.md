@@ -64,18 +64,25 @@ Labs for this course are available at path shared below. Elev8ed Notebooks (powe
 		* <host-ip>:<port>/lab/workspaces/lab18_Reinforcement_Learning
 19. ##### Training and Deploying TensorFlow Models at Scale
 		* <host-ip>:<port>/lab/workspaces/lab19_TensorFlow_Models
+20.	#### Capsule Networks 
+		* <host-ip>:<port>/lab/workspaces/lab20_Capsule
+21.	#### TensorFlow Reproducibility
+		* <host-ip>:<port>/lab/workspaces/lab21_Reproducibility
 
 
-### Scientific Python tutorials (NumPy, Matplotlib, Pandas)
-		* <host-ip>:<port>/lab/workspaces/lab_tools
+#### Scientific Python tutorials (NumPy, Matplotlib, Pandas)
+	* <host-ip>:<port>/lab/workspaces/lab_tools
 
-### Math Tutorials (Linear Algebra, Differential Calculus)
-		* <host-ip>:<port>/lab/workspaces/lab_maths
+#### Math Tutorials (Linear Algebra, Differential Calculus)
+	* <host-ip>:<port>/lab/workspaces/lab_maths
 
-### Misc (list of equations in the course)
-		* <host-ip>:<port>/lab/workspaces/lab_equations
+#### Capsule Networks 
+	* <host-ip>:<port>/lab/workspaces/lab_equations
 
-### Extra
+#### Misc (list of equations in the course)
+	* <host-ip>:<port>/lab/workspaces/lab_equations
+
+#### Extra
 
 1. ##### Machine Learning Project Checklist
 		* <host-ip>:<port>/lab/workspaces/lab_Project_Checklist
@@ -86,7 +93,7 @@ Labs for this course are available at path shared below. Elev8ed Notebooks (powe
 4. ##### Other Popular ANN Architectures
 		* <host-ip>:<port>/lab/workspaces/lab_Popular_ANN_Architectures
 5. ##### Special Data Structures
-		* <host-ip>:<port>/lab/workspaces/lab__Data_Structures
+		* <host-ip>:<port>/lab/workspaces/lab_Data_Structures
 6. ##### TensorFlow Graphs
 		* <host-ip>:<port>/lab/workspaces/lab_TensorFlow_Graphs
 
