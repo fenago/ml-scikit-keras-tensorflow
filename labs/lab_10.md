@@ -2632,6 +2632,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] You can get the best of both worlds by being open to biological

@@ -2030,6 +2030,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] Stuart P. Lloyd, "Least Squares Quantization in PCM," *IEEE Transactions

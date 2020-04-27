@@ -2900,6 +2900,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] For more details, be sure to check out Richard Sutton and Andrew Barto's

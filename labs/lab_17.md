@@ -1841,6 +1841,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 ^[1] William G. Chase and Herbert A. Simon, "Perception in Chess," *Cognitive
 Psychology* 4, no. 1 (1973): 55--81.

@@ -1928,6 +1928,8 @@ Exercises
 
 **Solution for the exercises are available in the solutions file.**
 
+<h5><span style="color:red;">References</span></h5>
+
 
 
 ^[1] It is often the case that a learning algorithm will try to optimize a
