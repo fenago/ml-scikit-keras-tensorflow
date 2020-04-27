@@ -1375,9 +1375,7 @@ lab.
 
 Finally, two variants of Adam are worth mentioning:
 
-AdaMax
-
-:   Notice that in step 2 of [Equation
+AdaMax: Notice that in step 2 of [Equation
     11-8]
     Adam accumulates the squares of the gradients in **s** (with a
     greater weight for more recent gradients). In step 5, if we ignore
@@ -1399,9 +1397,7 @@ AdaMax
     more optimizer you can try if you experience problems with Adam on
     some task.
 
-Nadam
-
-:   Nadam optimization is Adam optimization plus the Nesterov trick, so
+Nadam: Nadam optimization is Adam optimization plus the Nesterov trick, so
     it will often converge slightly faster than Adam. In [his report
     introducing this
     technique](https://homl.info/nadam), ^[19]
@@ -1521,9 +1517,7 @@ These strategies are called *learning schedules*
 [Lab 4]
 These are the most commonly used learning schedules:
 
-*Power scheduling*
-
-:   Set the learning rate to a function of the
+*Power scheduling*: Set the learning rate to a function of the
     iteration number *t*: *η*(*t*) = *η*~0~ / (1 + *t*/*s*)^*c*^. The
     initial learning rate *η*~0~, the power *c* (typically set to 1),
     and the steps *s* are hyperparameters. The learning rate drops at
@@ -1533,32 +1527,24 @@ These are the most commonly used learning schedules:
     drops quickly, then more and more slowly. Of course, power
     scheduling requires tuning *η*~0~ and *s* (and possibly *c*).
 
-*Exponential scheduling*
-
-:   Set the learning rate to *η*(*t*) = *η*~0~
+*Exponential scheduling*: Set the learning rate to *η*(*t*) = *η*~0~
     0.1^*t/s*^. The learning rate will gradually drop by a factor of 10
     every *s* steps. While power scheduling reduces the learning rate
     more and more slowly, exponential scheduling keeps slashing it by a
     factor of 10 every *s* steps.
 
-*Piecewise constant scheduling*
-
-:   Use a constant learning rate for a number of
+*Piecewise constant scheduling*: Use a constant learning rate for a number of
     epochs (e.g., *η*~0~ = 0.1 for 5 epochs), then a smaller learning
     rate for another number of epochs (e.g., *η*~1~ = 0.001 for 50
     epochs), and so on. Although this solution can work very well, it
     requires fiddling around to figure out the right sequence of
     learning rates and how long to use each of them.
 
-*Performance scheduling*
-
-:   Measure the validation error every *N* steps
+*Performance scheduling*: Measure the validation error every *N* steps
     (just like for early stopping), and reduce the learning rate by a
     factor of *λ* when the error stops dropping.
 
-*1cycle scheduling*
-
-:   Contrary to the other approaches, *1cycle*
+*1cycle scheduling*: Contrary to the other approaches, *1cycle*
     (introduced in a [2018
     paper](https://homl.info/1cycle) ^[21]
     by Leslie Smith) starts by increasing the initial learning rate

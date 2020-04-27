@@ -749,16 +749,12 @@ Great! Now let's write a small script that will query the prediction
 service. Google provides several libraries to simplify access to its
 services:
 
-Google API Client Library
-
-:   This is a fairly thin layer on top of [*OAuth
+Google API Client Library: This is a fairly thin layer on top of [*OAuth
     2.0*](https://oauth.net/) (for the authentication) and REST. You can
     use it with all GCP services, including AI Platform. You can install
     it using pip: the library is called `google-api-python-client`.
 
-Google Cloud Client Libraries
-
-:   These are a bit more high-level: each one is dedicated to a
+Google Cloud Client Libraries: These are a bit more high-level: each one is dedicated to a
     particular service, such as GCS, Google BigQuery, Google Cloud
     Natural Language, and Google Cloud Vision. All these libraries can
     be installed using pip (e.g., the GCS Client Library is called

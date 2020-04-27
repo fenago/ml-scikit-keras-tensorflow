@@ -430,27 +430,19 @@ in the notebook or
 [Appendix F]
 for more details):
 
-Sparse tensors (`tf.SparseTensor`)
-
-:   Efficiently represent tensors containing
+Sparse tensors (`tf.SparseTensor`): Efficiently represent tensors containing
     mostly zeros. The `tf.sparse` package contains operations for sparse
     tensors.
 
-Tensor arrays (`tf.TensorArray`)
-
-:   Are lists of tensors. They have a fixed size
+Tensor arrays (`tf.TensorArray`): Are lists of tensors. They have a fixed size
     by default but can optionally be made dynamic. All tensors they
     contain must have the same shape and data type.
 
-Ragged tensors (`tf.RaggedTensor`)
-
-:   Represent static lists of lists of tensors,
+Ragged tensors (`tf.RaggedTensor`): Represent static lists of lists of tensors,
     where every tensor has the same shape and data type. The `tf.ragged`
     package contains operations for ragged tensors.
 
-String tensors
-
-:   Are regular tensors of type `tf.string`. These
+String tensors: Are regular tensors of type `tf.string`. These
     represent byte strings, not Unicode strings, so if you create a
     string tensor using a Unicode string (e.g., a regular Python 3
     string like `"café"`), then it will get encoded to UTF-8
@@ -465,17 +457,13 @@ String tensors
     type `tf.int32` holding Unicode code points), the length appears in
     the shape.
 
-Sets
-
-:   Are represented as regular tensors (or sparse
+Sets: Are represented as regular tensors (or sparse
     tensors). For example, `tf.constant([[1, 2], [3, 4]])` represents
     the two sets {1, 2} and {3, 4}. More generally, each set is
     represented by a vector in the tensor's last axis. You can
     manipulate sets using operations from the `tf.sets` package.
 
-Queues
-
-:   Store tensors across multiple steps. TensorFlow offers various kinds
+Queues: Store tensors across multiple steps. TensorFlow offers various kinds
     of queues: simple First In, First Out (FIFO) queues (FIFOQueue),
     queues that can 
     prioritize some items (`PriorityQueue`), shuffle their items

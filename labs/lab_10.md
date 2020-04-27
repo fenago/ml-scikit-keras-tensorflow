@@ -539,18 +539,14 @@ at every step. In fact, the backpropagation algorithm works well with
 many other activation functions, not just the logistic function. Here
 are two other popular choices:
 
-The *hyperbolic tangent* function: tanh(*z*) = 2*σ*(2*z*) -- 1
-
-:   Just like the logistic
+The *hyperbolic tangent* function: tanh(*z*) = 2*σ*(2*z*) -- 1: Just like the logistic
     function, this activation function is *S*-shaped, continuous, and
     differentiable, but its output value ranges from --1 to 1 (instead
     of 0 to 1 in the case of the logistic function). That range tends to
     make each layer's output more or less centered around 0 at the
     beginning of training, which often helps speed up convergence.
 
-The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*)
-
-:   The ReLU function is
+The Rectified Linear Unit function: ReLU(*z*) = max(0, *z*): The ReLU function is
     continuous but unfortunately not differentiable at *z* = 0 (the
     slope changes abruptly, which can make Gradient Descent bounce
     around), and its derivative is 0 for *z* \< 0. In practice, however,
@@ -2208,45 +2204,31 @@ techniques take care of the "zooming" process for you and lead to much
 better solutions in much less time. Here are some 
 Python libraries you can use to optimize hyperparameters:
 
-[Hyperopt](https://github.com/hyperopt/hyperopt)
-
-:   A popular library for optimizing over all
+[Hyperopt](https://github.com/hyperopt/hyperopt): A popular library for optimizing over all
     sorts of complex search spaces (including real values, such as the
     learning rate, and discrete values, such as the number of layers).
 
-[Hyperas](https://github.com/maxpumperla/hyperas), [kopt](https://github.com/Avsecz/kopt), or [Talos](https://github.com/autonomio/talos)
-
-:   Useful libraries for
+[Hyperas](https://github.com/maxpumperla/hyperas), [kopt](https://github.com/Avsecz/kopt), or [Talos](https://github.com/autonomio/talos): Useful libraries for
     optimizing 
     hyperparameters for Keras models (the first two are based on
     Hyperopt).
 
-[Keras Tuner](https://homl.info/kerastuner)
-
-:   An easy-to-use hyperparameter optimization
+[Keras Tuner](https://homl.info/kerastuner): An easy-to-use hyperparameter optimization
     library by Google for Keras models, with a hosted service for
     visualization and analysis.
 
-[Scikit-Optimize (`skopt`)](https://scikit-optimize.github.io/)
-
-:   A general-purpose optimization library. The
+[Scikit-Optimize (`skopt`)](https://scikit-optimize.github.io/): A general-purpose optimization library. The
     `BayesSearchCV` class performs Bayesian optimization using an
     interface similar to `GridSearchCV`.
 
-[Spearmint](https://github.com/JasperSnoek/spearmint)
+[Spearmint](https://github.com/JasperSnoek/spearmint): A Bayesian optimization library.
 
-:   A Bayesian optimization library.
-
-[Hyperband](https://github.com/zygmuntz/hyperband)
-
-:   A fast hyperparameter tuning library based on
+[Hyperband](https://github.com/zygmuntz/hyperband): A fast hyperparameter tuning library based on
     the recent [Hyperband
     paper](https://homl.info/hyperband) ^[22]
     by Lisha Li et al.
 
-[Sklearn-Deap](https://github.com/rsteca/sklearn-deap)
-
-:   A hyperparameter optimization library based on
+[Sklearn-Deap](https://github.com/rsteca/sklearn-deap): A hyperparameter optimization library based on
     evolutionary algorithms, with a `GridSearchCV`-like interface.
 
 Moreover, many companies offer services for hyperparameter optimization.
@@ -2401,9 +2383,7 @@ and neurons are not the only hyperparameters you can tweak in an MLP.
 Here are some of the most important ones, as well as tips on how to set
 them:
 
-Learning rate
-
-:   The learning rate is arguably the most important hyperparameter. In
+Learning rate: The learning rate is arguably the most important hyperparameter. In
     general, the optimal learning rate is about half of the maximum
     learning rate (i.e., the learning rate above which the training
     algorithm diverges, as we saw in
@@ -2424,16 +2404,12 @@ Learning rate
     techniques in
     [Lab 11]
 
-Optimizer
-
-:   Choosing a better optimizer than plain old Mini-batch Gradient
+Optimizer: Choosing a better optimizer than plain old Mini-batch Gradient
     Descent (and tuning its hyperparameters) is also quite important. We
     will see several advanced optimizers in
     [Lab 11]
 
-Batch size
-
-:   The batch size can have a significant impact on your model's
+Batch size: The batch size can have a significant impact on your model's
     performance and training time. The main benefit of using large batch
     sizes is that hardware accelerators like GPUs can process them
     efficiently (see
@@ -2465,16 +2441,12 @@ Batch size
     performance is disappointing, then try using a small batch size
     instead.
 
-Activation function
-
-:   We discussed how to choose the activation function earlier in this
+Activation function: We discussed how to choose the activation function earlier in this
     lab: in general, the ReLU activation function will be a good
     default for all hidden layers. For the output layer, it really
     depends on your task.
 
-Number of iterations
-
-:   In most cases, the number of training iterations does not actually
+Number of iterations: In most cases, the number of training iterations does not actually
     need to be tweaked: just use early stopping instead.
 
 

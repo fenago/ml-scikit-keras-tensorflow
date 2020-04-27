@@ -869,9 +869,7 @@ There are many other dimensionality reduction
 techniques, several of which are available in
 Scikit-Learn. Here are some of the most popular ones:
 
-Random Projections
-
-:   As its name suggests, projects the data to a
+Random Projections: As its name suggests, projects the data to a
     lower-dimensional space using a random linear projection. This may
     sound crazy, but it turns out that such a random projection is
     actually very likely to preserve distances well, as was demonstrated
@@ -882,30 +880,22 @@ Random Projections
     documentation for the `sklearn.random_projection` package for more
     details.
 
-Multidimensional Scaling (MDS)
-
-:   Reduces dimensionality while trying to
+Multidimensional Scaling (MDS): Reduces dimensionality while trying to
     preserve the distances between the instances.
 
-Isomap
-
-:   Creates a graph by
+Isomap: Creates a graph by
     connecting each instance to its nearest neighbors, then reduces
     dimensionality while trying to preserve the *geodesic
     distances*^[9]
      between the instances.
 
-t-Distributed Stochastic Neighbor Embedding (t-SNE)
-
-:   Reduces dimensionality while trying to keep
+t-Distributed Stochastic Neighbor Embedding (t-SNE): Reduces dimensionality while trying to keep
     similar instances close and dissimilar instances apart. It is mostly
     used for visualization, in particular to visualize clusters of
     instances in high-dimensional space (e.g., to visualize the MNIST
     images in 2D).
 
-Linear Discriminant Analysis (LDA)
-
-:   Is a classification algorithm, but during
+Linear Discriminant Analysis (LDA): Is a classification algorithm, but during
     training it learns the most discriminative axes between the classes,
     and these axes can then be used to define a hyperplane onto which to
     project the data. The benefit of this approach is that the

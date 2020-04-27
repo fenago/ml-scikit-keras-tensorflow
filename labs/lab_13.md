@@ -40,18 +40,14 @@ how to create custom preprocessing layers and use the standard Keras
 ones. We will also take a quick look at a few related projects from
 TensorFlow's ecosystem:
 
-TF Transform (*tf.Transform*)
-
-:   Makes it possible to write a single
+TF Transform (*tf.Transform*): Makes it possible to write a single
     preprocessing function that can be run in batch mode on your full
     training set, before training (to speed it up), and then exported to
     a TF Function and incorporated into your trained model so that once
     it is deployed in production it can take care of preprocessing new
     instances on the fly.
 
-TF Datasets (TFDS)
-
-:   Provides a convenient function to download
+TF Datasets (TFDS): Provides a convenient function to download
     many common datasets of all kinds, including large ones like
     ImageNet, as well as convenient dataset objects to manipulate them
     using the Data API.

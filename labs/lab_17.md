@@ -1164,9 +1164,7 @@ that this competition will push them to excel. As shown in
 [Figure 17-15]
 a GAN is composed of two neural networks:
 
-Generator
-
-:   Takes a random distribution as input (typically Gaussian) and
+Generator: Takes a random distribution as input (typically Gaussian) and
     outputs some data---typically, an image. You can think of the random
     inputs as the latent representations (i.e., codings) of the image to
     be generated. So, as you can see, the generator offers the same
@@ -1175,9 +1173,7 @@ Generator
     Gaussian noise, and it outputs a brand-new image). However, it is
     trained very differently, as we will soon see.
 
-Discriminator
-
-:   Takes either a fake image from the generator or a real image from
+Discriminator: Takes either a fake image from the generator or a real image from
     the training set as input, and must guess whether the input image is
     fake or real.
 
@@ -1606,9 +1602,7 @@ The paper also introduced several other techniques aimed at increasing
 the diversity of the outputs (to avoid mode collapse) and making
 training more stable:
 
-Minibatch standard deviation layer
-
-:   Added near the end of
+Minibatch standard deviation layer: Added near the end of
     the discriminator. For each position in the inputs, it computes the
     standard deviation across all channels and all instances in the
     batch
@@ -1626,9 +1620,7 @@ Minibatch standard deviation layer
     diversity. This will encourage the generator to produce more diverse
     outputs, reducing the risk of mode collapse.
 
-Equalized learning rate
-
-:   Initializes all weights
+Equalized learning rate: Initializes all weights
     using a simple Gaussian distribution with mean 0 and standard
     deviation 1 rather than using He initialization. However, the
     weights are scaled down at runtime (i.e., every time the layer is
@@ -1650,9 +1642,7 @@ Equalized learning rate
     so they all learn at the same speed. This both speeds up and
     stabilizes training.
 
-Pixelwise normalization layer
-
-:   Added after each
+Pixelwise normalization layer: Added after each
     convolutional layer in the generator. It normalizes each activation
     based on all the activations in the same image and at the same
     location, but across all channels (dividing by the square root of
@@ -1694,9 +1684,7 @@ generator. Let's take a look at the StyleGAN. It is composed of two
 networks (see
 [Figure 17-20]
 
-Mapping network
-
-:   An eight-layer MLP that maps the latent representations **z** (i.e.,
+Mapping network: An eight-layer MLP that maps the latent representations **z** (i.e.,
     the codings) to a vector **w**. This vector is then
     sent through multiple
     *affine transformations* (i.e., `Dense` layers with no activation
@@ -1708,9 +1696,7 @@ Mapping network
     short, the mapping network maps the codings to multiple style
     vectors.
 
-Synthesis network
-
-:   Responsible for generating the images. It has a constant learned
+Synthesis network: Responsible for generating the images. It has a constant learned
     input (to be clear, this input will be constant *after* training,
     but *during* training it keeps getting tweaked by backpropagation).
     It processes this input through multiple convolutional and

@@ -1692,9 +1692,7 @@ Scikit-Learn's API is remarkably well designed.
 These are the [main design
 principles](https://homl.info/11): ^[17]
 
-Consistency
-
-:   All objects share a consistent and simple interface:
+Consistency: All objects share a consistent and simple interface:
 
     Estimators
 
@@ -1736,29 +1734,21 @@ Consistency
         algorithms).
 ^[18]
 
-Inspection
-
-:   All the estimator's hyperparameters are accessible directly via
+Inspection: All the estimator's hyperparameters are accessible directly via
     public instance variables (e.g., `imputer.strategy`), and all the
     estimator's learned parameters are accessible via public instance
     variables with an underscore suffix (e.g., `imputer.statistics_`).
 
-Nonproliferation of classes
-
-:   Datasets are represented as NumPy arrays or SciPy sparse matrices,
+Nonproliferation of classes: Datasets are represented as NumPy arrays or SciPy sparse matrices,
     instead of homemade classes. Hyperparameters are just regular Python
     strings or numbers.
 
-Composition
-
-:   Existing building blocks are reused as much as possible. For
+Composition: Existing building blocks are reused as much as possible. For
     example, it is easy to create a `Pipeline` estimator from an
     arbitrary sequence of transformers followed by a final estimator, as
     we will see.
 
-Sensible defaults
-
-:   Scikit-Learn provides reasonable default values for most parameters,
+Sensible defaults: Scikit-Learn provides reasonable default values for most parameters,
     making it easy to quickly create a baseline working system.
 
 
